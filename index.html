@@ -100,14 +100,9 @@
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      justify-content: space-between; /* This will push children to the edges */
+      justify-content: flex-start; /* Revert to flex-start */
       margin-top: 24px;
-      align-items: center; /* Vertically align items if they wrap */
-    }
-    #card-buttons-side-quests {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
+      align-items: center;
     }
     #card-buttons button {
       background: var(--color-accent); color: #fff; border: none; border-radius: 50px; padding: 10px 24px;
@@ -375,30 +370,39 @@
           renderContent(cardContentEl, n.content);
 
           const btns = document.getElementById('card-buttons');
-          btns.innerHTML = '<div id="card-buttons-side-quests"></div>'; // Add a container for side quests
-          const sideQuestBtnsContainer = btns.querySelector('#card-buttons-side-quests');
+          btns.innerHTML = ''; // Clear existing buttons
 
           if (n.type === 'main') {
               const mainNodeData = courseData.find(d => String(d.id) === n.id);
-              if (mainNodeData && mainNodeData.sideQuests) {
+              let hasSideQuests = false;
+              if (mainNodeData && mainNodeData.sideQuests && mainNodeData.sideQuests.length > 0) {
+                  hasSideQuests = true;
                   mainNodeData.sideQuests.forEach(sq => {
                       const btn = document.createElement('button');
                       btn.textContent = sq.buttonText;
                       btn.onclick = () => updateView(`${n.id}-${sq.type}`);
-                      sideQuestBtnsContainer.appendChild(btn); // Add to the left-aligned group
+                      btns.appendChild(btn);
                   });
               }
+
+              let hasMainConnections = Object.keys(n.connections).length > 0;
+              if (hasSideQuests && hasMainConnections) {
+                  const spacer = document.createElement('div');
+                  spacer.style.flexGrow = '1';
+                  btns.appendChild(spacer);
+              }
+
               for (const [label, targetId] of Object.entries(n.connections)) {
                   const btn = document.createElement('button');
                   btn.textContent = label;
                   btn.onclick = () => updateView(String(targetId));
-                  btns.appendChild(btn); // Add main path buttons directly to the parent
+                  btns.appendChild(btn);
               }
           } else if (n.type === 'sidequest') {
               const btn = document.createElement('button');
               btn.textContent = 'Return to main path';
               btn.onclick = () => updateView(String(n.parentId));
-              btns.appendChild(btn); // Add return button (will be right-aligned)
+              btns.appendChild(btn);
           }
           
           node.classed('active', d => d.id === activeNodeId)
