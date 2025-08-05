@@ -170,7 +170,7 @@
 
         for (const line of lines) {
             const trimmedLine = line.trim();
-            const isListItem = trimmedLine.startsWith('* ') || trimmedLine.startsWith('- ');
+            const isListItem = trimmedLine.startsWith('* ') || trimmedLine.startsWith('- ') || trimmedLine.startsWith('-');
 
             // Process bold markdown within any line
             const processBold = (str) => str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
@@ -180,7 +180,7 @@
                     html += '<ul>';
                     inList = true;
                 }
-                const listItemContent = processBold(trimmedLine.substring(2));
+                const listItemContent = processBold(trimmedLine.startsWith('- ') ? trimmedLine.substring(2) : trimmedLine.substring(1));
                 html += `<li>${listItemContent}</li>`;
             } else {
                 if (inList) {
