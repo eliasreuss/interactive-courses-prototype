@@ -121,6 +121,7 @@
   <script>
     function renderContent(element, text) {
         const content = text || '';
+        // --- Handle special content types first (YouTube, links) ---
         const youtubeRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]{11})/;
         const youtubeMatch = content.match(youtubeRegex);
         if (youtubeMatch) {
@@ -132,21 +133,54 @@
             element.innerHTML = `<a href="${content}" target="_blank" rel="noopener noreferrer" class="resource-link-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M13.194 10.806a1.5 1.5 0 1 0-2.122-2.122 1.5 1.5 0 0 0 2.122 2.122Zm-.708 6.364a1.5 1.5 0 1 0-2.122-2.122 1.5 1.5 0 0 0 2.122 2.122ZM12 3.5A8.5 8.5 0 1 1 3.5 12 8.5 8.5 0 0 1 12 3.5ZM10.5 12a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Zm6 0a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z"></path></svg><span>Open Resource</span></a>`;
             return;
         }
+
+        // --- Handle standard text, image, and list content ---
         let html = '';
-        const imageRegex = /!\[.*?\]\((.*?)\)/g;
-        content.split('\n').forEach(line => {
-            if (line.trim() === '' && html !== '') { html += '<p> </p>'; return; } // Render blank lines
-            const images = [...line.matchAll(imageRegex)];
-            if (images.length > 0) {
-                let imageHtml = '<div class="content-images-container">';
-                images.forEach(imgMatch => { imageHtml += `<img src="images/${imgMatch[1]}" alt="${imgMatch[0]}">`; });
-                imageHtml += '</div>';
-                html += imageHtml;
+        const lines = content.split('\n');
+        let inList = false;
+
+        for (const line of lines) {
+            const trimmedLine = line.trim();
+            const isListItem = trimmedLine.startsWith('* ') || trimmedLine.startsWith('- ');
+
+            // Process bold markdown within any line
+            const processBold = (str) => str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+            if (isListItem) {
+                if (!inList) {
+                    html += '<ul>';
+                    inList = true;
+                }
+                const listItemContent = processBold(trimmedLine.substring(2));
+                html += `<li>${listItemContent}</li>`;
             } else {
-                const processedLine = line.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-                html += `<p>${processedLine}</p>`;
+                if (inList) {
+                    html += '</ul>';
+                    inList = false;
+                }
+
+                const imageRegex = /!\[.*?\]\((.*?)\)/g;
+                const images = [...line.matchAll(imageRegex)];
+
+                if (images.length > 0) {
+                    let imageHtml = '<div class="content-images-container">';
+                    images.forEach(imgMatch => {
+                        imageHtml += `<img src="images/${imgMatch[1]}" alt="${imgMatch[0]}">`;
+                    });
+                    imageHtml += '</div>';
+                    html += imageHtml;
+                } else if (trimmedLine === '' && html.length > 0) {
+                    html += '<p> </p>';
+                } else if (trimmedLine !== '') {
+                    html += `<p>${processBold(line)}</p>`;
+                }
             }
-        });
+        }
+
+        if (inList) {
+            html += '</ul>'; // Close any list that's still open
+        }
+
         element.innerHTML = html;
     }
 

@@ -66,9 +66,12 @@
         <label>Node Title:</label><input type="text" class="node-title" required>
         <div class="label-with-button">
             <label>Node Content:</label>
-            <button type="button" class="add-image-btn" style="margin-bottom: 5px;">Add Image</button>
+            <div>
+                <button type="button" class="add-list-btn" style="margin-bottom: 5px;">Add Bullet List</button>
+                <button type="button" class="add-image-btn" style="margin-bottom: 5px;">Add Image</button>
+            </div>
         </div>
-        <textarea class="node-content" placeholder="Use **text** for bold. For images, use the button or type ![alt text](image.png). Put multiple images on one line for side-by-side display." required></textarea>
+        <textarea class="node-content" placeholder="Use **text** for bold. For lists, use '* ' or '- '. For images, use the button or type ![alt text](image.png)." required></textarea>
         <h4>Connections</h4>
         <div class="connections-container"></div>
         <button class="add-connection-btn">Add Main Path Link</button>
@@ -104,9 +107,12 @@
         <div class="sidequest-content-area">
             <div class="label-with-button">
                 <label>Side Quest Content:</label>
-                <button type="button" class="add-image-btn" style="margin-bottom: 5px;">Add Image</button>
+                <div>
+                    <button type="button" class="add-list-btn" style="margin-bottom: 5px;">Add Bullet List</button>
+                    <button type="button" class="add-image-btn" style="margin-bottom: 5px;">Add Image</button>
+                </div>
             </div>
-            <textarea class="sq-content" placeholder="Paste a YouTube URL here to embed a video, or any other URL for a link. Otherwise, just type regular text or add an image." required></textarea>
+            <textarea class="sq-content" placeholder="Paste a YouTube URL here to embed a video, or any other URL for a link. You can also use lists (* or -) and bold text." required></textarea>
         </div>
         <button class="btn-remove">✖</button>
     </div>
@@ -185,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
         node.content = node.content.trim(); return node;
     }
     
-    // --- NEW: Event listener for "Add Image" button ---
+    // --- NEW: Event listener for "Add Image" and "Add List" buttons ---
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('add-image-btn')) {
             const imageFile = prompt("Enter the image filename (e.g., my-image.png):");
@@ -193,19 +199,26 @@ document.addEventListener('DOMContentLoaded', () => {
             const altText = prompt("Enter a short description (alt text):", "image");
             
             const markdown = `![${altText}](${imageFile})`;
-            
-            // Find the associated textarea
-            const parent = e.target.closest('.label-with-button, .sidequest-content-area');
-            const textarea = parent.nextElementSibling.tagName === 'TEXTAREA' ? parent.nextElementSibling : parent.querySelector('textarea');
-            
-            // Insert markdown at cursor
-            const start = textarea.selectionStart;
-            const end = textarea.selectionEnd;
-            const text = textarea.value;
-            textarea.value = text.substring(0, start) + markdown + text.substring(end);
-            textarea.focus();
+            insertTextAtCursor(e.target, markdown);
+        }
+        
+        if (e.target.classList.contains('add-list-btn')) {
+            const listMarkdown = "\n* List item 1\n* List item 2\n";
+            insertTextAtCursor(e.target, listMarkdown);
         }
     });
+
+    function insertTextAtCursor(buttonElement, textToInsert) {
+        const parent = buttonElement.closest('.label-with-button, .sidequest-content-area');
+        const textarea = parent.nextElementSibling.tagName === 'TEXTAREA' ? parent.nextElementSibling : parent.querySelector('textarea');
+        
+        const start = textarea.selectionStart;
+        const end = textarea.selectionEnd;
+        const text = textarea.value;
+        textarea.value = text.substring(0, start) + textToInsert + text.substring(end);
+        textarea.focus();
+        textarea.selectionStart = textarea.selectionEnd = start + textToInsert.length;
+    }
 
     if (nodesContainer.children.length === 0) addNewNode();
     addNodeBtn.addEventListener('click', () => addNewNode());
