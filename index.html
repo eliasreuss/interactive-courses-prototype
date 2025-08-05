@@ -139,7 +139,7 @@
             const images = [...line.matchAll(imageRegex)];
             if (images.length > 0) {
                 let imageHtml = '<div class="content-images-container">';
-                images.forEach(imgMatch => { imageHtml += `<img src="${imgMatch[1]}" alt="${imgMatch[0]}">`; });
+                images.forEach(imgMatch => { imageHtml += `<img src="images/${imgMatch[1]}" alt="${imgMatch[0]}">`; });
                 imageHtml += '</div>';
                 html += imageHtml;
             } else {
@@ -221,7 +221,7 @@
         try {
             const urlParams = new URLSearchParams(window.location.search);
             const courseFile = urlParams.get('course') || 'course-edited.txt';
-            const response = await fetch(courseFile);
+            const response = await fetch('courses/' + courseFile);
             if (!response.ok) throw new Error(`Network response was not ok: ${response.statusText}`);
             const text = await response.text();
             courseData = parseFlowScript(text);
