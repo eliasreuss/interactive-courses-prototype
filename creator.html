@@ -246,15 +246,22 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target.classList.contains('add-image-btn')) {
             const imageFile = prompt("Enter the image filename (e.g., my-image.png):");
             if (!imageFile) return;
+
             const altText = prompt("Enter a short description (alt text):", "image");
             
-            let size = "";
-            while (!['small', 'medium', 'large'].includes(size)) {
-                size = prompt("Enter image size (small, medium, or large):", "large")?.toLowerCase();
-                if (size === null) return; // User cancelled
+            const size = prompt("Enter image size (e.g., x-small, small, medium, large, or a custom height like '150px'):", "large");
+            if (!size) return;
+            
+            const align = prompt("Enter image alignment (left, center, or right):", "center");
+            if (!align) return;
+
+            let attributes = [];
+            if (size) attributes.push(`size:${size.trim()}`);
+            if (align && ['left', 'center', 'right'].includes(align.trim())) {
+                attributes.push(`align:${align.trim()}`);
             }
             
-            const markdown = `![${altText}|size:${size}](${imageFile})`;
+            const markdown = `![${altText}/${attributes.join('/')}](${imageFile})`;
             insertTextAtCursor(e.target, markdown);
         }
         

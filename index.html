@@ -92,10 +92,15 @@
     .content-images-container .img-container.size-large {
         flex-basis: 100%;
     }
+    .content-images-container .size-x-small { max-width: 15%; flex-basis: 15%; }
     .content-images-container .size-small { max-width: 25%; flex-basis: 25%; }
     .content-images-container .size-medium { max-width: 50%; flex-basis: 50%; }
     .content-images-container .size-large { max-width: 100%; flex-basis: 100%; }
-    
+
+    /* Alignment for the container of a line of images */
+    .content-images-container.align-left { justify-content: flex-start; }
+    .content-images-container.align-center { justify-content: center; }
+    .content-images-container.align-right { justify-content: flex-end; }
     #card-buttons {
       display: flex;
       gap: 12px;
@@ -193,16 +198,45 @@
                     inList = false;
                 }
 
-                const imageRegex = /!\[(.*?)(?:\|size:(small|medium|large))?\]\((.*?)\)/g;
+                const imageRegex = /!\[(.*?)\/(.*?)\]\((.*?)\)/g;
                 const images = [...line.matchAll(imageRegex)];
 
                 if (images.length > 0) {
-                    let imageHtml = '<div class="content-images-container">';
+                    // Default alignment for a line of images
+                    let alignClass = 'align-center'; 
+                    
+                    // The first image's alignment determines the alignment for the whole line
+                    const firstImageAttrs = images[0][2].split('/');
+                    firstImageAttrs.forEach(attr => {
+                        const [key, value] = attr.split(':');
+                        if (key === 'align') {
+                            alignClass = `align-${value}`;
+                        }
+                    });
+
+                    let imageHtml = `<div class="content-images-container ${alignClass}">`;
+
                     images.forEach(imgMatch => {
                         const altText = imgMatch[1];
-                        const sizeClass = imgMatch[2] ? `size-${imgMatch[2]}` : 'size-large';
+                        const attributes = imgMatch[2].split('/');
                         const imgSrc = `images/${imgMatch[3]}`;
-                        imageHtml += `<div class="img-container ${sizeClass}"><img src="${imgSrc}" alt="${altText}"></div>`;
+                        
+                        let sizeClass = 'size-large';
+                        let style = '';
+
+                        attributes.forEach(attr => {
+                            const [key, value] = attr.split(':');
+                            if (key === 'size') {
+                                if (value.endsWith('px')) {
+                                    style = `height: ${value}; width: auto;`;
+                                    sizeClass = ''; // Custom size overrides class
+                                } else {
+                                    sizeClass = `size-${value}`;
+                                }
+                            }
+                        });
+
+                        imageHtml += `<div class="img-container ${sizeClass}" style="${style}"><img src="${imgSrc}" alt="${altText}" style="${style}"></div>`;
                     });
                     imageHtml += '</div>';
                     html += imageHtml;
