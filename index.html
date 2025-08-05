@@ -101,13 +101,17 @@
     .content-images-container.align-left { justify-content: flex-start; }
     .content-images-container.align-center { justify-content: center; }
     .content-images-container.align-right { justify-content: flex-end; }
+
     #card-buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: flex-start; /* Revert to flex-start */
-      margin-top: 24px;
-      align-items: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 24px;
+    }
+    #card-buttons-left, #card-buttons-right {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
     }
     #card-buttons button {
       background: var(--color-accent); color: #fff; border: none; border-radius: 50px; padding: 10px 24px;
@@ -198,40 +202,45 @@
                     inList = false;
                 }
 
-                const imageRegex = /!\[(.*?)\/(.*?)\]\((.*?)\)/g;
+                const imageRegex = /!\[(.*?)\]\((.*?)\)/g;
                 const images = [...line.matchAll(imageRegex)];
 
                 if (images.length > 0) {
-                    // Default alignment for a line of images
-                    let alignClass = 'align-center'; 
-                    
-                    // The first image's alignment determines the alignment for the whole line
-                    const firstImageAttrs = images[0][2].split('/');
-                    firstImageAttrs.forEach(attr => {
+                    let combinedAttrs = [];
+                    images.forEach(imgMatch => {
+                        const allData = imgMatch[1].split('/');
+                        const attributes = allData.slice(1);
+                        combinedAttrs = combinedAttrs.concat(attributes);
+                    });
+
+                    let alignClass = 'align-center';
+                    combinedAttrs.forEach(attr => {
                         const [key, value] = attr.split(':');
                         if (key === 'align') {
-                            alignClass = `align-${value}`;
+                            alignClass = `align-${value.trim()}`;
                         }
                     });
 
                     let imageHtml = `<div class="content-images-container ${alignClass}">`;
 
                     images.forEach(imgMatch => {
-                        const altText = imgMatch[1];
-                        const attributes = imgMatch[2].split('/');
-                        const imgSrc = `images/${imgMatch[3]}`;
+                        const allData = imgMatch[1].split('/');
+                        const altText = allData[0].trim();
+                        const attributes = allData.slice(1);
+                        const imgSrc = `images/${imgMatch[2]}`;
                         
                         let sizeClass = 'size-large';
                         let style = '';
 
                         attributes.forEach(attr => {
                             const [key, value] = attr.split(':');
-                            if (key === 'size') {
-                                if (value.endsWith('px')) {
-                                    style = `height: ${value}; width: auto;`;
-                                    sizeClass = ''; // Custom size overrides class
+                            if (key.trim() === 'size') {
+                                const sizeValue = value.trim();
+                                if (sizeValue.endsWith('px')) {
+                                    style = `height: ${sizeValue}; width: auto;`;
+                                    sizeClass = '';
                                 } else {
-                                    sizeClass = `size-${value}`;
+                                    sizeClass = `size-${sizeValue}`;
                                 }
                             }
                         });
@@ -403,40 +412,35 @@
           const cardContentEl = document.getElementById('card-content');
           renderContent(cardContentEl, n.content);
 
-          const btns = document.getElementById('card-buttons');
-          btns.innerHTML = ''; // Clear existing buttons
+          const btnsContainer = document.getElementById('card-buttons');
+          btnsContainer.innerHTML = `
+              <div id="card-buttons-left"></div>
+              <div id="card-buttons-right"></div>
+          `;
+          const leftButtons = btnsContainer.querySelector('#card-buttons-left');
+          const rightButtons = btnsContainer.querySelector('#card-buttons-right');
 
           if (n.type === 'main') {
               const mainNodeData = courseData.find(d => String(d.id) === n.id);
-              let hasSideQuests = false;
-              if (mainNodeData && mainNodeData.sideQuests && mainNodeData.sideQuests.length > 0) {
-                  hasSideQuests = true;
+              if (mainNodeData && mainNodeData.sideQuests) {
                   mainNodeData.sideQuests.forEach(sq => {
                       const btn = document.createElement('button');
                       btn.textContent = sq.buttonText;
                       btn.onclick = () => updateView(`${n.id}-${sq.type}`);
-                      btns.appendChild(btn);
+                      leftButtons.appendChild(btn);
                   });
               }
-
-              let hasMainConnections = Object.keys(n.connections).length > 0;
-              if (hasSideQuests && hasMainConnections) {
-                  const spacer = document.createElement('div');
-                  spacer.style.flexGrow = '1';
-                  btns.appendChild(spacer);
-              }
-
               for (const [label, targetId] of Object.entries(n.connections)) {
                   const btn = document.createElement('button');
                   btn.textContent = label;
                   btn.onclick = () => updateView(String(targetId));
-                  btns.appendChild(btn);
+                  rightButtons.appendChild(btn);
               }
           } else if (n.type === 'sidequest') {
               const btn = document.createElement('button');
               btn.textContent = 'Return to main path';
               btn.onclick = () => updateView(String(n.parentId));
-              btns.appendChild(btn);
+              rightButtons.appendChild(btn);
           }
           
           node.classed('active', d => d.id === activeNodeId)
