@@ -41,9 +41,12 @@
 <div class="container">
     <div class="top-controls">
         <h1>FlowScript Course Creator</h1>
-        <a href="editor.html" class="button-like">Edit an Existing Course</a>
+        <label for="file-input" id="upload-btn" class="button" style="display:inline-block; padding: 10px 15px; cursor:pointer;">
+            📤 Upload & Edit .txt File
+        </label>
+        <input type="file" id="file-input" accept=".txt" style="display: none;">
     </div>
-    <p>Use this page to create a new course from scratch. To edit an existing <code>.txt</code> file, please use the editor.</p>
+    <p>Create a new course from scratch, or upload an existing <code>.txt</code> file to continue editing it.</p>
     <div id="nodes-container"></div>
     <button id="add-node-btn" class="btn-add">➕ Add Main Path Node</button>
     <div class="output-area">
@@ -154,41 +157,91 @@ document.addEventListener('DOMContentLoaded', () => {
         newSQ.querySelector('.sq-content').value = content;
         container.appendChild(newSQ);
     }
-    function parseAndRender(text) {
-        nodesContainer.innerHTML = ''; let maxId = 0; const sideQuestContentMap = new Map(); const nodeBlocks = text.split(/\n\s*\n/); const mainNodeData = [];
-        nodeBlocks.forEach(block => {
-            const trimmedBlock = block.trim(); if (!trimmedBlock || trimmedBlock.startsWith('#')) return;
-            const sqContentMatch = trimmedBlock.match(/^\[side-quest-content:(.+)\]/);
-            if (sqContentMatch) { sideQuestContentMap.set(sqContentMatch[1], trimmedBlock.split('\n---\n')[1]?.trim() || '');
-            } else { mainNodeData.push(parseNodeBlock(trimmedBlock)); }
+
+    // --- START: NEW, ROBUST PARSER (from index.html) ---
+    function parseFlowScript(text) {
+        const sideQuestContentMap = new Map();
+        const mainNodes = [];
+        let currentBlock = null;
+
+        const sqRegex = /\[side-quest-content:([^\]]+)\]\s*\n---\n([\s\S]*?)\n---/g;
+        let remainingText = text.replace(sqRegex, (match, type, content) => {
+            sideQuestContentMap.set(type.trim(), content.trim());
+            return '';
         });
-        mainNodeData.forEach(nodeData => {
-            if (!nodeData) return;
+
+        const lines = remainingText.split('\n');
+        let isContent = false;
+        
+        for (const line of lines) {
+            if (line.trim().startsWith('id:')) {
+                if (currentBlock) mainNodes.push(currentBlock);
+                currentBlock = { connections: {}, sideQuests: [], content: '' };
+                isContent = false;
+            }
+
+            if (!currentBlock) continue;
+
+            if (line.trim() === '---') {
+                isContent = !isContent;
+                continue;
+            }
+
+            if (isContent) {
+                currentBlock.content = (currentBlock.content || '') + line + '\n';
+            } else {
+                if (line.startsWith('>')) {
+                    const mainMatch = line.match(/>\s*(.+?)\s*->\s*(\d+)/);
+                    const sqMatch = line.match(/>\s*(.+?)\s*->\s*\[(.+?):(.+?)\]/);
+                    if (mainMatch) {
+                        currentBlock.connections[mainMatch[1].trim()] = parseInt(mainMatch[2]);
+                    } else if (sqMatch) {
+                        const [, buttonText, type, title] = sqMatch;
+                        currentBlock.sideQuests.push({ type, title, buttonText, content: sideQuestContentMap.get(type) || '' });
+                    }
+                } else {
+                    const [key, ...valueParts] = line.split(':');
+                    if (valueParts.length > 0) {
+                        const value = valueParts.join(':').trim();
+                        currentBlock[key.trim()] = key.trim() === 'id' ? parseInt(value) : value;
+                    }
+                }
+            }
+        }
+        if (currentBlock) mainNodes.push(currentBlock);
+
+        mainNodes.forEach(node => {
+            if (node.content) node.content = node.content.trim();
+        });
+        
+        return mainNodes;
+    }
+
+    function parseAndRender(text) {
+        nodesContainer.innerHTML = '';
+        let maxId = 0;
+        const courseData = parseFlowScript(text);
+
+        courseData.forEach(nodeData => {
+            if (!nodeData || !nodeData.id) return;
             const nodeCard = addNewNode(nodeData.id, nodeData.title, nodeData.content);
-            nodeData.connections.forEach(conn => addConnectionToNode(nodeCard, conn.text, conn.target));
-            nodeData.sideQuests.forEach(sq => { const sqContent = sideQuestContentMap.get(sq.type) || ''; addSideQuestToNode(nodeCard, sq.buttonText, sq.type, sq.title, sqContent); });
+
+            for (const [text, target] of Object.entries(nodeData.connections)) {
+                addConnectionToNode(nodeCard, text, target);
+            }
+
+            nodeData.sideQuests.forEach(sq => {
+                addSideQuestToNode(nodeCard, sq.buttonText, sq.type, sq.title, sq.content);
+            });
+
             if (nodeData.id > maxId) maxId = nodeData.id;
         });
-        nodeIdCounter = mainNodeData.length > 0 ? maxId + 1 : 1;
+
+        nodeIdCounter = courseData.length > 0 ? maxId + 1 : 1;
     }
-    function parseNodeBlock(block) {
-        const node = { connections: [], sideQuests: [], content: '' }; let isContent = false;
-        block.split('\n').forEach(line => {
-            if (line.trim() === '---') { isContent = !isContent; return; }
-            if (isContent) { node.content += line + '\n'; return; }
-            if (line.startsWith('>')) {
-                const mainMatch = line.match(/>\s*(.+?)\s*->\s*(\d+)/); const sqMatch = line.match(/>\s*(.+?)\s*->\s*\[(.+?):(.+?)\]/);
-                if (mainMatch) node.connections.push({ text: mainMatch[1].trim(), target: parseInt(mainMatch[2]) });
-                else if (sqMatch) node.sideQuests.push({ buttonText: sqMatch[1].trim(), type: sqMatch[2].trim(), title: sqMatch[3].trim() });
-            } else {
-                const [key, ...valueParts] = line.split(':');
-                if (valueParts.length > 0) { const value = valueParts.join(':').trim(); if(key.trim() === 'id') node.id = parseInt(value); else if(key.trim() === 'title') node.title = value; }
-            }
-        });
-        node.content = node.content.trim(); return node;
-    }
+    // --- END: NEW, ROBUST PARSER ---
     
-    // --- NEW: Event listener for "Add Image" and "Add List" buttons ---
+    // --- Event listener for "Add Image" and "Add List" buttons ---
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('add-image-btn')) {
             const imageFile = prompt("Enter the image filename (e.g., my-image.png):");
