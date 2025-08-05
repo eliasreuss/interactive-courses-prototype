@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlowScript Course Creator</title>
+    <style>
+        :root {
+            --primary-blue: #007bff; --light-gray: #f8f9fa; --medium-gray: #dee2e6; --dark-gray: #343a40;
+            --red: #dc3545; --green: #28a745; --yellow: #ffc107; --cyan: #17a2b8;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; background-color: var(--light-gray); color: var(--dark-gray); margin: 0; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        h1, h2, h3, h4 { color: #212529; }
+        h2 { border-bottom: 2px solid #e9ecef; padding-bottom: 10px; }
+        .node-card { border: 1px solid var(--medium-gray); border-radius: 6px; padding: 20px; margin-bottom: 20px; background-color: #fff; }
+        input[type="text"], input[type="number"], textarea, select { width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 4px; box-sizing: border-box; margin-bottom: 10px; font-size: 1rem; }
+        textarea { min-height: 120px; resize: vertical; }
+        label { font-weight: 600; display: block; margin-bottom: 5px; }
+        .label-with-button { display: flex; justify-content: space-between; align-items: center; }
+        button { background-color: var(--primary-blue); color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; font-size: 0.9rem; margin-right: 5px; transition: background-color 0.2s; }
+        button:hover { background-color: #0056b3; }
+        .btn-add { background-color: var(--green); }
+        .btn-add:hover { background-color: #218838; }
+        .btn-remove { background-color: var(--red); }
+        .btn-remove:hover { background-color: #c82333; }
+        .btn-generate { background-color: var(--yellow); color: #212529; font-weight: bold; width: 100%; padding: 15px; font-size: 1.2rem; margin-top: 20px; }
+        .btn-generate:hover { background-color: #e0a800; }
+        .connection-row, .sidequest-row { display: flex; gap: 15px; align-items: flex-start; margin-bottom: 15px; border-left: 3px solid var(--medium-gray); padding: 15px; border-radius: 4px;}
+        .sidequest-row { border-left-color: var(--cyan); }
+        .connection-inputs { flex: 2; }
+        .sidequest-content-area { flex: 1.5; }
+        .output-area { margin-top: 20px; }
+        #outputText { width: 100%; min-height: 400px; background-color: #e9ecef; color: #495057; font-family: monospace; font-size: 0.9rem; border-radius: 4px; }
+        #upload-btn { background-color: #6c757d; }
+        #upload-btn:hover { background-color: #5a6268; }
+        .top-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="top-controls">
+        <h1>FlowScript Course Creator</h1>
+        <label for="file-input" id="upload-btn" class="button" style="display:inline-block; padding: 10px 15px; cursor:pointer;">
+            📤 Upload & Edit .txt File
+        </label>
+        <input type="file" id="file-input" accept=".txt" style="display: none;">
+    </div>
+    <p>Create a new course from scratch, or upload an existing <code>.txt</code> file to continue editing it.</p>
+    <div id="nodes-container"></div>
+    <button id="add-node-btn" class="btn-add">➕ Add Main Path Node</button>
+    <div class="output-area">
+        <h2>Output</h2>
+        <button id="generate-btn" class="btn-generate">1. Generate & Preview Course Text</button>
+        <textarea id="outputText" readonly placeholder="Your generated course.txt content will appear here..."></textarea>
+        <button id="download-btn" style="margin-top: 10px; display: none;">2. Download .txt File</button>
+    </div>
+</div>
+
+<!-- TEMPLATES (hidden) -->
+<template id="node-template">
+    <div class="node-card">
+        <button class="btn-remove" style="float: right;">Remove Node</button>
+        <h3>Node Details</h3>
+        <label>Node ID:</label><input type="number" class="node-id" required>
+        <label>Node Title:</label><input type="text" class="node-title" required>
+        <div class="label-with-button">
+            <label>Node Content:</label>
+            <button type="button" class="add-image-btn" style="margin-bottom: 5px;">Add Image</button>
+        </div>
+        <textarea class="node-content" placeholder="Use **text** for bold. For images, use the button or type ![alt text](image.png). Put multiple images on one line for side-by-side display." required></textarea>
+        <h4>Connections</h4>
+        <div class="connections-container"></div>
+        <button class="add-connection-btn">Add Main Path Link</button>
+        <button class="add-sidequest-btn">Add Side Quest</button>
+    </div>
+</template>
+
+<template id="connection-template">
+    <div class="connection-row">
+        <div class="connection-inputs" style="display: flex; align-items: center; gap: 10px; width: 100%;">
+            <input type="text" class="conn-text" placeholder="Button Text" required style="flex: 1;">
+            <span>➔</span>
+            <input type="number" class="conn-target" placeholder="Target ID" required style="flex: 0.5;">
+        </div>
+        <button class="btn-remove">✖</button>
+    </div>
+</template>
+
+<template id="sidequest-template">
+    <div class="sidequest-row">
+        <div class="connection-inputs">
+            <div style="display: flex; gap: 5px; align-items: center; margin-bottom: 10px;">
+                <input type="text" class="sq-btn-text" placeholder="Button Text" required>
+                <span>➔ [</span>
+                <select class="sq-type">
+                    <option value="video">video</option><option value="now">now</option><option value="case">case</option>
+                </select>
+                <span>:</span>
+                <input type="text" class="sq-title" placeholder="Side Quest Title" required>
+                <span>]</span>
+            </div>
+        </div>
+        <div class="sidequest-content-area">
+            <div class="label-with-button">
+                <label>Side Quest Content:</label>
+                <button type="button" class="add-image-btn" style="margin-bottom: 5px;">Add Image</button>
+            </div>
+            <textarea class="sq-content" placeholder="Paste a YouTube URL here to embed a video, or any other URL for a link. Otherwise, just type regular text or add an image." required></textarea>
+        </div>
+        <button class="btn-remove">✖</button>
+    </div>
+</template>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // All existing variables are the same
+    const nodesContainer = document.getElementById('nodes-container');
+    const addNodeBtn = document.getElementById('add-node-btn');
+    const generateBtn = document.getElementById('generate-btn');
+    const downloadBtn = document.getElementById('download-btn');
+    const fileInput = document.getElementById('file-input');
+    const nodeTemplate = document.getElementById('node-template');
+    const connectionTemplate = document.getElementById('connection-template');
+    const sidequestTemplate = document.getElementById('sidequest-template');
+    let nodeIdCounter = 1;
+
+    // The functions for adding nodes, connections, parsing, etc., are all the same.
+    // ... (All previous JS functions from last correct answer go here) ...
+    function addNewNode(id = null, title = '', content = '') {
+        const nodeCard = nodeTemplate.content.cloneNode(true).querySelector('.node-card');
+        nodeCard.querySelector('.node-id').value = id !== null ? id : nodeIdCounter++;
+        nodeCard.querySelector('.node-title').value = title;
+        nodeCard.querySelector('.node-content').value = content;
+        nodesContainer.appendChild(nodeCard);
+        return nodeCard;
+    }
+    function addConnectionToNode(nodeCard, text = '', target = '') {
+        const container = nodeCard.querySelector('.connections-container');
+        const newConn = connectionTemplate.content.cloneNode(true);
+        newConn.querySelector('.conn-text').value = text;
+        newConn.querySelector('.conn-target').value = target;
+        container.appendChild(newConn);
+    }
+    function addSideQuestToNode(nodeCard, btnText = '', type = 'video', title = '', content = '') {
+        const container = nodeCard.querySelector('.connections-container');
+        const newSQ = sidequestTemplate.content.cloneNode(true);
+        newSQ.querySelector('.sq-btn-text').value = btnText;
+        newSQ.querySelector('.sq-type').value = type;
+        newSQ.querySelector('.sq-title').value = title;
+        newSQ.querySelector('.sq-content').value = content;
+        container.appendChild(newSQ);
+    }
+    function parseAndRender(text) {
+        nodesContainer.innerHTML = ''; let maxId = 0; const sideQuestContentMap = new Map(); const nodeBlocks = text.split(/\n\s*\n/); const mainNodeData = [];
+        nodeBlocks.forEach(block => {
+            const trimmedBlock = block.trim(); if (!trimmedBlock || trimmedBlock.startsWith('#')) return;
+            const sqContentMatch = trimmedBlock.match(/^\[side-quest-content:(.+)\]/);
+            if (sqContentMatch) { sideQuestContentMap.set(sqContentMatch[1], trimmedBlock.split('\n---\n')[1]?.trim() || '');
+            } else { mainNodeData.push(parseNodeBlock(trimmedBlock)); }
+        });
+        mainNodeData.forEach(nodeData => {
+            if (!nodeData) return;
+            const nodeCard = addNewNode(nodeData.id, nodeData.title, nodeData.content);
+            nodeData.connections.forEach(conn => addConnectionToNode(nodeCard, conn.text, conn.target));
+            nodeData.sideQuests.forEach(sq => { const sqContent = sideQuestContentMap.get(sq.type) || ''; addSideQuestToNode(nodeCard, sq.buttonText, sq.type, sq.title, sqContent); });
+            if (nodeData.id > maxId) maxId = nodeData.id;
+        });
+        nodeIdCounter = mainNodeData.length > 0 ? maxId + 1 : 1;
+    }
+    function parseNodeBlock(block) {
+        const node = { connections: [], sideQuests: [], content: '' }; let isContent = false;
+        block.split('\n').forEach(line => {
+            if (line.trim() === '---') { isContent = !isContent; return; }
+            if (isContent) { node.content += line + '\n'; return; }
+            if (line.startsWith('>')) {
+                const mainMatch = line.match(/>\s*(.+?)\s*->\s*(\d+)/); const sqMatch = line.match(/>\s*(.+?)\s*->\s*\[(.+?):(.+?)\]/);
+                if (mainMatch) node.connections.push({ text: mainMatch[1].trim(), target: parseInt(mainMatch[2]) });
+                else if (sqMatch) node.sideQuests.push({ buttonText: sqMatch[1].trim(), type: sqMatch[2].trim(), title: sqMatch[3].trim() });
+            } else {
+                const [key, ...valueParts] = line.split(':');
+                if (valueParts.length > 0) { const value = valueParts.join(':').trim(); if(key.trim() === 'id') node.id = parseInt(value); else if(key.trim() === 'title') node.title = value; }
+            }
+        });
+        node.content = node.content.trim(); return node;
+    }
+    
+    // --- NEW: Event listener for "Add Image" button ---
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('add-image-btn')) {
+            const imageFile = prompt("Enter the image filename (e.g., my-image.png):");
+            if (!imageFile) return;
+            const altText = prompt("Enter a short description (alt text):", "image");
+            
+            const markdown = `![${altText}](${imageFile})`;
+            
+            // Find the associated textarea
+            const parent = e.target.closest('.label-with-button, .sidequest-content-area');
+            const textarea = parent.nextElementSibling.tagName === 'TEXTAREA' ? parent.nextElementSibling : parent.querySelector('textarea');
+            
+            // Insert markdown at cursor
+            const start = textarea.selectionStart;
+            const end = textarea.selectionEnd;
+            const text = textarea.value;
+            textarea.value = text.substring(0, start) + markdown + text.substring(end);
+            textarea.focus();
+        }
+    });
+
+    if (nodesContainer.children.length === 0) addNewNode();
+    addNodeBtn.addEventListener('click', () => addNewNode());
+    nodesContainer.addEventListener('click', (e) => {
+        if (e.target.classList.contains('btn-remove')) e.target.closest('.node-card, .connection-row, .sidequest-row').remove();
+        else if (e.target.classList.contains('add-connection-btn')) addConnectionToNode(e.target.closest('.node-card'));
+        else if (e.target.classList.contains('add-sidequest-btn')) addSideQuestToNode(e.target.closest('.node-card'));
+    });
+    fileInput.addEventListener('change', (e) => {
+        const file = e.target.files[0]; if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            try { parseAndRender(event.target.result); alert('Course successfully loaded!'); }
+            catch (error) { console.error("Error parsing file:", error); alert("Could not parse file."); }
+        };
+        reader.readAsText(file); e.target.value = '';
+    });
+    generateBtn.addEventListener('click', () => {
+        let finalOutput = '# Auto-generated by FlowScript Course Creator\n\n'; const sideQuestContentMap = new Map();
+        document.querySelectorAll('.node-card').forEach(card => {
+            const id = card.querySelector('.node-id').value, title = card.querySelector('.node-title').value, content = card.querySelector('.node-content').value; if (!id || !title) return;
+            finalOutput += `id: ${id}\ntitle: ${title}\ntype: main\n---\n${content.trim()}\n---\n`;
+            card.querySelectorAll('.connection-row').forEach(conn => { const text = conn.querySelector('.conn-text').value, target = conn.querySelector('.conn-target').value; if(text && target) finalOutput += `> ${text} -> ${target}\n`; });
+            card.querySelectorAll('.sidequest-row').forEach(sq => {
+                const btnText = sq.querySelector('.sq-btn-text').value, type = sq.querySelector('.sq-type').value, sqTitle = sq.querySelector('.sq-title').value, sqContent = sq.querySelector('.sq-content').value;
+                if (btnText && type && sqTitle) { finalOutput += `> ${btnText} -> [${type}:${sqTitle}]\n`; if (sqContent && !sideQuestContentMap.has(type)) sideQuestContentMap.set(type, sqContent.trim()); }
+            });
+            finalOutput += '\n';
+        });
+        sideQuestContentMap.forEach((content, type) => { finalOutput += `[side-quest-content:${type}]\n---\n${content}\n---\n\n`; });
+        outputText.value = finalOutput.trim(); downloadBtn.style.display = 'inline-block'; alert('Course text generated!');
+    });
+    downloadBtn.addEventListener('click', () => {
+        const textToSave = outputText.value; if (!textToSave) return alert("Generate text first!");
+        const blob = new Blob([textToSave], { type: 'text/plain' }); const url = URL.createObjectURL(blob);
+        const a = document.createElement('a'); a.href = url; a.download = 'course-edited.txt';
+        document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
+    });
+});
+</script>
+
+</body>
+</html>
