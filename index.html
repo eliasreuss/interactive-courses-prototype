@@ -21,7 +21,7 @@
     }
     .container { display: flex; height: 100vh; width: 100vw; box-sizing: border-box; }
     #flow-map-container {
-      width: 400px; min-width: 0; background: var(--color-bg); display: flex; flex-direction: column; position: relative; cursor: grab;
+      width: 400px; min-width: 0; background: var(--color-bg); display: flex; flex-direction: column; position: relative; cursor: grab; flex-shrink: 0;
     }
     #flow-map-container.collapsed { width: 0 !important; padding: 0; border: none; }
     #flow-map-container:active { cursor: grabbing; }
@@ -57,15 +57,44 @@
     }
     #card-text-content { flex-grow: 1; }
     #card-title { font-size: 2rem; font-weight: 600; margin-bottom: 12px; color: var(--color-primary-text); }
-    #card-content { font-size: 1.1rem; color: var(--color-primary-text); white-space: pre-wrap; line-height: 1.7; }
+    #card-content { font-size: 1.1rem; color: var(--color-primary-text); white-space: pre-wrap; line-height: 1.7; overflow-wrap: break-word; }
     #card-content p { margin: 0 0 1em 0; }
     #card-content strong { font-weight: 600; }
+    #card-content ul {
+      list-style: none; /* Remove default styling */
+      padding-left: 1em;
+      margin: 1em 0;
+    }
+    #card-content li {
+      padding-left: 1.2em;
+      position: relative;
+      margin-bottom: 0.5em;
+    }
+    #card-content li::before {
+      content: '•'; /* Use a solid bullet character */
+      color: var(--color-primary-text); /* Use the main text color */
+      font-weight: bold;
+      font-size: 1.1em;
+      position: absolute;
+      left: 0;
+      top: -0.1em; /* Fine-tune vertical alignment */
+    }
     .content-images-container {
-      display: flex; gap: 20px; justify-content: center; margin: 30px 0;
+      display: flex; gap: 20px; justify-content: center; margin: 30px 0; flex-wrap: wrap; align-items: center;
     }
     .content-images-container img {
-      max-width: 45%; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); background-color: #f0f0f0;
+      max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); background-color: #f0f0f0;
     }
+    .content-images-container .img-container {
+        display: flex;
+        justify-content: center;
+    }
+    .content-images-container .img-container.size-large {
+        flex-basis: 100%;
+    }
+    .content-images-container .size-small { max-width: 25%; }
+    .content-images-container .size-medium { max-width: 50%; }
+    .content-images-container .size-large { max-width: 100%; }
     
     #card-buttons {
       display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; margin-top: 24px;
@@ -159,13 +188,16 @@
                     inList = false;
                 }
 
-                const imageRegex = /!\[.*?\]\((.*?)\)/g;
+                const imageRegex = /!\[(.*?)(?:\|size:(small|medium|large))?\]\((.*?)\)/g;
                 const images = [...line.matchAll(imageRegex)];
 
                 if (images.length > 0) {
                     let imageHtml = '<div class="content-images-container">';
                     images.forEach(imgMatch => {
-                        imageHtml += `<img src="images/${imgMatch[1]}" alt="${imgMatch[0]}">`;
+                        const altText = imgMatch[1];
+                        const sizeClass = imgMatch[2] ? `size-${imgMatch[2]}` : 'size-large';
+                        const imgSrc = `images/${imgMatch[3]}`;
+                        imageHtml += `<div class="img-container ${sizeClass}"><img src="${imgSrc}" alt="${altText}"></div>`;
                     });
                     imageHtml += '</div>';
                     html += imageHtml;
@@ -254,7 +286,7 @@
         let courseData;
         try {
             const urlParams = new URLSearchParams(window.location.search);
-            const courseFile = urlParams.get('course') || 'course-edited.txt';
+            const courseFile = urlParams.get('course') || 'Double-ABC-Analysis.txt';
             const response = await fetch('courses/' + courseFile);
             if (!response.ok) throw new Error(`Network response was not ok: ${response.statusText}`);
             const text = await response.text();

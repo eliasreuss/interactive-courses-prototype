@@ -71,7 +71,7 @@
                 <button type="button" class="add-image-btn" style="margin-bottom: 5px;">Add Image</button>
             </div>
         </div>
-        <textarea class="node-content" placeholder="Use **text** for bold. For lists, use '* ' or '- '. For images, use the button or type ![alt text](image.png)." required></textarea>
+        <textarea class="node-content" placeholder="Use **text** for bold. For lists, use '* ' or '- '. For images, use the button or type ![alt text|size:medium](image.png)." required></textarea>
         <h4>Connections</h4>
         <div class="connections-container"></div>
         <button class="add-connection-btn">Add Main Path Link</button>
@@ -112,7 +112,7 @@
                     <button type="button" class="add-image-btn" style="margin-bottom: 5px;">Add Image</button>
                 </div>
             </div>
-            <textarea class="sq-content" placeholder="Paste a YouTube URL here to embed a video, or any other URL for a link. You can also use lists (* or -) and bold text." required></textarea>
+            <textarea class="sq-content" placeholder="Paste a YouTube URL here to embed a video, or any other URL for a link. You can also use lists, bold text, and sized images." required></textarea>
         </div>
         <button class="btn-remove">✖</button>
     </div>
@@ -198,7 +198,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!imageFile) return;
             const altText = prompt("Enter a short description (alt text):", "image");
             
-            const markdown = `![${altText}](${imageFile})`;
+            let size = "";
+            while (!['small', 'medium', 'large'].includes(size)) {
+                size = prompt("Enter image size (small, medium, or large):", "large")?.toLowerCase();
+                if (size === null) return; // User cancelled
+            }
+            
+            const markdown = `![${altText}|size:${size}](${imageFile})`;
             insertTextAtCursor(e.target, markdown);
         }
         
