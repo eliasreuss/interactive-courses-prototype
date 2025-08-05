@@ -21,7 +21,7 @@ type: main
 ---
 Double ABC Analysis is one of the most powerful tools in inventory optimization, and a a framework for balancing service, cost and profit.
 
-![ABC-Analysis|size:medium](ABC-Analysis.png)![Tradeoffs|size:medium](Tradeoff.png)
+![ABC-Analysis|size:small](ABC-Analysis.png)![Tradeoffs|size:small](Tradeoff.png)
 
 Here’s what it can help with:
 ---
