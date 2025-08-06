@@ -102,6 +102,59 @@
     .content-images-container.align-center { justify-content: center; }
     .content-images-container.align-right { justify-content: flex-end; }
 
+    /* --- Flip Card Styles --- */
+    .flip-card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px 0;
+    }
+    .flip-card {
+        background-color: transparent;
+        perspective: 1000px;
+        border-radius: 12px;
+        aspect-ratio: 1.618; /* Golden ratio for a pleasant look */
+    }
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        border-radius: 12px;
+    }
+    .flip-card.flipped .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+    .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+        font-size: 1rem;
+    }
+    .flip-card-front {
+        background-color: #f8f9fa;
+        color: var(--color-primary-text);
+        border: 1px solid #e9ecef;
+    }
+    .flip-card-back {
+        background-color: var(--color-card-bg);
+        color: var(--color-primary-text);
+        transform: rotateY(180deg);
+        border: 1px solid #dee2e6;
+    }
+    /* --- End Flip Card Styles --- */
+
     #card-buttons {
         display: flex;
         justify-content: space-between;
@@ -162,7 +215,11 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
   <script>
-    function renderContent(element, text) {
+    function renderContent(element, text, nodeType = 'main') {
+        if (nodeType === 'flip-cards') {
+            renderFlipCards(element, text);
+            return;
+        }
         const content = text || '';
         // --- Handle special content types first (YouTube, links) ---
         const youtubeRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]{11})/;
@@ -261,6 +318,40 @@
             html += '</ul>'; // Close any list that's still open
         }
 
+        element.innerHTML = html;
+    }
+
+    function renderFlipCards(element, text) {
+        const cardsData = [];
+        const cardBlocks = text.split('---');
+        
+        cardBlocks.forEach(block => {
+            if (!block.trim().startsWith('[card]')) return;
+            const frontMatch = block.match(/front:([\s\S]*?)back:/);
+            const backMatch = block.match(/back:([\s\S]*)/);
+            
+            cardsData.push({
+                front: frontMatch ? frontMatch[1].trim() : 'Click to turn around',
+                back: backMatch ? backMatch[1].trim() : ''
+            });
+        });
+
+        let html = '<div class="flip-card-grid">';
+        cardsData.forEach(card => {
+            html += `
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <p>${card.front}</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>${card.back}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        html += '</div>';
         element.innerHTML = html;
     }
 
@@ -410,7 +501,7 @@
           }
 
           const cardContentEl = document.getElementById('card-content');
-          renderContent(cardContentEl, n.content);
+          renderContent(cardContentEl, n.content, n.type);
 
           const btnsContainer = document.getElementById('card-buttons');
           btnsContainer.innerHTML = `

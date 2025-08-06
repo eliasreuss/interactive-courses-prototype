@@ -64,14 +64,29 @@
         <h3>Node Details</h3>
         <label>Node ID:</label><input type="number" class="node-id" required>
         <label>Node Title:</label><input type="text" class="node-title">
-        <div class="label-with-button">
-            <label>Node Content:</label>
-            <div>
-                <button type="button" class="add-list-btn" style="margin-bottom: 5px;">Add Bullet List</button>
-                <button type="button" class="add-image-btn" style="margin-bottom: 5px;">Add Image</button>
+        <label>Node Type:</label>
+        <select class="node-type">
+            <option value="main" selected>Standard Content</option>
+            <option value="flip-cards">Flip Cards</option>
+        </select>
+        <div class="node-content-area">
+            <!-- Standard content editor -->
+            <div class="standard-content-editor">
+                <div class="label-with-button">
+                    <label>Node Content:</label>
+                    <div>
+                        <button type="button" class="add-list-btn" style="margin-bottom: 5px;">Add Bullet List</button>
+                        <button type="button" class="add-image-btn" style="margin-bottom: 5px;">Add Image</button>
+                    </div>
+                </div>
+                <textarea class="node-content" placeholder="Use **text** for bold. For lists, use '* ' or '- '. For images, use the button or type ![alt text|size:medium](image.png)." required></textarea>
+            </div>
+            <!-- Flip cards editor -->
+            <div class="flip-cards-editor" style="display: none;">
+                <div class="flip-cards-container"></div>
+                <button type="button" class="add-flip-card-btn">Add Flip Card</button>
             </div>
         </div>
-        <textarea class="node-content" placeholder="Use **text** for bold. For lists, use '* ' or '- '. For images, use the button or type ![alt text|size:medium](image.png)." required></textarea>
         <h4>Connections</h4>
         <div class="connections-container"></div>
         <button class="add-connection-btn">Add Main Path Link</button>
@@ -117,6 +132,15 @@
         <button class="btn-remove">✖</button>
     </div>
 </template>
+<template id="flip-card-template">
+    <div class="flip-card-row" style="border-left: 3px solid var(--cyan); padding: 15px; margin-bottom: 15px; border-radius: 4px;">
+        <button class="btn-remove" style="float: right;">✖</button>
+        <label>Card Front Content:</label>
+        <textarea class="flip-card-front" placeholder="Content for the front of the card..." rows="3"></textarea>
+        <label>Card Back Content:</label>
+        <textarea class="flip-card-back" placeholder="Content for the back of the card..." rows="3"></textarea>
+    </div>
+</template>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -157,6 +181,23 @@ document.addEventListener('DOMContentLoaded', () => {
         newSQ.querySelector('.sq-content').value = content;
         container.appendChild(newSQ);
     }
+
+    nodesContainer.addEventListener('change', e => {
+        if (e.target.classList.contains('node-type')) {
+            const card = e.target.closest('.node-card');
+            const type = e.target.value;
+            const standardEditor = card.querySelector('.standard-content-editor');
+            const flipEditor = card.querySelector('.flip-cards-editor');
+
+            if (type === 'flip-cards') {
+                standardEditor.style.display = 'none';
+                flipEditor.style.display = 'block';
+            } else {
+                standardEditor.style.display = 'block';
+                flipEditor.style.display = 'none';
+            }
+        }
+    });
 
     // --- START: NEW, ROBUST PARSER (from index.html) ---
     function parseFlowScript(text) {
@@ -269,6 +310,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const listMarkdown = "\n* List item 1\n* List item 2\n";
             insertTextAtCursor(e.target, listMarkdown);
         }
+
+        if (e.target.classList.contains('add-flip-card-btn')) {
+            const container = e.target.previousElementSibling;
+            const cardTemplate = document.getElementById('flip-card-template');
+            container.appendChild(cardTemplate.content.cloneNode(true));
+        }
     });
 
     function insertTextAtCursor(buttonElement, textToInsert) {
@@ -286,7 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (nodesContainer.children.length === 0) addNewNode();
     addNodeBtn.addEventListener('click', () => addNewNode());
     nodesContainer.addEventListener('click', (e) => {
-        if (e.target.classList.contains('btn-remove')) e.target.closest('.node-card, .connection-row, .sidequest-row').remove();
+        if (e.target.classList.contains('btn-remove')) e.target.closest('.node-card, .connection-row, .sidequest-row, .flip-card-row').remove();
         else if (e.target.classList.contains('add-connection-btn')) addConnectionToNode(e.target.closest('.node-card'));
         else if (e.target.classList.contains('add-sidequest-btn')) addSideQuestToNode(e.target.closest('.node-card'));
     });
@@ -302,8 +349,29 @@ document.addEventListener('DOMContentLoaded', () => {
     generateBtn.addEventListener('click', () => {
         let finalOutput = '# Auto-generated by FlowScript Course Creator\n\n'; const sideQuestContentMap = new Map();
         document.querySelectorAll('.node-card').forEach(card => {
-            const id = card.querySelector('.node-id').value, title = card.querySelector('.node-title').value, content = card.querySelector('.node-content').value; if (!id) return;
-            finalOutput += `id: ${id}\ntitle: ${title}\ntype: main\n---\n${content.trim()}\n---\n`;
+            const id = card.querySelector('.node-id').value;
+            const title = card.querySelector('.node-title').value;
+            const type = card.querySelector('.node-type').value;
+            
+            if (!id) return;
+            
+            let content = '';
+            if (type === 'flip-cards') {
+                const flipCards = [];
+                card.querySelectorAll('.flip-card-row').forEach(row => {
+                    const front = row.querySelector('.flip-card-front').value;
+                    const back = row.querySelector('.flip-card-back').value;
+                    if (front || back) {
+                       flipCards.push(`[card]\nfront: ${front}\nback: ${back}`);
+                    }
+                });
+                content = flipCards.join('\n---\n');
+            } else {
+                content = card.querySelector('.node-content').value;
+            }
+
+            finalOutput += `id: ${id}\ntitle: ${title}\ntype: ${type}\n---\n${content.trim()}\n---\n`;
+            
             card.querySelectorAll('.connection-row').forEach(conn => { const text = conn.querySelector('.conn-text').value, target = conn.querySelector('.conn-target').value; if(text && target) finalOutput += `> ${text} -> ${target}\n`; });
             card.querySelectorAll('.sidequest-row').forEach(sq => {
                 const btnText = sq.querySelector('.sq-btn-text').value, type = sq.querySelector('.sq-type').value, sqTitle = sq.querySelector('.sq-title').value, sqContent = sq.querySelector('.sq-content').value;
