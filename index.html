@@ -124,6 +124,7 @@
         transform-style: preserve-3d;
         box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         border-radius: 12px;
+        background-color: var(--color-card-bg); /* Add background here */
     }
     .flip-card.flipped .flip-card-inner {
         transform: rotateY(180deg);
@@ -141,6 +142,9 @@
         padding: 20px;
         box-sizing: border-box;
         font-size: 1rem;
+    }
+    .flip-card-front p, .flip-card-back p {
+        margin: 0;
     }
     .flip-card-front {
         background-color: #f8f9fa;
@@ -323,17 +327,55 @@
 
     function renderFlipCards(element, text) {
         const cardsData = [];
+        // Split cards by the '---' separator
         const cardBlocks = text.split('---');
         
         cardBlocks.forEach(block => {
             if (!block.trim().startsWith('[card]')) return;
-            const frontMatch = block.match(/front:([\s\S]*?)back:/);
-            const backMatch = block.match(/back:([\s\S]*)/);
+
+            let front = 'Click to turn around';
+            let back = '';
             
-            cardsData.push({
-                front: frontMatch ? frontMatch[1].trim() : 'Click to turn around',
-                back: backMatch ? backMatch[1].trim() : ''
+            const lines = block.trim().split('\n').slice(1); // Skip the [card] line
+            let currentKey = '';
+            let contentBuffer = '';
+
+            lines.forEach(line => {
+                const frontMatch = line.match(/^front:\s*(.*)/);
+                const backMatch = line.match(/^back:\s*(.*)/);
+
+                if (frontMatch) {
+                    if (currentKey === 'back') { // Finished back content
+                        back = contentBuffer.trim();
+                        contentBuffer = '';
+                    }
+                    currentKey = 'front';
+                    contentBuffer = frontMatch[1];
+                } else if (backMatch) {
+                    if (currentKey === 'front') { // Finished front content
+                        front = contentBuffer.trim();
+                        contentBuffer = '';
+                    }
+                    currentKey = 'back';
+                    contentBuffer = backMatch[1];
+                } else {
+                    contentBuffer += '\n' + line;
+                }
             });
+
+            // Capture the last piece of content
+            if (currentKey === 'front') {
+                front = contentBuffer.trim();
+            } else if (currentKey === 'back') {
+                back = contentBuffer.trim();
+            }
+
+            // Use default if front is empty
+            if (!front) {
+                front = 'Click to turn around';
+            }
+
+            cardsData.push({ front, back });
         });
 
         let html = '<div class="flip-card-grid">';
@@ -511,7 +553,7 @@
           const leftButtons = btnsContainer.querySelector('#card-buttons-left');
           const rightButtons = btnsContainer.querySelector('#card-buttons-right');
 
-          if (n.type === 'main') {
+          if (n.type === 'main' || n.type === 'flip-cards') {
               const mainNodeData = courseData.find(d => String(d.id) === n.id);
               if (mainNodeData && mainNodeData.sideQuests) {
                   mainNodeData.sideQuests.forEach(sq => {
