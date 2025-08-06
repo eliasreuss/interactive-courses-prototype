@@ -21,7 +21,7 @@ type: main
 ---
 Double ABC Analysis is one of the most powerful tools in inventory optimization, and a a framework for balancing service, cost and profit.
 
-![ABC-Analysis/size:medium/align:left](ABC-Analysis.png)![Tradeoffs/size:medium/align:left](Tradeoff.png)
+![ABC-Analysis/size:small/align:left](ABC-Analysis.png)![Tradeoffs/size:small/align:left](Tradeoff.png)
 
 Here’s what it can help with:
 ---
@@ -47,12 +47,13 @@ type: main
 ---
 The Double ABC Analysis expands on the classic ABC method, a powerful tool grounded in the 80/20 rule – also known as the Pareto Principle, named after economist Vilfredo Pareto. This method helps identify the small percentage of items that generate the most value, allowing you to focus your efforts where they matter most.
 
-If you're unfamiliar with the Pareto Principle or the ABC method, we recommend watching the introductory video before continuing.
+If you're unfamiliar with the Pareto Principle or the ABC method, we recommend watching the introductory video before continuing. You can also read a case blah blah blah...
 
 Already familiar? Great — let’s continue on the main learning path.
 ---
 > Continue on main learning path -> 5
 > Watch video (1:50) -> [video:The classic ABC method]
+> Read case -> [case:Case: Alfa Laval]
 
 id: 5
 title: So to recap:
@@ -69,13 +70,40 @@ With ABC Analysis, you divide your products into three groups:
 > Next up: Double ABC Analysis -> 6
 
 id: 6
-title: rre
+title: Fløp
+type: flip-cards
+---
+[card]
+front: Click to turn around
+back: Back content wuhuuu
+---
+[card]
+front: Blip
+back: Bløp
+---
+[card]
+front: Skip 
+back: Skap
+---
+[card]
+front: ioe
+back: ejofln
+---
+> Continue main path -> 7
+
+id: 7
+title: kinflen
 type: main
 ---
-rer
+enfl
 ---
 
 [side-quest-content:video]
 ---
 https://www.youtube.com/watch?v=fafHuo0mblE
+---
+
+[side-quest-content:case]
+---
+https://inact.io/case/alfa-laval/
 ---
