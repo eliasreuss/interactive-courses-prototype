@@ -91,6 +91,7 @@
         <div class="connections-container"></div>
         <button class="add-connection-btn">Add Main Path Link</button>
         <button class="add-sidequest-btn">Add Side Quest</button>
+        <button class="add-link-btn">Add Link Button</button>
     </div>
 </template>
 
@@ -142,6 +143,17 @@
     </div>
 </template>
 
+<template id="link-template">
+    <div class="link-row" style="border-left: 3px solid var(--green); padding: 15px; margin-bottom: 15px; border-radius: 4px;">
+        <button class="btn-remove" style="float: right;">✖</button>
+        <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
+            <input type="text" class="link-btn-text" placeholder="Button Text (e.g., 'Open Documentation')" required style="flex: 1;">
+            <span>➔</span>
+            <input type="url" class="link-url" placeholder="URL (e.g., https://example.com)" required style="flex: 2;">
+        </div>
+    </div>
+</template>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     // All existing variables are the same
@@ -153,6 +165,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const nodeTemplate = document.getElementById('node-template');
     const connectionTemplate = document.getElementById('connection-template');
     const sidequestTemplate = document.getElementById('sidequest-template');
+    const flipCardTemplate = document.getElementById('flip-card-template');
+    const linkTemplate = document.getElementById('link-template');
+    const outputText = document.getElementById('outputText');
     let nodeIdCounter = 1;
 
     // The functions for adding nodes, connections, parsing, etc., are all the same.
@@ -181,6 +196,14 @@ document.addEventListener('DOMContentLoaded', () => {
         newSQ.querySelector('.sq-content').value = content;
         container.appendChild(newSQ);
     }
+    
+    function addLinkToNode(nodeCard, btnText = '', url = '') {
+        const container = nodeCard.querySelector('.connections-container');
+        const newLink = linkTemplate.content.cloneNode(true);
+        newLink.querySelector('.link-btn-text').value = btnText;
+        newLink.querySelector('.link-url').value = url;
+        container.appendChild(newLink);
+    }
 
     nodesContainer.addEventListener('change', e => {
         if (e.target.classList.contains('node-type')) {
@@ -206,8 +229,19 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentBlock = null;
 
         const sqRegex = /\[side-quest-content:([^\]]+)\]\s*\n---\n([\s\S]*?)\n---/g;
-        let remainingText = text.replace(sqRegex, (match, type, content) => {
-            sideQuestContentMap.set(type.trim(), content.trim());
+        let remainingText = text.replace(sqRegex, (match, fullType, content) => {
+            // Handle both old format (type only) and new format (type:title)
+            const parts = fullType.trim().split(':');
+            const type = parts[0];
+            const title = parts[1] || '';
+            
+            if (title) {
+                // New format: type:title
+                sideQuestContentMap.set(`${type}:${title}`, content.trim());
+            } else {
+                // Old format: type only (for backward compatibility)
+                sideQuestContentMap.set(type, content.trim());
+            }
             return '';
         });
 
@@ -233,12 +267,18 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 if (line.startsWith('>')) {
                     const mainMatch = line.match(/>\s*(.+?)\s*->\s*(\d+)/);
-                    const sqMatch = line.match(/>\s*(.+?)\s*->\s*\[(.+?):(.+?)\]/);
+                    const sqMatch = line.match(/>\s*(.+?)\s*->\s*\[(video|now|case):(.+?)\]/);
+                    const linkMatch = line.match(/>\s*(.+?)\s*->\s*\[link:(.+)\]/);
                     if (mainMatch) {
                         currentBlock.connections[mainMatch[1].trim()] = parseInt(mainMatch[2]);
                     } else if (sqMatch) {
                         const [, buttonText, type, title] = sqMatch;
-                        currentBlock.sideQuests.push({ type, title, buttonText, content: sideQuestContentMap.get(type) || '' });
+                        const content = sideQuestContentMap.get(`${type}:${title}`) || sideQuestContentMap.get(type) || '';
+                        currentBlock.sideQuests.push({ type, title, buttonText, content });
+                    } else if (linkMatch) {
+                        const [, buttonText, url] = linkMatch;
+                        if (!currentBlock.links) currentBlock.links = [];
+                        currentBlock.links.push({ buttonText: buttonText.trim(), url: url.trim().replace(/\]$/, '') });
                     }
                 } else {
                     const [key, ...valueParts] = line.split(':');
@@ -265,7 +305,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
         courseData.forEach(nodeData => {
             if (!nodeData || !nodeData.id) return;
-            const nodeCard = addNewNode(nodeData.id, nodeData.title, nodeData.content);
+            
+            // Determine node type and handle content accordingly
+            let nodeType = 'main';
+            let content = nodeData.content || '';
+            
+            if (nodeData.type === 'flip-cards') {
+                nodeType = 'flip-cards';
+            }
+            
+            const nodeCard = addNewNode(nodeData.id, nodeData.title, content);
+            
+            // Set the node type and handle flip card content
+            const typeSelect = nodeCard.querySelector('.node-type');
+            typeSelect.value = nodeType;
+            
+            if (nodeType === 'flip-cards') {
+                // Parse flip card content and populate the flip card editor
+                const flipCards = parseFlipCardContent(content);
+                const flipEditor = nodeCard.querySelector('.flip-cards-editor');
+                const flipCardsContainer = flipEditor.querySelector('.flip-cards-container');
+                
+                // Clear existing flip cards
+                flipCardsContainer.innerHTML = '';
+                
+                // Add each flip card
+                flipCards.forEach(card => {
+                    const cardTemplate = document.getElementById('flip-card-template');
+                    const newCard = cardTemplate.content.cloneNode(true);
+                    newCard.querySelector('.flip-card-front').value = card.front;
+                    newCard.querySelector('.flip-card-back').value = card.back;
+                    flipCardsContainer.appendChild(newCard);
+                });
+                
+                // Show flip card editor, hide standard editor
+                nodeCard.querySelector('.standard-content-editor').style.display = 'none';
+                flipEditor.style.display = 'block';
+            }
 
             for (const [text, target] of Object.entries(nodeData.connections)) {
                 addConnectionToNode(nodeCard, text, target);
@@ -275,10 +351,69 @@ document.addEventListener('DOMContentLoaded', () => {
                 addSideQuestToNode(nodeCard, sq.buttonText, sq.type, sq.title, sq.content);
             });
 
+            if (nodeData.links) {
+                nodeData.links.forEach(link => {
+                    addLinkToNode(nodeCard, link.buttonText, link.url);
+                });
+            }
+
             if (nodeData.id > maxId) maxId = nodeData.id;
         });
 
         nodeIdCounter = courseData.length > 0 ? maxId + 1 : 1;
+    }
+    
+    function parseFlipCardContent(content) {
+        const cards = [];
+        const cardBlocks = content.split('[card-separator]');
+        
+        cardBlocks.forEach(block => {
+            const trimmedBlock = block.trim();
+            if (!trimmedBlock.startsWith('[card]')) return;
+            
+            let front = 'Click to reveal';
+            let back = '';
+            
+            const lines = trimmedBlock.split('\n').slice(1); // Skip the [card] line
+            let currentKey = '';
+            let contentBuffer = '';
+            
+            lines.forEach(line => {
+                const frontMatch = line.match(/^front:\s*(.*)/);
+                const backMatch = line.match(/^back:\s*(.*)/);
+                
+                if (frontMatch) {
+                    if (currentKey === 'back') { // Finished back content
+                        back = contentBuffer.trim();
+                        contentBuffer = '';
+                    }
+                    currentKey = 'front';
+                    contentBuffer = frontMatch[1];
+                } else if (backMatch) {
+                    if (currentKey === 'front') { // Finished front content
+                        front = contentBuffer.trim();
+                        contentBuffer = '';
+                    }
+                    currentKey = 'back';
+                    contentBuffer = backMatch[1];
+                } else if (currentKey) {
+                    contentBuffer += '\n' + line;
+                }
+            });
+            
+            // Set final content
+            if (currentKey === 'front') {
+                front = contentBuffer.trim();
+            } else if (currentKey === 'back') {
+                back = contentBuffer.trim();
+            }
+            
+            if (front || back) {
+                cards.push({ front, back });
+            }
+        });
+        
+        return cards;
     }
     // --- END: NEW, ROBUST PARSER ---
     
@@ -333,9 +468,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (nodesContainer.children.length === 0) addNewNode();
     addNodeBtn.addEventListener('click', () => addNewNode());
     nodesContainer.addEventListener('click', (e) => {
-        if (e.target.classList.contains('btn-remove')) e.target.closest('.node-card, .connection-row, .sidequest-row, .flip-card-row').remove();
+        if (e.target.classList.contains('btn-remove')) e.target.closest('.node-card, .connection-row, .sidequest-row, .flip-card-row, .link-row').remove();
         else if (e.target.classList.contains('add-connection-btn')) addConnectionToNode(e.target.closest('.node-card'));
         else if (e.target.classList.contains('add-sidequest-btn')) addSideQuestToNode(e.target.closest('.node-card'));
+        else if (e.target.classList.contains('add-link-btn')) addLinkToNode(e.target.closest('.node-card'));
     });
     fileInput.addEventListener('change', (e) => {
         const file = e.target.files[0]; if (!file) return;
@@ -365,7 +501,7 @@ document.addEventListener('DOMContentLoaded', () => {
                        flipCards.push(`[card]\nfront: ${front}\nback: ${back}`);
                     }
                 });
-                content = flipCards.join('\n---\n');
+                content = flipCards.join('\n[card-separator]\n');
             } else {
                 content = card.querySelector('.node-content').value;
             }
@@ -375,11 +511,28 @@ document.addEventListener('DOMContentLoaded', () => {
             card.querySelectorAll('.connection-row').forEach(conn => { const text = conn.querySelector('.conn-text').value, target = conn.querySelector('.conn-target').value; if(text && target) finalOutput += `> ${text} -> ${target}\n`; });
             card.querySelectorAll('.sidequest-row').forEach(sq => {
                 const btnText = sq.querySelector('.sq-btn-text').value, type = sq.querySelector('.sq-type').value, sqTitle = sq.querySelector('.sq-title').value, sqContent = sq.querySelector('.sq-content').value;
-                if (btnText && type && sqTitle) { finalOutput += `> ${btnText} -> [${type}:${sqTitle}]\n`; if (sqContent && !sideQuestContentMap.has(type)) sideQuestContentMap.set(type, sqContent.trim()); }
+                if (btnText && type && sqTitle) { 
+                    finalOutput += `> ${btnText} -> [${type}:${sqTitle}]\n`; 
+                    if (sqContent) {
+                        // Use type:title as the unique key to handle multiple side quests of the same type
+                        const uniqueKey = `${type}:${sqTitle}`;
+                        sideQuestContentMap.set(uniqueKey, sqContent.trim()); 
+                    }
+                }
+            });
+            card.querySelectorAll('.link-row').forEach(link => {
+                const btnText = link.querySelector('.link-btn-text').value;
+                const url = link.querySelector('.link-url').value;
+                if (btnText && url) {
+                    finalOutput += `> ${btnText} -> [link:${url}]\n`;
+                }
             });
             finalOutput += '\n';
         });
-        sideQuestContentMap.forEach((content, type) => { finalOutput += `[side-quest-content:${type}]\n---\n${content}\n---\n\n`; });
+        sideQuestContentMap.forEach((content, uniqueKey) => { 
+            const [type, title] = uniqueKey.split(':', 2);
+            finalOutput += `[side-quest-content:${type}:${title}]\n---\n${content}\n---\n\n`; 
+        });
         outputText.value = finalOutput.trim(); downloadBtn.style.display = 'inline-block'; alert('Course text generated!');
     });
     downloadBtn.addEventListener('click', () => {

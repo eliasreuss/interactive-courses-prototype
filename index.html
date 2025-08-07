@@ -56,9 +56,9 @@
       padding: 40px 36px 32px 36px; display: flex; flex-direction: column; overflow-y: auto; box-sizing: border-box;
     }
     #card-text-content { flex-grow: 1; }
-    #card-title { font-size: 2rem; font-weight: 600; margin-bottom: 12px; color: var(--color-primary-text); }
+    #card-title { font-size: 2rem; font-weight: 600; margin-bottom: 24px; color: var(--color-primary-text); }
     #card-content { font-size: 1.1rem; color: var(--color-primary-text); white-space: pre-wrap; line-height: 1.7; overflow-wrap: break-word; }
-    #card-content p { margin: 0 0 1em 0; }
+    #card-content p { margin: 0 0 0.5em 0; }
     #card-content strong { font-weight: 600; }
     #card-content ul {
       list-style: none; /* Remove default styling */
@@ -102,62 +102,55 @@
     .content-images-container.align-center { justify-content: center; }
     .content-images-container.align-right { justify-content: flex-end; }
 
-    /* --- Flip Card Styles --- */
+    /* --- Flip Card Styles (Overhauled for Simplicity & Robustness) --- */
     .flip-card-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         gap: 20px;
         padding: 20px 0;
+        /* By removing 'align-items: start', cards will stretch to equal height in each row */
     }
     .flip-card {
-        background-color: transparent;
-        perspective: 1000px;
-        border-radius: 12px;
-        aspect-ratio: 1.618; /* Golden ratio for a pleasant look */
-    }
-    .flip-card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 0.6s;
-        transform-style: preserve-3d;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        border-radius: 12px;
-    }
-    .flip-card.flipped .flip-card-inner {
-        transform: rotateY(180deg);
+        display: grid; /* Use grid to stack front and back */
+        grid-template-areas: "stack";
+        cursor: pointer;
     }
     .flip-card-front, .flip-card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        border-radius: 12px;
+        grid-area: stack; /* Place both front and back in the same grid area */
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 20px;
+        min-height: 150px; /* Set a minimum height but allow it to grow */
         box-sizing: border-box;
         font-size: 1rem;
-    }
-    .flip-card-front p, .flip-card-back p {
-        margin: 0;
+        transition: opacity 0.4s ease;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     }
     .flip-card-front {
         background-color: #f8f9fa;
         color: var(--color-primary-text);
-        border: 1px solid #e9ecef;
+        opacity: 1;
+        text-align: center;
+        flex-direction: column; /* Stack title and subtitle vertically */
     }
     .flip-card-back {
         background-color: var(--color-card-bg);
         color: var(--color-primary-text);
-        transform: rotateY(180deg);
-        border: 1px solid #dee2e6;
+        opacity: 0;
+    }
+    .flip-card.flipped .flip-card-front {
+        opacity: 0;
+    }
+    .flip-card.flipped .flip-card-back {
+        opacity: 1;
+    }
+    .flip-card-front p, .flip-card-back p {
+        margin: 0;
     }
     /* --- End Flip Card Styles --- */
-
+    
     #card-buttons {
         display: flex;
         justify-content: space-between;
@@ -194,7 +187,12 @@
     .node.visited-sidequest circle { fill: var(--color-visited-sidequest); }
     .node.active circle { fill: var(--color-accent); filter: drop-shadow(0 0 10px var(--color-accent)); r: 15 !important; }
     
-    @media (max-width: 900px) { /* Media query for responsive is unchanged */ }
+    @media (max-width: 900px) {
+        .flip-card-grid {
+            grid-template-columns: 1fr;
+        }
+        /* Media query for responsive is unchanged */
+    }
   </style>
 </head>
 <body>
@@ -287,7 +285,7 @@
                         const allData = imgMatch[1].split('/');
                         const altText = allData[0].trim();
                         const attributes = allData.slice(1);
-                        const imgSrc = `images/${imgMatch[2]}`;
+                        const imgSrc = `images/${imgMatch[2]}?v=1.0`;
                         
                         let sizeClass = 'size-large';
                         let style = '';
@@ -328,12 +326,13 @@
         const cardsData = [];
         // Split cards by the new, unique separator
         const cardBlocks = text.split('[card-separator]');
+        const processBold = (str) => str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         
         cardBlocks.forEach(block => {
             const trimmedBlock = block.trim();
             if (!trimmedBlock.startsWith('[card]')) return;
 
-            let front = 'Click to turn around';
+            let front = 'Click to reveal';
             let back = '';
             
             const lines = trimmedBlock.split('\n').slice(1); // Skip the [card] line
@@ -372,7 +371,7 @@
 
             // Use default if front is empty
             if (!front) {
-                front = 'Click to turn around';
+                front = 'Click to reveal';
             }
 
             cardsData.push({ front, back });
@@ -380,15 +379,23 @@
 
         let html = '<div class="flip-card-grid">';
         cardsData.forEach(card => {
+            // New logic to handle title and subtitle for the front of the card
+            const frontParts = card.front.split('\n');
+            const frontTitle = frontParts[0];
+            const frontSubtitle = frontParts.slice(1).join('<br>');
+
+            let frontHtml = `<p><strong>${processBold(frontTitle)}</strong></p>`;
+            if (frontSubtitle) {
+                frontHtml += `<p style="font-size: 0.8em; opacity: 0.7; margin-top: 8px;">${processBold(frontSubtitle)}</p>`;
+            }
+
             html += `
                 <div class="flip-card" onclick="this.classList.toggle('flipped')">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <p>${card.front}</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <p>${card.back}</p>
-                        </div>
+                    <div class="flip-card-front">
+                        ${frontHtml}
+                    </div>
+                    <div class="flip-card-back">
+                        <p>${processBold(card.back)}</p>
                     </div>
                 </div>
             `;
@@ -405,8 +412,19 @@
 
         // First pass to extract side quest content blocks, which are self-contained
         const sqRegex = /\[side-quest-content:([^\]]+)\]\s*\n---\n([\s\S]*?)\n---/g;
-        let remainingText = text.replace(sqRegex, (match, type, content) => {
-            sideQuestContentMap.set(type.trim(), content.trim());
+        let remainingText = text.replace(sqRegex, (match, fullType, content) => {
+            // Handle both old format (type only) and new format (type:title)
+            const parts = fullType.trim().split(':');
+            const type = parts[0];
+            const title = parts[1] || '';
+            
+            if (title) {
+                // New format: type:title
+                sideQuestContentMap.set(`${type}:${title}`, content.trim());
+            } else {
+                // Old format: type only (for backward compatibility)
+                sideQuestContentMap.set(type, content.trim());
+            }
             return ''; // Remove the block from the text
         });
 
@@ -434,12 +452,19 @@
             } else {
                 if (line.startsWith('>')) {
                     const mainMatch = line.match(/>\s*(.+?)\s*->\s*(\d+)/);
-                    const sqMatch = line.match(/>\s*(.+?)\s*->\s*\[(.+?):(.+?)\]/);
+                    const sqMatch = line.match(/>\s*(.+?)\s*->\s*\[(video|now|case):(.+?)\]/);
+                    const linkMatch = line.match(/>\s*(.+?)\s*->\s*\[link:(.+)\]/);
                     if (mainMatch) {
                         currentBlock.connections[mainMatch[1].trim()] = parseInt(mainMatch[2]);
                     } else if (sqMatch) {
                         const [, buttonText, type, title] = sqMatch;
-                        currentBlock.sideQuests.push({ type, title, buttonText, content: sideQuestContentMap.get(type) || '' });
+                        // Try to get content using the new format (type:title) first, then fall back to old format (type only)
+                        const content = sideQuestContentMap.get(`${type}:${title}`) || sideQuestContentMap.get(type) || '';
+                        currentBlock.sideQuests.push({ type, title, buttonText, content });
+                    } else if (linkMatch) {
+                        const [, buttonText, url] = linkMatch;
+                        if (!currentBlock.links) currentBlock.links = [];
+                        currentBlock.links.push({ buttonText: buttonText.trim(), url: url.trim().replace(/\]$/, '') });
                     }
                 } else {
                     const [key, ...valueParts] = line.split(':');
@@ -468,7 +493,7 @@
         try {
             const urlParams = new URLSearchParams(window.location.search);
             const courseFile = urlParams.get('course') || 'Double-ABC-Analysis.txt';
-            const response = await fetch('courses/' + courseFile);
+            const response = await fetch(`courses/${courseFile}?v=1.0`); // Cache-busting
             if (!response.ok) throw new Error(`Network response was not ok: ${response.statusText}`);
             const text = await response.text();
             courseData = parseFlowScript(text);
@@ -563,6 +588,14 @@
                       leftButtons.appendChild(btn);
                   });
               }
+              if (mainNodeData && mainNodeData.links) {
+                  mainNodeData.links.forEach(link => {
+                      const btn = document.createElement('button');
+                      btn.textContent = link.buttonText;
+                      btn.onclick = () => window.open(link.url, '_blank');
+                      leftButtons.appendChild(btn);
+                  });
+              }
               for (const [label, targetId] of Object.entries(n.connections)) {
                   const btn = document.createElement('button');
                   btn.textContent = label;
@@ -577,7 +610,7 @@
           }
           
           node.classed('active', d => d.id === activeNodeId)
-            .classed('visited-main', d => visitedNodes.has(d.id) && d.type === 'main' && d.id !== activeNodeId)
+            .classed('visited-main', d => visitedNodes.has(d.id) && (d.type === 'main' || d.type === 'flip-cards') && d.id !== activeNodeId)
             .classed('visited-sidequest', d => visitedNodes.has(d.id) && d.type === 'sidequest' && d.id !== activeNodeId)
             .classed('unvisited', d => !visitedNodes.has(d.id));
           link.classed('visited-main', d => visitedNodes.has(d.source.id) && visitedNodes.has(d.target.id))
