@@ -273,7 +273,28 @@ document.addEventListener('DOMContentLoaded', () => {
                         currentBlock.connections[mainMatch[1].trim()] = parseInt(mainMatch[2]);
                     } else if (sqMatch) {
                         const [, buttonText, type, title] = sqMatch;
-                        const content = sideQuestContentMap.get(`${type}:${title}`) || sideQuestContentMap.get(type) || '';
+                        // Try multiple matching strategies for content lookup
+                        let content = sideQuestContentMap.get(`${type}:${title}`);
+                        
+                        if (!content) {
+                            // Try to find content by partial title match (for legacy compatibility)
+                            for (const [key, value] of sideQuestContentMap.entries()) {
+                                if (key.startsWith(`${type}:`)) {
+                                    const keyTitle = key.split(':', 2)[1];
+                                    // Check if either title contains the other (partial match)
+                                    if (title.includes(keyTitle) || keyTitle.includes(title)) {
+                                        content = value;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                        
+                        if (!content) {
+                            // Final fallback to type-only match
+                            content = sideQuestContentMap.get(type) || '';
+                        }
+                        
                         currentBlock.sideQuests.push({ type, title, buttonText, content });
                     } else if (linkMatch) {
                         const [, buttonText, url] = linkMatch;
@@ -428,12 +449,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const size = prompt("Enter image size (e.g., x-small, small, medium, large, or a custom height like '150px'):", "large");
             if (!size) return;
             
-            const align = prompt("Enter image alignment (left, center, or right):", "center");
+            const align = prompt("Enter image alignment (left, center, right, or stack-right):", "center");
             if (!align) return;
 
             let attributes = [];
             if (size) attributes.push(`size:${size.trim()}`);
-            if (align && ['left', 'center', 'right'].includes(align.trim())) {
+            if (align && ['left', 'center', 'right', 'stack-right'].includes(align.trim())) {
                 attributes.push(`align:${align.trim()}`);
             }
             

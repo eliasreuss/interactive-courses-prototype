@@ -83,7 +83,7 @@
       display: flex; gap: 20px; justify-content: center; margin: 30px 0; flex-wrap: wrap; align-items: center;
     }
     .content-images-container img {
-      max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); background-color: #f0f0f0;
+      max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.1); background-color: #f0f0f0;
     }
     .content-images-container .img-container {
         display: flex;
@@ -101,6 +101,26 @@
     .content-images-container.align-left { justify-content: flex-start; }
     .content-images-container.align-center { justify-content: center; }
     .content-images-container.align-right { justify-content: flex-end; }
+    
+    /* Special layout for stacked images on the right */
+    .content-with-stacked-images {
+      display: flex; gap: 30px; align-items: center;
+    }
+    .content-with-stacked-images .text-content {
+      flex: 1; /* Take up remaining space */
+    }
+    .content-with-stacked-images .stacked-images {
+      display: flex; flex-direction: column; gap: 15px; flex-shrink: 0; max-width: 400px;
+      margin-top: 0; /* Align with top of text content */
+    }
+    .content-with-stacked-images .stacked-images img {
+      border-radius: 15px; 
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+      background-color: #f0f0f0;
+    }
+    .content-images-container.align-stack-right {
+      margin: 0; /* Remove default margins for stacked layout */
+    }
 
     /* --- Flip Card Styles (Overhauled for Simplicity & Robustness) --- */
     .flip-card-grid {
@@ -235,17 +255,155 @@
             return;
         }
 
-        // --- Handle standard text, image, and list content ---
-        let html = '';
+        // Check if we have any stacked-right images
+        const imageRegex = /!\[(.*?)\]\((.*?)\)/g;
+        const allImages = [...content.matchAll(imageRegex)];
+        const hasStackedImages = allImages.some(img => {
+            const attrs = img[1].split('/').slice(1);
+            return attrs.some(attr => attr.includes('align:stack-right'));
+        });
+
+        if (hasStackedImages) {
+            renderContentWithStackedImages(element, content);
+        } else {
+            renderContentNormal(element, content);
+        }
+    }
+
+    function renderContentWithStackedImages(element, content) {
         const lines = content.split('\n');
+        let textHtml = '';
+        let stackedImages = [];
         let inList = false;
+        const processBold = (str) => str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
         for (const line of lines) {
             const trimmedLine = line.trim();
             const isListItem = trimmedLine.startsWith('* ') || trimmedLine.startsWith('- ') || trimmedLine.startsWith('-');
 
-            // Process bold markdown within any line
-            const processBold = (str) => str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            const imageRegex = /!\[(.*?)\]\((.*?)\)/g;
+            const images = [...line.matchAll(imageRegex)];
+
+            if (images.length > 0) {
+                // Check if this line has stacked-right images
+                let hasStackedOnThisLine = false;
+                images.forEach(imgMatch => {
+                    const allData = imgMatch[1].split('/');
+                    const attributes = allData.slice(1);
+                    const isStacked = attributes.some(attr => attr.includes('align:stack-right'));
+                    
+                    if (isStacked) {
+                        hasStackedOnThisLine = true;
+                        const altText = allData[0].trim();
+                        const imgSrc = `images/${imgMatch[2]}?v=1.0`;
+                        
+                        let sizeClass = 'size-medium';
+                        let style = '';
+                        attributes.forEach(attr => {
+                            const [key, value] = attr.split(':');
+                            if (key.trim() === 'size') {
+                                const sizeValue = value.trim();
+                                if (sizeValue.endsWith('px')) {
+                                    style = `height: ${sizeValue}; width: auto;`;
+                                    sizeClass = '';
+                                } else {
+                                    sizeClass = `size-${sizeValue}`;
+                                }
+                            }
+                        });
+                        
+                        stackedImages.push(`<div class="img-container ${sizeClass}" style="${style}"><img src="${imgSrc}" alt="${altText}" style="${style}"></div>`);
+                    }
+                });
+
+                // If line has non-stacked images, process them normally
+                if (!hasStackedOnThisLine) {
+                    let combinedAttrs = [];
+                    images.forEach(imgMatch => {
+                        const allData = imgMatch[1].split('/');
+                        const attributes = allData.slice(1);
+                        combinedAttrs = combinedAttrs.concat(attributes);
+                    });
+
+                    let alignClass = 'align-center';
+                    combinedAttrs.forEach(attr => {
+                        const [key, value] = attr.split(':');
+                        if (key === 'align') {
+                            alignClass = `align-${value.trim()}`;
+                        }
+                    });
+
+                    let imageHtml = `<div class="content-images-container ${alignClass}">`;
+                    images.forEach(imgMatch => {
+                        const allData = imgMatch[1].split('/');
+                        const altText = allData[0].trim();
+                        const attributes = allData.slice(1);
+                        const imgSrc = `images/${imgMatch[2]}?v=1.0`;
+                        
+                        let sizeClass = 'size-large';
+                        let style = '';
+                        attributes.forEach(attr => {
+                            const [key, value] = attr.split(':');
+                            if (key.trim() === 'size') {
+                                const sizeValue = value.trim();
+                                if (sizeValue.endsWith('px')) {
+                                    style = `height: ${sizeValue}; width: auto;`;
+                                    sizeClass = '';
+                                } else {
+                                    sizeClass = `size-${sizeValue}`;
+                                }
+                            }
+                        });
+                        imageHtml += `<div class="img-container ${sizeClass}" style="${style}"><img src="${imgSrc}" alt="${altText}" style="${style}"></div>`;
+                    });
+                    imageHtml += '</div>';
+                    textHtml += imageHtml;
+                }
+            } else if (isListItem) {
+                if (!inList) {
+                    textHtml += '<ul>';
+                    inList = true;
+                }
+                const listItemContent = processBold(trimmedLine.startsWith('- ') ? trimmedLine.substring(2) : trimmedLine.substring(1));
+                textHtml += `<li>${listItemContent}</li>`;
+            } else {
+                if (inList) {
+                    textHtml += '</ul>';
+                    inList = false;
+                }
+                if (trimmedLine === '' && textHtml.length > 0) {
+                    textHtml += '<p> </p>';
+                } else if (trimmedLine !== '') {
+                    textHtml += `<p>${processBold(line)}</p>`;
+                }
+            }
+        }
+
+        if (inList) {
+            textHtml += '</ul>';
+        }
+
+        // Create the layout with text on left and stacked images on right
+        const stackedImagesHtml = stackedImages.length > 0 ? 
+            `<div class="stacked-images">${stackedImages.join('')}</div>` : '';
+
+        element.innerHTML = `
+            <div class="content-with-stacked-images">
+                <div class="text-content">${textHtml}</div>
+                ${stackedImagesHtml}
+            </div>
+        `;
+    }
+
+    function renderContentNormal(element, content) {
+        let html = '';
+        const lines = content.split('\n');
+        let inList = false;
+        const processBold = (str) => str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+        for (const line of lines) {
+            const trimmedLine = line.trim();
+            const isListItem = trimmedLine.startsWith('* ') || trimmedLine.startsWith('- ') || trimmedLine.startsWith('-');
 
             if (isListItem) {
                 if (!inList) {
@@ -308,7 +466,7 @@
                     imageHtml += '</div>';
                     html += imageHtml;
                 } else if (trimmedLine === '' && html.length > 0) {
-                    html += '<p> </p>';
+                    html += '<p> </p>';
                 } else if (trimmedLine !== '') {
                     html += `<p>${processBold(line)}</p>`;
                 }
@@ -458,8 +616,28 @@
                         currentBlock.connections[mainMatch[1].trim()] = parseInt(mainMatch[2]);
                     } else if (sqMatch) {
                         const [, buttonText, type, title] = sqMatch;
-                        // Try to get content using the new format (type:title) first, then fall back to old format (type only)
-                        const content = sideQuestContentMap.get(`${type}:${title}`) || sideQuestContentMap.get(type) || '';
+                        // Try multiple matching strategies for content lookup
+                        let content = sideQuestContentMap.get(`${type}:${title}`);
+                        
+                        if (!content) {
+                            // Try to find content by partial title match (for legacy compatibility)
+                            for (const [key, value] of sideQuestContentMap.entries()) {
+                                if (key.startsWith(`${type}:`)) {
+                                    const keyTitle = key.split(':', 2)[1];
+                                    // Check if either title contains the other (partial match)
+                                    if (title.includes(keyTitle) || keyTitle.includes(title)) {
+                                        content = value;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                        
+                        if (!content) {
+                            // Final fallback to type-only match
+                            content = sideQuestContentMap.get(type) || '';
+                        }
+                        
                         currentBlock.sideQuests.push({ type, title, buttonText, content });
                     } else if (linkMatch) {
                         const [, buttonText, url] = linkMatch;
@@ -492,7 +670,7 @@
         let courseData;
         try {
             const urlParams = new URLSearchParams(window.location.search);
-            const courseFile = urlParams.get('course') || 'Double-ABC-Analysis.txt';
+            const courseFile = urlParams.get('course') || 'Intro.txt';
             const response = await fetch(`courses/${courseFile}?v=1.0`); // Cache-busting
             if (!response.ok) throw new Error(`Network response was not ok: ${response.statusText}`);
             const text = await response.text();
@@ -514,8 +692,8 @@
             const mainNode = { ...mainNodeData, id: String(mainNodeData.id) }; delete mainNode.sideQuests;
             d3Nodes.push(mainNode); nodeById.set(mainNode.id, mainNode);
             if (mainNodeData.sideQuests) {
-                mainNodeData.sideQuests.forEach(sqData => {
-                    const sideQuestId = `${mainNodeData.id}-${sqData.type}`; const sideQuestNode = { ...sqData, id: sideQuestId, type: 'sidequest', parentId: mainNode.id };
+                mainNodeData.sideQuests.forEach((sqData, index) => {
+                    const sideQuestId = `${mainNodeData.id}-${sqData.type}-${index}`; const sideQuestNode = { ...sqData, id: sideQuestId, type: 'sidequest', parentId: mainNode.id };
                     d3Nodes.push(sideQuestNode); nodeById.set(sideQuestNode.id, sideQuestNode); d3Links.push({ source: mainNode.id, target: sideQuestId });
                 });
             }
@@ -558,6 +736,12 @@
           const n = nodeById.get(nodeId);
           if(!n) { console.error(`Node with id "${nodeId}" not found.`); return; }
           
+          // Scroll to top of content area when navigating to a new node
+          const contentArea = document.getElementById('content-area');
+          if (contentArea) {
+            contentArea.scrollTop = 0;
+          }
+          
           const cardTitleEl = document.getElementById('card-title');
           if (n.title && n.title.trim() !== '') {
             cardTitleEl.textContent = n.title;
@@ -581,10 +765,10 @@
           if (n.type === 'main' || n.type === 'flip-cards') {
               const mainNodeData = courseData.find(d => String(d.id) === n.id);
               if (mainNodeData && mainNodeData.sideQuests) {
-                  mainNodeData.sideQuests.forEach(sq => {
+                  mainNodeData.sideQuests.forEach((sq, index) => {
                       const btn = document.createElement('button');
                       btn.textContent = sq.buttonText;
-                      btn.onclick = () => updateView(`${n.id}-${sq.type}`);
+                      btn.onclick = () => updateView(`${n.id}-${sq.type}-${index}`);
                       leftButtons.appendChild(btn);
                   });
               }
