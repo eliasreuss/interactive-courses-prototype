@@ -298,6 +298,8 @@
             return;
         }
         const content = text || '';
+        // Clear any previous resource metadata on this element
+        try { element.removeAttribute('data-resource-url'); element.removeAttribute('data-resource-title'); } catch (_) {}
         // --- Handle special content types first (YouTube, links) ---
         const youtubeRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]{11})/;
         const youtubeMatch = content.match(youtubeRegex);
@@ -307,7 +309,9 @@
             return;
         }
         if (content.startsWith('http://') || content.startsWith('https://')) {
-            element.innerHTML = `<a href="${content}" class="resource-link-btn" data-u="${encodeURIComponent(content)}" onclick="return handleResourceClick(event, decodeURIComponent(this.dataset.u), 'Open Resource')"><span>Open Resource</span></a>`;
+            // Store URL on the content element; we'll render the button in the buttons area instead
+            element.setAttribute('data-resource-url', content);
+            element.setAttribute('data-resource-title', 'Open Resource');
             return;
         }
 
@@ -649,8 +653,10 @@
       try {
         const parsed = new URL(url, window.location.href);
         const host = parsed.hostname || '';
-        // Some sites (like login flows) block third-party cookies inside iframes → open in new tab
-        if (host.endsWith('inactnow.io')) {
+        const isTargetInact = host.endsWith('inactnow.io');
+        const isCurrentInact = (window.location.hostname || '').endsWith('inactnow.io');
+        // If cross-site relative to inactnow.io, open in new tab to avoid cookie blocking; if same-site, keep in embed
+        if (isTargetInact && !isCurrentInact) {
           window.open(url, '_blank');
           return false;
         }
@@ -927,6 +933,16 @@
 
           if (n.type === 'main' || n.type === 'flip-cards') {
               const mainNodeData = courseData.find(d => String(d.id) === n.id);
+              // If the content included a top-level resource URL, render a left-side button for it
+              const cardContentEl = document.getElementById('card-content');
+              const resourceUrl = cardContentEl.getAttribute('data-resource-url');
+              const resourceTitle = cardContentEl.getAttribute('data-resource-title') || 'Open Resource';
+              if (resourceUrl) {
+                  const btn = document.createElement('button');
+                  btn.textContent = resourceTitle;
+                  btn.onclick = (ev) => handleResourceClick(ev, resourceUrl, resourceTitle);
+                  leftButtons.appendChild(btn);
+              }
               if (mainNodeData && mainNodeData.sideQuests) {
                   mainNodeData.sideQuests.forEach((sq, index) => {
                       const btn = document.createElement('button');
@@ -935,14 +951,14 @@
                       leftButtons.appendChild(btn);
                   });
               }
-                                if (mainNodeData && mainNodeData.links) {
-                      mainNodeData.links.forEach(link => {
-                          const btn = document.createElement('button');
-                          btn.textContent = link.buttonText;
-                          btn.onclick = (ev) => handleResourceClick(ev, link.url, link.buttonText);
-                          leftButtons.appendChild(btn);
-                      });
-                  }
+              if (mainNodeData && mainNodeData.links) {
+                  mainNodeData.links.forEach(link => {
+                      const btn = document.createElement('button');
+                      btn.textContent = link.buttonText;
+                      btn.onclick = (ev) => handleResourceClick(ev, link.url, link.buttonText);
+                      leftButtons.appendChild(btn);
+                  });
+              }
               for (const [label, targetId] of Object.entries(n.connections)) {
                   const btn = document.createElement('button');
                   btn.textContent = label;
