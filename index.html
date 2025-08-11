@@ -208,6 +208,26 @@
     #embed-title { font-weight: 600; }
     #embed-close { background: transparent; border: none; border-radius: 6px; width: 28px; height: 28px; cursor: pointer; font-size: 18px; line-height: 28px; }
     #embed-iframe { flex: 1 1 auto; width: 100%; border: 0; }
+    
+    /* Draggable divider between content and embed */
+    #content-embed-resizer {
+      width: 8px;
+      cursor: col-resize;
+      background: transparent;
+      position: relative;
+      z-index: 5;
+      display: none; /* only visible when embed is visible */
+    }
+    #content-embed-resizer.visible { display: block; }
+    #content-embed-resizer::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0; left: 2px; right: 2px;
+      border-radius: 2px;
+      background: rgba(0,0,0,0.06);
+      transition: background 0.2s;
+    }
+    #content-embed-resizer:hover::after { background: rgba(0,0,0,0.12); }
 
     .link { stroke: #999; stroke-opacity: 0.6; }
     .link.visited-main, .link.visited-sidequest { stroke: var(--color-visited-main); stroke-width: 2.5px; }
@@ -253,6 +273,8 @@
             </div>
             <div id="card-buttons"></div>
         </div>
+
+        <div id="content-embed-resizer" aria-hidden="true"></div>
 
         <div id="embed-panel" aria-label="Embedded resource panel">
           <div id="embed-header">
@@ -598,10 +620,20 @@
       const panel = document.getElementById('embed-panel');
       const iframe = document.getElementById('embed-iframe');
       const titleEl = document.getElementById('embed-title');
+      const resizer = document.getElementById('content-embed-resizer');
+      const contentCard = document.getElementById('content-card');
       if (!panel || !iframe) { window.open(url, '_blank'); return; }
       titleEl.textContent = title;
       iframe.src = url;
       panel.classList.add('visible');
+      if (resizer) resizer.classList.add('visible');
+      // Ensure we have sensible initial split if not set yet
+      if (contentCard && !contentCard.style.width) {
+        contentCard.style.width = '50%';
+      }
+      if (!panel.style.width) {
+        panel.style.width = '50%';
+      }
     }
 
     function handleResourceClick(e, url, title) {
@@ -619,9 +651,53 @@
         closeBtn.addEventListener('click', () => {
           const panel = document.getElementById('embed-panel');
           const iframe = document.getElementById('embed-iframe');
+          const resizer = document.getElementById('content-embed-resizer');
           if (iframe) iframe.src = 'about:blank';
           if (panel) panel.classList.remove('visible');
+          if (resizer) resizer.classList.remove('visible');
         });
+      }
+
+      // Drag-to-resize between content and embed
+      const resizer = document.getElementById('content-embed-resizer');
+      const contentArea = document.getElementById('content-area');
+      const contentCard = document.getElementById('content-card');
+      const embedPanel = document.getElementById('embed-panel');
+      let isDragging = false;
+
+      function onPointerDown(e) {
+        if (!embedPanel.classList.contains('visible')) return;
+        isDragging = true;
+        document.body.style.cursor = 'col-resize';
+        e.preventDefault();
+      }
+      function onPointerMove(e) {
+        if (!isDragging) return;
+        const containerRect = contentArea.getBoundingClientRect();
+        const minLeft = containerRect.left + 300; // min width for content card
+        const maxLeft = containerRect.right - 420; // min width for embed panel
+        let x = e.clientX;
+        if (x < minLeft) x = minLeft;
+        if (x > maxLeft) x = maxLeft;
+        const leftWidth = x - containerRect.left;
+        const rightWidth = containerRect.right - x;
+        contentCard.style.width = leftWidth + 'px';
+        embedPanel.style.width = rightWidth + 'px';
+      }
+      function onPointerUp() {
+        if (!isDragging) return;
+        isDragging = false;
+        document.body.style.cursor = 'default';
+      }
+
+      if (resizer) {
+        resizer.addEventListener('mousedown', onPointerDown);
+        window.addEventListener('mousemove', onPointerMove);
+        window.addEventListener('mouseup', onPointerUp);
+        // touch support
+        resizer.addEventListener('touchstart', (e) => onPointerDown(e.touches[0]));
+        window.addEventListener('touchmove', (e) => onPointerMove(e.touches[0]));
+        window.addEventListener('touchend', onPointerUp);
       }
     });
 
