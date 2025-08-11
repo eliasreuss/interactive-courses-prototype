@@ -204,9 +204,11 @@
     #embed-panel { width: 48%; min-width: 420px; height: 100%; background: var(--color-card-bg); border-radius: 18px;
       box-shadow: 0 4px 32px 0 rgba(60,60,60,0.07); display: none; flex-direction: column; overflow: hidden; }
     #embed-panel.visible { display: flex; }
-    #embed-header { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; border-bottom: 1px solid #eee; }
+    #embed-header { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; border-bottom: 1px solid #eee; gap: 8px; }
     #embed-title { font-weight: 600; }
+    #embed-actions { display: flex; align-items: center; gap: 8px; }
     #embed-close { background: transparent; border: none; border-radius: 6px; width: 28px; height: 28px; cursor: pointer; font-size: 18px; line-height: 28px; }
+    #embed-open-external { background: var(--color-accent); color: #fff; border: none; border-radius: 8px; padding: 6px 10px; cursor: pointer; font-weight: 600; }
     #embed-iframe { flex: 1 1 auto; width: 100%; border: 0; }
     
     /* Draggable divider between content and embed */
@@ -279,9 +281,12 @@
         <div id="embed-panel" aria-label="Embedded resource panel">
           <div id="embed-header">
             <span id="embed-title">Resource</span>
-            <button id="embed-close" title="Close">×</button>
+            <div id="embed-actions">
+              <button id="embed-open-external" title="Open in new tab">Open in new tab</button>
+              <button id="embed-close" title="Close">×</button>
+            </div>
           </div>
-          <iframe id="embed-iframe" allow="fullscreen; clipboard-write; autoplay"></iframe>
+          <iframe id="embed-iframe" allow="fullscreen; clipboard-write; autoplay; storage-access"></iframe>
         </div>
     </div>
   </div>
@@ -641,22 +646,39 @@
         window.open(url, '_blank');
         return false;
       }
+      try {
+        const parsed = new URL(url, window.location.href);
+        const host = parsed.hostname || '';
+        // Some sites (like login flows) block third-party cookies inside iframes → open in new tab
+        if (host.endsWith('inactnow.io')) {
+          window.open(url, '_blank');
+          return false;
+        }
+      } catch (_) { /* ignore URL parse errors and fallback to embed */ }
       openInEmbed(url, title || 'Resource');
       return false;
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      const closeBtn = document.getElementById('embed-close');
-      if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-          const panel = document.getElementById('embed-panel');
-          const iframe = document.getElementById('embed-iframe');
-          const resizer = document.getElementById('content-embed-resizer');
-          if (iframe) iframe.src = 'about:blank';
-          if (panel) panel.classList.remove('visible');
-          if (resizer) resizer.classList.remove('visible');
-        });
-      }
+             const closeBtn = document.getElementById('embed-close');
+       const openExternalBtn = document.getElementById('embed-open-external');
+       if (closeBtn) {
+         closeBtn.addEventListener('click', () => {
+           const panel = document.getElementById('embed-panel');
+           const iframe = document.getElementById('embed-iframe');
+           const resizer = document.getElementById('content-embed-resizer');
+           if (iframe) iframe.src = 'about:blank';
+           if (panel) panel.classList.remove('visible');
+           if (resizer) resizer.classList.remove('visible');
+         });
+       }
+       if (openExternalBtn) {
+         openExternalBtn.addEventListener('click', () => {
+           const iframe = document.getElementById('embed-iframe');
+           const url = iframe && iframe.src ? iframe.src : null;
+           if (url) window.open(url, '_blank');
+         });
+       }
 
       // Drag-to-resize between content and embed
       const resizer = document.getElementById('content-embed-resizer');
