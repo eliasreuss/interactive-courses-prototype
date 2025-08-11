@@ -126,6 +126,7 @@
                 <div>
                     <button type="button" class="add-list-btn" style="margin-bottom: 5px;">Add Bullet List</button>
                     <button type="button" class="add-image-btn" style="margin-bottom: 5px;">Add Image</button>
+                    <button type="button" class="add-inline-button" style="margin-bottom: 5px;">Add Link Button</button>
                 </div>
             </div>
             <textarea class="sq-content" placeholder="Paste a YouTube URL here to embed a video, or any other URL for a link. You can also use lists, bold text, and sized images." required></textarea>
@@ -465,6 +466,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target.classList.contains('add-list-btn')) {
             const listMarkdown = "\n* List item 1\n* List item 2\n";
             insertTextAtCursor(e.target, listMarkdown);
+        }
+
+        if (e.target.classList.contains('add-inline-button')) {
+            const label = prompt('Button label', 'Open Resource');
+            const url = prompt('Button URL (https://...)', 'https://');
+            if (!label || !url) return;
+            insertTextAtCursor(e.target, ` [button:${label}](${url}) `);
         }
 
         if (e.target.classList.contains('add-flip-card-btn')) {

@@ -302,37 +302,50 @@
         try {
           element.removeAttribute('data-resource-url');
           element.removeAttribute('data-resource-title');
+          element.removeAttribute('data-buttons');
           element.innerHTML = '';
         } catch (_) {}
+
+        // Extract inline button syntax: [button:Label](https://...)
+        const buttonRegex = /\[button:([^\]]+)\]\((https?:\/\/[^\s)]+)\)/gi;
+        const buttonDefs = [];
+        let strippedContent = content.replace(buttonRegex, (m, label, url) => {
+          buttonDefs.push({ buttonText: label.trim(), url: url.trim() });
+          return '';
+        }).trim();
+
         // --- Handle special content types first (YouTube, links) ---
         const youtubeRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]{11})/;
-        const youtubeMatch = content.match(youtubeRegex);
+        const youtubeMatch = strippedContent.match(youtubeRegex);
         if (youtubeMatch) {
             const videoId = youtubeMatch[1];
             element.innerHTML = `<div style="position: relative; width: 100%; padding-top: 56.25%; background: #eee; border-radius: 8px; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+            if (buttonDefs.length) element.setAttribute('data-buttons', JSON.stringify(buttonDefs));
             return;
         }
-        if (content.startsWith('http://') || content.startsWith('https://')) {
+        if (strippedContent.startsWith('http://') || strippedContent.startsWith('https://')) {
             // Store URL on the content element; we'll render the button in the buttons area instead
             element.innerHTML = '';
-            element.setAttribute('data-resource-url', content);
+            element.setAttribute('data-resource-url', strippedContent);
             element.setAttribute('data-resource-title', 'Open Resource');
+            if (buttonDefs.length) element.setAttribute('data-buttons', JSON.stringify(buttonDefs));
             return;
         }
-
+ 
         // Check if we have any stacked-right images
         const imageRegex = /!\[(.*?)\]\((.*?)\)/g;
-        const allImages = [...content.matchAll(imageRegex)];
+        const allImages = [...strippedContent.matchAll(imageRegex)];
         const hasStackedImages = allImages.some(img => {
             const attrs = img[1].split('/').slice(1);
             return attrs.some(attr => attr.includes('align:stack-right'));
         });
-
+ 
         if (hasStackedImages) {
-            renderContentWithStackedImages(element, content);
+            renderContentWithStackedImages(element, strippedContent);
         } else {
-            renderContentNormal(element, content);
+            renderContentNormal(element, strippedContent);
         }
+        if (buttonDefs.length) element.setAttribute('data-buttons', JSON.stringify(buttonDefs));
     }
 
     function renderContentWithStackedImages(element, content) {
@@ -922,8 +935,13 @@
           
           const cardTitleEl = document.getElementById('card-title');
           if (n.type === 'sidequest') {
-            cardTitleEl.textContent = '';
-            cardTitleEl.style.display = 'none';
+            if (n.title && n.title.trim() !== '') {
+              cardTitleEl.textContent = n.title;
+              cardTitleEl.style.display = '';
+            } else {
+              cardTitleEl.textContent = '';
+              cardTitleEl.style.display = 'none';
+            }
           } else if (n.title && n.title.trim() !== '') {
             cardTitleEl.textContent = n.title;
             cardTitleEl.style.display = '';
@@ -948,6 +966,19 @@
           const cardContentElRef = document.getElementById('card-content');
           const resourceUrl = cardContentElRef.getAttribute('data-resource-url');
           const resourceTitle = cardContentElRef.getAttribute('data-resource-title') || 'Open Resource';
+          const inlineButtonsJson = cardContentElRef.getAttribute('data-buttons');
+          if (inlineButtonsJson) {
+              try {
+                  const btns = JSON.parse(inlineButtonsJson);
+                  btns.forEach(b => {
+                      const ib = document.createElement('button');
+                      ib.textContent = b.buttonText || 'Open';
+                      ib.onclick = (ev) => handleResourceClick(ev, b.url, b.buttonText || 'Open');
+                      leftButtons.appendChild(ib);
+                  });
+              } catch (_) {}
+              cardContentElRef.removeAttribute('data-buttons');
+          }
           if (resourceUrl) {
               const btn = document.createElement('button');
               btn.textContent = resourceTitle;
