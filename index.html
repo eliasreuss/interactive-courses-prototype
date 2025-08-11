@@ -912,7 +912,10 @@
           }
           
           const cardTitleEl = document.getElementById('card-title');
-          if (n.title && n.title.trim() !== '') {
+          if (n.type === 'sidequest') {
+            cardTitleEl.textContent = '';
+            cardTitleEl.style.display = 'none';
+          } else if (n.title && n.title.trim() !== '') {
             cardTitleEl.textContent = n.title;
             cardTitleEl.style.display = '';
           } else {
