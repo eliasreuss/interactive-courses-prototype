@@ -800,7 +800,7 @@
                 if (line.startsWith('>')) {
                     const mainMatch = line.match(/>\s*(.+?)\s*->\s*(\d+)/);
                     const sqMatch = line.match(/>\s*(.+?)\s*->\s*\[(video|now|case):(.+?)\]/);
-                    const linkMatch = line.match(/>\s*(.+?)\s*->\s*\[link:(.+)\]/);
+                    const linkMatch = line.match(/>\s*(.+?)\s*->\s*\[link:(newtab|embed)?:?(.+?)\]/);
                     if (mainMatch) {
                         currentBlock.connections[mainMatch[1].trim()] = parseInt(mainMatch[2]);
                     } else if (sqMatch) {
@@ -829,9 +829,9 @@
                         
                         currentBlock.sideQuests.push({ type, title, buttonText, content });
                     } else if (linkMatch) {
-                        const [, buttonText, url] = linkMatch;
+                        const [, buttonText, targetOpt, url] = linkMatch;
                         if (!currentBlock.links) currentBlock.links = [];
-                        currentBlock.links.push({ buttonText: buttonText.trim(), url: url.trim().replace(/\]$/, '') });
+                        currentBlock.links.push({ buttonText: buttonText.trim(), url: url.trim().replace(/\]$/, ''), target: (targetOpt || 'newtab').trim() });
                     }
                 } else {
                     const [key, ...valueParts] = line.split(':');
@@ -1003,7 +1003,15 @@
                   mainNodeData.links.forEach(link => {
                       const btn = document.createElement('button');
                       btn.textContent = link.buttonText;
-                      btn.onclick = (ev) => handleResourceClick(ev, link.url, link.buttonText);
+                      btn.onclick = (ev) => {
+                          if ((link.target || 'newtab') === 'embed') {
+                              // Force embed regardless of modifier keys
+                              openInEmbed(link.url, link.buttonText);
+                              return;
+                          }
+                          // Default: new tab
+                          window.open(link.url, '_blank');
+                      };
                       leftButtons.appendChild(btn);
                   });
               }

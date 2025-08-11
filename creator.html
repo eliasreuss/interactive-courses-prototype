@@ -151,6 +151,10 @@
             <input type="text" class="link-btn-text" placeholder="Button Text (e.g., 'Open Documentation')" required style="flex: 1;">
             <span>➔</span>
             <input type="url" class="link-url" placeholder="URL (e.g., https://example.com)" required style="flex: 2;">
+            <label style="display:flex; gap:6px; align-items:center; white-space:nowrap;">
+                <input type="checkbox" class="link-target-newtab" checked>
+                Open in new tab
+            </label>
         </div>
     </div>
 </template>
@@ -552,8 +556,10 @@ document.addEventListener('DOMContentLoaded', () => {
             card.querySelectorAll('.link-row').forEach(link => {
                 const btnText = link.querySelector('.link-btn-text').value;
                 const url = link.querySelector('.link-url').value;
+                const newTab = link.querySelector('.link-target-newtab').checked;
                 if (btnText && url) {
-                    finalOutput += `> ${btnText} -> [link:${url}]\n`;
+                    const target = newTab ? 'newtab' : 'embed';
+                    finalOutput += `> ${btnText} -> [link:${target}:${url}]\n`;
                 }
             });
             finalOutput += '\n';
