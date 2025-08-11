@@ -48,8 +48,8 @@
     #tooltip .tooltip-type { font-size: 0.8rem; opacity: 0.8; margin-top: 4px; }
     
     #content-area {
-        flex: 1 1 auto; display: flex; justify-content: center; align-items: center;
-        padding: 72px; box-sizing: border-box; overflow: auto;
+        flex: 1 1 auto; display: flex; align-items: stretch; justify-content: flex-start;
+        gap: 16px; padding: 72px; box-sizing: border-box; overflow: hidden;
     }
     #content-card {
       width: 100%; height: 100%; background: var(--color-card-bg); border-radius: 18px; box-shadow: 0 4px 32px 0 rgba(60,60,60,0.07);
@@ -201,6 +201,14 @@
     }
     .resource-link-btn:hover { background-color: #e04e00; transform: translateY(-2px); box-shadow: 0 4px 12px 0 rgba(255,90,0,0.3); }
 
+    #embed-panel { width: 48%; min-width: 420px; height: 100%; background: var(--color-card-bg); border-radius: 18px;
+      box-shadow: 0 4px 32px 0 rgba(60,60,60,0.07); display: none; flex-direction: column; overflow: hidden; }
+    #embed-panel.visible { display: flex; }
+    #embed-header { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; border-bottom: 1px solid #eee; }
+    #embed-title { font-weight: 600; }
+    #embed-close { background: transparent; border: none; border-radius: 6px; width: 28px; height: 28px; cursor: pointer; font-size: 18px; line-height: 28px; }
+    #embed-iframe { flex: 1 1 auto; width: 100%; border: 0; }
+
     .link { stroke: #999; stroke-opacity: 0.6; }
     .link.visited-main, .link.visited-sidequest { stroke: var(--color-visited-main); stroke-width: 2.5px; }
     .link.visited-sidequest { stroke-dasharray: 4 4; }
@@ -245,6 +253,14 @@
             </div>
             <div id="card-buttons"></div>
         </div>
+
+        <div id="embed-panel" aria-label="Embedded resource panel">
+          <div id="embed-header">
+            <span id="embed-title">Resource</span>
+            <button id="embed-close" title="Close">×</button>
+          </div>
+          <iframe id="embed-iframe" allow="fullscreen; clipboard-write; autoplay"></iframe>
+        </div>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
@@ -264,7 +280,7 @@
             return;
         }
         if (content.startsWith('http://') || content.startsWith('https://')) {
-            element.innerHTML = `<a href="${content}" target="_blank" rel="noopener noreferrer" class="resource-link-btn"><span>Open Resource</span></a>`;
+            element.innerHTML = `<a href="${content}" class="resource-link-btn" data-u="${encodeURIComponent(content)}" onclick="return handleResourceClick(event, decodeURIComponent(this.dataset.u), 'Open Resource')"><span>Open Resource</span></a>`;
             return;
         }
 
@@ -578,6 +594,37 @@
         element.innerHTML = html;
     }
 
+    function openInEmbed(url, title = 'Resource') {
+      const panel = document.getElementById('embed-panel');
+      const iframe = document.getElementById('embed-iframe');
+      const titleEl = document.getElementById('embed-title');
+      if (!panel || !iframe) { window.open(url, '_blank'); return; }
+      titleEl.textContent = title;
+      iframe.src = url;
+      panel.classList.add('visible');
+    }
+
+    function handleResourceClick(e, url, title) {
+      if (e && (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1)) {
+        window.open(url, '_blank');
+        return false;
+      }
+      openInEmbed(url, title || 'Resource');
+      return false;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const closeBtn = document.getElementById('embed-close');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          const panel = document.getElementById('embed-panel');
+          const iframe = document.getElementById('embed-iframe');
+          if (iframe) iframe.src = 'about:blank';
+          if (panel) panel.classList.remove('visible');
+        });
+      }
+    });
+
     // --- START: NEW, MORE ROBUST PARSER ---
     function parseFlowScript(text) {
         const sideQuestContentMap = new Map();
@@ -790,14 +837,14 @@
                       leftButtons.appendChild(btn);
                   });
               }
-              if (mainNodeData && mainNodeData.links) {
-                  mainNodeData.links.forEach(link => {
-                      const btn = document.createElement('button');
-                      btn.textContent = link.buttonText;
-                      btn.onclick = () => window.open(link.url, '_blank');
-                      leftButtons.appendChild(btn);
-                  });
-              }
+                                if (mainNodeData && mainNodeData.links) {
+                      mainNodeData.links.forEach(link => {
+                          const btn = document.createElement('button');
+                          btn.textContent = link.buttonText;
+                          btn.onclick = (ev) => handleResourceClick(ev, link.url, link.buttonText);
+                          leftButtons.appendChild(btn);
+                      });
+                  }
               for (const [label, targetId] of Object.entries(n.connections)) {
                   const btn = document.createElement('button');
                   btn.textContent = label;
