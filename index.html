@@ -678,9 +678,13 @@
            const panel = document.getElementById('embed-panel');
            const iframe = document.getElementById('embed-iframe');
            const resizer = document.getElementById('content-embed-resizer');
+           const contentCard = document.getElementById('content-card');
            if (iframe) iframe.src = 'about:blank';
            if (panel) panel.classList.remove('visible');
            if (resizer) resizer.classList.remove('visible');
+           // Reset widths so the info-card returns to full size
+           if (contentCard) contentCard.style.width = '';
+           if (panel) panel.style.width = '';
          });
        }
        if (openExternalBtn) {
