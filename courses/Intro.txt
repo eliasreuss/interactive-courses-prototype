@@ -116,8 +116,7 @@ Together, they transform your approach to inventory – from firefighting to fac
 
 **Let's get started!**
 ---
-> Go to flow one - Double ABC Analysis -> [link:https://www.google.com/search?q=hej&rlz=1C5CHFA_enDK1152DK1152&oq=hej&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARBFGEAyBwgCEAAYgAQyBwgDEAAYgAQyDQgEEC4YxwEY0QMYgAQyBwgFEAAYgAQyDQgGEC4YrwEYxwEYgAQyDQgHEC4YxwEY0QMYgATSAQczNDNqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8]
-> Go to home screen -> [link:https://www.google.com/search?q=hej&rlz=1C5CHFA_enDK1152DK1152&oq=hej&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARBFGEAyBwgCEAAYgAQyBwgDEAAYgAQyDQgEEC4YxwEY0QMYgAQyBwgFEAAYgAQyDQgGEC4YrwEYxwEYgAQyDQgHEC4YxwEY0QMYgATSAQczNDNqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8]
+> Go to flow one - Double ABC Analysis -> [link:https://eliasreuss.github.io/interactive-courses-prototype/index.html?course=Double-ABC-Analysis.txt]
 
 [side-quest-content:case:Webinar]
 ---

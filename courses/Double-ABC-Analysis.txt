@@ -34,7 +34,7 @@ type: flip-cards
 [card]
 front: **Inventory diagnosis**
 (Click to read more)
-back: Uncover status quo and identify areas for improvement​
+back: Uncovering status quo and identify areas for improvement​
 [card-separator]
 [card]
 front: **Alignment**
@@ -119,10 +119,10 @@ type: main
 
 Where a single ABC Analysis looks at revenue alone, Double ABC adds a second lens: demand patterns.  It shows you both how valuable a product is – and how predictable it is. 
 
-Do you want a quick recap of what some of the categories mean?
+Do you want a quick recap of what some of the key categories mean?
 ---
 > Continue main path -> 8
-> Show me what the categories mean -> [case:A summary of what some of the categories mean]
+> Show me what the categories mean -> [case:A summary of what some of the key categories mean]
 
 id: 8
 title: How it looks in Inact Now
