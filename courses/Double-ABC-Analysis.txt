@@ -279,7 +279,7 @@ https://www.youtube.com/watch?v=fafHuo0mblE
 https://www.youtube.com/watch?v=26VCBmuyOU4&t=1s
 ---
 
-[side-quest-content:case:A summary of what some of the categories mean]
+[side-quest-content:case:A summary of what some of the key categories mean]
 ---
 ![Variations/size:300px/align:left](Variationer.png)![Double ABC/size:300px/align:left](DoubleABC2.0.png)
 
