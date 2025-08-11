@@ -83,11 +83,15 @@
       display: flex; gap: 20px; justify-content: center; margin: 30px 0; flex-wrap: wrap; align-items: center;
     }
     .content-images-container img {
-      max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.1); background-color: #f0f0f0;
+      max-width: 100%; height: auto; display: block;
     }
     .content-images-container .img-container {
         display: flex;
         justify-content: center;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08), 0 3px 8px rgba(0,0,0,0.08);
+        background: #fff;
     }
     .content-images-container .img-container.size-large {
         flex-basis: 100%;
@@ -113,10 +117,12 @@
       display: flex; flex-direction: column; gap: 15px; flex-shrink: 0; max-width: 400px;
       margin-top: 0; /* Align with top of text content */
     }
-    .content-with-stacked-images .stacked-images img {
-      border-radius: 15px; 
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
-      background-color: #f0f0f0;
+    .content-with-stacked-images .stacked-images img { display: block; }
+    .content-with-stacked-images .stacked-images .img-container {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08), 0 3px 8px rgba(0,0,0,0.08);
+      background: #fff;
     }
     .content-images-container.align-stack-right {
       margin: 0; /* Remove default margins for stacked layout */
@@ -207,6 +213,13 @@
     .node.visited-sidequest circle { fill: var(--color-visited-sidequest); }
     .node.active circle { fill: var(--color-accent); filter: drop-shadow(0 0 10px var(--color-accent)); r: 15 !important; }
     
+    .img-container {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08), 0 3px 8px rgba(0,0,0,0.08);
+      background: #fff;
+    }
+    
     @media (max-width: 900px) {
         .flip-card-grid {
             grid-template-columns: 1fr;
@@ -251,7 +264,7 @@
             return;
         }
         if (content.startsWith('http://') || content.startsWith('https://')) {
-            element.innerHTML = `<a href="${content}" target="_blank" rel="noopener noreferrer" class="resource-link-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M13.194 10.806a1.5 1.5 0 1 0-2.122-2.122 1.5 1.5 0 0 0 2.122 2.122Zm-.708 6.364a1.5 1.5 0 1 0-2.122-2.122 1.5 1.5 0 0 0 2.122 2.122ZM12 3.5A8.5 8.5 0 1 1 3.5 12 8.5 8.5 0 0 1 12 3.5ZM10.5 12a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Zm6 0a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z"></path></svg><span>Open Resource</span></a>`;
+            element.innerHTML = `<a href="${content}" target="_blank" rel="noopener noreferrer" class="resource-link-btn"><span>Open Resource</span></a>`;
             return;
         }
 
@@ -295,7 +308,8 @@
                     if (isStacked) {
                         hasStackedOnThisLine = true;
                         const altText = allData[0].trim();
-                        const imgSrc = `images/${imgMatch[2]}?v=1.0`;
+                        const v = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? Date.now() : '1.0';
+                        const imgSrc = `images/${imgMatch[2]}?v=${v}`;
                         
                         let sizeClass = 'size-medium';
                         let style = '';
@@ -338,7 +352,8 @@
                         const allData = imgMatch[1].split('/');
                         const altText = allData[0].trim();
                         const attributes = allData.slice(1);
-                        const imgSrc = `images/${imgMatch[2]}?v=1.0`;
+                        const v = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? Date.now() : '1.0';
+                        const imgSrc = `images/${imgMatch[2]}?v=${v}`;
                         
                         let sizeClass = 'size-large';
                         let style = '';
@@ -443,7 +458,8 @@
                         const allData = imgMatch[1].split('/');
                         const altText = allData[0].trim();
                         const attributes = allData.slice(1);
-                        const imgSrc = `images/${imgMatch[2]}?v=1.0`;
+                        const v = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? Date.now() : '1.0';
+                        const imgSrc = `images/${imgMatch[2]}?v=${v}`;
                         
                         let sizeClass = 'size-large';
                         let style = '';
@@ -671,7 +687,9 @@
         try {
             const urlParams = new URLSearchParams(window.location.search);
             const courseFile = urlParams.get('course') || 'Intro.txt';
-            const response = await fetch(`courses/${courseFile}?v=1.0`); // Cache-busting
+            const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+            const cacheParam = isLocal ? Date.now() : '1.0';
+            const response = await fetch(`courses/${courseFile}?v=${cacheParam}`); // Cache-busting
             if (!response.ok) throw new Error(`Network response was not ok: ${response.statusText}`);
             const text = await response.text();
             courseData = parseFlowScript(text);
