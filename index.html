@@ -299,7 +299,11 @@
         }
         const content = text || '';
         // Clear any previous resource metadata on this element
-        try { element.removeAttribute('data-resource-url'); element.removeAttribute('data-resource-title'); } catch (_) {}
+        try {
+          element.removeAttribute('data-resource-url');
+          element.removeAttribute('data-resource-title');
+          element.innerHTML = '';
+        } catch (_) {}
         // --- Handle special content types first (YouTube, links) ---
         const youtubeRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]{11})/;
         const youtubeMatch = content.match(youtubeRegex);
@@ -310,6 +314,7 @@
         }
         if (content.startsWith('http://') || content.startsWith('https://')) {
             // Store URL on the content element; we'll render the button in the buttons area instead
+            element.innerHTML = '';
             element.setAttribute('data-resource-url', content);
             element.setAttribute('data-resource-title', 'Open Resource');
             return;
@@ -944,6 +949,9 @@
               btn.textContent = resourceTitle;
               btn.onclick = (ev) => handleResourceClick(ev, resourceUrl, resourceTitle);
               leftButtons.appendChild(btn);
+              // Clear after consuming so subsequent nodes don't inherit
+              cardContentElRef.removeAttribute('data-resource-url');
+              cardContentElRef.removeAttribute('data-resource-title');
           }
  
           if (n.type === 'main' || n.type === 'flip-cards') {
