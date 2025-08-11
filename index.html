@@ -931,18 +931,20 @@
           const leftButtons = btnsContainer.querySelector('#card-buttons-left');
           const rightButtons = btnsContainer.querySelector('#card-buttons-right');
 
+          // If the card content stored a top-level resource URL (content was a bare URL),
+          // render an "Open Resource" button in the bottom-left, regardless of node type.
+          const cardContentElRef = document.getElementById('card-content');
+          const resourceUrl = cardContentElRef.getAttribute('data-resource-url');
+          const resourceTitle = cardContentElRef.getAttribute('data-resource-title') || 'Open Resource';
+          if (resourceUrl) {
+              const btn = document.createElement('button');
+              btn.textContent = resourceTitle;
+              btn.onclick = (ev) => handleResourceClick(ev, resourceUrl, resourceTitle);
+              leftButtons.appendChild(btn);
+          }
+ 
           if (n.type === 'main' || n.type === 'flip-cards') {
               const mainNodeData = courseData.find(d => String(d.id) === n.id);
-              // If the content included a top-level resource URL, render a left-side button for it
-              const cardContentEl = document.getElementById('card-content');
-              const resourceUrl = cardContentEl.getAttribute('data-resource-url');
-              const resourceTitle = cardContentEl.getAttribute('data-resource-title') || 'Open Resource';
-              if (resourceUrl) {
-                  const btn = document.createElement('button');
-                  btn.textContent = resourceTitle;
-                  btn.onclick = (ev) => handleResourceClick(ev, resourceUrl, resourceTitle);
-                  leftButtons.appendChild(btn);
-              }
               if (mainNodeData && mainNodeData.sideQuests) {
                   mainNodeData.sideQuests.forEach((sq, index) => {
                       const btn = document.createElement('button');
