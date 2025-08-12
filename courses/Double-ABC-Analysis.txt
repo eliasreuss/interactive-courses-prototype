@@ -140,7 +140,7 @@ Click "Open Inact Now" - this will open your organisations own Double ABC Analys
 When you're done, click "continue"
 ---
 > Continue -> 9
-> Open Inact Now -> [link:https://inactnow.io/app/#/report/8525/overview/9337a6d7e1]
+> Open Inact Now -> [link:embed:https://inactnow.io/app/#/report/16763/overview/8fb5b5ff93]
 
 id: 9
 title: Your Double ABC Insight
@@ -266,8 +266,8 @@ Here’s a quick recap of what you’ve covered:
 
 You’re off to a great start. Let’s keep going!
 ---
-> Go to next flow -> [link:https://www.google.com/search?q=hej&sca_esv=950f1dd50efd152d&rlz=1C5CHFA_enDK1152DK1152&ei=Zl2TaLCaH8KD9u8PmIexyQw&ved=0ahUKEwiw5bXfqfaOAxXCgf0HHZhDLMkQ4dUDCBA&uact=5&oq=hej&gs_lp=Egxnd3Mtd2l6LXNlcnAiA2hlajIKEC4YgAQYQxiKBTIKEAAYgAQYQxiKBTIKEAAYgAQYQxiKBTIFEAAYgAQyBRAAGIAEMgUQLhiABDILEC4YgAQY0QMYxwEyBRAAGIAEMgUQLhiABDIFEC4YgARIkwhQwgVY-gZwA3gBkAEAmAF-oAHiAaoBAzEuMbgBA8gBAPgBAZgCBaAC-gHCAgoQABiwAxjWBBhHwgINEAAYgAQYsAMYQxiKBcICCxAAGIAEGJECGIoFwgIIEC4YgAQY1AKYAwCIBgGQBgqSBwMzLjKgB5MgsgcDMC4yuAfqAcIHAzItNcgHFA&sclient=gws-wiz-serp]
-> Go to home screen -> [link:https://www.google.com/search?q=hej&sca_esv=950f1dd50efd152d&rlz=1C5CHFA_enDK1152DK1152&ei=Zl2TaLCaH8KD9u8PmIexyQw&ved=0ahUKEwiw5bXfqfaOAxXCgf0HHZhDLMkQ4dUDCBA&uact=5&oq=hej&gs_lp=Egxnd3Mtd2l6LXNlcnAiA2hlajIKEC4YgAQYQxiKBTIKEAAYgAQYQxiKBTIKEAAYgAQYQxiKBTIFEAAYgAQyBRAAGIAEMgUQLhiABDILEC4YgAQY0QMYxwEyBRAAGIAEMgUQLhiABDIFEC4YgARIkwhQwgVY-gZwA3gBkAEAmAF-oAHiAaoBAzEuMbgBA8gBAPgBAZgCBaAC-gHCAgoQABiwAxjWBBhHwgINEAAYgAQYsAMYQxiKBcICCxAAGIAEGJECGIoFwgIIEC4YgAQY1AKYAwCIBgGQBgqSBwMzLjKgB5MgsgcDMC4yuAfqAcIHAzItNcgHFA&sclient=gws-wiz-serp]
+> Go to next flow -> [link:newtab:https://www.google.com/search?q=hej&sca_esv=950f1dd50efd152d&rlz=1C5CHFA_enDK1152DK1152&ei=Zl2TaLCaH8KD9u8PmIexyQw&ved=0ahUKEwiw5bXfqfaOAxXCgf0HHZhDLMkQ4dUDCBA&uact=5&oq=hej&gs_lp=Egxnd3Mtd2l6LXNlcnAiA2hlajIKEC4YgAQYQxiKBTIKEAAYgAQYQxiKBTIKEAAYgAQYQxiKBTIFEAAYgAQyBRAAGIAEMgUQLhiABDILEC4YgAQY0QMYxwEyBRAAGIAEMgUQLhiABDIFEC4YgARIkwhQwgVY-gZwA3gBkAEAmAF-oAHiAaoBAzEuMbgBA8gBAPgBAZgCBaAC-gHCAgoQABiwAxjWBBhHwgINEAAYgAQYsAMYQxiKBcICCxAAGIAEGJECGIoFwgIIEC4YgAQY1AKYAwCIBgGQBgqSBwMzLjKgB5MgsgcDMC4yuAfqAcIHAzItNcgHFA&sclient=gws-wiz-serp]
+> Go to home screen -> [link:newtab:https://www.google.com/search?q=hej&sca_esv=950f1dd50efd152d&rlz=1C5CHFA_enDK1152DK1152&ei=Zl2TaLCaH8KD9u8PmIexyQw&ved=0ahUKEwiw5bXfqfaOAxXCgf0HHZhDLMkQ4dUDCBA&uact=5&oq=hej&gs_lp=Egxnd3Mtd2l6LXNlcnAiA2hlajIKEC4YgAQYQxiKBTIKEAAYgAQYQxiKBTIKEAAYgAQYQxiKBTIFEAAYgAQyBRAAGIAEMgUQLhiABDILEC4YgAQY0QMYxwEyBRAAGIAEMgUQLhiABDIFEC4YgARIkwhQwgVY-gZwA3gBkAEAmAF-oAHiAaoBAzEuMbgBA8gBAPgBAZgCBaAC-gHCAgoQABiwAxjWBBhHwgINEAAYgAQYsAMYQxiKBcICCxAAGIAEGJECGIoFwgIIEC4YgAQY1AKYAwCIBgGQBgqSBwMzLjKgB5MgsgcDMC4yuAfqAcIHAzItNcgHFA&sclient=gws-wiz-serp]
 
 [side-quest-content:video:The classic ABC method]
 ---
