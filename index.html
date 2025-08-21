@@ -999,7 +999,7 @@
         let courseData;
         try {
             const urlParams = new URLSearchParams(window.location.search);
-            const courseFile = urlParams.get('course') || 'Double-ABC-Analysis.txt';
+            const courseFile = urlParams.get('course') || 'Intro.txt';
             const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
             const cacheParam = isLocal ? Date.now() : '1.0';
             const response = await fetch(`courses/${courseFile}?v=${cacheParam}`); // Cache-busting
