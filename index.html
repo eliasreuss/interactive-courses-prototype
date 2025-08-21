@@ -56,15 +56,20 @@
       padding: 40px 36px 32px 36px; display: flex; flex-direction: column; overflow-y: auto; box-sizing: border-box;
     }
     #card-text-content { flex-grow: 1; }
-    #card-title { font-size: 2rem; font-weight: 600; margin-bottom: 24px; color: var(--color-primary-text); }
-    #card-content { font-size: 1.1rem; color: var(--color-primary-text); white-space: pre-wrap; line-height: 1.7; overflow-wrap: break-word; }
-    #card-content p { margin: 0 0 0.5em 0; }
+    #card-title { font-size: 2rem; font-weight: normal; margin-bottom: 24px; color: var(--color-primary-text); }
+    #card-content { font-size: 1.1rem; color: var(--color-primary-text); white-space: pre-wrap; line-height: 1.5; overflow-wrap: break-word; }
+    #card-content p { margin: 0 0 0.15em 0; }
     #card-content strong { font-weight: 600; }
     #card-content ul {
       list-style: none; /* Remove default styling */
       padding-left: 1em;
       margin: 1em 0;
     }
+    /* Quote component */
+    .quote-block { display: grid; grid-template-columns: 32px 1fr; gap: 12px; align-items: start; margin: 24px 0; }
+    .quote-mark { color: var(--color-accent); font-weight: 700; font-size: 28px; line-height: 1; }
+    .quote-text { font-style: italic; opacity: 0.9; }
+    .quote-author { color: #8a8f87; font-size: 0.95rem; margin-top: 6px; }
     #card-content li {
       padding-left: 1.2em;
       position: relative;
@@ -92,7 +97,23 @@
         overflow: hidden;
         box-shadow: 0 10px 25px rgba(0,0,0,0.08), 0 3px 8px rgba(0,0,0,0.08);
         background: #fff;
+        flex: 1 1 auto;
     }
+    /* Borderless media container */
+    .content-images-container .img-container.no-frame,
+    .content-with-stacked-images .stacked-images .img-container.no-frame {
+        background: transparent;
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .content-images-container .img-container.size-large,
+    .content-images-container .size-large { max-width: 100%; flex-basis: 100%; }
+    .content-images-container .size-x-small { max-width: 15%; flex-basis: 15%; }
+    .content-images-container .size-small { max-width: 25%; flex-basis: 25%; }
+    .content-images-container .size-medium { max-width: 50%; flex-basis: 50%; }
+    /* Exact widths that account for the 20px gap between items */
+    .content-images-container .size-third { flex: 0 0 calc((100% - 40px) / 3); max-width: calc((100% - 40px) / 3); }
+    .content-images-container .size-fourth { flex: 0 0 calc((100% - 60px) / 4); max-width: calc((100% - 60px) / 4); }
     .content-images-container .img-container.size-large {
         flex-basis: 100%;
     }
@@ -100,6 +121,16 @@
     .content-images-container .size-small { max-width: 25%; flex-basis: 25%; }
     .content-images-container .size-medium { max-width: 50%; flex-basis: 50%; }
     .content-images-container .size-large { max-width: 100%; flex-basis: 100%; }
+
+    /* Make videos fill their container, which handles sizing and shadows */
+    .img-container video {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        display: block;
+    }
 
     /* Alignment for the container of a line of images */
     .content-images-container.align-left { justify-content: flex-start; }
@@ -114,7 +145,7 @@
       flex: 1; /* Take up remaining space */
     }
     .content-with-stacked-images .stacked-images {
-      display: flex; flex-direction: column; gap: 15px; flex-shrink: 0; max-width: 400px;
+      display: flex; flex-direction: column; gap: 15px; flex-shrink: 0; max-width: clamp(320px, 45%, 800px);
       margin-top: 0; /* Align with top of text content */
     }
     .content-with-stacked-images .stacked-images img { display: block; }
@@ -124,6 +155,11 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.08), 0 3px 8px rgba(0,0,0,0.08);
       background: #fff;
     }
+    /* Width sizing for stacked-right media */
+    .content-with-stacked-images .stacked-images .size-x-small { max-width: 15%; flex-basis: 15%; }
+    .content-with-stacked-images .stacked-images .size-small { max-width: 25%; flex-basis: 25%; }
+    .content-with-stacked-images .stacked-images .size-medium { max-width: 50%; flex-basis: 50%; }
+    .content-with-stacked-images .stacked-images .size-large { max-width: 100%; flex-basis: 100%; }
     .content-images-container.align-stack-right {
       margin: 0; /* Remove default margins for stacked layout */
     }
@@ -297,7 +333,9 @@
             renderFlipCards(element, text);
             return;
         }
-        const content = text || '';
+        let content = text || '';
+        // Strip any leading header tags like [title:], [next:], [prev:] that may remain in card content
+        content = content.replace(/^(?:\s*\[(?:title|next|prev):[^\]]+\]\s*\n)+/i, '');
         // Clear any previous resource metadata on this element
         try {
           element.removeAttribute('data-resource-url');
@@ -306,6 +344,34 @@
           element.innerHTML = '';
         } catch (_) {}
 
+        // Detect and render [quote] blocks first
+        const quoteRegex = /\[quote\][\s\S]*?\[\/quote\]/g;
+        const hasQuote = quoteRegex.test(content);
+        if (hasQuote) {
+          const parts = content.split(quoteRegex);
+          const quotes = content.match(quoteRegex) || [];
+          // Render non-quote parts normally and quotes as components, sequentially
+          let html = '';
+          for (let i = 0; i < parts.length; i++) {
+            const part = parts[i];
+            if (part && part.trim()) {
+              const temp = document.createElement('div');
+              renderContentNormal(temp, part.trim());
+              html += temp.innerHTML;
+            }
+            const q = quotes[i];
+            if (q) {
+              const textMatch = q.match(/text:\s*(.*)/);
+              const authorMatch = q.match(/author:\s*(.*)/);
+              const qText = textMatch ? textMatch[1].trim() : '';
+              const qAuthor = authorMatch ? authorMatch[1].trim() : '';
+              html += `<div class="quote-block"><div class="quote-mark">❝</div><div><div class="quote-text">${qText}</div>${qAuthor ? `<div class="quote-author">— ${qAuthor}</div>` : ''}</div></div>`;
+            }
+          }
+          element.innerHTML = html;
+          return;
+        }
+
         // Extract inline button syntax: [button:Label](https://...)
         const buttonRegex = /\[button:([^\]]+)\]\((https?:\/\/[^\s)]+)\)/gi;
         const buttonDefs = [];
@@ -313,6 +379,9 @@
           buttonDefs.push({ buttonText: label.trim(), url: url.trim() });
           return '';
         }).trim();
+
+        // Normalize alias syntax: [image/...](file) or [video/...](file) -> ![image/...](file)
+        strippedContent = strippedContent.replace(/\[(image|video)([^\]]*)\]\(([^)]+)\)/gi, '![$1$2]($3)');
 
         // --- Handle special content types first (YouTube, links) ---
         const youtubeRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]{11})/;
@@ -333,14 +402,14 @@
         }
  
         // Check if we have any stacked-right images
-        const imageRegex = /!\[(.*?)\]\((.*?)\)/g;
+        const imageRegex = /!\[(.*?)\]\(([^)\s]+)\)/g;
         const allImages = [...strippedContent.matchAll(imageRegex)];
-        const hasStackedImages = allImages.some(img => {
+        const hasStackedMedia = allImages.some(img => {
             const attrs = img[1].split('/').slice(1);
             return attrs.some(attr => attr.includes('align:stack-right'));
         });
  
-        if (hasStackedImages) {
+        if (hasStackedMedia) {
             renderContentWithStackedImages(element, strippedContent);
         } else {
             renderContentNormal(element, strippedContent);
@@ -351,7 +420,7 @@
     function renderContentWithStackedImages(element, content) {
         const lines = content.split('\n');
         let textHtml = '';
-        let stackedImages = [];
+        let stackedMedia = [];
         let inList = false;
         const processBold = (str) => str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
@@ -359,25 +428,29 @@
             const trimmedLine = line.trim();
             const isListItem = trimmedLine.startsWith('* ') || trimmedLine.startsWith('- ') || trimmedLine.startsWith('-');
 
-            const imageRegex = /!\[(.*?)\]\((.*?)\)/g;
-            const images = [...line.matchAll(imageRegex)];
+            const mediaRegex = /!\[(.*?)\]\(([^)\s]+)\)/g;
+            const mediaItems = [...line.matchAll(mediaRegex)];
 
-            if (images.length > 0) {
-                // Check if this line has stacked-right images
+            if (mediaItems.length > 0) {
+                // Check if this line has stacked-right media
                 let hasStackedOnThisLine = false;
-                images.forEach(imgMatch => {
-                    const allData = imgMatch[1].split('/');
+                mediaItems.forEach(match => {
+                    const allData = match[1].split('/');
                     const attributes = allData.slice(1);
                     const isStacked = attributes.some(attr => attr.includes('align:stack-right'));
                     
                     if (isStacked) {
                         hasStackedOnThisLine = true;
-                        const altText = allData[0].trim();
+                        const typeAndAlt = allData[0].split(':');
+                        const isVideo = typeAndAlt[0] === 'video';
+                        const altText = isVideo ? typeAndAlt.slice(1).join(':').trim() : allData[0].trim();
+                        
                         const v = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? Date.now() : '1.0';
-                        const imgSrc = `images/${imgMatch[2]}?v=${v}`;
+                        const src = `images/${match[2]}?v=${v}`;
                         
                         let sizeClass = 'size-medium';
                         let style = '';
+                        let frameClass = '';
                         attributes.forEach(attr => {
                             const [key, value] = attr.split(':');
                             if (key.trim() === 'size') {
@@ -388,18 +461,27 @@
                                 } else {
                                     sizeClass = `size-${sizeValue}`;
                                 }
+                            } else if (key.trim() === 'frame' || key.trim() === 'border' || key.trim() === 'style') {
+                                const v = (value || '').trim().toLowerCase();
+                                if (v === 'none' || v === 'no' || v === 'off' || v === 'plain' || v === '0') {
+                                    frameClass = 'no-frame';
+                                }
                             }
                         });
                         
-                        stackedImages.push(`<div class="img-container ${sizeClass}" style="${style}"><img src="${imgSrc}" alt="${altText}" style="${style}"></div>`);
+                        if (isVideo) {
+                            stackedMedia.push(`<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><video autoplay loop muted playsinline style=\"width:100%;height:auto;\" src=\"${src}\" title=\"${altText}\"></video></div>`);
+                        } else {
+                            stackedMedia.push(`<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><img src=\"${src}\" alt=\"${altText}\" style=\"${style}\"></div>`);
+                        }
                     }
                 });
 
-                // If line has non-stacked images, process them normally
+                // If line has non-stacked media, process them normally
                 if (!hasStackedOnThisLine) {
                     let combinedAttrs = [];
-                    images.forEach(imgMatch => {
-                        const allData = imgMatch[1].split('/');
+                    mediaItems.forEach(match => {
+                        const allData = match[1].split('/');
                         const attributes = allData.slice(1);
                         combinedAttrs = combinedAttrs.concat(attributes);
                     });
@@ -412,16 +494,19 @@
                         }
                     });
 
-                    let imageHtml = `<div class="content-images-container ${alignClass}">`;
-                    images.forEach(imgMatch => {
-                        const allData = imgMatch[1].split('/');
-                        const altText = allData[0].trim();
+                    let mediaHtml = `<div class="content-images-container ${alignClass}">`;
+                    mediaItems.forEach(match => {
+                        const allData = match[1].split('/');
+                        const typeAndAlt = allData[0].split(':');
+                        const isVideo = typeAndAlt[0] === 'video';
+                        const altText = isVideo ? typeAndAlt.slice(1).join(':').trim() : allData[0].trim();
                         const attributes = allData.slice(1);
                         const v = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? Date.now() : '1.0';
-                        const imgSrc = `images/${imgMatch[2]}?v=${v}`;
+                        const src = `images/${match[2]}?v=${v}`;
                         
                         let sizeClass = 'size-large';
                         let style = '';
+                        let frameClass = '';
                         attributes.forEach(attr => {
                             const [key, value] = attr.split(':');
                             if (key.trim() === 'size') {
@@ -432,12 +517,21 @@
                                 } else {
                                     sizeClass = `size-${sizeValue}`;
                                 }
+                            } else if (key.trim() === 'frame' || key.trim() === 'border' || key.trim() === 'style') {
+                                const v = (value || '').trim().toLowerCase();
+                                if (v === 'none' || v === 'no' || v === 'off' || v === 'plain' || v === '0') {
+                                    frameClass = 'no-frame';
+                                }
                             }
                         });
-                        imageHtml += `<div class="img-container ${sizeClass}" style="${style}"><img src="${imgSrc}" alt="${altText}" style="${style}"></div>`;
+                        if (isVideo) {
+                            mediaHtml += `<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><video autoplay loop muted playsinline style=\"width:100%;height:auto;\" src=\"${src}\" title=\"${altText}\"></video></div>`;
+                        } else {
+                            mediaHtml += `<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><img src=\"${src}\" alt=\"${altText}\" style=\"${style}\"></div>`;
+                        }
                     });
-                    imageHtml += '</div>';
-                    textHtml += imageHtml;
+                    mediaHtml += '</div>';
+                    textHtml += mediaHtml;
                 }
             } else if (isListItem) {
                 if (!inList) {
@@ -464,13 +558,13 @@
         }
 
         // Create the layout with text on left and stacked images on right
-        const stackedImagesHtml = stackedImages.length > 0 ? 
-            `<div class="stacked-images">${stackedImages.join('')}</div>` : '';
+        const stackedMediaHtml = stackedMedia.length > 0 ? 
+            `<div class="stacked-images">${stackedMedia.join('')}</div>` : '';
 
         element.innerHTML = `
             <div class="content-with-stacked-images">
                 <div class="text-content">${textHtml}</div>
-                ${stackedImagesHtml}
+                ${stackedMediaHtml}
             </div>
         `;
     }
@@ -498,12 +592,12 @@
                     inList = false;
                 }
 
-                const imageRegex = /!\[(.*?)\]\((.*?)\)/g;
-                const images = [...line.matchAll(imageRegex)];
+                const imageRegex = /!\[(.*?)\]\(([^)\s]+)\)/g;
+                const mediaItems = [...line.matchAll(imageRegex)];
 
-                if (images.length > 0) {
+                if (mediaItems.length > 0) {
                     let combinedAttrs = [];
-                    images.forEach(imgMatch => {
+                    mediaItems.forEach(imgMatch => {
                         const allData = imgMatch[1].split('/');
                         const attributes = allData.slice(1);
                         combinedAttrs = combinedAttrs.concat(attributes);
@@ -517,17 +611,20 @@
                         }
                     });
 
-                    let imageHtml = `<div class="content-images-container ${alignClass}">`;
+                    let mediaHtml = `<div class="content-images-container ${alignClass}">`;
 
-                    images.forEach(imgMatch => {
-                        const allData = imgMatch[1].split('/');
-                        const altText = allData[0].trim();
+                    mediaItems.forEach(match => {
+                        const allData = match[1].split('/');
+                        const typeAndAlt = allData[0].split(':');
+                        const isVideo = typeAndAlt[0] === 'video';
+                        const altText = isVideo ? typeAndAlt.slice(1).join(':').trim() : allData[0].trim();
                         const attributes = allData.slice(1);
                         const v = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? Date.now() : '1.0';
-                        const imgSrc = `images/${imgMatch[2]}?v=${v}`;
+                        const src = `images/${match[2]}?v=${v}`;
                         
                         let sizeClass = 'size-large';
                         let style = '';
+                        let frameClass = '';
 
                         attributes.forEach(attr => {
                             const [key, value] = attr.split(':');
@@ -539,13 +636,21 @@
                                 } else {
                                     sizeClass = `size-${sizeValue}`;
                                 }
+                            } else if (key.trim() === 'frame' || key.trim() === 'border' || key.trim() === 'style') {
+                                const v = (value || '').trim().toLowerCase();
+                                if (v === 'none' || v === 'no' || v === 'off' || v === 'plain' || v === '0') {
+                                    frameClass = 'no-frame';
+                                }
                             }
                         });
-
-                        imageHtml += `<div class="img-container ${sizeClass}" style="${style}"><img src="${imgSrc}" alt="${altText}" style="${style}"></div>`;
+                        if (isVideo) {
+                           mediaHtml += `<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><video autoplay loop muted playsinline style=\"width:100%;height:auto;\" src=\"${src}\" title=\"${altText}\"></video></div>`;
+                        } else {
+                           mediaHtml += `<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><img src=\"${src}\" alt=\"${altText}\" style=\"${style}\"></div>`;
+                        }
                     });
-                    imageHtml += '</div>';
-                    html += imageHtml;
+                    mediaHtml += '</div>';
+                    html += mediaHtml;
                 } else if (trimmedLine === '' && html.length > 0) {
                     html += '<p> </p>';
                 } else if (trimmedLine !== '') {
@@ -564,7 +669,17 @@
     function renderFlipCards(element, text) {
         const cardsData = [];
         // Split cards by the new, unique separator
-        const cardBlocks = text.split('[card-separator]');
+        let introHtml = '';
+        let working = text || '';
+        const introMatch = working.match(/\[intro\]\n([\s\S]*?)\n\[\/intro\]\n?/);
+        if (introMatch) {
+            const introText = introMatch[1].trim();
+            const temp = document.createElement('div');
+            renderContentNormal(temp, introText);
+            introHtml = temp.innerHTML;
+            working = working.replace(introMatch[0], '');
+        }
+        const cardBlocks = working.split('[card-separator]');
         const processBold = (str) => str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         
         cardBlocks.forEach(block => {
@@ -616,7 +731,11 @@
             cardsData.push({ front, back });
         });
 
-        let html = '<div class="flip-card-grid">';
+        let html = '';
+        if (introHtml) {
+            html += `<div style="margin-bottom: 12px;">${introHtml}</div>`;
+        }
+        html += '<div class="flip-card-grid">';
         cardsData.forEach(card => {
             // New logic to handle title and subtitle for the front of the card
             const frontParts = card.front.split('\n');
@@ -760,18 +879,36 @@
         // First pass to extract side quest content blocks, which are self-contained
         const sqRegex = /\[side-quest-content:([^\]]+)\]\s*\n---\n([\s\S]*?)\n---/g;
         let remainingText = text.replace(sqRegex, (match, fullType, content) => {
-            // Handle both old format (type only) and new format (type:title)
-            const parts = fullType.trim().split(':');
-            const type = parts[0];
-            const title = parts[1] || '';
-            
-            if (title) {
-                // New format: type:title
-                sideQuestContentMap.set(`${type}:${title}`, content.trim());
-            } else {
-                // Old format: type only (for backward compatibility)
-                sideQuestContentMap.set(type, content.trim());
-            }
+            // fullType can be like "type:title|next=...|back=..."
+            const firstColon = fullType.indexOf(':');
+            const type = firstColon >= 0 ? fullType.slice(0, firstColon).trim() : fullType.trim();
+            const rest = firstColon >= 0 ? fullType.slice(firstColon + 1) : '';
+            const barIdx = rest.indexOf('|');
+            const title = (barIdx >= 0 ? rest.slice(0, barIdx) : rest).trim();
+            const optsStr = barIdx >= 0 ? rest.slice(barIdx + 1) : '';
+            const opts = {};
+            optsStr.split('|').forEach(p => {
+                const [k, ...vparts] = p.split('=');
+                if (!k || vparts.length === 0) return;
+                opts[k.trim()] = vparts.join('=').trim();
+            });
+            const raw = (content || '').trim();
+            const partsArr = raw.length ? raw.split(/\n\[sq-card-separator\]\n/) : [''];
+            const cardObjs = partsArr.map(p => {
+                let t = p.trim();
+                let nextLabel = '';
+                let prevLabel = '';
+                const lines = t.split('\n');
+                while (lines.length && /^\[(next|prev):/.test(lines[0].trim())) {
+                    const m = lines.shift().trim().match(/^\[(next|prev):\s*(.+?)\]$/);
+                    if (m) {
+                        if (m[1] === 'next') nextLabel = m[2]; else prevLabel = m[2];
+                    } else { break; }
+                }
+                return { content: lines.join('\n').trim(), nextLabel, prevLabel };
+            });
+            const key = title ? `${type}:${title}` : type;
+            sideQuestContentMap.set(key, { cards: cardObjs, nextLabel: opts.next || '', backLabel: opts.back || '' });
             return ''; // Remove the block from the text
         });
 
@@ -806,28 +943,31 @@
                     } else if (sqMatch) {
                         const [, buttonText, type, title] = sqMatch;
                         // Try multiple matching strategies for content lookup
-                        let content = sideQuestContentMap.get(`${type}:${title}`);
+                        let meta = sideQuestContentMap.get(`${type}:${title}`);
                         
-                        if (!content) {
+                        if (!meta) {
                             // Try to find content by partial title match (for legacy compatibility)
                             for (const [key, value] of sideQuestContentMap.entries()) {
                                 if (key.startsWith(`${type}:`)) {
                                     const keyTitle = key.split(':', 2)[1];
                                     // Check if either title contains the other (partial match)
                                     if (title.includes(keyTitle) || keyTitle.includes(title)) {
-                                        content = value;
+                                        meta = value;
                                         break;
                                     }
                                 }
                             }
                         }
                         
-                        if (!content) {
+                        if (!meta) {
                             // Final fallback to type-only match
-                            content = sideQuestContentMap.get(type) || '';
+                            meta = sideQuestContentMap.get(type) || { cards: [''], nextLabel: '', backLabel: '' };
                         }
                         
-                        currentBlock.sideQuests.push({ type, title, buttonText, content });
+                        const cards = Array.isArray(meta) ? meta : (meta.cards || ['']);
+                        const nextLabel = meta.nextLabel || '';
+                        const backLabel = meta.backLabel || '';
+                        currentBlock.sideQuests.push({ type, title, buttonText, cards, nextLabel, backLabel });
                     } else if (linkMatch) {
                         const [, buttonText, targetOpt, url] = linkMatch;
                         if (!currentBlock.links) currentBlock.links = [];
@@ -859,7 +999,7 @@
         let courseData;
         try {
             const urlParams = new URLSearchParams(window.location.search);
-            const courseFile = urlParams.get('course') || 'Intro.txt';
+            const courseFile = urlParams.get('course') || 'Double-ABC-Analysis.txt';
             const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
             const cacheParam = isLocal ? Date.now() : '1.0';
             const response = await fetch(`courses/${courseFile}?v=${cacheParam}`); // Cache-busting
@@ -874,7 +1014,8 @@
             return;
         }
 
-        let activeNodeId = '1'; let visitedNodes = new Set(['1']);
+        const firstNode = courseData.find(n => n && n.id != null);
+        let activeNodeId = String(firstNode ? firstNode.id : '1'); let visitedNodes = new Set([activeNodeId]);
         const svgContainer = d3.select('#flow-map-container'); const svg = d3.select('#flow-map-svg'); const g = svg.append('g'); const tooltip = d3.select('#tooltip');
         const d3Nodes = [], d3Links = [], nodeById = new Map();
 
@@ -884,8 +1025,24 @@
             d3Nodes.push(mainNode); nodeById.set(mainNode.id, mainNode);
             if (mainNodeData.sideQuests) {
                 mainNodeData.sideQuests.forEach((sqData, index) => {
-                    const sideQuestId = `${mainNodeData.id}-${sqData.type}-${index}`; const sideQuestNode = { ...sqData, id: sideQuestId, type: 'sidequest', parentId: mainNode.id };
-                    d3Nodes.push(sideQuestNode); nodeById.set(sideQuestNode.id, sideQuestNode); d3Links.push({ source: mainNode.id, target: sideQuestId });
+                    const cards = Array.isArray(sqData.cards) && sqData.cards.length ? sqData.cards : [sqData.content || ''];
+                    let previousId = null;
+                    const hasMultiple = cards.length > 1;
+                    const randLeftRight = (((parseInt(mainNodeData.id, 10) || 0) * 9301 + index * 49297) % 2) === 0 ? -1 : 1;
+                    const branchDir = hasMultiple ? 1 : randLeftRight; // multi: always right, single: random left/right
+                    cards.forEach((card, cardIdx) => {
+                        const cardContent = typeof card === 'object' ? (card.content || '') : card;
+                        const cardNext = typeof card === 'object' ? (card.nextLabel || '') : '';
+                        const cardPrev = typeof card === 'object' ? (card.prevLabel || '') : '';
+                        const sideQuestId = `${mainNodeData.id}-${sqData.type}-${index}-${cardIdx}`;
+                        const titleSuffix = cards.length > 1 ? ` (${cardIdx + 1}/${cards.length})` : '';
+                        const cardTitle = typeof card === 'object' ? (card.title || '') : (sqData.title || '');
+                        const sideQuestNode = { ...sqData, id: sideQuestId, type: 'sidequest', parentId: String(mainNodeData.id), content: cardContent, cardIndex: cardIdx, numCards: cards.length, title: cardTitle, buttonText: sqData.buttonText + titleSuffix, nextLabel: cardNext || sqData.nextLabel || '', backLabel: cardPrev || sqData.backLabel || '', prevId: previousId || null, nextId: null, branchDir };
+                        d3Nodes.push(sideQuestNode); nodeById.set(sideQuestNode.id, sideQuestNode);
+                        if (previousId) { d3Links.push({ source: previousId, target: sideQuestId }); const prevNode = nodeById.get(previousId); if (prevNode) prevNode.nextId = sideQuestId; }
+                        else { d3Links.push({ source: String(mainNodeData.id), target: sideQuestId }); }
+                        previousId = sideQuestId;
+                    });
                 });
             }
             Object.values(mainNodeData.connections).forEach(targetId => { d3Links.push({ source: mainNode.id, target: String(targetId) }); });
@@ -898,10 +1055,40 @@
             svg.attr('viewBox', `0 0 ${width} ${height}`);
             const mainPath = d3Nodes.filter(n => n.type === 'main' || n.type === 'flip-cards'); const mainYStep = (height * 0.9) / (mainPath.length > 1 ? mainPath.length - 1 : 1);
             mainPath.forEach((n, i) => { n.fy = height * 0.05 + i * mainYStep; n.fx = width / 2; });
+            updateSideQuestPositions();
         }
         updateMainPathPositions();
 
-        const simulation = d3.forceSimulation(d3Nodes).force('link', d3.forceLink(d3Links).id(d => d.id).distance(80).strength(0.8)).force('charge', d3.forceManyBody().strength(-500)).force('collide', d3.forceCollide(20));
+        function updateSideQuestPositions() {
+            const baseHorizontal = Math.max(120, Math.min(220, Math.round(width * 0.18)));
+            const verticalStep = 72;
+            d3Nodes.forEach(n => {
+                if (n.type === 'sidequest') {
+                    const parent = nodeById.get(String(n.parentId));
+                    if (parent && typeof parent.fy !== 'undefined' && typeof parent.fx !== 'undefined') {
+                        const idx = typeof n.cardIndex === 'number' ? n.cardIndex : 0;
+                        const dir = n.branchDir || 1; // 1=right, -1=left
+                        const t = (idx + 1) / Math.max(2, (n.numCards || 2));
+                        const arcPush = Math.sin(t * Math.PI) * 30; // arched curve feel
+                        const jitterSeed = ((parseInt(n.parentId, 10) || 0) * 8341 + idx * 2718) % 7;
+                        const jitterX = (jitterSeed - 3) * 1.2;
+                        const jitterY = ((jitterSeed * 2) % 5 - 2) * 1.2;
+                        n.targetFx = parent.fx + dir * (baseHorizontal + arcPush) + jitterX;
+                        n.targetFy = parent.fy + (idx + 1) * verticalStep + jitterY;
+                        if (typeof n.x === 'undefined' || typeof n.y === 'undefined') {
+                            n.x = n.targetFx; n.y = n.targetFy;
+                        }
+                    }
+                }
+            });
+        }
+
+        const simulation = d3.forceSimulation(d3Nodes)
+          .force('link', d3.forceLink(d3Links).id(d => d.id).distance(80).strength(0.8))
+          .force('charge', d3.forceManyBody().strength(-450))
+          .force('collide', d3.forceCollide(20))
+          .force('sqX', d3.forceX(d => (d.type === 'sidequest' && typeof d.targetFx === 'number') ? d.targetFx : (typeof d.fx === 'number' ? d.fx : width / 2)).strength(d => d.type === 'sidequest' ? 0.08 : 0))
+          .force('sqY', d3.forceY(d => (d.type === 'sidequest' && typeof d.targetFy === 'number') ? d.targetFy : (typeof d.fy === 'number' ? d.fy : height / 2)).strength(d => d.type === 'sidequest' ? 0.12 : 0));
         const link = g.append('g').attr('class', 'links').selectAll('line').data(d3Links).join('line').attr('class', 'link');
         const node = g.append('g').attr('class', 'nodes').selectAll('g').data(d3Nodes).join('g').attr('class', 'node')
           .on('click', (event, d) => updateView(d.id))
@@ -909,7 +1096,7 @@
           .on('mousemove', function(event) { const [x, y] = d3.pointer(event, document.body); tooltip.style('left', (x + 20) + 'px').style('top', (y + 20) + 'px'); })
           .on('mouseout', function() { tooltip.style('visibility', 'hidden').style('opacity', 0); });
         node.append('circle').attr('r', 12);
-        const zoom = d3.zoom().scaleExtent([0.5, 3]).on('zoom', (event) => g.attr('transform', event.transform)); svg.call(zoom);
+        const zoom = d3.zoom().scaleExtent([0.5, 3]).on('zoom', (event) => { g.attr('transform', event.transform); simulation.alpha(0.04).restart(); }); svg.call(zoom);
 
         function centerNode(nodeId) {
             const targetNode = nodeById.get(nodeId); if (!targetNode || typeof targetNode.x === 'undefined') return;
@@ -934,16 +1121,28 @@
           }
           
           const cardTitleEl = document.getElementById('card-title');
+          // Fallback extractors in case meta wasn't propagated
+          const extractHeader = (source, key) => {
+            if (!source) return '';
+            const re = new RegExp("(?:^|\\n)\\[" + key + ":\\s*([^\\]]+)\\]", 'i');
+            const m = source.match(re);
+            return m ? m[1].trim() : '';
+          };
+          const effectiveTitle = (n.title && n.title.trim().length) ? n.title : extractHeader(n.content, 'title');
+          const effectiveNext = (n.nextLabel && n.nextLabel.trim().length) ? n.nextLabel : extractHeader(n.content, 'next');
+
           if (n.type === 'sidequest') {
-            if (n.title && n.title.trim() !== '') {
-              cardTitleEl.textContent = n.title;
+            if (effectiveTitle && effectiveTitle.trim() !== '') {
+              const processBold = (str) => str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+              cardTitleEl.innerHTML = processBold(effectiveTitle);
               cardTitleEl.style.display = '';
             } else {
               cardTitleEl.textContent = '';
               cardTitleEl.style.display = 'none';
             }
           } else if (n.title && n.title.trim() !== '') {
-            cardTitleEl.textContent = n.title;
+            const processBold = (str) => str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            cardTitleEl.innerHTML = processBold(n.title);
             cardTitleEl.style.display = '';
           } else {
             cardTitleEl.textContent = '';
@@ -973,7 +1172,7 @@
                   btns.forEach(b => {
                       const ib = document.createElement('button');
                       ib.textContent = b.buttonText || 'Open';
-                      ib.onclick = (ev) => handleResourceClick(ev, b.url, b.buttonText || 'Open');
+                      ib.onclick = (ev) => { ev && ev.preventDefault && ev.preventDefault(); openInEmbed(b.url, b.buttonText || 'Open'); };
                       leftButtons.appendChild(ib);
                   });
               } catch (_) {}
@@ -995,7 +1194,7 @@
                   mainNodeData.sideQuests.forEach((sq, index) => {
                       const btn = document.createElement('button');
                       btn.textContent = sq.buttonText;
-                      btn.onclick = () => updateView(`${n.id}-${sq.type}-${index}`);
+                      btn.onclick = () => updateView(`${n.id}-${sq.type}-${index}-0`);
                       leftButtons.appendChild(btn);
                   });
               }
@@ -1021,9 +1220,21 @@
                   btn.onclick = () => updateView(String(targetId));
                   rightButtons.appendChild(btn);
               }
-          } else if (n.type === 'sidequest') {
+                    } else if (n.type === 'sidequest') {
+              if (n.prevId) {
+                const prevBtn = document.createElement('button');
+                prevBtn.textContent = n.backLabel || '◀ Previous';
+                prevBtn.onclick = () => updateView(n.prevId);
+                leftButtons.appendChild(prevBtn);
+              }
+              if (n.nextId) {
+                const nextBtn = document.createElement('button');
+                nextBtn.textContent = (effectiveNext && effectiveNext.trim().length) ? effectiveNext : ((n.nextLabel && n.nextLabel.trim().length) ? n.nextLabel : 'Next ▶');
+                nextBtn.onclick = () => updateView(n.nextId);
+                leftButtons.appendChild(nextBtn);
+              }
               const btn = document.createElement('button');
-              btn.textContent = 'Return to main path';
+              btn.textContent = n.backToMainLabel || n.backLabel || 'Return to main path';
               btn.onclick = () => updateView(String(n.parentId));
               rightButtons.appendChild(btn);
           }
@@ -1040,7 +1251,7 @@
         const resizer = document.getElementById('resizer'); const sidebar = document.getElementById('flow-map-container'); const closeBtn = document.getElementById('close-sidebar-btn'); const openBtn = document.getElementById('open-sidebar-btn');
         let isResizing = false;
         resizer.addEventListener('mousedown', (e) => { isResizing = true; document.body.style.cursor = 'col-resize'; sidebar.style.transition = 'none'; });
-        window.addEventListener('mousemove', (e) => { if (!isResizing) return; const newWidth = e.clientX; if (newWidth > 200 && newWidth < document.body.clientWidth - 400) sidebar.style.width = newWidth + 'px'; });
+        window.addEventListener('mousemove', (e) => { if (!isResizing) return; const newWidth = e.clientX; if (newWidth > 200 && newWidth < document.body.clientWidth - 400) { sidebar.style.width = newWidth + 'px'; updateMainPathPositions(); simulation.alpha(0.1).restart(); } });
         window.addEventListener('mouseup', (e) => { if (isResizing) { isResizing = false; document.body.style.cursor = 'default'; sidebar.style.transition = ''; updateMainPathPositions(); simulation.alpha(0.3).restart(); } });
         closeBtn.addEventListener('click', () => { sidebar.classList.add('collapsed'); openBtn.style.display = 'block'; });
         openBtn.addEventListener('click', () => { sidebar.classList.remove('collapsed'); openBtn.style.display = 'none'; setTimeout(() => { updateMainPathPositions(); simulation.alpha(0.3).restart(); }, 300); });

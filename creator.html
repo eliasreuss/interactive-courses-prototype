@@ -14,7 +14,7 @@
         h2 { border-bottom: 2px solid #e9ecef; padding-bottom: 10px; }
         .node-card { border: 1px solid var(--medium-gray); border-radius: 6px; padding: 20px; margin-bottom: 20px; background-color: #fff; }
         input[type="text"], input[type="number"], textarea, select { width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 4px; box-sizing: border-box; margin-bottom: 10px; font-size: 1rem; }
-        textarea { min-height: 120px; resize: vertical; }
+        textarea.node-content, textarea.sq-content, textarea.flip-card-front, textarea.flip-card-back { min-height: 120px; resize: vertical; }
         label { font-weight: 600; display: block; margin-bottom: 5px; }
         .label-with-button { display: flex; justify-content: space-between; align-items: center; }
         button { background-color: var(--primary-blue); color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; font-size: 0.9rem; margin-right: 5px; transition: background-color 0.2s; }
@@ -27,8 +27,8 @@
         .btn-generate:hover { background-color: #e0a800; }
         .connection-row, .sidequest-row { display: flex; gap: 15px; align-items: flex-start; margin-bottom: 15px; border-left: 3px solid var(--medium-gray); padding: 15px; border-radius: 4px;}
         .sidequest-row { border-left-color: var(--cyan); }
-        .connection-inputs { flex: 2; }
-        .sidequest-content-area { flex: 1.5; }
+        .connection-inputs { flex: 1; }
+        .sidequest-content-area { flex: 3; }
         .output-area { margin-top: 20px; }
         #outputText { width: 100%; min-height: 400px; background-color: #e9ecef; color: #495057; font-family: monospace; font-size: 0.9rem; border-radius: 4px; }
         #upload-btn { background-color: #6c757d; }
@@ -63,7 +63,7 @@
         <button class="btn-remove" style="float: right;">Remove Node</button>
         <h3>Node Details</h3>
         <label>Node ID:</label><input type="number" class="node-id" required>
-        <label>Node Title:</label><input type="text" class="node-title">
+        <label>Node Title:</label><textarea class="node-title" rows="2" placeholder="Use **text** for bold."></textarea>
         <label>Node Type:</label>
         <select class="node-type">
             <option value="main" selected>Standard Content</option>
@@ -77,12 +77,17 @@
                     <div>
                         <button type="button" class="add-list-btn" style="margin-bottom: 5px;">Add Bullet List</button>
                         <button type="button" class="add-image-btn" style="margin-bottom: 5px;">Add Image</button>
+                        <button type="button" class="add-video-btn" style="margin-bottom: 5px;">Add Video</button>
+                        <button type="button" class="add-image-row-btn" style="margin-bottom: 5px;">Add Image Row (3)</button>
+                        <button type="button" class="add-quote-btn" style="margin-bottom: 5px;">Add Quote</button>
                     </div>
                 </div>
                 <textarea class="node-content" placeholder="Use **text** for bold. For lists, use '* ' or '- '. For images, use the button or type ![alt text|size:medium](image.png)." required></textarea>
             </div>
             <!-- Flip cards editor -->
             <div class="flip-cards-editor" style="display: none;">
+                <label>Flip Cards Intro (optional):</label>
+                <textarea class="flip-intro" placeholder="Intro/body text that appears above the flip cards..." rows="3"></textarea>
                 <div class="flip-cards-container"></div>
                 <button type="button" class="add-flip-card-btn">Add Flip Card</button>
             </div>
@@ -119,6 +124,10 @@
                 <input type="text" class="sq-title" placeholder="Side Quest Title" required>
                 <span>]</span>
             </div>
+            <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
+                <input type="text" class="sq-next-label" placeholder="Next button text (default: Next)">
+                <input type="text" class="sq-back-label" placeholder="Back button text (default: Return to main path)">
+            </div>
         </div>
         <div class="sidequest-content-area">
             <div class="label-with-button">
@@ -126,10 +135,23 @@
                 <div>
                     <button type="button" class="add-list-btn" style="margin-bottom: 5px;">Add Bullet List</button>
                     <button type="button" class="add-image-btn" style="margin-bottom: 5px;">Add Image</button>
+                    <button type="button" class="add-video-btn" style="margin-bottom: 5px;">Add Video</button>
+                    <button type="button" class="add-image-row-btn" style="margin-bottom: 5px;">Add Image Row (3)</button>
+                    <button type="button" class="add-quote-btn" style="margin-bottom: 5px;">Add Quote</button>
                     <button type="button" class="add-inline-button" style="margin-bottom: 5px;">Add Link Button</button>
+                    <button type="button" class="add-sq-card-btn" style="margin-bottom: 5px;">Add Side Quest Card</button>
                 </div>
             </div>
-            <textarea class="sq-content" placeholder="Paste a YouTube URL here to embed a video, or any other URL for a link. You can also use lists, bold text, and sized images." required></textarea>
+            <div class="sq-card-wrap" style="margin-bottom: 10px;">
+                <div style="display:flex; gap:10px; margin: 5px 0;">
+                    <input type="text" class="sq-card-title" placeholder="Card title (optional)" style="flex:1;">
+                </div>
+                <div style="display:flex; gap:10px; margin: 5px 0;">
+                    <input type="text" class="sq-card-next-label" placeholder="Next label (optional)" style="flex:1;">
+                    <input type="text" class="sq-card-prev-label" placeholder="Previous label (optional)" style="flex:1;">
+                </div>
+                <textarea class="sq-content" placeholder="Card content. You can paste URLs, add lists, images, etc." required></textarea>
+            </div>
         </div>
         <button class="btn-remove">✖</button>
     </div>
@@ -192,13 +214,44 @@ document.addEventListener('DOMContentLoaded', () => {
         newConn.querySelector('.conn-target').value = target;
         container.appendChild(newConn);
     }
-    function addSideQuestToNode(nodeCard, btnText = '', type = 'video', title = '', content = '') {
+    function addSideQuestToNode(nodeCard, btnText = '', type = 'video', title = '', contentOrCards = '', nextLabel = '', backLabel = '') {
         const container = nodeCard.querySelector('.connections-container');
         const newSQ = sidequestTemplate.content.cloneNode(true);
         newSQ.querySelector('.sq-btn-text').value = btnText;
         newSQ.querySelector('.sq-type').value = type;
         newSQ.querySelector('.sq-title').value = title;
-        newSQ.querySelector('.sq-content').value = content;
+        if (nextLabel) newSQ.querySelector('.sq-next-label').value = nextLabel;
+        if (backLabel) newSQ.querySelector('.sq-back-label').value = backLabel;
+        const area = newSQ.querySelector('.sidequest-content-area');
+        const firstWrap = area.querySelector('.sq-card-wrap');
+        const cards = Array.isArray(contentOrCards) ? contentOrCards : (contentOrCards ? [contentOrCards] : ['']);
+        if (cards.length > 0) {
+            const c0 = cards[0];
+            if (typeof c0 === 'object') {
+                firstWrap.querySelector('.sq-card-title').value = c0.title || '';
+                firstWrap.querySelector('.sq-card-next-label').value = c0.nextLabel || '';
+                firstWrap.querySelector('.sq-card-prev-label').value = c0.prevLabel || '';
+                firstWrap.querySelector('.sq-content').value = c0.content || '';
+            } else {
+                firstWrap.querySelector('.sq-content').value = c0;
+            }
+            for (let i = 1; i < cards.length; i++) {
+                const wrap = document.createElement('div');
+                wrap.className = 'sq-card-wrap';
+                wrap.style.marginBottom = '10px';
+                wrap.innerHTML = `<div style="display:flex; gap:10px; margin: 5px 0;"><input type="text" class="sq-card-title" placeholder="Card title (optional)" style="flex:1;"></div><div style="display:flex; gap:10px; margin: 5px 0;"><input type="text" class="sq-card-next-label" placeholder="Next label (optional)" style="flex:1;"><input type="text" class="sq-card-prev-label" placeholder="Previous label (optional)" style="flex:1;"></div><textarea class="sq-content" placeholder="Card content. You can paste URLs, add lists, images, etc." required></textarea>`;
+                const ci = cards[i];
+                if (typeof ci === 'object') {
+                    wrap.querySelector('.sq-card-title').value = ci.title || '';
+                    wrap.querySelector('.sq-card-next-label').value = ci.nextLabel || '';
+                    wrap.querySelector('.sq-card-prev-label').value = ci.prevLabel || '';
+                    wrap.querySelector('.sq-content').value = ci.content || '';
+                } else {
+                    wrap.querySelector('.sq-content').value = ci;
+                }
+                area.appendChild(wrap);
+            }
+        }
         container.appendChild(newSQ);
     }
     
@@ -235,18 +288,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const sqRegex = /\[side-quest-content:([^\]]+)\]\s*\n---\n([\s\S]*?)\n---/g;
         let remainingText = text.replace(sqRegex, (match, fullType, content) => {
-            // Handle both old format (type only) and new format (type:title)
-            const parts = fullType.trim().split(':');
-            const type = parts[0];
-            const title = parts[1] || '';
-            
-            if (title) {
-                // New format: type:title
-                sideQuestContentMap.set(`${type}:${title}`, content.trim());
-            } else {
-                // Old format: type only (for backward compatibility)
-                sideQuestContentMap.set(type, content.trim());
-            }
+            // fullType can be like "type:title|next=...|back=..."
+            const firstColon = fullType.indexOf(':');
+            const type = firstColon >= 0 ? fullType.slice(0, firstColon).trim() : fullType.trim();
+            const rest = firstColon >= 0 ? fullType.slice(firstColon + 1) : '';
+            const barIdx = rest.indexOf('|');
+            const title = (barIdx >= 0 ? rest.slice(0, barIdx) : rest).trim();
+            const optsStr = barIdx >= 0 ? rest.slice(barIdx + 1) : '';
+            const opts = {};
+            optsStr.split('|').forEach(p => {
+                const [k, ...vparts] = p.split('=');
+                if (!k || vparts.length === 0) return;
+                opts[k.trim()] = vparts.join('=').trim();
+            });
+            const raw = (content || '').trim();
+            const parts = raw.length ? raw.split(/\n\[sq-card-separator\]\n/) : [''];
+            const cardObjs = parts.map(p => {
+                let t = p.trim();
+                let nextLabel = '';
+                let prevLabel = '';
+                let title = '';
+                const lines = t.split('\n');
+                while (lines.length && /^\[(next|prev|title):/.test(lines[0].trim())) {
+                    const m = lines.shift().trim().match(/^\[(next|prev|title):\s*(.+?)\]$/);
+                    if (m) {
+                        if (m[1] === 'next') nextLabel = m[2]; else if (m[1] === 'prev') prevLabel = m[2]; else title = m[2];
+                    } else { break; }
+                }
+                return { content: lines.join('\n').trim(), nextLabel, prevLabel, title };
+            });
+            const key = title ? `${type}:${title}` : type;
+            sideQuestContentMap.set(key, { cards: cardObjs, nextLabel: opts.next || '', backLabel: opts.back || '' });
             return '';
         });
 
@@ -279,28 +351,31 @@ document.addEventListener('DOMContentLoaded', () => {
                     } else if (sqMatch) {
                         const [, buttonText, type, title] = sqMatch;
                         // Try multiple matching strategies for content lookup
-                        let content = sideQuestContentMap.get(`${type}:${title}`);
+                        let meta = sideQuestContentMap.get(`${type}:${title}`);
                         
-                        if (!content) {
+                        if (!meta) {
                             // Try to find content by partial title match (for legacy compatibility)
                             for (const [key, value] of sideQuestContentMap.entries()) {
                                 if (key.startsWith(`${type}:`)) {
                                     const keyTitle = key.split(':', 2)[1];
                                     // Check if either title contains the other (partial match)
                                     if (title.includes(keyTitle) || keyTitle.includes(title)) {
-                                        content = value;
+                                        meta = value;
                                         break;
                                     }
                                 }
                             }
                         }
                         
-                        if (!content) {
+                        if (!meta) {
                             // Final fallback to type-only match
-                            content = sideQuestContentMap.get(type) || '';
+                            meta = sideQuestContentMap.get(type) || { cards: [''], nextLabel: '', backLabel: '' };
                         }
                         
-                        currentBlock.sideQuests.push({ type, title, buttonText, content });
+                        const cards = Array.isArray(meta) ? meta : (meta.cards || ['']);
+                        const nextLabel = meta.nextLabel || '';
+                        const backLabel = meta.backLabel || '';
+                        currentBlock.sideQuests.push({ type, title, buttonText, cards, nextLabel, backLabel });
                     } else if (linkMatch) {
                         const [, buttonText, url] = linkMatch;
                         if (!currentBlock.links) currentBlock.links = [];
@@ -309,7 +384,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     const [key, ...valueParts] = line.split(':');
                     if (valueParts.length > 0) {
-                        const value = valueParts.join(':').trim();
+                        let value = valueParts.join(':').trim();
+                        if (key.trim() === 'title') { value = value.replace(/<br>/g, '\n'); }
                         currentBlock[key.trim()] = key.trim() === 'id' ? parseInt(value) : value;
                     }
                 }
@@ -317,9 +393,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (currentBlock) mainNodes.push(currentBlock);
 
-        mainNodes.forEach(node => {
-            if (node.content) node.content = node.content.trim();
-        });
+        mainNodes.forEach(node => { if (node.content) node.content = node.content.trim(); });
         
         return mainNodes;
     }
@@ -348,15 +422,18 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (nodeType === 'flip-cards') {
                 // Parse flip card content and populate the flip card editor
-                const flipCards = parseFlipCardContent(content);
+                const parsed = parseFlipCardContent(content);
                 const flipEditor = nodeCard.querySelector('.flip-cards-editor');
                 const flipCardsContainer = flipEditor.querySelector('.flip-cards-container');
+                // Intro
+                const introArea = flipEditor.querySelector('.flip-intro');
+                introArea.value = parsed.intro || '';
                 
                 // Clear existing flip cards
                 flipCardsContainer.innerHTML = '';
                 
                 // Add each flip card
-                flipCards.forEach(card => {
+                parsed.cards.forEach(card => {
                     const cardTemplate = document.getElementById('flip-card-template');
                     const newCard = cardTemplate.content.cloneNode(true);
                     newCard.querySelector('.flip-card-front').value = card.front;
@@ -374,7 +451,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             nodeData.sideQuests.forEach(sq => {
-                addSideQuestToNode(nodeCard, sq.buttonText, sq.type, sq.title, sq.content);
+                addSideQuestToNode(nodeCard, sq.buttonText, sq.type, sq.title, Array.isArray(sq.cards) ? sq.cards : (sq.content ? [sq.content] : ['']), sq.nextLabel || '', sq.backLabel || '');
             });
 
             if (nodeData.links) {
@@ -390,8 +467,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function parseFlipCardContent(content) {
+        const result = { intro: '', cards: [] };
+        if (!content) return result;
+        let working = content;
+        // Support explicit intro block
+        const introMatch = working.match(/\[intro\]\n([\s\S]*?)\n\[\/intro\]\n?/);
+        if (introMatch) {
+            result.intro = introMatch[1].trim();
+            working = working.replace(introMatch[0], '');
+        } else {
+            // Or treat any preface text before first [card] as intro
+            const firstCardIdx = working.indexOf('[card]');
+            if (firstCardIdx > 0) {
+                result.intro = working.slice(0, firstCardIdx).trim();
+                working = working.slice(firstCardIdx);
+            }
+        }
         const cards = [];
-        const cardBlocks = content.split('[card-separator]');
+        const cardBlocks = working.split('[card-separator]');
         
         cardBlocks.forEach(block => {
             const trimmedBlock = block.trim();
@@ -439,7 +532,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         
-        return cards;
+        result.cards = cards;
+        return result;
     }
     // --- END: NEW, ROBUST PARSER ---
     
@@ -451,22 +545,78 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const altText = prompt("Enter a short description (alt text):", "image");
             
-            const size = prompt("Enter image size (e.g., x-small, small, medium, large, or a custom height like '150px'):", "large");
+            const size = prompt("Enter image size (e.g., x-small, small, medium, large, third, or a custom height like '150px'):", "large");
             if (!size) return;
             
             const align = prompt("Enter image alignment (left, center, right, or stack-right):", "center");
             if (!align) return;
+            const border = prompt("Frame? Type 'none' for no border/shadow, or leave blank:", "");
 
             let attributes = [];
             if (size) attributes.push(`size:${size.trim()}`);
             if (align && ['left', 'center', 'right', 'stack-right'].includes(align.trim())) {
                 attributes.push(`align:${align.trim()}`);
             }
+            if (border && border.trim().length) attributes.push(`frame:${border.trim()}`);
             
             const markdown = `![${altText}/${attributes.join('/')}](${imageFile})`;
             insertTextAtCursor(e.target, markdown);
         }
+
+        if (e.target.classList.contains('add-video-btn')) {
+            const videoFile = prompt("Enter the video filename (e.g., motion.mp4):");
+            if (!videoFile) return;
+
+            const altText = prompt("Enter a short description (alt text):", "motion graphic");
+            
+            const size = prompt("Enter video size (e.g., small, medium, large, third, or '300px'):", "medium");
+            if (!size) return;
+            
+            const align = prompt("Enter video alignment (left, center, right, or stack-right):", "stack-right");
+            if (!align) return;
+            const border = prompt("Frame? Type 'none' for no border/shadow, or leave blank:", "");
+
+            let attributes = [];
+            if (size) attributes.push(`size:${size.trim()}`);
+            if (align && ['left', 'center', 'right', 'stack-right'].includes(align.trim())) {
+                attributes.push(`align:${align.trim()}`);
+            }
+            if (border && border.trim().length) attributes.push(`frame:${border.trim()}`);
+            
+            const markdown = `![video:${altText}/${attributes.join('/')}](${videoFile})`;
+            insertTextAtCursor(e.target, markdown);
+        }
         
+        if (e.target.classList.contains('add-image-row-btn')) {
+            const countStr = prompt("How many images in the row? (2-4)", "3");
+            if (!countStr) return; const count = Math.max(2, Math.min(4, parseInt(countStr, 10) || 3));
+            const sizeDefault = count === 4 ? 'fourth' : (count === 3 ? 'third' : (count === 2 ? 'medium' : 'small'));
+            const size = prompt("Enter image size for the row (e.g., fourth, third, small, medium, large or '200px'):", sizeDefault);
+            if (!size) return;
+            const align = prompt("Enter row alignment (left, center, right):", "center");
+            if (!align) return;
+            const border = prompt("Frame? Type 'none' for no border/shadow, or leave blank for default:", "none");
+            const parts = [];
+            for (let i = 1; i <= count; i++) {
+                const file = prompt(`Image ${i} filename (e.g., img${i}.png):`);
+                if (!file) return; // cancel if any missing
+                const alt = prompt(`Image ${i} alt text:`, `image ${i}`) || `image ${i}`;
+                const attrs = [`size:${size.trim()}`, `align:${align.trim()}`];
+                if (border && border.trim().length) attrs.push(`frame:${border.trim()}`);
+                parts.push(`![${alt}/${attrs.join('/')}](${file})`);
+            }
+            const row = parts.join(' ') + '\n';
+            insertTextAtCursor(e.target, row);
+        }
+
+        if (e.target.classList.contains('add-quote-btn')) {
+            const quote = prompt('Quote text:', 'We can now document exactly how we optimize the warehouse and show management exactly what is working and what is not');
+            if (!quote) return;
+            const author = prompt('Attribution (e.g., Name, Title or Company):', 'Purchasing manager at Aubo') || '';
+            const block = `\n[quote]\ntext: ${quote}\nauthor: ${author}\n[/quote]\n`;
+            insertTextAtCursor(e.target, block);
+        }
+
         if (e.target.classList.contains('add-list-btn')) {
             const listMarkdown = "\n* List item 1\n* List item 2\n";
             insertTextAtCursor(e.target, listMarkdown);
@@ -479,6 +629,16 @@ document.addEventListener('DOMContentLoaded', () => {
             insertTextAtCursor(e.target, ` [button:${label}](${url}) `);
         }
 
+        if (e.target.classList.contains('add-sq-card-btn')) {
+            const area = e.target.closest('.sidequest-content-area');
+            if (!area) return;
+            const wrap = document.createElement('div');
+            wrap.className = 'sq-card-wrap';
+            wrap.style.marginBottom = '10px';
+            wrap.innerHTML = `<div style="display:flex; gap:10px; margin: 5px 0;"><input type="text" class="sq-card-title" placeholder="Card title (optional)" style="flex:1;"></div><div style="display:flex; gap:10px; margin: 5px 0;"><input type="text" class="sq-card-next-label" placeholder="Next label (optional)" style="flex:1;"><input type="text" class="sq-card-prev-label" placeholder="Previous label (optional)" style="flex:1;"></div><textarea class="sq-content" placeholder="Card content. You can paste URLs, add lists, images, etc." required></textarea>`;
+            area.appendChild(wrap);
+        }
+
         if (e.target.classList.contains('add-flip-card-btn')) {
             const container = e.target.previousElementSibling;
             const cardTemplate = document.getElementById('flip-card-template');
@@ -487,15 +647,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function insertTextAtCursor(buttonElement, textToInsert) {
-        const parent = buttonElement.closest('.label-with-button, .sidequest-content-area');
-        const textarea = parent.nextElementSibling.tagName === 'TEXTAREA' ? parent.nextElementSibling : parent.querySelector('textarea');
-        
-        const start = textarea.selectionStart;
-        const end = textarea.selectionEnd;
-        const text = textarea.value;
+        // Prefer a textarea inside the sidequest content area, falling back to standard node textarea
+        const sqArea = buttonElement.closest('.sidequest-content-area');
+        let textarea = null;
+        if (sqArea) {
+            // Use the focused textarea if it's inside this area; otherwise the first card textarea
+            const active = document.activeElement && sqArea.contains(document.activeElement) && document.activeElement.tagName === 'TEXTAREA' ? document.activeElement : null;
+            textarea = active || sqArea.querySelector('textarea:focus') || sqArea.querySelector('.sq-card-wrap textarea') || sqArea.querySelector('textarea');
+        } else {
+            const labelWrap = buttonElement.closest('.label-with-button');
+            if (labelWrap && labelWrap.nextElementSibling && labelWrap.nextElementSibling.tagName === 'TEXTAREA') {
+                textarea = labelWrap.nextElementSibling;
+            } else if (labelWrap) {
+                const container = labelWrap.parentElement || document;
+                textarea = container.querySelector('textarea');
+            }
+        }
+        if (!textarea) return;
+        const start = textarea.selectionStart ?? 0;
+        const end = textarea.selectionEnd ?? 0;
+        const text = textarea.value || '';
         textarea.value = text.substring(0, start) + textToInsert + text.substring(end);
         textarea.focus();
-        textarea.selectionStart = textarea.selectionEnd = start + textToInsert.length;
+        const caret = start + textToInsert.length;
+        textarea.selectionStart = textarea.selectionEnd = caret;
     }
 
     if (nodesContainer.children.length === 0) addNewNode();
@@ -519,7 +694,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let finalOutput = '# Auto-generated by FlowScript Course Creator\n\n'; const sideQuestContentMap = new Map();
         document.querySelectorAll('.node-card').forEach(card => {
             const id = card.querySelector('.node-id').value;
-            const title = card.querySelector('.node-title').value;
+            const title = card.querySelector('.node-title').value.replace(/\n/g, '<br>');
             const type = card.querySelector('.node-type').value;
             
             if (!id) return;
@@ -527,6 +702,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let content = '';
             if (type === 'flip-cards') {
                 const flipCards = [];
+                const intro = card.querySelector('.flip-intro')?.value || '';
                 card.querySelectorAll('.flip-card-row').forEach(row => {
                     const front = row.querySelector('.flip-card-front').value;
                     const back = row.querySelector('.flip-card-back').value;
@@ -534,7 +710,10 @@ document.addEventListener('DOMContentLoaded', () => {
                        flipCards.push(`[card]\nfront: ${front}\nback: ${back}`);
                     }
                 });
-                content = flipCards.join('\n[card-separator]\n');
+                const cardsJoined = flipCards.join('\n[card-separator]\n');
+                content = (intro && intro.trim().length)
+                    ? `[intro]\n${intro.trim()}\n[/intro]\n${cardsJoined}`
+                    : cardsJoined;
             } else {
                 content = card.querySelector('.node-content').value;
             }
@@ -543,13 +722,26 @@ document.addEventListener('DOMContentLoaded', () => {
             
             card.querySelectorAll('.connection-row').forEach(conn => { const text = conn.querySelector('.conn-text').value, target = conn.querySelector('.conn-target').value; if(text && target) finalOutput += `> ${text} -> ${target}\n`; });
             card.querySelectorAll('.sidequest-row').forEach(sq => {
-                const btnText = sq.querySelector('.sq-btn-text').value, type = sq.querySelector('.sq-type').value, sqTitle = sq.querySelector('.sq-title').value, sqContent = sq.querySelector('.sq-content').value;
+                const btnText = sq.querySelector('.sq-btn-text').value, type = sq.querySelector('.sq-type').value, sqTitle = sq.querySelector('.sq-title').value;
+                const nextLabel = (sq.querySelector('.sq-next-label').value || '').trim();
+                const backLabel = (sq.querySelector('.sq-back-label').value || '').trim();
+                const wraps = Array.from(sq.querySelectorAll('.sq-card-wrap'));
+                const cards = wraps.map(w => {
+                    const title = (w.querySelector('.sq-card-title').value || '').trim();
+                    const n = (w.querySelector('.sq-card-next-label').value || '').trim();
+                    const p = (w.querySelector('.sq-card-prev-label').value || '').trim();
+                    const body = (w.querySelector('.sq-content').value || '').trim();
+                    const meta = [];
+                    if (title.length) meta.push(`[title: ${title}]`);
+                    if (n.length) meta.push(`[next: ${n}]`);
+                    if (p.length) meta.push(`[prev: ${p}]`);
+                    return (meta.length ? meta.join('\n') + '\n' : '') + body;
+                }).filter(v => v.length > 0);
                 if (btnText && type && sqTitle) { 
                     finalOutput += `> ${btnText} -> [${type}:${sqTitle}]\n`; 
-                    if (sqContent) {
-                        // Use type:title as the unique key to handle multiple side quests of the same type
+                    if (cards.length) {
                         const uniqueKey = `${type}:${sqTitle}`;
-                        sideQuestContentMap.set(uniqueKey, sqContent.trim()); 
+                        sideQuestContentMap.set(uniqueKey, { cards: cards.join('\n[sq-card-separator]\n'), nextLabel, backLabel });
                     }
                 }
             });
@@ -564,9 +756,14 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             finalOutput += '\n';
         });
-        sideQuestContentMap.forEach((content, uniqueKey) => { 
+        sideQuestContentMap.forEach((meta, uniqueKey) => { 
             const [type, title] = uniqueKey.split(':', 2);
-            finalOutput += `[side-quest-content:${type}:${title}]\n---\n${content}\n---\n\n`; 
+            const opts = [];
+            if (meta.nextLabel && meta.nextLabel.length) opts.push(`next=${meta.nextLabel}`);
+            if (meta.backLabel && meta.backLabel.length) opts.push(`back=${meta.backLabel}`);
+            const optsStr = opts.length ? `|${opts.join('|')}` : '';
+            const content = typeof meta === 'string' ? meta : meta.cards;
+            finalOutput += `[side-quest-content:${type}:${title}${optsStr}]\n---\n${content}\n---\n\n`; 
         });
         outputText.value = finalOutput.trim(); downloadBtn.style.display = 'inline-block'; alert('Course text generated!');
     });
