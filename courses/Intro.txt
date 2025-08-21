@@ -134,10 +134,11 @@ author: Head of Operations at Hans Følsgaard
 
 **Let’s get started!**
 ---
-> Continue to flow 1 - Double ABC Analysis -> [link:newtab:newtab:newtab:https://eliasreuss.github.io/interactive-courses-prototype/index.html?course=Double-ABC-Analysis.txt]
+> Continue to flow 1 - Double ABC Analysis -> [link:newtab:https://eliasreuss.github.io/interactive-courses-prototype/index.html?course=Double-ABC-Analysis.txt]
 
 [side-quest-content:video:Webinar]
 ---
+[title: Webinar: Complexity kills growth - Fit for Growth]
 How do you handle a growing number of products and product variants, and create a common language across purchasing, logistics, and sales?
 
 In the webinar, Professor Lars Hvam presents methods for analyzing and managing an expanding portfolio of products and product variants, with a case from Rockwool.
@@ -147,6 +148,7 @@ In the webinar, Professor Lars Hvam presents methods for analyzing and managing 
 
 [side-quest-content:case:Blog post]
 ---
+[title: Blog post: Complexity kills growth in your organisation]
 Studies show that complexity can eat up to 40 percent of a company’s profits. Complexity only adds value up to a certain point, after which the value of complexity will decline.
 
 Read the blog post to learn more. [button:Read blog post](https://inact.io/blog/kompleksitet-draeber-vaeksten-i-din-forretning/)
