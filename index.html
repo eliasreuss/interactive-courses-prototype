@@ -1085,7 +1085,9 @@
                     } else if (linkMatch) {
                         const [, buttonText, targetOpt, url] = linkMatch;
                         if (!currentBlock.links) currentBlock.links = [];
-                        currentBlock.links.push({ buttonText: buttonText.trim(), url: url.trim().replace(/\]$/, ''), target: (targetOpt || 'newtab').trim() });
+                        const rawUrl = url.trim().replace(/\]$/, '');
+                        const sanitizedUrl = rawUrl.replace(/^newtab:/i, '').replace(/^embed:/i, '');
+                        currentBlock.links.push({ buttonText: buttonText.trim(), url: sanitizedUrl, target: (targetOpt || 'newtab').trim() });
                     }
                 } else {
                     const [key, ...valueParts] = line.split(':');
