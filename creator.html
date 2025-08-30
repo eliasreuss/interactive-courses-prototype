@@ -60,10 +60,17 @@
 <!-- TEMPLATES (hidden) -->
 <template id="node-template">
     <div class="node-card">
+        <button class="add-node-below-btn" style="float: right; margin-right: 8px;">Add Node Below</button>
+        <button class="add-node-above-btn" style="float: right; margin-right: 8px;">Add Node Above</button>
         <button class="btn-remove" style="float: right;">Remove Node</button>
         <h3>Node Details</h3>
         <label>Node ID:</label><input type="number" class="node-id" required>
         <label>Node Title:</label><textarea class="node-title" rows="2" placeholder="Use **text** for bold."></textarea>
+        <label>Title Alignment:</label>
+        <select class="node-title-align">
+            <option value="left" selected>Left</option>
+            <option value="center">Center</option>
+        </select>
         <label>Node Type:</label>
         <select class="node-type">
             <option value="main" selected>Standard Content</option>
@@ -199,12 +206,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // The functions for adding nodes, connections, parsing, etc., are all the same.
     // ... (All previous JS functions from last correct answer go here) ...
-    function addNewNode(id = null, title = '', content = '') {
+    function addNewNode(id = null, title = '', content = '', titleAlign = 'left', insertBeforeElement = null) {
         const nodeCard = nodeTemplate.content.cloneNode(true).querySelector('.node-card');
         nodeCard.querySelector('.node-id').value = id !== null ? id : nodeIdCounter++;
         nodeCard.querySelector('.node-title').value = title;
-        nodeCard.querySelector('.node-content').value = content;
-        nodesContainer.appendChild(nodeCard);
+        const alignSel = nodeCard.querySelector('.node-title-align');
+        if (alignSel) alignSel.value = (titleAlign === 'center') ? 'center' : 'left';
+        const contentArea = nodeCard.querySelector('.node-content');
+        if (contentArea) contentArea.value = content;
+        if (insertBeforeElement && insertBeforeElement.parentElement === nodesContainer) {
+            nodesContainer.insertBefore(nodeCard, insertBeforeElement);
+        } else {
+            nodesContainer.appendChild(nodeCard);
+        }
         return nodeCard;
     }
     function addConnectionToNode(nodeCard, text = '', target = '') {
@@ -386,6 +400,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (valueParts.length > 0) {
                         let value = valueParts.join(':').trim();
                         if (key.trim() === 'title') { value = value.replace(/<br>/g, '\n'); }
+                        if (key.trim() === 'title-align') { currentBlock['title-align'] = value.toLowerCase(); continue; }
                         currentBlock[key.trim()] = key.trim() === 'id' ? parseInt(value) : value;
                     }
                 }
@@ -414,7 +429,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 nodeType = 'flip-cards';
             }
             
-            const nodeCard = addNewNode(nodeData.id, nodeData.title, content);
+            const nodeCard = addNewNode(nodeData.id, nodeData.title, content, (nodeData['title-align'] || 'left'));
             
             // Set the node type and handle flip card content
             const typeSelect = nodeCard.querySelector('.node-type');
@@ -548,13 +563,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const size = prompt("Enter image size (e.g., x-small, small, medium, large, third, or a custom height like '150px'):", "large");
             if (!size) return;
             
-            const align = prompt("Enter image alignment (left, center, right, or stack-right):", "center");
+            const align = prompt("Enter image alignment (left, center, right, stack-right, or stack-right-top):", "center");
             if (!align) return;
             const border = prompt("Frame? Type 'none' for no border/shadow, or leave blank:", "");
 
             let attributes = [];
             if (size) attributes.push(`size:${size.trim()}`);
-            if (align && ['left', 'center', 'right', 'stack-right'].includes(align.trim())) {
+            if (align && ['left', 'center', 'right', 'stack-right', 'stack-right-top'].includes(align.trim())) {
                 attributes.push(`align:${align.trim()}`);
             }
             if (border && border.trim().length) attributes.push(`frame:${border.trim()}`);
@@ -564,7 +579,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (e.target.classList.contains('add-video-btn')) {
-            const videoFile = prompt("Enter the video filename (e.g., motion.mp4):");
+            const videoFile = prompt("Enter the video filename (e.g., motion.mp4 or animation.json):");
             if (!videoFile) return;
 
             const altText = prompt("Enter a short description (alt text):", "motion graphic");
@@ -572,18 +587,20 @@ document.addEventListener('DOMContentLoaded', () => {
             const size = prompt("Enter video size (e.g., small, medium, large, third, or '300px'):", "medium");
             if (!size) return;
             
-            const align = prompt("Enter video alignment (left, center, right, or stack-right):", "stack-right");
+            const align = prompt("Enter video alignment (left, center, right, stack-right, or stack-right-top):", "stack-right");
             if (!align) return;
             const border = prompt("Frame? Type 'none' for no border/shadow, or leave blank:", "");
 
             let attributes = [];
             if (size) attributes.push(`size:${size.trim()}`);
-            if (align && ['left', 'center', 'right', 'stack-right'].includes(align.trim())) {
+            if (align && ['left', 'center', 'right', 'stack-right', 'stack-right-top'].includes(align.trim())) {
                 attributes.push(`align:${align.trim()}`);
             }
             if (border && border.trim().length) attributes.push(`frame:${border.trim()}`);
             
-            const markdown = `![video:${altText}/${attributes.join('/')}](${videoFile})`;
+            const isJson = /\.json(\?|$)/i.test(videoFile.trim());
+            const mediaType = isJson ? 'lottie' : 'video';
+            const markdown = `![${mediaType}:${altText}/${attributes.join('/')}](${videoFile})`;
             insertTextAtCursor(e.target, markdown);
         }
         
@@ -680,6 +697,15 @@ document.addEventListener('DOMContentLoaded', () => {
         else if (e.target.classList.contains('add-connection-btn')) addConnectionToNode(e.target.closest('.node-card'));
         else if (e.target.classList.contains('add-sidequest-btn')) addSideQuestToNode(e.target.closest('.node-card'));
         else if (e.target.classList.contains('add-link-btn')) addLinkToNode(e.target.closest('.node-card'));
+        else if (e.target.classList.contains('add-node-above-btn')) {
+            const currentCard = e.target.closest('.node-card');
+            addNewNode(null, '', '', 'left', currentCard);
+        }
+        else if (e.target.classList.contains('add-node-below-btn')) {
+            const currentCard = e.target.closest('.node-card');
+            const next = currentCard.nextElementSibling;
+            addNewNode(null, '', '', 'left', next);
+        }
     });
     fileInput.addEventListener('change', (e) => {
         const file = e.target.files[0]; if (!file) return;
@@ -695,6 +721,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.node-card').forEach(card => {
             const id = card.querySelector('.node-id').value;
             const title = card.querySelector('.node-title').value.replace(/\n/g, '<br>');
+            const titleAlign = (card.querySelector('.node-title-align')?.value || 'left');
             const type = card.querySelector('.node-type').value;
             
             if (!id) return;
@@ -718,7 +745,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 content = card.querySelector('.node-content').value;
             }
 
-            finalOutput += `id: ${id}\ntitle: ${title}\ntype: ${type}\n---\n${content.trim()}\n---\n`;
+            const alignLine = (titleAlign === 'center') ? `title-align: center\n` : '';
+            finalOutput += `id: ${id}\ntitle: ${title}\n${alignLine}type: ${type}\n---\n${content.trim()}\n---\n`;
             
             card.querySelectorAll('.connection-row').forEach(conn => { const text = conn.querySelector('.conn-text').value, target = conn.querySelector('.conn-target').value; if(text && target) finalOutput += `> ${text} -> ${target}\n`; });
             card.querySelectorAll('.sidequest-row').forEach(sq => {

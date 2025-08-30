@@ -22,6 +22,7 @@
     .container { display: flex; height: 100vh; width: 100vw; box-sizing: border-box; }
     #flow-map-container {
       width: 400px; min-width: 0; background: var(--color-bg); display: flex; flex-direction: column; position: relative; cursor: grab; flex-shrink: 0;
+      transition: width 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), padding 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
     }
     #flow-map-container.collapsed { width: 0 !important; padding: 0; border: none; }
     #flow-map-container:active { cursor: grabbing; }
@@ -32,14 +33,26 @@
     }
     #resizer { width: 8px; height: 100%; position: absolute; right: 0; top: 0; cursor: col-resize; background: transparent; z-index: 20; }
     #close-sidebar-btn {
-      position: absolute; top: 10px; right: 10px; width: 24px; height: 24px; background: rgba(0,0,0,0.1); border: none; border-radius: 50%;
-      color: #333; cursor: pointer; font-size: 16px; line-height: 24px; text-align: center; z-index: 21; opacity: 0.5; transition: opacity 0.2s, background 0.2s;
+      position: absolute; right: 10px; top: 50%; transform: translateY(-50%) scaleX(-1);
+      padding: 8px 12px; background: var(--color-card-bg);
+      border: 1px solid #eee; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer; z-index: 30;
     }
-    #close-sidebar-btn:hover { opacity: 1; background: rgba(0,0,0,0.2); }
+    #close-sidebar-btn:hover { background: #f7f7f7; }
     #open-sidebar-btn {
       display: none; position: absolute; left: 10px; top: 50%; transform: translateY(-50%); padding: 8px 12px; background: var(--color-card-bg);
       border: 1px solid #eee; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer; z-index: 30;
     }
+    #open-sidebar-tip {
+      position: absolute; left: 48px; top: 50%; transform: translateY(-50%) translateX(-8px);
+      background: #333; color: #fff; padding: 8px 10px; border-radius: 8px; font-size: 0.9rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2); opacity: 0; visibility: hidden; transition: opacity 0.28s ease, transform 0.28s ease;
+      pointer-events: none; z-index: 31;
+    }
+    #open-sidebar-tip::before {
+      content: ''; position: absolute; left: -8px; top: 50%; transform: translateY(-50%);
+      border-width: 8px; border-style: solid; border-color: transparent #333 transparent transparent;
+    }
+    #open-sidebar-tip.visible { opacity: 1; visibility: visible; transform: translateY(-50%) translateX(0); }
     #tooltip {
       position: absolute; visibility: hidden; background-color: #333; color: #fff; padding: 8px 12px; border-radius: 6px;
       font-size: 0.9rem; pointer-events: none; transition: opacity 0.2s; opacity: 0; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
@@ -53,9 +66,9 @@
     }
     #content-card {
       width: 100%; height: 100%; background: var(--color-card-bg); border-radius: 18px; box-shadow: 0 4px 32px 0 rgba(60,60,60,0.07);
-      padding: 40px 36px 32px 36px; display: flex; flex-direction: column; overflow-y: auto; box-sizing: border-box;
+      padding: 40px 36px 24px 36px; display: flex; flex-direction: column; overflow-y: auto; box-sizing: border-box;
     }
-    #card-text-content { flex-grow: 1; }
+    #card-text-content { flex-grow: 1; padding-bottom: 24px; }
     #card-title { font-size: 2rem; font-weight: normal; margin-bottom: 24px; color: var(--color-primary-text); }
     #card-content { font-size: 1.1rem; color: var(--color-primary-text); white-space: pre-wrap; line-height: 1.5; overflow-wrap: break-word; }
     #card-content p { margin: 0 0 0.15em 0; }
@@ -131,6 +144,12 @@
         object-fit: contain;
         display: block;
     }
+    /* Lottie container sizing */
+    .img-container .lottie-anim {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
 
     /* Alignment for the container of a line of images */
     .content-images-container.align-left { justify-content: flex-start; }
@@ -141,12 +160,17 @@
     .content-with-stacked-images {
       display: flex; gap: 30px; align-items: center;
     }
+    /* Optional top-aligned variant for stack-right layouts */
+    .content-with-stacked-images.top-aligned {
+      align-items: flex-start;
+    }
     .content-with-stacked-images .text-content {
       flex: 1; /* Take up remaining space */
     }
     .content-with-stacked-images .stacked-images {
       display: flex; flex-direction: column; gap: 15px; flex-shrink: 0; max-width: clamp(320px, 45%, 800px);
       margin-top: 0; /* Align with top of text content */
+      margin-left: auto; /* Always keep media anchored to the right */
     }
     .content-with-stacked-images .stacked-images img { display: block; }
     .content-with-stacked-images .stacked-images .img-container {
@@ -214,10 +238,14 @@
     /* --- End Flip Card Styles --- */
     
     #card-buttons {
+        position: sticky;
+        bottom: 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-top: 24px;
+        padding: 12px 0;
+        z-index: 2;
     }
     #card-buttons-left, #card-buttons-right {
         display: flex;
@@ -230,6 +258,37 @@
       box-shadow: 0 2px 8px 0 rgba(255,90,0,0.15);
     }
     #card-buttons button:hover { background: #e04e00; }
+
+    /* Custom styles for main path navigation buttons */
+    #card-buttons .btn-primary {
+      background: #FF5A00; color: #fff; border: none; border-radius: 500px; padding: 10px 24px;
+      font-size: 14px; font-family: var(--font-family); font-weight: 600; line-height: 1.2;
+      display: inline-flex; align-items: center; gap: 12px; box-shadow: 0 2px 8px rgba(255,90,0,0.18);
+      transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    /* Chevron SVGs will be inserted in markup; no pseudo-element needed */
+    #card-buttons .btn-primary:hover { background: #e04e00; box-shadow: 0 4px 12px rgba(255,90,0,0.28); transform: translateY(-1px); }
+    #card-buttons .btn-primary svg { width: 10px; height: 16px; }
+
+    /* Sidequest buttons (green) */
+    #card-buttons .btn-sidequest {
+      background: #304642; color: #fff; border: none; border-radius: 500px; padding: 10px 24px;
+      font-size: 14px; font-family: var(--font-family); font-weight: 600; line-height: 1.2;
+      display: inline-flex; align-items: center; gap: 12px; box-shadow: 0 2px 8px rgba(48,70,66,0.18);
+      transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    #card-buttons .btn-sidequest:hover { background: #2a3c39; box-shadow: 0 4px 12px rgba(48,70,66,0.28); transform: translateY(-1px); }
+
+    #card-buttons .btn-prev {
+      background: #fff; color: #8A8A8A; border: 1px solid #8A8A8A; border-radius: 500px; padding: 10px 24px;
+      font-size: 14px; font-family: var(--font-family); font-weight: 600; line-height: 1.2;
+      display: inline-flex; align-items: center; gap: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: background 0.2s, box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+    }
+    /* Chevron SVG will be inserted in markup; no pseudo-element needed */
+    #card-buttons .btn-prev:hover { background: #fff; border-color: #6f6f6f; box-shadow: 0 4px 12px rgba(0,0,0,0.10); transform: translateY(-1px); }
+    #card-buttons .btn-prev svg { width: 10px; height: 16px; }
+
     .resource-link-btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 10px; margin-top: 20px; padding: 12px 28px;
       background-color: var(--color-accent); color: white; text-decoration: none; border-radius: 50px; font-weight: 600;
@@ -292,18 +351,30 @@
         }
         /* Media query for responsive is unchanged */
     }
+
+    /* Sidebar open: give more separation and slightly narrower text column */
+    #flow-map-container:not(.collapsed) ~ #content-area #content-card .content-with-stacked-images { gap: 40px; }
+    #flow-map-container:not(.collapsed) ~ #content-area #content-card .content-with-stacked-images .text-content { flex: 0 1 52ch; max-width: 52ch; }
+    #flow-map-container:not(.collapsed) ~ #content-area #content-card .content-with-stacked-images .stacked-images { max-width: clamp(320px, 48%, 760px); }
+
+    /* Sidebar closed: add more side padding on the card and bring text/media closer */
+    #flow-map-container.collapsed ~ #content-area #content-card { padding-left: 56px; padding-right: 56px; }
+    #flow-map-container.collapsed ~ #content-area #content-card .content-with-stacked-images { gap: 22px; }
+    #flow-map-container.collapsed ~ #content-area #content-card .content-with-stacked-images .text-content { flex: 1 1 70ch; max-width: 70ch; }
+    #flow-map-container.collapsed ~ #content-area #content-card .content-with-stacked-images .stacked-images { max-width: clamp(340px, 44%, 820px); }
   </style>
 </head>
 <body>
   <div class="container">
-    <div id="flow-map-container">
+    <div id="flow-map-container" class="collapsed">
       <svg id="flow-map-svg"></svg>
       <div id="tooltip"></div>
       <div id="resizer"></div>
-      <button id="close-sidebar-btn" title="Close Flow Map">×</button>
+      <button id="close-sidebar-btn" title="Close Flow Map">➔</button>
     </div>
     <div id="content-area">
         <button id="open-sidebar-btn" title="Open Flow Map">➔</button>
+        <div id="open-sidebar-tip" role="status" aria-live="polite">Click to open flow path</div>
         <div id="content-card">
             <div id="card-text-content">
                 <h2 id="card-title">Loading...</h2>
@@ -327,6 +398,7 @@
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script src="https://unpkg.com/lottie-web@5.12.2/build/player/lottie.min.js"></script>
   <script>
     function renderContent(element, text, nodeType = 'main') {
         if (nodeType === 'flip-cards') {
@@ -381,7 +453,7 @@
         }).trim();
 
         // Normalize alias syntax: [image/...](file) or [video/...](file) -> ![image/...](file)
-        strippedContent = strippedContent.replace(/\[(image|video)([^\]]*)\]\(([^)]+)\)/gi, '![$1$2]($3)');
+        strippedContent = strippedContent.replace(/\[(image|video|lottie)([^\]]*)\]\(([^)]+)\)/gi, '![$1$2]($3)');
 
         // --- Handle special content types first (YouTube, links) ---
         const youtubeRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]{11})/;
@@ -406,7 +478,7 @@
         const allImages = [...strippedContent.matchAll(imageRegex)];
         const hasStackedMedia = allImages.some(img => {
             const attrs = img[1].split('/').slice(1);
-            return attrs.some(attr => attr.includes('align:stack-right'));
+            return attrs.some(attr => attr.includes('align:stack-right') || attr.includes('align:stack-right-top'));
         });
  
         if (hasStackedMedia) {
@@ -442,8 +514,11 @@
                     if (isStacked) {
                         hasStackedOnThisLine = true;
                         const typeAndAlt = allData[0].split(':');
-                        const isVideo = typeAndAlt[0] === 'video';
-                        const altText = isVideo ? typeAndAlt.slice(1).join(':').trim() : allData[0].trim();
+                        const mediaType = typeAndAlt[0];
+                        const isVideo = mediaType === 'video';
+                        const fileRef = match[2];
+                        const isLottie = mediaType === 'lottie' || /\.json(\?|$)/i.test(fileRef);
+                        const altText = (isVideo || isLottie) ? typeAndAlt.slice(1).join(':').trim() : allData[0].trim();
                         
                         const v = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? Date.now() : '1.0';
                         const src = `images/${match[2]}?v=${v}`;
@@ -471,6 +546,8 @@
                         
                         if (isVideo) {
                             stackedMedia.push(`<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><video autoplay loop muted playsinline style=\"width:100%;height:auto;\" src=\"${src}\" title=\"${altText}\"></video></div>`);
+                        } else if (isLottie) {
+                            stackedMedia.push(`<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><div class=\"lottie-anim\" data-src=\"${src}\" data-loop=\"true\" data-autoplay=\"true\" aria-label=\"${altText}\"></div></div>`);
                         } else {
                             stackedMedia.push(`<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><img src=\"${src}\" alt=\"${altText}\" style=\"${style}\"></div>`);
                         }
@@ -498,8 +575,11 @@
                     mediaItems.forEach(match => {
                         const allData = match[1].split('/');
                         const typeAndAlt = allData[0].split(':');
-                        const isVideo = typeAndAlt[0] === 'video';
-                        const altText = isVideo ? typeAndAlt.slice(1).join(':').trim() : allData[0].trim();
+                        const mediaType = typeAndAlt[0];
+                        const isVideo = mediaType === 'video';
+                        const fileRef = match[2];
+                        const isLottie = mediaType === 'lottie' || /\.json(\?|$)/i.test(fileRef);
+                        const altText = (isVideo || isLottie) ? typeAndAlt.slice(1).join(':').trim() : allData[0].trim();
                         const attributes = allData.slice(1);
                         const v = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? Date.now() : '1.0';
                         const src = `images/${match[2]}?v=${v}`;
@@ -526,6 +606,8 @@
                         });
                         if (isVideo) {
                             mediaHtml += `<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><video autoplay loop muted playsinline style=\"width:100%;height:auto;\" src=\"${src}\" title=\"${altText}\"></video></div>`;
+                        } else if (isLottie) {
+                            mediaHtml += `<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><div class=\"lottie-anim\" data-src=\"${src}\" data-loop=\"true\" data-autoplay=\"true\" aria-label=\"${altText}\"></div></div>`;
                         } else {
                             mediaHtml += `<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><img src=\"${src}\" alt=\"${altText}\" style=\"${style}\"></div>`;
                         }
@@ -561,12 +643,17 @@
         const stackedMediaHtml = stackedMedia.length > 0 ? 
             `<div class="stacked-images">${stackedMedia.join('')}</div>` : '';
 
+        // If any stacked media used, default container exists. Allow optional top alignment:
+        // Use `align:stack-right-top` or `valign:top` on any stacked media item to activate.
+        const shouldTopAlign = /align:stack-right-top|valign:top/i.test(content);
+
         element.innerHTML = `
-            <div class="content-with-stacked-images">
+            <div class="content-with-stacked-images${shouldTopAlign ? ' top-aligned' : ''}">
                 <div class="text-content">${textHtml}</div>
                 ${stackedMediaHtml}
             </div>
         `;
+        initLottieWithin(element);
     }
 
     function renderContentNormal(element, content) {
@@ -616,8 +703,11 @@
                     mediaItems.forEach(match => {
                         const allData = match[1].split('/');
                         const typeAndAlt = allData[0].split(':');
-                        const isVideo = typeAndAlt[0] === 'video';
-                        const altText = isVideo ? typeAndAlt.slice(1).join(':').trim() : allData[0].trim();
+                        const mediaType = typeAndAlt[0];
+                        const isVideo = mediaType === 'video';
+                        const fileRef = match[2];
+                        const isLottie = mediaType === 'lottie' || /\.json(\?|$)/i.test(fileRef);
+                        const altText = (isVideo || isLottie) ? typeAndAlt.slice(1).join(':').trim() : allData[0].trim();
                         const attributes = allData.slice(1);
                         const v = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? Date.now() : '1.0';
                         const src = `images/${match[2]}?v=${v}`;
@@ -645,6 +735,8 @@
                         });
                         if (isVideo) {
                            mediaHtml += `<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><video autoplay loop muted playsinline style=\"width:100%;height:auto;\" src=\"${src}\" title=\"${altText}\"></video></div>`;
+                        } else if (isLottie) {
+                           mediaHtml += `<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><div class=\"lottie-anim\" data-src=\"${src}\" data-loop=\"true\" data-autoplay=\"true\" aria-label=\"${altText}\"></div></div>`;
                         } else {
                            mediaHtml += `<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><img src=\"${src}\" alt=\"${altText}\" style=\"${style}\"></div>`;
                         }
@@ -664,6 +756,28 @@
         }
 
         element.innerHTML = html;
+        initLottieWithin(element);
+    }
+
+    function initLottieWithin(root) {
+        if (!window.lottie || !root) return;
+        const nodes = root.querySelectorAll('.lottie-anim:not([data-lottie-initialized])');
+        nodes.forEach(el => {
+            const path = el.getAttribute('data-src');
+            if (!path) return;
+            // Use top-aligned aspect ratio inside stacked-right columns to avoid visual downward offset
+            const isStackedRight = !!el.closest('.stacked-images');
+            const preserve = isStackedRight ? 'xMinYMin meet' : 'xMidYMid meet';
+            window.lottie.loadAnimation({
+                container: el,
+                renderer: 'svg',
+                loop: el.getAttribute('data-loop') !== 'false',
+                autoplay: el.getAttribute('data-autoplay') !== 'false',
+                path,
+                rendererSettings: { preserveAspectRatio: preserve, progressiveLoad: true }
+            });
+            el.setAttribute('data-lottie-initialized', '1');
+        });
     }
 
     function renderFlipCards(element, text) {
@@ -804,28 +918,28 @@
 
     document.addEventListener('DOMContentLoaded', () => {
              const closeBtn = document.getElementById('embed-close');
-       const openExternalBtn = document.getElementById('embed-open-external');
-       if (closeBtn) {
-         closeBtn.addEventListener('click', () => {
-           const panel = document.getElementById('embed-panel');
-           const iframe = document.getElementById('embed-iframe');
-           const resizer = document.getElementById('content-embed-resizer');
-           const contentCard = document.getElementById('content-card');
-           if (iframe) iframe.src = 'about:blank';
-           if (panel) panel.classList.remove('visible');
-           if (resizer) resizer.classList.remove('visible');
-           // Reset widths so the info-card returns to full size
-           if (contentCard) contentCard.style.width = '';
-           if (panel) panel.style.width = '';
-         });
-       }
-       if (openExternalBtn) {
-         openExternalBtn.addEventListener('click', () => {
-           const iframe = document.getElementById('embed-iframe');
-           const url = iframe && iframe.src ? iframe.src : null;
-           if (url) window.open(url, '_blank');
-         });
-       }
+      const openExternalBtn = document.getElementById('embed-open-external');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          const panel = document.getElementById('embed-panel');
+          const iframe = document.getElementById('embed-iframe');
+          const resizer = document.getElementById('content-embed-resizer');
+          const contentCard = document.getElementById('content-card');
+          if (iframe) iframe.src = 'about:blank';
+          if (panel) panel.classList.remove('visible');
+          if (resizer) resizer.classList.remove('visible');
+          // Reset widths so the info-card returns to full size
+          if (contentCard) contentCard.style.width = '';
+          if (panel) panel.style.width = '';
+        });
+      }
+      if (openExternalBtn) {
+        openExternalBtn.addEventListener('click', () => {
+          const iframe = document.getElementById('embed-iframe');
+          const url = iframe && iframe.src ? iframe.src : null;
+          if (url) window.open(url, '_blank');
+        });
+      }
 
       // Drag-to-resize between content and embed
       const resizer = document.getElementById('content-embed-resizer');
@@ -977,6 +1091,7 @@
                     const [key, ...valueParts] = line.split(':');
                     if (valueParts.length > 0) {
                         const value = valueParts.join(':').trim();
+                        if (key.trim() === 'title-align') { currentBlock['title-align'] = value.toLowerCase(); continue; }
                         currentBlock[key.trim()] = key.trim() === 'id' ? parseInt(value) : value;
                     }
                 }
@@ -999,7 +1114,7 @@
         let courseData;
         try {
             const urlParams = new URLSearchParams(window.location.search);
-            const courseFile = urlParams.get('course') || 'Intro.txt';
+            const courseFile = urlParams.get('course') || 'intro-2.txt';
             const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
             const cacheParam = isLocal ? Date.now() : '1.0';
             const response = await fetch(`courses/${courseFile}?v=${cacheParam}`); // Cache-busting
@@ -1016,8 +1131,14 @@
 
         const firstNode = courseData.find(n => n && n.id != null);
         let activeNodeId = String(firstNode ? firstNode.id : '1'); let visitedNodes = new Set([activeNodeId]);
-        const svgContainer = d3.select('#flow-map-container'); const svg = d3.select('#flow-map-svg'); const g = svg.append('g'); const tooltip = d3.select('#tooltip');
+        let wasSidebarClosedBeforeSideQuest = false; // For auto-opening/closing on side quests
+        const mainPathHistory = [activeNodeId]; let skipHistoryPush = false;
+        const hasD3 = (typeof window !== 'undefined') && (typeof window.d3 !== 'undefined');
+        let svgContainer, svg, g, tooltip, node, link, zoom, simulation;
         const d3Nodes = [], d3Links = [], nodeById = new Map();
+        if (hasD3) {
+          svgContainer = d3.select('#flow-map-container'); svg = d3.select('#flow-map-svg'); g = svg.append('g'); tooltip = d3.select('#tooltip');
+        }
 
         courseData.forEach(mainNodeData => {
             if (!mainNodeData.id) return; // Skip invalid nodes
@@ -1048,24 +1169,45 @@
             Object.values(mainNodeData.connections).forEach(targetId => { d3Links.push({ source: mainNode.id, target: String(targetId) }); });
         });
 
-        let width = svgContainer.node().getBoundingClientRect().width; let height = svgContainer.node().getBoundingClientRect().height;
+        let width = 0, height = 0;
+        if (hasD3 && svgContainer) {
+          const rect = svgContainer.node().getBoundingClientRect();
+          width = rect.width || 400;
+          height = rect.height || (window.innerHeight || 800);
+        }
+        const validLinks = d3Links.filter(l => nodeById.has(String(l.target)) && nodeById.has(String(l.source)));
+        // Side-quest motion tuning (live-updated during pan)
+        let sqXStrength = 0.055, sqYStrength = 0.085, sqLinkStrength = 0.25;
+
         
         function updateMainPathPositions() {
-            width = svgContainer.node().getBoundingClientRect().width; height = svgContainer.node().getBoundingClientRect().height; if (width === 0 || height === 0) return;
+            if (!hasD3 || !svgContainer || !svg) return;
+            const rect = svgContainer.node().getBoundingClientRect();
+            let w = rect.width, h = rect.height;
+            // When the sidebar starts collapsed, width can be 0. Use safe fallbacks to avoid crumpling.
+            if (!w || w === 0) w = 400; // logical layout width while collapsed
+            if (!h || h === 0) h = window.innerHeight || 800;
+            width = w; height = h;
             svg.attr('viewBox', `0 0 ${width} ${height}`);
-            const mainPath = d3Nodes.filter(n => n.type === 'main' || n.type === 'flip-cards'); const mainYStep = (height * 0.9) / (mainPath.length > 1 ? mainPath.length - 1 : 1);
-            mainPath.forEach((n, i) => { n.fy = height * 0.05 + i * mainYStep; n.fx = width / 2; });
+            const mainPath = d3Nodes.filter(n => n.type === 'main' || n.type === 'flip-cards');
+            const MAIN_NODE_MIN_STEP = 160; // ensures long, calm gaps between main nodes
+            const distributedStep = (height * 0.9) / (mainPath.length > 1 ? mainPath.length - 1 : 1);
+            const mainYStep = Math.max(MAIN_NODE_MIN_STEP, distributedStep);
+            mainPath.forEach((n, i) => { n.targetFy = height * 0.05 + i * mainYStep; n.targetFx = width / 2; if (typeof n.x === 'undefined' || typeof n.y === 'undefined') { n.x = n.targetFx; n.y = n.targetFy; } });
             updateSideQuestPositions();
         }
         updateMainPathPositions();
 
         function updateSideQuestPositions() {
-            const baseHorizontal = Math.max(120, Math.min(220, Math.round(width * 0.18)));
-            const verticalStep = 72;
+            if (!hasD3) return;
+            const baseHorizontal = Math.max(140, Math.min(240, Math.round((width || 400) * 0.20)));
+            const verticalStep = 92;
             d3Nodes.forEach(n => {
                 if (n.type === 'sidequest') {
                     const parent = nodeById.get(String(n.parentId));
-                    if (parent && typeof parent.fy !== 'undefined' && typeof parent.fx !== 'undefined') {
+                    if (parent && (typeof parent.targetFy !== 'undefined' || typeof parent.fy !== 'undefined')) {
+                        const pfx = typeof parent.targetFx === 'number' ? parent.targetFx : (typeof parent.fx === 'number' ? parent.fx : width / 2);
+                        const pfy = typeof parent.targetFy === 'number' ? parent.targetFy : (typeof parent.fy === 'number' ? parent.fy : height / 2);
                         const idx = typeof n.cardIndex === 'number' ? n.cardIndex : 0;
                         const dir = n.branchDir || 1; // 1=right, -1=left
                         const t = (idx + 1) / Math.max(2, (n.numCards || 2));
@@ -1073,8 +1215,8 @@
                         const jitterSeed = ((parseInt(n.parentId, 10) || 0) * 8341 + idx * 2718) % 7;
                         const jitterX = (jitterSeed - 3) * 1.2;
                         const jitterY = ((jitterSeed * 2) % 5 - 2) * 1.2;
-                        n.targetFx = parent.fx + dir * (baseHorizontal + arcPush) + jitterX;
-                        n.targetFy = parent.fy + (idx + 1) * verticalStep + jitterY;
+                        n.targetFx = pfx + dir * (baseHorizontal + arcPush) + jitterX;
+                        n.targetFy = pfy + (idx + 1) * verticalStep + jitterY;
                         if (typeof n.x === 'undefined' || typeof n.y === 'undefined') {
                             n.x = n.targetFx; n.y = n.targetFy;
                         }
@@ -1083,36 +1225,90 @@
             });
         }
 
-        const simulation = d3.forceSimulation(d3Nodes)
-          .force('link', d3.forceLink(d3Links).id(d => d.id).distance(80).strength(0.8))
-          .force('charge', d3.forceManyBody().strength(-450))
-          .force('collide', d3.forceCollide(20))
-          .force('sqX', d3.forceX(d => (d.type === 'sidequest' && typeof d.targetFx === 'number') ? d.targetFx : (typeof d.fx === 'number' ? d.fx : width / 2)).strength(d => d.type === 'sidequest' ? 0.08 : 0))
-          .force('sqY', d3.forceY(d => (d.type === 'sidequest' && typeof d.targetFy === 'number') ? d.targetFy : (typeof d.fy === 'number' ? d.fy : height / 2)).strength(d => d.type === 'sidequest' ? 0.12 : 0));
-        const link = g.append('g').attr('class', 'links').selectAll('line').data(d3Links).join('line').attr('class', 'link');
-        const node = g.append('g').attr('class', 'nodes').selectAll('g').data(d3Nodes).join('g').attr('class', 'node')
-          .on('click', (event, d) => updateView(d.id))
-          .on('mouseover', function(event, d) { tooltip.style('visibility', 'visible').style('opacity', 1); tooltip.html(`<div class="tooltip-title">${d.title}</div><div class="tooltip-type">${d.type === 'sidequest' ? `▶ ${d.type.charAt(0).toUpperCase() + d.type.slice(1)}` : 'ⓘ Main Step'}</div>`); })
-          .on('mousemove', function(event) { const [x, y] = d3.pointer(event, document.body); tooltip.style('left', (x + 20) + 'px').style('top', (y + 20) + 'px'); })
-          .on('mouseout', function() { tooltip.style('visibility', 'hidden').style('opacity', 0); });
-        node.append('circle').attr('r', 12);
-        const zoom = d3.zoom().scaleExtent([0.5, 3]).on('zoom', (event) => { g.attr('transform', event.transform); simulation.alpha(0.04).restart(); }); svg.call(zoom);
+        if (hasD3) {
+          simulation = d3.forceSimulation(d3Nodes)
+            .velocityDecay(0.36)
+            .force('link', d3.forceLink(validLinks)
+              .id(d => d.id)
+              .distance(d => {
+                const sType = (d.source && d.source.type) || (nodeById.get(String(d.source)) || {}).type;
+                const tType = (d.target && d.target.type) || (nodeById.get(String(d.target)) || {}).type;
+                const involvesSQ = (sType === 'sidequest') || (tType === 'sidequest');
+                return involvesSQ ? 140 : 120;
+              })
+              .strength(d => {
+                const sType = (d.source && d.source.type) || (nodeById.get(String(d.source)) || {}).type;
+                const tType = (d.target && d.target.type) || (nodeById.get(String(d.target)) || {}).type;
+                const involvesSQ = (sType === 'sidequest') || (tType === 'sidequest');
+                return involvesSQ ? sqLinkStrength : 0.9;
+              })
+            )
+            .force('charge', d3.forceManyBody().strength(-450))
+            .force('collide', d3.forceCollide(20))
+            // Softly guide main nodes toward their targets so they have physics
+            .force('mainX', d3.forceX(d => (d.type !== 'sidequest' && typeof d.targetFx === 'number') ? d.targetFx : width / 2).strength(d => d.type !== 'sidequest' ? 0.06 : 0))
+            .force('mainY', d3.forceY(d => (d.type !== 'sidequest' && typeof d.targetFy === 'number') ? d.targetFy : height / 2).strength(d => d.type !== 'sidequest' ? 0.08 : 0))
+            .force('sqX', d3.forceX(d => (d.type === 'sidequest' && typeof d.targetFx === 'number') ? d.targetFx : width / 2).strength(d => d.type === 'sidequest' ? sqXStrength : 0))
+            .force('sqY', d3.forceY(d => (d.type === 'sidequest' && typeof d.targetFy === 'number') ? d.targetFy : height / 2).strength(d => d.type === 'sidequest' ? sqYStrength : 0));
+          link = g.append('g').attr('class', 'links').selectAll('line').data(validLinks).join('line').attr('class', 'link');
+          node = g.append('g').attr('class', 'nodes').selectAll('g').data(d3Nodes).join('g').attr('class', 'node')
+            .on('click', (event, d) => updateView(d.id))
+            .on('mouseover', function(event, d) { tooltip.style('visibility', 'visible').style('opacity', 1); tooltip.html(`<div class="tooltip-title">${d.title}</div><div class="tooltip-type">${d.type === 'sidequest' ? `▶ ${d.type.charAt(0).toUpperCase() + d.type.slice(1)}` : 'ⓘ Main Step'}</div>`); })
+            .on('mousemove', function(event) { const [x, y] = d3.pointer(event, document.body); tooltip.style('left', (x + 20) + 'px').style('top', (y + 20) + 'px'); })
+            .on('mouseout', function() { tooltip.style('visibility', 'hidden').style('opacity', 0); });
+          node.append('circle').attr('r', 12);
+                     zoom = d3.zoom().scaleExtent([0.5, 3])
+             .on('start', () => { if (simulation) { sqXStrength = 0.08; sqYStrength = 0.12; sqLinkStrength = 0.32; simulation.alphaTarget(0.2).restart(); } })
+             .on('zoom', (event) => { g.attr('transform', event.transform); if (simulation) simulation.alpha(0.06).restart(); })
+             .on('end', () => { if (simulation) { sqXStrength = 0.055; sqYStrength = 0.085; sqLinkStrength = 0.25; simulation.alphaTarget(0); } });
+           svg.call(zoom);
+        }
 
         function centerNode(nodeId) {
             const targetNode = nodeById.get(nodeId); if (!targetNode || typeof targetNode.x === 'undefined') return;
             const currentTransform = d3.zoomTransform(svg.node());
-            const targetX = -targetNode.x * currentTransform.k + width / 2; const targetY = -targetNode.y * currentTransform.k + height / 2;
+            const targetX = -targetNode.x * currentTransform.k + width / 2; const targetY = -targetNode.y * currentTransform.k + Math.min(height * 0.45, 260);
             svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity.translate(targetX, targetY).scale(currentTransform.k));
         }
-        simulation.on('tick', () => {
-          link.attr('x1', d => d.source.x).attr('y1', d => d.source.y).attr('x2', d => d.target.x).attr('y2', d => d.target.y);
-          node.attr('transform', d => `translate(${d.x},${d.y})`);
-        });
+        if (hasD3 && simulation) {
+          simulation.on('tick', () => {
+            link.attr('x1', d => d.source.x).attr('y1', d => d.source.y).attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+            node.attr('transform', d => `translate(${d.x},${d.y})`);
+          });
+        }
 
         function updateView(nodeId) {
           activeNodeId = nodeId; visitedNodes.add(nodeId);
           const n = nodeById.get(nodeId);
           if(!n) { console.error(`Node with id "${nodeId}" not found.`); return; }
+
+          // Auto-open/close sidebar for side quests
+          const sidebar = document.getElementById('flow-map-container');
+          const openBtn = document.getElementById('open-sidebar-btn');
+          const closeBtn = document.getElementById('close-sidebar-btn');
+
+          if (n.type === 'sidequest') {
+              if (n.numCards > 1 && sidebar && sidebar.classList.contains('collapsed')) {
+                  wasSidebarClosedBeforeSideQuest = true;
+                  if (openBtn) openBtn.click();
+              }
+          } else if (n.type === 'main' || n.type === 'flip-cards') {
+              if (wasSidebarClosedBeforeSideQuest) {
+                  if (sidebar && !sidebar.classList.contains('collapsed')) {
+                      if (closeBtn) closeBtn.click();
+                  }
+                  wasSidebarClosedBeforeSideQuest = false; // Always reset
+              }
+          }
+
+          // Maintain main path history whenever landing on a main node via any navigation
+          if (n.type === 'main' || n.type === 'flip-cards') {
+            if (!skipHistoryPush) {
+              const last = mainPathHistory[mainPathHistory.length - 1];
+              if (last !== n.id) mainPathHistory.push(n.id);
+            }
+            skipHistoryPush = false;
+          }
           
           // Scroll to top of content area when navigating to a new node
           const contentArea = document.getElementById('content-area');
@@ -1121,6 +1317,12 @@
           }
           
           const cardTitleEl = document.getElementById('card-title');
+          // Apply title alignment if present on node
+          if (n['title-align'] && String(n['title-align']).toLowerCase() === 'center') {
+            cardTitleEl.style.textAlign = 'center';
+          } else {
+            cardTitleEl.style.textAlign = '';
+          }
           // Fallback extractors in case meta wasn't propagated
           const extractHeader = (source, key) => {
             if (!source) return '';
@@ -1171,7 +1373,8 @@
                   const btns = JSON.parse(inlineButtonsJson);
                   btns.forEach(b => {
                       const ib = document.createElement('button');
-                      ib.textContent = b.buttonText || 'Open';
+                      ib.className = 'btn-sidequest';
+                      ib.innerHTML = `<span>${b.buttonText || 'Open'}</span>`;
                       ib.onclick = (ev) => { ev && ev.preventDefault && ev.preventDefault(); openInEmbed(b.url, b.buttonText || 'Open'); };
                       leftButtons.appendChild(ib);
                   });
@@ -1180,7 +1383,8 @@
           }
           if (resourceUrl) {
               const btn = document.createElement('button');
-              btn.textContent = resourceTitle;
+              btn.className = 'btn-sidequest';
+              btn.innerHTML = `<span>${resourceTitle}</span>`;
               btn.onclick = (ev) => handleResourceClick(ev, resourceUrl, resourceTitle);
               leftButtons.appendChild(btn);
               // Clear after consuming so subsequent nodes don't inherit
@@ -1189,19 +1393,44 @@
           }
  
           if (n.type === 'main' || n.type === 'flip-cards') {
+              if (mainPathHistory.length > 1) {
+                const prevBtn = document.createElement('button');
+                prevBtn.className = 'btn-prev';
+                prevBtn.innerHTML = `<svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="transform: rotate(180deg);"><path d="M2 2L9 9L2 16" stroke="#8A8A8A" stroke-width="3" stroke-linecap="round"/></svg><span>Previous</span>`;
+                prevBtn.onclick = () => {
+                  // Step back one main node and navigate without re-adding to history
+                  if (mainPathHistory.length > 1) {
+                    mainPathHistory.pop();
+                    const prevNodeId = mainPathHistory[mainPathHistory.length - 1];
+                    skipHistoryPush = true;
+                    updateView(prevNodeId);
+                  }
+                };
+                rightButtons.appendChild(prevBtn);
+              }
               const mainNodeData = courseData.find(d => String(d.id) === n.id);
               if (mainNodeData && mainNodeData.sideQuests) {
                   mainNodeData.sideQuests.forEach((sq, index) => {
                       const btn = document.createElement('button');
-                      btn.textContent = sq.buttonText;
+                      btn.className = 'btn-sidequest';
+                      btn.innerHTML = `<span>${sq.buttonText}</span>`;
                       btn.onclick = () => updateView(`${n.id}-${sq.type}-${index}-0`);
                       leftButtons.appendChild(btn);
                   });
               }
               if (mainNodeData && mainNodeData.links) {
+                  const mainSequence = courseData.filter(d => d && (d.type === 'main' || d.type === 'flip-cards'));
+                  const lastMainId = mainSequence.length ? String(mainSequence[mainSequence.length - 1].id) : null;
+                  const isLastMain = lastMainId === n.id;
                   mainNodeData.links.forEach(link => {
                       const btn = document.createElement('button');
-                      btn.textContent = link.buttonText;
+                      if (isLastMain) {
+                          btn.className = 'btn-primary';
+                          btn.innerHTML = `<span>${link.buttonText}</span><svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M2 2L9 9L2 16" stroke="white" stroke-width="3" stroke-linecap="round"/></svg>`;
+                      } else {
+                          btn.className = 'btn-sidequest';
+                          btn.innerHTML = `<span>${link.buttonText}</span>`;
+                      }
                       btn.onclick = (ev) => {
                           if ((link.target || 'newtab') === 'embed') {
                               // Force embed regardless of modifier keys
@@ -1211,16 +1440,17 @@
                           // Default: new tab
                           window.open(link.url, '_blank');
                       };
-                      leftButtons.appendChild(btn);
+                      (isLastMain ? rightButtons : leftButtons).appendChild(btn);
                   });
               }
               for (const [label, targetId] of Object.entries(n.connections)) {
                   const btn = document.createElement('button');
-                  btn.textContent = label;
+                  btn.className = 'btn-primary';
+                  btn.innerHTML = `<span>${label}</span><svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M2 2L9 9L2 16" stroke="white" stroke-width="3" stroke-linecap="round"/></svg>`;
                   btn.onclick = () => updateView(String(targetId));
                   rightButtons.appendChild(btn);
               }
-                    } else if (n.type === 'sidequest') {
+          } else if (n.type === 'sidequest') {
               if (n.prevId) {
                 const prevBtn = document.createElement('button');
                 prevBtn.textContent = n.backLabel || '◀ Previous';
@@ -1239,22 +1469,53 @@
               rightButtons.appendChild(btn);
           }
           
-          node.classed('active', d => d.id === activeNodeId)
-            .classed('visited-main', d => visitedNodes.has(d.id) && (d.type === 'main' || d.type === 'flip-cards') && d.id !== activeNodeId)
-            .classed('visited-sidequest', d => visitedNodes.has(d.id) && d.type === 'sidequest' && d.id !== activeNodeId)
-            .classed('unvisited', d => !visitedNodes.has(d.id));
-          link.classed('visited-main', d => visitedNodes.has(d.source.id) && visitedNodes.has(d.target.id))
-            .classed('visited-sidequest', d => visitedNodes.has(d.source.id) && visitedNodes.has(d.target.id) && (nodeById.get(d.source.id)?.type === 'sidequest' || nodeById.get(d.target.id)?.type === 'sidequest'));
-          centerNode(nodeId);
+          if (hasD3) {
+            node.classed('active', d => d.id === activeNodeId)
+              .classed('visited-main', d => visitedNodes.has(d.id) && (d.type === 'main' || d.type === 'flip-cards') && d.id !== activeNodeId)
+              .classed('visited-sidequest', d => visitedNodes.has(d.id) && d.type === 'sidequest' && d.id !== activeNodeId)
+              .classed('unvisited', d => !visitedNodes.has(d.id));
+            link.classed('visited-main', d => visitedNodes.has(d.source.id) && visitedNodes.has(d.target.id))
+              .classed('visited-sidequest', d => visitedNodes.has(d.source.id) && visitedNodes.has(d.target.id) && (nodeById.get(d.source.id)?.type === 'sidequest' || nodeById.get(d.target.id)?.type === 'sidequest'));
+            centerNode(nodeId);
+          }
         }
 
+        if (!hasD3) { document.getElementById('flow-map-container').style.display = 'none'; }
         const resizer = document.getElementById('resizer'); const sidebar = document.getElementById('flow-map-container'); const closeBtn = document.getElementById('close-sidebar-btn'); const openBtn = document.getElementById('open-sidebar-btn');
         let isResizing = false;
         resizer.addEventListener('mousedown', (e) => { isResizing = true; document.body.style.cursor = 'col-resize'; sidebar.style.transition = 'none'; });
         window.addEventListener('mousemove', (e) => { if (!isResizing) return; const newWidth = e.clientX; if (newWidth > 200 && newWidth < document.body.clientWidth - 400) { sidebar.style.width = newWidth + 'px'; updateMainPathPositions(); simulation.alpha(0.1).restart(); } });
         window.addEventListener('mouseup', (e) => { if (isResizing) { isResizing = false; document.body.style.cursor = 'default'; sidebar.style.transition = ''; updateMainPathPositions(); simulation.alpha(0.3).restart(); } });
         closeBtn.addEventListener('click', () => { sidebar.classList.add('collapsed'); openBtn.style.display = 'block'; });
-        openBtn.addEventListener('click', () => { sidebar.classList.remove('collapsed'); openBtn.style.display = 'none'; setTimeout(() => { updateMainPathPositions(); simulation.alpha(0.3).restart(); }, 300); });
+        openBtn.addEventListener('click', () => { sidebar.classList.remove('collapsed'); openBtn.style.display = 'none'; const tip = document.getElementById('open-sidebar-tip'); if (tip) tip.classList.remove('visible'); setTimeout(() => { updateMainPathPositions(); simulation.alpha(0.3).restart(); }, 500); });
+
+        // Auto-start with sidebar closed and show helper tip briefly on first visit
+        (function initSidebarState() {
+          const tip = document.getElementById('open-sidebar-tip');
+          // If sidebar starts collapsed (which it now does by default), ensure the open button is visible.
+          if (sidebar.classList.contains('collapsed')) {
+            openBtn.style.display = 'block';
+          }
+          const hasSeenTip = sessionStorage.getItem('openSidebarTipSeen') === '1';
+          const showTip = () => { if (tip) tip.classList.add('visible'); };
+          const hideTip = () => { if (tip) tip.classList.remove('visible'); };
+          if (!hasSeenTip) {
+            // Defer showing until after layout/paint for reliability
+            requestAnimationFrame(() => {
+              setTimeout(() => {
+                showTip();
+                setTimeout(() => { hideTip(); sessionStorage.setItem('openSidebarTipSeen', '1'); }, 2600);
+              }, 50);
+            });
+          }
+          // Show tip on hover/focus of the open button
+          if (openBtn) {
+            openBtn.addEventListener('mouseenter', showTip);
+            openBtn.addEventListener('mouseleave', hideTip);
+            openBtn.addEventListener('focus', showTip);
+            openBtn.addEventListener('blur', hideTip);
+          }
+        })();
 
         updateView(activeNodeId);
     })();
