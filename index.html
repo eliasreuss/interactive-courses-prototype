@@ -1114,18 +1114,20 @@
         let courseData;
         try {
             const urlParams = new URLSearchParams(window.location.search);
-            const courseFile = urlParams.get('course') || 'intro-2.txt';
+            const courseFile = urlParams.get('course') || 'Intro-2.txt';
             const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
-            const cacheParam = isLocal ? Date.now() : '1.0';
-            const response = await fetch(`courses/${courseFile}?v=${cacheParam}`); // Cache-busting
-            if (!response.ok) throw new Error(`Network response was not ok: ${response.statusText}`);
+            // Always bust caches to avoid GitHub Pages serving stale assets after deploys
+            const cacheParam = Date.now();
+            const requestUrl = `courses/${courseFile}?v=${cacheParam}`;
+            const response = await fetch(requestUrl);
+            if (!response.ok) throw new Error(`Failed to fetch ${requestUrl} (status ${response.status})`);
             const text = await response.text();
             courseData = parseFlowScript(text);
             if (!courseData || courseData.length === 0) { throw new Error("Parsing resulted in no valid course data."); }
         } catch (error) {
             console.error('Error loading or parsing course file:', error);
             document.getElementById('card-title').textContent = 'Error';
-            document.getElementById('card-content').innerHTML = 'Could not load the course. Please check that <strong>course.txt</strong> exists and is valid. Remember to use a local server.';
+            document.getElementById('card-content').innerHTML = `Could not load the course. ${String(error && error.message || error)}. <br/>Tip: hard refresh (Ctrl/Cmd+Shift+R) if this was just deployed.`;
             return;
         }
 
