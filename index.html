@@ -337,6 +337,12 @@
     .node.visited-main circle { fill: var(--color-visited-main); }
     .node.visited-sidequest circle { fill: var(--color-visited-sidequest); }
     .node.active circle { fill: var(--color-accent); filter: drop-shadow(0 0 10px var(--color-accent)); r: 15 !important; }
+    /* Nav pill (section titles on flow map) */
+    .nav-pill text {
+      font-family: var(--font-family);
+      font-size: 12px;
+      fill: var(--color-primary-text);
+    }
     
     .img-container {
       border-radius: 15px;
@@ -1144,9 +1150,24 @@
           svgContainer = d3.select('#flow-map-container'); svg = d3.select('#flow-map-svg'); g = svg.append('g'); tooltip = d3.select('#tooltip');
         }
 
+        // Helper to convert rich titles to plain nav labels
+        function toPlainNavLabel(rawTitle) {
+            if (!rawTitle) return '';
+            let t = String(rawTitle);
+            t = t.replace(/<br\s*\/?>(\s*)?/gi, ' ');
+            t = t.replace(/\*\*(.*?)\*\*/g, '$1');
+            t = t.replace(/<[^>]+>/g, '');
+            return t.trim();
+        }
+
         courseData.forEach(mainNodeData => {
             if (!mainNodeData.id) return; // Skip invalid nodes
-            const mainNode = { ...mainNodeData, id: String(mainNodeData.id) }; delete mainNode.sideQuests;
+            const mainNode = { ...mainNodeData, id: String(mainNodeData.id) };
+            // Prepare a clean label to render for nav pills
+            if (mainNode.title) {
+                mainNode.navLabel = toPlainNavLabel(mainNode.title);
+            }
+            delete mainNode.sideQuests;
             d3Nodes.push(mainNode); nodeById.set(mainNode.id, mainNode);
             if (mainNodeData.sideQuests) {
                 mainNodeData.sideQuests.forEach((sqData, index) => {
@@ -1254,6 +1275,12 @@
             .force('mainY', d3.forceY(d => (d.type !== 'sidequest' && typeof d.targetFy === 'number') ? d.targetFy : height / 2).strength(d => d.type !== 'sidequest' ? 0.08 : 0))
             .force('sqX', d3.forceX(d => (d.type === 'sidequest' && typeof d.targetFx === 'number') ? d.targetFx : width / 2).strength(d => d.type === 'sidequest' ? sqXStrength : 0))
             .force('sqY', d3.forceY(d => (d.type === 'sidequest' && typeof d.targetFy === 'number') ? d.targetFy : height / 2).strength(d => d.type === 'sidequest' ? sqYStrength : 0));
+          // Nudge section title nodes slightly upward to make room for pills
+          d3Nodes.forEach(n => {
+            if ((n.type === 'main' || n.type === 'flip-cards') && String(n.nav || '').toLowerCase() === 'title' && typeof n.targetFy === 'number') {
+              n.targetFy = n.targetFy - 12;
+            }
+          });
           link = g.append('g').attr('class', 'links').selectAll('line').data(validLinks).join('line').attr('class', 'link');
           node = g.append('g').attr('class', 'nodes').selectAll('g').data(d3Nodes).join('g').attr('class', 'node')
             .on('click', (event, d) => updateView(d.id))
@@ -1261,6 +1288,18 @@
             .on('mousemove', function(event) { const [x, y] = d3.pointer(event, document.body); tooltip.style('left', (x + 20) + 'px').style('top', (y + 20) + 'px'); })
             .on('mouseout', function() { tooltip.style('visibility', 'hidden').style('opacity', 0); });
           node.append('circle').attr('r', 12);
+
+          // Add nav pills for nodes marked as section titles
+          const navGroup = g.append('g').attr('class', 'nav-pills');
+          function renderNavPills() {
+            const pillData = d3Nodes.filter(n => (n.type === 'main' || n.type === 'flip-cards') && String(n.nav || '').toLowerCase() === 'title');
+            const pills = navGroup.selectAll('g.nav-pill').data(pillData, d => d.id);
+            const enter = pills.enter().append('g').attr('class', 'nav-pill');
+            enter.append('rect').attr('rx', 15).attr('ry', 15).attr('fill', '#FFFFFF').attr('stroke', '#304642').attr('stroke-width', 1);
+            enter.append('text').attr('dy', '0.35em');
+            pills.exit().remove();
+          }
+          renderNavPills();
                      zoom = d3.zoom().scaleExtent([0.5, 3])
              .on('start', () => { if (simulation) { sqXStrength = 0.08; sqYStrength = 0.12; sqLinkStrength = 0.32; simulation.alphaTarget(0.2).restart(); } })
              .on('zoom', (event) => { g.attr('transform', event.transform); if (simulation) simulation.alpha(0.06).restart(); })
@@ -1278,6 +1317,24 @@
           simulation.on('tick', () => {
             link.attr('x1', d => d.source.x).attr('y1', d => d.source.y).attr('x2', d => d.target.x).attr('y2', d => d.target.y);
             node.attr('transform', d => `translate(${d.x},${d.y})`);
+            // Update nav pill positions and sizes
+            const pillSel = g.selectAll('g.nav-pill');
+            pillSel.each(function(d) {
+              const group = d3.select(this);
+              const label = (d.navLabel || '').trim() || (d.title ? String(d.title).replace(/<[^>]+>/g, '').replace(/\*\*(.*?)\*\*/g, '$1') : '');
+              const textSel = group.select('text');
+              textSel.text(label);
+              // Measure text by using SVG getBBox after setting text
+              const bbox = textSel.node() ? textSel.node().getBBox() : { width: 0, height: 0 };
+              const paddingX = 10, paddingY = 6;
+              const rectSel = group.select('rect');
+              rectSel.attr('width', Math.max(30, bbox.width + paddingX * 2)).attr('height', Math.max(18, bbox.height + paddingY * 2));
+              // Position above node with a small offset
+              const x = (d.x || 0) - (parseFloat(rectSel.attr('width')) / 2);
+              const y = (d.y || 0) - 30 - parseFloat(rectSel.attr('height'));
+              group.attr('transform', `translate(${x},${y})`);
+              textSel.attr('x', parseFloat(rectSel.attr('width')) / 2).attr('y', parseFloat(rectSel.attr('height')) / 2);
+            });
           });
         }
 

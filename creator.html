@@ -71,6 +71,20 @@
             <option value="left" selected>Left</option>
             <option value="center">Center</option>
         </select>
+        <div style="display:flex; gap:10px; align-items:center;">
+            <div style="flex:1;">
+                <label>Nav Type (section label on flow map):</label>
+                <select class="node-nav-type">
+                    <option value="">None</option>
+                    <option value="title">Title</option>
+                    <option value="subtitle">Subtitle</option>
+                </select>
+            </div>
+            <div style="flex:1;">
+                <label>Nav Parent ID (optional):</label>
+                <input type="number" class="node-nav-parent" placeholder="e.g. 1">
+            </div>
+        </div>
         <label>Node Type:</label>
         <select class="node-type">
             <option value="main" selected>Standard Content</option>
@@ -206,12 +220,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // The functions for adding nodes, connections, parsing, etc., are all the same.
     // ... (All previous JS functions from last correct answer go here) ...
-    function addNewNode(id = null, title = '', content = '', titleAlign = 'left', insertBeforeElement = null) {
+    function addNewNode(id = null, title = '', content = '', titleAlign = 'left', insertBeforeElement = null, navType = '', navParent = '') {
         const nodeCard = nodeTemplate.content.cloneNode(true).querySelector('.node-card');
         nodeCard.querySelector('.node-id').value = id !== null ? id : nodeIdCounter++;
         nodeCard.querySelector('.node-title').value = title;
         const alignSel = nodeCard.querySelector('.node-title-align');
         if (alignSel) alignSel.value = (titleAlign === 'center') ? 'center' : 'left';
+        const navSel = nodeCard.querySelector('.node-nav-type');
+        if (navSel) navSel.value = navType || '';
+        const navParentEl = nodeCard.querySelector('.node-nav-parent');
+        if (navParentEl) navParentEl.value = navParent || '';
         const contentArea = nodeCard.querySelector('.node-content');
         if (contentArea) contentArea.value = content;
         if (insertBeforeElement && insertBeforeElement.parentElement === nodesContainer) {
@@ -429,7 +447,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 nodeType = 'flip-cards';
             }
             
-            const nodeCard = addNewNode(nodeData.id, nodeData.title, content, (nodeData['title-align'] || 'left'));
+            const nodeCard = addNewNode(
+                nodeData.id,
+                nodeData.title,
+                content,
+                (nodeData['title-align'] || 'left'),
+                null,
+                (nodeData.nav || ''),
+                (nodeData['nav-parent'] || '')
+            );
             
             // Set the node type and handle flip card content
             const typeSelect = nodeCard.querySelector('.node-type');
@@ -723,6 +749,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const title = card.querySelector('.node-title').value.replace(/\n/g, '<br>');
             const titleAlign = (card.querySelector('.node-title-align')?.value || 'left');
             const type = card.querySelector('.node-type').value;
+            const navType = (card.querySelector('.node-nav-type')?.value || '').trim();
+            const navParent = (card.querySelector('.node-nav-parent')?.value || '').trim();
             
             if (!id) return;
             
@@ -746,7 +774,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const alignLine = (titleAlign === 'center') ? `title-align: center\n` : '';
-            finalOutput += `id: ${id}\ntitle: ${title}\n${alignLine}type: ${type}\n---\n${content.trim()}\n---\n`;
+            const navTypeLine = navType && navType.length ? `nav: ${navType}\n` : '';
+            const navParentLine = navParent && navParent.length ? `nav-parent: ${navParent}\n` : '';
+            finalOutput += `id: ${id}\ntitle: ${title}\n${alignLine}${navTypeLine}${navParentLine}type: ${type}\n---\n${content.trim()}\n---\n`;
             
             card.querySelectorAll('.connection-row').forEach(conn => { const text = conn.querySelector('.conn-text').value, target = conn.querySelector('.conn-target').value; if(text && target) finalOutput += `> ${text} -> ${target}\n`; });
             card.querySelectorAll('.sidequest-row').forEach(sq => {
