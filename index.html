@@ -337,12 +337,27 @@
     .node.visited-main circle { fill: var(--color-visited-main); }
     .node.visited-sidequest circle { fill: var(--color-visited-sidequest); }
     .node.active circle { fill: var(--color-accent); filter: drop-shadow(0 0 10px var(--color-accent)); r: 15 !important; }
-    /* Nav pill (section titles on flow map) */
-    .nav-pill text {
+    /* Nav title nodes (pills) */
+    .node.nav-title .nav-text {
       font-family: var(--font-family);
+      font-weight: 400;
       font-size: 12px;
-      fill: var(--color-primary-text);
+      letter-spacing: 0.2px;
+      dominant-baseline: middle;
+      text-anchor: middle;
     }
+    .node.nav-title .nav-rect {
+      rx: 15; ry: 15;
+      fill: #fff; stroke: #304642; stroke-width: 1;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.08));
+    }
+    /* State colors for nav title nodes */
+    .node.nav-title.unvisited .nav-rect { fill: var(--color-unvisited); stroke: var(--color-unvisited); }
+    .node.nav-title.unvisited .nav-text { fill: var(--color-primary-text); }
+    .node.nav-title.visited-main .nav-rect { fill: var(--color-visited-main); stroke: var(--color-visited-main); }
+    .node.nav-title.visited-main .nav-text { fill: #fff; }
+    .node.nav-title.active .nav-rect { fill: var(--color-accent); stroke: var(--color-accent); filter: drop-shadow(0 0 10px rgba(255,90,0,0.6)); }
+    .node.nav-title.active .nav-text { fill: #fff; }
     
     .img-container {
       border-radius: 15px;
@@ -1122,7 +1137,7 @@
         let courseData;
         try {
             const urlParams = new URLSearchParams(window.location.search);
-            const courseFile = urlParams.get('course') || 'Intro-2.txt';
+            const courseFile = urlParams.get('course') || 'Intro-3.txt';
             const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
             // Always bust caches to avoid GitHub Pages serving stale assets after deploys
             const cacheParam = Date.now();
@@ -1288,18 +1303,22 @@
             .on('mousemove', function(event) { const [x, y] = d3.pointer(event, document.body); tooltip.style('left', (x + 20) + 'px').style('top', (y + 20) + 'px'); })
             .on('mouseout', function() { tooltip.style('visibility', 'hidden').style('opacity', 0); });
           node.append('circle').attr('r', 12);
-
-          // Add nav pills for nodes marked as section titles
-          const navGroup = g.append('g').attr('class', 'nav-pills');
-          function renderNavPills() {
-            const pillData = d3Nodes.filter(n => (n.type === 'main' || n.type === 'flip-cards') && String(n.nav || '').toLowerCase() === 'title');
-            const pills = navGroup.selectAll('g.nav-pill').data(pillData, d => d.id);
-            const enter = pills.enter().append('g').attr('class', 'nav-pill');
-            enter.append('rect').attr('rx', 15).attr('ry', 15).attr('fill', '#FFFFFF').attr('stroke', '#304642').attr('stroke-width', 1);
-            enter.append('text').attr('dy', '0.35em');
-            pills.exit().remove();
-          }
-          renderNavPills();
+          // Convert title nodes into pill-shaped nodes
+          node.each(function(d) {
+            const isTitle = (d.type === 'main' || d.type === 'flip-cards') && String(d.nav || '').toLowerCase() === 'title';
+            if (!isTitle) return;
+            const gsel = d3.select(this);
+            gsel.classed('nav-title', true);
+            gsel.select('circle').remove();
+            const label = (d.navLabel || '').trim() || (d.title ? String(d.title).replace(/<[^>]+>/g, '').replace(/\*\*(.*?)\*\*/g, '$1') : '');
+            const text = gsel.append('text').attr('class', 'nav-text').text(label);
+            const bbox = text.node() ? text.node().getBBox() : { width: 60, height: 14 };
+            const paddingX = 18, paddingY = 8;
+            const w = Math.max(100, bbox.width + paddingX * 2);
+            const h = Math.max(28, bbox.height + paddingY * 2);
+            gsel.insert('rect', 'text').attr('class', 'nav-rect').attr('width', w).attr('height', h).attr('x', -w / 2).attr('y', -h / 2);
+            text.attr('x', 0).attr('y', 1);
+          });
                      zoom = d3.zoom().scaleExtent([0.5, 3])
              .on('start', () => { if (simulation) { sqXStrength = 0.08; sqYStrength = 0.12; sqLinkStrength = 0.32; simulation.alphaTarget(0.2).restart(); } })
              .on('zoom', (event) => { g.attr('transform', event.transform); if (simulation) simulation.alpha(0.06).restart(); })
@@ -1317,23 +1336,17 @@
           simulation.on('tick', () => {
             link.attr('x1', d => d.source.x).attr('y1', d => d.source.y).attr('x2', d => d.target.x).attr('y2', d => d.target.y);
             node.attr('transform', d => `translate(${d.x},${d.y})`);
-            // Update nav pill positions and sizes
-            const pillSel = g.selectAll('g.nav-pill');
-            pillSel.each(function(d) {
-              const group = d3.select(this);
-              const label = (d.navLabel || '').trim() || (d.title ? String(d.title).replace(/<[^>]+>/g, '').replace(/\*\*(.*?)\*\*/g, '$1') : '');
-              const textSel = group.select('text');
-              textSel.text(label);
-              // Measure text by using SVG getBBox after setting text
-              const bbox = textSel.node() ? textSel.node().getBBox() : { width: 0, height: 0 };
-              const paddingX = 10, paddingY = 6;
-              const rectSel = group.select('rect');
-              rectSel.attr('width', Math.max(30, bbox.width + paddingX * 2)).attr('height', Math.max(18, bbox.height + paddingY * 2));
-              // Position above node with a small offset
-              const x = (d.x || 0) - (parseFloat(rectSel.attr('width')) / 2);
-              const y = (d.y || 0) - 30 - parseFloat(rectSel.attr('height'));
-              group.attr('transform', `translate(${x},${y})`);
-              textSel.attr('x', parseFloat(rectSel.attr('width')) / 2).attr('y', parseFloat(rectSel.attr('height')) / 2);
+            // Keep nav title node pills centered on their coordinates and resize text if layout changes
+            g.selectAll('g.node.nav-title').each(function(d) {
+              const gsel = d3.select(this);
+              const textSel = gsel.select('text.nav-text');
+              const rectSel = gsel.select('rect.nav-rect');
+              if (!textSel.node() || !rectSel.node()) return;
+              const bbox = textSel.node().getBBox();
+              const paddingX = 18, paddingY = 8;
+              const w = Math.max(100, bbox.width + paddingX * 2);
+              const h = Math.max(28, bbox.height + paddingY * 2);
+              rectSel.attr('width', w).attr('height', h).attr('x', -w / 2).attr('y', -h / 2);
             });
           });
         }
