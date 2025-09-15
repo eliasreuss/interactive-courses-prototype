@@ -338,7 +338,7 @@
     .node.visited-sidequest circle { fill: var(--color-visited-sidequest); }
     .node.active circle { fill: var(--color-accent); filter: drop-shadow(0 0 10px var(--color-accent)); r: 15 !important; }
     /* Nav title nodes (pills) */
-    .node.nav-title .nav-text {
+    .node.pill .nav-text {
       font-family: var(--font-family);
       font-weight: 400;
       font-size: 12px;
@@ -346,18 +346,18 @@
       dominant-baseline: middle;
       text-anchor: middle;
     }
-    .node.nav-title .nav-rect {
+    .node.pill .nav-rect {
       rx: 15; ry: 15;
       fill: #fff; stroke: #304642; stroke-width: 1;
       filter: drop-shadow(0 2px 6px rgba(0,0,0,0.08));
     }
     /* State colors for nav title nodes */
-    .node.nav-title.unvisited .nav-rect { fill: var(--color-unvisited); stroke: var(--color-unvisited); }
-    .node.nav-title.unvisited .nav-text { fill: var(--color-primary-text); }
-    .node.nav-title.visited-main .nav-rect { fill: var(--color-visited-main); stroke: var(--color-visited-main); }
-    .node.nav-title.visited-main .nav-text { fill: #fff; }
-    .node.nav-title.active .nav-rect { fill: var(--color-accent); stroke: var(--color-accent); filter: drop-shadow(0 0 10px rgba(255,90,0,0.6)); }
-    .node.nav-title.active .nav-text { fill: #fff; }
+    .node.pill.unvisited .nav-rect { fill: var(--color-unvisited); stroke: var(--color-unvisited); }
+    .node.pill.unvisited .nav-text { fill: var(--color-primary-text); }
+    .node.pill.visited-main .nav-rect { fill: var(--color-visited-main); stroke: var(--color-visited-main); }
+    .node.pill.visited-main .nav-text { fill: #fff; }
+    .node.pill.active .nav-rect { fill: var(--color-accent); stroke: var(--color-accent); filter: drop-shadow(0 0 10px rgba(255,90,0,0.6)); }
+    .node.pill.active .nav-text { fill: #fff; }
     
     .img-container {
       border-radius: 15px;
@@ -1303,18 +1303,17 @@
             .on('mousemove', function(event) { const [x, y] = d3.pointer(event, document.body); tooltip.style('left', (x + 20) + 'px').style('top', (y + 20) + 'px'); })
             .on('mouseout', function() { tooltip.style('visibility', 'hidden').style('opacity', 0); });
           node.append('circle').attr('r', 12);
-          // Convert title nodes into pill-shaped nodes
+          // Render all nodes as pill-shaped labeled nodes
           node.each(function(d) {
-            const isTitle = (d.type === 'main' || d.type === 'flip-cards') && String(d.nav || '').toLowerCase() === 'title';
-            if (!isTitle) return;
             const gsel = d3.select(this);
-            gsel.classed('nav-title', true);
+            gsel.classed('pill', true);
             gsel.select('circle').remove();
-            const label = (d.navLabel || '').trim() || (d.title ? String(d.title).replace(/<[^>]+>/g, '').replace(/\*\*(.*?)\*\*/g, '$1') : '');
+            const baseTitle = (d.title && d.title.trim().length) ? (typeof toPlainNavLabel === 'function' ? toPlainNavLabel(d.title) : String(d.title).replace(/<br\s*\/?>(\s*)?/gi, ' ').replace(/\*\*(.*?)\*\*/g, '$1').replace(/<[^>]+>/g, '')) : '';
+            const label = (baseTitle && baseTitle.trim().length) ? baseTitle.trim() : ((d.buttonText && d.buttonText.trim().length) ? d.buttonText.trim() : (`${d.type === 'sidequest' ? 'Info' : 'Step'} ${d.id}`));
             const text = gsel.append('text').attr('class', 'nav-text').text(label);
             const bbox = text.node() ? text.node().getBBox() : { width: 60, height: 14 };
             const paddingX = 18, paddingY = 8;
-            const w = Math.max(100, bbox.width + paddingX * 2);
+            const w = Math.max(110, bbox.width + paddingX * 2);
             const h = Math.max(28, bbox.height + paddingY * 2);
             gsel.insert('rect', 'text').attr('class', 'nav-rect').attr('width', w).attr('height', h).attr('x', -w / 2).attr('y', -h / 2);
             text.attr('x', 0).attr('y', 1);
@@ -1336,8 +1335,8 @@
           simulation.on('tick', () => {
             link.attr('x1', d => d.source.x).attr('y1', d => d.source.y).attr('x2', d => d.target.x).attr('y2', d => d.target.y);
             node.attr('transform', d => `translate(${d.x},${d.y})`);
-            // Keep nav title node pills centered on their coordinates and resize text if layout changes
-            g.selectAll('g.node.nav-title').each(function(d) {
+            // Keep pill nodes centered and resize their rects to text
+            g.selectAll('g.node.pill').each(function(d) {
               const gsel = d3.select(this);
               const textSel = gsel.select('text.nav-text');
               const rectSel = gsel.select('rect.nav-rect');
