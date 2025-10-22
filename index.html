@@ -337,6 +337,27 @@
     .node.visited-main circle { fill: var(--color-visited-main); }
     .node.visited-sidequest circle { fill: var(--color-visited-sidequest); }
     .node.active circle { fill: var(--color-accent); filter: drop-shadow(0 0 10px var(--color-accent)); r: 15 !important; }
+    /* Nav title nodes (pills) */
+    .node.nav-title .nav-text {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 12px;
+      letter-spacing: 0.2px;
+      dominant-baseline: middle;
+      text-anchor: middle;
+    }
+    .node.nav-title .nav-rect {
+      rx: 15; ry: 15;
+      fill: #fff; stroke: #304642; stroke-width: 1;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.08));
+    }
+    /* State colors for nav title nodes */
+    .node.nav-title.unvisited .nav-rect { fill: var(--color-unvisited); stroke: var(--color-unvisited); }
+    .node.nav-title.unvisited .nav-text { fill: var(--color-primary-text); }
+    .node.nav-title.visited-main .nav-rect { fill: var(--color-visited-main); stroke: var(--color-visited-main); }
+    .node.nav-title.visited-main .nav-text { fill: #fff; }
+    .node.nav-title.active .nav-rect { fill: var(--color-accent); stroke: var(--color-accent); filter: drop-shadow(0 0 10px rgba(255,90,0,0.6)); }
+    .node.nav-title.active .nav-text { fill: #fff; }
     
     .img-container {
       border-radius: 15px;
@@ -526,9 +547,12 @@
                         let sizeClass = 'size-medium';
                         let style = '';
                         let frameClass = '';
+                        let wantsControls = false; // when true: click-to-play with sound
                         attributes.forEach(attr => {
                             const [key, value] = attr.split(':');
-                            if (key.trim() === 'size') {
+                            const k = (key || '').trim().toLowerCase();
+                            const v = (value || '').trim().toLowerCase();
+                            if (k === 'size') {
                                 const sizeValue = value.trim();
                                 if (sizeValue.endsWith('px')) {
                                     style = `height: ${sizeValue}; width: auto;`;
@@ -536,16 +560,21 @@
                                 } else {
                                     sizeClass = `size-${sizeValue}`;
                                 }
-                            } else if (key.trim() === 'frame' || key.trim() === 'border' || key.trim() === 'style') {
-                                const v = (value || '').trim().toLowerCase();
+                            } else if (k === 'frame' || k === 'border' || k === 'style') {
                                 if (v === 'none' || v === 'no' || v === 'off' || v === 'plain' || v === '0') {
                                     frameClass = 'no-frame';
                                 }
+                            } else if (k === 'controls' || (k === 'play' && (v === 'click' || v === 'manual')) || (k === 'autoplay' && (v === 'off' || v === 'false' || v === 'no')) || (k === 'sound' && (v === 'on' || v === 'true' || v === 'yes'))) {
+                                wantsControls = true;
                             }
                         });
                         
                         if (isVideo) {
-                            stackedMedia.push(`<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><video autoplay loop muted playsinline style=\"width:100%;height:auto;\" src=\"${src}\" title=\"${altText}\"></video></div>`);
+                            if (wantsControls) {
+                                stackedMedia.push(`<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><video controls style=\"width:100%;height:auto;\" src=\"${src}\" title=\"${altText}\"></video></div>`);
+                            } else {
+                                stackedMedia.push(`<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><video autoplay loop muted playsinline style=\"width:100%;height:auto;\" src=\"${src}\" title=\"${altText}\"></video></div>`);
+                            }
                         } else if (isLottie) {
                             stackedMedia.push(`<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><div class=\"lottie-anim\" data-src=\"${src}\" data-loop=\"true\" data-autoplay=\"true\" aria-label=\"${altText}\"></div></div>`);
                         } else {
@@ -715,26 +744,34 @@
                         let sizeClass = 'size-large';
                         let style = '';
                         let frameClass = '';
+                        let wantsControls = false; // when true: click-to-play with sound
 
                         attributes.forEach(attr => {
                             const [key, value] = attr.split(':');
-                            if (key.trim() === 'size') {
-                                const sizeValue = value.trim();
+                            const k = (key || '').trim().toLowerCase();
+                            const v = (value || '').trim().toLowerCase();
+                            if (k === 'size') {
+                                const sizeValue = (value || '').trim();
                                 if (sizeValue.endsWith('px')) {
                                     style = `height: ${sizeValue}; width: auto;`;
                                     sizeClass = '';
                                 } else {
                                     sizeClass = `size-${sizeValue}`;
                                 }
-                            } else if (key.trim() === 'frame' || key.trim() === 'border' || key.trim() === 'style') {
-                                const v = (value || '').trim().toLowerCase();
+                            } else if (k === 'frame' || k === 'border' || k === 'style') {
                                 if (v === 'none' || v === 'no' || v === 'off' || v === 'plain' || v === '0') {
                                     frameClass = 'no-frame';
                                 }
+                            } else if (k === 'controls' || (k === 'play' && (v === 'click' || v === 'manual')) || (k === 'autoplay' && (v === 'off' || v === 'false' || v === 'no')) || (k === 'sound' && (v === 'on' || v === 'true' || v === 'yes'))) {
+                                wantsControls = true;
                             }
                         });
                         if (isVideo) {
-                           mediaHtml += `<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><video autoplay loop muted playsinline style=\"width:100%;height:auto;\" src=\"${src}\" title=\"${altText}\"></video></div>`;
+                            if (wantsControls) {
+                                mediaHtml += `<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><video controls style=\"width:100%;height:auto;\" src=\"${src}\" title=\"${altText}\"></video></div>`;
+                            } else {
+                                mediaHtml += `<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><video autoplay loop muted playsinline style=\"width:100%;height:auto;\" src=\"${src}\" title=\"${altText}\"></video></div>`;
+                            }
                         } else if (isLottie) {
                            mediaHtml += `<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><div class=\"lottie-anim\" data-src=\"${src}\" data-loop=\"true\" data-autoplay=\"true\" aria-label=\"${altText}\"></div></div>`;
                         } else {
@@ -1116,7 +1153,7 @@
         let courseData;
         try {
             const urlParams = new URLSearchParams(window.location.search);
-            const courseFile = urlParams.get('course') || 'Intro-2.txt';
+            const courseFile = urlParams.get('course') || 'Intro-3.txt';
             const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
             // Always bust caches to avoid GitHub Pages serving stale assets after deploys
             const cacheParam = Date.now();
@@ -1144,9 +1181,24 @@
           svgContainer = d3.select('#flow-map-container'); svg = d3.select('#flow-map-svg'); g = svg.append('g'); tooltip = d3.select('#tooltip');
         }
 
+        // Helper to convert rich titles to plain nav labels
+        function toPlainNavLabel(rawTitle) {
+            if (!rawTitle) return '';
+            let t = String(rawTitle);
+            t = t.replace(/<br\s*\/?>(\s*)?/gi, ' ');
+            t = t.replace(/\*\*(.*?)\*\*/g, '$1');
+            t = t.replace(/<[^>]+>/g, '');
+            return t.trim();
+        }
+
         courseData.forEach(mainNodeData => {
             if (!mainNodeData.id) return; // Skip invalid nodes
-            const mainNode = { ...mainNodeData, id: String(mainNodeData.id) }; delete mainNode.sideQuests;
+            const mainNode = { ...mainNodeData, id: String(mainNodeData.id) };
+            // Prepare a clean label to render for nav pills
+            if (mainNode.title) {
+                mainNode.navLabel = toPlainNavLabel(mainNode.title);
+            }
+            delete mainNode.sideQuests;
             d3Nodes.push(mainNode); nodeById.set(mainNode.id, mainNode);
             if (mainNodeData.sideQuests) {
                 mainNodeData.sideQuests.forEach((sqData, index) => {
@@ -1254,6 +1306,12 @@
             .force('mainY', d3.forceY(d => (d.type !== 'sidequest' && typeof d.targetFy === 'number') ? d.targetFy : height / 2).strength(d => d.type !== 'sidequest' ? 0.08 : 0))
             .force('sqX', d3.forceX(d => (d.type === 'sidequest' && typeof d.targetFx === 'number') ? d.targetFx : width / 2).strength(d => d.type === 'sidequest' ? sqXStrength : 0))
             .force('sqY', d3.forceY(d => (d.type === 'sidequest' && typeof d.targetFy === 'number') ? d.targetFy : height / 2).strength(d => d.type === 'sidequest' ? sqYStrength : 0));
+          // Nudge section title nodes slightly upward to make room for pills
+          d3Nodes.forEach(n => {
+            if ((n.type === 'main' || n.type === 'flip-cards') && String(n.nav || '').toLowerCase() === 'title' && typeof n.targetFy === 'number') {
+              n.targetFy = n.targetFy - 12;
+            }
+          });
           link = g.append('g').attr('class', 'links').selectAll('line').data(validLinks).join('line').attr('class', 'link');
           node = g.append('g').attr('class', 'nodes').selectAll('g').data(d3Nodes).join('g').attr('class', 'node')
             .on('click', (event, d) => updateView(d.id))
@@ -1261,6 +1319,7 @@
             .on('mousemove', function(event) { const [x, y] = d3.pointer(event, document.body); tooltip.style('left', (x + 20) + 'px').style('top', (y + 20) + 'px'); })
             .on('mouseout', function() { tooltip.style('visibility', 'hidden').style('opacity', 0); });
           node.append('circle').attr('r', 12);
+          // Title nodes should render like regular circular nodes; no special pill rendering
                      zoom = d3.zoom().scaleExtent([0.5, 3])
              .on('start', () => { if (simulation) { sqXStrength = 0.08; sqYStrength = 0.12; sqLinkStrength = 0.32; simulation.alphaTarget(0.2).restart(); } })
              .on('zoom', (event) => { g.attr('transform', event.transform); if (simulation) simulation.alpha(0.06).restart(); })
@@ -1278,6 +1337,18 @@
           simulation.on('tick', () => {
             link.attr('x1', d => d.source.x).attr('y1', d => d.source.y).attr('x2', d => d.target.x).attr('y2', d => d.target.y);
             node.attr('transform', d => `translate(${d.x},${d.y})`);
+            // Keep nav title node pills centered on their coordinates and resize text if layout changes
+            g.selectAll('g.node.nav-title').each(function(d) {
+              const gsel = d3.select(this);
+              const textSel = gsel.select('text.nav-text');
+              const rectSel = gsel.select('rect.nav-rect');
+              if (!textSel.node() || !rectSel.node()) return;
+              const bbox = textSel.node().getBBox();
+              const paddingX = 18, paddingY = 8;
+              const w = Math.max(100, bbox.width + paddingX * 2);
+              const h = Math.max(28, bbox.height + paddingY * 2);
+              rectSel.attr('width', w).attr('height', h).attr('x', -w / 2).attr('y', -h / 2);
+            });
           });
         }
 
