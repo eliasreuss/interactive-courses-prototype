@@ -235,7 +235,7 @@ id: 16
 title: **The Double ABC insight explained**
 type: main
 ---
-This brief video walks you through how to navigate and interpret your double ABC analysis insight in Inact Now.![video:Explainer video/size:medium/align:center/frame:none](Double-ABC-Explainer-2.1.mp4)
+This brief video walks you through how to navigate and interpret your double ABC analysis insight in Inact Now.![video:Explainer video/size:large/align:center/frame:none/controls](Double-ABC-Explainer-2.1.mp4)
 ---
 > Continue -> 17
 
@@ -277,7 +277,7 @@ Here’s a quick recap of what you’ve covered:
 -What the special categories are, and why they help give a fuller picture
 
 **You’re off to a great start. Let’s keep going!**
-![image/size:550px/align:stack-right/frame:none](Congrats-ABC.png)
+![image/size:450px/align:stack-right/frame:none](Congrats-ABC.png)
 ---
 
 [side-quest-content:video:The ABC Analysis]
