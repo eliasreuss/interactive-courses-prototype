@@ -547,9 +547,12 @@
                         let sizeClass = 'size-medium';
                         let style = '';
                         let frameClass = '';
+                        let wantsControls = false; // when true: click-to-play with sound
                         attributes.forEach(attr => {
                             const [key, value] = attr.split(':');
-                            if (key.trim() === 'size') {
+                            const k = (key || '').trim().toLowerCase();
+                            const v = (value || '').trim().toLowerCase();
+                            if (k === 'size') {
                                 const sizeValue = value.trim();
                                 if (sizeValue.endsWith('px')) {
                                     style = `height: ${sizeValue}; width: auto;`;
@@ -557,16 +560,21 @@
                                 } else {
                                     sizeClass = `size-${sizeValue}`;
                                 }
-                            } else if (key.trim() === 'frame' || key.trim() === 'border' || key.trim() === 'style') {
-                                const v = (value || '').trim().toLowerCase();
+                            } else if (k === 'frame' || k === 'border' || k === 'style') {
                                 if (v === 'none' || v === 'no' || v === 'off' || v === 'plain' || v === '0') {
                                     frameClass = 'no-frame';
                                 }
+                            } else if (k === 'controls' || (k === 'play' && (v === 'click' || v === 'manual')) || (k === 'autoplay' && (v === 'off' || v === 'false' || v === 'no')) || (k === 'sound' && (v === 'on' || v === 'true' || v === 'yes'))) {
+                                wantsControls = true;
                             }
                         });
                         
                         if (isVideo) {
-                            stackedMedia.push(`<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><video autoplay loop muted playsinline style=\"width:100%;height:auto;\" src=\"${src}\" title=\"${altText}\"></video></div>`);
+                            if (wantsControls) {
+                                stackedMedia.push(`<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><video controls style=\"width:100%;height:auto;\" src=\"${src}\" title=\"${altText}\"></video></div>`);
+                            } else {
+                                stackedMedia.push(`<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><video autoplay loop muted playsinline style=\"width:100%;height:auto;\" src=\"${src}\" title=\"${altText}\"></video></div>`);
+                            }
                         } else if (isLottie) {
                             stackedMedia.push(`<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><div class=\"lottie-anim\" data-src=\"${src}\" data-loop=\"true\" data-autoplay=\"true\" aria-label=\"${altText}\"></div></div>`);
                         } else {
@@ -736,26 +744,34 @@
                         let sizeClass = 'size-large';
                         let style = '';
                         let frameClass = '';
+                        let wantsControls = false; // when true: click-to-play with sound
 
                         attributes.forEach(attr => {
                             const [key, value] = attr.split(':');
-                            if (key.trim() === 'size') {
-                                const sizeValue = value.trim();
+                            const k = (key || '').trim().toLowerCase();
+                            const v = (value || '').trim().toLowerCase();
+                            if (k === 'size') {
+                                const sizeValue = (value || '').trim();
                                 if (sizeValue.endsWith('px')) {
                                     style = `height: ${sizeValue}; width: auto;`;
                                     sizeClass = '';
                                 } else {
                                     sizeClass = `size-${sizeValue}`;
                                 }
-                            } else if (key.trim() === 'frame' || key.trim() === 'border' || key.trim() === 'style') {
-                                const v = (value || '').trim().toLowerCase();
+                            } else if (k === 'frame' || k === 'border' || k === 'style') {
                                 if (v === 'none' || v === 'no' || v === 'off' || v === 'plain' || v === '0') {
                                     frameClass = 'no-frame';
                                 }
+                            } else if (k === 'controls' || (k === 'play' && (v === 'click' || v === 'manual')) || (k === 'autoplay' && (v === 'off' || v === 'false' || v === 'no')) || (k === 'sound' && (v === 'on' || v === 'true' || v === 'yes'))) {
+                                wantsControls = true;
                             }
                         });
                         if (isVideo) {
-                           mediaHtml += `<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><video autoplay loop muted playsinline style=\"width:100%;height:auto;\" src=\"${src}\" title=\"${altText}\"></video></div>`;
+                            if (wantsControls) {
+                                mediaHtml += `<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><video controls style=\"width:100%;height:auto;\" src=\"${src}\" title=\"${altText}\"></video></div>`;
+                            } else {
+                                mediaHtml += `<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><video autoplay loop muted playsinline style=\"width:100%;height:auto;\" src=\"${src}\" title=\"${altText}\"></video></div>`;
+                            }
                         } else if (isLottie) {
                            mediaHtml += `<div class=\"img-container ${sizeClass} ${frameClass}\" style=\"${style}\"><div class=\"lottie-anim\" data-src=\"${src}\" data-loop=\"true\" data-autoplay=\"true\" aria-label=\"${altText}\"></div></div>`;
                         } else {
@@ -1137,7 +1153,7 @@
         let courseData;
         try {
             const urlParams = new URLSearchParams(window.location.search);
-            const courseFile = urlParams.get('course') || 'Intro-3.txt';
+            const courseFile = urlParams.get('course') || 'Double-ABC-Analysis-2.txt';
             const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
             // Always bust caches to avoid GitHub Pages serving stale assets after deploys
             const cacheParam = Date.now();

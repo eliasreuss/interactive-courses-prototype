@@ -21,12 +21,18 @@ id: 3
 title: **The Pareto principle:**<br>The vital few and the trivial many
 type: main
 ---
-**To understand Double ABC, let’s start with its foundation:**
+**To understand Double ABC, it helps to first recall the basics of classic ABC analysis.**
 
-**The Double ABC Analysis builds on the classic ABC method — a simple but powerful way to apply the 80/20 rule, also called the Pareto principle.**![image/size:400px/align:stack-right/frame:none](Closet.png)
+ABC analysis is built on the Pareto principle (80/20 rule), which shows that a small portion of items usually accounts for most of the value.
 
-Think of your closet: you probably wear just 20% of your clothes 80% of the time. 
-The same is true for your inventory — a small share of items drives most of the value.
+For example, in a warehouse, a handful of products (the “A” items) may generate the majority of sales or inventory value, while many other products (the “B” and “C” items) contribute far less.
+
+ABC analysis helps identify which inventory items matter most by classifying them into three categories:
+
+-**A items:** the few, high-value drivers
+-**B items:** the moderate contributors
+-**C items:** the many, low-value items
+![image/size:800px/align:stack-right/frame:none](ABC-Fiskere.png)
 ---
 > Continue -> 4
 
@@ -34,45 +40,54 @@ id: 4
 title: **ABC Analysis**
 type: main
 ---
-**The ABC Analysis is used for...**
-**...focusing on what truly creates value..**
+If we for example look at the total consumption lines of all our products over the past 12 months (their demand), we see that a small share of products accounts for most of the demand, while most products contribute very little.
 
-In short: a small part of your products generate the majority of your revenue.
+**We can group them into the three categories:**
 
-With ABC Analysis, you divide your products into three groups:
+-**A products** – the top ~10% of products that make up 80% of total demand
+-**B products** – the next ~20% of products that cover 15% of demand
+-**C products** – the remaining ~70% of products that add up to only 5% of demand
 
--**A items** – the top ~10% of products that generate around 80% of your revenue
--**B items** – the next ~20% that bring in about 15% of revenue
--**C items** – the remaining ~70% of products that only make up 5% of revenue
+And that’s the idea behind ABC analysis: a few products matter most, while most matter much less.
 
-Not familiar with the 80/20 rule or ABC method? Watch the short intro video first.
+Want to learn more about the 80/20 rule or ABC method? **Watch the short video.**
 
-Already know it? Perfect — **let’s move on.**
+Feeling comfortable with the concept? Perfect — **let’s move on.**
+
 ![image/size:400px/align:stack-right/frame:none](Single-ABC-Vizz.png)
 ---
-> Continue -> 5
+> Continue -> 20
 > Watch video: The ABC Analysis -> [video:The ABC Analysis]
 
-id: 5
-title: **Double ABC analysis**
+id: 20
+title: **Introducing the Double ABC analysis**
 type: main
 ---
-You’ve just learned how a simple ABC Analysis works, but that isn’t the whole story.
+And that’s how the ABC analysis works, but there’s more.
 
-The Double ABC Analysis adds a second dimension: **Not just how much you sell, but also how often.**
+**Double ABC analysis** looks at **two variables at the same time** instead of just one. These could for example be:
 
-**Double ABC Analysis is a way to rank your products using two factors at the same time instead of just one:**
+**1. Cost of inventory** – how much the product cost us over the last 12 months (total cost of goods).
+**2. Demand** – how often the product was sold or used in the last 12 months (consumption lines).
+---
+> Continue -> 5
 
--**Frequency** → how often the product is purchased.
--**Revenue** → how much money the product generates.
+id: 5
+title: **Interpreting the Double ABC analysis**
+type: main
+---
+This is how it works: 
 
-Each product is scored on both factors using the ABC scale:
+Each product gets **two scores**, A / B / C, for each variable. These two scores are combined into a two-letter category. For example:
 
--**A = high, B = medium, C = low.** 
+-**AA** = high cost of inventory, high demand
+-**CB** = low cost of inventory, medium demand
 
-These two ratings are then combined into a two-letter category. 
+This helps you quickly see which products are the most important and decide how to manage them.
 
-**Watch the video for a more thorough walkthrough, or skip ahead to dive straight into an example.**
+**Tip:** You can use Double ABC with any two variables you want — for example, revenue and lead time, or sales and criticality.
+
+Watch the video for a full walkthrough, or continue to see an example.
 
 ![image/size:400px/align:stack-right](ABC-Analysis.png)
 ---
@@ -86,11 +101,11 @@ type: main
 **Let’s apply it to a paper company:**
 
 **AA items**
-High revenue, high frequency
+High cost of inventory, high demand
 
 → Your everyday heroes. Like copy paper in an office. Easy to manage. Low risk.
 
-![image/size:400px/align:stack-right](ABC-Example-1.png)
+![image/size:400px/align:stack-right/frame:none](ABC-Example-1.png)
 ---
 > Continue -> 7
 
@@ -101,11 +116,11 @@ type: main
 **Let’s apply it to a paper company:**
 
 **AC items**
-High revenue, low frequency
+High cost of inventory, low demand
 
-→ Big-ticket items sold occasionally. Like a copy machine. Valuable – but riskier to keep in stock.
+→ Big-ticket items sold occasionally. Like a copy machine. Valuable but riskier to stock, as they tie up significant capital with little predictability on when — or how many — will sell.
 
-![image/size:400px/align:stack-right](ABC-Example-2.png)
+![image/size:400px/align:stack-right/frame:none](ABC-Example-2.png)
 ---
 > Continue -> 8
 
@@ -116,10 +131,10 @@ type: main
 **Let’s apply it to a paper company:**
 
 **CA items**
-Low revenue, high frequency
+Low cost of inventory, high demand
 
 → Often overlooked, but critical for customer experience. Like paperclips or screws in production.
-![image/size:400px/align:stack-right](ABC-Example-3.png)
+![image/size:400px/align:stack-right/frame:none](ABC-Example-3.png)
 ---
 > Continue -> 9
 
@@ -130,10 +145,11 @@ type: main
 **Let’s apply it to a paper company:**
 
 **CC items**
-Low revenue, low frequency
+Low cost of inventory, low demand
 
-→ Generate very little income, rarely sells. Like plastic sleeves. Important to manage carefully – or phase out.
-![image/size:400px/align:stack-right](ABC-Example-4.png)
+→ Rarely sells. Like plastic sleeves. Important to manage carefully – or phase out.
+
+![image/size:400px/align:stack-right/frame:none](ABC-Example-4.png)
 ---
 > Continue -> 10
 
@@ -143,14 +159,15 @@ type: main
 ---
 **And just like that, every product in your inventory will be assigned a double ABC category.**
 
-It will help you understand **not just what sells – but how it sells.**
+Where a single ABC analysis may look at demand alone, Double ABC adds a second lens: cost of inventory. It shows you both how predictable a products demand is - and how expensive it is to hold. 
 
-Where a single ABC Analysis looks at revenue alone, Double ABC adds a second lens: demand patterns. It shows you both how valuable a product is – and how predictable it is.
+**Note:** Cost of inventory and demand are just examples of variables you can use for the analysis. The best choice of variables will always depend on your specific goals.
 
-**Note:** Revenue and frequency are just examples of axes you can use for the analysis. The best choice of axes will always depend on your specific goals.
+**Click the left button to explore examples of different variables and how they can shape your analysis.** 
 
-**Click the left button to explore examples of different axes and how they can shape your analysis. Or, continue on the main path if you’d like to move ahead.**
-![image/size:400px/align:stack-right](ABC-Example-Final.png)
+If you feel comfortable with the concept, click continue to see what the analysis can help you with. 
+
+![image/size:400px/align:stack-right/frame:none](ABC-Example-Final.png)
 ---
 > Continue -> 11
 > Show me examples of different axes -> [case:The company’s ABC categorization depends on the purpose.]
@@ -161,17 +178,17 @@ type: main
 ---
 ![image/size:500px/align:center/frame:none](Analysis-Help.png)
 ---
-> Continue -> 12
+> How did it help others? -> 12
 
 id: 12
 title: **Case: Micro Matic**
 type: main
 ---
-**Here is how Micro Matic increased their service level and lowered their stock, using the double ABC Analysis**
+Below is an example from Micro Matic, who used the Double ABC analysis to raise their service level while reducing overall stock. By segmenting their products into the different categories, they were able to decide where to increase minimum inventory, where to lower it, and where to avoid holding stock altogether.
 
 ![image/size:500px/align:center/frame:none](Micro-Matic-Case.png)
 
-The result? Their service level jumped to **95% almost overnight.**
+For Micro Matic, using the double ABC analysis to inform new policies helped them reach their service level goal of 95% almost immediately.
 ---
 > Continue -> 13
 
@@ -199,7 +216,7 @@ Great! Now’s the time to open your Double ABC Analysis insight so you can foll
 Click the “Open Insight Now” button, or open it manually in a separate window.
 ---
 > It's open, continue -> 15
-> Open Inact Now -> [link:newtab:newtab:embed:https://inactnow.io/app/#/]
+> Open Inact Now -> [link:newtab:newtab:newtab:embed:https://inactnow.io/app/#/]
 
 id: 15
 title: **Great... What are we looking at?**
@@ -215,20 +232,10 @@ But for now, let’s focus on this Insight we've prepared for you.
 > Continue -> 16
 
 id: 16
-title: **What do the numbers mean?**
+title: **The Double ABC insight explained**
 type: main
 ---
-You’re looking at an overview of your own inventory — and how your products are distributed across the Double ABC categories.
-
-**Let’s break down what the numbers tell us:**
-
-**Inventory Value** – Your current total inventory value
-**Cost of Goods Consumed (12 months)** – The total cost of inventory used over the past year
-**Total Products** – The total number of individual products in your inventory
-
-Beneath these key figures, you’ll find **your inventory segmented by Double ABC classification.**
-
-This is a great opportunity to ask yourself: does the current product distribution support your goals?
+This brief video walks you through how to navigate and interpret your double ABC analysis insight in Inact Now.![video:Explainer video/size:medium/align:center/frame:none](Double-ABC-Explainer-2.1.mp4)
 ---
 > Continue -> 17
 
@@ -236,15 +243,14 @@ id: 17
 title: **What about items that don’t quite fit?**
 type: main
 ---
-When people first see their Double ABC Analysis, a common question is:
-
-**“What about items that don’t quite fit?”**
+When people first see their Double ABC Analysis, a common question often comes up: **“What about items that don’t quite fit?”**
 
 For example, new products often appear as low-performing (like CC) simply because they haven’t had time to generate sales. That doesn’t mean they lack potential.
 
 That’s why the Inact Now view goes **beyond the standard nine categories.** We’ve added **six extra classifications** to capture special cases—like new, discontinued, or strategic items—so you can act with more nuance.
 
 **Let’s explore these categories and see how they guide smarter decisions.**
+
 ![lottie:motion graphic/size:950px/align:stack-right-top/frame:none](ANIFRAME.json)
 ---
 > Explain the special categories -> 18

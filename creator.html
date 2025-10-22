@@ -616,6 +616,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const align = prompt("Enter video alignment (left, center, right, stack-right, or stack-right-top):", "stack-right");
             if (!align) return;
             const border = prompt("Frame? Type 'none' for no border/shadow, or leave blank:", "");
+            const playback = prompt("Playback: type 'controls' for click-to-play with sound, or 'autoplay' for muted looping:", "controls");
 
             let attributes = [];
             if (size) attributes.push(`size:${size.trim()}`);
@@ -623,6 +624,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 attributes.push(`align:${align.trim()}`);
             }
             if (border && border.trim().length) attributes.push(`frame:${border.trim()}`);
+            if (playback && /controls|click|sound/i.test(playback.trim())) attributes.push('controls');
             
             const isJson = /\.json(\?|$)/i.test(videoFile.trim());
             const mediaType = isJson ? 'lottie' : 'video';
