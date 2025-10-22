@@ -8,25 +8,35 @@ type: main
 ---
 ![image/size:550px/align:center/frame:none](Intro-illustration-1.png)
 ---
-> Let's do it -> 2
+> Let's do it -> 6
+
+id: 6
+title: **The why**
+type: main
+---
+Lets’s begin with the core question: **why do we need Inact for inventory management?**
+
+In short - because managing inventory without proper visibilty leads to unwanted complexity. Inact helps remove that complexity!
+
+![image/size:500px/align:stack-right-top/frame:none](Sailor.png)
+---
+> Continue -> 2
 
 id: 2
 title: **The hidden complexities of inventory management**
 nav: title
 type: main
 ---
-Inventory Is the Lifeblood of Your Business. 
-Your inventory is where all business decisions end up.
+**Inventory management is a balancing act.**
 
-**Sales** wants more.
+**Sales** wants more products in stock, so they can fulfill customer demand quickly and avoid missed opportunities.
 
-**Finance** wants less.
+**Finance** wants fewer products in stock, because excess inventory ties up working capital and increases carrying costs.
 
-**Supply chain** sits in the middle – balancing
-service levels, lead times, and cost.
+**Supply chain** sits in the middle – balancing service levels, lead times, and overall cost efficiency.
 
-That balance is hard - but mastering it is key to
-running a healthy, profitable business.
+Striking this balance is difficult. When it’s managed without the right visibility and insights, it creates unwanted complexity.
+
 ![video:motion graphic/size:350px/align:stack-right/frame:none](BalanceAnimation.mp4)
 ---
 > Continue -> 3
@@ -35,10 +45,10 @@ id: 3
 title: **The cost of unwanted complexity**
 type: main
 ---
-**When this balancing act fails, the result is costly.** 
+**The consequences are costly.**
 
-Most companies are sitting on 15–35% excess inventory. 
-This imbalance silently drains resources in three critical ways:
+In fact, most companies are sitting on 15–35% excess inventory, as a result of their balancing act failing. This hidden burden silently drains resources in three critical ways: 
+
 ![1/size:third/align:center/frame:none](Excess-1.png) ![2/size:third/align:center/frame:none](Excess-2.png) ![3/size:third/align:center/frame:none](Excess-3.png)
 
 **Want to dig deeper into how complexity can stifle growth?** 
@@ -49,12 +59,12 @@ Check out our webinar or blog post. Otherwise, feel free to continue on the main
 > Read blog post -> [case:Blog post: Complexity kills growth in your organisation]
 
 id: 4
-title: **What to do about this complexity?**
+title: **So, what can you do about this complexity?**
 type: main
 ---
-**Well... This is exactly what Inact was built to solve!**
+**This is exactly what Inact was built to solve.**
 
-This learning path will be about using Inact for Inventory management – **but that is only the beginning.**
+In this learning path, we’ll focus on how Inact supports inventory management – **but that is only the beginning.**
 
 Inact can be a partner across your whole organisation, providing the tools to manage inventory, suppliers, products, and customers effectively.
 
@@ -71,7 +81,7 @@ You will go through five easily-digestible flows. Together, they give you the kn
 
 ![image/size:large/align:center/frame:none](Flows-overview.png)
 ---
-> Sounds good! Take me to flow 1: Double ABC Analysis -> [link:newtab:newtab:newtab:https://eliasreuss.github.io/interactive-courses-prototype/index.html?course=Double-ABC-Analysis-2.txt]
+> Sounds good! Take me to flow 1: Double ABC Analysis -> [link:newtab:newtab:newtab:newtab:https://eliasreuss.github.io/interactive-courses-prototype/index.html?course=Double-ABC-Analysis-2.txt]
 
 [side-quest-content:video:Webinar]
 ---
