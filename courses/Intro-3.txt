@@ -54,7 +54,7 @@ In fact, most companies are sitting on 15–35% excess inventory, as a result of
 **Want to dig deeper into how complexity can stifle growth?** 
 Check out our webinar or blog post. Otherwise, feel free to continue on the main path.
 ---
-> Continue main path -> 4
+> Continue -> 4
 > Watch webinar -> [video:Webinar: Complexity kills growth - Fit for Growth]
 > Read blog post -> [case:Blog post: Complexity kills growth in your organisation]
 
@@ -81,7 +81,7 @@ You will go through five easily-digestible flows. Together, they give you the kn
 
 ![image/size:large/align:center/frame:none](Flows-overview.png)
 ---
-> Sounds good! Take me to flow 1: Double ABC Analysis -> [link:newtab:newtab:newtab:newtab:https://eliasreuss.github.io/interactive-courses-prototype/index.html?course=Double-ABC-Analysis-2.txt]
+> Sounds good! Take me to flow 1: Double ABC Analysis -> [link:newtab:newtab:https://eliasreuss.github.io/interactive-courses-prototype/?course=Double-ABC-Analysis-2.txt]
 
 [side-quest-content:video:Webinar]
 ---

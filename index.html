@@ -143,6 +143,9 @@
         height: auto;
         object-fit: contain;
         display: block;
+        /* Ensure video controls are not covered by the sticky button bar */
+        position: relative;
+        z-index: 3;
     }
     /* Lottie container sizing */
     .img-container .lottie-anim {

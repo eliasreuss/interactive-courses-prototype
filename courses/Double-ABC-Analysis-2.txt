@@ -216,7 +216,7 @@ Great! Now’s the time to open your Double ABC Analysis insight so you can foll
 Click the “Open Insight Now” button, or open it manually in a separate window.
 ---
 > It's open, continue -> 15
-> Open Inact Now -> [link:newtab:newtab:newtab:embed:https://inactnow.io/app/#/]
+> Open Inact Now -> [link:newtab:newtab:newtab:newtab:embed:https://inactnow.io/app/#/]
 
 id: 15
 title: **Great... What are we looking at?**
@@ -339,5 +339,5 @@ You can do this either by clicking “Open Inact Now”, or by opening it in a s
 ---
 **Tip: If you’re ever unsure what a category means, just click the “i” icon in Inact Now for a quick explanation.**
 
-![image/size:medium/align:left](SmallTip.png)
+![image/size:medium/align:center](SmallTip.png)
 ---
