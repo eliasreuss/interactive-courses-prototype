@@ -785,36 +785,85 @@
       let html = '';
       const processBold = (str) => str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
       
-      // Process columns first
-      let processedContent = content;
-      const columnsRegex = /\{columns\}([\s\S]*?)\{\/columns\}/g;
-      processedContent = processedContent.replace(columnsRegex, (match, columnsContent) => {
-        const columnParts = columnsContent.split(/\{column\}/).filter(p => p.trim());
-        let columnsHtml = '<div class="columns-container" style="display: flex; gap: 24px; align-items: flex-start;">';
-        columnParts.forEach(colContent => {
-          const cleanContent = colContent.replace(/\{\/column\}/g, '').trim();
-          if (cleanContent) {
-            const tempDiv = document.createElement('div');
-            renderColumnContent(tempDiv, cleanContent);
-            columnsHtml += `<div class="column" style="flex: 1;">${tempDiv.innerHTML}</div>`;
-          }
-        });
-        columnsHtml += '</div>';
-        return `<!--COLUMNS_PLACEHOLDER_${columnsHtml}-->`;
+      // Check if content has columns
+      const hasColumns = /\{columns\}/.test(content);
+      
+      if (hasColumns) {
+        // Process content with columns
+        html = processContentWithColumns(content, processBold);
+      } else {
+        // Process content without columns (original logic)
+        html = processSimpleContent(content, processBold);
+      }
+
+      element.innerHTML = html;
+      initLottieWithin(element);
+    }
+    
+    // Process content that contains {columns} blocks
+    function processContentWithColumns(content, processBold) {
+      let html = '';
+      let remaining = content;
+      
+      while (remaining.length > 0) {
+        const columnsStart = remaining.indexOf('{columns}');
+        
+        if (columnsStart === -1) {
+          // No more columns, process remaining content
+          html += processSimpleContent(remaining, processBold);
+          break;
+        }
+        
+        // Process content before columns
+        if (columnsStart > 0) {
+          html += processSimpleContent(remaining.substring(0, columnsStart), processBold);
+        }
+        
+        // Find end of columns block
+        const columnsEnd = remaining.indexOf('{/columns}', columnsStart);
+        if (columnsEnd === -1) {
+          // Malformed columns, just process rest as text
+          html += processSimpleContent(remaining.substring(columnsStart), processBold);
+          break;
+        }
+        
+        // Extract and process columns block
+        const columnsContent = remaining.substring(columnsStart + 9, columnsEnd); // 9 = '{columns}'.length
+        html += renderColumnsBlock(columnsContent, processBold);
+        
+        // Continue with rest of content
+        remaining = remaining.substring(columnsEnd + 10); // 10 = '{/columns}'.length
+      }
+      
+      return html;
+    }
+    
+    // Render a {columns} block
+    function renderColumnsBlock(columnsContent, processBold) {
+      const columnParts = columnsContent.split(/\{column\}/).filter(p => p.trim());
+      let columnsHtml = '<div class="columns-container" style="display: flex; gap: 24px; align-items: flex-start;">';
+      
+      columnParts.forEach(colContent => {
+        const cleanContent = colContent.replace(/\{\/column\}/g, '').trim();
+        if (cleanContent) {
+          const tempDiv = document.createElement('div');
+          renderColumnContent(tempDiv, cleanContent);
+          columnsHtml += `<div class="column" style="flex: 1;">${tempDiv.innerHTML}</div>`;
+        }
       });
       
-      const lines = processedContent.split('\n');
+      columnsHtml += '</div>';
+      return columnsHtml;
+    }
+    
+    // Process simple content (no columns)
+    function processSimpleContent(content, processBold) {
+      let html = '';
+      const lines = content.split('\n');
       let inList = false;
 
       for (const line of lines) {
         const trimmedLine = line.trim();
-        
-        // Check for columns placeholder
-        if (trimmedLine.startsWith('<!--COLUMNS_PLACEHOLDER_')) {
-          if (inList) { html += '</ul>'; inList = false; }
-          html += trimmedLine.replace('<!--COLUMNS_PLACEHOLDER_', '').replace('-->', '');
-          continue;
-        }
         
         // Handle <br/> tags
         if (trimmedLine === '<br/>' || trimmedLine === '<br>') {
@@ -876,8 +925,7 @@
       }
 
       if (inList) html += '</ul>';
-      element.innerHTML = html;
-      initLottieWithin(element);
+      return html;
     }
     
     // Helper to render content within columns
