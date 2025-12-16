@@ -1854,7 +1854,7 @@
                 <input type="number" class="field-input node-id" required>
             </div>
             <div class="field-group title-field">
-                <label class="field-label">Slide Title</label>
+                <label class="field-label">Slide Title (shown on slide)</label>
                 <input type="text" class="field-input node-title" placeholder="Use **text** for bold">
                 <div class="node-options" style="margin-top: 8px; margin-bottom: 0;">
                     <label class="checkbox-option">
@@ -1867,6 +1867,10 @@
                     </label>
                 </div>
             </div>
+        </div>
+        <div class="field-group" style="margin-bottom: 16px;">
+            <label class="field-label">Index Title (shown in sidebar/TOC - leave empty to use slide title)</label>
+            <input type="text" class="field-input node-index-title" placeholder="Short title for navigation">
         </div>
         
         <div class="nav-options" style="display: none;">
@@ -3661,6 +3665,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 false
             );
             
+            // Set index title if present
+            if (nodeData.indexTitle) {
+                const indexTitleInput = nodeCard.querySelector('.node-index-title');
+                if (indexTitleInput) indexTitleInput.value = nodeData.indexTitle;
+            }
+            
             const typeSelect = nodeCard.querySelector('.node-type');
             typeSelect.value = nodeType;
             
@@ -4152,8 +4162,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 // Build slide output in new format
+                const indexTitle = card.querySelector('.node-index-title')?.value || '';
                 finalOutput += `slide_id: ${slideId}\n`;
-                finalOutput += `index_title: ${title.replace(/\*\*/g, '')}\n`; // Strip bold for index
+                // Use custom index_title if provided, otherwise strip bold from title
+                finalOutput += `index_title: ${indexTitle || title.replace(/\*\*/g, '')}\n`;
                 finalOutput += `title: ${title}\n`;
                 if (titleAlign === 'center') {
                     finalOutput += `title-align: center\n`;
@@ -4367,6 +4379,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     type: 'slide',
                     id: card.querySelector('.node-id').value,
                     title: card.querySelector('.node-title').value,
+                    indexTitle: card.querySelector('.node-index-title')?.value || '',
                     titleBold: card.querySelector('.node-title-bold')?.checked || false,
                     titleCenter: card.querySelector('.node-title-center')?.checked || false,
                     content: card.querySelector('.node-content').value,
@@ -4442,6 +4455,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 );
                 
                 // Restore additional properties
+                if (nodeData.indexTitle) {
+                    const indexTitleInput = nodeCard.querySelector('.node-index-title');
+                    if (indexTitleInput) indexTitleInput.value = nodeData.indexTitle;
+                }
+                if (nodeData.indexTitle) {
+                    const indexTitleInput = nodeCard.querySelector('.node-index-title');
+                    if (indexTitleInput) indexTitleInput.value = nodeData.indexTitle;
+                }
                 if (nodeData.titleBold) {
                     const titleBoldCheck = nodeCard.querySelector('.node-title-bold');
                     if (titleBoldCheck) titleBoldCheck.checked = true;
