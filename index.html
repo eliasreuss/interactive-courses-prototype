@@ -1359,10 +1359,58 @@
             let currentBlock = null;
             let currentTopic = null;
             let isContent = false;
+            let inSidequestContent = false;
+            let currentSidequestContent = null;
+            const sidequestContents = []; // Store sidequest content blocks for later linking
             
             for (let i = 0; i < lines.length; i++) {
                 const line = lines[i];
                 const trimmedLine = line.trim();
+                
+                // Check for old format sidequest content: [side-quest-content:type:title|back=Label]
+                const sqContentMatch = trimmedLine.match(/^\[side-quest-content:([^:]+):([^\]|]+)(?:\|back=([^\]]+))?\]$/);
+                if (sqContentMatch) {
+                    // Save current block before switching to sidequest content
+                    if (currentBlock && !inSidequestContent) {
+                        nodesArray.push(currentBlock);
+                        currentBlock = null;
+                    }
+                    inSidequestContent = true;
+                    isContent = false;
+                    currentSidequestContent = {
+                        type: sqContentMatch[1].trim().toLowerCase(),
+                        title: sqContentMatch[2].trim(),
+                        backLabel: sqContentMatch[3] ? sqContentMatch[3].trim() : 'Return to main path',
+                        content: ''
+                    };
+                    continue;
+                }
+                
+                // Handle sidequest content parsing
+                if (inSidequestContent) {
+                    if (trimmedLine === '---') {
+                        if (!isContent) {
+                            isContent = true;
+                        } else {
+                            // End of sidequest content block
+                            sidequestContents.push(currentSidequestContent);
+                            currentSidequestContent = null;
+                            inSidequestContent = false;
+                            isContent = false;
+                        }
+                        continue;
+                    }
+                    if (isContent && currentSidequestContent) {
+                        // Parse [title: ...] inside sidequest content
+                        const titleMatch = trimmedLine.match(/^\[title:\s*(.+)\]$/);
+                        if (titleMatch) {
+                            currentSidequestContent.displayTitle = titleMatch[1].trim();
+                        } else {
+                            currentSidequestContent.content += line + '\n';
+                        }
+                    }
+                    continue;
+                }
                 
                 // Check for topic header: [id:1/topic: Introduction]
                 const topicMatch = trimmedLine.match(/^\[id:([^\/]+)\/topic:\s*(.+?)\]$/);
@@ -1444,9 +1492,24 @@
                             if (oldMatch) {
                                 const buttonText = oldMatch[1].trim();
                                 const target = oldMatch[2].trim();
-                                const targetId = parseInt(target);
-                                if (!isNaN(targetId)) {
-                                    currentBlock.connections[buttonText] = targetId;
+                                
+                                // Check if target is a sidequest reference: [type:title]
+                                const sidequestMatch = target.match(/^\[([^:]+):(.+)\]$/);
+                                if (sidequestMatch) {
+                                    const sqType = sidequestMatch[1].trim().toLowerCase();
+                                    const sqTitle = sidequestMatch[2].trim();
+                                    if (!currentBlock.sideQuests) currentBlock.sideQuests = [];
+                                    currentBlock.sideQuests.push({
+                                        buttonText: buttonText,
+                                        type: sqType,
+                                        title: sqTitle,
+                                        fullTitle: sqTitle
+                                    });
+                                } else {
+                                    const targetId = parseInt(target);
+                                    if (!isNaN(targetId)) {
+                                        currentBlock.connections[buttonText] = targetId;
+                                    }
                                 }
                             }
                         }
@@ -1477,6 +1540,27 @@
             }
             
             if (currentBlock) nodesArray.push(currentBlock);
+            
+            // Link sidequest contents to their buttons
+            if (sidequestContents.length > 0) {
+                nodesArray.forEach(node => {
+                    if (node.sideQuests) {
+                        node.sideQuests.forEach(sq => {
+                            // Find matching sidequest content by type
+                            const matchingContent = sidequestContents.find(sqc => 
+                                sqc.type === sq.type && 
+                                (sq.title.toLowerCase().includes(sqc.title.toLowerCase()) || 
+                                 sqc.title.toLowerCase().includes(sq.type))
+                            );
+                            if (matchingContent) {
+                                sq.content = matchingContent.content.trim();
+                                sq.backLabel = matchingContent.backLabel;
+                                sq.displayTitle = matchingContent.displayTitle || sq.title;
+                            }
+                        });
+                    }
+                });
+            }
         }
         
         // Process content to handle columns and external URLs
@@ -1703,13 +1787,39 @@
     }
 
     function isNodeInSection(nodeId, section) {
+      // Direct match - this section's ID equals the active node
       if (section.id === nodeId) return true;
+      
+      // Check if active node is one of this section's children
       if (section.children.some(c => c.id === nodeId)) return true;
-      // Check sidequests
-      if (nodeId.includes('-') && nodeId.startsWith(section.id + '-')) return true;
-      for (const child of section.children) {
-        if (nodeId.startsWith(child.id + '-')) return true;
+      
+      // Check if active node is a sidequest belonging to this section or its children
+      if (nodeId.includes('-')) {
+        // Sidequest IDs have format: parentId-type-index-cardIdx
+        // Extract the parent ID (everything before the first dash that isn't part of a multi-digit number)
+        const parts = nodeId.split('-');
+        if (parts.length >= 4) {
+          const parentId = parts[0];
+          // Check if the sidequest's parent is this section or one of its children
+          if (section.id === parentId) return true;
+          if (section.children.some(c => c.id === parentId)) return true;
+        }
+        
+        // Also check for new format: sq-targetId-slideNum
+        if (nodeId.startsWith('sq-')) {
+          const sqParts = nodeId.split('-');
+          if (sqParts.length >= 3) {
+            const sqTargetId = sqParts[1];
+            // The sidequest belongs to whichever section contains the return node
+            const returnNode = window.sidequestReturnNode;
+            if (returnNode) {
+              if (section.id === returnNode) return true;
+              if (section.children.some(c => c.id === returnNode)) return true;
+            }
+          }
+        }
       }
+      
       return false;
     }
 
@@ -1756,11 +1866,14 @@
       
       // Check if current node is a sidequest
       const currentNode = nodeById.get(activeNodeId);
-      const isSidequest = currentNode && currentNode.type === 'sidequest';
+      // A node is a sidequest if its type is 'sidequest' OR if its ID contains the sidequest format
+      const isSidequest = (currentNode && currentNode.type === 'sidequest') || 
+                          activeNodeId.includes('-') || 
+                          activeNodeId.startsWith('sq-');
       
       // Use last main node if we're in a sidequest, otherwise update lastMainNodeId
       const effectiveNodeId = isSidequest ? lastMainNodeId : activeNodeId;
-      if (!isSidequest) {
+      if (!isSidequest && effectiveNodeId) {
         lastMainNodeId = activeNodeId;
       }
       
@@ -1912,26 +2025,28 @@
       // Collect action buttons (sidequests, links, etc.)
       const actionButtons = [];
       
-      // Sidequest buttons (new format)
+      // Sidequest buttons (both new and old format)
       if ((n.type === 'main' || n.type === 'flip-cards' || !n.type) && mainNodeData && mainNodeData.sideQuests) {
         mainNodeData.sideQuests.forEach((sq, index) => {
           const btn = document.createElement('button');
           btn.className = 'btn btn-outline';
           btn.innerHTML = sq.buttonText;
           btn.onclick = () => {
-            // Check if sidequest target is an ID like "s1" or a number
+            // Store return node for sidequest BEFORE navigating
+            window.sidequestReturnNode = n.id;
+            
+            // Check if sidequest target is an ID like "s1" or a number (new format)
             const targetId = sq.targetId || sq.id;
             if (targetId && window.sidequestNodesMap && window.sidequestNodesMap.has(targetId)) {
               // Navigate to first slide of this sidequest
               const sqNodes = window.sidequestNodesMap.get(targetId);
               if (sqNodes.length > 0) {
-                // Store return node for sidequest
-                window.sidequestReturnNode = n.id;
                 updateView(`sq-${targetId}-1`);
               }
             } else {
-              // Old format fallback
-              updateView(`${n.id}-${sq.type}-${index}-0`);
+              // Old format - navigate to inline sidequest content
+              const sqNodeId = `${n.id}-${sq.type}-${index}-0`;
+              updateView(sqNodeId);
             }
           };
           actionButtons.push(btn);
@@ -2088,8 +2203,17 @@
           </svg>
         `;
         returnBtn.onclick = () => {
-          const returnNode = n.parentId || window.sidequestReturnNode || '1';
-          updateView(String(returnNode));
+          // Priority: parentId from node data, then stored return node, finally fallback to first slide
+          const returnNode = n.parentId || window.sidequestReturnNode;
+          if (returnNode) {
+            // Clear the stored return node after use
+            const targetNode = String(returnNode);
+            updateView(targetNode);
+          } else {
+            // Fallback: find first non-section slide
+            const firstSlide = courseData.find(node => node && node.id != null && node.isSection !== true);
+            updateView(String(firstSlide ? firstSlide.id : '1'));
+          }
         };
         navBtns.appendChild(returnBtn);
       }
