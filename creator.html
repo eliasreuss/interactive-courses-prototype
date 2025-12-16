@@ -2,243 +2,3055 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>FlowScript Course Creator</title>
+    <title>Inact Learn – Course Creator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-blue: #007bff; --light-gray: #f8f9fa; --medium-gray: #dee2e6; --dark-gray: #343a40;
-            --red: #dc3545; --green: #28a745; --yellow: #ffc107; --cyan: #17a2b8;
+            --bg-dark: #E6E8E2;
+            --card-bg: #ffffff;
+            --accent-green: #304642;
+            --accent-green-hover: #243835;
+            --accent-olive: #D0D5C5;
+            --text-dark: #1a1a1a;
+            --text-muted: #666666;
+            --border-color: #e0e0e0;
+            --input-bg: #fafafa;
+            --shadow: 0 2px 8px rgba(0,0,0,0.08);
+            --radius: 12px;
+            --radius-sm: 8px;
         }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; background-color: var(--light-gray); color: var(--dark-gray); margin: 0; padding: 20px; }
-        .container { max-width: 900px; margin: 0 auto; background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        h1, h2, h3, h4 { color: #212529; }
-        h2 { border-bottom: 2px solid #e9ecef; padding-bottom: 10px; }
-        .node-card { border: 1px solid var(--medium-gray); border-radius: 6px; padding: 20px; margin-bottom: 20px; background-color: #fff; }
-        input[type="text"], input[type="number"], textarea, select { width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 4px; box-sizing: border-box; margin-bottom: 10px; font-size: 1rem; }
-        textarea.node-content, textarea.sq-content, textarea.flip-card-front, textarea.flip-card-back { min-height: 120px; resize: vertical; }
-        label { font-weight: 600; display: block; margin-bottom: 5px; }
-        .label-with-button { display: flex; justify-content: space-between; align-items: center; }
-        button { background-color: var(--primary-blue); color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; font-size: 0.9rem; margin-right: 5px; transition: background-color 0.2s; }
-        button:hover { background-color: #0056b3; }
-        .btn-add { background-color: var(--green); }
-        .btn-add:hover { background-color: #218838; }
-        .btn-remove { background-color: var(--red); }
-        .btn-remove:hover { background-color: #c82333; }
-        .btn-generate { background-color: var(--yellow); color: #212529; font-weight: bold; width: 100%; padding: 15px; font-size: 1.2rem; margin-top: 20px; }
-        .btn-generate:hover { background-color: #e0a800; }
-        .connection-row, .sidequest-row { display: flex; gap: 15px; align-items: flex-start; margin-bottom: 15px; border-left: 3px solid var(--medium-gray); padding: 15px; border-radius: 4px;}
-        .sidequest-row { border-left-color: var(--cyan); }
-        .connection-inputs { flex: 1; }
-        .sidequest-content-area { flex: 3; }
-        .output-area { margin-top: 20px; }
-        #outputText { width: 100%; min-height: 400px; background-color: #e9ecef; color: #495057; font-family: monospace; font-size: 0.9rem; border-radius: 4px; }
-        #upload-btn { background-color: #6c757d; }
-        #upload-btn:hover { background-color: #5a6268; }
-        .top-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        
+        /* ========== HEADER ========== */
+        .app-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 64px;
+            background: #fff;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            z-index: 1000;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+        
+        .header-logo {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            margin-right: 32px;
+            white-space: nowrap;
+        }
+        
+        .header-logo span {
+            color: var(--text-dark);
+        }
+        
+        .header-divider {
+            width: 1px;
+            height: 28px;
+            background: var(--border-color);
+            margin-right: 24px;
+        }
+        
+        .header-tabs {
+            display: flex;
+            gap: 8px;
+            flex: 1;
+        }
+        
+        .header-tab {
+            padding: 8px 20px;
+            padding-bottom: 18px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid transparent;
+            border-radius: 0;
+            cursor: pointer;
+            transition: all 0.15s;
+            font-family: inherit;
+            margin-bottom: -1px;
+        }
+        
+        .header-tab:hover {
+            color: var(--text-dark);
+        }
+        
+        .header-tab.active {
+            color: var(--accent-green);
+            font-weight: 600;
+            border-bottom-color: var(--accent-green);
+        }
+        
+        .header-actions {
+            display: flex;
+            gap: 10px;
+            margin-left: auto;
+        }
+        
+        .header-btn {
+            padding: 10px 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.15s;
+            font-family: inherit;
+            border: none;
+        }
+        
+        .header-btn.upload {
+            background: var(--accent-green);
+            color: #fff;
+        }
+        
+        .header-btn.upload:hover {
+            background: var(--accent-green-hover);
+        }
+        
+        .header-btn.save {
+            background: #FF5A00;
+            color: #fff;
+        }
+        
+        .header-btn.save:hover {
+            background: #E65000;
+        }
+        
+        .header-btn.save-new {
+            background: #FF5A00;
+            color: #fff;
+        }
+        
+        .header-btn.save-new:hover {
+            background: #E65000;
+        }
+        
+        .header-btn.new-course {
+            background: #16A34A;
+            color: #fff;
+        }
+        
+        .header-btn.new-course:hover {
+            background: #15803D;
+        }
+        
+        /* Layout */
+        .app-layout {
+            display: flex;
+            min-height: 100vh;
+            padding-top: 64px;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            width: 380px;
+            background: var(--card-bg);
+            border-right: 1px solid var(--border-color);
+            padding: 24px;
+            overflow-y: auto;
+            position: fixed;
+            top: 64px;
+            left: 0;
+            height: calc(100vh - 64px);
+            z-index: 100;
+        }
+        
+        .sidebar-header {
+            margin-bottom: 24px;
+        }
+        
+        .sidebar-header h2 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            color: var(--text-muted);
+            margin: 0 0 16px 0;
+        }
+        
+        .sidebar-nodes {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        
+        /* Drop indicator line */
+        .drop-indicator {
+            height: 3px;
+            background: var(--accent-green);
+            border-radius: 2px;
+            margin: 2px 0;
+            opacity: 0;
+            transition: opacity 0.15s;
+        }
+        
+        .drop-indicator.active {
+            opacity: 1;
+        }
+        
+        /* Sidebar Node Items */
+        .sidebar-node {
+            background: var(--input-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 14px 16px;
+            margin: 3px 0;
+            cursor: grab;
+            transition: all 0.15s;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .sidebar-node:hover {
+            background: var(--accent-olive);
+            border-color: var(--accent-olive);
+        }
+        
+        .sidebar-node.active {
+            background: var(--accent-olive);
+            border-color: var(--accent-green);
+        }
+        
+        .sidebar-node.dragging {
+            opacity: 0.4;
+            cursor: grabbing;
+            transform: scale(0.98);
+        }
+        
+        .sidebar-node.is-section-title {
+            background: var(--accent-olive);
+            border-color: var(--accent-green);
+            font-weight: 600;
+        }
+        
+        .sidebar-node .node-drag-handle {
+            color: var(--text-muted);
+            cursor: grab;
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        
+        .sidebar-node .node-id-badge {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--accent-green);
+            min-width: 24px;
+            flex-shrink: 0;
+        }
+        
+        .sidebar-node .node-title-text {
+            flex: 1;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            min-width: 0;
+            line-height: 1.4;
+            word-wrap: break-word;
+        }
+        
+        .sidebar-node .node-type-badge {
+            font-size: 0.7rem;
+            padding: 3px 10px;
+            border-radius: 50px;
+            background: var(--accent-green);
+            color: #fff;
+            font-weight: 500;
+            flex-shrink: 0;
+        }
+        
+        .sidebar-node .node-type-badge.sidequest {
+            background: var(--text-muted);
+        }
+        
+        /* Drag handle */
+        .drag-handle {
+            color: var(--text-muted);
+            cursor: grab;
+            font-size: 0.8rem;
+            letter-spacing: -2px;
+            user-select: none;
+            padding: 4px;
+            margin: -4px;
+            margin-right: 4px;
+            flex-shrink: 0;
+        }
+        
+        .drag-handle:hover {
+            color: var(--accent-green);
+        }
+        
+        /* Sidebar Section Items (draggable) */
+        .sidebar-section-item {
+            margin: 3px 0;
+        }
+        
+        .sidebar-section-item.dragging,
+        .sidebar-slide.dragging {
+            opacity: 0.4;
+        }
+        
+        .sidebar-section-header {
+            background: var(--accent-olive);
+            border: 1px solid var(--accent-green);
+            border-radius: var(--radius-sm);
+            padding: 10px 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            transition: all 0.15s;
+        }
+        
+        .sidebar-section-header:hover {
+            background: var(--accent-green);
+            color: white;
+        }
+        
+        .sidebar-section-header:hover .drag-handle {
+            color: white;
+        }
+        
+        .sidebar-slide {
+            background: var(--input-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 10px 14px;
+            margin: 3px 0;
+            cursor: pointer;
+            transition: all 0.15s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .sidebar-slide:hover {
+            background: var(--accent-olive);
+            border-color: var(--accent-olive);
+        }
+        
+        .sidebar-slide .slide-id-badge {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--accent-green);
+            min-width: 20px;
+        }
+        
+        .sidebar-slide .slide-title-text {
+            flex: 1;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .sidebar-slide .slide-type-badge {
+            font-size: 0.65rem;
+            padding: 2px 8px;
+            border-radius: 50px;
+            background: var(--accent-green);
+            color: #fff;
+            font-weight: 500;
+            flex-shrink: 0;
+        }
+        
+        .sidebar-slide .slide-type-badge.sidequest {
+            background: var(--text-muted);
+        }
+        
+        /* Section Title Cards */
+        .section-title-card {
+            background: var(--accent-olive);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            box-shadow: var(--shadow);
+            position: relative;
+            margin-bottom: 16px;
+            border: 2px solid var(--accent-green);
+        }
+        
+        .section-title-card + .node-card,
+        .section-title-card + .node-connector {
+            margin-top: 0;
+        }
+        
+        .section-title-actions {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+        }
+        
+        .btn-section-action {
+            background: transparent;
+            border: none;
+            color: var(--accent-green);
+            cursor: pointer;
+            padding: 4px 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .btn-section-action:hover {
+            color: var(--text-dark);
+        }
+        
+        .section-title-content {
+            padding-right: 80px;
+        }
+        
+        .section-title-input {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        /* Main Content Area */
+        .main-content {
+            flex: 1;
+            margin-left: 380px;
+            padding: 40px;
+        }
+        
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+            padding: 0 4px;
+        }
+        
+        .top-bar h1 {
+            color: var(--accent-green);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .top-actions {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .btn-secondary {
+            background: var(--accent-olive);
+            color: var(--accent-green);
+            border: 1px solid var(--accent-olive);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        
+        .btn-secondary:hover {
+            background: #c0c5b5;
+            border-color: #c0c5b5;
+        }
+        
+        /* Node Cards */
+        .node-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .node-card + .node-card {
+            margin-top: 16px;
+        }
+        
+        .node-connector {
+            display: flex;
+            justify-content: center;
+            padding: 16px 0;
+        }
+        
+        .node-connector svg {
+            width: 24px;
+            height: 32px;
+            color: var(--accent-green);
+            opacity: 0.4;
+        }
+        
+        .node-header {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        
+        .field-group.id-field {
+            flex: 0 0 80px;
+        }
+        
+        .field-group.title-field {
+            flex: 1;
+        }
+        
+        .field-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+        
+        .field-input {
+            padding: 10px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            font-family: inherit;
+            background: var(--input-bg);
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        
+        .field-input:focus {
+            outline: none;
+            border-color: var(--accent-green);
+            box-shadow: 0 0 0 3px rgba(61, 79, 61, 0.1);
+        }
+        
+        .node-options {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+        
+        .checkbox-option input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--border-color);
+            border-radius: 50%;
+            appearance: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+        }
+        
+        .checkbox-option input[type="checkbox"]:checked {
+            background: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .checkbox-option input[type="checkbox"]:checked::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 6px;
+            height: 6px;
+            background: #fff;
+            border-radius: 50%;
+        }
+        
+        /* Content Area */
+        .content-section {
+            margin-bottom: 20px;
+        }
+        
+        .content-section .field-label {
+            margin-bottom: 8px;
+        }
+        
+        .content-wrapper {
+            position: relative;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            background: var(--input-bg);
+        }
+        
+        .content-textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 16px;
+            padding-right: 50px;
+            padding-bottom: 50px;
+            border: none;
+            font-size: 0.95rem;
+            font-family: inherit;
+            background: transparent;
+            resize: vertical;
+            line-height: 1.6;
+        }
+        
+        .content-textarea:focus {
+            outline: none;
+        }
+        
+        .content-wrapper:focus-within {
+            border-color: var(--accent-green);
+            box-shadow: 0 0 0 3px rgba(61, 79, 61, 0.1);
+        }
+        
+        .content-footer-options {
+            position: absolute;
+            bottom: 12px;
+            left: 16px;
+            display: flex;
+            gap: 16px;
+        }
+        
+        .add-media-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            background: var(--accent-olive);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            z-index: 10;
+        }
+        
+        .add-media-btn:hover {
+            background: #b8c4a8;
+            transform: scale(1.05);
+        }
+        
+        .add-media-btn svg {
+            width: 18px;
+            height: 18px;
+            color: var(--accent-green);
+        }
+        
+        .media-dropdown {
+            position: absolute;
+            top: 48px;
+            right: 12px;
+            background: var(--accent-olive);
+            border-radius: var(--radius-sm);
+            padding: 8px 0;
+            min-width: 140px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            z-index: 1000;
+            display: none;
+        }
+        
+        .media-dropdown.show {
+            display: block;
+        }
+        
+        .media-option {
+            padding: 10px 16px;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        
+        .media-option:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        /* Bottom Options Row */
+        .bottom-options {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 24px;
+            padding-top: 4px;
+        }
+        
+        /* Connections Section */
+        .connections-section {
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+        
+        .connections-header {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+        
+        .button-text-inputs {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+        
+        .button-text-group {
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .button-text-label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+        
+        .button-text-group .field-input {
+            width: 100%;
+        }
+        
+        
+        .connection-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-connection {
+            background: var(--accent-green);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        
+        .btn-connection:hover {
+            background: var(--accent-green-hover);
+            transform: translateY(-1px);
+        }
+        
+        /* Connection/Sidequest Rows */
+        .connections-list {
+            margin-bottom: 16px;
+        }
+        
+        .connection-row, .sidequest-row, .link-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: var(--input-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            margin-bottom: 10px;
+        }
+        
+        .connection-row input,
+        .link-row input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-family: inherit;
+            background: #fff;
+        }
+        
+        .connection-row input:focus,
+        .link-row input:focus {
+            outline: none;
+            border-color: var(--accent-green);
+        }
+        
+        .connection-arrow {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        
+        .btn-remove-small {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            background: #fee;
+            border: 1px solid #fcc;
+            color: #c44;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+        
+        .btn-remove-small:hover {
+            background: #fdd;
+            border-color: #c44;
+        }
+        
+        /* Sidequest styling - Card-based design matching main nodes */
+        .sidequest-row {
+            flex-direction: column;
+            align-items: stretch;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin-top: 24px;
+            box-shadow: var(--shadow);
+        }
+        
+        .sidequest-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .sidequest-number {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent-green);
+        }
+        
+        /* Title section */
+        .sidequest-title-section {
+            margin-bottom: 20px;
+        }
+        
+        .sidequest-field-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .sidequest-title-input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            font-family: inherit;
+            background: #fff;
+        }
+        
+        .sidequest-title-input:focus {
+            outline: none;
+            border-color: var(--accent-green);
+            box-shadow: 0 0 0 3px rgba(48, 70, 66, 0.1);
+        }
+        
+        .sidequest-toggles {
+            display: flex;
+            gap: 16px;
+            margin-top: 10px;
+        }
+        
+        /* Content section */
+        .sidequest-content-section {
+            margin-bottom: 20px;
+        }
+        
+        .sidequest-content-wrapper {
+            position: relative;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            background: #fff;
+        }
+        
+        .sidequest-content-textarea {
+            width: 100%;
+            min-height: 160px;
+            padding: 16px;
+            padding-right: 50px;
+            padding-bottom: 50px;
+            border: none;
+            font-size: 0.95rem;
+            font-family: inherit;
+            background: transparent;
+            resize: vertical;
+            line-height: 1.6;
+        }
+        
+        .sidequest-content-textarea:focus {
+            outline: none;
+        }
+        
+        .sidequest-content-wrapper:focus-within {
+            border-color: var(--accent-green);
+            box-shadow: 0 0 0 3px rgba(48, 70, 66, 0.1);
+        }
+        
+        .sidequest-media-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--accent-green);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: all 0.15s;
+        }
+        
+        .sidequest-media-btn:hover {
+            background: var(--accent-green-hover);
+            transform: scale(1.05);
+        }
+        
+        .sidequest-media-dropdown {
+            position: absolute;
+            top: 44px;
+            right: 12px;
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            display: none;
+            min-width: 120px;
+        }
+        
+        .sidequest-media-dropdown.active {
+            display: block;
+        }
+        
+        .sidequest-media-option {
+            padding: 10px 14px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: background 0.1s;
+        }
+        
+        .sidequest-media-option:hover {
+            background: var(--accent-olive);
+        }
+        
+        .sidequest-content-footer {
+            position: absolute;
+            bottom: 12px;
+            left: 16px;
+            display: flex;
+            gap: 16px;
+        }
+        
+        /* Button text section */
+        .sidequest-buttons-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .sidequest-button-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+        
+        .sidequest-button-input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-family: inherit;
+            background: #fff;
+        }
+        
+        .sidequest-button-input:focus {
+            outline: none;
+            border-color: var(--accent-green);
+            box-shadow: 0 0 0 3px rgba(48, 70, 66, 0.1);
+        }
+        
+        /* Add step button */
+        .sidequest-add-step-btn {
+            padding: 10px 20px;
+            background: var(--accent-olive);
+            color: var(--accent-green);
+            border: 1px solid var(--accent-green);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.15s;
+            font-family: inherit;
+        }
+        
+        .sidequest-add-step-btn:hover {
+            background: #c5cbb8;
+        }
+        
+        /* Hidden fields for compatibility */
+        .sq-hidden-fields {
+            display: none;
+        }
+        
+        /* Sidequest step cards (for multi-step sidequests) */
+        .sq-steps-container {
+            margin-bottom: 16px;
+        }
+        
+        .sq-step-card {
+            background: var(--input-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin-bottom: 12px;
+            position: relative;
+        }
+        
+        .sq-step-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .sq-step-number {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-green);
+        }
+        
+        .sq-step-title-section {
+            margin-bottom: 12px;
+        }
+        
+        .sq-step-field-label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+        
+        .sq-step-title-input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-family: inherit;
+            background: #fff;
+        }
+        
+        .sq-step-title-input:focus {
+            outline: none;
+            border-color: var(--accent-green);
+        }
+        
+        .sq-step-content-section {
+            margin-bottom: 12px;
+        }
+        
+        .sq-step-content-wrapper {
+            position: relative;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            background: #fff;
+        }
+        
+        .sq-step-content-wrapper:focus-within {
+            border-color: var(--accent-green);
+        }
+        
+        .sq-step-content {
+            width: 100%;
+            min-height: 100px;
+            padding: 12px;
+            padding-right: 45px;
+            border: none;
+            font-size: 0.9rem;
+            font-family: inherit;
+            background: transparent;
+            resize: vertical;
+        }
+        
+        .sq-step-content:focus {
+            outline: none;
+        }
+        
+        .sq-step-media-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--accent-green);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.15s;
+        }
+        
+        .sq-step-media-btn:hover {
+            background: var(--accent-green-hover);
+            transform: scale(1.05);
+        }
+        
+        .sq-step-media-dropdown {
+            position: absolute;
+            top: 38px;
+            right: 8px;
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            display: none;
+            min-width: 110px;
+        }
+        
+        .sq-step-media-dropdown.active {
+            display: block;
+        }
+        
+        .sq-step-media-option {
+            padding: 8px 12px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: background 0.1s;
+        }
+        
+        .sq-step-media-option:hover {
+            background: var(--accent-olive);
+        }
+        
+        .sq-step-buttons-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        
+        .sq-step-button-group label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+        
+        .sq-step-button-input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-family: inherit;
+            background: #fff;
+        }
+        
+        .sq-step-button-input:focus {
+            outline: none;
+            border-color: var(--accent-green);
+        }
+        
+        /* Legacy sq-card-wrap for compatibility */
+        .sq-card-wrap {
+            display: none;
+        }
+        
+        .sq-card-wrap.legacy-visible {
+            display: block;
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .sq-card-wrap input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-family: inherit;
+            background: var(--input-bg);
+            margin-bottom: 8px;
+        }
+        
+        .sq-card-wrap textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-family: inherit;
+            background: var(--input-bg);
+            resize: vertical;
+        }
+        
+        .sq-media-buttons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+        
+        .sq-media-buttons button {
+            padding: 6px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            background: #fff;
+            font-size: 0.8rem;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.15s;
+        }
+        
+        .sq-media-buttons button:hover {
+            background: var(--accent-olive);
+            border-color: var(--accent-olive);
+        }
+        
+        /* Link row */
+        .link-row {
+            border-left: 3px solid #28a745;
+        }
+        
+        .link-row .link-newtab-label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+        
+        /* Flip cards */
+        .flip-cards-editor {
+            display: none;
+        }
+        
+        .flip-card-row {
+            background: var(--input-bg);
+            border: 1px solid var(--border-color);
+            border-left: 3px solid #17a2b8;
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+        
+        .flip-card-row textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-family: inherit;
+            background: #fff;
+            resize: vertical;
+            min-height: 80px;
+            margin-bottom: 12px;
+        }
+        
+        .flip-card-row textarea:last-child {
+            margin-bottom: 0;
+        }
+        
+        .flip-card-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+        
+        /* Output Area */
+        .output-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin-top: 32px;
+        }
+        
+        .output-section h2 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 0 0 16px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+        
+        .btn-generate {
+            width: 100%;
+            background: var(--accent-green);
+            color: #fff;
+            border: none;
+            padding: 16px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+            margin-bottom: 16px;
+        }
+        
+        .btn-generate:hover {
+            background: var(--accent-green-hover);
+        }
+        
+        .btn-clear {
+            width: 100%;
+            background: transparent;
+            color: #888;
+            border: 1px solid #ccc;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-clear:hover {
+            background: #f5f5f5;
+            border-color: #999;
+            color: #666;
+        }
+        
+        #outputText {
+            width: 100%;
+            min-height: 300px;
+            padding: 16px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+            font-size: 0.85rem;
+            background: var(--input-bg);
+            resize: vertical;
+        }
+        
+        .btn-download {
+            margin-top: 12px;
+            background: rgba(48, 70, 66, 0.1);
+            color: var(--accent-green);
+            border: 1px solid var(--accent-green);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        
+        .btn-download:hover {
+            background: var(--accent-green);
+            color: #fff;
+        }
+        
+        /* Hidden file input */
+        #file-input {
+            display: none;
+        }
+        
+        /* Node type selector */
+        .node-type-row {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        
+        .node-type-row select {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-family: inherit;
+            background: #fff;
+            cursor: pointer;
+        }
+        
+        .node-type-row select:focus {
+            outline: none;
+            border-color: var(--accent-green);
+        }
+        
+        /* Nav options */
+        .nav-options {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+            padding: 12px 16px;
+            background: var(--input-bg);
+            border-radius: var(--radius-sm);
+        }
+        
+        .nav-options .field-group {
+            flex: 1;
+        }
+        
+        .nav-options select,
+        .nav-options input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-family: inherit;
+            background: #fff;
+        }
+        
+        /* Remove node button */
+        .node-actions {
+            position: relative;
+            display: flex;
+            gap: 8px;
+            justify-content: flex-end;
+            margin-bottom: 16px;
+        }
+        
+        .btn-node-action {
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.15s;
+            font-family: inherit;
+            border: 1px solid var(--border-color);
+            background: #fff;
+            color: var(--text-dark);
+        }
+        
+        .btn-node-action:hover {
+            background: var(--input-bg);
+        }
+        
+        .btn-node-action.remove {
+            background: #fee;
+            border-color: #fcc;
+            color: #c44;
+        }
+        
+        .btn-node-action.remove:hover {
+            background: #fdd;
+        }
+        
+        /* ========== SAVED COURSES VIEW ========== */
+        .courses-view {
+            display: none;
+            padding: 40px;
+            padding-top: 104px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .courses-view.active {
+            display: block;
+        }
+        
+        .courses-view h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent-green);
+            margin: 0 0 8px 0;
+        }
+        
+        .courses-view-subtitle {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 32px;
+        }
+        
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+        
+        .course-card {
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            transition: all 0.2s;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            border-color: var(--accent-green);
+        }
+        
+        .course-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        
+        .course-card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 0;
+            flex: 1;
+            padding-right: 12px;
+        }
+        
+        .course-card-delete {
+            background: transparent;
+            border: none;
+            color: #999;
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 4px;
+            transition: all 0.15s;
+            font-size: 1.1rem;
+        }
+        
+        .course-card-delete:hover {
+            background: #fee;
+            color: #c44;
+        }
+        
+        .course-card-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+        
+        .course-card-meta span {
+            display: inline-block;
+            margin-right: 16px;
+        }
+        
+        .course-card-preview {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .course-card-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .course-card-btn {
+            flex: 1;
+            padding: 10px 16px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.15s;
+            font-family: inherit;
+            text-align: center;
+        }
+        
+        .course-card-btn.edit {
+            background: var(--accent-green);
+            color: #fff;
+            border: none;
+        }
+        
+        .course-card-btn.edit:hover {
+            background: var(--accent-green-hover);
+        }
+        
+        .course-card-btn.duplicate {
+            background: transparent;
+            color: var(--accent-green);
+            border: 1px solid var(--accent-green);
+        }
+        
+        .course-card-btn.duplicate:hover {
+            background: var(--accent-olive);
+        }
+        
+        .no-courses {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-muted);
+        }
+        
+        .no-courses-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            opacity: 0.5;
+        }
+        
+        .no-courses h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 0 0 8px 0;
+        }
+        
+        .no-courses p {
+            margin: 0;
+        }
+        
+        /* Save Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+        }
+        
+        .modal {
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 32px;
+            width: 100%;
+            max-width: 440px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }
+        
+        .modal h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 0 0 8px 0;
+        }
+        
+        .modal p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 0 0 24px 0;
+        }
+        
+        .modal-input {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            margin-bottom: 24px;
+        }
+        
+        .modal-input:focus {
+            outline: none;
+            border-color: var(--accent-green);
+            box-shadow: 0 0 0 3px rgba(48, 70, 66, 0.1);
+        }
+        
+        .modal-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+        }
+        
+        .modal-btn {
+            padding: 12px 24px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.15s;
+            font-family: inherit;
+        }
+        
+        .modal-btn.cancel {
+            background: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+        
+        .modal-btn.cancel:hover {
+            background: var(--input-bg);
+        }
+        
+        .modal-btn.confirm {
+            background: var(--accent-green);
+            color: #fff;
+            border: none;
+        }
+        
+        .modal-btn.confirm:hover {
+            background: var(--accent-green-hover);
+        }
+        
+        /* Current course indicator */
+        .current-course-name {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            padding: 6px 14px;
+            background: var(--input-bg);
+            border-radius: 50px;
+            margin-right: 8px;
+            max-width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .current-course-name strong {
+            color: var(--text-dark);
+        }
+        
+        /* Hide creator when showing courses */
+        .app-layout.hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="top-controls">
-        <h1>FlowScript Course Creator</h1>
-        <label for="file-input" id="upload-btn" class="button" style="display:inline-block; padding: 10px 15px; cursor:pointer;">
-            📤 Upload & Edit .txt File
-        </label>
+<!-- ========== HEADER ========== -->
+<header class="app-header">
+    <div class="header-logo"><span>Learn</span> – Course Creator</div>
+    <div class="header-divider"></div>
+    <nav class="header-tabs">
+        <button class="header-tab active" data-tab="creator">Creator</button>
+        <button class="header-tab" data-tab="courses">Saved courses</button>
+    </nav>
+    <div class="header-actions">
+        <span class="current-course-name" id="current-course-name" style="display: none;"></span>
+        <label for="file-input" class="header-btn upload" style="cursor: pointer;">Upload .txt file</label>
         <input type="file" id="file-input" accept=".txt" style="display: none;">
+        <button class="header-btn save" id="save-btn">Save</button>
+        <button class="header-btn save-new" id="save-new-btn">Save new version</button>
+        <button class="header-btn new-course" id="new-course-btn">Start new course</button>
     </div>
-    <p>Create a new course from scratch, or upload an existing <code>.txt</code> file to continue editing it.</p>
-    <div id="nodes-container"></div>
-    <button id="add-node-btn" class="btn-add">➕ Add Main Path Node</button>
-    <div class="output-area">
-        <h2>Output</h2>
-        <button id="generate-btn" class="btn-generate">1. Generate & Preview Course Text</button>
-        <textarea id="outputText" readonly placeholder="Your generated course.txt content will appear here..."></textarea>
-        <button id="download-btn" style="margin-top: 10px; display: none;">2. Download .txt File</button>
+</header>
+
+<!-- ========== SAVE MODAL ========== -->
+<div class="modal-overlay" id="save-modal">
+    <div class="modal">
+        <h3>Save Course</h3>
+        <p>Give your course a name to save it for later.</p>
+        <input type="text" class="modal-input" id="course-name-input" placeholder="Enter course name...">
+        <div class="modal-actions">
+            <button class="modal-btn cancel" id="modal-cancel">Cancel</button>
+            <button class="modal-btn confirm" id="modal-confirm">Save Course</button>
+        </div>
     </div>
 </div>
 
-<!-- TEMPLATES (hidden) -->
+<!-- ========== SAVED COURSES VIEW ========== -->
+<div class="courses-view" id="courses-view">
+    <h2>Saved Courses</h2>
+    <p class="courses-view-subtitle">Your saved courses that you can continue working on.</p>
+    <div class="courses-grid" id="courses-grid"></div>
+</div>
+
+<!-- ========== CREATOR VIEW ========== -->
+<div class="app-layout" id="creator-view">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>Course Structure</h2>
+        </div>
+        <div class="sidebar-nodes" id="sidebar-nodes"></div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+<div class="container">
+            
+    <div id="nodes-container"></div>
+    
+    <div class="add-buttons-row" style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
+        <button id="add-section-btn" class="btn btn-secondary">Add section</button>
+        <button id="add-slide-btn" class="btn btn-primary">Add slide below</button>
+        <button id="add-slide-above-btn" class="btn btn-secondary">Add slide above</button>
+        <button id="add-sidequest-btn" class="btn btn-secondary">Add side quest slide</button>
+    </div>
+            
+            <div class="output-section">
+        <h2>Output</h2>
+                <button id="generate-btn" class="btn-generate">Generate & Preview Course Text</button>
+        <textarea id="outputText" readonly placeholder="Your generated course.txt content will appear here..."></textarea>
+                <button id="download-btn" class="btn-download" style="display: none;">Download .txt File</button>
+                <button id="clear-btn" class="btn-clear" style="margin-top: 12px;">Clear Course & Start Fresh</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- TEMPLATES -->
 <template id="node-template">
     <div class="node-card">
-        <button class="add-node-below-btn" style="float: right; margin-right: 8px;">Add Node Below</button>
-        <button class="add-node-above-btn" style="float: right; margin-right: 8px;">Add Node Above</button>
-        <button class="btn-remove" style="float: right;">Remove Node</button>
-        <h3>Node Details</h3>
-        <label>Node ID:</label><input type="number" class="node-id" required>
-        <label>Node Title:</label><textarea class="node-title" rows="2" placeholder="Use **text** for bold."></textarea>
-        <label>Title Alignment:</label>
-        <select class="node-title-align">
-            <option value="left" selected>Left</option>
-            <option value="center">Center</option>
-        </select>
-        <div style="display:flex; gap:10px; align-items:center;">
-            <div style="flex:1;">
-                <label>Nav Type (section label on flow map):</label>
+        <div class="node-actions">
+            <button class="btn-node-action remove btn-remove">Remove</button>
+        </div>
+        
+        <div class="node-header">
+            <div class="field-group id-field">
+                <label class="field-label">Slide ID</label>
+                <input type="number" class="field-input node-id" required>
+            </div>
+            <div class="field-group title-field">
+                <label class="field-label">Slide Title</label>
+                <input type="text" class="field-input node-title" placeholder="Use **text** for bold">
+                <div class="node-options" style="margin-top: 8px; margin-bottom: 0;">
+                    <label class="checkbox-option">
+                        <input type="checkbox" class="node-title-bold">
+                        Bold
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="checkbox" class="node-title-center">
+                        Center aligned
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-options" style="display: none;">
+            <div class="field-group">
+                <label class="field-label">Nav Type</label>
                 <select class="node-nav-type">
                     <option value="">None</option>
                     <option value="title">Title</option>
                     <option value="subtitle">Subtitle</option>
                 </select>
             </div>
-            <div style="flex:1;">
-                <label>Nav Parent ID (optional):</label>
+            <div class="field-group">
+                <label class="field-label">Nav Parent ID</label>
                 <input type="number" class="node-nav-parent" placeholder="e.g. 1">
             </div>
         </div>
-        <label>Node Type:</label>
+        
+        <div class="node-type-row" style="display: none;">
+            <label class="field-label">Node Type:</label>
         <select class="node-type">
             <option value="main" selected>Standard Content</option>
             <option value="flip-cards">Flip Cards</option>
         </select>
+        </div>
+        
+        <div class="content-section">
+            <label class="field-label">Content</label>
         <div class="node-content-area">
-            <!-- Standard content editor -->
             <div class="standard-content-editor">
-                <div class="label-with-button">
-                    <label>Node Content:</label>
-                    <div>
-                        <button type="button" class="add-list-btn" style="margin-bottom: 5px;">Add Bullet List</button>
-                        <button type="button" class="add-image-btn" style="margin-bottom: 5px;">Add Image</button>
-                        <button type="button" class="add-video-btn" style="margin-bottom: 5px;">Add Video</button>
-                        <button type="button" class="add-image-row-btn" style="margin-bottom: 5px;">Add Image Row (3)</button>
-                        <button type="button" class="add-quote-btn" style="margin-bottom: 5px;">Add Quote</button>
+                    <div class="content-wrapper">
+                        <textarea class="content-textarea node-content" placeholder="Write your content here. Use **text** for bold, * for lists."></textarea>
+                        <button type="button" class="add-media-btn media-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                        <div class="media-dropdown">
+                            <div class="media-option add-image-btn">Image</div>
+                            <div class="media-option add-image-row-btn">Image row</div>
+                            <div class="media-option add-video-btn">Video</div>
+                            <div class="media-option add-animation-btn">Animation</div>
+                            <div class="media-option add-quote-btn">Quote</div>
+                            <div class="media-option add-supademo-btn">Supademo</div>
                     </div>
+                        <div class="content-footer-options">
+                            <label class="checkbox-option">
+                                <input type="checkbox" class="content-bold">
+                                Bold
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" class="content-center">
+                                Center aligned
+                            </label>
                 </div>
-                <textarea class="node-content" placeholder="Use **text** for bold. For lists, use '* ' or '- '. For images, use the button or type ![alt text|size:medium](image.png)." required></textarea>
             </div>
-            <!-- Flip cards editor -->
-            <div class="flip-cards-editor" style="display: none;">
-                <label>Flip Cards Intro (optional):</label>
-                <textarea class="flip-intro" placeholder="Intro/body text that appears above the flip cards..." rows="3"></textarea>
+                </div>
+                <div class="flip-cards-editor">
+                    <div class="field-group" style="margin-bottom: 16px;">
+                        <label class="field-label">Flip Cards Intro (optional)</label>
+                        <textarea class="flip-intro content-textarea" placeholder="Intro text that appears above the flip cards..." style="min-height: 80px;"></textarea>
+                    </div>
                 <div class="flip-cards-container"></div>
-                <button type="button" class="add-flip-card-btn">Add Flip Card</button>
+                    <button type="button" class="btn-connection add-flip-card-btn">Add Flip Card</button>
             </div>
         </div>
-        <h4>Connections</h4>
-        <div class="connections-container"></div>
-        <button class="add-connection-btn">Add Main Path Link</button>
-        <button class="add-sidequest-btn">Add Side Quest</button>
-        <button class="add-link-btn">Add Link Button</button>
+        </div>
+        
+        <div class="connections-section">
+            <div class="button-text-inputs">
+                <div class="button-text-group">
+                    <label class="button-text-label">Continue button text</label>
+                    <input type="text" class="field-input next-button-text" placeholder="Continue" value="Continue">
+                </div>
+            </div>
+            <div class="connections-list connections-container" style="display: none;"></div>
+            <div class="connection-buttons">
+                <button class="btn-connection add-section-btn">Add section</button>
+                <button class="btn-connection add-node-below-btn">Add slide below</button>
+                <button class="btn-connection add-node-above-btn">Add slide above</button>
+                <button class="btn-connection add-sidequest-btn">Add side quest slide</button>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template id="section-title-template">
+    <div class="section-title-card">
+        <div class="section-title-actions">
+            <button class="btn-section-action btn-remove-section">Remove</button>
+        </div>
+        <div class="section-title-content">
+            <label class="field-label">Section title</label>
+            <input type="text" class="field-input section-title-input" placeholder="Enter section title">
+        </div>
+    </div>
+</template>
+
+<template id="node-connector-template">
+    <div class="node-connector">
+        <svg viewBox="0 0 24 32" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="0" x2="12" y2="24"></line>
+            <polyline points="6,18 12,24 18,18"></polyline>
+        </svg>
     </div>
 </template>
 
 <template id="connection-template">
     <div class="connection-row">
-        <div class="connection-inputs" style="display: flex; align-items: center; gap: 10px; width: 100%;">
-            <input type="text" class="conn-text" placeholder="Button Text" required style="flex: 1;">
-            <span>➔</span>
-            <input type="number" class="conn-target" placeholder="Target ID" required style="flex: 0.5;">
-        </div>
-        <button class="btn-remove">✖</button>
+        <input type="text" class="conn-text" placeholder="Button Text" required>
+        <span class="connection-arrow">→</span>
+        <input type="number" class="conn-target" placeholder="Target ID" required style="max-width: 100px;">
+        <button class="btn-remove-small btn-remove">×</button>
     </div>
 </template>
 
 <template id="sidequest-template">
     <div class="sidequest-row">
-        <div class="connection-inputs">
-            <div style="display: flex; gap: 5px; align-items: center; margin-bottom: 10px;">
-                <input type="text" class="sq-btn-text" placeholder="Button Text" required>
-                <span>➔ [</span>
-                <select class="sq-type">
-                    <option value="video">video</option><option value="now">now</option><option value="case">case</option>
-                </select>
-                <span>:</span>
-                <input type="text" class="sq-title" placeholder="Side Quest Title" required>
-                <span>]</span>
+        <!-- Header with Sidequest number and remove button -->
+        <div class="sidequest-card-header">
+            <span class="sidequest-number">Sidequest <span class="sq-number-value">1</span></span>
+            <button class="btn-remove-small btn-remove">×</button>
             </div>
-            <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
-                <input type="text" class="sq-next-label" placeholder="Next button text (default: Next)">
-                <input type="text" class="sq-back-label" placeholder="Back button text (default: Return to main path)">
-            </div>
-        </div>
-        <div class="sidequest-content-area">
-            <div class="label-with-button">
-                <label>Side Quest Content:</label>
-                <div>
-                    <button type="button" class="add-list-btn" style="margin-bottom: 5px;">Add Bullet List</button>
-                    <button type="button" class="add-image-btn" style="margin-bottom: 5px;">Add Image</button>
-                    <button type="button" class="add-video-btn" style="margin-bottom: 5px;">Add Video</button>
-                    <button type="button" class="add-image-row-btn" style="margin-bottom: 5px;">Add Image Row (3)</button>
-                    <button type="button" class="add-quote-btn" style="margin-bottom: 5px;">Add Quote</button>
-                    <button type="button" class="add-inline-button" style="margin-bottom: 5px;">Add Link Button</button>
-                    <button type="button" class="add-sq-card-btn" style="margin-bottom: 5px;">Add Side Quest Card</button>
-                </div>
-            </div>
-            <div class="sq-card-wrap" style="margin-bottom: 10px;">
-                <div style="display:flex; gap:10px; margin: 5px 0;">
-                    <input type="text" class="sq-card-title" placeholder="Card title (optional)" style="flex:1;">
-                </div>
-                <div style="display:flex; gap:10px; margin: 5px 0;">
-                    <input type="text" class="sq-card-next-label" placeholder="Next label (optional)" style="flex:1;">
-                    <input type="text" class="sq-card-prev-label" placeholder="Previous label (optional)" style="flex:1;">
-                </div>
-                <textarea class="sq-content" placeholder="Card content. You can paste URLs, add lists, images, etc." required></textarea>
+        
+        <!-- Title Section -->
+        <div class="sidequest-title-section">
+            <label class="sidequest-field-label">Title</label>
+            <input type="text" class="sidequest-title-input sq-title" placeholder="Enter sidequest title...">
+            <div class="sidequest-toggles">
+                <label class="checkbox-option">
+                    <input type="checkbox" class="sq-title-bold">
+                    Bold
+                </label>
+                <label class="checkbox-option">
+                    <input type="checkbox" class="sq-title-center">
+                    Center aligned
+                </label>
             </div>
         </div>
-        <button class="btn-remove">✖</button>
+        
+        <!-- Button Text Section -->
+        <div class="sidequest-title-section">
+            <label class="sidequest-field-label">Button text (shown in footer)</label>
+            <input type="text" class="sidequest-title-input sq-btn-text" placeholder="e.g. Watch webinar, Read blog post...">
+                </div>
+        
+        <!-- Content Section -->
+        <div class="sidequest-content-section">
+            <label class="sidequest-field-label">Content</label>
+            <div class="sidequest-content-wrapper">
+                <textarea class="sidequest-content-textarea sq-content" placeholder="Write your sidequest content here..."></textarea>
+                <button type="button" class="sidequest-media-btn sq-media-toggle">+</button>
+                <div class="sidequest-media-dropdown">
+                    <div class="sidequest-media-option sq-add-image">Image</div>
+                    <div class="sidequest-media-option sq-add-image-row">Image row</div>
+                    <div class="sidequest-media-option sq-add-video">Video</div>
+                    <div class="sidequest-media-option sq-add-animation">Animation</div>
+                    <div class="sidequest-media-option sq-add-quote">Quote</div>
+                    <div class="sidequest-media-option sq-add-supademo">Supademo</div>
+            </div>
+                <div class="sidequest-content-footer">
+                    <label class="checkbox-option">
+                        <input type="checkbox" class="sq-content-bold">
+                        Bold
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="checkbox" class="sq-content-center">
+                        Center aligned
+                    </label>
+                </div>
+                </div>
+            </div>
+        
+        <!-- Button Text Section -->
+        <div class="sidequest-buttons-section">
+            <div class="sidequest-button-group">
+                <label>Leave sidequest button text</label>
+                <input type="text" class="sidequest-button-input sq-back-label" placeholder="Return to main path">
+        </div>
+            <div class="sidequest-button-group">
+                <label>Continue to next sidequest node button text</label>
+                <input type="text" class="sidequest-button-input sq-next-label" placeholder="Next">
+        </div>
+        </div>
+        
+        <!-- Steps Container (for multi-step sidequests) -->
+        <div class="sq-steps-container"></div>
+        
+        <!-- Add Step Button -->
+        <button type="button" class="sidequest-add-step-btn add-sq-card-btn">Add sidequest step</button>
+        
+        <!-- Hidden fields for compatibility with existing code -->
+        <div class="sq-hidden-fields">
+            <input type="text" class="sq-btn-text" value="">
+            <select class="sq-type">
+                <option value="video" selected>video</option>
+                <option value="now">now</option>
+                <option value="case">case</option>
+            </select>
+            <div class="sidequest-content-area">
+                <div class="sq-card-wrap">
+                    <input type="text" class="sq-card-title">
+                    <input type="text" class="sq-card-next-label">
+                    <input type="text" class="sq-card-prev-label">
+                </div>
+            </div>
+        </div>
     </div>
 </template>
+
 <template id="flip-card-template">
-    <div class="flip-card-row" style="border-left: 3px solid var(--cyan); padding: 15px; margin-bottom: 15px; border-radius: 4px;">
-        <button class="btn-remove" style="float: right;">✖</button>
-        <label>Card Front Content:</label>
-        <textarea class="flip-card-front" placeholder="Content for the front of the card..." rows="3"></textarea>
-        <label>Card Back Content:</label>
-        <textarea class="flip-card-back" placeholder="Content for the back of the card..." rows="3"></textarea>
+    <div class="flip-card-row">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span class="flip-card-label">FLIP CARD</span>
+            <button class="btn-remove-small btn-remove">×</button>
+        </div>
+        <div class="flip-card-label">Front Content</div>
+        <textarea class="flip-card-front" placeholder="Content for the front of the card..."></textarea>
+        <div class="flip-card-label">Back Content</div>
+        <textarea class="flip-card-back" placeholder="Content for the back of the card..."></textarea>
     </div>
 </template>
 
 <template id="link-template">
-    <div class="link-row" style="border-left: 3px solid var(--green); padding: 15px; margin-bottom: 15px; border-radius: 4px;">
-        <button class="btn-remove" style="float: right;">✖</button>
-        <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
-            <input type="text" class="link-btn-text" placeholder="Button Text (e.g., 'Open Documentation')" required style="flex: 1;">
-            <span>➔</span>
-            <input type="url" class="link-url" placeholder="URL (e.g., https://example.com)" required style="flex: 2;">
-            <label style="display:flex; gap:6px; align-items:center; white-space:nowrap;">
+    <div class="link-row">
+        <input type="text" class="link-btn-text" placeholder="Button Text" required>
+        <span class="connection-arrow">→</span>
+        <input type="url" class="link-url" placeholder="https://..." required style="flex: 2;">
+        <label class="link-newtab-label">
                 <input type="checkbox" class="link-target-newtab" checked>
-                Open in new tab
+            New tab
             </label>
-        </div>
+        <button class="btn-remove-small btn-remove">×</button>
     </div>
 </template>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    // All existing variables are the same
     const nodesContainer = document.getElementById('nodes-container');
-    const addNodeBtn = document.getElementById('add-node-btn');
+    const sidebarNodes = document.getElementById('sidebar-nodes');
     const generateBtn = document.getElementById('generate-btn');
     const downloadBtn = document.getElementById('download-btn');
     const fileInput = document.getElementById('file-input');
     const nodeTemplate = document.getElementById('node-template');
+    const sectionTitleTemplate = document.getElementById('section-title-template');
+    const connectorTemplate = document.getElementById('node-connector-template');
     const connectionTemplate = document.getElementById('connection-template');
     const sidequestTemplate = document.getElementById('sidequest-template');
     const flipCardTemplate = document.getElementById('flip-card-template');
     const linkTemplate = document.getElementById('link-template');
     const outputText = document.getElementById('outputText');
-    let nodeIdCounter = 1;
+    let draggedSidebarItem = null;
+    let dropTargetIndex = null;
+    
+    // ========== HEADER & COURSE MANAGEMENT ==========
+    const headerTabs = document.querySelectorAll('.header-tab');
+    const creatorView = document.getElementById('creator-view');
+    const coursesView = document.getElementById('courses-view');
+    const coursesGrid = document.getElementById('courses-grid');
+    const saveBtn = document.getElementById('save-btn');
+    const saveNewBtn = document.getElementById('save-new-btn');
+    const newCourseBtn = document.getElementById('new-course-btn');
+    const saveModal = document.getElementById('save-modal');
+    const courseNameInput = document.getElementById('course-name-input');
+    const modalCancel = document.getElementById('modal-cancel');
+    const modalConfirm = document.getElementById('modal-confirm');
+    const currentCourseNameEl = document.getElementById('current-course-name');
+    
+    let currentCourseId = null;
+    let currentCourseName = null;
+    
+    // Tab switching
+    headerTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const targetTab = tab.dataset.tab;
+            
+            headerTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            
+            if (targetTab === 'creator') {
+                creatorView.classList.remove('hidden');
+                coursesView.classList.remove('active');
+            } else if (targetTab === 'courses') {
+                creatorView.classList.add('hidden');
+                coursesView.classList.add('active');
+                renderCoursesGrid();
+            }
+        });
+    });
+    
+    // Get all saved courses from localStorage
+    function getSavedCourses() {
+        const courses = localStorage.getItem('savedCourses');
+        return courses ? JSON.parse(courses) : [];
+    }
+    
+    // Save courses to localStorage
+    function saveCourses(courses) {
+        localStorage.setItem('savedCourses', JSON.stringify(courses));
+    }
+    
+    // Get current course data
+    function getCurrentCourseData() {
+        const nodeCards = Array.from(nodesContainer.querySelectorAll('.node-card'));
+        return nodeCards.map(card => {
+            return {
+                id: card.querySelector('.node-id').value,
+                title: card.querySelector('.node-title').value,
+                titleBold: card.querySelector('.node-title-bold')?.checked || false,
+                titleCenter: card.querySelector('.node-title-center')?.checked || false,
+                content: card.querySelector('.node-content').value,
+                contentBold: card.querySelector('.content-bold')?.checked || false,
+                contentCenter: card.querySelector('.content-center')?.checked || false,
+                nextButtonText: card.querySelector('.next-button-text')?.value || 'Continue',
+                nodeType: card.querySelector('.node-type')?.value || 'main',
+                flipIntro: card.querySelector('.flip-intro')?.value || '',
+                sidequests: Array.from(card.querySelectorAll('.sidequest-row')).map(sq => {
+                    // Collect content from main textarea and step cards
+                    const cards = [];
+                    const mainContent = sq.querySelector('.sidequest-content-textarea')?.value || '';
+                    if (mainContent) {
+                        cards.push({ content: mainContent });
+                    }
+                    sq.querySelectorAll('.sq-step-card').forEach(step => {
+                        cards.push({
+                            title: step.querySelector('.sq-step-title-input')?.value || '',
+                            content: step.querySelector('.sq-step-content')?.value || '',
+                            nextLabel: step.querySelector('.sq-step-next-label')?.value || '',
+                            backLabel: step.querySelector('.sq-step-back-label')?.value || ''
+                        });
+                    });
+                    return {
+                        btnText: sq.querySelector('.sq-btn-text')?.value || sq.querySelector('.sq-title')?.value || '',
+                        type: sq.querySelector('.sq-type')?.value || 'video',
+                        title: sq.querySelector('.sq-title')?.value || '',
+                        nextLabel: sq.querySelector('.sq-next-label')?.value || '',
+                        backLabel: sq.querySelector('.sq-back-label')?.value || '',
+                        cards: cards
+                    };
+                })
+            };
+        });
+    }
+    
+    // Save course with name
+    function saveCourse(name, forceNew = false) {
+        const courses = getSavedCourses();
+        const courseData = getCurrentCourseData();
+        const now = new Date();
+        
+        if (currentCourseId && !forceNew) {
+            // Update existing course
+            const index = courses.findIndex(c => c.id === currentCourseId);
+            if (index !== -1) {
+                courses[index].data = courseData;
+                courses[index].updatedAt = now.toISOString();
+                courses[index].nodeCount = courseData.length;
+            }
+        } else {
+            // Create new course
+            const newCourse = {
+                id: Date.now().toString(),
+                name: name,
+                data: courseData,
+                createdAt: now.toISOString(),
+                updatedAt: now.toISOString(),
+                nodeCount: courseData.length
+            };
+            courses.unshift(newCourse);
+            currentCourseId = newCourse.id;
+            currentCourseName = name;
+        }
+        
+        saveCourses(courses);
+        updateCurrentCourseDisplay();
+        
+        // Also update the auto-save
+        localStorage.setItem('courseCreatorData', JSON.stringify(courseData));
+        localStorage.setItem('currentCourseId', currentCourseId);
+        localStorage.setItem('currentCourseName', currentCourseName);
+    }
+    
+    // Update current course name display
+    function updateCurrentCourseDisplay() {
+        if (currentCourseName) {
+            currentCourseNameEl.innerHTML = `<strong>${currentCourseName}</strong>`;
+            currentCourseNameEl.style.display = 'inline-block';
+        } else {
+            currentCourseNameEl.style.display = 'none';
+        }
+    }
+    
+    // Load a course by ID
+    function loadCourse(courseId) {
+        const courses = getSavedCourses();
+        const course = courses.find(c => c.id === courseId);
+        
+        if (!course) return;
+        
+        currentCourseId = course.id;
+        currentCourseName = course.name;
+        
+        // Clear and load nodes
+        nodesContainer.innerHTML = '';
+        
+        course.data.forEach((nodeData, index) => {
+            const nodeCard = addNewNode(
+                nodeData.id || index + 1,
+                nodeData.title || '',
+                nodeData.content || '',
+                nodeData.titleCenter ? 'center' : 'left',
+                null,
+                '',
+                '',
+                false,
+                nodeData.isSectionTitle || false
+            );
+            
+            if (nodeData.titleBold) {
+                const titleBoldCheck = nodeCard.querySelector('.node-title-bold');
+                if (titleBoldCheck) titleBoldCheck.checked = true;
+            }
+            if (nodeData.contentBold) {
+                const contentBoldCheck = nodeCard.querySelector('.content-bold');
+                if (contentBoldCheck) contentBoldCheck.checked = true;
+            }
+            if (nodeData.contentCenter) {
+                const contentCenterCheck = nodeCard.querySelector('.content-center');
+                if (contentCenterCheck) contentCenterCheck.checked = true;
+            }
+            if (nodeData.nextButtonText) {
+                const nextBtn = nodeCard.querySelector('.next-button-text');
+                if (nextBtn) nextBtn.value = nodeData.nextButtonText;
+            }
+            if (nodeData.nodeType) {
+                const typeSelect = nodeCard.querySelector('.node-type');
+                if (typeSelect) typeSelect.value = nodeData.nodeType;
+            }
+            if (nodeData.flipIntro) {
+                const flipIntro = nodeCard.querySelector('.flip-intro');
+                if (flipIntro) flipIntro.value = nodeData.flipIntro;
+            }
+            
+            if (nodeData.sidequests && nodeData.sidequests.length > 0) {
+                nodeData.sidequests.forEach(sq => {
+                    addSideQuestToNode(
+                        nodeCard,
+                        sq.btnText,
+                        sq.type,
+                        sq.title,
+                        sq.cards.map(c => ({
+                            title: c.title,
+                            nextLabel: c.nextLabel,
+                            prevLabel: c.prevLabel,
+                            content: c.content
+                        })),
+                        sq.nextLabel,
+                        sq.backLabel
+                    );
+                });
+            }
+        });
+        
+        updateSidebar();
+        updateCurrentCourseDisplay();
+        
+        // Save to auto-save
+        localStorage.setItem('courseCreatorData', JSON.stringify(course.data));
+        localStorage.setItem('currentCourseId', currentCourseId);
+        localStorage.setItem('currentCourseName', currentCourseName);
+        
+        // Switch to creator view
+        headerTabs.forEach(t => t.classList.remove('active'));
+        document.querySelector('[data-tab="creator"]').classList.add('active');
+        creatorView.classList.remove('hidden');
+        coursesView.classList.remove('active');
+    }
+    
+    // Delete a course
+    function deleteCourse(courseId) {
+        if (!confirm('Are you sure you want to delete this course?')) return;
+        
+        let courses = getSavedCourses();
+        courses = courses.filter(c => c.id !== courseId);
+        saveCourses(courses);
+        
+        if (currentCourseId === courseId) {
+            currentCourseId = null;
+            currentCourseName = null;
+            localStorage.removeItem('currentCourseId');
+            localStorage.removeItem('currentCourseName');
+            updateCurrentCourseDisplay();
+        }
+        
+        renderCoursesGrid();
+    }
+    
+    // Duplicate a course
+    function duplicateCourse(courseId) {
+        const courses = getSavedCourses();
+        const course = courses.find(c => c.id === courseId);
+        
+        if (!course) return;
+        
+        const now = new Date();
+        const newCourse = {
+            id: Date.now().toString(),
+            name: course.name + ' (Copy)',
+            data: JSON.parse(JSON.stringify(course.data)),
+            createdAt: now.toISOString(),
+            updatedAt: now.toISOString(),
+            nodeCount: course.nodeCount
+        };
+        
+        courses.unshift(newCourse);
+        saveCourses(courses);
+        renderCoursesGrid();
+    }
+    
+    // Render the courses grid
+    function renderCoursesGrid() {
+        const courses = getSavedCourses();
+        
+        if (courses.length === 0) {
+            coursesGrid.innerHTML = `
+                <div class="no-courses">
+                    <div class="no-courses-icon">📚</div>
+                    <h3>No courses yet</h3>
+                    <p>Start creating a course and save it to see it here.</p>
+                </div>
+            `;
+            return;
+        }
+        
+        coursesGrid.innerHTML = courses.map(course => {
+            const updatedDate = new Date(course.updatedAt).toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric'
+            });
+            
+            // Get preview from first node title
+            const preview = course.data && course.data.length > 0 
+                ? course.data.slice(0, 3).map(n => n.title || 'Untitled').join(' → ')
+                : 'Empty course';
+            
+            return `
+                <div class="course-card" data-id="${course.id}">
+                    <div class="course-card-header">
+                        <h3 class="course-card-title">${course.name}</h3>
+                        <button class="course-card-delete" data-delete="${course.id}" title="Delete course">×</button>
+                    </div>
+                    <div class="course-card-meta">
+                        <span>${course.nodeCount || 0} nodes</span>
+                        <span>Updated ${updatedDate}</span>
+                    </div>
+                    <div class="course-card-preview">${preview}</div>
+                    <div class="course-card-actions">
+                        <button class="course-card-btn edit" data-edit="${course.id}">Continue editing</button>
+                        <button class="course-card-btn duplicate" data-duplicate="${course.id}">Duplicate</button>
+                    </div>
+                </div>
+            `;
+        }).join('');
+        
+        // Add event listeners
+        coursesGrid.querySelectorAll('[data-edit]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                loadCourse(btn.dataset.edit);
+            });
+        });
+        
+        coursesGrid.querySelectorAll('[data-delete]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                deleteCourse(btn.dataset.delete);
+            });
+        });
+        
+        coursesGrid.querySelectorAll('[data-duplicate]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                duplicateCourse(btn.dataset.duplicate);
+            });
+        });
+        
+        // Click on card to edit
+        coursesGrid.querySelectorAll('.course-card').forEach(card => {
+            card.addEventListener('click', () => {
+                loadCourse(card.dataset.id);
+            });
+        });
+    }
+    
+    // Save button - save current course or show modal if new
+    saveBtn.addEventListener('click', () => {
+        if (currentCourseId && currentCourseName) {
+            saveCourse(currentCourseName);
+            showSaveNotification('Course saved!');
+        } else {
+            saveModal.classList.add('active');
+            courseNameInput.value = '';
+            courseNameInput.focus();
+        }
+    });
+    
+    // Save new version button - always show modal
+    saveNewBtn.addEventListener('click', () => {
+        saveModal.classList.add('active');
+        courseNameInput.value = currentCourseName ? currentCourseName + ' v2' : '';
+        courseNameInput.focus();
+    });
+    
+    // New course button
+    newCourseBtn.addEventListener('click', () => {
+        if (confirm('Start a new course? Make sure you\'ve saved your current work.')) {
+            currentCourseId = null;
+            currentCourseName = null;
+            localStorage.removeItem('currentCourseId');
+            localStorage.removeItem('currentCourseName');
+            localStorage.removeItem('courseCreatorData');
+            nodesContainer.innerHTML = '';
+            outputText.value = '';
+            downloadBtn.style.display = 'none';
+            addNewNode(null, '', '', 'left', null, '', '', false, true);
+            updateCurrentCourseDisplay();
+        }
+    });
+    
+    // Modal cancel
+    modalCancel.addEventListener('click', () => {
+        saveModal.classList.remove('active');
+    });
+    
+    // Modal confirm
+    modalConfirm.addEventListener('click', () => {
+        const name = courseNameInput.value.trim();
+        if (!name) {
+            courseNameInput.focus();
+            return;
+        }
+        
+        // Check if this is a "save new version" action
+        const isNewVersion = saveNewBtn.dataset.triggered === 'true';
+        saveNewBtn.dataset.triggered = 'false';
+        
+        if (isNewVersion) {
+            currentCourseId = null; // Force create new
+            currentCourseName = name;
+        } else {
+            currentCourseName = name;
+        }
+        
+        saveCourse(name, isNewVersion);
+        saveModal.classList.remove('active');
+        showSaveNotification('Course saved!');
+    });
+    
+    // Track if save new was clicked
+    saveNewBtn.addEventListener('click', () => {
+        saveNewBtn.dataset.triggered = 'true';
+    });
+    
+    // Close modal on backdrop click
+    saveModal.addEventListener('click', (e) => {
+        if (e.target === saveModal) {
+            saveModal.classList.remove('active');
+        }
+    });
+    
+    // Enter key in modal
+    courseNameInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            modalConfirm.click();
+        }
+    });
+    
+    // Show save notification
+    function showSaveNotification(message) {
+        const notification = document.createElement('div');
+        notification.style.cssText = `
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: var(--accent-green);
+            color: #fff;
+            padding: 14px 24px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+            z-index: 3000;
+            animation: slideIn 0.3s ease;
+        `;
+        notification.textContent = message;
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.style.animation = 'slideOut 0.3s ease';
+            setTimeout(() => notification.remove(), 300);
+        }, 2000);
+    }
+    
+    // Add animation keyframes
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slideOut {
+            from { transform: translateY(0); opacity: 1; }
+            to { transform: translateY(20px); opacity: 0; }
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // Load current course info on startup
+    const savedCourseId = localStorage.getItem('currentCourseId');
+    const savedCourseName = localStorage.getItem('currentCourseName');
+    if (savedCourseId && savedCourseName) {
+        currentCourseId = savedCourseId;
+        currentCourseName = savedCourseName;
+        updateCurrentCourseDisplay();
+    }
 
-    // The functions for adding nodes, connections, parsing, etc., are all the same.
-    // ... (All previous JS functions from last correct answer go here) ...
-    function addNewNode(id = null, title = '', content = '', titleAlign = 'left', insertBeforeElement = null, navType = '', navParent = '') {
+    // ========== SIDEBAR FUNCTIONS ==========
+    
+    // Update all node IDs to be sequential based on position
+    function updateNodeIds() {
+        const nodeCards = Array.from(nodesContainer.querySelectorAll('.node-card'));
+        nodeCards.forEach((card, index) => {
+            card.querySelector('.node-id').value = index + 1;
+        });
+    }
+    
+    function updateSidebar() {
+        sidebarNodes.innerHTML = '';
+        
+        // Get all elements in order (section titles and slides)
+        const allElements = Array.from(nodesContainer.children).filter(el => 
+            el.classList.contains('section-title-card') || el.classList.contains('node-card')
+        );
+        
+        // Update slide IDs (only for node-cards, not section titles)
+        updateNodeIds();
+        
+        // Add initial drop indicator
+        const initialIndicator = document.createElement('div');
+        initialIndicator.className = 'drop-indicator';
+        initialIndicator.dataset.dropIndex = '0';
+        sidebarNodes.appendChild(initialIndicator);
+        
+        // Helper function to add drag/drop to a sidebar item
+        function addDragDropHandlers(sidebarItem, element, elementIndex) {
+            sidebarItem.draggable = true;
+            
+            sidebarItem.addEventListener('dragstart', (e) => {
+                e.stopPropagation();
+                draggedSidebarItem = sidebarItem;
+                sidebarItem.classList.add('dragging');
+                e.dataTransfer.effectAllowed = 'move';
+            });
+            
+            sidebarItem.addEventListener('dragend', () => {
+                sidebarItem.classList.remove('dragging');
+                clearDropIndicators();
+                
+                if (dropTargetIndex !== null && draggedSidebarItem) {
+                    const fromIndex = parseInt(draggedSidebarItem.dataset.elementIndex);
+                    if (fromIndex !== dropTargetIndex && fromIndex !== dropTargetIndex - 1) {
+                        reorderElements(fromIndex, dropTargetIndex);
+                    }
+                }
+                
+                draggedSidebarItem = null;
+                dropTargetIndex = null;
+            });
+            
+            sidebarItem.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                if (!draggedSidebarItem || draggedSidebarItem === sidebarItem) return;
+                
+                const rect = sidebarItem.getBoundingClientRect();
+                const midY = rect.top + rect.height / 2;
+                const insertBefore = e.clientY < midY;
+                
+                clearDropIndicators();
+                
+                if (insertBefore) {
+                    const indicator = sidebarItem.previousElementSibling;
+                    if (indicator && indicator.classList.contains('drop-indicator')) {
+                        indicator.classList.add('active');
+                        dropTargetIndex = elementIndex;
+                    }
+                } else {
+                    const indicator = sidebarItem.nextElementSibling;
+                    if (indicator && indicator.classList.contains('drop-indicator')) {
+                        indicator.classList.add('active');
+                        dropTargetIndex = elementIndex + 1;
+                    }
+                }
+            });
+        }
+        
+        let slideIndex = 0;
+        
+        allElements.forEach((element, elementIndex) => {
+            if (element.classList.contains('section-title-card')) {
+                // This is a section title
+                const sectionTitle = element.querySelector('.section-title-input').value || 'Untitled Section';
+                const formattedTitle = sectionTitle.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+                
+                const sectionItem = document.createElement('div');
+                sectionItem.className = 'sidebar-section-item';
+                sectionItem.dataset.elementIndex = elementIndex;
+                
+                sectionItem.innerHTML = `
+                    <div class="sidebar-section-header">
+                        <span class="drag-handle">⋮⋮</span>
+                        <span class="section-title-text">${formattedTitle}</span>
+                    </div>
+                `;
+                
+                // Click to scroll to section (but not on drag handle)
+                sectionItem.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('drag-handle')) return;
+                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    element.style.boxShadow = '0 0 0 3px var(--accent-green)';
+                    setTimeout(() => element.style.boxShadow = '', 1500);
+                });
+                
+                addDragDropHandlers(sectionItem, element, elementIndex);
+                
+                sidebarNodes.appendChild(sectionItem);
+                
+                // Add drop indicator after section
+                const indicator = document.createElement('div');
+                indicator.className = 'drop-indicator';
+                indicator.dataset.dropIndex = String(elementIndex + 1);
+                sidebarNodes.appendChild(indicator);
+                
+            } else if (element.classList.contains('node-card')) {
+                // This is a slide
+                slideIndex++;
+                const rawTitle = element.querySelector('.node-title').value || 'Untitled';
+                const formattedTitle = rawTitle.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+                
+                const slideItem = document.createElement('div');
+                slideItem.className = 'sidebar-slide';
+                slideItem.dataset.elementIndex = elementIndex;
+                slideItem.dataset.slideId = slideIndex;
+                
+                slideItem.innerHTML = `
+                    <span class="drag-handle">⋮⋮</span>
+                    <span class="slide-id-badge">${slideIndex}</span>
+                    <span class="slide-title-text">${formattedTitle}</span>
+                    <span class="slide-type-badge">Slide</span>
+                `;
+                
+                // Click to scroll to slide (but not on drag handle)
+                slideItem.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('drag-handle')) return;
+                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    element.style.boxShadow = '0 0 0 3px var(--accent-green)';
+                    setTimeout(() => element.style.boxShadow = '', 1500);
+                });
+                
+                addDragDropHandlers(slideItem, element, elementIndex);
+                
+                sidebarNodes.appendChild(slideItem);
+                
+                // Add drop indicator after slide
+                const indicator = document.createElement('div');
+                indicator.className = 'drop-indicator';
+                indicator.dataset.dropIndex = String(elementIndex + 1);
+                sidebarNodes.appendChild(indicator);
+            }
+        });
+    }
+    
+    function clearDropIndicators() {
+        document.querySelectorAll('.drop-indicator.active').forEach(el => el.classList.remove('active'));
+    }
+    
+    function reorderElements(fromIndex, toIndex) {
+        // Get all draggable elements (sections and slides)
+        const allElements = Array.from(nodesContainer.children).filter(el => 
+            el.classList.contains('section-title-card') || el.classList.contains('node-card')
+        );
+        
+        if (fromIndex < 0 || fromIndex >= allElements.length) return;
+        
+        // Adjust toIndex if moving down
+        let adjustedToIndex = toIndex;
+        if (fromIndex < toIndex) {
+            adjustedToIndex = toIndex - 1;
+        }
+        
+        if (adjustedToIndex < 0) adjustedToIndex = 0;
+        if (adjustedToIndex >= allElements.length) adjustedToIndex = allElements.length - 1;
+        
+        const movingElement = allElements[fromIndex];
+        
+        // Remove connectors around the moving element (if it's a node-card)
+        if (movingElement.classList.contains('node-card')) {
+            const prevConnector = movingElement.previousElementSibling;
+            const nextConnector = movingElement.nextElementSibling;
+            if (prevConnector && prevConnector.classList.contains('node-connector')) {
+                prevConnector.remove();
+            } else if (nextConnector && nextConnector.classList.contains('node-connector')) {
+                nextConnector.remove();
+            }
+        }
+        
+        // Remove the element temporarily
+        movingElement.remove();
+        
+        // Get updated list of elements
+        const remainingElements = Array.from(nodesContainer.children).filter(el => 
+            el.classList.contains('section-title-card') || el.classList.contains('node-card')
+        );
+        
+        if (adjustedToIndex >= remainingElements.length) {
+            // Insert at the end
+            nodesContainer.appendChild(movingElement);
+        } else {
+            // Insert before the target
+            const targetElement = remainingElements[adjustedToIndex];
+            nodesContainer.insertBefore(movingElement, targetElement);
+        }
+        
+        // Rebuild all connectors and update IDs
+        rebuildConnectors();
+        updateNodeIds();
+        
+        // Update sidebar
+        updateSidebar();
+        
+        // Save changes
+        saveToLocalStorage();
+    }
+    
+    function rebuildConnectors() {
+        // Remove all existing connectors
+        nodesContainer.querySelectorAll('.node-connector').forEach(c => c.remove());
+        
+        // Add connectors between each pair of nodes
+        const nodeCards = Array.from(nodesContainer.querySelectorAll('.node-card'));
+        for (let i = 0; i < nodeCards.length - 1; i++) {
+            const connector = connectorTemplate.content.cloneNode(true);
+            nodeCards[i].after(connector);
+        }
+    }
+
+    // Media dropdown toggle
+    document.addEventListener('click', function(e) {
+        // Close all dropdowns first
+        if (!e.target.closest('.add-media-btn') && !e.target.closest('.media-dropdown')) {
+            document.querySelectorAll('.media-dropdown.show').forEach(d => d.classList.remove('show'));
+        }
+        
+        // Close sidequest media dropdowns
+        if (!e.target.closest('.sq-media-toggle') && !e.target.closest('.sidequest-media-dropdown')) {
+            document.querySelectorAll('.sidequest-media-dropdown.active').forEach(d => d.classList.remove('active'));
+        }
+        
+        // Close step media dropdowns
+        if (!e.target.closest('.sq-step-media-btn') && !e.target.closest('.sq-step-media-dropdown')) {
+            document.querySelectorAll('.sq-step-media-dropdown.active').forEach(d => d.classList.remove('active'));
+        }
+        
+        if (e.target.closest('.media-toggle')) {
+            const btn = e.target.closest('.media-toggle');
+            const dropdown = btn.nextElementSibling;
+            dropdown.classList.toggle('show');
+            e.stopPropagation();
+        }
+        
+        // Step media dropdown toggle
+        if (e.target.classList.contains('sq-step-media-btn')) {
+            const dropdown = e.target.nextElementSibling;
+            if (dropdown) {
+                // Close other step dropdowns
+                document.querySelectorAll('.sq-step-media-dropdown.active').forEach(d => {
+                    if (d !== dropdown) d.classList.remove('active');
+                });
+                dropdown.classList.toggle('active');
+            }
+            e.stopPropagation();
+        }
+        
+        // Step media option click
+        if (e.target.classList.contains('sq-step-media-option')) {
+            const wrapper = e.target.closest('.sq-step-content-wrapper');
+            const textarea = wrapper.querySelector('.sq-step-content');
+            const dropdown = e.target.closest('.sq-step-media-dropdown');
+            dropdown.classList.remove('active');
+            
+            const type = e.target.dataset.type;
+            
+            // Use the same prompts as main content
+            insertMediaWithPrompts(type, textarea);
+            e.stopPropagation();
+        }
+    });
+    
+    // Helper function to insert media with prompts (used by sidequest and step media)
+    function insertMediaWithPrompts(type, textarea) {
+        let textToInsert = '';
+        
+        if (type === 'image') {
+            const imageFile = prompt("Enter the image filename (e.g., my-image.png):");
+            if (!imageFile) return;
+            
+            const altText = prompt("Enter a short description (alt text):", "image");
+            const size = prompt("Enter image size (e.g., x-small, small, medium, large, third, or a custom height like '150px'):", "large");
+            if (!size) return;
+            const align = prompt("Enter image alignment (left, center, right, stack-right, or stack-right-top):", "center");
+            if (!align) return;
+            const border = prompt("Frame? Type 'none' for no border/shadow, or leave blank:", "");
+            
+            let attributes = [];
+            if (size) attributes.push(`size:${size.trim()}`);
+            if (align && ['left', 'center', 'right', 'stack-right', 'stack-right-top'].includes(align.trim())) {
+                attributes.push(`align:${align.trim()}`);
+            }
+            if (border && border.trim().length) attributes.push(`frame:${border.trim()}`);
+            
+            textToInsert = `![${altText}/${attributes.join('/')}](${imageFile})`;
+        }
+        else if (type === 'image-row') {
+            const countStr = prompt("How many images in the row? (2-4)", "3");
+            if (!countStr) return;
+            const count = Math.max(2, Math.min(4, parseInt(countStr, 10) || 3));
+            const sizeDefault = count === 4 ? 'fourth' : (count === 3 ? 'third' : (count === 2 ? 'medium' : 'small'));
+            const size = prompt("Enter image size for the row (e.g., fourth, third, small, medium, large or '200px'):", sizeDefault);
+            if (!size) return;
+            const align = prompt("Enter row alignment (left, center, right):", "center");
+            if (!align) return;
+            const border = prompt("Frame? Type 'none' for no border/shadow, or leave blank for default:", "none");
+            const parts = [];
+            for (let i = 1; i <= count; i++) {
+                const file = prompt(`Image ${i} filename (e.g., img${i}.png):`);
+                if (!file) return;
+                const alt = prompt(`Image ${i} alt text:`, `image ${i}`) || `image ${i}`;
+                const attrs = [`size:${size.trim()}`, `align:${align.trim()}`];
+                if (border && border.trim().length) attrs.push(`frame:${border.trim()}`);
+                parts.push(`![${alt}/${attrs.join('/')}](${file})`);
+            }
+            textToInsert = parts.join(' ') + '\n';
+        }
+        else if (type === 'video' || type === 'animation') {
+            const videoFile = prompt("Enter the video filename (e.g., motion.mp4 or animation.json):");
+            if (!videoFile) return;
+            
+            const altText = prompt("Enter a short description (alt text):", "motion graphic");
+            const size = prompt("Enter video size (e.g., small, medium, large, third, or '300px'):", "medium");
+            if (!size) return;
+            const align = prompt("Enter video alignment (left, center, right, stack-right, or stack-right-top):", "stack-right");
+            if (!align) return;
+            const border = prompt("Frame? Type 'none' for no border/shadow, or leave blank:", "");
+            const playback = prompt("Playback: type 'controls' for click-to-play with sound, or 'autoplay' for muted looping:", "controls");
+            
+            let attributes = [];
+            if (size) attributes.push(`size:${size.trim()}`);
+            if (align && ['left', 'center', 'right', 'stack-right', 'stack-right-top'].includes(align.trim())) {
+                attributes.push(`align:${align.trim()}`);
+            }
+            if (border && border.trim().length) attributes.push(`frame:${border.trim()}`);
+            if (playback && /controls|click|sound/i.test(playback.trim())) attributes.push('controls');
+            
+            const isJson = /\.json(\?|$)/i.test(videoFile.trim());
+            const mediaType = isJson ? 'lottie' : 'video';
+            textToInsert = `![${mediaType}:${altText}/${attributes.join('/')}](${videoFile})`;
+        }
+        else if (type === 'quote') {
+            const quote = prompt('Quote text:', 'We can now document exactly how we optimize the warehouse and show management exactly what is working and what is not');
+            if (!quote) return;
+            const author = prompt('Attribution (e.g., Name, Title or Company):', 'Purchasing manager at Aubo') || '';
+            textToInsert = `\n[quote]\ntext: ${quote}\nauthor: ${author}\n[/quote]\n`;
+        }
+        else if (type === 'supademo') {
+            const embedCode = prompt("Paste the Supademo embed code or just the embed URL:");
+            if (!embedCode) return;
+            
+            // Extract the URL from the embed code if full HTML was pasted
+            let supademoUrl = embedCode.trim();
+            const urlMatch = embedCode.match(/src="([^"]+)"/);
+            if (urlMatch) {
+                supademoUrl = urlMatch[1];
+            }
+            
+            // Extract the title if present
+            const titleMatch = embedCode.match(/title="([^"]+)"/);
+            const title = titleMatch ? titleMatch[1] : prompt("Enter a title for the demo:", "Interactive Demo") || "Interactive Demo";
+            
+            textToInsert = `[supademo: ${title}](${supademoUrl})`;
+        }
+        
+        if (textToInsert && textarea) {
+            const start = textarea.selectionStart;
+            const end = textarea.selectionEnd;
+            const text = textarea.value;
+            textarea.value = text.substring(0, start) + textToInsert + text.substring(end);
+            textarea.focus();
+            textarea.selectionStart = textarea.selectionEnd = start + textToInsert.length;
+        }
+    }
+
+    function addSectionTitle(title = '', insertBeforeElement = null) {
+        const sectionCard = sectionTitleTemplate.content.cloneNode(true).querySelector('.section-title-card');
+        const input = sectionCard.querySelector('.section-title-input');
+        input.value = title;
+        
+        // Remove button handler
+        sectionCard.querySelector('.btn-remove-section').onclick = () => {
+            sectionCard.remove();
+            updateSidebar();
+            saveToLocalStorage();
+        };
+        
+        // Update sidebar when title changes
+        input.addEventListener('input', () => {
+            updateSidebar();
+        });
+        
+        if (insertBeforeElement && insertBeforeElement.parentElement === nodesContainer) {
+            nodesContainer.insertBefore(sectionCard, insertBeforeElement);
+        } else {
+            nodesContainer.appendChild(sectionCard);
+        }
+        
+        updateSidebar();
+        saveToLocalStorage();
+        return sectionCard;
+    }
+
+    function addNewNode(id = null, title = '', content = '', titleAlign = 'left', insertBeforeElement = null, navType = '', navParent = '', addConnectorAfter = false) {
         const nodeCard = nodeTemplate.content.cloneNode(true).querySelector('.node-card');
-        nodeCard.querySelector('.node-id').value = id !== null ? id : nodeIdCounter++;
+        
+        // Add connector if not the first node
+        if (nodesContainer.children.length > 0 && !insertBeforeElement) {
+            // Adding at the end - connector goes before the new node
+            const connector = connectorTemplate.content.cloneNode(true);
+            nodesContainer.appendChild(connector);
+        }
+        
+        // ID will be set by updateNodeIds() after insertion, use temp value for now
+        const nodeCount = nodesContainer.querySelectorAll('.node-card').length;
+        nodeCard.querySelector('.node-id').value = id !== null ? id : nodeCount + 1;
         nodeCard.querySelector('.node-title').value = title;
-        const alignSel = nodeCard.querySelector('.node-title-align');
-        if (alignSel) alignSel.value = (titleAlign === 'center') ? 'center' : 'left';
+        
+        const centerCheck = nodeCard.querySelector('.node-title-center');
+        if (centerCheck) centerCheck.checked = (titleAlign === 'center');
+        
         const navSel = nodeCard.querySelector('.node-nav-type');
         if (navSel) navSel.value = navType || '';
         const navParentEl = nodeCard.querySelector('.node-nav-parent');
         if (navParentEl) navParentEl.value = navParent || '';
+        
         const contentArea = nodeCard.querySelector('.node-content');
         if (contentArea) contentArea.value = content;
+        
         if (insertBeforeElement && insertBeforeElement.parentElement === nodesContainer) {
             nodesContainer.insertBefore(nodeCard, insertBeforeElement);
+            // If we need to add connector after the new node (for "add above" functionality)
+            if (addConnectorAfter) {
+                const connector = connectorTemplate.content.cloneNode(true);
+                // Insert connector after the new node (before the insertBeforeElement)
+                nodesContainer.insertBefore(connector, insertBeforeElement);
+            }
         } else {
             nodesContainer.appendChild(nodeCard);
         }
+        
+        // Update sidebar after adding node
+        updateSidebar();
+        
         return nodeCard;
     }
+    
     function addConnectionToNode(nodeCard, text = '', target = '') {
         const container = nodeCard.querySelector('.connections-container');
         const newConn = connectionTemplate.content.cloneNode(true);
@@ -246,45 +3058,157 @@ document.addEventListener('DOMContentLoaded', () => {
         newConn.querySelector('.conn-target').value = target;
         container.appendChild(newConn);
     }
+    
     function addSideQuestToNode(nodeCard, btnText = '', type = 'video', title = '', contentOrCards = '', nextLabel = '', backLabel = '') {
         const container = nodeCard.querySelector('.connections-container');
+        // Make sure the container is visible when adding side quests
+        container.style.display = 'block';
         const newSQ = sidequestTemplate.content.cloneNode(true);
+        
+        // Set hidden fields for compatibility
         newSQ.querySelector('.sq-btn-text').value = btnText;
         newSQ.querySelector('.sq-type').value = type;
+        
+        // Set visible title field
         newSQ.querySelector('.sq-title').value = title;
+        
+        // Set button text fields
         if (nextLabel) newSQ.querySelector('.sq-next-label').value = nextLabel;
         if (backLabel) newSQ.querySelector('.sq-back-label').value = backLabel;
-        const area = newSQ.querySelector('.sidequest-content-area');
-        const firstWrap = area.querySelector('.sq-card-wrap');
+        
+        // Set sidequest number
+        const existingSidequests = container.querySelectorAll('.sidequest-row').length;
+        newSQ.querySelector('.sq-number-value').textContent = existingSidequests + 1;
+        
+        // Handle content - put in the main textarea
+        const mainTextarea = newSQ.querySelector('.sidequest-content-textarea');
+        const stepsContainer = newSQ.querySelector('.sq-steps-container');
         const cards = Array.isArray(contentOrCards) ? contentOrCards : (contentOrCards ? [contentOrCards] : ['']);
+        
         if (cards.length > 0) {
             const c0 = cards[0];
             if (typeof c0 === 'object') {
-                firstWrap.querySelector('.sq-card-title').value = c0.title || '';
-                firstWrap.querySelector('.sq-card-next-label').value = c0.nextLabel || '';
-                firstWrap.querySelector('.sq-card-prev-label').value = c0.prevLabel || '';
-                firstWrap.querySelector('.sq-content').value = c0.content || '';
+                mainTextarea.value = c0.content || '';
             } else {
-                firstWrap.querySelector('.sq-content').value = c0;
+                mainTextarea.value = c0;
             }
+            
+            // Add additional cards as steps using the addStepToSidequest function
             for (let i = 1; i < cards.length; i++) {
-                const wrap = document.createElement('div');
-                wrap.className = 'sq-card-wrap';
-                wrap.style.marginBottom = '10px';
-                wrap.innerHTML = `<div style="display:flex; gap:10px; margin: 5px 0;"><input type="text" class="sq-card-title" placeholder="Card title (optional)" style="flex:1;"></div><div style="display:flex; gap:10px; margin: 5px 0;"><input type="text" class="sq-card-next-label" placeholder="Next label (optional)" style="flex:1;"><input type="text" class="sq-card-prev-label" placeholder="Previous label (optional)" style="flex:1;"></div><textarea class="sq-content" placeholder="Card content. You can paste URLs, add lists, images, etc." required></textarea>`;
                 const ci = cards[i];
-                if (typeof ci === 'object') {
-                    wrap.querySelector('.sq-card-title').value = ci.title || '';
-                    wrap.querySelector('.sq-card-next-label').value = ci.nextLabel || '';
-                    wrap.querySelector('.sq-card-prev-label').value = ci.prevLabel || '';
-                    wrap.querySelector('.sq-content').value = ci.content || '';
-                } else {
-                    wrap.querySelector('.sq-content').value = ci;
-                }
-                area.appendChild(wrap);
+                const stepContent = typeof ci === 'object' ? (ci.content || '') : ci;
+                const stepTitle = typeof ci === 'object' ? (ci.title || '') : '';
+                const stepNextLabel = typeof ci === 'object' ? (ci.nextLabel || '') : '';
+                const stepBackLabel = typeof ci === 'object' ? (ci.backLabel || '') : '';
+                
+                // We need to get the actual sidequest row element after it's appended
+                // So we'll create the step manually here with full fields
+                const stepCard = document.createElement('div');
+                stepCard.className = 'sq-step-card';
+                stepCard.innerHTML = `
+                    <div class="sq-step-header">
+                        <span class="sq-step-number">Step ${i + 1}</span>
+                        <button class="btn-remove-small btn-remove">×</button>
+                    </div>
+                    <div class="sq-step-title-section">
+                        <label class="sq-step-field-label">Step Title</label>
+                        <input type="text" class="sq-step-title-input" placeholder="Enter step title..." value="${stepTitle}">
+                    </div>
+                    <div class="sq-step-content-section">
+                        <label class="sq-step-field-label">Content</label>
+                        <div class="sq-step-content-wrapper">
+                            <textarea class="sq-step-content" placeholder="Step content...">${stepContent}</textarea>
+                            <button type="button" class="sq-step-media-btn">+</button>
+                            <div class="sq-step-media-dropdown">
+                                <div class="sq-step-media-option" data-type="image">Image</div>
+                                <div class="sq-step-media-option" data-type="image-row">Image row</div>
+                                <div class="sq-step-media-option" data-type="video">Video</div>
+                                <div class="sq-step-media-option" data-type="animation">Animation</div>
+                                <div class="sq-step-media-option" data-type="quote">Quote</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sq-step-buttons-section">
+                        <div class="sq-step-button-group">
+                            <label>Leave sidequest button text</label>
+                            <input type="text" class="sq-step-button-input sq-step-back-label" placeholder="Return to main path" value="${stepBackLabel}">
+                        </div>
+                        <div class="sq-step-button-group">
+                            <label>Next step button text</label>
+                            <input type="text" class="sq-step-button-input sq-step-next-label" placeholder="Next" value="${stepNextLabel}">
+                        </div>
+                    </div>
+                `;
+                stepsContainer.appendChild(stepCard);
             }
         }
+        
         container.appendChild(newSQ);
+        updateSidequestNumbers(container);
+    }
+    
+    
+    // Update sidequest numbers after add/remove
+    function updateSidequestNumbers(container) {
+        const sidequests = container.querySelectorAll('.sidequest-row');
+        sidequests.forEach((sq, index) => {
+            const numEl = sq.querySelector('.sq-number-value');
+            if (numEl) numEl.textContent = index + 1;
+        });
+    }
+    
+    // Add step to sidequest
+    function addStepToSidequest(sidequestRow, title = '', content = '', nextLabel = '', backLabel = '') {
+        const stepsContainer = sidequestRow.querySelector('.sq-steps-container');
+        const existingSteps = stepsContainer.querySelectorAll('.sq-step-card').length;
+        
+        const stepCard = document.createElement('div');
+        stepCard.className = 'sq-step-card';
+        stepCard.innerHTML = `
+            <div class="sq-step-header">
+                <span class="sq-step-number">Step ${existingSteps + 2}</span>
+                <button class="btn-remove-small btn-remove">×</button>
+            </div>
+            <div class="sq-step-title-section">
+                <label class="sq-step-field-label">Step Title</label>
+                <input type="text" class="sq-step-title-input" placeholder="Enter step title..." value="${title}">
+            </div>
+            <div class="sq-step-content-section">
+                <label class="sq-step-field-label">Content</label>
+                <div class="sq-step-content-wrapper">
+                    <textarea class="sq-step-content" placeholder="Step content...">${content}</textarea>
+                    <button type="button" class="sq-step-media-btn">+</button>
+                    <div class="sq-step-media-dropdown">
+                        <div class="sq-step-media-option" data-type="image">Image</div>
+                        <div class="sq-step-media-option" data-type="image-row">Image row</div>
+                        <div class="sq-step-media-option" data-type="video">Video</div>
+                        <div class="sq-step-media-option" data-type="animation">Animation</div>
+                        <div class="sq-step-media-option" data-type="quote">Quote</div>
+                        <div class="sq-step-media-option" data-type="supademo">Supademo</div>
+                    </div>
+                </div>
+            </div>
+            <div class="sq-step-buttons-section">
+                <div class="sq-step-button-group">
+                    <label>Leave sidequest button text</label>
+                    <input type="text" class="sq-step-button-input sq-step-back-label" placeholder="Return to main path" value="${backLabel}">
+                </div>
+                <div class="sq-step-button-group">
+                    <label>Next step button text</label>
+                    <input type="text" class="sq-step-button-input sq-step-next-label" placeholder="Next" value="${nextLabel}">
+                </div>
+            </div>
+        `;
+        stepsContainer.appendChild(stepCard);
+    }
+    
+    // Update step numbers after removal
+    function updateStepNumbers(stepsContainer) {
+        const steps = stepsContainer.querySelectorAll('.sq-step-card');
+        steps.forEach((step, index) => {
+            const numEl = step.querySelector('.sq-step-number');
+            if (numEl) numEl.textContent = `Step ${index + 2}`;
+        });
     }
     
     function addLinkToNode(nodeCard, btnText = '', url = '') {
@@ -295,7 +3219,13 @@ document.addEventListener('DOMContentLoaded', () => {
         container.appendChild(newLink);
     }
 
-    nodesContainer.addEventListener('change', e => {
+    // Listen for changes to update sidebar
+    nodesContainer.addEventListener('input', (e) => {
+        if (e.target.classList.contains('node-id') || 
+            e.target.classList.contains('node-title')) {
+            updateSidebar();
+        }
+        
         if (e.target.classList.contains('node-type')) {
             const card = e.target.closest('.node-card');
             const type = e.target.value;
@@ -312,15 +3242,273 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- START: NEW, ROBUST PARSER (from index.html) ---
+    // Parser functions - supports both old and new format
     function parseFlowScript(text) {
+        const mainNodes = [];
+        const sidequestMap = new Map(); // Map sidequest ID to its slides
+        
+        // Check if this is the new format (has [id:X/topic:] syntax)
+        const isNewFormat = /\[id:[^\]]+\/topic:/.test(text);
+        
+        if (isNewFormat) {
+            return parseNewFormat(text);
+        } else {
+            return parseOldFormat(text);
+        }
+    }
+    
+    // Parse new markdown format
+    function parseNewFormat(text) {
+        const mainNodes = [];
+        const sidequestMap = new Map();
+        
+        // Split into main content and sidequest section
+        const sidequestMarker = '[flow-specific-side-quests]';
+        const sidequestIndex = text.indexOf(sidequestMarker);
+        let mainText = text;
+        let sidequestText = '';
+        
+        if (sidequestIndex !== -1) {
+            mainText = text.substring(0, sidequestIndex);
+            sidequestText = text.substring(sidequestIndex + sidequestMarker.length);
+        }
+        
+        // Parse main content
+        let currentTopic = null;
+        let currentBlock = null;
+        let isContent = false;
+        
+        const lines = mainText.split('\n');
+        
+        for (let i = 0; i < lines.length; i++) {
+            const line = lines[i];
+            const trimmedLine = line.trim();
+            
+            // Check for topic header: [id:X/topic: Name]
+            const topicMatch = trimmedLine.match(/^\[id:([^\/]+)\/topic:\s*(.+?)\]$/);
+            if (topicMatch) {
+                if (currentBlock) mainNodes.push(currentBlock);
+                currentTopic = {
+                    id: topicMatch[1].trim(),
+                    name: topicMatch[2].trim()
+                };
+                // Create a section title node
+                mainNodes.push({
+                    isSectionTitle: true,
+                    title: currentTopic.name
+                });
+                currentBlock = null;
+                isContent = false;
+                continue;
+            }
+            
+            // Check for slide_id (new format)
+            if (trimmedLine.startsWith('slide_id:')) {
+                if (currentBlock) mainNodes.push(currentBlock);
+                const idValue = trimmedLine.split(':').slice(1).join(':').trim();
+                currentBlock = { 
+                    id: parseInt(idValue) || idValue,
+                    connections: {}, 
+                    sideQuests: [],
+                    content: ''
+                };
+                isContent = false;
+                continue;
+            }
+            
+            // Also support old format id:
+            if (trimmedLine.startsWith('id:') && !trimmedLine.includes('/topic:')) {
+                if (currentBlock) mainNodes.push(currentBlock);
+                const idValue = trimmedLine.split(':').slice(1).join(':').trim();
+                currentBlock = { 
+                    id: parseInt(idValue) || idValue,
+                    connections: {}, 
+                    sideQuests: [],
+                    content: ''
+                };
+                isContent = false;
+                continue;
+            }
+            
+            if (!currentBlock) continue;
+            
+            if (trimmedLine === '---') {
+                isContent = !isContent;
+                continue;
+            }
+            
+            if (isContent) {
+                currentBlock.content = (currentBlock.content || '') + line + '\n';
+            } else {
+                // Parse navigation
+                if (line.startsWith('>')) {
+                    // New format: > [type] Label -> target
+                    const navMatch = line.match(/^>\s*\[([^\]]+)\]\s*(.+?)\s*->\s*(.+)$/);
+                    if (navMatch) {
+                        const navType = navMatch[1].trim().toLowerCase();
+                        const buttonText = navMatch[2].trim();
+                        const target = navMatch[3].trim();
+                        
+                        if (navType === 'next') {
+                            currentBlock.connections[buttonText] = parseInt(target) || target;
+                        } else if (navType === 'next:flow') {
+                            if (!currentBlock.links) currentBlock.links = [];
+                            currentBlock.links.push({ buttonText, url: target, isFlowLink: true });
+                        } else if (navType === 'sidequest') {
+                            currentBlock.sideQuests.push({ 
+                                buttonText, 
+                                targetId: target,
+                                type: 'sidequest',
+                                title: buttonText
+                            });
+                        }
+                    } else {
+                        // Old format: > Label -> target
+                        const oldMatch = line.match(/^>\s*(.+?)\s*->\s*(.+)$/);
+                        if (oldMatch) {
+                            const buttonText = oldMatch[1].trim();
+                            const target = oldMatch[2].trim();
+                            const targetId = parseInt(target);
+                            if (!isNaN(targetId)) {
+                                currentBlock.connections[buttonText] = targetId;
+                            }
+                        }
+                    }
+                } else {
+                    // Parse properties
+                    const colonIdx = line.indexOf(':');
+                    if (colonIdx > 0) {
+                        const key = line.substring(0, colonIdx).trim();
+                        const value = line.substring(colonIdx + 1).trim();
+                        
+                        if (key === 'title-align') {
+                            currentBlock['title-align'] = value.toLowerCase();
+                        } else if (key === 'index_title') {
+                            currentBlock.indexTitle = value;
+                        } else if (key === 'type') {
+                            currentBlock.type = value;
+                        } else if (key === 'title') {
+                            currentBlock.title = value.replace(/^#\s*/, '');
+                        } else if (key === 'section' || key === 'parent') {
+                            currentBlock.section = ['true', 'yes', '1'].includes(value.toLowerCase());
+                        } else {
+                            currentBlock[key] = value;
+                        }
+                    }
+                }
+            }
+        }
+        
+        if (currentBlock) mainNodes.push(currentBlock);
+        
+        // Parse sidequests if present
+        if (sidequestText.trim()) {
+            parseSidequestSection(sidequestText, sidequestMap);
+        }
+        
+        // Attach sidequest content to main nodes
+        mainNodes.forEach(node => {
+            if (node.sideQuests) {
+                node.sideQuests.forEach(sq => {
+                    if (sq.targetId && sidequestMap.has(sq.targetId)) {
+                        const sqData = sidequestMap.get(sq.targetId);
+                        sq.title = sqData.topicName || sq.buttonText;
+                        sq.cards = sqData.slides.map(s => ({ content: s.content, title: s.title }));
+                    }
+                });
+            }
+        });
+        
+        // Clean up content
+        mainNodes.forEach(node => { 
+            if (node.content) node.content = node.content.trim(); 
+        });
+        
+        return mainNodes;
+    }
+    
+    // Parse sidequest section from new format
+    function parseSidequestSection(text, sidequestMap) {
+        let currentSqId = null;
+        let currentSqTopic = null;
+        let currentSlide = null;
+        let isContent = false;
+        const currentSlides = [];
+        
+        const lines = text.split('\n');
+        
+        for (const line of lines) {
+            const trimmedLine = line.trim();
+            
+            // Check for sidequest topic header: [id:sX/topic: Name]
+            const topicMatch = trimmedLine.match(/^\[id:([^\/]+)\/topic:\s*(.+?)\]$/);
+            if (topicMatch) {
+                // Save previous sidequest
+                if (currentSqId && currentSlides.length > 0) {
+                    sidequestMap.set(currentSqId, {
+                        topicName: currentSqTopic,
+                        slides: [...currentSlides]
+                    });
+                }
+                currentSqId = topicMatch[1].trim();
+                currentSqTopic = topicMatch[2].trim();
+                currentSlides.length = 0;
+                currentSlide = null;
+                isContent = false;
+                continue;
+            }
+            
+            // Check for slide_id
+            if (trimmedLine.startsWith('slide_id:')) {
+                if (currentSlide) {
+                    currentSlides.push(currentSlide);
+                }
+                currentSlide = { content: '' };
+                isContent = false;
+                continue;
+            }
+            
+            if (!currentSlide) continue;
+            
+            if (trimmedLine === '---') {
+                isContent = !isContent;
+                continue;
+            }
+            
+            if (isContent) {
+                currentSlide.content = (currentSlide.content || '') + line + '\n';
+            } else {
+                const colonIdx = line.indexOf(':');
+                if (colonIdx > 0) {
+                    const key = line.substring(0, colonIdx).trim();
+                    const value = line.substring(colonIdx + 1).trim();
+                    if (key === 'title') {
+                        currentSlide.title = value.replace(/^\*\*|\*\*$/g, '');
+                    }
+                }
+            }
+        }
+        
+        // Save last sidequest
+        if (currentSlide) {
+            currentSlides.push(currentSlide);
+        }
+        if (currentSqId && currentSlides.length > 0) {
+            sidequestMap.set(currentSqId, {
+                topicName: currentSqTopic,
+                slides: [...currentSlides]
+            });
+        }
+    }
+    
+    // Parse old markdown format (for backwards compatibility)
+    function parseOldFormat(text) {
         const sideQuestContentMap = new Map();
         const mainNodes = [];
         let currentBlock = null;
 
         const sqRegex = /\[side-quest-content:([^\]]+)\]\s*\n---\n([\s\S]*?)\n---/g;
         let remainingText = text.replace(sqRegex, (match, fullType, content) => {
-            // fullType can be like "type:title|next=...|back=..."
             const firstColon = fullType.indexOf(':');
             const type = firstColon >= 0 ? fullType.slice(0, firstColon).trim() : fullType.trim();
             const rest = firstColon >= 0 ? fullType.slice(firstColon + 1) : '';
@@ -382,15 +3570,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         currentBlock.connections[mainMatch[1].trim()] = parseInt(mainMatch[2]);
                     } else if (sqMatch) {
                         const [, buttonText, type, title] = sqMatch;
-                        // Try multiple matching strategies for content lookup
                         let meta = sideQuestContentMap.get(`${type}:${title}`);
                         
                         if (!meta) {
-                            // Try to find content by partial title match (for legacy compatibility)
                             for (const [key, value] of sideQuestContentMap.entries()) {
                                 if (key.startsWith(`${type}:`)) {
                                     const keyTitle = key.split(':', 2)[1];
-                                    // Check if either title contains the other (partial match)
                                     if (title.includes(keyTitle) || keyTitle.includes(title)) {
                                         meta = value;
                                         break;
@@ -400,7 +3585,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                         
                         if (!meta) {
-                            // Final fallback to type-only match
                             meta = sideQuestContentMap.get(type) || { cards: [''], nextLabel: '', backLabel: '' };
                         }
                         
@@ -419,6 +3603,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         let value = valueParts.join(':').trim();
                         if (key.trim() === 'title') { value = value.replace(/<br>/g, '\n'); }
                         if (key.trim() === 'title-align') { currentBlock['title-align'] = value.toLowerCase(); continue; }
+                        if (key.trim() === 'parent' || key.trim() === 'section') { 
+                            currentBlock.section = ['true', 'yes', '1'].includes(value.toLowerCase()); 
+                            continue; 
+                        }
                         currentBlock[key.trim()] = key.trim() === 'id' ? parseInt(value) : value;
                     }
                 }
@@ -436,14 +3624,29 @@ document.addEventListener('DOMContentLoaded', () => {
         let maxId = 0;
         const courseData = parseFlowScript(text);
 
-        courseData.forEach(nodeData => {
+        courseData.forEach((nodeData, index) => {
+            // Handle section title nodes (from new format)
+            if (nodeData.isSectionTitle) {
+                addSectionTitle(nodeData.title);
+                return;
+            }
+            
             if (!nodeData || !nodeData.id) return;
             
-            // Determine node type and handle content accordingly
-            let nodeType = 'main';
+            // Check for section title (old format)
+            const isSectionTitle = (nodeData.section === true || nodeData.section === 'true');
+            
+            if (isSectionTitle) {
+                // Create a section title card
+                addSectionTitle(nodeData.title);
+                return;
+            }
+            
+            // This is a regular slide
+            let nodeType = nodeData.type || 'main';
             let content = nodeData.content || '';
             
-            if (nodeData.type === 'flip-cards') {
+            if (nodeType === 'flip-cards') {
                 nodeType = 'flip-cards';
             }
             
@@ -454,26 +3657,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 (nodeData['title-align'] || 'left'),
                 null,
                 (nodeData.nav || ''),
-                (nodeData['nav-parent'] || '')
+                (nodeData['nav-parent'] || ''),
+                false
             );
             
-            // Set the node type and handle flip card content
             const typeSelect = nodeCard.querySelector('.node-type');
             typeSelect.value = nodeType;
             
             if (nodeType === 'flip-cards') {
-                // Parse flip card content and populate the flip card editor
                 const parsed = parseFlipCardContent(content);
                 const flipEditor = nodeCard.querySelector('.flip-cards-editor');
                 const flipCardsContainer = flipEditor.querySelector('.flip-cards-container');
-                // Intro
                 const introArea = flipEditor.querySelector('.flip-intro');
                 introArea.value = parsed.intro || '';
                 
-                // Clear existing flip cards
                 flipCardsContainer.innerHTML = '';
                 
-                // Add each flip card
                 parsed.cards.forEach(card => {
                     const cardTemplate = document.getElementById('flip-card-template');
                     const newCard = cardTemplate.content.cloneNode(true);
@@ -482,13 +3681,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     flipCardsContainer.appendChild(newCard);
                 });
                 
-                // Show flip card editor, hide standard editor
                 nodeCard.querySelector('.standard-content-editor').style.display = 'none';
                 flipEditor.style.display = 'block';
             }
 
-            for (const [text, target] of Object.entries(nodeData.connections)) {
-                addConnectionToNode(nodeCard, text, target);
+            // Load button text from connections if available
+            const connectionTexts = Object.keys(nodeData.connections || {});
+            if (connectionTexts.length > 0) {
+                // Use the first connection's button text
+                nodeCard.querySelector('.next-button-text').value = connectionTexts[0];
             }
 
             nodeData.sideQuests.forEach(sq => {
@@ -505,19 +3706,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         nodeIdCounter = courseData.length > 0 ? maxId + 1 : 1;
+        updateSidebar();
     }
     
     function parseFlipCardContent(content) {
         const result = { intro: '', cards: [] };
         if (!content) return result;
         let working = content;
-        // Support explicit intro block
         const introMatch = working.match(/\[intro\]\n([\s\S]*?)\n\[\/intro\]\n?/);
         if (introMatch) {
             result.intro = introMatch[1].trim();
             working = working.replace(introMatch[0], '');
         } else {
-            // Or treat any preface text before first [card] as intro
             const firstCardIdx = working.indexOf('[card]');
             if (firstCardIdx > 0) {
                 result.intro = working.slice(0, firstCardIdx).trim();
@@ -534,7 +3734,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let front = 'Click to reveal';
             let back = '';
             
-            const lines = trimmedBlock.split('\n').slice(1); // Skip the [card] line
+            const lines = trimmedBlock.split('\n').slice(1);
             let currentKey = '';
             let contentBuffer = '';
             
@@ -543,14 +3743,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 const backMatch = line.match(/^back:\s*(.*)/);
                 
                 if (frontMatch) {
-                    if (currentKey === 'back') { // Finished back content
+                    if (currentKey === 'back') {
                         back = contentBuffer.trim();
                         contentBuffer = '';
                     }
                     currentKey = 'front';
                     contentBuffer = frontMatch[1];
                 } else if (backMatch) {
-                    if (currentKey === 'front') { // Finished front content
+                    if (currentKey === 'front') {
                         front = contentBuffer.trim();
                         contentBuffer = '';
                     }
@@ -561,7 +3761,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
             
-            // Set final content
             if (currentKey === 'front') {
                 front = contentBuffer.trim();
             } else if (currentKey === 'back') {
@@ -576,19 +3775,16 @@ document.addEventListener('DOMContentLoaded', () => {
         result.cards = cards;
         return result;
     }
-    // --- END: NEW, ROBUST PARSER ---
     
-    // --- Event listener for "Add Image" and "Add List" buttons ---
+    // Media button handlers
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('add-image-btn')) {
             const imageFile = prompt("Enter the image filename (e.g., my-image.png):");
             if (!imageFile) return;
 
             const altText = prompt("Enter a short description (alt text):", "image");
-            
             const size = prompt("Enter image size (e.g., x-small, small, medium, large, third, or a custom height like '150px'):", "large");
             if (!size) return;
-            
             const align = prompt("Enter image alignment (left, center, right, stack-right, or stack-right-top):", "center");
             if (!align) return;
             const border = prompt("Frame? Type 'none' for no border/shadow, or leave blank:", "");
@@ -602,17 +3798,18 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const markdown = `![${altText}/${attributes.join('/')}](${imageFile})`;
             insertTextAtCursor(e.target, markdown);
+            
+            // Close dropdown
+            document.querySelectorAll('.media-dropdown.show').forEach(d => d.classList.remove('show'));
         }
 
-        if (e.target.classList.contains('add-video-btn')) {
+        if (e.target.classList.contains('add-video-btn') || e.target.classList.contains('add-animation-btn')) {
             const videoFile = prompt("Enter the video filename (e.g., motion.mp4 or animation.json):");
             if (!videoFile) return;
 
             const altText = prompt("Enter a short description (alt text):", "motion graphic");
-            
             const size = prompt("Enter video size (e.g., small, medium, large, third, or '300px'):", "medium");
             if (!size) return;
-            
             const align = prompt("Enter video alignment (left, center, right, stack-right, or stack-right-top):", "stack-right");
             if (!align) return;
             const border = prompt("Frame? Type 'none' for no border/shadow, or leave blank:", "");
@@ -630,11 +3827,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const mediaType = isJson ? 'lottie' : 'video';
             const markdown = `![${mediaType}:${altText}/${attributes.join('/')}](${videoFile})`;
             insertTextAtCursor(e.target, markdown);
+            
+            document.querySelectorAll('.media-dropdown.show').forEach(d => d.classList.remove('show'));
         }
         
         if (e.target.classList.contains('add-image-row-btn')) {
             const countStr = prompt("How many images in the row? (2-4)", "3");
-            if (!countStr) return; const count = Math.max(2, Math.min(4, parseInt(countStr, 10) || 3));
+            if (!countStr) return;
+            const count = Math.max(2, Math.min(4, parseInt(countStr, 10) || 3));
             const sizeDefault = count === 4 ? 'fourth' : (count === 3 ? 'third' : (count === 2 ? 'medium' : 'small'));
             const size = prompt("Enter image size for the row (e.g., fourth, third, small, medium, large or '200px'):", sizeDefault);
             if (!size) return;
@@ -644,7 +3844,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const parts = [];
             for (let i = 1; i <= count; i++) {
                 const file = prompt(`Image ${i} filename (e.g., img${i}.png):`);
-                if (!file) return; // cancel if any missing
+                if (!file) return;
                 const alt = prompt(`Image ${i} alt text:`, `image ${i}`) || `image ${i}`;
                 const attrs = [`size:${size.trim()}`, `align:${align.trim()}`];
                 if (border && border.trim().length) attrs.push(`frame:${border.trim()}`);
@@ -652,6 +3852,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             const row = parts.join(' ') + '\n';
             insertTextAtCursor(e.target, row);
+            
+            document.querySelectorAll('.media-dropdown.show').forEach(d => d.classList.remove('show'));
         }
 
         if (e.target.classList.contains('add-quote-btn')) {
@@ -660,6 +3862,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const author = prompt('Attribution (e.g., Name, Title or Company):', 'Purchasing manager at Aubo') || '';
             const block = `\n[quote]\ntext: ${quote}\nauthor: ${author}\n[/quote]\n`;
             insertTextAtCursor(e.target, block);
+            
+            document.querySelectorAll('.media-dropdown.show').forEach(d => d.classList.remove('show'));
         }
 
         if (e.target.classList.contains('add-list-btn')) {
@@ -679,8 +3883,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!area) return;
             const wrap = document.createElement('div');
             wrap.className = 'sq-card-wrap';
-            wrap.style.marginBottom = '10px';
-            wrap.innerHTML = `<div style="display:flex; gap:10px; margin: 5px 0;"><input type="text" class="sq-card-title" placeholder="Card title (optional)" style="flex:1;"></div><div style="display:flex; gap:10px; margin: 5px 0;"><input type="text" class="sq-card-next-label" placeholder="Next label (optional)" style="flex:1;"><input type="text" class="sq-card-prev-label" placeholder="Previous label (optional)" style="flex:1;"></div><textarea class="sq-content" placeholder="Card content. You can paste URLs, add lists, images, etc." required></textarea>`;
+            wrap.innerHTML = `<input type="text" class="sq-card-title" placeholder="Card title (optional)"><div style="display: flex; gap: 10px;"><input type="text" class="sq-card-next-label" placeholder="Next label (optional)" style="flex: 1;"><input type="text" class="sq-card-prev-label" placeholder="Previous label (optional)" style="flex: 1;"></div><textarea class="sq-content" placeholder="Card content..." required></textarea>`;
             area.appendChild(wrap);
         }
 
@@ -689,16 +3892,40 @@ document.addEventListener('DOMContentLoaded', () => {
             const cardTemplate = document.getElementById('flip-card-template');
             container.appendChild(cardTemplate.content.cloneNode(true));
         }
+        
+        if (e.target.classList.contains('add-supademo-btn')) {
+            const embedCode = prompt("Paste the Supademo embed code or just the embed URL:");
+            if (!embedCode) return;
+            
+            // Extract the URL from the embed code if full HTML was pasted
+            let supademoUrl = embedCode.trim();
+            const urlMatch = embedCode.match(/src="([^"]+)"/);
+            if (urlMatch) {
+                supademoUrl = urlMatch[1];
+            }
+            
+            // Extract the title if present
+            const titleMatch = embedCode.match(/title="([^"]+)"/);
+            const title = titleMatch ? titleMatch[1] : prompt("Enter a title for the demo:", "Interactive Demo") || "Interactive Demo";
+            
+            const markdown = `[supademo: ${title}](${supademoUrl})`;
+            insertTextAtCursor(e.target, markdown);
+            
+            document.querySelectorAll('.media-dropdown.show').forEach(d => d.classList.remove('show'));
+        }
     });
 
     function insertTextAtCursor(buttonElement, textToInsert) {
-        // Prefer a textarea inside the sidequest content area, falling back to standard node textarea
         const sqArea = buttonElement.closest('.sidequest-content-area');
         let textarea = null;
         if (sqArea) {
-            // Use the focused textarea if it's inside this area; otherwise the first card textarea
             const active = document.activeElement && sqArea.contains(document.activeElement) && document.activeElement.tagName === 'TEXTAREA' ? document.activeElement : null;
             textarea = active || sqArea.querySelector('textarea:focus') || sqArea.querySelector('.sq-card-wrap textarea') || sqArea.querySelector('textarea');
+        } else {
+            // For main content area
+            const contentWrapper = buttonElement.closest('.content-wrapper');
+            if (contentWrapper) {
+                textarea = contentWrapper.querySelector('.content-textarea');
         } else {
             const labelWrap = buttonElement.closest('.label-with-button');
             if (labelWrap && labelWrap.nextElementSibling && labelWrap.nextElementSibling.tagName === 'TEXTAREA') {
@@ -706,6 +3933,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (labelWrap) {
                 const container = labelWrap.parentElement || document;
                 textarea = container.querySelector('textarea');
+                }
             }
         }
         if (!textarea) return;
@@ -718,121 +3946,575 @@ document.addEventListener('DOMContentLoaded', () => {
         textarea.selectionStart = textarea.selectionEnd = caret;
     }
 
-    if (nodesContainer.children.length === 0) addNewNode();
-    addNodeBtn.addEventListener('click', () => addNewNode());
+    // Initial node creation is now handled by auto-save loading at the end of the script
+    
     nodesContainer.addEventListener('click', (e) => {
-        if (e.target.classList.contains('btn-remove')) e.target.closest('.node-card, .connection-row, .sidequest-row, .flip-card-row, .link-row').remove();
+        // Remove step from sidequest - CHECK THIS FIRST before general btn-remove
+        if (e.target.closest('.sq-step-card') && e.target.classList.contains('btn-remove')) {
+            e.stopPropagation();
+            const stepCard = e.target.closest('.sq-step-card');
+            const stepsContainer = stepCard.parentElement;
+            stepCard.remove();
+            updateStepNumbers(stepsContainer);
+            return;
+        }
+        
+        if (e.target.classList.contains('btn-remove')) {
+            const element = e.target.closest('.node-card, .connection-row, .sidequest-row, .flip-card-row, .link-row');
+            const nodeCard = e.target.closest('.node-card');
+            const isSidequest = element && element.classList.contains('sidequest-row');
+            
+            if (element && element.classList.contains('node-card')) {
+                // Also remove the connector before or after
+                const prev = element.previousElementSibling;
+                const next = element.nextElementSibling;
+                if (prev && prev.classList.contains('node-connector')) {
+                    prev.remove();
+                } else if (next && next.classList.contains('node-connector')) {
+                    next.remove();
+                }
+            }
+            element.remove();
+            updateSidebar();
+            
+            // Update sidequest button inputs if a sidequest was removed
+            if (isSidequest && nodeCard) {
+                const container = nodeCard.querySelector('.connections-container');
+                updateSidequestNumbers(container);
+            }
+        }
         else if (e.target.classList.contains('add-connection-btn')) addConnectionToNode(e.target.closest('.node-card'));
         else if (e.target.classList.contains('add-sidequest-btn')) addSideQuestToNode(e.target.closest('.node-card'));
         else if (e.target.classList.contains('add-link-btn')) addLinkToNode(e.target.closest('.node-card'));
+        // Sidequest step adding
+        else if (e.target.classList.contains('add-sq-card-btn')) {
+            const sidequestRow = e.target.closest('.sidequest-row');
+            if (sidequestRow) addStepToSidequest(sidequestRow);
+        }
+        // Sidequest media dropdown toggle
+        else if (e.target.classList.contains('sq-media-toggle')) {
+            const dropdown = e.target.nextElementSibling;
+            if (dropdown) dropdown.classList.toggle('active');
+        }
+        // Sidequest media options
+        else if (e.target.classList.contains('sidequest-media-option')) {
+            const textarea = e.target.closest('.sidequest-content-wrapper').querySelector('.sidequest-content-textarea');
+            const dropdown = e.target.closest('.sidequest-media-dropdown');
+            dropdown.classList.remove('active');
+            
+            let type = '';
+            if (e.target.classList.contains('sq-add-image')) type = 'image';
+            else if (e.target.classList.contains('sq-add-image-row')) type = 'image-row';
+            else if (e.target.classList.contains('sq-add-video')) type = 'video';
+            else if (e.target.classList.contains('sq-add-animation')) type = 'animation';
+            else if (e.target.classList.contains('sq-add-quote')) type = 'quote';
+            else if (e.target.classList.contains('sq-add-supademo')) type = 'supademo';
+            
+            if (type) {
+                insertMediaWithPrompts(type, textarea);
+            }
+        }
         else if (e.target.classList.contains('add-node-above-btn')) {
             const currentCard = e.target.closest('.node-card');
-            addNewNode(null, '', '', 'left', currentCard);
+            // Check if there's a connector before this card
+            const prev = currentCard.previousElementSibling;
+            if (prev && prev.classList.contains('node-connector')) {
+                addNewNode(null, '', '', 'left', prev, '', '', false);
+            } else {
+                addNewNode(null, '', '', 'left', currentCard, '', '', true);
+            }
+            // Update all IDs after adding
+            updateNodeIds();
         }
         else if (e.target.classList.contains('add-node-below-btn')) {
             const currentCard = e.target.closest('.node-card');
             const next = currentCard.nextElementSibling;
-            addNewNode(null, '', '', 'left', next);
+            // Skip connector if present to find the next card
+            const nextCard = next && next.classList.contains('node-connector') ? next.nextElementSibling : next;
+            if (nextCard) {
+                const connectorBeforeNext = nextCard.previousElementSibling;
+                if (connectorBeforeNext && connectorBeforeNext.classList.contains('node-connector')) {
+                    addNewNode(null, '', '', 'left', connectorBeforeNext, '', '', false);
+                } else {
+                    addNewNode(null, '', '', 'left', nextCard, '', '', true);
+                }
+            } else {
+                addNewNode(null, '', '', 'left', null, '', '', false);
+            }
+            // Update all IDs after adding
+            updateNodeIds();
+        }
+        else if (e.target.classList.contains('add-section-btn') && e.target.closest('.node-card')) {
+            // Add section button inside a node card
+            const currentCard = e.target.closest('.node-card');
+            const next = currentCard.nextElementSibling;
+            // Skip connector if present
+            const insertBefore = next && next.classList.contains('node-connector') ? next.nextElementSibling : next;
+            addSectionTitle('', insertBefore);
         }
     });
+    
     fileInput.addEventListener('change', (e) => {
-        const file = e.target.files[0]; if (!file) return;
+        const file = e.target.files[0];
+        if (!file) return;
         const reader = new FileReader();
         reader.onload = (event) => {
-            try { parseAndRender(event.target.result); alert('Course successfully loaded!'); }
-            catch (error) { console.error("Error parsing file:", error); alert("Could not parse file."); }
+            try {
+                parseAndRender(event.target.result);
+                alert('Course successfully loaded!');
+            } catch (error) {
+                console.error("Error parsing file:", error);
+                alert("Could not parse file.");
+            }
         };
-        reader.readAsText(file); e.target.value = '';
+        reader.readAsText(file);
+        e.target.value = '';
     });
+    
     generateBtn.addEventListener('click', () => {
-        let finalOutput = '# Auto-generated by FlowScript Course Creator\n\n'; const sideQuestContentMap = new Map();
-        document.querySelectorAll('.node-card').forEach(card => {
-            const id = card.querySelector('.node-id').value;
-            const title = card.querySelector('.node-title').value.replace(/\n/g, '<br>');
-            const titleAlign = (card.querySelector('.node-title-align')?.value || 'left');
-            const type = card.querySelector('.node-type').value;
-            const navType = (card.querySelector('.node-nav-type')?.value || '').trim();
-            const navParent = (card.querySelector('.node-nav-parent')?.value || '').trim();
-            
-            if (!id) return;
-            
-            let content = '';
-            if (type === 'flip-cards') {
-                const flipCards = [];
-                const intro = card.querySelector('.flip-intro')?.value || '';
-                card.querySelectorAll('.flip-card-row').forEach(row => {
-                    const front = row.querySelector('.flip-card-front').value;
-                    const back = row.querySelector('.flip-card-back').value;
-                    if (front || back) {
-                       flipCards.push(`[card]\nfront: ${front}\nback: ${back}`);
+        let finalOutput = '';
+        const sidequestSlides = []; // Collect all sidequest slides for output at the end
+        let sidequestIdCounter = 1;
+        
+        // Get all elements in order (section titles and slides)
+        const allElements = Array.from(nodesContainer.children).filter(el => 
+            el.classList.contains('section-title-card') || el.classList.contains('node-card')
+        );
+        
+        let slideIdCounter = 1;
+        let topicIdCounter = 1;
+        const slideIdMap = new Map(); // Map element index to slide ID
+        const sidequestIdMap = new Map(); // Map sidequest to its ID (s1, s2, etc.)
+        
+        // First pass: assign IDs to all slides (not sections) and collect sidequests
+        allElements.forEach((element, index) => {
+            if (element.classList.contains('node-card')) {
+                slideIdMap.set(index, slideIdCounter);
+                slideIdCounter++;
+                
+                // Also collect sidequests and assign IDs
+                element.querySelectorAll('.sidequest-row').forEach((sq, sqIdx) => {
+                    const sqKey = `${index}-${sqIdx}`;
+                    const sqId = `s${sidequestIdCounter}`;
+                    sidequestIdMap.set(sqKey, sqId);
+                    sidequestIdCounter++;
+                });
+            }
+        });
+        
+        let currentTopicId = null;
+        let currentTopicName = null;
+        let isFirstSlideInTopic = true;
+        
+        allElements.forEach((element, index) => {
+            if (element.classList.contains('section-title-card')) {
+                // This is a topic/section header
+                const topicName = element.querySelector('.section-title-input').value || 'Untitled Section';
+                currentTopicId = topicIdCounter;
+                currentTopicName = topicName;
+                topicIdCounter++;
+                isFirstSlideInTopic = true;
+                
+            } else if (element.classList.contains('node-card')) {
+                // This is a slide
+                const card = element;
+                const slideId = slideIdMap.get(index);
+                const title = card.querySelector('.node-title').value.replace(/\n/g, '<br>');
+                const titleCenter = card.querySelector('.node-title-center')?.checked;
+                const titleAlign = titleCenter ? 'center' : 'left';
+                const type = card.querySelector('.node-type').value;
+                
+                if (!slideId) return;
+                
+                // Output topic header if this is the first slide in a topic
+                if (isFirstSlideInTopic && currentTopicName) {
+                    finalOutput += `[id:${currentTopicId}/topic: ${currentTopicName}]\n\n`;
+                    isFirstSlideInTopic = false;
+                }
+                
+                let content = '';
+                if (type === 'flip-cards') {
+                    const flipCards = [];
+                    const intro = card.querySelector('.flip-intro')?.value || '';
+                    card.querySelectorAll('.flip-card-row').forEach(row => {
+                        const front = row.querySelector('.flip-card-front').value;
+                        const back = row.querySelector('.flip-card-back').value;
+                        if (front || back) {
+                           flipCards.push(`[card]\nfront: ${front}\nback: ${back}`);
+                        }
+                    });
+                    const cardsJoined = flipCards.join('\n[card-separator]\n');
+                    content = (intro && intro.trim().length)
+                        ? `[intro]\n${intro.trim()}\n[/intro]\n${cardsJoined}`
+                        : cardsJoined;
+                } else {
+                    content = card.querySelector('.node-content').value;
+                }
+
+                // Build slide output in new format
+                finalOutput += `slide_id: ${slideId}\n`;
+                finalOutput += `index_title: ${title.replace(/\*\*/g, '')}\n`; // Strip bold for index
+                finalOutput += `title: ${title}\n`;
+                if (titleAlign === 'center') {
+                    finalOutput += `title-align: center\n`;
+                }
+                finalOutput += `type: ${type}\n`;
+                finalOutput += `---\n${content.trim()}\n---\n`;
+                
+                // Auto-generate connection to next element
+                let nextIndex = index + 1;
+                while (nextIndex < allElements.length) {
+                    const nextEl = allElements[nextIndex];
+                    if (nextEl.classList.contains('node-card') || nextEl.classList.contains('section-title-card')) {
+                        // For section titles, skip to the first slide after it
+                        if (nextEl.classList.contains('section-title-card')) {
+                            let slideAfterSection = nextIndex + 1;
+                            while (slideAfterSection < allElements.length && 
+                                   !allElements[slideAfterSection].classList.contains('node-card')) {
+                                slideAfterSection++;
+                            }
+                            if (slideAfterSection < allElements.length) {
+                                const nextId = slideIdMap.get(slideAfterSection);
+                                const buttonText = card.querySelector('.next-button-text')?.value || 'Continue';
+                                finalOutput += `> [next] ${buttonText} -> ${nextId}\n`;
+                            }
+                        } else {
+                            const nextId = slideIdMap.get(nextIndex);
+                            const buttonText = card.querySelector('.next-button-text')?.value || 'Continue';
+                            finalOutput += `> [next] ${buttonText} -> ${nextId}\n`;
+                        }
+                        break;
+                    }
+                    nextIndex++;
+                }
+                
+                // Process sidequests
+                card.querySelectorAll('.sidequest-row').forEach((sq, sqIdx) => {
+                    const sqKey = `${index}-${sqIdx}`;
+                    const sqId = sidequestIdMap.get(sqKey);
+                    const sqTitle = (sq.querySelector('.sq-title').value || '').trim();
+                    const btnText = (sq.querySelector('.sq-btn-text')?.value || '').trim() || sqTitle;
+                    
+                    if (sqId && btnText) {
+                        finalOutput += `> [sidequest] ${btnText} -> ${sqId}\n`;
+                        
+                        // Collect sidequest content for output later
+                        const slides = [];
+                        
+                        // Main content textarea (first slide)
+                        const mainContent = (sq.querySelector('.sidequest-content-textarea')?.value || '').trim();
+                        if (mainContent) {
+                            slides.push({
+                                title: sqTitle,
+                                content: mainContent
+                            });
+                        }
+                        
+                        // Additional step cards
+                        sq.querySelectorAll('.sq-step-card').forEach(step => {
+                            const stepTitle = (step.querySelector('.sq-step-title-input')?.value || '').trim();
+                            const stepContent = (step.querySelector('.sq-step-content')?.value || '').trim();
+                            if (stepContent) {
+                                slides.push({
+                                    title: stepTitle || sqTitle,
+                                    content: stepContent
+                                });
+                            }
+                        });
+                        
+                        if (slides.length > 0) {
+                            sidequestSlides.push({
+                                id: sqId,
+                                topicName: sqTitle || 'Sidequest',
+                                slides: slides
+                            });
+                        }
                     }
                 });
-                const cardsJoined = flipCards.join('\n[card-separator]\n');
-                content = (intro && intro.trim().length)
-                    ? `[intro]\n${intro.trim()}\n[/intro]\n${cardsJoined}`
-                    : cardsJoined;
-            } else {
-                content = card.querySelector('.node-content').value;
-            }
-
-            const alignLine = (titleAlign === 'center') ? `title-align: center\n` : '';
-            const navTypeLine = navType && navType.length ? `nav: ${navType}\n` : '';
-            const navParentLine = navParent && navParent.length ? `nav-parent: ${navParent}\n` : '';
-            finalOutput += `id: ${id}\ntitle: ${title}\n${alignLine}${navTypeLine}${navParentLine}type: ${type}\n---\n${content.trim()}\n---\n`;
-            
-            card.querySelectorAll('.connection-row').forEach(conn => { const text = conn.querySelector('.conn-text').value, target = conn.querySelector('.conn-target').value; if(text && target) finalOutput += `> ${text} -> ${target}\n`; });
-            card.querySelectorAll('.sidequest-row').forEach(sq => {
-                const btnText = sq.querySelector('.sq-btn-text').value, type = sq.querySelector('.sq-type').value, sqTitle = sq.querySelector('.sq-title').value;
-                const nextLabel = (sq.querySelector('.sq-next-label').value || '').trim();
-                const backLabel = (sq.querySelector('.sq-back-label').value || '').trim();
-                const wraps = Array.from(sq.querySelectorAll('.sq-card-wrap'));
-                const cards = wraps.map(w => {
-                    const title = (w.querySelector('.sq-card-title').value || '').trim();
-                    const n = (w.querySelector('.sq-card-next-label').value || '').trim();
-                    const p = (w.querySelector('.sq-card-prev-label').value || '').trim();
-                    const body = (w.querySelector('.sq-content').value || '').trim();
-                    const meta = [];
-                    if (title.length) meta.push(`[title: ${title}]`);
-                    if (n.length) meta.push(`[next: ${n}]`);
-                    if (p.length) meta.push(`[prev: ${p}]`);
-                    return (meta.length ? meta.join('\n') + '\n' : '') + body;
-                }).filter(v => v.length > 0);
-                if (btnText && type && sqTitle) { 
-                    finalOutput += `> ${btnText} -> [${type}:${sqTitle}]\n`; 
-                    if (cards.length) {
-                        const uniqueKey = `${type}:${sqTitle}`;
-                        sideQuestContentMap.set(uniqueKey, { cards: cards.join('\n[sq-card-separator]\n'), nextLabel, backLabel });
+                
+                // Process flow links (external URLs)
+                card.querySelectorAll('.link-row').forEach(link => {
+                    const btnText = link.querySelector('.link-btn-text').value;
+                    const url = link.querySelector('.link-url').value;
+                    const isFlowLink = url && (url.includes('course=') || url.includes('.txt'));
+                    
+                    if (btnText && url) {
+                        if (isFlowLink) {
+                            finalOutput += `> [next:flow] ${btnText} -> ${url}\n`;
+                        } else {
+                            finalOutput += `> [sidequest] ${btnText} -> ${url}\n`;
+                        }
                     }
-                }
-            });
-            card.querySelectorAll('.link-row').forEach(link => {
-                const btnText = link.querySelector('.link-btn-text').value;
-                const url = link.querySelector('.link-url').value;
-                const newTab = link.querySelector('.link-target-newtab').checked;
-                if (btnText && url) {
-                    const target = newTab ? 'newtab' : 'embed';
-                    finalOutput += `> ${btnText} -> [link:${target}:${url}]\n`;
-                }
-            });
-            finalOutput += '\n';
+                });
+                
+                finalOutput += '\n';
+            }
         });
-        sideQuestContentMap.forEach((meta, uniqueKey) => { 
-            const [type, title] = uniqueKey.split(':', 2);
-            const opts = [];
-            if (meta.nextLabel && meta.nextLabel.length) opts.push(`next=${meta.nextLabel}`);
-            if (meta.backLabel && meta.backLabel.length) opts.push(`back=${meta.backLabel}`);
-            const optsStr = opts.length ? `|${opts.join('|')}` : '';
-            const content = typeof meta === 'string' ? meta : meta.cards;
-            finalOutput += `[side-quest-content:${type}:${title}${optsStr}]\n---\n${content}\n---\n\n`; 
-        });
-        outputText.value = finalOutput.trim(); downloadBtn.style.display = 'inline-block'; alert('Course text generated!');
+        
+        // Output sidequests section
+        if (sidequestSlides.length > 0) {
+            finalOutput += `[flow-specific-side-quests]\n\n`;
+            
+            sidequestSlides.forEach(sq => {
+                finalOutput += `[id:${sq.id}/topic: ${sq.topicName}]\n\n`;
+                
+                sq.slides.forEach((slide, slideIdx) => {
+                    finalOutput += `slide_id: ${slideIdx + 1}\n`;
+                    finalOutput += `title: **${slide.title}**\n`;
+                    finalOutput += `type: sidequest\n`;
+                    finalOutput += `---\n${slide.content}\n---\n`;
+                    
+                    // Add navigation to next slide if not the last
+                    if (slideIdx < sq.slides.length - 1) {
+                        finalOutput += `> [next] Continue -> ${slideIdx + 2}\n`;
+                    }
+                    
+                    finalOutput += '\n';
+                });
+            });
+        }
+        
+        outputText.value = finalOutput.trim();
+        downloadBtn.style.display = 'inline-block';
+        alert('Course text generated!');
     });
+    
     downloadBtn.addEventListener('click', () => {
-        const textToSave = outputText.value; if (!textToSave) return alert("Generate text first!");
-        const blob = new Blob([textToSave], { type: 'text/plain' }); const url = URL.createObjectURL(blob);
-        const a = document.createElement('a'); a.href = url; a.download = 'course-edited.txt';
-        document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
+        const textToSave = outputText.value;
+        if (!textToSave) return alert("Generate text first!");
+        const blob = new Blob([textToSave], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'course-edited.txt';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
     });
+    
+    // ========== CLEAR COURSE BUTTON ==========
+    const clearBtn = document.getElementById('clear-btn');
+    clearBtn.addEventListener('click', () => {
+        if (confirm('Are you sure you want to clear the course? This will delete all nodes and start fresh.')) {
+            currentCourseId = null;
+            currentCourseName = null;
+            localStorage.removeItem('courseCreatorData');
+            localStorage.removeItem('currentCourseId');
+            localStorage.removeItem('currentCourseName');
+            nodesContainer.innerHTML = '';
+            outputText.value = '';
+            downloadBtn.style.display = 'none';
+            addNewNode();
+            updateCurrentCourseDisplay();
+        }
+    });
+    
+    // ========== ADD SECTION/SLIDE BUTTONS ==========
+    const addSectionBtn = document.getElementById('add-section-btn');
+    const addSlideBtn = document.getElementById('add-slide-btn');
+    const addSlideAboveBtn = document.getElementById('add-slide-above-btn');
+    const addSidequestMainBtn = document.getElementById('add-sidequest-btn');
+    
+    addSectionBtn.addEventListener('click', () => {
+        addSectionTitle();
+    });
+    
+    addSlideBtn.addEventListener('click', () => {
+        addNewNode();
+        updateNodeIds();
+    });
+    
+    addSlideAboveBtn.addEventListener('click', () => {
+        // Add slide above the last node
+        const lastCard = nodesContainer.querySelector('.node-card:last-of-type');
+        if (lastCard) {
+            addNewNode(null, '', '', 'left', lastCard, '', '', true);
+        } else {
+            addNewNode();
+        }
+        updateNodeIds();
+    });
+    
+    if (addSidequestMainBtn) {
+        addSidequestMainBtn.addEventListener('click', () => {
+            // Add to the last slide
+            const lastCard = nodesContainer.querySelector('.node-card:last-of-type');
+            if (lastCard) {
+                const addSqBtn = lastCard.querySelector('.add-sidequest-btn');
+                if (addSqBtn) addSqBtn.click();
+            }
+        });
+    }
+    
+    // ========== AUTO-SAVE FUNCTIONALITY ==========
+    
+    function saveToLocalStorage() {
+        // Get all elements in order (section titles and slides)
+        const allElements = Array.from(nodesContainer.children).filter(el => 
+            el.classList.contains('section-title-card') || el.classList.contains('node-card')
+        );
+        
+        const courseData = allElements.map(element => {
+            if (element.classList.contains('section-title-card')) {
+                return {
+                    type: 'section-title',
+                    title: element.querySelector('.section-title-input')?.value || ''
+                };
+            } else {
+                const card = element;
+                return {
+                    type: 'slide',
+                    id: card.querySelector('.node-id').value,
+                    title: card.querySelector('.node-title').value,
+                    titleBold: card.querySelector('.node-title-bold')?.checked || false,
+                    titleCenter: card.querySelector('.node-title-center')?.checked || false,
+                    content: card.querySelector('.node-content').value,
+                    contentBold: card.querySelector('.content-bold')?.checked || false,
+                    contentCenter: card.querySelector('.content-center')?.checked || false,
+                    nextButtonText: card.querySelector('.next-button-text')?.value || 'Continue',
+                    nodeType: card.querySelector('.node-type')?.value || 'main',
+                    flipIntro: card.querySelector('.flip-intro')?.value || '',
+                    // Save sidequest data
+                    sidequests: Array.from(card.querySelectorAll('.sidequest-row')).map(sq => {
+                        const cards = [];
+                        const mainContent = sq.querySelector('.sidequest-content-textarea')?.value || '';
+                        if (mainContent) {
+                            cards.push({ content: mainContent });
+                        }
+                        sq.querySelectorAll('.sq-step-card').forEach(step => {
+                            cards.push({
+                                title: step.querySelector('.sq-step-title-input')?.value || '',
+                                content: step.querySelector('.sq-step-content')?.value || '',
+                                nextLabel: step.querySelector('.sq-step-next-label')?.value || '',
+                                backLabel: step.querySelector('.sq-step-back-label')?.value || ''
+                            });
+                        });
+                        return {
+                            btnText: sq.querySelector('.sq-btn-text')?.value || sq.querySelector('.sq-title')?.value || '',
+                            type: sq.querySelector('.sq-type')?.value || 'video',
+                            title: sq.querySelector('.sq-title')?.value || '',
+                            nextLabel: sq.querySelector('.sq-next-label')?.value || '',
+                            backLabel: sq.querySelector('.sq-back-label')?.value || '',
+                            cards: cards
+                        };
+                    })
+                };
+            }
+        });
+        
+        localStorage.setItem('courseCreatorData', JSON.stringify(courseData));
+    }
+    
+    function loadFromLocalStorage() {
+        const saved = localStorage.getItem('courseCreatorData');
+        if (!saved) return false;
+        
+        try {
+            const courseData = JSON.parse(saved);
+            if (!courseData || courseData.length === 0) return false;
+            
+            nodesContainer.innerHTML = '';
+            
+            courseData.forEach((nodeData, index) => {
+                // Handle new format with type field
+                if (nodeData.type === 'section-title') {
+                    addSectionTitle(nodeData.title || '');
+                    return;
+                }
+                
+                // Handle old format (backwards compatibility) or slide type
+                const nodeCard = addNewNode(
+                    nodeData.id || index + 1,
+                    nodeData.title || '',
+                    nodeData.content || '',
+                    nodeData.titleCenter ? 'center' : 'left',
+                    null,
+                    '',
+                    '',
+                    false
+                );
+                
+                // Restore additional properties
+                if (nodeData.titleBold) {
+                    const titleBoldCheck = nodeCard.querySelector('.node-title-bold');
+                    if (titleBoldCheck) titleBoldCheck.checked = true;
+                }
+                if (nodeData.contentBold) {
+                    const contentBoldCheck = nodeCard.querySelector('.content-bold');
+                    if (contentBoldCheck) contentBoldCheck.checked = true;
+                }
+                if (nodeData.contentCenter) {
+                    const contentCenterCheck = nodeCard.querySelector('.content-center');
+                    if (contentCenterCheck) contentCenterCheck.checked = true;
+                }
+                if (nodeData.nextButtonText) {
+                    const nextBtn = nodeCard.querySelector('.next-button-text');
+                    if (nextBtn) nextBtn.value = nodeData.nextButtonText;
+                }
+                if (nodeData.nodeType) {
+                    const typeSelect = nodeCard.querySelector('.node-type');
+                    if (typeSelect) typeSelect.value = nodeData.nodeType;
+                }
+                if (nodeData.flipIntro) {
+                    const flipIntro = nodeCard.querySelector('.flip-intro');
+                    if (flipIntro) flipIntro.value = nodeData.flipIntro;
+                }
+                
+                // Restore sidequests
+                if (nodeData.sidequests && nodeData.sidequests.length > 0) {
+                    nodeData.sidequests.forEach(sq => {
+                        addSideQuestToNode(
+                            nodeCard,
+                            sq.btnText,
+                            sq.type,
+                            sq.title,
+                            sq.cards.map(c => ({
+                                title: c.title,
+                                nextLabel: c.nextLabel,
+                                prevLabel: c.prevLabel,
+                                content: c.content
+                            })),
+                            sq.nextLabel,
+                            sq.backLabel
+                        );
+                    });
+                }
+            });
+            
+            updateSidebar();
+            return true;
+        } catch (e) {
+            console.error('Error loading saved course:', e);
+            return false;
+        }
+    }
+    
+    // Auto-save on any input change
+    document.addEventListener('input', () => {
+        saveToLocalStorage();
+    });
+    
+    document.addEventListener('change', () => {
+        saveToLocalStorage();
+    });
+    
+    // Also save when nodes are added/removed
+    const originalAddNewNode = addNewNode;
+    // We'll trigger save after mutations via MutationObserver
+    const observer = new MutationObserver(() => {
+        setTimeout(saveToLocalStorage, 100);
+    });
+    observer.observe(nodesContainer, { childList: true, subtree: true });
+    
+    // Load saved data on startup (only if we haven't already created a node)
+    if (nodesContainer.children.length === 0) {
+        const loaded = loadFromLocalStorage();
+        if (!loaded) {
+            // No saved data, create initial node
+            addNewNode(null, '', '', 'left', null, '', '', false, true);
+        }
+    }
 });
 </script>
 
