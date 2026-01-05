@@ -312,7 +312,7 @@
 
     /* Sidequest step dots */
     .toc-step-dots {
-      margin-left: auto;
+      margin-left: 10px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -1805,7 +1805,6 @@
                 const sqEl = document.createElement('div');
                 sqEl.className = `toc-child${isSqActive ? ' active' : ''}`;
                 sqEl.style.paddingLeft = '12px';
-                sqEl.style.justifyContent = 'space-between';
                 sqEl.onclick = (e) => {
                     e.stopPropagation();
                     updateView(sqId);
@@ -1828,23 +1827,24 @@
                   type: sq.type,
                   sqIdx
                 });
-                if (stepIds.length > 1) {
-                  const dots = document.createElement('div');
-                  dots.className = 'toc-step-dots';
-                  stepIds.forEach((stepId, i) => {
-                    const dot = document.createElement('span');
-                    dot.className = 'toc-step-dot' +
-                      (visitedNodes.has(String(stepId)) ? ' visited' : '') +
-                      (activeNodeId === String(stepId) ? ' active' : '');
-                    dot.title = `Step ${i + 1}`;
-                    dot.onclick = (ev) => {
-                      ev.stopPropagation();
-                      updateView(String(stepId));
-                    };
-                    dots.appendChild(dot);
-                  });
-                  sqEl.appendChild(dots);
-                }
+                const dots = document.createElement('div');
+                dots.className = 'toc-step-dots';
+                // Always show at least one dot (even for 1-step sidequests)
+                const stepsToRender = stepIds.length > 0 ? stepIds : [sqId];
+                stepsToRender.forEach((stepId, i) => {
+                  const dot = document.createElement('span');
+                  dot.className = 'toc-step-dot' +
+                    (visitedNodes.has(String(stepId)) ? ' visited' : '') +
+                    (activeNodeId === String(stepId) ? ' active' : '');
+                  dot.title = `Step ${i + 1}`;
+                  dot.onclick = (ev) => {
+                    ev.stopPropagation();
+                    updateView(String(stepId));
+                  };
+                  dots.appendChild(dot);
+                });
+                // Place dots right after the title (inside leftWrap) like the design
+                leftWrap.appendChild(dots);
                 childrenContainer.appendChild(sqEl);
               });
             }
@@ -1859,7 +1859,6 @@
               const isSqActive = activeNodeId === sqId || activeNodeId.startsWith(sqPrefix);
               const sqEl = document.createElement('div');
               sqEl.className = `toc-child${isSqActive ? ' active' : ''}`;
-              sqEl.style.justifyContent = 'space-between';
               sqEl.onclick = (e) => {
                   e.stopPropagation();
                   updateView(sqId);
@@ -1881,23 +1880,22 @@
                 type: sq.type,
                 sqIdx
               });
-              if (stepIds.length > 1) {
-                const dots = document.createElement('div');
-                dots.className = 'toc-step-dots';
-                stepIds.forEach((stepId, i) => {
-                  const dot = document.createElement('span');
-                  dot.className = 'toc-step-dot' +
-                    (visitedNodes.has(String(stepId)) ? ' visited' : '') +
-                    (activeNodeId === String(stepId) ? ' active' : '');
-                  dot.title = `Step ${i + 1}`;
-                  dot.onclick = (ev) => {
-                    ev.stopPropagation();
-                    updateView(String(stepId));
-                  };
-                  dots.appendChild(dot);
-                });
-                sqEl.appendChild(dots);
-              }
+              const dots = document.createElement('div');
+              dots.className = 'toc-step-dots';
+              const stepsToRender = stepIds.length > 0 ? stepIds : [sqId];
+              stepsToRender.forEach((stepId, i) => {
+                const dot = document.createElement('span');
+                dot.className = 'toc-step-dot' +
+                  (visitedNodes.has(String(stepId)) ? ' visited' : '') +
+                  (activeNodeId === String(stepId) ? ' active' : '');
+                dot.title = `Step ${i + 1}`;
+                dot.onclick = (ev) => {
+                  ev.stopPropagation();
+                  updateView(String(stepId));
+                };
+                dots.appendChild(dot);
+              });
+              leftWrap.appendChild(dots);
               childrenContainer.appendChild(sqEl);
             });
           }
