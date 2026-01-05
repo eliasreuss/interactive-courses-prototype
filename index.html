@@ -493,6 +493,19 @@
       align-items: center;
       gap: 12px;
     }
+
+    /* Prevent footer buttons from wrapping into multiple lines on small screens */
+    @media (max-width: 680px) {
+      .footer-right {
+        flex-wrap: nowrap;
+        overflow: hidden;
+        min-width: 0;
+      }
+      .footer-right .btn {
+        min-width: 0;               /* allow flex items to shrink */
+        max-width: clamp(96px, 28vw, 180px);
+      }
+    }
     
     .footer-divider {
       width: 1px;
@@ -514,6 +527,10 @@
       cursor: pointer;
       transition: all 0.2s;
       border: none;
+      white-space: nowrap;         /* keep button text on one line */
+      overflow: hidden;            /* enable ellipsis */
+      text-overflow: ellipsis;
+      min-width: 0;                /* allow shrinking inside flex containers */
     }
     
     .btn-primary {
@@ -556,6 +573,15 @@
     .btn svg {
       width: 10px;
       height: 16px;
+      flex-shrink: 0;
+    }
+
+    /* Truncate inner label when buttons include a <span> */
+    .btn > span {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     
     /* Resource link button */
