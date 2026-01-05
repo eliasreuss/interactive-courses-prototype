@@ -412,7 +412,7 @@
     
     /* Media containers */
     .content-images-container {
-      display: flex; gap: 20px; justify-content: center; margin: 30px 0; flex-wrap: wrap; align-items: center;
+      display: flex; gap: 32px; justify-content: center; margin: 30px 0; flex-wrap: wrap; align-items: center;
     }
     .content-images-container img { max-width: 100%; height: auto; display: block; }
     .content-images-container .img-container {
@@ -427,9 +427,9 @@
     .content-images-container .size-x-small { max-width: 15%; flex-basis: 15%; }
     .content-images-container .size-small { max-width: 25%; flex-basis: 25%; }
     .content-images-container .size-medium { max-width: 50%; flex-basis: 50%; }
-    .content-images-container .size-large { max-width: 100%; flex-basis: 100%; }
-    .content-images-container .size-third { flex: 0 0 calc((100% - 40px) / 3); max-width: calc((100% - 40px) / 3); }
-    .content-images-container .size-fourth { flex: 0 0 calc((100% - 60px) / 4); max-width: calc((100% - 60px) / 4); }
+    .content-images-container .size-large { max-width: 70%; flex-basis: 70%; }
+    .content-images-container .size-third { flex: 0 0 calc((100% - 64px) / 3); max-width: calc((100% - 64px) / 3); }
+    .content-images-container .size-fourth { flex: 0 0 calc((100% - 72px) / 4); max-width: calc((100% - 72px) / 4); }
     .content-images-container.align-left { justify-content: flex-start; }
     .content-images-container.align-center { justify-content: center; }
     .content-images-container.align-right { justify-content: flex-end; }
@@ -2414,7 +2414,7 @@
     (async function() {
       try {
         const urlParams = new URLSearchParams(window.location.search);
-        const courseFile = urlParams.get('course') || 'intro-test.txt';
+        const courseFile = urlParams.get('course') || 'Intro.txt';
         const cacheParam = Date.now();
         const requestUrl = `courses/${courseFile}?v=${cacheParam}`;
         const response = await fetch(requestUrl);

@@ -1,0 +1,74 @@
+slide_id: 1
+index_title: Welcome
+title: Welcome to the learning path: **Introduction to Inact for Inventory Management**
+title-align: center
+type: main
+---
+![image/size:500px/align:center/frame:none](intro/Intro-Intro.png)
+---
+> [next] Let's do it! -> 2
+
+slide_id: 2
+index_title: The three pillars
+title: **The three pillars of inventory management**
+type: main
+---
+At its core, inventory optimization boils down to answering three critical questions:
+![image 1/size:third/align:center/frame:none](intro/What-To-Stock.png) ![image 2/size:third/align:center/frame:none](intro/How-Much-To-Stock.png) ![image 3/size:third/align:center/frame:none](intro/How-Much-To-Order.png)
+---
+> [next] Continue -> 3
+
+slide_id: 3
+index_title: Different departments, different targets
+title: **Different departments, different targets**
+type: main
+---
+These are simple questions, but they don’t have simple answers. While everyone in the organization wants the company to succeed, different departments are often aiming for different targets.
+
+**You have probably seen this dynamic before:**
+
+![image/size:large/align:center/frame:none](intro/Triangle-Dynamic.png)
+
+This tug of war between priorities makes it essential to find the right balance to keep the business healthy and profitable.
+---
+> [next] Continue -> 4
+
+slide_id: 4
+index_title: The cost of imbalance
+title: **The cost of imbalance**
+type: main
+---
+But finding the right balance is hard, and the consequences are costly.
+
+In fact, most companies are sitting on 15-35% excess inventory as a result of their balancing act failing. This silently drains resources in three critical ways: 
+
+![image 1/size:third/align:center/frame:none](intro/Rising-Inventory-Capital.png) ![image 2/size:third/align:center/frame:none](intro/Too-Low-Turnover-Rate.png) ![image 3/size:third/align:center/frame:none](intro/Obsolete-Goods-And-Write-Offs.png)
+
+Throughout this learning path, you’ll explore practical ways to prevent these costs and regain control of your inventory.
+---
+> [next] Continue -> 5
+
+slide_id: 5
+index_title: The strategy
+title: **The strategy**
+type: main
+---
+This is the goal: Inventory management that keeps the right products in stock - using optimal reorder points and quantities - without binding unnecessary capital. 
+
+![image/size:large/align:center/frame:none](intro/Full-Picture-ROP-ROQ.png)
+
+So, if you’re ready, let’s take a look at what we will go through in the learning path so we can get there.
+---
+> [next] Let's do it! -> 6
+
+slide_id: 6
+index_title: The learning path
+title: **The learning path**
+type: main
+---
+Here are the five flows we’ll cover:
+
+![image/size:large/align:center/frame:none](intro/Learning-Path-Overview.png)
+
+From here, you can continue to the first flow, “Double ABC Analysis,” or return to your dashboard.
+---
