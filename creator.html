@@ -1816,6 +1816,15 @@
 <div class="container">
             
     <div id="nodes-container"></div>
+
+    <!-- Asset folder settings (Option A: images/<course>/...) -->
+    <div class="field-group" style="margin-top: 16px; max-width: 520px;">
+        <label class="field-label">Assets folder (inside <code>images/</code>)</label>
+        <input id="assets-folder-input" type="text" class="field-input" placeholder="e.g. intro/ (leave empty to not prefix)">
+        <div style="margin-top: 6px; font-size: 12px; color: #6E6E6E;">
+            Tip: when you insert media, filenames like <code>photo.png</code> will become <code>intro/photo.png</code> automatically.
+        </div>
+    </div>
     
     <div class="add-buttons-row" style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
         <button id="add-section-btn" class="btn-connection">Add section</button>
@@ -2110,6 +2119,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const flipCardTemplate = document.getElementById('flip-card-template');
     const linkTemplate = document.getElementById('link-template');
     const outputText = document.getElementById('outputText');
+    const assetsFolderInput = document.getElementById('assets-folder-input');
     let draggedSidebarItem = null;
     let dropTargetIndex = null;
     
@@ -2129,6 +2139,52 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let currentCourseId = null;
     let currentCourseName = null;
+
+    // ========== ASSETS FOLDER (Option A: images/<course>/...) ==========
+    function slugifyFolderName(name) {
+        return String(name || '')
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '') // strip accents
+            .toLowerCase()
+            .trim()
+            .replace(/[^a-z0-9\s_-]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-')
+            .replace(/^[-_]+|[-_]+$/g, '');
+    }
+
+    function normalizeAssetsFolder(value) {
+        let v = String(value || '').trim();
+        if (!v) return '';
+        v = v.replace(/^images\//i, ''); // user convenience
+        v = v.replace(/\\/g, '/');
+        v = v.replace(/^\/+/, '');
+        // ensure trailing slash
+        if (!v.endsWith('/')) v += '/';
+        return v;
+    }
+
+    function getAssetsFolder() {
+        return normalizeAssetsFolder(assetsFolderInput ? assetsFolderInput.value : '');
+    }
+
+    function applyDefaultAssetsFolder() {
+        if (!assetsFolderInput) return;
+        // If user already set a value, keep it
+        if (assetsFolderInput.value && assetsFolderInput.value.trim()) return;
+        const base = slugifyFolderName(currentCourseName || '');
+        if (base) assetsFolderInput.value = `${base}/`;
+    }
+
+    function applyAssetsFolderPrefix(path) {
+        const raw = String(path || '').trim();
+        if (!raw) return raw;
+        // Don't prefix external URLs or already-namespaced paths
+        if (/^(https?:)?\/\//i.test(raw) || /^data:/i.test(raw)) return raw;
+        if (raw.includes('/')) return raw;
+        const prefix = getAssetsFolder();
+        return prefix ? `${prefix}${raw}` : raw;
+    }
     
     // Tab switching
     headerTabs.forEach(tab => {
@@ -2207,6 +2263,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function saveCourse(name, forceNew = false) {
         const courses = getSavedCourses();
         const courseData = getCurrentCourseData();
+        const assetsFolder = getAssetsFolder();
         const now = new Date();
         
         if (currentCourseId && !forceNew) {
@@ -2214,6 +2271,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const index = courses.findIndex(c => c.id === currentCourseId);
             if (index !== -1) {
                 courses[index].data = courseData;
+                courses[index].assetsFolder = assetsFolder;
                 courses[index].updatedAt = now.toISOString();
                 courses[index].nodeCount = courseData.length;
             }
@@ -2223,6 +2281,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 id: Date.now().toString(),
                 name: name,
                 data: courseData,
+                assetsFolder: assetsFolder,
                 createdAt: now.toISOString(),
                 updatedAt: now.toISOString(),
                 nodeCount: courseData.length
@@ -2239,6 +2298,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('courseCreatorData', JSON.stringify(courseData));
         localStorage.setItem('currentCourseId', currentCourseId);
         localStorage.setItem('currentCourseName', currentCourseName);
+        localStorage.setItem('courseCreatorAssetsFolder', assetsFolder);
     }
     
     // Update current course name display
@@ -2249,6 +2309,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             currentCourseNameEl.style.display = 'none';
         }
+        applyDefaultAssetsFolder();
     }
     
     // Load a course by ID
@@ -2260,6 +2321,10 @@ document.addEventListener('DOMContentLoaded', () => {
         
         currentCourseId = course.id;
         currentCourseName = course.name;
+        if (assetsFolderInput) {
+            assetsFolderInput.value = normalizeAssetsFolder(course.assetsFolder || '');
+            applyDefaultAssetsFolder();
+        }
         
         // Clear and load nodes
         nodesContainer.innerHTML = '';
@@ -2329,6 +2394,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('courseCreatorData', JSON.stringify(course.data));
         localStorage.setItem('currentCourseId', currentCourseId);
         localStorage.setItem('currentCourseName', currentCourseName);
+        localStorage.setItem('courseCreatorAssetsFolder', getAssetsFolder());
         
         // Switch to creator view
         headerTabs.forEach(t => t.classList.remove('active'));
@@ -2368,6 +2434,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: Date.now().toString(),
             name: course.name + ' (Copy)',
             data: JSON.parse(JSON.stringify(course.data)),
+            assetsFolder: course.assetsFolder || '',
             createdAt: now.toISOString(),
             updatedAt: now.toISOString(),
             nodeCount: course.nodeCount
@@ -2875,6 +2942,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (type === 'image') {
             const imageFile = prompt("Enter the image filename (e.g., my-image.png):");
             if (!imageFile) return;
+            const imagePath = applyAssetsFolderPrefix(imageFile);
             
             const altText = prompt("Enter a short description (alt text):", "image");
             const size = prompt("Enter image size (e.g., x-small, small, medium, large, third, or a custom height like '150px'):", "large");
@@ -2890,7 +2958,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             if (border && border.trim().length) attributes.push(`frame:${border.trim()}`);
             
-            textToInsert = `![${altText}/${attributes.join('/')}](${imageFile})`;
+            textToInsert = `![${altText}/${attributes.join('/')}](${imagePath})`;
         }
         else if (type === 'image-row') {
             const countStr = prompt("How many images in the row? (2-4)", "3");
@@ -2906,16 +2974,18 @@ document.addEventListener('DOMContentLoaded', () => {
             for (let i = 1; i <= count; i++) {
                 const file = prompt(`Image ${i} filename (e.g., img${i}.png):`);
                 if (!file) return;
+                const filePath = applyAssetsFolderPrefix(file);
                 const alt = prompt(`Image ${i} alt text:`, `image ${i}`) || `image ${i}`;
                 const attrs = [`size:${size.trim()}`, `align:${align.trim()}`];
                 if (border && border.trim().length) attrs.push(`frame:${border.trim()}`);
-                parts.push(`![${alt}/${attrs.join('/')}](${file})`);
+                parts.push(`![${alt}/${attrs.join('/')}](${filePath})`);
             }
             textToInsert = parts.join(' ') + '\n';
         }
         else if (type === 'video' || type === 'animation') {
             const videoFile = prompt("Enter the video filename (e.g., motion.mp4 or animation.json):");
             if (!videoFile) return;
+            const videoPath = applyAssetsFolderPrefix(videoFile);
             
             const altText = prompt("Enter a short description (alt text):", "motion graphic");
             const size = prompt("Enter video size (e.g., small, medium, large, third, or '300px'):", "medium");
@@ -2933,9 +3003,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (border && border.trim().length) attributes.push(`frame:${border.trim()}`);
             if (playback && /controls|click|sound/i.test(playback.trim())) attributes.push('controls');
             
-            const isJson = /\.json(\?|$)/i.test(videoFile.trim());
+            const isJson = /\.json(\?|$)/i.test(videoPath.trim());
             const mediaType = isJson ? 'lottie' : 'video';
-            textToInsert = `![${mediaType}:${altText}/${attributes.join('/')}](${videoFile})`;
+            textToInsert = `![${mediaType}:${altText}/${attributes.join('/')}](${videoPath})`;
         }
         else if (type === 'quote') {
             const quote = prompt('Quote text:', 'We can now document exactly how we optimize the warehouse and show management exactly what is working and what is not');
@@ -3779,6 +3849,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target.classList.contains('add-image-btn')) {
             const imageFile = prompt("Enter the image filename (e.g., my-image.png):");
             if (!imageFile) return;
+            const imagePath = applyAssetsFolderPrefix(imageFile);
 
             const altText = prompt("Enter a short description (alt text):", "image");
             const size = prompt("Enter image size (e.g., x-small, small, medium, large, third, or a custom height like '150px'):", "large");
@@ -3794,7 +3865,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             if (border && border.trim().length) attributes.push(`frame:${border.trim()}`);
             
-            const markdown = `![${altText}/${attributes.join('/')}](${imageFile})`;
+            const markdown = `![${altText}/${attributes.join('/')}](${imagePath})`;
             insertTextAtCursor(e.target, markdown);
             
             // Close dropdown
@@ -3804,6 +3875,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target.classList.contains('add-video-btn') || e.target.classList.contains('add-animation-btn')) {
             const videoFile = prompt("Enter the video filename (e.g., motion.mp4 or animation.json):");
             if (!videoFile) return;
+            const videoPath = applyAssetsFolderPrefix(videoFile);
 
             const altText = prompt("Enter a short description (alt text):", "motion graphic");
             const size = prompt("Enter video size (e.g., small, medium, large, third, or '300px'):", "medium");
@@ -3821,9 +3893,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (border && border.trim().length) attributes.push(`frame:${border.trim()}`);
             if (playback && /controls|click|sound/i.test(playback.trim())) attributes.push('controls');
             
-            const isJson = /\.json(\?|$)/i.test(videoFile.trim());
+            const isJson = /\.json(\?|$)/i.test(videoPath.trim());
             const mediaType = isJson ? 'lottie' : 'video';
-            const markdown = `![${mediaType}:${altText}/${attributes.join('/')}](${videoFile})`;
+            const markdown = `![${mediaType}:${altText}/${attributes.join('/')}](${videoPath})`;
             insertTextAtCursor(e.target, markdown);
             
             document.querySelectorAll('.media-dropdown.show').forEach(d => d.classList.remove('show'));
@@ -3843,10 +3915,11 @@ document.addEventListener('DOMContentLoaded', () => {
             for (let i = 1; i <= count; i++) {
                 const file = prompt(`Image ${i} filename (e.g., img${i}.png):`);
                 if (!file) return;
+                const filePath = applyAssetsFolderPrefix(file);
                 const alt = prompt(`Image ${i} alt text:`, `image ${i}`) || `image ${i}`;
                 const attrs = [`size:${size.trim()}`, `align:${align.trim()}`];
                 if (border && border.trim().length) attrs.push(`frame:${border.trim()}`);
-                parts.push(`![${alt}/${attrs.join('/')}](${file})`);
+                parts.push(`![${alt}/${attrs.join('/')}](${filePath})`);
             }
             const row = parts.join(' ') + '\n';
             insertTextAtCursor(e.target, row);
@@ -4411,6 +4484,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         localStorage.setItem('courseCreatorData', JSON.stringify(courseData));
+        // Store creator settings separately for backward compatibility
+        localStorage.setItem('courseCreatorAssetsFolder', getAssetsFolder());
     }
     
     function loadFromLocalStorage() {
@@ -4418,6 +4493,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!saved) return false;
         
         try {
+            if (assetsFolderInput) {
+                assetsFolderInput.value = normalizeAssetsFolder(localStorage.getItem('courseCreatorAssetsFolder') || '');
+                applyDefaultAssetsFolder();
+            }
             const courseData = JSON.parse(saved);
             if (!courseData || courseData.length === 0) return false;
             
@@ -4533,6 +4612,17 @@ document.addEventListener('DOMContentLoaded', () => {
             // No saved data, create initial node
             addNewNode(null, '', '', 'left', null, '', '', false, true);
         }
+    }
+
+    // Initialize assets folder on startup (derive from course name if empty)
+    if (assetsFolderInput) {
+        assetsFolderInput.addEventListener('input', () => {
+            assetsFolderInput.value = normalizeAssetsFolder(assetsFolderInput.value);
+        });
+        if (!assetsFolderInput.value) {
+            assetsFolderInput.value = normalizeAssetsFolder(localStorage.getItem('courseCreatorAssetsFolder') || '');
+        }
+        applyDefaultAssetsFolder();
     }
 });
 </script>
