@@ -348,47 +348,20 @@
     #card-content {
       font-size: 1.1rem;
       color: var(--color-primary-text);
-      line-height: 1.7;
+      line-height: 1.25;
     }
     
-    /* Typography - better paragraph spacing */
-    #card-content p { 
-      margin: 0 0 0.25em 0; 
-    }
-    
-    /* Add more space after paragraphs followed by another paragraph (visual break) */
-    #card-content p + p {
-      margin-top: 0.75em;
-    }
-    
-    /* Paragraphs that only contain bold text get more spacing (they act as sub-headings) */
-    #card-content p > strong:only-child {
-      display: block;
-      margin-top: 1em;
-      margin-bottom: 0.3em;
-    }
-    
-    /* First paragraph doesn't need top margin */
-    #card-content > p:first-child,
-    #card-content > .columns-container:first-child p:first-child,
-    .column > p:first-child {
-      margin-top: 0;
-    }
-    #card-content > p:first-child > strong:only-child {
-      margin-top: 0;
-    }
-    
+    #card-content p { margin: 0; }
     #card-content strong { font-weight: 600; }
-    
     #card-content ul {
       list-style: none;
       padding-left: 1em;
-      margin: 0.75em 0;
+      margin: 1em 0;
     }
     #card-content li {
       padding-left: 1.2em;
       position: relative;
-      margin-bottom: 0.4em;
+      margin-bottom: 0.5em;
     }
     #card-content li::before {
       content: '•';
@@ -400,17 +373,9 @@
       top: -0.1em;
     }
     
-    /* Column typography */
-    .column p {
-      margin: 0 0 0.5em 0;
-    }
-    .column p + p {
-      margin-top: 0.5em;
-    }
-    .column p > strong:only-child {
-      display: block;
-      margin-top: 0.75em;
-      margin-bottom: 0.2em;
+    /* Spacing for paragraph breaks (empty lines in source) */
+    #card-content .paragraph-break {
+      height: 1em;
     }
     
     /* Quote component */
@@ -910,7 +875,6 @@
       let html = '';
       const lines = content.split('\n');
       let inList = false;
-      let lastWasEmpty = false;
 
       for (const line of lines) {
         const trimmedLine = line.trim();
@@ -918,14 +882,14 @@
         // Handle <br/> tags - add vertical space
         if (trimmedLine === '<br/>' || trimmedLine === '<br>') {
           if (inList) { html += '</ul>'; inList = false; }
-          html += '<div style="height: 1em;"></div>';
-          lastWasEmpty = false;
+          html += '<div class="paragraph-break"></div>';
           continue;
         }
         
-        // Track empty lines for paragraph spacing
+        // Empty line = paragraph break (user pressed enter)
         if (trimmedLine === '') {
-          lastWasEmpty = true;
+          if (inList) { html += '</ul>'; inList = false; }
+          html += '<div class="paragraph-break"></div>';
           continue;
         }
         
@@ -935,7 +899,6 @@
           if (!inList) { html += '<ul>'; inList = true; }
           const listItemContent = processBold(trimmedLine.startsWith('- ') ? trimmedLine.substring(2) : trimmedLine.substring(1));
           html += `<li>${listItemContent}</li>`;
-          lastWasEmpty = false;
         } else {
           if (inList) { html += '</ul>'; inList = false; }
 
@@ -949,7 +912,6 @@
                 <iframe src="${url}" loading="lazy" title="${title}" allow="clipboard-write" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px;"></iframe>
               </div>
             </div>`;
-            lastWasEmpty = false;
             continue;
           }
 
@@ -975,10 +937,8 @@
             });
             mediaHtml += '</div>';
             html += mediaHtml;
-            lastWasEmpty = false;
           } else {
             html += `<p>${processBold(trimmedLine)}</p>`;
-            lastWasEmpty = false;
           }
         }
       }
@@ -993,24 +953,14 @@
       let html = '';
       const lines = content.split('\n');
       let inList = false;
-      let pendingParagraphs = []; // Group consecutive text lines
-      
-      const flushParagraphs = () => {
-        if (pendingParagraphs.length > 0) {
-          // Join consecutive lines that form a paragraph
-          pendingParagraphs.forEach(p => {
-            html += `<p>${processBold(p)}</p>`;
-          });
-          pendingParagraphs = [];
-        }
-      };
       
       for (const line of lines) {
         const trimmedLine = line.trim();
         
-        // Skip completely empty lines but use them as paragraph breaks
+        // Empty line = paragraph break
         if (!trimmedLine) {
-          flushParagraphs();
+          if (inList) { html += '</ul>'; inList = false; }
+          html += '<div class="paragraph-break"></div>';
           continue;
         }
         
@@ -1019,10 +969,7 @@
         const mediaItems = [...line.matchAll(imageRegex)];
         
         if (mediaItems.length > 0) {
-          flushParagraphs();
           if (inList) { html += '</ul>'; inList = false; }
-          
-          // Only render the media, not any leftover text from the alt
           let mediaHtml = `<div class="content-images-container align-center">`;
           mediaItems.forEach(match => {
             mediaHtml += renderMediaItem(match);
@@ -1030,17 +977,15 @@
           mediaHtml += '</div>';
           html += mediaHtml;
         } else if (trimmedLine.startsWith('* ') || trimmedLine.startsWith('- ')) {
-          flushParagraphs();
           if (!inList) { html += '<ul>'; inList = true; }
           const listItemContent = processBold(trimmedLine.startsWith('- ') ? trimmedLine.substring(2) : trimmedLine.substring(1));
           html += `<li>${listItemContent}</li>`;
         } else {
           if (inList) { html += '</ul>'; inList = false; }
-          pendingParagraphs.push(trimmedLine);
+          html += `<p>${processBold(trimmedLine)}</p>`;
         }
       }
       
-      flushParagraphs();
       if (inList) html += '</ul>';
       element.innerHTML = html;
     }
