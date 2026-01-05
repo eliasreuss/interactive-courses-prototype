@@ -427,16 +427,17 @@
     .content-images-container .size-x-small { max-width: 15%; flex-basis: 15%; }
     .content-images-container .size-small { max-width: 25%; flex-basis: 25%; }
     .content-images-container .size-medium { max-width: 50%; flex-basis: 50%; }
-    .content-images-container .size-large { max-width: 70%; flex-basis: 70%; }
-    .content-images-container .size-third { flex: 0 0 calc((100% - 64px) / 3); max-width: calc((100% - 64px) / 3); }
+    .content-images-container .size-large { max-width: 80%; flex-basis: 80%; }
+    .content-images-container .size-third { flex: 0 0 calc((80% - 64px) / 3); max-width: calc((80% - 64px) / 3); }
     .content-images-container .size-fourth { flex: 0 0 calc((100% - 72px) / 4); max-width: calc((100% - 72px) / 4); }
     .content-images-container.align-left { justify-content: flex-start; }
     .content-images-container.align-center { justify-content: center; }
     .content-images-container.align-right { justify-content: flex-end; }
     
-    /* Responsive large images - grow as viewport shrinks */
+    /* Responsive images - grow as viewport shrinks */
     @media (max-width: 1500px) {
       .content-images-container .size-large { max-width: 100%; flex-basis: 100%; }
+      .content-images-container .size-third { flex: 0 0 calc((100% - 64px) / 3); max-width: calc((100% - 64px) / 3); }
     }
     
     .img-container video { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block; }
