@@ -745,12 +745,6 @@
         }
         
         
-        .connection-buttons {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        
         .btn-connection {
             background: var(--accent-green);
             color: #fff;
@@ -1824,10 +1818,10 @@
     <div id="nodes-container"></div>
     
     <div class="add-buttons-row" style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
-        <button id="add-section-btn" class="btn btn-secondary">Add section</button>
-        <button id="add-slide-btn" class="btn btn-primary">Add slide below</button>
-        <button id="add-slide-above-btn" class="btn btn-secondary">Add slide above</button>
-        <button id="add-sidequest-btn" class="btn btn-secondary">Add side quest slide</button>
+        <button id="add-section-btn" class="btn-connection">Add section</button>
+        <button id="add-slide-btn" class="btn-connection">Add slide below</button>
+        <button id="add-slide-above-btn" class="btn-connection">Add slide above</button>
+        <button id="add-sidequest-btn" class="btn-connection">Add side quest slide</button>
     </div>
             
             <div class="output-section">
@@ -1947,12 +1941,6 @@
                 </div>
             </div>
             <div class="connections-list connections-container" style="display: none;"></div>
-            <div class="connection-buttons">
-                <button class="btn-connection add-section-btn">Add section</button>
-                <button class="btn-connection add-node-below-btn">Add slide below</button>
-                <button class="btn-connection add-node-above-btn">Add slide above</button>
-                <button class="btn-connection add-sidequest-btn">Add side quest slide</button>
-            </div>
         </div>
     </div>
 </template>
