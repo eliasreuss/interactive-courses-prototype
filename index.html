@@ -1610,21 +1610,26 @@
     function buildTOCStructure(courseData) {
       parentSections = [];
       let currentTopic = null;
+      let currentTopicId = null; // raw topic id from markdown (e.g. "2")
       
       courseData.forEach(node => {
         if (!node.id) return;
         
         // Check if this node starts a new topic
-        if (node.topic && (!currentTopic || node.topic.id !== currentTopic.id)) {
+        if (node.topic) {
+          const rawTopicId = String(node.topic.id);
+          if (!currentTopic || currentTopicId !== rawTopicId) {
           currentTopic = {
             // Namespace topic IDs so they can't collide with numeric slide IDs (e.g. topic "3" vs slide "3")
-            id: `topic:${node.topic.id}`,
-            topicId: String(node.topic.id),
+            id: `topic:${rawTopicId}`,
+            topicId: rawTopicId,
             name: node.topic.name,
             children: [],
             sideQuests: []
           };
+          currentTopicId = rawTopicId;
           parentSections.push(currentTopic);
+        }
         }
         
         // Get the title for TOC (prefer indexTitle, fall back to title)
