@@ -309,6 +309,32 @@
       color: var(--color-accent);
       font-weight: 600;
     }
+
+    /* Sidequest step dots */
+    .toc-step-dots {
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .toc-step-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 9999px;
+      background: var(--color-unvisited);
+      opacity: 0.9;
+      cursor: pointer;
+    }
+    .toc-step-dot.visited {
+      background: var(--color-primary-text);
+      opacity: 0.9;
+    }
+    .toc-step-dot.active {
+      background: var(--color-accent);
+      opacity: 1;
+    }
+    .toc-step-dot:hover { opacity: 0.7; }
     
     /* ========== CONTENT CARD AREA ========== */
     .content-area {
@@ -1677,6 +1703,23 @@
     function renderTOC() {
       const sidebar = document.getElementById('sidebar');
       sidebar.innerHTML = '';
+
+      function getSidequestStepIds({ isNewFormat, targetId, parentId, type, sqIdx }) {
+        // New format: sq-<targetId>-<slideNum>
+        if (isNewFormat && targetId && window.sidequestNodesMap && window.sidequestNodesMap.has(String(targetId))) {
+          const nodes = window.sidequestNodesMap.get(String(targetId)) || [];
+          return nodes.map((_, i) => `sq-${targetId}-${i + 1}`);
+        }
+        // Old format: <parentId>-<type>-<idx>-<cardIdx>
+        const ids = [];
+        if (!parentId || !type) return ids;
+        for (let i = 0; i < 50; i++) { // hard cap to avoid infinite loops
+          const id = `${parentId}-${type}-${sqIdx}-${i}`;
+          if (!nodeById.has(String(id))) break;
+          ids.push(String(id));
+        }
+        return ids;
+      }
       
       parentSections.forEach((section, sectionIdx) => {
         const hasChildren = section.children.length > 0 || section.sideQuests.length > 0;
@@ -1762,14 +1805,46 @@
                 const sqEl = document.createElement('div');
                 sqEl.className = `toc-child${isSqActive ? ' active' : ''}`;
                 sqEl.style.paddingLeft = '12px';
+                sqEl.style.justifyContent = 'space-between';
                 sqEl.onclick = (e) => {
                     e.stopPropagation();
                     updateView(sqId);
                 };
-                sqEl.innerHTML = `
+                const leftWrap = document.createElement('div');
+                leftWrap.style.display = 'flex';
+                leftWrap.style.alignItems = 'center';
+                leftWrap.style.gap = '10px';
+                leftWrap.innerHTML = `
                   <div class="toc-child-indicator sidequest"></div>
                   <span class="toc-child-title">${sq.buttonText || sq.title}</span>
                 `;
+                sqEl.appendChild(leftWrap);
+
+                // Step dots (one per sidequest step)
+                const stepIds = getSidequestStepIds({
+                  isNewFormat,
+                  targetId: sq.targetId,
+                  parentId: child.id,
+                  type: sq.type,
+                  sqIdx
+                });
+                if (stepIds.length > 1) {
+                  const dots = document.createElement('div');
+                  dots.className = 'toc-step-dots';
+                  stepIds.forEach((stepId, i) => {
+                    const dot = document.createElement('span');
+                    dot.className = 'toc-step-dot' +
+                      (visitedNodes.has(String(stepId)) ? ' visited' : '') +
+                      (activeNodeId === String(stepId) ? ' active' : '');
+                    dot.title = `Step ${i + 1}`;
+                    dot.onclick = (ev) => {
+                      ev.stopPropagation();
+                      updateView(String(stepId));
+                    };
+                    dots.appendChild(dot);
+                  });
+                  sqEl.appendChild(dots);
+                }
                 childrenContainer.appendChild(sqEl);
               });
             }
@@ -1784,14 +1859,45 @@
               const isSqActive = activeNodeId === sqId || activeNodeId.startsWith(sqPrefix);
               const sqEl = document.createElement('div');
               sqEl.className = `toc-child${isSqActive ? ' active' : ''}`;
+              sqEl.style.justifyContent = 'space-between';
               sqEl.onclick = (e) => {
                   e.stopPropagation();
                   updateView(sqId);
               };
-              sqEl.innerHTML = `
+              const leftWrap = document.createElement('div');
+              leftWrap.style.display = 'flex';
+              leftWrap.style.alignItems = 'center';
+              leftWrap.style.gap = '10px';
+              leftWrap.innerHTML = `
                 <div class="toc-child-indicator sidequest"></div>
                 <span class="toc-child-title">${sq.buttonText || sq.title}</span>
               `;
+              sqEl.appendChild(leftWrap);
+
+              const stepIds = getSidequestStepIds({
+                isNewFormat,
+                targetId: sq.targetId,
+                parentId: section.id,
+                type: sq.type,
+                sqIdx
+              });
+              if (stepIds.length > 1) {
+                const dots = document.createElement('div');
+                dots.className = 'toc-step-dots';
+                stepIds.forEach((stepId, i) => {
+                  const dot = document.createElement('span');
+                  dot.className = 'toc-step-dot' +
+                    (visitedNodes.has(String(stepId)) ? ' visited' : '') +
+                    (activeNodeId === String(stepId) ? ' active' : '');
+                  dot.title = `Step ${i + 1}`;
+                  dot.onclick = (ev) => {
+                    ev.stopPropagation();
+                    updateView(String(stepId));
+                  };
+                  dots.appendChild(dot);
+                });
+                sqEl.appendChild(dots);
+              }
               childrenContainer.appendChild(sqEl);
             });
           }
