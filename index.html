@@ -2207,7 +2207,8 @@
       if ((n.type === 'main' || n.type === 'flip-cards' || !n.type) && mainNodeData && mainNodeData.sideQuests) {
         mainNodeData.sideQuests.forEach((sq, index) => {
           const btn = document.createElement('button');
-          btn.className = 'btn btn-outline';
+          // Style sidequest actions as filled dark-green buttons (per design)
+          btn.className = 'btn btn-secondary';
           btn.innerHTML = sq.buttonText;
           btn.onclick = () => {
             // Store return node for sidequest BEFORE navigating
