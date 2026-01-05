@@ -1617,7 +1617,9 @@
         // Check if this node starts a new topic
         if (node.topic && (!currentTopic || node.topic.id !== currentTopic.id)) {
           currentTopic = {
-            id: node.topic.id,
+            // Namespace topic IDs so they can't collide with numeric slide IDs (e.g. topic "3" vs slide "3")
+            id: `topic:${node.topic.id}`,
+            topicId: String(node.topic.id),
             name: node.topic.name,
             children: [],
             sideQuests: []
@@ -1804,8 +1806,9 @@
     }
 
     function isNodeInSection(nodeId, section) {
-      // Direct match - this section's ID equals the active node
-      if (section.id === nodeId) return true;
+      // For topic sections (isSection), the section itself is not a slide.
+      // Never treat a direct ID match as "in section" to avoid collisions (topic "3" vs slide "3").
+      if (!section.isSection && section.id === nodeId) return true;
       
       // Check if active node is one of this section's children
       if (section.children.some(c => c.id === nodeId)) return true;
@@ -1826,11 +1829,9 @@
         if (nodeId.startsWith('sq-')) {
           const sqParts = nodeId.split('-');
           if (sqParts.length >= 3) {
-            const sqTargetId = sqParts[1];
             // The sidequest belongs to whichever section contains the return node
             const returnNode = window.sidequestReturnNode;
             if (returnNode) {
-              if (section.id === returnNode) return true;
               if (section.children.some(c => c.id === returnNode)) return true;
             }
           }
