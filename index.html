@@ -766,17 +766,26 @@
             return;
         }
  
-        const imageRegex = /!\[(.*?)\]\(([^)\s]+)\)/g;
-        const allImages = [...strippedContent.matchAll(imageRegex)];
-        const hasStackedMedia = allImages.some(img => {
-            const attrs = img[1].split('/').slice(1);
-            return attrs.some(attr => attr.includes('align:stack-right') || attr.includes('align:stack-right-top'));
-        });
- 
-        if (hasStackedMedia) {
-            renderContentWithStackedImages(element, strippedContent);
-        } else {
+        // Check for columns FIRST - columns take priority over stacked media
+        const hasColumns = /\{columns\}/.test(strippedContent);
+        
+        if (hasColumns) {
+            // Content has columns - use column-aware rendering
             renderContentNormal(element, strippedContent);
+        } else {
+            // No columns - check for stacked media
+            const imageRegex = /!\[(.*?)\]\(([^)\s]+)\)/g;
+            const allImages = [...strippedContent.matchAll(imageRegex)];
+            const hasStackedMedia = allImages.some(img => {
+                const attrs = img[1].split('/').slice(1);
+                return attrs.some(attr => attr.includes('align:stack-right') || attr.includes('align:stack-right-top'));
+            });
+     
+            if (hasStackedMedia) {
+                renderContentWithStackedImages(element, strippedContent);
+            } else {
+                renderContentNormal(element, strippedContent);
+            }
         }
         if (buttonDefs.length) element.setAttribute('data-buttons', JSON.stringify(buttonDefs));
     }
