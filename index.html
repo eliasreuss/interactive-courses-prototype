@@ -348,7 +348,7 @@
     #card-content {
       font-size: 1.1rem;
       color: var(--color-primary-text);
-      line-height: 1.25;
+      line-height: 1.50;
     }
     
     #card-content p { margin: 0; }
@@ -855,7 +855,7 @@
     // Render a {columns} block
     function renderColumnsBlock(columnsContent, processBold) {
       const columnParts = columnsContent.split(/\{column\}/).filter(p => p.trim());
-      let columnsHtml = '<div class="columns-container" style="display: flex; gap: 24px; align-items: flex-start;">';
+      let columnsHtml = '<div class="columns-container" style="display: flex; gap: 24px; align-items: center;">';
       
       columnParts.forEach(colContent => {
         const cleanContent = colContent.replace(/\{\/column\}/g, '').trim();
