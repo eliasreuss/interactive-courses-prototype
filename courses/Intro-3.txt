@@ -6,7 +6,7 @@ title-align: center
 nav: title
 type: main
 ---
-![image/size:550px/align:center/frame:none](Intro-illustration-1.png)
+![image/size:550px/align:center/frame:none](legacy/Intro-illustration-1.png)
 ---
 > Let's do it -> 6
 
@@ -18,7 +18,7 @@ Lets’s begin with the core question: **why do we need Inact for inventory mana
 
 In short - because managing inventory without proper visibilty leads to unwanted complexity. Inact helps remove that complexity!
 
-![image/size:500px/align:stack-right-top/frame:none](Sailor.png)
+![image/size:500px/align:stack-right-top/frame:none](legacy/Sailor.png)
 ---
 > Continue -> 2
 
@@ -37,7 +37,7 @@ type: main
 
 Striking this balance is difficult. When it’s managed without the right visibility and insights, it creates unwanted complexity.
 
-![video:motion graphic/size:350px/align:stack-right/frame:none](BalanceAnimation.mp4)
+![video:motion graphic/size:350px/align:stack-right/frame:none](legacy/BalanceAnimation.mp4)
 ---
 > Continue -> 3
 
@@ -49,7 +49,7 @@ type: main
 
 In fact, most companies are sitting on 15–35% excess inventory, as a result of their balancing act failing. This hidden burden silently drains resources in three critical ways: 
 
-![1/size:third/align:center/frame:none](Excess-1.png) ![2/size:third/align:center/frame:none](Excess-2.png) ![3/size:third/align:center/frame:none](Excess-3.png)
+![1/size:third/align:center/frame:none](legacy/Excess-1.png) ![2/size:third/align:center/frame:none](legacy/Excess-2.png) ![3/size:third/align:center/frame:none](legacy/Excess-3.png)
 
 **Want to dig deeper into how complexity can stifle growth?** 
 Check out our webinar or blog post. Otherwise, feel free to continue on the main path.
@@ -68,7 +68,7 @@ In this learning path, we’ll focus on how Inact supports inventory management 
 
 Inact can be a partner across your whole organisation, providing the tools to manage inventory, suppliers, products, and customers effectively.
 
-![image/size:350px/align:center/frame:none](You-are-here.png)
+![image/size:350px/align:center/frame:none](legacy/You-are-here.png)
 ---
 > Continue -> 5
 
@@ -79,7 +79,7 @@ type: main
 ---
 You will go through five easily-digestible flows. Together, they give you the knowledge, mindset, and tools to succeed with Inact Now for inventory optimization.
 
-![image/size:large/align:center/frame:none](Flows-overview.png)
+![image/size:large/align:center/frame:none](legacy/Flows-overview.png)
 ---
 > Sounds good! Take me to flow 1: Double ABC Analysis -> [link:newtab:newtab:https://eliasreuss.github.io/interactive-courses-prototype/?course=Double-ABC-Analysis-2.txt]
 
