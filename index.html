@@ -689,6 +689,8 @@
     let nodeById = new Map();
     let parentSections = []; // For TOC - parent nodes with their children
     let pendingSupademoNavigation = null;
+    // Per-sidequest return pointer (targetId -> main slide id)
+    let sidequestReturnByTargetId = new Map();
     
     // ========== SUPADEMO HELPERS ==========
     function hasSupademoContent(text) {
@@ -1751,8 +1753,12 @@
             // Add sidequests for this child
             if (child.sideQuests && child.sideQuests.length > 0) {
               child.sideQuests.forEach((sq, sqIdx) => {
-                const sqId = `${child.id}-${sq.type}-${sqIdx}-0`;
-                const isSqActive = activeNodeId === sqId || activeNodeId.startsWith(sqId.substring(0, sqId.lastIndexOf('-'))); // handle multi-card sidequests
+                // New format sidequests use nodes like: sq-<targetId>-<slideNum>
+                // Old format sidequests use nodes like: <parentId>-<type>-<idx>-<cardIdx>
+                const isNewFormat = !!sq.targetId;
+                const sqId = isNewFormat ? `sq-${sq.targetId}-1` : `${child.id}-${sq.type}-${sqIdx}-0`;
+                const sqPrefix = isNewFormat ? `sq-${sq.targetId}-` : sqId.substring(0, sqId.lastIndexOf('-') + 1);
+                const isSqActive = activeNodeId === sqId || activeNodeId.startsWith(sqPrefix); // handle multi-card/slide sidequests
                 const sqEl = document.createElement('div');
                 sqEl.className = `toc-child${isSqActive ? ' active' : ''}`;
                 sqEl.style.paddingLeft = '12px';
@@ -1772,8 +1778,10 @@
           // Add sidequests for the parent section itself
           if (section.sideQuests && section.sideQuests.length > 0) {
             section.sideQuests.forEach((sq, sqIdx) => {
-              const sqId = `${section.id}-${sq.type}-${sqIdx}-0`;
-              const isSqActive = activeNodeId === sqId || activeNodeId.startsWith(sqId.substring(0, sqId.lastIndexOf('-')));
+              const isNewFormat = !!sq.targetId;
+              const sqId = isNewFormat ? `sq-${sq.targetId}-1` : `${section.id}-${sq.type}-${sqIdx}-0`;
+              const sqPrefix = isNewFormat ? `sq-${sq.targetId}-` : sqId.substring(0, sqId.lastIndexOf('-') + 1);
+              const isSqActive = activeNodeId === sqId || activeNodeId.startsWith(sqPrefix);
               const sqEl = document.createElement('div');
               sqEl.className = `toc-child${isSqActive ? ' active' : ''}`;
               sqEl.onclick = (e) => {
@@ -2057,6 +2065,9 @@
           btn.onclick = () => {
             // Store return node for sidequest BEFORE navigating
             window.sidequestReturnNode = n.id;
+            if (sq && sq.targetId) {
+              sidequestReturnByTargetId.set(String(sq.targetId), String(n.id));
+            }
             
             // Check if sidequest target is an ID like "s1" or a number (new format)
             const targetId = sq.targetId || sq.id;
@@ -2226,17 +2237,26 @@
           </svg>
         `;
         returnBtn.onclick = () => {
-          // Priority: parentId from node data, then stored return node, finally fallback to first slide
-          const returnNode = n.parentId || window.sidequestReturnNode;
-          if (returnNode) {
-            // Clear the stored return node after use
-            const targetNode = String(returnNode);
-            updateView(targetNode);
-          } else {
-            // Fallback: find first non-section slide
-            const firstSlide = courseData.find(node => node && node.id != null && node.isSection !== true);
-            updateView(String(firstSlide ? firstSlide.id : '1'));
+          // For new-format sidequests, prefer the per-targetId return pointer
+          let returnNode = null;
+          if (n.id && String(n.id).startsWith('sq-')) {
+            const parts = String(n.id).split('-'); // ["sq", "<targetId>", "<slideNum>"]
+            const targetId = parts.length >= 2 ? parts[1] : null;
+            if (targetId && sidequestReturnByTargetId.has(String(targetId))) {
+              returnNode = sidequestReturnByTargetId.get(String(targetId));
+            }
           }
+          // Fallbacks: node parentId, then global stored return node
+          returnNode = returnNode || n.parentId || window.sidequestReturnNode;
+
+          if (returnNode) {
+            updateView(String(returnNode));
+            return;
+          }
+
+          // Final fallback: first non-section slide
+          const firstSlide = courseData.find(node => node && node.id != null && node.isSection !== true);
+          updateView(String(firstSlide ? firstSlide.id : '1'));
         };
         navBtns.appendChild(returnBtn);
       }
