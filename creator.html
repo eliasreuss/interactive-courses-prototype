@@ -1895,6 +1895,7 @@
             <label class="field-label">Node Type:</label>
         <select class="node-type">
             <option value="main" selected>Standard Content</option>
+            <option value="hero">Hero Intro</option>
             <option value="flip-cards">Flip Cards</option>
         </select>
         </div>
@@ -1939,6 +1940,29 @@
                 <div class="flip-cards-container"></div>
                     <button type="button" class="btn-connection add-flip-card-btn">Add Flip Card</button>
             </div>
+                <div class="hero-editor" style="display: none;">
+                    <div class="field-group">
+                        <label class="field-label">Hero Image</label>
+                        <div style="display: flex; gap: 8px; align-items: center;">
+                            <input type="text" class="field-input hero-image" placeholder="e.g. intro/hero.png or full URL">
+                            <button type="button" class="btn-secondary hero-image-browse" style="white-space: nowrap;">Browse...</button>
+                        </div>
+                        <div style="font-size: 12px; color: #6E6E6E; margin-top: 4px;">Path relative to images/ folder, or full URL</div>
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label">Subtitle (small text above title)</label>
+                        <input type="text" class="field-input hero-subtitle" placeholder="e.g. Welcome to the learning path:">
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label">Title (large heading)</label>
+                        <input type="text" class="field-input hero-title" placeholder="e.g. Introduction to Inventory Management">
+                        <div style="font-size: 12px; color: #6E6E6E; margin-top: 4px;">Use **text** for bold</div>
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label">Body text</label>
+                        <textarea class="content-textarea hero-body" placeholder="Body text that appears below the title..." style="min-height: 100px;"></textarea>
+                    </div>
+                </div>
         </div>
         </div>
         
@@ -3293,13 +3317,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const type = e.target.value;
             const standardEditor = card.querySelector('.standard-content-editor');
             const flipEditor = card.querySelector('.flip-cards-editor');
+            const heroEditor = card.querySelector('.hero-editor');
 
+            standardEditor.style.display = 'none';
+            flipEditor.style.display = 'none';
+            heroEditor.style.display = 'none';
+            
             if (type === 'flip-cards') {
-                standardEditor.style.display = 'none';
                 flipEditor.style.display = 'block';
+            } else if (type === 'hero') {
+                heroEditor.style.display = 'block';
             } else {
                 standardEditor.style.display = 'block';
-                flipEditor.style.display = 'none';
             }
         }
     });
@@ -3751,6 +3780,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 nodeCard.querySelector('.standard-content-editor').style.display = 'none';
                 flipEditor.style.display = 'block';
+            } else if (nodeType === 'hero') {
+                // Parse hero content
+                const heroEditor = nodeCard.querySelector('.hero-editor');
+                const imageMatch = content.match(/hero_image:\s*(.+)/);
+                const subtitleMatch = content.match(/hero_subtitle:\s*(.+)/);
+                const titleMatch = content.match(/hero_title:\s*(.+)/);
+                const bodyMatch = content.match(/hero_body:\s*([\s\S]*?)(?=\n(?:hero_|$)|$)/);
+                
+                if (imageMatch) heroEditor.querySelector('.hero-image').value = imageMatch[1].trim();
+                if (subtitleMatch) heroEditor.querySelector('.hero-subtitle').value = subtitleMatch[1].trim();
+                if (titleMatch) heroEditor.querySelector('.hero-title').value = titleMatch[1].trim();
+                if (bodyMatch) heroEditor.querySelector('.hero-body').value = bodyMatch[1].trim();
+                
+                nodeCard.querySelector('.standard-content-editor').style.display = 'none';
+                heroEditor.style.display = 'block';
             }
 
             // Load button text from connections if available
@@ -3846,6 +3890,16 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Media button handlers
     document.addEventListener('click', function(e) {
+        // Hero image browse button
+        if (e.target.classList.contains('hero-image-browse')) {
+            const imageFile = prompt("Enter the image filename (e.g., intro/hero.png or full URL):");
+            if (!imageFile) return;
+            const imagePath = applyAssetsFolderPrefix(imageFile);
+            const heroImageInput = e.target.closest('.field-group').querySelector('.hero-image');
+            if (heroImageInput) heroImageInput.value = imagePath;
+            return;
+        }
+        
         if (e.target.classList.contains('add-image-btn')) {
             const imageFile = prompt("Enter the image filename (e.g., my-image.png):");
             if (!imageFile) return;
@@ -4218,6 +4272,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     content = (intro && intro.trim().length)
                         ? `[intro]\n${intro.trim()}\n[/intro]\n${cardsJoined}`
                         : cardsJoined;
+                } else if (type === 'hero') {
+                    // Hero slide content
+                    const heroImage = card.querySelector('.hero-image')?.value || '';
+                    const heroSubtitle = card.querySelector('.hero-subtitle')?.value || '';
+                    const heroTitle = card.querySelector('.hero-title')?.value || '';
+                    const heroBody = card.querySelector('.hero-body')?.value || '';
+                    
+                    const parts = [];
+                    if (heroImage) parts.push(`hero_image: ${heroImage}`);
+                    if (heroSubtitle) parts.push(`hero_subtitle: ${heroSubtitle}`);
+                    if (heroTitle) parts.push(`hero_title: ${heroTitle}`);
+                    if (heroBody) parts.push(`hero_body: ${heroBody}`);
+                    content = parts.join('\n');
                 } else {
                     content = card.querySelector('.node-content').value;
                 }
@@ -4449,6 +4516,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     nextButtonText: card.querySelector('.next-button-text')?.value || 'Continue',
                     nodeType: card.querySelector('.node-type')?.value || 'main',
                     flipIntro: card.querySelector('.flip-intro')?.value || '',
+                    // Hero slide fields
+                    heroImage: card.querySelector('.hero-image')?.value || '',
+                    heroSubtitle: card.querySelector('.hero-subtitle')?.value || '',
+                    heroTitle: card.querySelector('.hero-title')?.value || '',
+                    heroBody: card.querySelector('.hero-body')?.value || '',
                     // Save sidequest data (only non-empty sidequests)
                     sidequests: Array.from(card.querySelectorAll('.sidequest-row')).map(sq => {
                         const cards = [];
@@ -4553,6 +4625,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (nodeData.flipIntro) {
                     const flipIntro = nodeCard.querySelector('.flip-intro');
                     if (flipIntro) flipIntro.value = nodeData.flipIntro;
+                }
+                
+                // Restore hero fields and show/hide appropriate editors
+                if (nodeData.nodeType === 'hero') {
+                    const heroEditor = nodeCard.querySelector('.hero-editor');
+                    if (nodeData.heroImage) heroEditor.querySelector('.hero-image').value = nodeData.heroImage;
+                    if (nodeData.heroSubtitle) heroEditor.querySelector('.hero-subtitle').value = nodeData.heroSubtitle;
+                    if (nodeData.heroTitle) heroEditor.querySelector('.hero-title').value = nodeData.heroTitle;
+                    if (nodeData.heroBody) heroEditor.querySelector('.hero-body').value = nodeData.heroBody;
+                    
+                    nodeCard.querySelector('.standard-content-editor').style.display = 'none';
+                    nodeCard.querySelector('.flip-cards-editor').style.display = 'none';
+                    heroEditor.style.display = 'block';
+                } else if (nodeData.nodeType === 'flip-cards') {
+                    nodeCard.querySelector('.standard-content-editor').style.display = 'none';
+                    nodeCard.querySelector('.hero-editor').style.display = 'none';
+                    nodeCard.querySelector('.flip-cards-editor').style.display = 'block';
                 }
                 
                 // Restore sidequests (only non-empty ones)

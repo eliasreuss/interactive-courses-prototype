@@ -458,6 +458,63 @@
       background: #fff;
     }
     
+    /* Hero slide layout */
+    .hero-layout {
+      display: flex;
+      gap: 48px;
+      align-items: center;
+      min-height: 400px;
+    }
+    .hero-image-side {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-image-side img {
+      max-width: 100%;
+      max-height: 500px;
+      object-fit: contain;
+    }
+    .hero-text-side {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+    }
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--color-primary-text);
+      margin: 0;
+      font-weight: 400;
+    }
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--color-primary-text);
+      margin: 0;
+      line-height: 1.2;
+    }
+    .hero-body {
+      font-size: 1.1rem;
+      color: var(--color-primary-text);
+      line-height: 1.6;
+      margin: 8px 0 0 0;
+    }
+    @media (max-width: 900px) {
+      .hero-layout {
+        flex-direction: column;
+        gap: 32px;
+      }
+      .hero-image-side {
+        order: -1;
+      }
+      .hero-title {
+        font-size: 1.8rem;
+      }
+    }
+    
     /* Flip cards */
     .flip-card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 20px 0; }
     .flip-card { display: grid; grid-template-areas: "stack"; cursor: pointer; }
@@ -782,6 +839,10 @@
     function renderContent(element, text, nodeType = 'main') {
         if (nodeType === 'flip-cards') {
             renderFlipCards(element, text);
+            return;
+        }
+        if (nodeType === 'hero') {
+            renderHeroSlide(element, text);
             return;
         }
         let content = text || '';
@@ -1307,6 +1368,69 @@
         }
     }
 
+    function renderHeroSlide(element, text) {
+        // Parse hero content:
+        // hero_image: path/to/image.png
+        // hero_subtitle: Subtitle text
+        // hero_title: Main title
+        // hero_body: Body text (can be multiline)
+        const content = text || '';
+        
+        const imageMatch = content.match(/hero_image:\s*(.+)/);
+        const subtitleMatch = content.match(/hero_subtitle:\s*(.+)/);
+        const titleMatch = content.match(/hero_title:\s*(.+)/);
+        const bodyMatch = content.match(/hero_body:\s*([\s\S]*?)(?=\n(?:hero_|$)|$)/);
+        
+        const imagePath = imageMatch ? imageMatch[1].trim() : '';
+        const subtitle = subtitleMatch ? subtitleMatch[1].trim() : '';
+        const title = titleMatch ? titleMatch[1].trim() : '';
+        const body = bodyMatch ? bodyMatch[1].trim() : '';
+        
+        // Build image URL
+        let imgSrc = '';
+        if (imagePath) {
+            if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
+                imgSrc = imagePath;
+            } else {
+                imgSrc = `images/${imagePath}`;
+            }
+        }
+        
+        // Build HTML
+        let html = '<div class="hero-layout">';
+        
+        // Image side
+        html += '<div class="hero-image-side">';
+        if (imgSrc) {
+            html += `<img src="${imgSrc}" alt="${title || 'Hero image'}">`;
+        }
+        html += '</div>';
+        
+        // Text side
+        html += '<div class="hero-text-side">';
+        if (subtitle) {
+            html += `<p class="hero-subtitle">${subtitle}</p>`;
+        }
+        if (title) {
+            // Process bold markers in title
+            const processedTitle = title.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            html += `<h1 class="hero-title">${processedTitle}</h1>`;
+        }
+        if (body) {
+            // Process bold markers and line breaks in body
+            const processedBody = body
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\n\n/g, '</p><p class="hero-body">')
+                .replace(/\n/g, '<br>');
+            html += `<p class="hero-body">${processedBody}</p>`;
+        }
+        html += '</div>';
+        
+        html += '</div>';
+        
+        element.innerHTML = html;
+    }
+    
     function renderFlipCards(element, text) {
         const cardsData = [];
         let introHtml = '';
