@@ -18,9 +18,9 @@
       --shadow-card: 0px 2px 8px rgba(0, 0, 0, 0.04), 0px 4px 16px rgba(0, 0, 0, 0.06);
       
       /* Fluid typography - scales smoothly from 768px to 1920px viewport */
-      --font-size-title: clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem);
-      --font-size-body: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
-      --font-size-small: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
+      --font-size-title: clamp(1.75rem, 1.5rem + 1vw, 2.5rem);
+      --font-size-body: clamp(1.05rem, 1rem + 0.35vw, 1.35rem);
+      --font-size-small: clamp(0.9rem, 0.85rem + 0.2vw, 1.05rem);
       
       /* Fluid spacing */
       --spacing-content: clamp(24px, 3vw, 48px);
@@ -448,9 +448,9 @@
     
     /* Responsive images - scale with viewport */
     @media (min-width: 1800px) {
-      /* On very large screens, constrain images to maintain balance with text */
-      .content-images-container .size-large { max-width: 70%; flex-basis: 70%; }
-      .content-images-container .size-third { flex: 0 0 calc((70% - 48px) / 3); max-width: calc((70% - 48px) / 3); }
+      /* On very large screens, keep images reasonably sized */
+      .content-images-container .size-large { max-width: 85%; flex-basis: 85%; }
+      .content-images-container .size-third { flex: 0 0 calc((85% - 56px) / 3); max-width: calc((85% - 56px) / 3); }
     }
     @media (max-width: 1500px) {
       .content-images-container .size-large { max-width: 100%; flex-basis: 100%; }
@@ -931,17 +931,17 @@
             renderContentNormal(element, strippedContent);
         } else {
             // No columns - check for stacked media
-            const imageRegex = /!\[(.*?)\]\(([^)\s]+)\)/g;
-            const allImages = [...strippedContent.matchAll(imageRegex)];
-            const hasStackedMedia = allImages.some(img => {
-                const attrs = img[1].split('/').slice(1);
-                return attrs.some(attr => attr.includes('align:stack-right') || attr.includes('align:stack-right-top'));
-            });
-     
-            if (hasStackedMedia) {
-                renderContentWithStackedImages(element, strippedContent);
-            } else {
-                renderContentNormal(element, strippedContent);
+        const imageRegex = /!\[(.*?)\]\(([^)\s]+)\)/g;
+        const allImages = [...strippedContent.matchAll(imageRegex)];
+        const hasStackedMedia = allImages.some(img => {
+            const attrs = img[1].split('/').slice(1);
+            return attrs.some(attr => attr.includes('align:stack-right') || attr.includes('align:stack-right-top'));
+        });
+ 
+        if (hasStackedMedia) {
+            renderContentWithStackedImages(element, strippedContent);
+        } else {
+            renderContentNormal(element, strippedContent);
             }
         }
         if (buttonDefs.length) element.setAttribute('data-buttons', JSON.stringify(buttonDefs));
@@ -1144,8 +1144,8 @@
     
     // Helper to render a single media item
     function renderMediaItem(match) {
-      const allData = match[1].split('/');
-      const attributes = allData.slice(1);
+              const allData = match[1].split('/');
+              const attributes = allData.slice(1);
       const fileRef = match[2];
       
       // Determine media type from attributes or file extension
@@ -1182,42 +1182,42 @@
       
       // Determine source - external URL or local file
       const isExternalUrl = fileRef.startsWith('http://') || fileRef.startsWith('https://');
-      const v = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? Date.now() : '1.0';
+              const v = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? Date.now() : '1.0';
       const src = isExternalUrl ? fileRef : `images/${fileRef}?v=${v}`;
-      
-      let sizeClass = 'size-large';
-      let style = '';
-      let frameClass = '';
-      let wantsControls = false;
-      
-      attributes.forEach(attr => {
-        const [key, value] = attr.split(':');
-        const k = (key || '').trim().toLowerCase();
-        const vv = (value || '').trim().toLowerCase();
-        if (k === 'size') {
-          const sizeValue = (value || '').trim();
-          if (sizeValue.endsWith('px')) {
-            style = `height: ${sizeValue}; width: auto;`;
-            sizeClass = '';
-          } else {
-            sizeClass = `size-${sizeValue}`;
-          }
-        } else if (k === 'frame' || k === 'border' || k === 'style') {
-          if (['none', 'no', 'off', 'plain', '0'].includes(vv)) frameClass = 'no-frame';
-        } else if (k === 'controls' || (k === 'play' && ['click', 'manual'].includes(vv)) || (k === 'autoplay' && ['off', 'false', 'no'].includes(vv)) || (k === 'sound' && ['on', 'true', 'yes'].includes(vv))) {
-          wantsControls = true;
-        }
-      });
-      
+              
+              let sizeClass = 'size-large';
+              let style = '';
+              let frameClass = '';
+              let wantsControls = false;
+
+              attributes.forEach(attr => {
+                const [key, value] = attr.split(':');
+                const k = (key || '').trim().toLowerCase();
+                const vv = (value || '').trim().toLowerCase();
+                if (k === 'size') {
+                  const sizeValue = (value || '').trim();
+                  if (sizeValue.endsWith('px')) {
+                    style = `height: ${sizeValue}; width: auto;`;
+                    sizeClass = '';
+                  } else {
+                    sizeClass = `size-${sizeValue}`;
+                  }
+                } else if (k === 'frame' || k === 'border' || k === 'style') {
+                  if (['none', 'no', 'off', 'plain', '0'].includes(vv)) frameClass = 'no-frame';
+                } else if (k === 'controls' || (k === 'play' && ['click', 'manual'].includes(vv)) || (k === 'autoplay' && ['off', 'false', 'no'].includes(vv)) || (k === 'sound' && ['on', 'true', 'yes'].includes(vv))) {
+                  wantsControls = true;
+                }
+              });
+              
       if (mediaType === 'video') {
-        if (wantsControls) {
+                if (wantsControls) {
           return `<div class="img-container ${sizeClass} ${frameClass}" style="${style}"><video controls style="width:100%;height:auto;" src="${src}" title="${altText}"></video></div>`;
-        } else {
+                } else {
           return `<div class="img-container ${sizeClass} ${frameClass}" style="${style}"><video autoplay loop muted playsinline style="width:100%;height:auto;" src="${src}" title="${altText}"></video></div>`;
-        }
+                }
       } else if (mediaType === 'lottie') {
         return `<div class="img-container ${sizeClass} ${frameClass}" style="${style}"><div class="lottie-anim" data-src="${src}" data-loop="true" data-autoplay="true" aria-label="${altText}"></div></div>`;
-      } else {
+              } else {
         return `<div class="img-container ${sizeClass} ${frameClass}" style="${style}"><img src="${src}" alt="${altText}" style="${style}"></div>`;
       }
     }
@@ -1233,19 +1233,19 @@
             const trimmedLine = line.trim();
             const isListItem = trimmedLine.startsWith('* ') || trimmedLine.startsWith('- ') || (trimmedLine.startsWith('-') && trimmedLine.length > 1 && trimmedLine[1] !== '-');
 
-            // Supademo
-            const supademoMatch = trimmedLine.match(/\[supademo:\s*([^\]]+)\]\(([^)]+)\)/i);
-            if (supademoMatch) {
-                if (inList) { textHtml += '</ul>'; inList = false; }
-                const title = supademoMatch[1].trim();
-                const url = supademoMatch[2].trim();
-                textHtml += `<div class="supademo-wrapper">
-                    <div class="supademo-container" style="position: relative; box-sizing: content-box; max-height: 80vh; width: 100%; aspect-ratio: 2.0556745182012848;">
-                        <iframe src="${url}" loading="lazy" title="${title}" allow="clipboard-write" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px;"></iframe>
-                    </div>
-                </div>`;
-                continue;
-            }
+        // Supademo
+        const supademoMatch = trimmedLine.match(/\[supademo:\s*([^\]]+)\]\(([^)]+)\)/i);
+        if (supademoMatch) {
+          if (inList) { textHtml += '</ul>'; inList = false; }
+          const title = supademoMatch[1].trim();
+          const url = supademoMatch[2].trim();
+          textHtml += `<div class="supademo-wrapper">
+            <div class="supademo-container" style="position: relative; box-sizing: content-box; max-height: 80vh; width: 100%; aspect-ratio: 2.0556745182012848;">
+              <iframe src="${url}" loading="lazy" title="${title}" allow="clipboard-write" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px;"></iframe>
+            </div>
+          </div>`;
+          continue;
+        }
 
             const mediaRegex = /!\[(.*?)\]\(([^)\s]+)\)/g;
             const mediaItems = [...line.matchAll(mediaRegex)];
@@ -1267,13 +1267,13 @@
                     let combinedAttrs = [];
                     mediaItems.forEach(match => {
                         const allData = match[1].split('/');
-                        combinedAttrs = combinedAttrs.concat(allData.slice(1));
+              combinedAttrs = combinedAttrs.concat(allData.slice(1));
                     });
 
                     let alignClass = 'align-center';
                     combinedAttrs.forEach(attr => {
                         const [key, value] = attr.split(':');
-                        if (key === 'align') alignClass = `align-${value.trim()}`;
+              if (key === 'align') alignClass = `align-${value.trim()}`;
                     });
 
                     let mediaHtml = `<div class="content-images-container ${alignClass}">`;
@@ -1284,11 +1284,11 @@
                     textHtml += mediaHtml;
                 }
             } else if (isListItem) {
-                if (!inList) { textHtml += '<ul>'; inList = true; }
+          if (!inList) { textHtml += '<ul>'; inList = true; }
                 const listItemContent = processBold(trimmedLine.startsWith('- ') ? trimmedLine.substring(2) : trimmedLine.substring(1));
                 textHtml += `<li>${listItemContent}</li>`;
             } else {
-                if (inList) { textHtml += '</ul>'; inList = false; }
+          if (inList) { textHtml += '</ul>'; inList = false; }
                 if (trimmedLine === '' && textHtml.length > 0) {
                     textHtml += '<p> </p>';
                 } else if (trimmedLine !== '') {
@@ -1297,9 +1297,9 @@
             }
         }
 
-        if (inList) textHtml += '</ul>';
+      if (inList) textHtml += '</ul>';
 
-        const stackedMediaHtml = stackedMedia.length > 0 ? `<div class="stacked-images">${stackedMedia.join('')}</div>` : '';
+      const stackedMediaHtml = stackedMedia.length > 0 ? `<div class="stacked-images">${stackedMedia.join('')}</div>` : '';
         const shouldTopAlign = /align:stack-right-top|valign:top/i.test(content);
 
         element.innerHTML = `
@@ -1444,7 +1444,7 @@
         
         element.innerHTML = html;
     }
-    
+
     function renderFlipCards(element, text) {
         const cardsData = [];
         let introHtml = '';
@@ -1590,7 +1590,7 @@
             const lines = sectionText.split('\n');
             let currentBlock = null;
             let currentTopic = null;
-            let isContent = false;
+        let isContent = false;
             let inSidequestContent = false;
             let currentSidequestContent = null;
             const sidequestContents = []; // Store sidequest content blocks for later linking
@@ -1608,7 +1608,7 @@
                         currentBlock = null;
                     }
                     inSidequestContent = true;
-                    isContent = false;
+                isContent = false;
                     currentSidequestContent = {
                         type: sqContentMatch[1].trim().toLowerCase(),
                         title: sqContentMatch[2].trim(),
@@ -1676,20 +1676,20 @@
                     }
                     isContent = false;
                     continue;
-                }
-                
-                if (!currentBlock) continue;
-                
+            }
+
+            if (!currentBlock) continue;
+
                 if (trimmedLine === '---') {
-                    isContent = !isContent;
-                    continue;
-                }
-                
-                if (isContent) {
-                    currentBlock.content = (currentBlock.content || '') + line + '\n';
-                } else {
+                isContent = !isContent;
+                continue;
+            }
+
+            if (isContent) {
+                currentBlock.content = (currentBlock.content || '') + line + '\n';
+            } else {
                     // Parse navigation buttons: > [next] Label -> target
-                    if (line.startsWith('>')) {
+                if (line.startsWith('>')) {
                         // New format: > [type] Label -> target
                         const navMatch = line.match(/^>\s*\[([^\]]+)\]\s*(.+?)\s*->\s*(.+)$/);
                         if (navMatch) {
@@ -1744,8 +1744,8 @@
                                     }
                                 }
                             }
-                        }
-                    } else {
+                    }
+                } else {
                         // Parse properties
                         const colonIdx = line.indexOf(':');
                         if (colonIdx > 0) {
@@ -1762,7 +1762,7 @@
                                 // Remove leading # from titles
                                 currentBlock.title = value.replace(/^#\s*/, '');
                             } else if (key === 'section' || key === 'parent') {
-                                currentBlock.isSection = ['true', 'yes', '1'].includes(value.toLowerCase());
+                            currentBlock.isSection = ['true', 'yes', '1'].includes(value.toLowerCase()); 
                             } else {
                                 currentBlock[key] = value;
                             }
@@ -2289,7 +2289,7 @@
       }
 
       // Update history for main nodes
-      if (n.type === 'main' || n.type === 'flip-cards' || !n.type) {
+      if (n.type === 'main' || n.type === 'flip-cards' || n.type === 'hero' || !n.type) {
             if (!skipHistoryPush) {
               const last = mainPathHistory[mainPathHistory.length - 1];
               if (last !== n.id) mainPathHistory.push(n.id);
@@ -2348,7 +2348,7 @@
       const actionButtons = [];
       
       // Sidequest buttons (both new and old format)
-      if ((n.type === 'main' || n.type === 'flip-cards' || !n.type) && mainNodeData && mainNodeData.sideQuests) {
+      if ((n.type === 'main' || n.type === 'flip-cards' || n.type === 'hero' || !n.type) && mainNodeData && mainNodeData.sideQuests) {
         mainNodeData.sideQuests.forEach((sq, index) => {
           const btn = document.createElement('button');
           // Style sidequest actions as filled dark-green buttons (per design)
@@ -2380,25 +2380,25 @@
       }
       
       // Handle inline buttons
-      if (inlineButtonsJson) {
-        try {
-          const btns = JSON.parse(inlineButtonsJson);
-          btns.forEach(b => {
+          if (inlineButtonsJson) {
+              try {
+                  const btns = JSON.parse(inlineButtonsJson);
+                  btns.forEach(b => {
             const btn = document.createElement('button');
             btn.className = 'btn btn-secondary';
             btn.innerHTML = b.buttonText || 'Open';
             btn.onclick = (ev) => { ev.preventDefault(); openInEmbed(b.url, b.buttonText || 'Open'); };
             actionButtons.push(btn);
-          });
-        } catch (_) {}
+                  });
+              } catch (_) {}
         cardContentEl.removeAttribute('data-buttons');
-      }
+          }
       
-      if (resourceUrl) {
-        const btn = document.createElement('button');
+          if (resourceUrl) {
+              const btn = document.createElement('button');
         btn.className = 'btn btn-secondary';
         btn.innerHTML = resourceTitle;
-        btn.onclick = (ev) => handleResourceClick(ev, resourceUrl, resourceTitle);
+              btn.onclick = (ev) => handleResourceClick(ev, resourceUrl, resourceTitle);
         actionButtons.push(btn);
         cardContentEl.removeAttribute('data-resource-url');
         cardContentEl.removeAttribute('data-resource-title');
@@ -2426,7 +2426,7 @@
 
       // Check for flow links (external course links)
       const hasFlowLinks = mainNodeData && mainNodeData.flowLinks && mainNodeData.flowLinks.length > 0;
-      const hasNavButtons = (n.type === 'main' || n.type === 'flip-cards' || !n.type) && 
+      const hasNavButtons = (n.type === 'main' || n.type === 'flip-cards' || n.type === 'hero' || !n.type) && 
                            (mainPathHistory.length > 1 || Object.keys(n.connections || {}).length > 0 || hasFlowLinks);
       
       // Add divider if there are action buttons and we'll have nav buttons
@@ -2437,10 +2437,10 @@
       }
 
       // Navigation buttons
-      if (n.type === 'main' || n.type === 'flip-cards' || !n.type) {
+      if (n.type === 'main' || n.type === 'flip-cards' || n.type === 'hero' || !n.type) {
         // Previous button
-        if (mainPathHistory.length > 1) {
-          const prevBtn = document.createElement('button');
+              if (mainPathHistory.length > 1) {
+                const prevBtn = document.createElement('button');
           prevBtn.className = 'btn btn-outline';
           prevBtn.innerHTML = `
             <svg width="12" height="18" viewBox="0 0 12 18" fill="none" style="transform: rotate(180deg);">
@@ -2448,20 +2448,20 @@
             </svg>
             <span>Previous</span>
           `;
-          prevBtn.onclick = () => {
-            if (mainPathHistory.length > 1) {
-              mainPathHistory.pop();
-              const prevNodeId = mainPathHistory[mainPathHistory.length - 1];
-              skipHistoryPush = true;
-              updateView(prevNodeId);
-            }
-          };
+                prevBtn.onclick = () => {
+                  if (mainPathHistory.length > 1) {
+                    mainPathHistory.pop();
+                    const prevNodeId = mainPathHistory[mainPathHistory.length - 1];
+                    skipHistoryPush = true;
+                    updateView(prevNodeId);
+                  }
+                };
           navBtns.appendChild(prevBtn);
         }
 
         // Continue/Next button
         for (const [label, targetId] of Object.entries(n.connections || {})) {
-          const btn = document.createElement('button');
+                      const btn = document.createElement('button');
           btn.className = 'btn btn-primary';
           btn.innerHTML = `
             <span>${label}</span>
@@ -2472,12 +2472,12 @@
           btn.onclick = () => {
             if (hasSupademoContent(n.content)) {
               showSupademoModal(() => navigateToNode(targetId));
-            } else {
+                      } else {
               navigateToNode(targetId);
             }
           };
           navBtns.appendChild(btn);
-        }
+              }
         
         // Flow links (external course links)
         if (mainNodeData && mainNodeData.flowLinks) {
@@ -2496,18 +2496,18 @@
             navBtns.appendChild(btn);
           });
         }
-      } else if (n.type === 'sidequest') {
+          } else if (n.type === 'sidequest') {
         // Sidequest navigation
-        if (n.prevId) {
-          const prevBtn = document.createElement('button');
+              if (n.prevId) {
+                const prevBtn = document.createElement('button');
           prevBtn.className = 'btn btn-outline';
-          prevBtn.textContent = n.backLabel || '◀ Previous';
-          prevBtn.onclick = () => updateView(n.prevId);
+                prevBtn.textContent = n.backLabel || '◀ Previous';
+                prevBtn.onclick = () => updateView(n.prevId);
           navBtns.appendChild(prevBtn);
-        }
+              }
         
-        if (n.nextId) {
-          const nextBtn = document.createElement('button');
+              if (n.nextId) {
+                const nextBtn = document.createElement('button');
           nextBtn.className = 'btn btn-secondary';
           nextBtn.textContent = n.nextLabel || 'Next ▶';
           nextBtn.onclick = () => {
