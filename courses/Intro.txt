@@ -1,15 +1,18 @@
 slide_id: 1
-index_title: Welcome
+index_title: Welcome to the learning path: Introduction to Inact for Inventory Management
 title: Welcome to the learning path: **Introduction to Inact for Inventory Management**
 title-align: center
-type: main
+type: hero
 ---
-![image/size:500px/align:center/frame:none](intro/Intro-Intro.png)
+hero_image: intro/Intro-Path-Cover.png
+hero_subtitle: Welcome to the learning path:
+hero_title: Introduction to Inact for Inventory Management
+hero_body: This is the intro to a five-part learning path. By the end, you’ll understand the fundamentals of inventory management and be ready to use Inact Now confidently in your daily work!
 ---
 > [next] Let's do it! -> 2
 
 slide_id: 2
-index_title: The three pillars
+index_title: The three pillars of inventory management
 title: **The three pillars of inventory management**
 type: main
 ---

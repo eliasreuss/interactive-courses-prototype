@@ -16,6 +16,14 @@
       --color-dropdown-bg: #F6F6F6;
       --font-family: 'Poppins', sans-serif;
       --shadow-card: 0px 2px 8px rgba(0, 0, 0, 0.04), 0px 4px 16px rgba(0, 0, 0, 0.06);
+      
+      /* Fluid typography - scales smoothly from 768px to 1920px viewport */
+      --font-size-title: clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem);
+      --font-size-body: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+      --font-size-small: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
+      
+      /* Fluid spacing */
+      --spacing-content: clamp(24px, 3vw, 48px);
     }
     
     * { box-sizing: border-box; }
@@ -220,7 +228,7 @@
     }
     
     .toc-section-title {
-      font-size: 14px;
+      font-size: clamp(13px, 0.8rem + 0.2vw, 15px);
       font-weight: 400;
       color: var(--color-primary-text);
     }
@@ -300,7 +308,7 @@
     }
     
     .toc-child-title {
-      font-size: 12px;
+      font-size: clamp(11px, 0.7rem + 0.15vw, 13px);
       font-weight: 400;
       color: var(--color-muted);
     }
@@ -359,22 +367,26 @@
     }
     
     .card-text-content {
-      padding: 40px 48px;
+      padding: var(--spacing-content);
       flex: 1;
       overflow-y: auto;
+      /* Center content and limit width for readability on large screens */
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
     }
     
     #card-title {
-      font-size: 2rem;
+      font-size: var(--font-size-title);
       font-weight: normal;
-      margin: 0 0 24px 0;
+      margin: 0 0 clamp(16px, 2vw, 28px) 0;
       color: var(--color-primary-text);
     }
     
     #card-content {
-      font-size: 1.1rem;
+      font-size: var(--font-size-body);
       color: var(--color-primary-text);
-      line-height: 1.50;
+      line-height: 1.55;
     }
     
     #card-content p { margin: 0; }
@@ -405,14 +417,14 @@
     }
     
     /* Quote component */
-    .quote-block { display: grid; grid-template-columns: 32px 1fr; gap: 12px; align-items: start; margin: 24px 0; }
-    .quote-mark { color: var(--color-accent); font-weight: 700; font-size: 28px; line-height: 1; }
-    .quote-text { font-style: italic; opacity: 0.9; }
-    .quote-author { color: #8a8f87; font-size: 0.95rem; margin-top: 6px; }
+    .quote-block { display: grid; grid-template-columns: clamp(24px, 2.5vw, 40px) 1fr; gap: clamp(8px, 1vw, 16px); align-items: start; margin: clamp(16px, 2vw, 32px) 0; }
+    .quote-mark { color: var(--color-accent); font-weight: 700; font-size: clamp(24px, 2vw, 36px); line-height: 1; }
+    .quote-text { font-style: italic; opacity: 0.9; font-size: var(--font-size-body); }
+    .quote-author { color: #8a8f87; font-size: var(--font-size-small); margin-top: 6px; }
     
     /* Media containers */
     .content-images-container {
-      display: flex; gap: 32px; justify-content: center; margin: 30px 0; flex-wrap: wrap; align-items: center;
+      display: flex; gap: clamp(16px, 2vw, 32px); justify-content: center; margin: clamp(20px, 3vw, 40px) 0; flex-wrap: wrap; align-items: center;
     }
     .content-images-container img { max-width: 100%; height: auto; display: block; }
     .content-images-container .img-container {
@@ -434,7 +446,12 @@
     .content-images-container.align-center { justify-content: center; }
     .content-images-container.align-right { justify-content: flex-end; }
     
-    /* Responsive images - grow as viewport shrinks */
+    /* Responsive images - scale with viewport */
+    @media (min-width: 1800px) {
+      /* On very large screens, constrain images to maintain balance with text */
+      .content-images-container .size-large { max-width: 70%; flex-basis: 70%; }
+      .content-images-container .size-third { flex: 0 0 calc((70% - 48px) / 3); max-width: calc((70% - 48px) / 3); }
+    }
     @media (max-width: 1500px) {
       .content-images-container .size-large { max-width: 100%; flex-basis: 100%; }
       .content-images-container .size-third { flex: 0 0 calc((100% - 64px) / 3); max-width: calc((100% - 64px) / 3); }
@@ -484,20 +501,20 @@
       gap: 16px;
     }
     .hero-subtitle {
-      font-size: 1.1rem;
+      font-size: var(--font-size-body);
       color: var(--color-primary-text);
       margin: 0;
       font-weight: 400;
     }
     .hero-title {
-      font-size: 2.2rem;
+      font-size: clamp(1.75rem, 1.5rem + 2vw, 2.75rem);
       font-weight: 700;
       color: var(--color-primary-text);
       margin: 0;
       line-height: 1.2;
     }
     .hero-body {
-      font-size: 1.1rem;
+      font-size: var(--font-size-body);
       color: var(--color-primary-text);
       line-height: 1.6;
       margin: 8px 0 0 0;
@@ -510,17 +527,14 @@
       .hero-image-side {
         order: -1;
       }
-      .hero-title {
-        font-size: 1.8rem;
-      }
     }
     
     /* Flip cards */
-    .flip-card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 20px 0; }
+    .flip-card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(12px, 1.5vw, 24px); padding: clamp(12px, 1.5vw, 24px) 0; }
     .flip-card { display: grid; grid-template-areas: "stack"; cursor: pointer; }
     .flip-card-front, .flip-card-back {
       grid-area: stack; display: flex; justify-content: center; align-items: center;
-      padding: 20px; min-height: 150px; box-sizing: border-box; font-size: 1rem;
+      padding: clamp(16px, 1.5vw, 24px); min-height: clamp(120px, 12vw, 180px); box-sizing: border-box; font-size: var(--font-size-body);
       transition: opacity 0.4s ease; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     }
     .flip-card-front { background-color: #f8f9fa; color: var(--color-primary-text); opacity: 1; text-align: center; flex-direction: column; }
@@ -585,10 +599,10 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 24px;
+      padding: clamp(8px, 1vw, 12px) clamp(16px, 2vw, 28px);
       border-radius: 500px;
       font-family: var(--font-family);
-      font-size: 14px;
+      font-size: var(--font-size-small);
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s;
