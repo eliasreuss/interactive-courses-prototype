@@ -609,6 +609,30 @@
       }
     }
     
+    /* Large screens (>1440px) - use more space, reduce margins */
+    @media (min-width: 1441px) {
+      .sidebar {
+        width: 380px;
+        padding: 28px 16px 28px 28px;
+      }
+      .toc-section-title {
+        font-size: 16px;
+      }
+      .toc-child-title {
+        font-size: 14px;
+      }
+      .card-text-content {
+        max-width: 1400px;
+      }
+      .hero-layout {
+        max-width: 1600px;
+      }
+      .content-area {
+        padding: 28px 28px 28px 16px;
+        gap: 28px;
+      }
+    }
+    
     /* Medium screens (13" laptops like MacBook Air) */
     @media (min-width: 901px) and (max-width: 1440px) {
       :root {
