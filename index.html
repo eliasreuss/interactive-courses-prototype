@@ -389,7 +389,8 @@
       justify-content: center;
     }
     .card-text-content.hero-mode {
-      padding: clamp(16px, 2vw, 32px);
+      /* Slightly less side padding vs normal slides */
+      padding: clamp(14px, 1.6vw, 24px);
       max-width: none;
       flex: 0 1 auto;
     }
@@ -495,14 +496,15 @@
     /* Hero slide layout */
     .hero-layout {
       display: flex;
-      gap: clamp(32px, 4vw, 64px);
+      gap: clamp(44px, 5vw, 88px);
       align-items: center;
       width: 100%;
-      max-width: 1400px;
+      max-width: 1520px;
       margin: 0 auto;
+      min-height: clamp(420px, 58vh, 720px);
     }
     .hero-image-side {
-      flex: 1.1;
+      flex: 1.25;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -511,13 +513,16 @@
       max-width: 100%;
       max-height: 70vh;
       object-fit: contain;
+      transform-origin: 50% 50%;
+      will-change: transform, opacity;
     }
     .hero-text-side {
-      flex: 1;
+      flex: 0.95;
       display: flex;
       flex-direction: column;
       justify-content: center;
       gap: clamp(12px, 1.5vw, 20px);
+      will-change: transform, opacity;
     }
     .hero-subtitle {
       font-size: var(--font-size-body);
@@ -538,10 +543,33 @@
       line-height: 1.6;
       margin: 8px 0 0 0;
     }
+
+    /* Subtle hero animations */
+    .hero-layout .hero-image-side img {
+      animation: heroImageIn 720ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    }
+    .hero-layout .hero-text-side {
+      animation: heroTextIn 720ms cubic-bezier(0.2, 0.8, 0.2, 1) 80ms both;
+    }
+    @keyframes heroImageIn {
+      from { opacity: 0; transform: translateX(-10px) scale(0.985); }
+      to   { opacity: 1; transform: translateX(0) scale(1); }
+    }
+    @keyframes heroTextIn {
+      from { opacity: 0; transform: translateX(10px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-layout .hero-image-side img,
+      .hero-layout .hero-text-side {
+        animation: none !important;
+      }
+    }
     @media (max-width: 900px) {
       .hero-layout {
         flex-direction: column;
-        gap: 32px;
+        gap: 28px;
+        min-height: auto;
       }
       .hero-image-side {
         order: -1;
