@@ -9,7 +9,7 @@
     :root {
       --color-bg: #FAFAFA;
       --color-card-bg: #FFFFFF;
-      --color-primary-text: #304642;
+      --color-primary-text: #111111;
       --color-accent: #FF5A00;
       --color-muted: #6E6E6E;
       --color-unvisited: #D7D7D7;
@@ -201,7 +201,7 @@
     }
     
     .toc-indicator.completed {
-      background: #304642 url('SVGs/CheckMark.svg') no-repeat center center;
+      background: var(--color-primary-text) url('SVGs/CheckMark.svg') no-repeat center center;
       background-size: 60%;
       border: none;
     }
@@ -292,7 +292,7 @@
     }
     
     .toc-child-indicator.visited {
-      background: #304642 url('SVGs/CheckMark.svg') no-repeat center center;
+      background: var(--color-primary-text) url('SVGs/CheckMark.svg') no-repeat center center;
       background-size: 60%;
       border: none;
     }
@@ -457,7 +457,7 @@
     .content-images-container .size-x-small { max-width: 15%; flex-basis: 15%; }
     .content-images-container .size-small { max-width: 25%; flex-basis: 25%; }
     .content-images-container .size-medium { max-width: 50%; flex-basis: 50%; }
-    .content-images-container .size-large { max-width: 80%; flex-basis: 80%; }
+    .content-images-container .size-large { max-width: 100%; flex-basis: 100%; }
     .content-images-container .size-fourth { flex: 0 0 calc((100% - 72px) / 4); max-width: calc((100% - 72px) / 4); }
     .content-images-container.align-left { justify-content: flex-start; }
     .content-images-container.align-center { justify-content: center; }
@@ -473,9 +473,6 @@
     }
     
     /* Responsive images - scale with viewport */
-    @media (max-width: 1500px) {
-      .content-images-container .size-large { max-width: 100%; flex-basis: 100%; }
-    }
     
     .img-container video { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block; }
     .img-container .lottie-anim { width: 100%; height: 100%; display: block; }
