@@ -4,7 +4,7 @@ title:
 title-align: center
 type: hero
 ---
-hero_image: intro/Intro-Path-Cover-2.png
+hero_image: intro/Intro-Path-Cover.png
 hero_subtitle: Welcome to the learning path:
 hero_title: Introduction to Inact for Inventory Management
 hero_body: This is the intro to a five-part learning path. By the end, you’ll understand the fundamentals of inventory management and be ready to use Inact Now confidently in your daily work!
@@ -17,7 +17,10 @@ title: **The three pillars of inventory management**
 type: main
 ---
 At its core, inventory optimization boils down to answering three critical questions:
+
 ![image 1/size:third/align:center/frame:none](intro/What-To-Stock.png) ![image 2/size:third/align:center/frame:none](intro/How-Much-To-Stock.png) ![image 3/size:third/align:center/frame:none](intro/How-Much-To-Order.png)
+
+These are simple questions, but they don’t have simple answers. While everyone in the organization wants the company to succeed, different departments are often aiming for different targets.
 ---
 > [next] Continue -> 3
 
@@ -26,8 +29,6 @@ index_title: Different departments, different targets
 title: **Different departments, different targets**
 type: main
 ---
-These are simple questions, but they don’t have simple answers. While everyone in the organization wants the company to succeed, different departments are often aiming for different targets.
-
 **You have probably seen this dynamic before:**
 
 ![image/size:large/align:center/frame:none](intro/Triangle-Dynamic.png)

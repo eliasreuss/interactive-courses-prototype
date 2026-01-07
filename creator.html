@@ -565,6 +565,23 @@
             color: var(--text-dark);
         }
         
+        /* Hero toggle styling */
+        .hero-toggle-row {
+            margin-bottom: 16px;
+            padding: 12px 16px;
+            background: #f0f7f5;
+            border-radius: 8px;
+            border: 1px solid #d0e3de;
+        }
+        
+        .hero-toggle-label {
+            font-weight: 500;
+        }
+        
+        .hero-toggle-label span {
+            color: var(--accent-green);
+        }
+        
         .checkbox-option input[type="checkbox"] {
             width: 18px;
             height: 18px;
@@ -1837,7 +1854,10 @@
         <h2>Output</h2>
                 <button id="generate-btn" class="btn-generate">Generate & Preview Course Text</button>
         <textarea id="outputText" readonly placeholder="Your generated course.txt content will appear here..."></textarea>
-                <button id="download-btn" class="btn-download" style="display: none;">Download .txt File</button>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <button id="copy-btn" class="btn-download" style="display: none;">Copy txt</button>
+                    <button id="download-btn" class="btn-download" style="display: none;">Download .txt File</button>
+                </div>
                 <button id="clear-btn" class="btn-clear" style="margin-top: 12px;">Clear Course & Start Fresh</button>
             </div>
         </div>
@@ -1891,14 +1911,14 @@
             </div>
         </div>
         
-        <div class="node-type-row">
-            <label class="field-label">Node Type:</label>
-        <select class="node-type">
-            <option value="main" selected>Standard Content</option>
-            <option value="hero">Hero Intro</option>
-            <option value="flip-cards">Flip Cards</option>
-        </select>
+        <div class="hero-toggle-row" style="display: none;">
+            <label class="checkbox-option hero-toggle-label">
+                <input type="checkbox" class="hero-toggle">
+                <span>Make this a Hero Intro slide</span>
+            </label>
         </div>
+        <!-- Hidden node-type field for compatibility -->
+        <input type="hidden" class="node-type" value="main">
         
         <div class="content-section">
             <label class="field-label">Content</label>
@@ -1932,14 +1952,6 @@
                 </div>
             </div>
                 </div>
-                <div class="flip-cards-editor">
-                    <div class="field-group" style="margin-bottom: 16px;">
-                        <label class="field-label">Flip Cards Intro (optional)</label>
-                        <textarea class="flip-intro content-textarea" placeholder="Intro text that appears above the flip cards..." style="min-height: 80px;"></textarea>
-                    </div>
-                <div class="flip-cards-container"></div>
-                    <button type="button" class="btn-connection add-flip-card-btn">Add Flip Card</button>
-            </div>
                 <div class="hero-editor" style="display: none;">
                     <div class="field-group">
                         <label class="field-label">Hero Image</label>
@@ -2698,6 +2710,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update slide IDs (only for node-cards, not section titles)
         updateNodeIds();
         
+        // Update hero toggle visibility (only show on first slide)
+        updateHeroToggleVisibility();
+        
         // Add initial drop indicator
         const initialIndicator = document.createElement('div');
         initialIndicator.className = 'drop-indicator';
@@ -2905,6 +2920,32 @@ document.addEventListener('DOMContentLoaded', () => {
             const connector = connectorTemplate.content.cloneNode(true);
             nodeCards[i].after(connector);
         }
+    }
+    
+    // Update hero toggle visibility - only show on first slide
+    function updateHeroToggleVisibility() {
+        const nodeCards = Array.from(nodesContainer.querySelectorAll('.node-card'));
+        nodeCards.forEach((card, index) => {
+            const heroToggleRow = card.querySelector('.hero-toggle-row');
+            const heroToggle = card.querySelector('.hero-toggle');
+            const nodeTypeInput = card.querySelector('.node-type');
+            const heroEditor = card.querySelector('.hero-editor');
+            const standardEditor = card.querySelector('.standard-content-editor');
+            
+            if (index === 0) {
+                // First slide - show hero toggle
+                heroToggleRow.style.display = 'block';
+            } else {
+                // Not first slide - hide hero toggle and ensure it's not hero type
+                heroToggleRow.style.display = 'none';
+                if (heroToggle.checked) {
+                    heroToggle.checked = false;
+                    nodeTypeInput.value = 'main';
+                    heroEditor.style.display = 'none';
+                    standardEditor.style.display = 'block';
+                }
+            }
+        });
     }
 
     // Media dropdown toggle
@@ -3312,23 +3353,22 @@ document.addEventListener('DOMContentLoaded', () => {
             updateSidebar();
         }
         
-        if (e.target.classList.contains('node-type')) {
+        // Hero toggle checkbox
+        if (e.target.classList.contains('hero-toggle')) {
             const card = e.target.closest('.node-card');
-            const type = e.target.value;
+            const isHero = e.target.checked;
             const standardEditor = card.querySelector('.standard-content-editor');
-            const flipEditor = card.querySelector('.flip-cards-editor');
             const heroEditor = card.querySelector('.hero-editor');
-
-            standardEditor.style.display = 'none';
-            flipEditor.style.display = 'none';
-            heroEditor.style.display = 'none';
+            const nodeTypeInput = card.querySelector('.node-type');
             
-            if (type === 'flip-cards') {
-                flipEditor.style.display = 'block';
-            } else if (type === 'hero') {
+            if (isHero) {
+                standardEditor.style.display = 'none';
                 heroEditor.style.display = 'block';
+                nodeTypeInput.value = 'hero';
             } else {
                 standardEditor.style.display = 'block';
+                heroEditor.style.display = 'none';
+                nodeTypeInput.value = 'main';
             }
         }
     });
@@ -3761,28 +3801,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const typeSelect = nodeCard.querySelector('.node-type');
             typeSelect.value = nodeType;
             
-            if (nodeType === 'flip-cards') {
-                const parsed = parseFlipCardContent(content);
-                const flipEditor = nodeCard.querySelector('.flip-cards-editor');
-                const flipCardsContainer = flipEditor.querySelector('.flip-cards-container');
-                const introArea = flipEditor.querySelector('.flip-intro');
-                introArea.value = parsed.intro || '';
-                
-                flipCardsContainer.innerHTML = '';
-                
-                parsed.cards.forEach(card => {
-                    const cardTemplate = document.getElementById('flip-card-template');
-                    const newCard = cardTemplate.content.cloneNode(true);
-                    newCard.querySelector('.flip-card-front').value = card.front;
-                    newCard.querySelector('.flip-card-back').value = card.back;
-                    flipCardsContainer.appendChild(newCard);
-                });
-                
-                nodeCard.querySelector('.standard-content-editor').style.display = 'none';
-                flipEditor.style.display = 'block';
-            } else if (nodeType === 'hero') {
+            if (nodeType === 'hero') {
                 // Parse hero content
                 const heroEditor = nodeCard.querySelector('.hero-editor');
+                const heroToggle = nodeCard.querySelector('.hero-toggle');
+                if (heroToggle) heroToggle.checked = true;
+                
                 const imageMatch = content.match(/hero_image:\s*(.+)/);
                 const subtitleMatch = content.match(/hero_subtitle:\s*(.+)/);
                 const titleMatch = content.match(/hero_title:\s*(.+)/);
@@ -4416,7 +4440,22 @@ document.addEventListener('DOMContentLoaded', () => {
         
         outputText.value = finalOutput.trim();
         downloadBtn.style.display = 'inline-block';
+        document.getElementById('copy-btn').style.display = 'inline-block';
         alert('Course text generated!');
+    });
+    
+    // Copy button
+    const copyBtn = document.getElementById('copy-btn');
+    copyBtn.addEventListener('click', () => {
+        const textToCopy = outputText.value;
+        if (!textToCopy) return alert("Generate text first!");
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            const originalText = copyBtn.textContent;
+            copyBtn.textContent = 'Copied!';
+            setTimeout(() => { copyBtn.textContent = originalText; }, 1500);
+        }).catch(err => {
+            alert('Failed to copy: ' + err);
+        });
     });
     
     downloadBtn.addEventListener('click', () => {
@@ -4445,6 +4484,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nodesContainer.innerHTML = '';
             outputText.value = '';
             downloadBtn.style.display = 'none';
+            copyBtn.style.display = 'none';
             addNewNode();
             updateCurrentCourseDisplay();
         }
@@ -4630,18 +4670,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Restore hero fields and show/hide appropriate editors
                 if (nodeData.nodeType === 'hero') {
                     const heroEditor = nodeCard.querySelector('.hero-editor');
+                    const heroToggle = nodeCard.querySelector('.hero-toggle');
+                    if (heroToggle) heroToggle.checked = true;
                     if (nodeData.heroImage) heroEditor.querySelector('.hero-image').value = nodeData.heroImage;
                     if (nodeData.heroSubtitle) heroEditor.querySelector('.hero-subtitle').value = nodeData.heroSubtitle;
                     if (nodeData.heroTitle) heroEditor.querySelector('.hero-title').value = nodeData.heroTitle;
                     if (nodeData.heroBody) heroEditor.querySelector('.hero-body').value = nodeData.heroBody;
                     
                     nodeCard.querySelector('.standard-content-editor').style.display = 'none';
-                    nodeCard.querySelector('.flip-cards-editor').style.display = 'none';
                     heroEditor.style.display = 'block';
-                } else if (nodeData.nodeType === 'flip-cards') {
-                    nodeCard.querySelector('.standard-content-editor').style.display = 'none';
-                    nodeCard.querySelector('.hero-editor').style.display = 'none';
-                    nodeCard.querySelector('.flip-cards-editor').style.display = 'block';
                 }
                 
                 // Restore sidequests (only non-empty ones)
