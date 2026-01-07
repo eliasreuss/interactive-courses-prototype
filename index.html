@@ -586,12 +586,11 @@
       /* Run entry first, then float forever */
       animation:
         heroImageIn 720ms cubic-bezier(0.2, 0.8, 0.2, 1) both,
-        heroFloat 6.5s ease-in-out 900ms infinite;
-      filter: drop-shadow(0 18px 26px rgba(0,0,0,0.10));
+        heroFloat 4s cubic-bezier(0.45, 0, 0.55, 1) 800ms infinite;
     }
     @keyframes heroFloat {
       0%, 100% { transform: translateY(0); }
-      50%      { transform: translateY(-10px); }
+      50%      { transform: translateY(-8px); }
     }
     @media (prefers-reduced-motion: reduce) {
       .content-card.is-animating,
