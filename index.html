@@ -366,10 +366,17 @@
       min-width: 0;
     }
     
+    /* Scrollable wrapper - scroll on the full card width so scrollbar is at edge */
+    .card-scroll-wrapper {
+      flex: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+    
     .card-text-content {
       padding: var(--spacing-content);
       flex: 1;
-      overflow-y: auto;
       /* Center content and limit width for readability on large screens */
       max-width: 1200px;
       margin: 0 auto;
@@ -377,12 +384,14 @@
     }
     
     /* Hero mode: reduced padding for full-bleed look */
+    .card-scroll-wrapper:has(.hero-mode) {
+      align-items: center;
+      justify-content: center;
+    }
     .card-text-content.hero-mode {
       padding: clamp(16px, 2vw, 32px);
       max-width: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      flex: 0 1 auto;
     }
     
     #card-title {
@@ -449,21 +458,23 @@
     .content-images-container .size-small { max-width: 25%; flex-basis: 25%; }
     .content-images-container .size-medium { max-width: 50%; flex-basis: 50%; }
     .content-images-container .size-large { max-width: 80%; flex-basis: 80%; }
-    .content-images-container .size-third { flex: 0 0 calc((80% - 64px) / 3); max-width: calc((80% - 64px) / 3); }
     .content-images-container .size-fourth { flex: 0 0 calc((100% - 72px) / 4); max-width: calc((100% - 72px) / 4); }
     .content-images-container.align-left { justify-content: flex-start; }
     .content-images-container.align-center { justify-content: center; }
     .content-images-container.align-right { justify-content: flex-end; }
     
-    /* Responsive images - scale with viewport */
-    @media (min-width: 1800px) {
-      /* On very large screens, keep images reasonably sized */
-      .content-images-container .size-large { max-width: 100%; flex-basis: 100%; }
-      .content-images-container .size-third { flex: 0 0 calc((100% - 56px) / 3); max-width: calc((100% - 56px) / 3); }
+    /* Third images: always 3 columns, never wrap */
+    .content-images-container:has(.size-third) {
+      flex-wrap: nowrap;
     }
+    .content-images-container .size-third { 
+      flex: 1 1 0; 
+      min-width: 0; /* Allow shrinking below content size */
+    }
+    
+    /* Responsive images - scale with viewport */
     @media (max-width: 1500px) {
       .content-images-container .size-large { max-width: 100%; flex-basis: 100%; }
-      .content-images-container .size-third { flex: 0 0 calc((100% - 64px) / 3); max-width: calc((100% - 64px) / 3); }
     }
     
     .img-container video { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block; }
@@ -793,10 +804,12 @@
       <!-- Content Area -->
       <div class="content-area">
         <div class="content-card" id="content-card">
-          <div class="card-text-content">
+          <div class="card-scroll-wrapper">
+            <div class="card-text-content">
                 <h2 id="card-title">Loading...</h2>
                 <div id="card-content"></div>
             </div>
+          </div>
           
           <!-- Footer (inside card) -->
           <footer class="card-footer">

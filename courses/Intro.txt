@@ -1,5 +1,5 @@
 slide_id: 1
-index_title: Welcome to the learning path: Introduction to Inact for Inventory Management
+index_title: Welcome
 title: 
 title-align: center
 type: hero
