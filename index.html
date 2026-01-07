@@ -2268,111 +2268,103 @@
     let lastMainNodeId = '1';
     
     function updateProgress() {
-      // Get all actual slides (excluding section titles)
+      // Get all actual slides (excluding section titles) in order
       const slideNodes = courseData.filter(n => {
         const nodeType = n.type || 'main';
-        // Exclude section titles - they are not slides
         if (n.isSection === true) return false;
         return nodeType === 'main' || nodeType === 'flip-cards' || nodeType === 'hero';
       });
       const totalSlides = slideNodes.length;
+      if (totalSlides === 0) return;
       
       // Check if current node is a sidequest
       const currentNode = nodeById.get(activeNodeId);
-      // A node is a sidequest if its type is 'sidequest' OR if its ID contains the sidequest format
       const isSidequest = (currentNode && currentNode.type === 'sidequest') || 
                           activeNodeId.includes('-') || 
                           activeNodeId.startsWith('sq-');
       
-      // Use last main node if we're in a sidequest, otherwise update lastMainNodeId
+      // Use last main node if we're in a sidequest
       const effectiveNodeId = isSidequest ? lastMainNodeId : activeNodeId;
-      if (!isSidequest && effectiveNodeId) {
+      if (!isSidequest) {
         lastMainNodeId = activeNodeId;
       }
       
-      // Find current node's position in the slides list
-      let currentSlideIdx = slideNodes.findIndex(n => String(n.id) === effectiveNodeId);
-      // If not found (e.g., sidequest), default to 0
+      // Find current slide index (0-based)
+      let currentSlideIdx = slideNodes.findIndex(n => String(n.id) === String(effectiveNodeId));
       if (currentSlideIdx < 0) currentSlideIdx = 0;
       
-      const isOnLastSlide = currentSlideIdx === slideNodes.length - 1;
+      // Calculate overall percentage
+      // Slide 1 = 0%, Slide 2 = 1/(n-1), ..., Last slide = 100%
+      const percent = totalSlides > 1 
+        ? Math.round((currentSlideIdx / (totalSlides - 1)) * 100)
+        : 100;
       
-      // Progress: current slide index (0-based), so slide 1 = 0%, slide 2 = ~17%, last slide = 100%
-      const completedCount = isOnLastSlide ? totalSlides : currentSlideIdx;
-      const percent = totalSlides > 0 ? Math.round((completedCount / totalSlides) * 100) : 0;
-      
-      // Update percent display
       document.getElementById('progress-percent').textContent = `${percent}%`;
       
-      // Update progress bar segments - one per section
+      // Update progress bar segments
       const progressBar = document.getElementById('progress-bar');
       
-      // Create segments if they don't exist yet
+      // Create segments if needed
       if (progressBar.children.length !== parentSections.length) {
         progressBar.innerHTML = '';
-        parentSections.forEach((section, sectionIdx) => {
+        parentSections.forEach((section, idx) => {
           const segment = document.createElement('div');
           segment.className = 'progress-segment';
-          segment.dataset.sectionIdx = sectionIdx;
-          
           const fill = document.createElement('div');
           fill.className = 'progress-segment-fill';
-          
           segment.appendChild(fill);
           progressBar.appendChild(segment);
         });
       }
       
-      // Build a flat list of all SLIDE IDs in order (excluding section titles)
-      const allSlideIdsInOrder = [];
+      // Build flat list of slide IDs in order
+      const allSlideIds = [];
       parentSections.forEach(section => {
-        // For section titles, only add children (the section itself is not a slide)
-        // For standalone slides, add the section itself
         if (section.isSection) {
-          section.children.forEach(child => allSlideIdsInOrder.push(child.id));
+          section.children.forEach(child => allSlideIds.push(String(child.id)));
         } else {
-          allSlideIdsInOrder.push(section.id);
-          section.children.forEach(child => allSlideIdsInOrder.push(child.id));
+          allSlideIds.push(String(section.id));
         }
       });
       
-      // Find current node's position in the flat list (use effective node for sidequests)
-      let currentPosInOrder = allSlideIdsInOrder.findIndex(id => String(id) === effectiveNodeId);
-      // If not found, default to 0 to avoid negative progress
-      if (currentPosInOrder < 0) currentPosInOrder = 0;
+      // Find current position in flat list
+      let currentPos = allSlideIds.indexOf(String(effectiveNodeId));
+      if (currentPos < 0) currentPos = 0;
       
-      // Update fill widths based on position (not visited status)
+      // Track cumulative slide count for segment fill calculation
+      let slidesSoFar = 0;
+      
       parentSections.forEach((section, sectionIdx) => {
         const segment = progressBar.children[sectionIdx];
         if (!segment) return;
-        
         const fill = segment.querySelector('.progress-segment-fill');
         if (!fill) return;
         
-        // Get all slide IDs in this section (excluding section title itself)
+        // Count slides in this section
         const slidesInSection = section.isSection 
-          ? section.children.map(c => c.id)
-          : [section.id, ...section.children.map(c => c.id)];
-        const totalInSection = slidesInSection.length;
+          ? section.children.length 
+          : 1;
         
-        // Count how many slides in this section are BEFORE or AT the current position
-        let completedInSection = 0;
-        slidesInSection.forEach(nodeId => {
-          const nodePos = allSlideIdsInOrder.findIndex(id => String(id) === String(nodeId));
-          // A slide is "completed" if it's before current position
-          // Current slide counts as completed only if it's the last slide overall
-          if (nodePos >= 0 && nodePos < currentPosInOrder) {
-            completedInSection++;
-          } else if (nodePos === currentPosInOrder && isOnLastSlide) {
-            completedInSection++;
+        // Determine fill for this segment
+        let fillPercent = 0;
+        
+        if (currentPos >= slidesSoFar + slidesInSection) {
+          // Current position is past this entire section
+          fillPercent = 100;
+        } else if (currentPos >= slidesSoFar) {
+          // Current position is within this section
+          const posInSection = currentPos - slidesSoFar;
+          // Fill based on position within section (0 = 0%, last = 100%)
+          if (slidesInSection === 1) {
+            fillPercent = 100; // If only one slide in section and we're on it, fill it
+          } else {
+            fillPercent = (posInSection / (slidesInSection - 1)) * 100;
           }
-        });
+        }
+        // else: current position is before this section, fillPercent stays 0
         
-        // Calculate fill percentage (clamp to 0-100)
-        const fillPercent = totalInSection > 0 
-          ? Math.min(100, Math.max(0, (completedInSection / totalInSection) * 100)) 
-          : 0;
-        fill.style.width = `${fillPercent}%`;
+        fill.style.width = `${Math.min(100, Math.max(0, fillPercent))}%`;
+        slidesSoFar += slidesInSection;
       });
     }
 
