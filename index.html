@@ -9,7 +9,8 @@
     :root {
       --color-bg: #FAFAFA;
       --color-card-bg: #FFFFFF;
-      --color-primary-text: #111111;
+      --color-primary-text: #111111;  /* Black for card content */
+      --color-ui-dark: #304642;       /* Dark green for UI elements */
       --color-accent: #FF5A00;
       --color-muted: #6E6E6E;
       --color-unvisited: #D7D7D7;
@@ -73,7 +74,7 @@
       font-family: var(--font-family);
       font-size: 14px;
       font-weight: 400;
-      color: var(--color-primary-text);
+      color: var(--color-ui-dark);
       cursor: pointer;
       padding: 8px 0;
       white-space: nowrap;
@@ -121,14 +122,14 @@
       height: 100%;
       width: 0;
       border-radius: 5px;
-      background: var(--color-primary-text);
+      background: var(--color-ui-dark);
       transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     .progress-percent {
       font-size: 14px;
       font-weight: 600;
-      color: var(--color-primary-text);
+      color: var(--color-ui-dark);
       white-space: nowrap;
     }
     
@@ -141,7 +142,7 @@
     
     .flow-name {
       font-size: 14px;
-      color: var(--color-primary-text);
+      color: var(--color-ui-dark);
     }
     
     .flow-name span {
@@ -201,7 +202,7 @@
     }
     
     .toc-indicator.completed {
-      background: var(--color-primary-text) url('SVGs/CheckMark.svg') no-repeat center center;
+      background: var(--color-ui-dark) url('SVGs/CheckMark.svg') no-repeat center center;
       background-size: 60%;
       border: none;
     }
@@ -211,7 +212,7 @@
     }
     
     .toc-indicator.active {
-      background: var(--color-primary-text);
+      background: var(--color-ui-dark);
     }
     
     .toc-indicator.current-node {
@@ -230,7 +231,7 @@
     .toc-section-title {
       font-size: clamp(13px, 0.8rem + 0.2vw, 15px);
       font-weight: 400;
-      color: var(--color-primary-text);
+      color: var(--color-ui-dark);
     }
     
     .toc-section.expanded .toc-section-title {
@@ -252,7 +253,7 @@
     }
     
     .toc-section.expanded .toc-chevron path {
-      stroke: var(--color-primary-text);
+      stroke: var(--color-ui-dark);
     }
     
     /* TOC Children (Dropdown) */
@@ -292,7 +293,7 @@
     }
     
     .toc-child-indicator.visited {
-      background: var(--color-primary-text) url('SVGs/CheckMark.svg') no-repeat center center;
+      background: var(--color-ui-dark) url('SVGs/CheckMark.svg') no-repeat center center;
       background-size: 60%;
       border: none;
     }
@@ -335,7 +336,7 @@
       cursor: pointer;
     }
     .toc-step-dot.visited {
-      background: var(--color-primary-text);
+      background: var(--color-ui-dark);
       opacity: 0.9;
     }
     .toc-step-dot.active {
@@ -717,7 +718,7 @@
     }
     
     .btn-secondary {
-      background: var(--color-primary-text);
+      background: var(--color-ui-dark);
       color: #fff;
       box-shadow: 0 2px 8px rgba(48,70,66,0.18);
     }
