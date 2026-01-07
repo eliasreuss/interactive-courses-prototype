@@ -19,12 +19,12 @@
       --shadow-card: 0px 2px 8px rgba(0, 0, 0, 0.04), 0px 4px 16px rgba(0, 0, 0, 0.06);
       
       /* Fluid typography - scales smoothly from 768px to 1920px viewport */
-      --font-size-title: clamp(1.75rem, 1.5rem + 1vw, 2.5rem);
-      --font-size-body: clamp(1.05rem, 1rem + 0.35vw, 1.35rem);
-      --font-size-small: clamp(0.9rem, 0.85rem + 0.2vw, 1.05rem);
+      --font-size-title: clamp(1.5rem, 1.2rem + 0.8vw, 2.5rem);
+      --font-size-body: clamp(0.95rem, 0.9rem + 0.3vw, 1.35rem);
+      --font-size-small: clamp(0.85rem, 0.8rem + 0.15vw, 1.05rem);
       
       /* Fluid spacing */
-      --spacing-content: clamp(24px, 3vw, 48px);
+      --spacing-content: clamp(20px, 2.5vw, 48px);
     }
     
     * { box-sizing: border-box; }
@@ -608,6 +608,57 @@
         animation: none !important;
       }
     }
+    
+    /* Medium screens (13" laptops like MacBook Air) */
+    @media (min-width: 901px) and (max-width: 1440px) {
+      :root {
+        --font-size-title: clamp(1.4rem, 1.1rem + 0.6vw, 2rem);
+        --font-size-body: clamp(0.9rem, 0.85rem + 0.25vw, 1.15rem);
+        --spacing-content: clamp(18px, 2vw, 36px);
+      }
+      .app-header {
+        padding: 12px 24px;
+      }
+      .sidebar {
+        width: 280px;
+        padding: 20px 10px 20px 20px;
+      }
+      .hero-layout {
+        gap: clamp(32px, 3.5vw, 64px);
+        min-height: clamp(360px, 50vh, 600px);
+        max-width: 1200px;
+      }
+      .hero-title {
+        font-size: clamp(1.5rem, 1.3rem + 1.5vw, 2.2rem);
+      }
+      .hero-image-side img {
+        max-height: 55vh;
+      }
+      .card-text-content {
+        max-width: 1000px;
+      }
+      .content-area {
+        padding: 20px 20px 20px 10px;
+        gap: 20px;
+      }
+      .card-footer {
+        padding: 16px 24px;
+      }
+      .progress-container {
+        margin: 0 16px;
+      }
+      .content-images-container {
+        gap: clamp(12px, 1.5vw, 24px);
+        margin: clamp(16px, 2.5vw, 32px) 0;
+      }
+      .content-with-stacked-images {
+        gap: 24px;
+      }
+      .content-with-stacked-images .stacked-images {
+        max-width: clamp(280px, 40%, 700px);
+      }
+    }
+    
     @media (max-width: 900px) {
       .hero-layout {
         flex-direction: column;

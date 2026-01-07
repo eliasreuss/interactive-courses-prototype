@@ -4,7 +4,7 @@ title:
 title-align: center
 type: hero
 ---
-hero_image: intro/Intro-Path-Cover.png
+hero_image: intro/Intro-Path-Cover-2.png
 hero_subtitle: Welcome to the learning path:
 hero_title: Introduction to Inact for Inventory Management
 hero_body: This is the intro to a five-part learning path. By the end, you’ll understand the fundamentals of inventory management and be ready to use Inact Now confidently in your daily work!
