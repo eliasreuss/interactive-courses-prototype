@@ -532,7 +532,7 @@
     }
     .hero-image-side img {
       max-width: 100%;
-      max-height: 70vh;
+      max-height: 64vh;
       object-fit: contain;
       transform-origin: 50% 50%;
       will-change: transform, opacity;
@@ -581,15 +581,17 @@
       to   { opacity: 1; transform: translateX(0); }
     }
 
-    /* Hero illustration: subtle hover micro-interaction */
-    @media (hover: hover) and (pointer: fine) {
-      .hero-image-side img {
-        transition: transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1), filter 260ms ease;
-      }
-      .hero-image-side:hover img {
-        transform: scale(1.015);
-        filter: drop-shadow(0 18px 26px rgba(0,0,0,0.10));
-      }
+    /* Hero illustration: subtle looping "float" */
+    .hero-layout .hero-image-side img {
+      /* Run entry first, then float forever */
+      animation:
+        heroImageIn 720ms cubic-bezier(0.2, 0.8, 0.2, 1) both,
+        heroFloat 6.5s ease-in-out 900ms infinite;
+      filter: drop-shadow(0 18px 26px rgba(0,0,0,0.10));
+    }
+    @keyframes heroFloat {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-10px); }
     }
     @media (prefers-reduced-motion: reduce) {
       .content-card.is-animating,
