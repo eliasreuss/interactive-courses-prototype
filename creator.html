@@ -2812,7 +2812,10 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (element.classList.contains('node-card')) {
                 // This is a slide
                 slideIndex++;
-                const rawTitle = element.querySelector('.node-title').value || 'Untitled';
+                // Use index_title if available, otherwise fall back to title
+                const indexTitleInput = element.querySelector('.node-index-title');
+                const indexTitle = indexTitleInput?.value?.trim() || '';
+                const rawTitle = indexTitle || element.querySelector('.node-title').value || 'Untitled';
                 const formattedTitle = rawTitle.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
                 
                 const slideItem = document.createElement('div');
@@ -3371,7 +3374,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Listen for changes to update sidebar
     nodesContainer.addEventListener('input', (e) => {
         if (e.target.classList.contains('node-id') || 
-            e.target.classList.contains('node-title')) {
+            e.target.classList.contains('node-title') ||
+            e.target.classList.contains('node-index-title')) {
             updateSidebar();
         }
         
