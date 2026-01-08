@@ -414,7 +414,7 @@
     
     /* Stacked images mode: reduced padding for two-column layout */
     .card-text-content.stacked-mode {
-      padding: clamp(20px, 2.2vw, 36px) clamp(20px, 2.5vw, 40px);
+      padding: clamp(20px, 2.2vw, 36px) clamp(32px, 4vw, 64px);
       max-width: none;
     }
     
@@ -524,7 +524,7 @@
     /* Stacked images layout */
     .content-with-stacked-images { 
       display: flex; 
-      gap: clamp(24px, 3vw, 40px); 
+      gap: clamp(32px, 4vw, 56px); 
       align-items: center; 
       width: 100%;
     }
@@ -694,7 +694,7 @@
         max-width: 1400px;
       }
       .card-text-content.stacked-mode {
-        padding: clamp(28px, 3vw, 48px) clamp(32px, 4vw, 64px);
+        padding: clamp(28px, 3vw, 48px) clamp(48px, 5.5vw, 88px);
       }
       .hero-layout {
         max-width: 1600px;
@@ -709,6 +709,9 @@
     @media (min-width: 1441px) and (max-width: 1920px) {
       .card-text-content {
         padding: var(--spacing-content) clamp(100px, 12vw, 180px);
+      }
+      .card-text-content.stacked-mode {
+        padding: clamp(24px, 2.5vw, 40px) clamp(40px, 4.5vw, 72px);
       }
       .content-images-container .size-large {
         max-width: 90%;
@@ -789,7 +792,7 @@
         max-width: clamp(280px, 40%, 700px);
       }
       .card-text-content.stacked-mode {
-        padding: clamp(18px, 2vw, 28px) clamp(18px, 2.2vw, 32px);
+        padding: clamp(18px, 2vw, 28px) clamp(24px, 3vw, 48px);
       }
     }
     
@@ -803,7 +806,7 @@
         order: -1;
       }
       .card-text-content.stacked-mode {
-        padding: clamp(16px, 2vw, 24px) clamp(16px, 2.2vw, 28px);
+        padding: clamp(16px, 2vw, 24px) clamp(20px, 2.5vw, 36px);
       }
       .content-with-stacked-images {
         flex-direction: column;
