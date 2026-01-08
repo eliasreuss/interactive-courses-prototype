@@ -633,16 +633,10 @@
       }
     }
     
-    /* Screens up to 1920px - keep images at 80% width */
+    /* Screens up to 1920px - increase card padding to narrow content */
     @media (min-width: 1441px) and (max-width: 1920px) {
-      .content-images-container .size-large {
-        max-width: 80%;
-        flex-basis: 80%;
-      }
-      .content-images-container:has(.size-third) {
-        max-width: 80%;
-        margin-left: auto;
-        margin-right: auto;
+      .card-text-content {
+        padding: var(--spacing-content) clamp(60px, 8vw, 120px);
       }
     }
     
