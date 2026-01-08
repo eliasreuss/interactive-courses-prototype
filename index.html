@@ -633,6 +633,19 @@
       }
     }
     
+    /* Screens up to 1920px - keep images at 80% width */
+    @media (min-width: 1441px) and (max-width: 1920px) {
+      .content-images-container .size-large {
+        max-width: 80%;
+        flex-basis: 80%;
+      }
+      .content-images-container:has(.size-third) {
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    
     /* Medium screens (13" laptops like MacBook Air) */
     @media (min-width: 901px) and (max-width: 1440px) {
       :root {
