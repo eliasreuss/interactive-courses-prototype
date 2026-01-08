@@ -16,7 +16,7 @@ index_title: The three pillars of inventory management
 title: **The three pillars of inventory management**
 type: main
 ---
-At its core, inventory optimization boils down to answering three critical questions:
+At its core, inventory optimization boils down to answering three questions:
 
 ![image 1/size:third/align:center/frame:none](intro/What-To-Stock.png) ![image 2/size:third/align:center/frame:none](intro/How-Much-To-Stock.png) ![image 3/size:third/align:center/frame:none](intro/How-Much-To-Order.png)
 
@@ -42,7 +42,7 @@ index_title: The cost of imbalance
 title: **The cost of imbalance**
 type: main
 ---
-But finding the right balance is hard, and the consequences are costly.
+But finding the right balance is hard, and the consequences for failing are costly.
 
 In fact, most companies are sitting on 15-35% excess inventory as a result of their balancing act failing. This silently drains resources in three critical ways: 
 
@@ -61,9 +61,9 @@ This is the goal: Inventory management that keeps the right products in stock - 
 
 ![image/size:large/align:center/frame:none](intro/Full-Picture-ROP-ROQ.png)
 
-So, if you’re ready, let’s take a look at what we will go through in the learning path so we can get there.
+So, if you’re ready, let’s take a look at what we will go through in the learning path.
 ---
-> [next] Let's do it! -> 6
+> [next] Continue -> 6
 
 slide_id: 6
 index_title: The learning path
