@@ -2297,6 +2297,16 @@
                 const isNewFormat = !!sq.targetId;
                 const sqId = isNewFormat ? `sq-${sq.targetId}-1` : `${child.id}-${sq.type}-${sqIdx}-0`;
                 const sqPrefix = isNewFormat ? `sq-${sq.targetId}-` : sqId.substring(0, sqId.lastIndexOf('-') + 1);
+                
+                // Get step IDs first (needed for visited check)
+                const stepIds = getSidequestStepIds({
+                  isNewFormat,
+                  targetId: sq.targetId,
+                  parentId: child.id,
+                  type: sq.type,
+                  sqIdx
+                });
+                
                 const isSqActive = activeNodeId === sqId || activeNodeId.startsWith(sqPrefix); // handle multi-card/slide sidequests
                 const sqVisited = visitedNodes.has(String(sqId)) || stepIds.some(id => visitedNodes.has(String(id)));
                 let sqClass = 'toc-child';
@@ -2321,7 +2331,6 @@
                 sqEl.appendChild(leftWrap);
 
                 // Step dots (one per sidequest step)
-                const stepIds = getSidequestStepIds({
                   isNewFormat,
                   targetId: sq.targetId,
                   parentId: child.id,
