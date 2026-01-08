@@ -516,23 +516,66 @@
     .img-container .lottie-anim { width: 100%; height: 100%; display: block; }
     
     /* Stacked images layout */
-    .content-with-stacked-images { display: flex; gap: 30px; align-items: center; }
+    .content-with-stacked-images { 
+      display: flex; 
+      gap: 30px; 
+      align-items: center; 
+      width: 100%;
+    }
     .content-with-stacked-images.top-aligned { align-items: flex-start; }
-    .content-with-stacked-images .text-content { flex: 1; }
+    .content-with-stacked-images .text-content { 
+      flex: 1; 
+      min-width: 0; /* Allow text to shrink */
+    }
     .content-with-stacked-images .stacked-images {
-      display: flex; flex-direction: column; gap: 15px; flex-shrink: 0; max-width: clamp(320px, 45%, 800px);
+      display: flex; 
+      flex-direction: column; 
+      gap: 15px; 
+      flex-shrink: 0; 
+      max-width: clamp(320px, 45%, 800px);
+      min-width: 0; /* Prevent overflow */
       margin-left: auto;
+    }
+    .content-with-stacked-images .stacked-images .img-container {
+      width: 100%;
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 15px; 
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08), 0 3px 8px rgba(0,0,0,0.08);
+      background: #fff;
+      box-sizing: border-box;
+    }
+    .content-with-stacked-images .stacked-images .img-container.no-frame {
+      background: transparent;
+      box-shadow: none;
+      border-radius: 0;
     }
     .content-with-stacked-images .stacked-images img { 
       display: block;
+      max-width: 100%;
+      max-height: 100%;
+      height: auto;
+      width: auto;
+      object-fit: contain;
       image-rendering: -webkit-optimize-contrast;
       image-rendering: high-quality;
       -ms-interpolation-mode: bicubic;
     }
-    .content-with-stacked-images .stacked-images .img-container {
-      border-radius: 15px; overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08), 0 3px 8px rgba(0,0,0,0.08);
-      background: #fff;
+    .content-with-stacked-images .stacked-images video {
+      max-width: 100%;
+      max-height: 100%;
+      height: auto;
+      width: auto;
+      object-fit: contain;
+    }
+    .content-with-stacked-images .stacked-images .lottie-anim {
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
     }
     
     /* Hero slide layout */
@@ -1157,7 +1200,13 @@
         const allImages = [...strippedContent.matchAll(imageRegex)];
         const hasStackedMedia = allImages.some(img => {
             const attrs = img[1].split('/').slice(1);
-            return attrs.some(attr => attr.includes('align:stack-right') || attr.includes('align:stack-right-top'));
+            return attrs.some(attr => {
+                const attrLower = attr.toLowerCase();
+                return attrLower.includes('align:stack-right') || 
+                       attrLower.includes('align:stack-right-top') ||
+                       attrLower === 'align:right' ||
+                       attrLower.startsWith('align:right/');
+            });
         });
  
         if (hasStackedMedia) {
@@ -1477,7 +1526,13 @@
                 mediaItems.forEach(match => {
                     const allData = match[1].split('/');
                     const attributes = allData.slice(1);
-                    const isStacked = attributes.some(attr => attr.includes('align:stack-right'));
+                    const isStacked = attributes.some(attr => {
+                        const attrLower = attr.toLowerCase();
+                        return attrLower.includes('align:stack-right') || 
+                               attrLower.includes('align:stack-right-top') ||
+                               attrLower === 'align:right' ||
+                               attrLower.startsWith('align:right/');
+                    });
                     
                     if (isStacked) {
                         hasStackedOnThisLine = true;

@@ -28,7 +28,7 @@ ABC analysis is built on the Pareto principle (80/20 rule), which shows that a s
 
 For example, in a warehouse, a handful of products (the “A” items) may generate the majority of sales or inventory value, while many other products (the “B” and “C” items) contribute far less.
 
-![/size:medium/align:right/frame:none](double-abc-analysis/Single-ABC.png)
+![/size:medium/align:stack-right/frame:none](double-abc-analysis/Single-ABC.png)
 ---
 > [next] Continue -> 3
 
@@ -47,7 +47,7 @@ If we for example look at our products demand, we see that a small share of prod
 
 And that’s the idea behind ABC analysis: a few products matter most, while most matter much less.
 
-![image/size:400px/align:right/frame:none](double-abc-analysis/Single-ABC-Vizz.png)
+![image/size:400px/align:stack-right/frame:none](double-abc-analysis/Single-ABC-Vizz.png)
 ---
 > [next] Continue -> 4
 
@@ -180,7 +180,7 @@ Instead of just labeling products, the analysis helps you understand what’s go
 
 Here are a few practical ways it can help:
 
-![image/size:500px/align:center/frame:none](double-abc-analysis/Analysis-Help.png)
+![image/size:largepx/align:center/frame:none](double-abc-analysis/Analysis-Help.png)
 ---
 > [next] Continue -> 12
 
@@ -210,7 +210,7 @@ Great! Now’s the time to open your Double ABC Analysis insight so you can foll
 Click the “Open Insight Now” button, or open it manually in a separate window.
 ---
 > [next] It's open, continue -> 14
-> [sidequest] Open Inact Now -> newtab:newtab:newtab:newtab:embed:https://inactnow.io/app/#/
+> [sidequest] Open Inact Now -> s4
 
 slide_id: 14
 index_title: Great... What are we looking at?
@@ -263,9 +263,9 @@ Here’s a quick explanation of each special category:
 ![image/size:large/align:center/frame:none](double-abc-analysis/Special-Categories.png)
 ---
 > [next] Continue -> 18
-> [sidequest] What if I forget? -> s4
+> [sidequest] What if I forget? -> s5
 
-[id:6/topic: Untitled Section]
+[id:6/topic: Whats next?]
 
 slide_id: 18
 index_title: What's next?
@@ -285,28 +285,6 @@ Here’s a quick recap of what you’ve covered:
 ---
 
 [flow-specific-side-quests]
-
-[id:s1/topic: Double ABC Analysis]
-
-slide_id: 1
-title: **Double ABC Analysis**
-type: sidequest
----
-https://www.youtube.com/watch?v=26VCBmuyOU4&t=9s
----
-
-[id:s2/topic: The company’s ABC categorization depends on the purpose.]
-
-slide_id: 1
-title: **The company’s ABC categorization depends on the purpose.**
-type: sidequest
----
--If the company wants to increase delivery reliability and/or reduce inventory, the recommended dimensions are consumption, order lines, and possibly standard deviation.
-
--As a starting point, the ABC model is set up according to 80 / 15 / 5 %, after which fixed thresholds can be established if needed. Fixed thresholds make it easier to communicate to the rest of the organization – e.g., an AA item is defined as having consumption > 250,000 DKK and 50 order lines per year.
-
--The more commercial dimensions are added to the analysis when the company wants to analyze the product life cycle and sales.
----
 
 [id:s3/topic: No problem, we’ll go through how to open it step by step]
 
@@ -339,22 +317,8 @@ type: sidequest
 -If it appears, click it—you’re all set! Head back to the main path.
 -If it doesn’t appear, no worries—we’ll walk through how to create it yourself.
 ---
-> [next] Continue -> 3
 
-slide_id: 3
-title: ****Creating your Double ABC Analysis Insight****
-type: sidequest
----
-**Creating your Double ABC Analysis Insight is as easy as 1–2–3 with the ready-made template:**
-
-1. Click “New Insight.”
-2. Select the Double ABC Analysis template under “Stock Policy.”
-3. Name your Insight, choose your data source, and click “Create.” Now you should be able to find your new Insight in the “Insights” tab.
-
-![video:motion graphic/size:medium/align:center](double-abc-analysis/CreateABCInsight.mp4)
----
-
-[id:s4/topic: Quick tip]
+[id:s5/topic: Quick tip]
 
 slide_id: 1
 title: **Quick tip**
