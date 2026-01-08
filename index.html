@@ -299,8 +299,8 @@
     }
     
     .toc-child-indicator.unvisited {
-      background: transparent;
-      border: 1px solid transparent;
+      background: var(--color-unvisited);
+      border: none;
     }
     
     .toc-child-indicator.sidequest {
@@ -311,6 +311,14 @@
     .toc-child-title {
       font-size: clamp(11px, 0.7rem + 0.15vw, 13px);
       font-weight: 400;
+      color: var(--color-muted);
+    }
+    
+    .toc-child.unvisited .toc-child-title {
+      color: var(--color-unvisited);
+    }
+    
+    .toc-child.visited .toc-child-title {
       color: var(--color-muted);
     }
     
@@ -2183,7 +2191,11 @@
             else if (childVisited) childIndicatorClass = 'visited';
             
             const childEl = document.createElement('div');
-            childEl.className = `toc-child${isChildActive ? ' active' : ''}`;
+            let childClass = 'toc-child';
+            if (isChildActive) childClass += ' active';
+            else if (childVisited) childClass += ' visited';
+            else childClass += ' unvisited';
+            childEl.className = childClass;
             childEl.onclick = (e) => {
                 e.stopPropagation(); // Prevent bubbling to parent
                 updateView(child.id);
@@ -2792,7 +2804,7 @@
     (async function() {
       try {
         const urlParams = new URLSearchParams(window.location.search);
-        const courseFile = urlParams.get('course') || 'Intro.txt';
+        const courseFile = urlParams.get('course') || 'Double-ABC-Analysis-3.txt';
         const cacheParam = Date.now();
         const requestUrl = `courses/${courseFile}?v=${cacheParam}`;
         const response = await fetch(requestUrl);
