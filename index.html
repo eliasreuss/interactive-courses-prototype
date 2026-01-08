@@ -154,6 +154,7 @@
       display: flex;
       flex: 1;
       overflow: hidden;
+      min-height: 0; /* Allow flex item to shrink */
     }
     
     /* ========== SIDEBAR (Table of Contents) ========== */
@@ -162,9 +163,12 @@
       flex-shrink: 0;
       padding: 24px 12px 24px 24px;
       overflow-y: auto;
+      overflow-x: hidden;
       display: flex;
       flex-direction: column;
       gap: 16px;
+      min-height: 0; /* Allow flex item to shrink below content size */
+      max-height: 100%; /* Constrain to parent height */
     }
     
     /* TOC Section (Parent) */
@@ -172,7 +176,8 @@
       background: #fff;
       border-radius: 15px;
       box-shadow: var(--shadow-card);
-      overflow: hidden;
+      overflow: visible; /* Allow content to be visible for scrolling */
+      flex-shrink: 0; /* Prevent sections from shrinking */
     }
     
     .toc-section-header {
@@ -263,6 +268,7 @@
       padding: 12px 16px;
       flex-direction: column;
       gap: 16px;
+      overflow: visible; /* Allow content to be visible */
     }
     
     .toc-section.expanded .toc-children {
