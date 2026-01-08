@@ -460,7 +460,14 @@
     .content-images-container {
       display: flex; gap: clamp(16px, 2vw, 32px); justify-content: center; margin: clamp(20px, 3vw, 40px) 0; flex-wrap: wrap; align-items: center;
     }
-    .content-images-container img { max-width: 100%; height: auto; display: block; }
+    .content-images-container img { 
+      max-width: 100%; 
+      height: auto; 
+      display: block;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: high-quality;
+      -ms-interpolation-mode: bicubic;
+    }
     .content-images-container .img-container {
       display: flex; justify-content: center; border-radius: 15px; overflow: hidden;
         box-shadow: 0 10px 25px rgba(0,0,0,0.08), 0 3px 8px rgba(0,0,0,0.08);
@@ -508,7 +515,12 @@
       display: flex; flex-direction: column; gap: 15px; flex-shrink: 0; max-width: clamp(320px, 45%, 800px);
       margin-left: auto;
     }
-    .content-with-stacked-images .stacked-images img { display: block; }
+    .content-with-stacked-images .stacked-images img { 
+      display: block;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: high-quality;
+      -ms-interpolation-mode: bicubic;
+    }
     .content-with-stacked-images .stacked-images .img-container {
       border-radius: 15px; overflow: hidden;
       box-shadow: 0 10px 25px rgba(0,0,0,0.08), 0 3px 8px rgba(0,0,0,0.08);
@@ -537,6 +549,9 @@
       object-fit: contain;
       transform-origin: 50% 50%;
       will-change: transform, opacity;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: high-quality;
+      -ms-interpolation-mode: bicubic;
     }
     .hero-text-side {
       flex: 0.95;
@@ -637,6 +652,15 @@
     @media (min-width: 1441px) and (max-width: 1920px) {
       .card-text-content {
         padding: var(--spacing-content) clamp(100px, 12vw, 180px);
+      }
+      .content-images-container .size-large {
+        max-width: 90%;
+        flex-basis: 90%;
+      }
+      .content-images-container:has(.size-third) {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
       }
     }
     
@@ -974,11 +998,11 @@
       <div class="content-area">
         <div class="content-card" id="content-card">
           <div class="card-scroll-wrapper">
-            <div class="card-text-content">
+          <div class="card-text-content">
                 <h2 id="card-title">Loading...</h2>
                 <div id="card-content"></div>
             </div>
-          </div>
+            </div>
           
           <!-- Footer (inside card) -->
           <footer class="card-footer">
@@ -2493,7 +2517,7 @@
       // Scroll content card to top
       const contentCard = document.getElementById('content-card');
       if (contentCard) contentCard.scrollTop = 0;
-
+      
       // Trigger subtle "slide enter" animations
       const cardEl = document.getElementById('content-card');
       const cardTitleAnimEl = document.getElementById('card-title');
@@ -2515,20 +2539,20 @@
             cardTextContent.classList.add('hero-mode');
           } else {
             cardTextContent.classList.remove('hero-mode');
-            if (n['title-align'] && String(n['title-align']).toLowerCase() === 'center') {
-              cardTitleEl.style.textAlign = 'center';
-            } else {
-              cardTitleEl.style.textAlign = '';
-            }
+          if (n['title-align'] && String(n['title-align']).toLowerCase() === 'center') {
+            cardTitleEl.style.textAlign = 'center';
+          } else {
+            cardTitleEl.style.textAlign = '';
+          }
       
-            const processBold = (str) => str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+              const processBold = (str) => str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
       
-            if (n.title && n.title.trim() !== '') {
-              cardTitleEl.innerHTML = processBold(n.title);
-              cardTitleEl.style.display = '';
-            } else {
-              cardTitleEl.textContent = '';
-              cardTitleEl.style.display = 'none';
+      if (n.title && n.title.trim() !== '') {
+            cardTitleEl.innerHTML = processBold(n.title);
+            cardTitleEl.style.display = '';
+          } else {
+            cardTitleEl.textContent = '';
+            cardTitleEl.style.display = 'none';
             }
           }
 
@@ -2641,7 +2665,7 @@
       const hasFlowLinks = mainNodeData && mainNodeData.flowLinks && mainNodeData.flowLinks.length > 0;
       const hasNavButtons = (n.type === 'main' || n.type === 'flip-cards' || n.type === 'hero' || !n.type) && 
                            (mainPathHistory.length > 1 || Object.keys(n.connections || {}).length > 0 || hasFlowLinks);
-      
+
       // Add divider if there are action buttons and we'll have nav buttons
       if (actionButtons.length > 0 && hasNavButtons) {
         const divider = document.createElement('div');
@@ -2708,7 +2732,7 @@
             };
             navBtns.appendChild(btn);
           });
-        }
+              }
           } else if (n.type === 'sidequest') {
         // Sidequest navigation
               if (n.prevId) {
