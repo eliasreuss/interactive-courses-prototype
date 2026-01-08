@@ -412,6 +412,12 @@
       flex: 0 1 auto;
     }
     
+    /* Stacked images mode: reduced padding for two-column layout */
+    .card-text-content.stacked-mode {
+      padding: clamp(20px, 2.2vw, 36px) clamp(20px, 2.5vw, 40px);
+      max-width: none;
+    }
+    
     #card-title {
       font-size: var(--font-size-title);
       font-weight: normal;
@@ -518,7 +524,7 @@
     /* Stacked images layout */
     .content-with-stacked-images { 
       display: flex; 
-      gap: 30px; 
+      gap: clamp(24px, 3vw, 40px); 
       align-items: center; 
       width: 100%;
     }
@@ -687,6 +693,9 @@
       .card-text-content {
         max-width: 1400px;
       }
+      .card-text-content.stacked-mode {
+        padding: clamp(28px, 3vw, 48px) clamp(32px, 4vw, 64px);
+      }
       .hero-layout {
         max-width: 1600px;
       }
@@ -779,6 +788,9 @@
       .content-with-stacked-images .stacked-images {
         max-width: clamp(280px, 40%, 700px);
       }
+      .card-text-content.stacked-mode {
+        padding: clamp(18px, 2vw, 28px) clamp(18px, 2.2vw, 32px);
+      }
     }
     
     @media (max-width: 900px) {
@@ -789,6 +801,18 @@
       }
       .hero-image-side {
         order: -1;
+      }
+      .card-text-content.stacked-mode {
+        padding: clamp(16px, 2vw, 24px) clamp(16px, 2.2vw, 28px);
+      }
+      .content-with-stacked-images {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .content-with-stacked-images .stacked-images {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
       }
     }
     
@@ -2621,9 +2645,19 @@
             }
           }
 
+      // Check if content has stacked images (align:right or align:stack-right)
+          const hasStackedImages = n.content && /align:(stack-right|right)/i.test(n.content);
+
       // Update content
           const cardContentEl = document.getElementById('card-content');
           renderContent(cardContentEl, n.content, n.type);
+          
+      // Apply stacked-mode class for reduced margins
+          if (hasStackedImages && n.type !== 'hero') {
+            cardTextContent.classList.add('stacked-mode');
+          } else {
+            cardTextContent.classList.remove('stacked-mode');
+          }
 
       // Update footer buttons
       updateFooterButtons(n);
