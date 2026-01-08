@@ -5,7 +5,7 @@ title: Welcome to the flow: <br>**Double ABC Analysis**
 title-align: center
 type: main
 ---
-![image/size:500px/align:center/frame:none](legacy/ABC-cover-illu.png)
+![image/size:500px/align:center/frame:none](double-abc-analysis/ABC-cover-illu.png)
 ---
 > Let's do it! -> 2
 
@@ -13,7 +13,7 @@ id: 2
 title: **You will learn:**
 type: main
 ---
-![ABC-Plan-2.png/size:fourth/align:center/frame:none](legacy/ABC-Plan-1.png) ![image 2/size:fourth/align:center/frame:none](legacy/ABC-Plan-2.png) ![image 3/size:fourth/align:center/frame:none](legacy/ABC-Plan-3.png) ![image 4/size:fourth/align:center/frame:none](legacy/ABC-Plan-4.png)
+![ABC-Plan-2.png/size:fourth/align:center/frame:none](double-abc-analysis/ABC-Plan-1.png) ![image 2/size:fourth/align:center/frame:none](double-abc-analysis/ABC-Plan-2.png) ![image 3/size:fourth/align:center/frame:none](double-abc-analysis/ABC-Plan-3.png) ![image 4/size:fourth/align:center/frame:none](double-abc-analysis/ABC-Plan-4.png)
 ---
 > Continue -> 3
 
@@ -32,7 +32,7 @@ ABC analysis helps identify which inventory items matter most by classifying the
 -**A items:** the few, high-value drivers
 -**B items:** the moderate contributors
 -**C items:** the many, low-value items
-![image/size:800px/align:stack-right/frame:none](legacy/ABC-Fiskere.png)
+![image/size:800px/align:stack-right/frame:none](double-abc-analysis/ABC-Fiskere.png)
 ---
 > Continue -> 4
 
@@ -54,7 +54,7 @@ Want to learn more about the 80/20 rule or ABC method? **Watch the short video.*
 
 Feeling comfortable with the concept? Perfect — **let’s move on.**
 
-![image/size:400px/align:stack-right/frame:none](legacy/Single-ABC-Vizz.png)
+![image/size:400px/align:stack-right/frame:none](double-abc-analysis/Single-ABC-Vizz.png)
 ---
 > Continue -> 20
 > Watch video: The ABC Analysis -> [video:The ABC Analysis]
@@ -89,7 +89,7 @@ This helps you quickly see which products are the most important and decide how 
 
 Watch the video for a full walkthrough, or continue to see an example.
 
-![image/size:400px/align:stack-right](legacy/ABC-Analysis.png)
+![image/size:400px/align:stack-right](double-abc-analysis/ABC-Analysis.png)
 ---
 > Show me an example -> 6
 > Watch video: Double ABC Analysis -> [video:Double ABC Analysis]
@@ -105,7 +105,7 @@ High cost of inventory, high demand
 
 → Your everyday heroes. Like copy paper in an office. Easy to manage. Low risk.
 
-![image/size:400px/align:stack-right/frame:none](legacy/ABC-Example-1.png)
+![image/size:400px/align:stack-right/frame:none](double-abc-analysis/ABC-Example-1.png)
 ---
 > Continue -> 7
 
@@ -120,7 +120,7 @@ High cost of inventory, low demand
 
 → Big-ticket items sold occasionally. Like a copy machine. Valuable but riskier to stock, as they tie up significant capital with little predictability on when — or how many — will sell.
 
-![image/size:400px/align:stack-right/frame:none](legacy/ABC-Example-2.png)
+![image/size:400px/align:stack-right/frame:none](double-abc-analysis/ABC-Example-2.png)
 ---
 > Continue -> 8
 
@@ -134,7 +134,7 @@ type: main
 Low cost of inventory, high demand
 
 → Often overlooked, but critical for customer experience. Like paperclips or screws in production.
-![image/size:400px/align:stack-right/frame:none](legacy/ABC-Example-3.png)
+![image/size:400px/align:stack-right/frame:none](double-abc-analysis/ABC-Example-3.png)
 ---
 > Continue -> 9
 
@@ -149,7 +149,7 @@ Low cost of inventory, low demand
 
 → Rarely sells. Like plastic sleeves. Important to manage carefully – or phase out.
 
-![image/size:400px/align:stack-right/frame:none](legacy/ABC-Example-4.png)
+![image/size:400px/align:stack-right/frame:none](double-abc-analysis/ABC-Example-4.png)
 ---
 > Continue -> 10
 
@@ -167,7 +167,7 @@ Where a single ABC analysis may look at demand alone, Double ABC adds a second l
 
 If you feel comfortable with the concept, click continue to see what the analysis can help you with. 
 
-![image/size:400px/align:stack-right/frame:none](legacy/ABC-Example-Final.png)
+![image/size:400px/align:stack-right/frame:none](double-abc-analysis/ABC-Example-Final.png)
 ---
 > Continue -> 11
 > Show me examples of different axes -> [case:The company’s ABC categorization depends on the purpose.]
@@ -176,7 +176,7 @@ id: 11
 title: **The analysis can help you with:**
 type: main
 ---
-![image/size:500px/align:center/frame:none](legacy/Analysis-Help.png)
+![image/size:500px/align:center/frame:none](double-abc-analysis/Analysis-Help.png)
 ---
 > How did it help others? -> 12
 
@@ -186,7 +186,7 @@ type: main
 ---
 Below is an example from Micro Matic, who used the Double ABC analysis to raise their service level while reducing overall stock. By segmenting their products into the different categories, they were able to decide where to increase minimum inventory, where to lower it, and where to avoid holding stock altogether.
 
-![image/size:500px/align:center/frame:none](legacy/Micro-Matic-Case.png)
+![image/size:500px/align:center/frame:none](double-abc-analysis/Micro-Matic-Case.png)
 
 For Micro Matic, using the double ABC analysis to inform new policies helped them reach their service level goal of 95% almost immediately.
 ---
@@ -235,7 +235,7 @@ id: 16
 title: **The Double ABC insight explained**
 type: main
 ---
-This brief video walks you through how to navigate and interpret your double ABC analysis insight in Inact Now.![video:Explainer video/size:large/align:center/frame:none/controls](legacy/Double-ABC-Explainer-2.1.mp4)
+This brief video walks you through how to navigate and interpret your double ABC analysis insight in Inact Now.![video:Explainer video/size:large/align:center/frame:none/controls](double-abc-analysis/Double-ABC-Explainer-2.1.mp4)
 ---
 > Continue -> 17
 
@@ -251,7 +251,7 @@ That’s why the Inact Now view goes **beyond the standard nine categories.** We
 
 **Let’s explore these categories and see how they guide smarter decisions.**
 
-![lottie:motion graphic/size:950px/align:stack-right-top/frame:none](legacy/ANIFRAME.json)
+![lottie:motion graphic/size:950px/align:stack-right-top/frame:none](double-abc-analysis/ANIFRAME.json)
 ---
 > Explain the special categories -> 18
 
@@ -260,7 +260,7 @@ title: **The special categories**
 title-align: center
 type: main
 ---
-![image/size:1000px/align:center/frame:none](legacy/Special-Categories.png)
+![image/size:1000px/align:center/frame:none](double-abc-analysis/Special-Categories.png)
 ---
 > Continue -> 19
 > What if I forget? -> [video:Quick tip]
@@ -277,7 +277,7 @@ Here’s a quick recap of what you’ve covered:
 -What the special categories are, and why they help give a fuller picture
 
 **You’re off to a great start. Let’s keep going!**
-![image/size:450px/align:stack-right/frame:none](legacy/Congrats-ABC.png)
+![image/size:450px/align:stack-right/frame:none](double-abc-analysis/Congrats-ABC.png)
 ---
 
 [side-quest-content:video:The ABC Analysis]
@@ -316,11 +316,11 @@ You can do this either by clicking “Open Inact Now”, or by opening it in a s
 
 1. In the top navigation bar, click “Insights.”
 
-[image/size:medium/align:left](legacy/Nav-Bar-Insights.png)
+[image/size:medium/align:left](double-abc-analysis/Nav-Bar-Insights.png)
 
 2. Use the search bar to look for "Double ABC Analysis"
 
-!![video:motion graphic/size:medium/align:left](legacy/SearchABCInsight.mp4)
+!![video:motion graphic/size:medium/align:left](double-abc-analysis/SearchABCInsight.mp4)
 
 -If it appears, click it—you’re all set! Head back to the main path.
 -If it doesn’t appear, no worries—we’ll walk through how to create it yourself.
@@ -332,12 +332,12 @@ You can do this either by clicking “Open Inact Now”, or by opening it in a s
 2. Select the Double ABC Analysis template under “Stock Policy.”
 3. Name your Insight, choose your data source, and click “Create.” Now you should be able to find your new Insight in the “Insights” tab.
 
-![video:motion graphic/size:medium/align:center](legacy/CreateABCInsight.mp4)
+![video:motion graphic/size:medium/align:center](double-abc-analysis/CreateABCInsight.mp4)
 ---
 
 [side-quest-content:video:Quick tip]
 ---
 **Tip: If you’re ever unsure what a category means, just click the “i” icon in Inact Now for a quick explanation.**
 
-![image/size:medium/align:center](legacy/SmallTip.png)
+![image/size:medium/align:center](double-abc-analysis/SmallTip.png)
 ---
