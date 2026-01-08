@@ -28,7 +28,7 @@ ABC analysis is built on the Pareto principle (80/20 rule), which shows that a s
 
 For example, in a warehouse, a handful of products (the “A” items) may generate the majority of sales or inventory value, while many other products (the “B” and “C” items) contribute far less.
 
-![/size:500px/align:right/frame:none](double-abc-analysis/Single-ABC.png)
+![image/size:500px/align:right/frame:none](double-abc-analysis/Single-ABC.png)
 ---
 > [next] Continue -> 3
 
@@ -255,7 +255,6 @@ That’s why the Inact Now view goes **beyond the standard nine categories.** We
 slide_id: 17
 index_title: An explanation of each special category
 title: **The special categories**
-title-align: center
 type: main
 ---
 Here’s a quick explanation of each special category:

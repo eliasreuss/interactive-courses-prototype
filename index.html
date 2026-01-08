@@ -2298,8 +2298,13 @@
                 const sqId = isNewFormat ? `sq-${sq.targetId}-1` : `${child.id}-${sq.type}-${sqIdx}-0`;
                 const sqPrefix = isNewFormat ? `sq-${sq.targetId}-` : sqId.substring(0, sqId.lastIndexOf('-') + 1);
                 const isSqActive = activeNodeId === sqId || activeNodeId.startsWith(sqPrefix); // handle multi-card/slide sidequests
+                const sqVisited = visitedNodes.has(String(sqId)) || stepIds.some(id => visitedNodes.has(String(id)));
+                let sqClass = 'toc-child';
+                if (isSqActive) sqClass += ' active';
+                else if (sqVisited) sqClass += ' visited';
+                else sqClass += ' unvisited';
                 const sqEl = document.createElement('div');
-                sqEl.className = `toc-child${isSqActive ? ' active' : ''}`;
+                sqEl.className = sqClass;
                 sqEl.style.paddingLeft = '12px';
                 sqEl.onclick = (e) => {
                     e.stopPropagation();
@@ -2353,8 +2358,20 @@
               const sqId = isNewFormat ? `sq-${sq.targetId}-1` : `${section.id}-${sq.type}-${sqIdx}-0`;
               const sqPrefix = isNewFormat ? `sq-${sq.targetId}-` : sqId.substring(0, sqId.lastIndexOf('-') + 1);
               const isSqActive = activeNodeId === sqId || activeNodeId.startsWith(sqPrefix);
+              const stepIds = getSidequestStepIds({
+                isNewFormat,
+                targetId: sq.targetId,
+                parentId: section.id,
+                type: sq.type,
+                sqIdx
+              });
+              const sqVisited = visitedNodes.has(String(sqId)) || stepIds.some(id => visitedNodes.has(String(id)));
+              let sqClass = 'toc-child';
+              if (isSqActive) sqClass += ' active';
+              else if (sqVisited) sqClass += ' visited';
+              else sqClass += ' unvisited';
               const sqEl = document.createElement('div');
-              sqEl.className = `toc-child${isSqActive ? ' active' : ''}`;
+              sqEl.className = sqClass;
               sqEl.onclick = (e) => {
                   e.stopPropagation();
                   updateView(sqId);
@@ -2369,13 +2386,6 @@
               `;
               sqEl.appendChild(leftWrap);
 
-              const stepIds = getSidequestStepIds({
-                isNewFormat,
-                targetId: sq.targetId,
-                parentId: section.id,
-                type: sq.type,
-                sqIdx
-              });
               const dots = document.createElement('div');
               dots.className = 'toc-step-dots';
               const stepsToRender = stepIds.length > 0 ? stepIds : [sqId];
