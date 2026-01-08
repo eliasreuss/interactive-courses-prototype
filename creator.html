@@ -1985,6 +1985,11 @@
                     <input type="text" class="field-input next-button-text" placeholder="Continue" value="Continue">
                 </div>
             </div>
+            <div class="connection-buttons" style="display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap;">
+                <button type="button" class="btn-connection add-connection-btn" style="font-size: 13px; padding: 6px 12px;">Add Connection</button>
+                <button type="button" class="btn-connection add-sidequest-btn" style="font-size: 13px; padding: 6px 12px;">Add Sidequest</button>
+                <button type="button" class="btn-connection add-link-btn" style="font-size: 13px; padding: 6px 12px;">Add Link</button>
+            </div>
             <div class="connections-list connections-container" style="display: none;"></div>
         </div>
     </div>
@@ -3365,6 +3370,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function addLinkToNode(nodeCard, btnText = '', url = '') {
         const container = nodeCard.querySelector('.connections-container');
+        // Make sure the container is visible when adding links
+        container.style.display = 'block';
         const newLink = linkTemplate.content.cloneNode(true);
         newLink.querySelector('.link-btn-text').value = btnText;
         newLink.querySelector('.link-url').value = url;
@@ -4493,12 +4500,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.querySelectorAll('.link-row').forEach(link => {
                     const btnText = link.querySelector('.link-btn-text').value;
                     const url = link.querySelector('.link-url').value;
-                    const isFlowLink = url && (url.includes('course=') || url.includes('.txt'));
+                    // Flow links are external URLs (http/https) that aren't sidequest targets
+                    // Sidequests use slide IDs, flow links use URLs
+                    const isFlowLink = url && (url.startsWith('http://') || url.startsWith('https://'));
                     
                     if (btnText && url) {
                         if (isFlowLink) {
                             finalOutput += `> [next:flow] ${btnText} -> ${url}\n`;
                         } else {
+                            // If it's not a URL, treat as sidequest target (slide ID)
                             finalOutput += `> [sidequest] ${btnText} -> ${url}\n`;
                         }
                     }
