@@ -3400,8 +3400,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const mainNodes = [];
         const sidequestMap = new Map(); // Map sidequest ID to its slides
         
-        // Check if this is the new format (has [id:X/topic:] syntax)
-        const isNewFormat = /\[id:[^\]]+\/topic:/.test(text);
+        // Check if this is the new format (has [id:X/topic:] syntax or slide_id:)
+        const isNewFormat = /\[id:[^\]]+\/topic:/.test(text) || /slide_id:/.test(text);
         
         if (isNewFormat) {
             return parseNewFormat(text);
