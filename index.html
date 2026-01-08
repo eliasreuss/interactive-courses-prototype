@@ -1566,8 +1566,9 @@
                 textHtml += `<li>${listItemContent}</li>`;
             } else {
           if (inList) { textHtml += '</ul>'; inList = false; }
-                if (trimmedLine === '' && textHtml.length > 0) {
-                    textHtml += '<p> </p>';
+                if (trimmedLine === '') {
+                    // Empty line = paragraph break (user pressed enter)
+                    textHtml += '<div class="paragraph-break"></div>';
                 } else if (trimmedLine !== '') {
                     textHtml += `<p>${processBold(line)}</p>`;
                 }
@@ -1592,7 +1593,7 @@
     function renderStackedMediaItem(match) {
         const allData = match[1].split('/');
         const attributes = allData.slice(1);
-        const fileRef = match[2];
+                        const fileRef = match[2];
         
         // Determine media type
         let mediaType = 'image';
@@ -1619,42 +1620,42 @@
         else if (/\.json(\?|$)/i.test(fileRef)) mediaType = 'lottie';
         
         const isExternalUrl = fileRef.startsWith('http://') || fileRef.startsWith('https://');
-        const v = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? Date.now() : '1.0';
+                        const v = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? Date.now() : '1.0';
         const src = isExternalUrl ? fileRef : `images/${fileRef}?v=${v}`;
-        
-        let sizeClass = 'size-medium';
-        let style = '';
-        let frameClass = '';
-        let wantsControls = false;
-        
-        attributes.forEach(attr => {
-            const [key, value] = attr.split(':');
-            const k = (key || '').trim().toLowerCase();
-            const vv = (value || '').trim().toLowerCase();
-            if (k === 'size') {
+                        
+                        let sizeClass = 'size-medium';
+                        let style = '';
+                        let frameClass = '';
+              let wantsControls = false;
+              
+                        attributes.forEach(attr => {
+                            const [key, value] = attr.split(':');
+                            const k = (key || '').trim().toLowerCase();
+                const vv = (value || '').trim().toLowerCase();
+                            if (k === 'size') {
                 const sizeValue = (value || '').trim();
-                if (sizeValue.endsWith('px')) {
-                    style = `height: ${sizeValue}; width: auto;`;
-                    sizeClass = '';
-                } else {
-                    sizeClass = `size-${sizeValue}`;
-                }
-            } else if (k === 'frame' || k === 'border' || k === 'style') {
-                if (['none', 'no', 'off', 'plain', '0'].includes(vv)) frameClass = 'no-frame';
-            } else if (k === 'controls' || (k === 'play' && ['click', 'manual'].includes(vv))) {
-                wantsControls = true;
-            }
-        });
-        
+                                if (sizeValue.endsWith('px')) {
+                                    style = `height: ${sizeValue}; width: auto;`;
+                                    sizeClass = '';
+                                } else {
+                                    sizeClass = `size-${sizeValue}`;
+                                }
+                            } else if (k === 'frame' || k === 'border' || k === 'style') {
+                  if (['none', 'no', 'off', 'plain', '0'].includes(vv)) frameClass = 'no-frame';
+                } else if (k === 'controls' || (k === 'play' && ['click', 'manual'].includes(vv))) {
+                                wantsControls = true;
+                            }
+                        });
+                        
         if (mediaType === 'video') {
-            if (wantsControls) {
+                            if (wantsControls) {
                 return `<div class="img-container ${sizeClass} ${frameClass}" style="${style}"><video controls style="width:100%;height:auto;" src="${src}" title="${altText}"></video></div>`;
-            } else {
+                            } else {
                 return `<div class="img-container ${sizeClass} ${frameClass}" style="${style}"><video autoplay loop muted playsinline style="width:100%;height:auto;" src="${src}" title="${altText}"></video></div>`;
-            }
+                            }
         } else if (mediaType === 'lottie') {
             return `<div class="img-container ${sizeClass} ${frameClass}" style="${style}"><div class="lottie-anim" data-src="${src}" data-loop="true" data-autoplay="true" aria-label="${altText}"></div></div>`;
-        } else {
+                        } else {
             return `<div class="img-container ${sizeClass} ${frameClass}" style="${style}"><img src="${src}" alt="${altText}" style="${style}"></div>`;
         }
     }
@@ -1682,7 +1683,7 @@
         if (imagePath) {
             if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
                 imgSrc = imagePath;
-            } else {
+                                } else {
                 imgSrc = `images/${imagePath}`;
             }
         }
