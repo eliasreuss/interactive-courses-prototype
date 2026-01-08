@@ -2859,7 +2859,12 @@
               if (n.prevId) {
                 const prevBtn = document.createElement('button');
           prevBtn.className = 'btn btn-outline';
-                prevBtn.textContent = n.backLabel || '◀ Previous';
+          prevBtn.innerHTML = `
+            <svg width="12" height="18" viewBox="0 0 12 18" fill="none" style="transform: rotate(180deg);">
+              <path d="M2 2L9 9L2 16" stroke="#8A8A8A" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            <span>${n.backLabel || 'Previous'}</span>
+          `;
                 prevBtn.onclick = () => updateView(n.prevId);
           navBtns.appendChild(prevBtn);
               }
@@ -2867,7 +2872,12 @@
               if (n.nextId) {
                 const nextBtn = document.createElement('button');
           nextBtn.className = 'btn btn-secondary';
-          nextBtn.textContent = n.nextLabel || 'Next ▶';
+          nextBtn.innerHTML = `
+            <span>${n.nextLabel || 'Next'}</span>
+            <svg width="12" height="18" viewBox="0 0 12 18" fill="none">
+              <path d="M2 2L9 9L2 16" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          `;
           nextBtn.onclick = () => {
             if (hasSupademoContent(n.content)) {
               showSupademoModal(() => navigateToNode(n.nextId));

@@ -41,9 +41,9 @@ If we for example look at our products demand, we see that a small share of prod
 
 **We can group them into the three categories:**
 
-**-A products** – the top ~10% of products that make up 80% of total demand
-**-B products** – the next ~20% of products that cover 15% of demand
-**-C products** – the remaining ~70% of products that add up to only 5% of demand
+-**A products** – the top ~10% of products that make up 80% of total demand
+-**B products** – the next ~20% of products that cover 15% of demand
+-**C products** – the remaining ~70% of products that add up to only 5% of demand
 
 And that’s the idea behind ABC analysis: a few products matter most, while most matter much less.
 
