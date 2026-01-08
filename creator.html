@@ -2924,25 +2924,47 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Update hero toggle visibility - only show on first slide
     function updateHeroToggleVisibility() {
-        const nodeCards = Array.from(nodesContainer.querySelectorAll('.node-card'));
-        nodeCards.forEach((card, index) => {
-            const heroToggleRow = card.querySelector('.hero-toggle-row');
-            const heroToggle = card.querySelector('.hero-toggle');
-            const nodeTypeInput = card.querySelector('.node-type');
-            const heroEditor = card.querySelector('.hero-editor');
-            const standardEditor = card.querySelector('.standard-content-editor');
+        // Get all elements in order (section titles and slides)
+        const allElements = Array.from(nodesContainer.children).filter(el => 
+            el.classList.contains('section-title-card') || el.classList.contains('node-card')
+        );
+        
+        // Find the first actual slide (not section title)
+        let firstSlideIndex = -1;
+        for (let i = 0; i < allElements.length; i++) {
+            if (allElements[i].classList.contains('node-card')) {
+                firstSlideIndex = i;
+                break;
+            }
+        }
+        
+        // Update each node card
+        allElements.forEach((element, index) => {
+            if (!element.classList.contains('node-card')) return;
             
-            if (index === 0) {
+            const heroToggleRow = element.querySelector('.hero-toggle-row');
+            const heroToggle = element.querySelector('.hero-toggle');
+            const nodeTypeInput = element.querySelector('.node-type');
+            const heroEditor = element.querySelector('.hero-editor');
+            const standardEditor = element.querySelector('.standard-content-editor');
+            
+            if (index === firstSlideIndex) {
                 // First slide - show hero toggle
-                heroToggleRow.style.display = 'block';
+                if (heroToggleRow) heroToggleRow.style.display = 'block';
             } else {
-                // Not first slide - hide hero toggle and ensure it's not hero type
-                heroToggleRow.style.display = 'none';
-                if (heroToggle.checked) {
+                // Not first slide - hide hero toggle
+                if (heroToggleRow) heroToggleRow.style.display = 'none';
+                // During loading, don't reset hero types - they're being set by the parser
+                if (window.isLoadingCourse) {
+                    // Keep the hero type as-is during loading
+                    return;
+                }
+                // After loading, if toggle is checked but type isn't hero, reset it
+                if (heroToggle && heroToggle.checked && nodeTypeInput && nodeTypeInput.value !== 'hero') {
                     heroToggle.checked = false;
-                    nodeTypeInput.value = 'main';
-                    heroEditor.style.display = 'none';
-                    standardEditor.style.display = 'block';
+                    if (nodeTypeInput) nodeTypeInput.value = 'main';
+                    if (heroEditor) heroEditor.style.display = 'none';
+                    if (standardEditor) standardEditor.style.display = 'block';
                 }
             }
         });
@@ -3754,6 +3776,9 @@ document.addEventListener('DOMContentLoaded', () => {
         nodesContainer.innerHTML = '';
         let maxId = 0;
         const courseData = parseFlowScript(text);
+        
+        // Track if we're currently loading (to prevent hero toggle from resetting during load)
+        window.isLoadingCourse = true;
 
         courseData.forEach((nodeData, index) => {
             // Handle section title nodes (from new format)
@@ -3799,26 +3824,46 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             const typeSelect = nodeCard.querySelector('.node-type');
-            typeSelect.value = nodeType;
+            if (typeSelect) {
+                typeSelect.value = nodeType;
+            }
             
             if (nodeType === 'hero') {
                 // Parse hero content
                 const heroEditor = nodeCard.querySelector('.hero-editor');
                 const heroToggle = nodeCard.querySelector('.hero-toggle');
-                if (heroToggle) heroToggle.checked = true;
+                const standardEditor = nodeCard.querySelector('.standard-content-editor');
                 
-                const imageMatch = content.match(/hero_image:\s*(.+)/);
-                const subtitleMatch = content.match(/hero_subtitle:\s*(.+)/);
-                const titleMatch = content.match(/hero_title:\s*(.+)/);
-                const bodyMatch = content.match(/hero_body:\s*([\s\S]*?)(?=\n(?:hero_|$)|$)/);
-                
-                if (imageMatch) heroEditor.querySelector('.hero-image').value = imageMatch[1].trim();
-                if (subtitleMatch) heroEditor.querySelector('.hero-subtitle').value = subtitleMatch[1].trim();
-                if (titleMatch) heroEditor.querySelector('.hero-title').value = titleMatch[1].trim();
-                if (bodyMatch) heroEditor.querySelector('.hero-body').value = bodyMatch[1].trim();
-                
-                nodeCard.querySelector('.standard-content-editor').style.display = 'none';
-                heroEditor.style.display = 'block';
+                if (!heroEditor) {
+                    console.warn('Hero editor not found for hero slide', nodeData.id);
+                } else {
+                    if (heroToggle) heroToggle.checked = true;
+                    
+                    const imageMatch = content.match(/hero_image:\s*(.+)/);
+                    const subtitleMatch = content.match(/hero_subtitle:\s*(.+)/);
+                    const titleMatch = content.match(/hero_title:\s*(.+)/);
+                    const bodyMatch = content.match(/hero_body:\s*([\s\S]*?)(?=\n(?:hero_|$)|$)/);
+                    
+                    if (imageMatch) {
+                        const imgInput = heroEditor.querySelector('.hero-image');
+                        if (imgInput) imgInput.value = imageMatch[1].trim();
+                    }
+                    if (subtitleMatch) {
+                        const subInput = heroEditor.querySelector('.hero-subtitle');
+                        if (subInput) subInput.value = subtitleMatch[1].trim();
+                    }
+                    if (titleMatch) {
+                        const titleInput = heroEditor.querySelector('.hero-title');
+                        if (titleInput) titleInput.value = titleMatch[1].trim();
+                    }
+                    if (bodyMatch) {
+                        const bodyInput = heroEditor.querySelector('.hero-body');
+                        if (bodyInput) bodyInput.value = bodyMatch[1].trim();
+                    }
+                    
+                    if (standardEditor) standardEditor.style.display = 'none';
+                    heroEditor.style.display = 'block';
+                }
             }
 
             // Load button text from connections if available
@@ -3842,7 +3887,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         nodeIdCounter = courseData.length > 0 ? maxId + 1 : 1;
+        
+        // Find first actual slide and convert any hero slides that aren't first to main
+        const allElements = Array.from(nodesContainer.children).filter(el => 
+            el.classList.contains('section-title-card') || el.classList.contains('node-card')
+        );
+        let firstSlideCard = null;
+        for (let i = 0; i < allElements.length; i++) {
+            if (allElements[i].classList.contains('node-card')) {
+                firstSlideCard = allElements[i];
+                break;
+            }
+        }
+        
+        // Convert hero slides that aren't first to main
+        allElements.forEach((element) => {
+            if (!element.classList.contains('node-card')) return;
+            if (element === firstSlideCard) return; // Skip first slide
+            
+            const nodeTypeInput = element.querySelector('.node-type');
+            const heroEditor = element.querySelector('.hero-editor');
+            const standardEditor = element.querySelector('.standard-content-editor');
+            const heroToggle = element.querySelector('.hero-toggle');
+            
+            if (nodeTypeInput && nodeTypeInput.value === 'hero') {
+                // Convert to main
+                nodeTypeInput.value = 'main';
+                if (heroToggle) heroToggle.checked = false;
+                if (heroEditor) heroEditor.style.display = 'none';
+                if (standardEditor) standardEditor.style.display = 'block';
+            }
+        });
+        
         updateSidebar();
+        // Update hero toggle visibility after loading
+        updateHeroToggleVisibility();
+        // Clear loading flag
+        window.isLoadingCourse = false;
     }
     
     function parseFlipCardContent(content) {
@@ -4209,12 +4290,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const reader = new FileReader();
         reader.onload = (event) => {
             try {
-                parseAndRender(event.target.result);
+                const text = event.target.result;
+                if (!text || !text.trim()) {
+                    alert('File is empty.');
+                    return;
+                }
+                parseAndRender(text);
                 alert('Course successfully loaded!');
             } catch (error) {
                 console.error("Error parsing file:", error);
-                alert("Could not parse file.");
+                alert(`Could not parse file: ${error.message || error}. Check the console for details.`);
             }
+        };
+        reader.onerror = () => {
+            alert('Error reading file.');
         };
         reader.readAsText(file);
         e.target.value = '';
