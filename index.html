@@ -2553,6 +2553,15 @@
       // Update progress bar segments
       const progressBar = document.getElementById('progress-bar');
       
+      // Calculate total slides for proportional segment sizing
+      let totalSlidesForSegments = 0;
+      const slidesPerSection = [];
+      parentSections.forEach(section => {
+        const slideCount = section.isSection ? section.children.length : 1;
+        slidesPerSection.push(slideCount);
+        totalSlidesForSegments += slideCount;
+      });
+      
       // Create segments if needed
       if (progressBar.children.length !== parentSections.length) {
         progressBar.innerHTML = '';
@@ -2565,6 +2574,18 @@
           progressBar.appendChild(segment);
         });
       }
+      
+      // Set proportional widths for segments based on slide count
+      parentSections.forEach((section, sectionIdx) => {
+        const segment = progressBar.children[sectionIdx];
+        if (!segment) return;
+        const slideCount = slidesPerSection[sectionIdx];
+        // Calculate proportional flex-basis (percentage of total)
+        const flexBasis = totalSlidesForSegments > 0 
+          ? (slideCount / totalSlidesForSegments) * 100 
+          : (100 / parentSections.length); // Fallback to equal if no slides
+        segment.style.flex = `0 0 ${flexBasis}%`;
+      });
       
       // Build flat list of slide IDs in order
       const allSlideIds = [];
