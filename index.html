@@ -3080,6 +3080,19 @@
             let previousId = null;
             nodes.forEach((sqNode, slideIdx) => {
               const nodeId = `sq-${sqId}-${slideIdx + 1}`;
+              
+              // Extract nextLabel from connections if available
+              let nextLabel = '';
+              if (sqNode.connections) {
+                  const nextSlideNum = slideIdx + 2;
+                  for (const [label, target] of Object.entries(sqNode.connections)) {
+                      if (target == nextSlideNum) {
+                          nextLabel = label;
+                          break;
+                      }
+                  }
+              }
+
               const sideQuestNode = {
                 ...sqNode,
                 id: nodeId,
@@ -3089,6 +3102,7 @@
                 numCards: nodes.length,
                 prevId: previousId,
                 nextId: null,
+                nextLabel: nextLabel,
                 backLabel: sqNode.backLabel || 'Return to main path'
               };
               
