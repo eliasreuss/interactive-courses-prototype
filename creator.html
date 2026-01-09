@@ -3406,6 +3406,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const ci = cards[i];
                 const stepContent = typeof ci === 'object' ? (ci.content || '') : ci;
                 const stepTitle = typeof ci === 'object' ? (ci.title || '') : '';
+                const stepIndexTitle = typeof ci === 'object' ? (ci.indexTitle || '') : '';
                 const stepNextLabel = typeof ci === 'object' ? (ci.nextLabel || '') : '';
                 const stepBackLabel = typeof ci === 'object' ? (ci.backLabel || '') : '';
                 
