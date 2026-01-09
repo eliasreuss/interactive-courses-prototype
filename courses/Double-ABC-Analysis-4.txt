@@ -295,7 +295,7 @@ Here’s a quick recap of what you’ve covered:
 [id:s1/topic: The company's ABC categorization depends on the purpose]
 
 slide_id: 1
-title: **The company's ABC categorization depends on the purpose.**
+title: **The company's ABC categorization depends on the purpose**
 type: sidequest
 ---
 -If the company wants to increase delivery reliability and/or reduce inventory, the recommended dimensions are consumption, order lines, and possibly standard deviation.
@@ -335,8 +335,8 @@ type: sidequest
 
 -If it appears, click it—you're all set! Head back to the main path.
 -If it doesn't appear, no worries—we'll walk through how to create it yourself.
-> [next] The Insight didn't exist - help me create it -> 3
 ---
+> [next] Continue -> 3
 
 slide_id: 3
 title: **Creating your Double ABC Analysis Insight**
