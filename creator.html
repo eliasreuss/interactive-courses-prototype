@@ -1538,6 +1538,9 @@
             transition: all 0.2s;
             cursor: pointer;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         
         .course-card:hover {
@@ -1598,6 +1601,8 @@
             line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
+            flex: 1;
+            margin-bottom: 16px;
         }
         
         .course-card-actions {
