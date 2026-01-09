@@ -54,7 +54,7 @@ And that’s the idea behind ABC analysis: a few products matter most, while mos
 [id:3/topic: The double ABC analysis]
 
 slide_id: 4
-index_title: Introducing the Double ABC analysis
+index_title: Introducing the double ABC analysis
 title: **Introducing the double ABC analysis**
 type: main
 ---
@@ -71,7 +71,7 @@ Now you know the theory behind an ABC analysis, but there’s more:
 
 slide_id: 5
 index_title: Understanding the double ABC analysis
-title: **Understanding the Double ABC analysis**
+title: **Understanding the double ABC analysis**
 type: main
 ---
 This is how it works: 
@@ -201,7 +201,7 @@ type: main
 ---
 So far, we’ve looked at what Double ABC can do.
 
-Now let’s apply it to your own inventory - in Inact Now, we’ve already set up a Double ABC Analysis for you. Let’s take a look at your own stock, and see how your products are distributed across the different categories. 
+Now let’s apply it to your own inventory - in Inact Now, we’ve already set up a double ABC analysis for you. Let’s take a look at your own stock, and see how your products are distributed across the different categories. 
 
 **Do you know how to open your Double ABC insight?**
 ---
@@ -235,7 +235,7 @@ But for now, let’s focus on this Insight we've prepared for you.
 
 slide_id: 16
 index_title: Video: double ABC insight explained
-title: **The Double ABC insight explained**
+title: **The double ABC insight explained**
 type: main
 ---
 This brief video walks you through how to navigate and interpret your double ABC analysis insight in Inact Now.![video:Explainer video/size:large/align:center/frame:none/controls](double-abc-analysis/Double-ABC-Explainer-2.1.mp4)
@@ -249,7 +249,7 @@ index_title: What are special categories?
 title: **What about items that don’t quite fit?**
 type: main
 ---
-When people first see their Double ABC Analysis, a common question often comes up: **“What about items that don’t quite fit?”**
+When people first see their double ABC analysis, a common question often comes up: **“What about items that don’t quite fit?”**
 
 For example, new products often appear as low-performing (like CC) simply because they haven’t had time to generate sales. That doesn’t mean they lack potential.
 
@@ -280,8 +280,8 @@ type: main
 ---
 Here’s a quick recap of what you’ve covered:
 
--The purpose of the Double ABC Analysis — and why it matters
--What the Double ABC Analysis is and how it works
+-The purpose of the double ABC analysis — and why it matters
+-What the double ABC analysis is and how it works
 -How the analysis is visualized in Inact Now — including hands-on exploration
 -What the special categories are, and why they help give a fuller picture
 
@@ -291,6 +291,15 @@ Here’s a quick recap of what you’ve covered:
 ---
 
 [flow-specific-side-quests]
+
+[id:s1/topic: Tell me more about double ABC]
+
+slide_id: 1
+title: **Tell me more about double ABC**
+type: sidequest
+---
+Content for this sidequest will be added here.
+---
 
 [id:s2/topic: No problem, we'll go through how to open it step by step]
 
@@ -344,7 +353,7 @@ slide_id: 1
 title: **Quick tip**
 type: sidequest
 ---
-**Tip: If you’re ever unsure what a category means, just click the “i” icon in Inact Now for a quick explanation.**
+**Tip: If you're ever unsure what a category means, just click the "i" icon in Inact Now for a quick explanation.**
 
 ![image/size:medium/align:center](double-abc-analysis/SmallTip.png)
 ---
