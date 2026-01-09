@@ -2367,9 +2367,13 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // First pass: assign slide IDs and sidequest IDs
         courseData.forEach((nodeData, index) => {
-            if (nodeData.type === 'section-title') {
+            // Handle both new format (with type field) and old format (without type)
+            const isSectionTitle = nodeData.type === 'section-title' || nodeData.isSectionTitle;
+            const isSlide = nodeData.type === 'slide' || (!isSectionTitle && nodeData.id);
+            
+            if (isSectionTitle) {
                 // Section title - will be handled in second pass
-            } else if (nodeData.type === 'slide') {
+            } else if (isSlide) {
                 slideIdMap.set(index, slideIdCounter++);
                 
                 // Count sidequests for this slide
@@ -2383,14 +2387,18 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Second pass: generate markdown
         courseData.forEach((nodeData, index) => {
-            if (nodeData.type === 'section-title') {
+            // Handle both new format (with type field) and old format (without type)
+            const isSectionTitle = nodeData.type === 'section-title' || nodeData.isSectionTitle;
+            const isSlide = nodeData.type === 'slide' || (!isSectionTitle && nodeData.id);
+            
+            if (isSectionTitle) {
                 // This is a topic/section header
                 currentTopicId = topicIdCounter;
                 currentTopicName = nodeData.title || 'Untitled Section';
                 topicIdCounter++;
                 isFirstSlideInTopic = true;
                 
-            } else if (nodeData.type === 'slide') {
+            } else if (isSlide) {
                 const slideId = slideIdMap.get(index);
                 if (!slideId) return;
                 
@@ -2402,7 +2410,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Build slide content
                 let content = '';
-                const type = nodeData.nodeType || 'main';
+                const type = nodeData.nodeType || nodeData.type || 'main';
                 
                 if (type === 'hero') {
                     const parts = [];
@@ -2417,6 +2425,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Build slide output
                 const title = nodeData.title || '';
+                // indexTitle might not be in old format, so fallback to title
                 const indexTitle = nodeData.indexTitle || title.replace(/\*\*/g, '');
                 markdown += `slide_id: ${slideId}\n`;
                 markdown += `index_title: ${indexTitle}\n`;
