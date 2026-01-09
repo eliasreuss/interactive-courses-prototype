@@ -2353,6 +2353,177 @@ document.addEventListener('DOMContentLoaded', () => {
         applyDefaultAssetsFolder();
     }
     
+    // Convert saved course data to markdown format
+    function courseDataToMarkdown(courseData) {
+        let markdown = '';
+        let topicIdCounter = 1;
+        let slideIdCounter = 1;
+        let sidequestIdCounter = 1;
+        let currentTopicId = null;
+        let currentTopicName = null;
+        let isFirstSlideInTopic = true;
+        const sidequestSlides = [];
+        const slideIdMap = new Map();
+        
+        // First pass: assign slide IDs and sidequest IDs
+        courseData.forEach((nodeData, index) => {
+            if (nodeData.type === 'section-title') {
+                // Section title - will be handled in second pass
+            } else if (nodeData.type === 'slide') {
+                slideIdMap.set(index, slideIdCounter++);
+                
+                // Count sidequests for this slide
+                if (nodeData.sidequests && nodeData.sidequests.length > 0) {
+                    nodeData.sidequests.forEach(() => {
+                        sidequestIdCounter++;
+                    });
+                }
+            }
+        });
+        
+        // Second pass: generate markdown
+        courseData.forEach((nodeData, index) => {
+            if (nodeData.type === 'section-title') {
+                // This is a topic/section header
+                currentTopicId = topicIdCounter;
+                currentTopicName = nodeData.title || 'Untitled Section';
+                topicIdCounter++;
+                isFirstSlideInTopic = true;
+                
+            } else if (nodeData.type === 'slide') {
+                const slideId = slideIdMap.get(index);
+                if (!slideId) return;
+                
+                // Output topic header if this is the first slide in a topic
+                if (isFirstSlideInTopic && currentTopicName) {
+                    markdown += `[id:${currentTopicId}/topic: ${currentTopicName}]\n\n`;
+                    isFirstSlideInTopic = false;
+                }
+                
+                // Build slide content
+                let content = '';
+                const type = nodeData.nodeType || 'main';
+                
+                if (type === 'hero') {
+                    const parts = [];
+                    if (nodeData.heroImage) parts.push(`hero_image: ${nodeData.heroImage}`);
+                    if (nodeData.heroSubtitle) parts.push(`hero_subtitle: ${nodeData.heroSubtitle}`);
+                    if (nodeData.heroTitle) parts.push(`hero_title: ${nodeData.heroTitle}`);
+                    if (nodeData.heroBody) parts.push(`hero_body: ${nodeData.heroBody}`);
+                    content = parts.join('\n');
+                } else {
+                    content = nodeData.content || '';
+                }
+                
+                // Build slide output
+                const title = nodeData.title || '';
+                const indexTitle = nodeData.indexTitle || title.replace(/\*\*/g, '');
+                markdown += `slide_id: ${slideId}\n`;
+                markdown += `index_title: ${indexTitle}\n`;
+                markdown += `title: ${title}\n`;
+                if (nodeData.titleCenter) {
+                    markdown += `title-align: center\n`;
+                }
+                markdown += `type: ${type}\n`;
+                markdown += `---\n${content.trim()}\n---\n`;
+                
+                // Auto-generate connection to next slide
+                let nextIndex = index + 1;
+                while (nextIndex < courseData.length) {
+                    const nextData = courseData[nextIndex];
+                    if (nextData.type === 'slide') {
+                        const nextId = slideIdMap.get(nextIndex);
+                        const buttonText = nodeData.nextButtonText || 'Continue';
+                        markdown += `> [next] ${buttonText} -> ${nextId}\n`;
+                        break;
+                    } else if (nextData.type === 'section-title') {
+                        // Skip to first slide after section
+                        let slideAfterSection = nextIndex + 1;
+                        while (slideAfterSection < courseData.length && 
+                               courseData[slideAfterSection].type !== 'slide') {
+                            slideAfterSection++;
+                        }
+                        if (slideAfterSection < courseData.length) {
+                            const nextId = slideIdMap.get(slideAfterSection);
+                            const buttonText = nodeData.nextButtonText || 'Continue';
+                            markdown += `> [next] ${buttonText} -> ${nextId}\n`;
+                        }
+                        break;
+                    }
+                    nextIndex++;
+                }
+                
+                // Process sidequests
+                if (nodeData.sidequests && nodeData.sidequests.length > 0) {
+                    let sqIndex = 0;
+                    nodeData.sidequests.forEach((sq) => {
+                        // Skip empty sidequests
+                        if (!sq.title && !sq.btnText && (!sq.cards || sq.cards.length === 0)) {
+                            return;
+                        }
+                        
+                        const sqId = `s${sidequestIdCounter - nodeData.sidequests.length + sqIndex + 1}`;
+                        const btnText = sq.btnText || sq.title || 'Sidequest';
+                        markdown += `> [sidequest] ${btnText} -> ${sqId}\n`;
+                        
+                        // Collect sidequest slides
+                        const slides = [];
+                        if (sq.cards && sq.cards.length > 0) {
+                            sq.cards.forEach(card => {
+                                if (card.content) {
+                                    slides.push({
+                                        title: card.title || sq.title || 'Sidequest',
+                                        content: card.content
+                                    });
+                                }
+                            });
+                        }
+                        
+                        if (slides.length > 0) {
+                            sidequestSlides.push({
+                                id: sqId,
+                                topicName: sq.title || 'Sidequest',
+                                slides: slides
+                            });
+                        }
+                        
+                        sqIndex++;
+                    });
+                }
+                
+                // Note: Links are not currently saved in course data structure,
+                // so they won't be restored when loading from saved courses
+                
+                markdown += '\n';
+            }
+        });
+        
+        // Output sidequests section
+        if (sidequestSlides.length > 0) {
+            markdown += `[flow-specific-side-quests]\n\n`;
+            
+            sidequestSlides.forEach(sq => {
+                markdown += `[id:${sq.id}/topic: ${sq.topicName}]\n\n`;
+                
+                sq.slides.forEach((slide, slideIdx) => {
+                    markdown += `slide_id: ${slideIdx + 1}\n`;
+                    markdown += `title: **${slide.title}**\n`;
+                    markdown += `type: sidequest\n`;
+                    markdown += `---\n${slide.content}\n---\n`;
+                    
+                    // Add navigation to next slide if not the last
+                    if (slideIdx < sq.slides.length - 1) {
+                        markdown += `> [next] Continue -> ${slideIdx + 2}\n`;
+                    }
+                    
+                    markdown += '\n';
+                });
+            });
+        }
+        
+        return markdown.trim();
+    }
+    
     // Load a course by ID
     function loadCourse(courseId) {
         const courses = getSavedCourses();
@@ -2367,119 +2538,23 @@ document.addEventListener('DOMContentLoaded', () => {
             applyDefaultAssetsFolder();
         }
         
-        // Clear and load nodes
-        nodesContainer.innerHTML = '';
-        
-        course.data.forEach((nodeData, index) => {
-            // Handle new format with type field - section titles
-            if (nodeData.type === 'section-title') {
-                addSectionTitle(nodeData.title || '');
-                return;
-            }
+        // Convert saved data to markdown and parse it (same as loading .txt file)
+        try {
+            const markdown = courseDataToMarkdown(course.data);
+            parseAndRender(markdown);
             
-            // Handle old format (backwards compatibility) or slide type
-            const nodeCard = addNewNode(
-                nodeData.id || index + 1,
-                nodeData.title || '',
-                nodeData.content || '',
-                nodeData.titleCenter ? 'center' : 'left',
-                null,
-                '',
-                '',
-                false
-            );
+            // Save to auto-save
+            localStorage.setItem('courseCreatorData', JSON.stringify(course.data));
+            localStorage.setItem('currentCourseId', currentCourseId);
+            localStorage.setItem('currentCourseName', currentCourseName);
+            localStorage.setItem('courseCreatorAssetsFolder', getAssetsFolder());
             
-            // Restore additional properties
-            if (nodeData.indexTitle) {
-                const indexTitleInput = nodeCard.querySelector('.node-index-title');
-                if (indexTitleInput) indexTitleInput.value = nodeData.indexTitle;
-            }
-            if (nodeData.titleBold) {
-                const titleBoldCheck = nodeCard.querySelector('.node-title-bold');
-                if (titleBoldCheck) titleBoldCheck.checked = true;
-            }
-            if (nodeData.contentBold) {
-                const contentBoldCheck = nodeCard.querySelector('.content-bold');
-                if (contentBoldCheck) contentBoldCheck.checked = true;
-            }
-            if (nodeData.contentCenter) {
-                const contentCenterCheck = nodeCard.querySelector('.content-center');
-                if (contentCenterCheck) contentCenterCheck.checked = true;
-            }
-            if (nodeData.nextButtonText) {
-                const nextBtn = nodeCard.querySelector('.next-button-text');
-                if (nextBtn) nextBtn.value = nodeData.nextButtonText;
-            }
-            if (nodeData.nodeType) {
-                const typeSelect = nodeCard.querySelector('.node-type');
-                if (typeSelect) typeSelect.value = nodeData.nodeType;
-            }
-            if (nodeData.flipIntro) {
-                const flipIntro = nodeCard.querySelector('.flip-intro');
-                if (flipIntro) flipIntro.value = nodeData.flipIntro;
-            }
-            
-            // Restore hero fields and show/hide appropriate editors
-            if (nodeData.nodeType === 'hero') {
-                const heroEditor = nodeCard.querySelector('.hero-editor');
-                const heroToggle = nodeCard.querySelector('.hero-toggle');
-                if (heroToggle) heroToggle.checked = true;
-                if (nodeData.heroImage && heroEditor) {
-                    const heroImageInput = heroEditor.querySelector('.hero-image');
-                    if (heroImageInput) heroImageInput.value = nodeData.heroImage;
-                }
-                if (nodeData.heroSubtitle && heroEditor) {
-                    const heroSubtitleInput = heroEditor.querySelector('.hero-subtitle');
-                    if (heroSubtitleInput) heroSubtitleInput.value = nodeData.heroSubtitle;
-                }
-                if (nodeData.heroTitle && heroEditor) {
-                    const heroTitleInput = heroEditor.querySelector('.hero-title');
-                    if (heroTitleInput) heroTitleInput.value = nodeData.heroTitle;
-                }
-                if (nodeData.heroBody && heroEditor) {
-                    const heroBodyInput = heroEditor.querySelector('.hero-body');
-                    if (heroBodyInput) heroBodyInput.value = nodeData.heroBody;
-                }
-                
-                const standardEditor = nodeCard.querySelector('.standard-content-editor');
-                if (standardEditor) standardEditor.style.display = 'none';
-                if (heroEditor) heroEditor.style.display = 'block';
-            }
-            
-            // Restore sidequests (only non-empty ones)
-            if (nodeData.sidequests && nodeData.sidequests.length > 0) {
-                nodeData.sidequests.forEach(sq => {
-                    // Skip empty sidequests
-                    if (!sq.title && !sq.btnText && (!sq.cards || sq.cards.length === 0)) {
-                        return;
-                    }
-                    addSideQuestToNode(
-                        nodeCard,
-                        sq.btnText,
-                        sq.type,
-                        sq.title,
-                        (sq.cards || []).map(c => ({
-                            title: c.title,
-                            nextLabel: c.nextLabel,
-                            prevLabel: c.prevLabel,
-                            content: c.content
-                        })),
-                        sq.nextLabel,
-                        sq.backLabel
-                    );
-                });
-            }
-        });
-        
-        updateSidebar();
-        updateCurrentCourseDisplay();
-        updateHeroToggleVisibility(); // Ensure hero toggle visibility is correct after loading
-        
-        // Save to auto-save
-        localStorage.setItem('courseCreatorData', JSON.stringify(course.data));
-        localStorage.setItem('currentCourseId', currentCourseId);
-        localStorage.setItem('currentCourseName', currentCourseName);
-        localStorage.setItem('courseCreatorAssetsFolder', getAssetsFolder());
+            updateCurrentCourseDisplay();
+        } catch (error) {
+            console.error('Error loading course:', error);
+            alert(`Could not load course: ${error.message || error}`);
+            return;
+        }
         
         // Switch to creator view
         headerTabs.forEach(t => t.classList.remove('active'));
