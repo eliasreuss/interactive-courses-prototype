@@ -2056,12 +2056,6 @@
             <input type="text" class="sidequest-title-input sq-btn-text" placeholder="e.g. Watch webinar, Read blog post...">
                 </div>
         
-        <!-- Index Title Section (for main content) -->
-        <div class="sidequest-title-section">
-            <label class="sidequest-field-label">Index Title (shown in sidebar/TOC - leave empty to use title)</label>
-            <input type="text" class="sidequest-title-input sq-main-index-title" placeholder="Short title for navigation">
-        </div>
-        
         <!-- Content Section -->
         <div class="sidequest-content-section">
             <label class="sidequest-field-label">Content</label>
@@ -2548,8 +2542,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 sq.slides.forEach((slide, slideIdx) => {
                     markdown += `slide_id: ${slideIdx + 1}\n`;
-                    const indexTitle = slide.indexTitle || slide.title.replace(/\*\*/g, '');
-                    markdown += `index_title: ${indexTitle}\n`;
                     markdown += `title: **${slide.title}**\n`;
                     markdown += `type: sidequest\n`;
                     markdown += `---\n${slide.content}\n---\n`;
@@ -3400,11 +3392,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const c0 = cards[0];
             if (typeof c0 === 'object') {
                 mainTextarea.value = c0.content || '';
-                // Set main index title if present
-                const mainIndexTitleInput = newSQ.querySelector('.sq-main-index-title');
-                if (mainIndexTitleInput && c0.indexTitle) {
-                    mainIndexTitleInput.value = c0.indexTitle;
-                }
             } else {
                 mainTextarea.value = c0;
             }
@@ -3414,7 +3401,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const ci = cards[i];
                 const stepContent = typeof ci === 'object' ? (ci.content || '') : ci;
                 const stepTitle = typeof ci === 'object' ? (ci.title || '') : '';
-                const stepIndexTitle = typeof ci === 'object' ? (ci.indexTitle || '') : '';
                 const stepNextLabel = typeof ci === 'object' ? (ci.nextLabel || '') : '';
                 const stepBackLabel = typeof ci === 'object' ? (ci.backLabel || '') : '';
                 
@@ -3431,14 +3417,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         <label class="sq-step-field-label">Step Title</label>
                         <input type="text" class="sq-step-title-input" placeholder="Enter step title..." value="${stepTitle}">
                     </div>
-                    <div class="sq-step-title-section">
-                        <label class="sq-step-field-label">Index Title (shown in sidebar/TOC - leave empty to use step title)</label>
-                        <input type="text" class="sq-step-index-title-input" placeholder="Short title for navigation" value="${stepIndexTitle}">
-                    </div>
-            <div class="sq-step-title-section">
-                <label class="sq-step-field-label">Index Title (shown in sidebar/TOC - leave empty to use step title)</label>
-                <input type="text" class="sq-step-index-title-input" placeholder="Short title for navigation" value="${stepIndexTitle || ''}">
-            </div>
                     <div class="sq-step-content-section">
                         <label class="sq-step-field-label">Content</label>
                         <div class="sq-step-content-wrapper">
@@ -3499,10 +3477,6 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="sq-step-title-section">
                 <label class="sq-step-field-label">Step Title</label>
                 <input type="text" class="sq-step-title-input" placeholder="Enter step title..." value="${title}">
-            </div>
-            <div class="sq-step-title-section">
-                <label class="sq-step-field-label">Index Title (shown in sidebar/TOC - leave empty to use step title)</label>
-                <input type="text" class="sq-step-index-title-input" placeholder="Short title for navigation">
             </div>
             <div class="sq-step-content-section">
                 <label class="sq-step-field-label">Content</label>
@@ -3781,6 +3755,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Check for sidequest topic header: [id:sX/topic: Name]
             const topicMatch = trimmedLine.match(/^\[id:([^\/]+)\/topic:\s*(.+?)\]$/);
             if (topicMatch) {
+                // Save current slide before starting new sidequest
+                if (currentSlide) {
+                    currentSlides.push(currentSlide);
+                }
                 // Save previous sidequest
                 if (currentSqId && currentSlides.length > 0) {
                     sidequestMap.set(currentSqId, {
@@ -4711,11 +4689,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         
                         // Main content textarea (first slide)
                 const mainContent = (sq.querySelector('.sidequest-content-textarea')?.value || '').trim();
-                const mainIndexTitle = (sq.querySelector('.sq-main-index-title')?.value || '').trim();
                 if (mainContent) {
                             slides.push({
                                 title: sqTitle,
-                                indexTitle: mainIndexTitle || '',
                                 content: mainContent
                             });
                 }
@@ -4773,8 +4749,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 sq.slides.forEach((slide, slideIdx) => {
                     finalOutput += `slide_id: ${slideIdx + 1}\n`;
-                    const indexTitle = slide.indexTitle || slide.title.replace(/\*\*/g, '');
-                    finalOutput += `index_title: ${indexTitle}\n`;
                     finalOutput += `title: **${slide.title}**\n`;
                     finalOutput += `type: sidequest\n`;
                     finalOutput += `---\n${slide.content}\n---\n`;
@@ -4785,7 +4759,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                     
                     finalOutput += '\n';
-                });
+        });
             });
         }
         
