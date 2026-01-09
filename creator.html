@@ -390,7 +390,8 @@
             padding: 20px 24px;
             box-shadow: var(--shadow);
             position: relative;
-            margin-bottom: 16px;
+            margin-bottom: 32px;
+            margin-top: 32px;
             border: 2px solid var(--accent-green);
         }
         
@@ -489,7 +490,7 @@
         }
         
         .node-card + .node-card {
-            margin-top: 16px;
+            margin-top: 32px;
         }
         
         .node-connector {
@@ -1856,7 +1857,7 @@
         <textarea id="outputText" readonly placeholder="Your generated course.txt content will appear here..."></textarea>
                 <div style="display: flex; gap: 12px; flex-wrap: wrap;">
                     <button id="copy-btn" class="btn-download" style="display: none;">Copy txt</button>
-                    <button id="download-btn" class="btn-download" style="display: none;">Download .txt File</button>
+                <button id="download-btn" class="btn-download" style="display: none;">Download .txt File</button>
                 </div>
                 <button id="clear-btn" class="btn-clear" style="margin-top: 12px;">Clear Course & Start Fresh</button>
             </div>
@@ -1940,31 +1941,21 @@
                             <div class="media-option add-quote-btn">Quote</div>
                             <div class="media-option add-supademo-btn">Supademo</div>
                     </div>
-                        <div class="content-footer-options">
-                            <label class="checkbox-option">
-                                <input type="checkbox" class="content-bold">
-                                Bold
-                            </label>
-                            <label class="checkbox-option">
-                                <input type="checkbox" class="content-center">
-                                Center aligned
-                            </label>
                 </div>
             </div>
-                </div>
                 <div class="hero-editor" style="display: none;">
                     <div class="field-group">
                         <label class="field-label">Hero Image</label>
                         <div style="display: flex; gap: 8px; align-items: center;">
                             <input type="text" class="field-input hero-image" placeholder="e.g. intro/hero.png or full URL">
                             <button type="button" class="btn-secondary hero-image-browse" style="white-space: nowrap;">Browse...</button>
-                        </div>
+                </div>
                         <div style="font-size: 12px; color: #6E6E6E; margin-top: 4px;">Path relative to images/ folder, or full URL</div>
                     </div>
                     <div class="field-group">
                         <label class="field-label">Subtitle (small text above title)</label>
                         <input type="text" class="field-input hero-subtitle" placeholder="e.g. Welcome to the learning path:">
-                    </div>
+            </div>
                     <div class="field-group">
                         <label class="field-label">Title (large heading)</label>
                         <input type="text" class="field-input hero-title" placeholder="e.g. Introduction to Inventory Management">
@@ -1986,7 +1977,6 @@
                 </div>
             </div>
             <div class="connection-buttons" style="display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap;">
-                <button type="button" class="btn-connection add-connection-btn" style="font-size: 13px; padding: 6px 12px;">Add Connection</button>
                 <button type="button" class="btn-connection add-sidequest-btn" style="font-size: 13px; padding: 6px 12px;">Add Sidequest</button>
                 <button type="button" class="btn-connection add-link-btn" style="font-size: 13px; padding: 6px 12px;">Add Link</button>
             </div>
@@ -2266,7 +2256,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         return allElements.map(element => {
             if (element.classList.contains('section-title-card')) {
-                return {
+            return {
                     type: 'section-title',
                     title: element.querySelector('.section-title-input')?.value || ''
                 };
@@ -2274,53 +2264,53 @@ document.addEventListener('DOMContentLoaded', () => {
                 const card = element;
                 return {
                     type: 'slide',
-                    id: card.querySelector('.node-id').value,
-                    title: card.querySelector('.node-title').value,
+                id: card.querySelector('.node-id').value,
+                title: card.querySelector('.node-title').value,
                     indexTitle: card.querySelector('.node-index-title')?.value || '',
-                    titleBold: card.querySelector('.node-title-bold')?.checked || false,
-                    titleCenter: card.querySelector('.node-title-center')?.checked || false,
-                    content: card.querySelector('.node-content').value,
-                    contentBold: card.querySelector('.content-bold')?.checked || false,
-                    contentCenter: card.querySelector('.content-center')?.checked || false,
-                    nextButtonText: card.querySelector('.next-button-text')?.value || 'Continue',
-                    nodeType: card.querySelector('.node-type')?.value || 'main',
-                    flipIntro: card.querySelector('.flip-intro')?.value || '',
+                titleBold: card.querySelector('.node-title-bold')?.checked || false,
+                titleCenter: card.querySelector('.node-title-center')?.checked || false,
+                content: card.querySelector('.node-content').value,
+                contentBold: card.querySelector('.content-bold')?.checked || false,
+                contentCenter: card.querySelector('.content-center')?.checked || false,
+                nextButtonText: card.querySelector('.next-button-text')?.value || 'Continue',
+                nodeType: card.querySelector('.node-type')?.value || 'main',
+                flipIntro: card.querySelector('.flip-intro')?.value || '',
                     // Hero slide fields
                     heroImage: card.querySelector('.hero-image')?.value || '',
                     heroSubtitle: card.querySelector('.hero-subtitle')?.value || '',
                     heroTitle: card.querySelector('.hero-title')?.value || '',
                     heroBody: card.querySelector('.hero-body')?.value || '',
                     // Save sidequest data (only non-empty sidequests)
-                    sidequests: Array.from(card.querySelectorAll('.sidequest-row')).map(sq => {
-                        const cards = [];
-                        const mainContent = sq.querySelector('.sidequest-content-textarea')?.value || '';
-                        if (mainContent) {
-                            cards.push({ content: mainContent });
-                        }
-                        sq.querySelectorAll('.sq-step-card').forEach(step => {
-                            cards.push({
-                                title: step.querySelector('.sq-step-title-input')?.value || '',
-                                content: step.querySelector('.sq-step-content')?.value || '',
-                                nextLabel: step.querySelector('.sq-step-next-label')?.value || '',
-                                backLabel: step.querySelector('.sq-step-back-label')?.value || ''
-                            });
+                sidequests: Array.from(card.querySelectorAll('.sidequest-row')).map(sq => {
+                    const cards = [];
+                    const mainContent = sq.querySelector('.sidequest-content-textarea')?.value || '';
+                    if (mainContent) {
+                        cards.push({ content: mainContent });
+                    }
+                    sq.querySelectorAll('.sq-step-card').forEach(step => {
+                        cards.push({
+                            title: step.querySelector('.sq-step-title-input')?.value || '',
+                            content: step.querySelector('.sq-step-content')?.value || '',
+                            nextLabel: step.querySelector('.sq-step-next-label')?.value || '',
+                            backLabel: step.querySelector('.sq-step-back-label')?.value || ''
                         });
+                    });
                         const title = sq.querySelector('.sq-title')?.value || '';
                         const btnText = sq.querySelector('.sq-btn-text')?.value || title;
                         // Only return if there's actual content
                         if (!title && !btnText && cards.length === 0) {
                             return null; // Will be filtered out
                         }
-                        return {
+                    return {
                             btnText: btnText,
-                            type: sq.querySelector('.sq-type')?.value || 'video',
+                        type: sq.querySelector('.sq-type')?.value || 'video',
                             title: title,
-                            nextLabel: sq.querySelector('.sq-next-label')?.value || '',
-                            backLabel: sq.querySelector('.sq-back-label')?.value || '',
-                            cards: cards
-                        };
+                        nextLabel: sq.querySelector('.sq-next-label')?.value || '',
+                        backLabel: sq.querySelector('.sq-back-label')?.value || '',
+                        cards: cards
+                    };
                     }).filter(sq => sq !== null) // Remove empty sidequests
-                };
+            };
             }
         });
     }
@@ -2488,7 +2478,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 
                 // Process sidequests
-                if (nodeData.sidequests && nodeData.sidequests.length > 0) {
+            if (nodeData.sidequests && nodeData.sidequests.length > 0) {
                     let sqIndex = 0;
                     nodeData.sidequests.forEach((sq) => {
                         // Skip empty sidequests
@@ -2508,9 +2498,9 @@ document.addEventListener('DOMContentLoaded', () => {
                                     slides.push({
                                         title: card.title || sq.title || 'Sidequest',
                                         content: card.content
-                                    });
-                                }
-                            });
+                });
+            }
+        });
                         }
                         
                         if (slides.length > 0) {
@@ -2576,11 +2566,11 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const markdown = courseDataToMarkdown(course.data);
             parseAndRender(markdown);
-            
-            // Save to auto-save
-            localStorage.setItem('courseCreatorData', JSON.stringify(course.data));
-            localStorage.setItem('currentCourseId', currentCourseId);
-            localStorage.setItem('currentCourseName', currentCourseName);
+        
+        // Save to auto-save
+        localStorage.setItem('courseCreatorData', JSON.stringify(course.data));
+        localStorage.setItem('currentCourseId', currentCourseId);
+        localStorage.setItem('currentCourseName', currentCourseName);
             localStorage.setItem('courseCreatorAssetsFolder', getAssetsFolder());
             
             updateCurrentCourseDisplay();
@@ -3361,14 +3351,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return nodeCard;
     }
     
-    function addConnectionToNode(nodeCard, text = '', target = '') {
-        const container = nodeCard.querySelector('.connections-container');
-        const newConn = connectionTemplate.content.cloneNode(true);
-        newConn.querySelector('.conn-text').value = text;
-        newConn.querySelector('.conn-target').value = target;
-        container.appendChild(newConn);
-    }
-    
     function addSideQuestToNode(nodeCard, btnText = '', type = 'video', title = '', contentOrCards = '', nextLabel = '', backLabel = '') {
         const container = nodeCard.querySelector('.connections-container');
         // Make sure the container is visible when adding side quests
@@ -3546,7 +3528,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const standardEditor = card.querySelector('.standard-content-editor');
             const heroEditor = card.querySelector('.hero-editor');
             const nodeTypeInput = card.querySelector('.node-type');
-            
+
             if (isHero) {
                 standardEditor.style.display = 'none';
                 heroEditor.style.display = 'block';
@@ -3989,7 +3971,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const typeSelect = nodeCard.querySelector('.node-type');
             if (typeSelect) {
-                typeSelect.value = nodeType;
+            typeSelect.value = nodeType;
             }
             
             if (nodeType === 'hero') {
@@ -4377,7 +4359,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateSidequestNumbers(container);
             }
         }
-        else if (e.target.classList.contains('add-connection-btn')) addConnectionToNode(e.target.closest('.node-card'));
         else if (e.target.classList.contains('add-sidequest-btn')) addSideQuestToNode(e.target.closest('.node-card'));
         else if (e.target.classList.contains('add-link-btn')) addLinkToNode(e.target.closest('.node-card'));
         // Sidequest step adding
@@ -4521,10 +4502,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 // This is a slide
                 const card = element;
                 const slideId = slideIdMap.get(index);
-                const title = card.querySelector('.node-title').value.replace(/\n/g, '<br>');
+            const title = card.querySelector('.node-title').value.replace(/\n/g, '<br>');
                 const titleCenter = card.querySelector('.node-title-center')?.checked;
                 const titleAlign = titleCenter ? 'center' : 'left';
-                const type = card.querySelector('.node-type').value;
+            const type = card.querySelector('.node-type').value;
                 
                 if (!slideId) return;
                 
@@ -4533,22 +4514,22 @@ document.addEventListener('DOMContentLoaded', () => {
                     finalOutput += `[id:${currentTopicId}/topic: ${currentTopicName}]\n\n`;
                     isFirstSlideInTopic = false;
                 }
-                
-                let content = '';
-                if (type === 'flip-cards') {
-                    const flipCards = [];
-                    const intro = card.querySelector('.flip-intro')?.value || '';
-                    card.querySelectorAll('.flip-card-row').forEach(row => {
-                        const front = row.querySelector('.flip-card-front').value;
-                        const back = row.querySelector('.flip-card-back').value;
-                        if (front || back) {
-                           flipCards.push(`[card]\nfront: ${front}\nback: ${back}`);
-                        }
-                    });
-                    const cardsJoined = flipCards.join('\n[card-separator]\n');
-                    content = (intro && intro.trim().length)
-                        ? `[intro]\n${intro.trim()}\n[/intro]\n${cardsJoined}`
-                        : cardsJoined;
+            
+            let content = '';
+            if (type === 'flip-cards') {
+                const flipCards = [];
+                const intro = card.querySelector('.flip-intro')?.value || '';
+                card.querySelectorAll('.flip-card-row').forEach(row => {
+                    const front = row.querySelector('.flip-card-front').value;
+                    const back = row.querySelector('.flip-card-back').value;
+                    if (front || back) {
+                       flipCards.push(`[card]\nfront: ${front}\nback: ${back}`);
+                    }
+                });
+                const cardsJoined = flipCards.join('\n[card-separator]\n');
+                content = (intro && intro.trim().length)
+                    ? `[intro]\n${intro.trim()}\n[/intro]\n${cardsJoined}`
+                    : cardsJoined;
                 } else if (type === 'hero') {
                     // Hero slide content
                     const heroImage = card.querySelector('.hero-image')?.value || '';
@@ -4562,9 +4543,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (heroTitle) parts.push(`hero_title: ${heroTitle}`);
                     if (heroBody) parts.push(`hero_body: ${heroBody}`);
                     content = parts.join('\n');
-                } else {
-                    content = card.querySelector('.node-content').value;
-                }
+            } else {
+                content = card.querySelector('.node-content').value;
+            }
 
                 // Build slide output in new format
                 const indexTitle = card.querySelector('.node-index-title')?.value || '';
@@ -4577,7 +4558,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 finalOutput += `type: ${type}\n`;
                 finalOutput += `---\n${content.trim()}\n---\n`;
-                
+            
                 // Auto-generate connection to next element
                 let nextIndex = index + 1;
                 while (nextIndex < allElements.length) {
@@ -4604,34 +4585,34 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                     nextIndex++;
                 }
-                
+            
                 // Process sidequests
                 card.querySelectorAll('.sidequest-row').forEach((sq, sqIdx) => {
                     const sqKey = `${index}-${sqIdx}`;
                     const sqId = sidequestIdMap.get(sqKey);
-                    const sqTitle = (sq.querySelector('.sq-title').value || '').trim();
+                const sqTitle = (sq.querySelector('.sq-title').value || '').trim();
                     const btnText = (sq.querySelector('.sq-btn-text')?.value || '').trim() || sqTitle;
-                    
+                
                     if (sqId && btnText) {
                         finalOutput += `> [sidequest] ${btnText} -> ${sqId}\n`;
-                        
+                
                         // Collect sidequest content for output later
                         const slides = [];
                         
                         // Main content textarea (first slide)
-                        const mainContent = (sq.querySelector('.sidequest-content-textarea')?.value || '').trim();
-                        if (mainContent) {
+                const mainContent = (sq.querySelector('.sidequest-content-textarea')?.value || '').trim();
+                if (mainContent) {
                             slides.push({
                                 title: sqTitle,
                                 content: mainContent
                             });
-                        }
-                        
+                }
+                
                         // Additional step cards
-                        sq.querySelectorAll('.sq-step-card').forEach(step => {
-                            const stepTitle = (step.querySelector('.sq-step-title-input')?.value || '').trim();
-                            const stepContent = (step.querySelector('.sq-step-content')?.value || '').trim();
-                            if (stepContent) {
+                sq.querySelectorAll('.sq-step-card').forEach(step => {
+                    const stepTitle = (step.querySelector('.sq-step-title-input')?.value || '').trim();
+                    const stepContent = (step.querySelector('.sq-step-content')?.value || '').trim();
+                    if (stepContent) {
                                 slides.push({
                                     title: stepTitle || sqTitle,
                                     content: stepContent
@@ -4645,19 +4626,19 @@ document.addEventListener('DOMContentLoaded', () => {
                                 topicName: sqTitle || 'Sidequest',
                                 slides: slides
                             });
-                        }
                     }
-                });
-                
+                }
+            });
+            
                 // Process flow links (external URLs)
-                card.querySelectorAll('.link-row').forEach(link => {
-                    const btnText = link.querySelector('.link-btn-text').value;
-                    const url = link.querySelector('.link-url').value;
+            card.querySelectorAll('.link-row').forEach(link => {
+                const btnText = link.querySelector('.link-btn-text').value;
+                const url = link.querySelector('.link-url').value;
                     // Flow links are external URLs (http/https) that aren't sidequest targets
                     // Sidequests use slide IDs, flow links use URLs
                     const isFlowLink = url && (url.startsWith('http://') || url.startsWith('https://'));
                     
-                    if (btnText && url) {
+                if (btnText && url) {
                         if (isFlowLink) {
                             finalOutput += `> [next:flow] ${btnText} -> ${url}\n`;
                         } else {
@@ -4667,7 +4648,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
                 
-                finalOutput += '\n';
+            finalOutput += '\n';
             }
         });
         
