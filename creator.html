@@ -3447,7 +3447,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         container.appendChild(newSQ);
+        sidequestRowElement = container.querySelector('.sidequest-row:last-child');
         updateSidequestNumbers(container);
+        return sidequestRowElement;
     }
     
     
@@ -3786,6 +3788,44 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             if (isContent) {
+                // Parse navigation buttons from content (similar to main content parsing)
+                if (line.startsWith('>')) {
+                    // New format: > [type] Label -> target
+                    const navMatch = line.match(/^>\s*\[([^\]]+)\]\s*(.+?)\s*->\s*(.+)$/);
+                    if (navMatch) {
+                        const navType = navMatch[1].trim().toLowerCase();
+                        const buttonText = navMatch[2].trim();
+                        const target = navMatch[3].trim();
+                        
+                        if (!currentSlide.links) currentSlide.links = [];
+                        if (!currentSlide.connections) currentSlide.connections = {};
+                        
+                        if (navType === 'next:flow') {
+                            // External flow link
+                            currentSlide.links.push({ buttonText, url: target, isFlowLink: true });
+                        } else if (navType === 'next') {
+                            // Regular next navigation
+                            currentSlide.connections[buttonText] = parseInt(target) || target;
+                        }
+                        // Don't add navigation line to content
+                        continue;
+                    } else {
+                        // Old format: > Label -> target
+                        const oldMatch = line.match(/^>\s*(.+?)\s*->\s*(.+)$/);
+                        if (oldMatch) {
+                            const buttonText = oldMatch[1].trim();
+                            const target = oldMatch[2].trim();
+                            if (!currentSlide.connections) currentSlide.connections = {};
+                            const targetId = parseInt(target);
+                            if (!isNaN(targetId)) {
+                                currentSlide.connections[buttonText] = targetId;
+                            }
+                            // Don't add navigation line to content
+                            continue;
+                        }
+                    }
+                }
+                // Add non-navigation lines to content
                 currentSlide.content = (currentSlide.content || '') + line + '\n';
             } else {
                 const colonIdx = line.indexOf(':');
@@ -4031,7 +4071,40 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             nodeData.sideQuests.forEach(sq => {
-                addSideQuestToNode(nodeCard, sq.buttonText, sq.type, sq.title, Array.isArray(sq.cards) ? sq.cards : (sq.content ? [sq.content] : ['']), sq.nextLabel || '', sq.backLabel || '');
+                const cards = Array.isArray(sq.cards) ? sq.cards : (sq.content ? [sq.content] : ['']);
+                // Process cards to extract links and clean content
+                const processedCards = cards.map(card => {
+                    if (typeof card === 'object') {
+                        // If card has links, we'll handle them after adding the sidequest
+                        return card;
+                    } else {
+                        return { content: card, title: '' };
+                    }
+                });
+                const sidequestRow = addSideQuestToNode(nodeCard, sq.buttonText, sq.type, sq.title, processedCards, sq.nextLabel || '', sq.backLabel || '');
+                
+                // Add links from cards if present
+                if (Array.isArray(sq.cards)) {
+                    sq.cards.forEach((card, cardIndex) => {
+                        if (typeof card === 'object' && card.links && card.links.length > 0) {
+                            // Find the corresponding step card (cardIndex 0 is main content, 1+ are steps)
+                            const stepCards = sidequestRow.querySelectorAll('.sq-step-card');
+                            const targetCard = cardIndex === 0 
+                                ? sidequestRow.querySelector('.sidequest-content-textarea')?.closest('.sidequest-row')
+                                : stepCards[cardIndex - 1];
+                            
+                            if (targetCard) {
+                                card.links.forEach(link => {
+                                    // Add link button - but links in sidequest steps might need different handling
+                                    // For now, we'll add them to the main sidequest row
+                                    if (cardIndex === 0 && link.isFlowLink) {
+                                        addLinkToNode(nodeCard, link.buttonText, link.url);
+                                    }
+                                });
+                            }
+                        }
+                    });
+                }
             });
 
             if (nodeData.links) {
