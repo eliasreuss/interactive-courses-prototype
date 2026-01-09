@@ -218,7 +218,6 @@ Great! Now’s the time to open your double ABC analysis insight so you can foll
 Click the “Open Inact Now” button, or open it manually in a separate window. Then open your insight.
 ---
 > [next] It's open, continue -> 15
-> [next:flow] Open Inact Now -> https://inactnow.io/app/#/
 
 slide_id: 15
 index_title: Interpreting the insight
@@ -293,30 +292,26 @@ Here’s a quick recap of what you’ve covered:
 
 [flow-specific-side-quests]
 
-[id:s1/topic: Setting up the double ABC for your goals]
+[id:s1/topic: Quick tip]
 
 slide_id: 1
-title: **Setting up the double ABC for your goals**
+title: **Quick tip**
 type: sidequest
 ---
-If the company wants to increase delivery reliability and/or reduce inventory, the recommended dimensions are consumption, order lines, and possibly standard deviation.
+**Tip: If you’re ever unsure what a category means, just click the “i” icon in Inact Now for a quick explanation.**
 
-As a starting point, the ABC model is set up according to 80 / 15 / 5 %, after which fixed thresholds can be established if needed. Fixed thresholds make it easier to communicate to the rest of the organization – e.g., an AA item is defined as having consumption > 250,000 DKK and 50 order lines per year.
-
-The more commercial dimensions are added to the analysis when the company wants to analyze the product life cycle and sales.
+![image/size:medium/align:center](double-abc-analysis/SmallTip.png)
 ---
 
-[id:s2/topic: No problem, we’ll go through how to open it step by step]
+[id:s2/topic: Quick tip]
 
 slide_id: 1
-title: **No problem, we’ll go through how to open it step by step**
+title: **Quick tip**
 type: sidequest
 ---
-[button:Open Inact Now](https://inactnow.io/app/#/) 
+**Tip: If you’re ever unsure what a category means, just click the “i” icon in Inact Now for a quick explanation.**
 
-First, open Inact Now and log in.
-
-You can do this either by clicking “Open Inact Now”, or by opening it in a separate window.
+![image/size:medium/align:center](double-abc-analysis/SmallTip.png)
 ---
 
 [id:s3/topic: Quick tip]
