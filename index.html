@@ -2869,12 +2869,7 @@
           const btn = document.createElement('button');
           // Style flow links as filled dark-green buttons like sidequests
           btn.className = 'btn btn-secondary';
-          btn.innerHTML = `
-            <span>${flowLink.buttonText}</span>
-            <svg width="12" height="18" viewBox="0 0 12 18" fill="none">
-              <path d="M2 2L9 9L2 16" stroke="white" stroke-width="3" stroke-linecap="round"/>
-            </svg>
-          `;
+          btn.innerHTML = `<span>${flowLink.buttonText}</span>`;
           btn.onclick = () => {
             // Open in new tab/window
             window.open(flowLink.url, '_blank');
