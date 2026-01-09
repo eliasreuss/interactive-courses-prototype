@@ -2542,6 +2542,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 sq.slides.forEach((slide, slideIdx) => {
                     markdown += `slide_id: ${slideIdx + 1}\n`;
+                    const indexTitle = slide.indexTitle || slide.title.replace(/\*\*/g, '');
+                    markdown += `index_title: ${indexTitle}\n`;
                     markdown += `title: **${slide.title}**\n`;
                     markdown += `type: sidequest\n`;
                     markdown += `---\n${slide.content}\n---\n`;
