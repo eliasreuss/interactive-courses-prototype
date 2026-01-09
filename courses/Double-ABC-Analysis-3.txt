@@ -170,7 +170,7 @@ Where a single ABC analysis may look at demand alone, Double ABC adds a second l
 
 **Note:** Cost of inventory and demand are just examples of variables you can use for the analysis. The best choice of variables will always depend on your specific goals.
 
-**Click the left button to explore how Double ABC works in more detail, and how choosing different dimensions can support different goals** 
+**Click the left button to explore how Double ABC works in more detail, and how choosing different variables can support different goals** 
 
 If you feel comfortable with the concept, click continue to keep going.
 
@@ -181,7 +181,7 @@ If you feel comfortable with the concept, click continue to keep going.
 
 slide_id: 12
 index_title: How the analysis can help
-title: **The analysis can help you with:**
+title: **How the analysis can help**
 type: main
 ---
 Once everything has a double ABC category, it starts to become genuinely useful. The analysis helps you understand what’s going on in your inventory and where to focus your attention.
@@ -210,12 +210,12 @@ Now let’s apply it to your own inventory - in Inact Now, we’ve already set u
 
 slide_id: 14
 index_title: Opening the double ABC insight
-title: **Open your Double ABC Analysis insight to follow along with the rest of the session**
+title: **Open your double ABC analysis insight**
 type: main
 ---
-Great! Now’s the time to open your Double ABC Analysis insight so you can follow along with the rest of the session.
+Great! Now’s the time to open your double ABC analysis insight so you can follow along with the rest of the session.
 
-Click the “Open Insight Now” button, or open it manually in a separate window.
+Click the “Open Inact Now” button, or open it manually in a separate window. Then open your insight.
 ---
 > [next] It's open, continue -> 15
 > [next:flow] Open Inact Now -> https://inactnow.io/app/#/
@@ -225,7 +225,7 @@ index_title: Interpreting the insight
 title: **Great... What are we looking at?**
 type: main
 ---
-What you’re looking at is called an **Insight.**
+What you’re looking at is called an **insight.**
 
 Insights are simple, powerful views that give you a clear understanding of your data.
  After completing these courses, you’ll be able to **create, edit, and share your own Insights**, giving you full control over what you see – and how you see it.

@@ -2371,6 +2371,13 @@ document.addEventListener('DOMContentLoaded', () => {
         nodesContainer.innerHTML = '';
         
         course.data.forEach((nodeData, index) => {
+            // Handle new format with type field - section titles
+            if (nodeData.type === 'section-title') {
+                addSectionTitle(nodeData.title || '');
+                return;
+            }
+            
+            // Handle old format (backwards compatibility) or slide type
             const nodeCard = addNewNode(
                 nodeData.id || index + 1,
                 nodeData.title || '',
@@ -2379,10 +2386,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 null,
                 '',
                 '',
-                false,
-                nodeData.isSectionTitle || false
+                false
             );
             
+            // Restore additional properties
+            if (nodeData.indexTitle) {
+                const indexTitleInput = nodeCard.querySelector('.node-index-title');
+                if (indexTitleInput) indexTitleInput.value = nodeData.indexTitle;
+            }
             if (nodeData.titleBold) {
                 const titleBoldCheck = nodeCard.querySelector('.node-title-bold');
                 if (titleBoldCheck) titleBoldCheck.checked = true;
@@ -2408,14 +2419,46 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (flipIntro) flipIntro.value = nodeData.flipIntro;
             }
             
+            // Restore hero fields and show/hide appropriate editors
+            if (nodeData.nodeType === 'hero') {
+                const heroEditor = nodeCard.querySelector('.hero-editor');
+                const heroToggle = nodeCard.querySelector('.hero-toggle');
+                if (heroToggle) heroToggle.checked = true;
+                if (nodeData.heroImage && heroEditor) {
+                    const heroImageInput = heroEditor.querySelector('.hero-image');
+                    if (heroImageInput) heroImageInput.value = nodeData.heroImage;
+                }
+                if (nodeData.heroSubtitle && heroEditor) {
+                    const heroSubtitleInput = heroEditor.querySelector('.hero-subtitle');
+                    if (heroSubtitleInput) heroSubtitleInput.value = nodeData.heroSubtitle;
+                }
+                if (nodeData.heroTitle && heroEditor) {
+                    const heroTitleInput = heroEditor.querySelector('.hero-title');
+                    if (heroTitleInput) heroTitleInput.value = nodeData.heroTitle;
+                }
+                if (nodeData.heroBody && heroEditor) {
+                    const heroBodyInput = heroEditor.querySelector('.hero-body');
+                    if (heroBodyInput) heroBodyInput.value = nodeData.heroBody;
+                }
+                
+                const standardEditor = nodeCard.querySelector('.standard-content-editor');
+                if (standardEditor) standardEditor.style.display = 'none';
+                if (heroEditor) heroEditor.style.display = 'block';
+            }
+            
+            // Restore sidequests (only non-empty ones)
             if (nodeData.sidequests && nodeData.sidequests.length > 0) {
                 nodeData.sidequests.forEach(sq => {
+                    // Skip empty sidequests
+                    if (!sq.title && !sq.btnText && (!sq.cards || sq.cards.length === 0)) {
+                        return;
+                    }
                     addSideQuestToNode(
                         nodeCard,
                         sq.btnText,
                         sq.type,
                         sq.title,
-                        sq.cards.map(c => ({
+                        (sq.cards || []).map(c => ({
                             title: c.title,
                             nextLabel: c.nextLabel,
                             prevLabel: c.prevLabel,
@@ -2430,6 +2473,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         updateSidebar();
         updateCurrentCourseDisplay();
+        updateHeroToggleVisibility(); // Ensure hero toggle visibility is correct after loading
         
         // Save to auto-save
         localStorage.setItem('courseCreatorData', JSON.stringify(course.data));
