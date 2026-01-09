@@ -3775,7 +3775,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (sq.targetId && sidequestMap.has(sq.targetId)) {
                         const sqData = sidequestMap.get(sq.targetId);
                         sq.title = sqData.topicName || sq.buttonText;
-                        sq.cards = sqData.slides.map(s => ({ content: s.content, title: s.title }));
+                        sq.cards = sqData.slides.map(s => ({ 
+                            content: s.content, 
+                            title: s.title,
+                            links: s.links || []
+                        }));
                     }
                 });
             }
