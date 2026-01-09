@@ -2876,8 +2876,8 @@
       actionButtons.forEach(btn => navBtns.appendChild(btn));
 
       // Check for flow links (external course links)
-      const hasFlowLinks = mainNodeData && mainNodeData.flowLinks && mainNodeData.flowLinks.length > 0;
-      const hasNavButtons = (n.type === 'main' || n.type === 'flip-cards' || n.type === 'hero' || !n.type) && 
+      const hasFlowLinks = (mainNodeData && mainNodeData.flowLinks && mainNodeData.flowLinks.length > 0) || (n.flowLinks && n.flowLinks.length > 0);
+      const hasNavButtons = (n.type === 'main' || n.type === 'flip-cards' || n.type === 'hero' || n.type === 'sidequest' || !n.type) && 
                            (mainPathHistory.length > 1 || Object.keys(n.connections || {}).length > 0 || hasFlowLinks);
 
       // Add divider if there are action buttons and we'll have nav buttons
