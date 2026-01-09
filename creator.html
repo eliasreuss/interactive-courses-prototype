@@ -2257,46 +2257,71 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('savedCourses', JSON.stringify(courses));
     }
     
-    // Get current course data
+    // Get current course data (same structure as saveToLocalStorage)
     function getCurrentCourseData() {
-        const nodeCards = Array.from(nodesContainer.querySelectorAll('.node-card'));
-        return nodeCards.map(card => {
-            return {
-                id: card.querySelector('.node-id').value,
-                title: card.querySelector('.node-title').value,
-                titleBold: card.querySelector('.node-title-bold')?.checked || false,
-                titleCenter: card.querySelector('.node-title-center')?.checked || false,
-                content: card.querySelector('.node-content').value,
-                contentBold: card.querySelector('.content-bold')?.checked || false,
-                contentCenter: card.querySelector('.content-center')?.checked || false,
-                nextButtonText: card.querySelector('.next-button-text')?.value || 'Continue',
-                nodeType: card.querySelector('.node-type')?.value || 'main',
-                flipIntro: card.querySelector('.flip-intro')?.value || '',
-                sidequests: Array.from(card.querySelectorAll('.sidequest-row')).map(sq => {
-                    // Collect content from main textarea and step cards
-                    const cards = [];
-                    const mainContent = sq.querySelector('.sidequest-content-textarea')?.value || '';
-                    if (mainContent) {
-                        cards.push({ content: mainContent });
-                    }
-                    sq.querySelectorAll('.sq-step-card').forEach(step => {
-                        cards.push({
-                            title: step.querySelector('.sq-step-title-input')?.value || '',
-                            content: step.querySelector('.sq-step-content')?.value || '',
-                            nextLabel: step.querySelector('.sq-step-next-label')?.value || '',
-                            backLabel: step.querySelector('.sq-step-back-label')?.value || ''
+        // Get all elements in order (section titles and slides)
+        const allElements = Array.from(nodesContainer.children).filter(el => 
+            el.classList.contains('section-title-card') || el.classList.contains('node-card')
+        );
+        
+        return allElements.map(element => {
+            if (element.classList.contains('section-title-card')) {
+                return {
+                    type: 'section-title',
+                    title: element.querySelector('.section-title-input')?.value || ''
+                };
+            } else {
+                const card = element;
+                return {
+                    type: 'slide',
+                    id: card.querySelector('.node-id').value,
+                    title: card.querySelector('.node-title').value,
+                    indexTitle: card.querySelector('.node-index-title')?.value || '',
+                    titleBold: card.querySelector('.node-title-bold')?.checked || false,
+                    titleCenter: card.querySelector('.node-title-center')?.checked || false,
+                    content: card.querySelector('.node-content').value,
+                    contentBold: card.querySelector('.content-bold')?.checked || false,
+                    contentCenter: card.querySelector('.content-center')?.checked || false,
+                    nextButtonText: card.querySelector('.next-button-text')?.value || 'Continue',
+                    nodeType: card.querySelector('.node-type')?.value || 'main',
+                    flipIntro: card.querySelector('.flip-intro')?.value || '',
+                    // Hero slide fields
+                    heroImage: card.querySelector('.hero-image')?.value || '',
+                    heroSubtitle: card.querySelector('.hero-subtitle')?.value || '',
+                    heroTitle: card.querySelector('.hero-title')?.value || '',
+                    heroBody: card.querySelector('.hero-body')?.value || '',
+                    // Save sidequest data (only non-empty sidequests)
+                    sidequests: Array.from(card.querySelectorAll('.sidequest-row')).map(sq => {
+                        const cards = [];
+                        const mainContent = sq.querySelector('.sidequest-content-textarea')?.value || '';
+                        if (mainContent) {
+                            cards.push({ content: mainContent });
+                        }
+                        sq.querySelectorAll('.sq-step-card').forEach(step => {
+                            cards.push({
+                                title: step.querySelector('.sq-step-title-input')?.value || '',
+                                content: step.querySelector('.sq-step-content')?.value || '',
+                                nextLabel: step.querySelector('.sq-step-next-label')?.value || '',
+                                backLabel: step.querySelector('.sq-step-back-label')?.value || ''
+                            });
                         });
-                    });
-                    return {
-                        btnText: sq.querySelector('.sq-btn-text')?.value || sq.querySelector('.sq-title')?.value || '',
-                        type: sq.querySelector('.sq-type')?.value || 'video',
-                        title: sq.querySelector('.sq-title')?.value || '',
-                        nextLabel: sq.querySelector('.sq-next-label')?.value || '',
-                        backLabel: sq.querySelector('.sq-back-label')?.value || '',
-                        cards: cards
-                    };
-                })
-            };
+                        const title = sq.querySelector('.sq-title')?.value || '';
+                        const btnText = sq.querySelector('.sq-btn-text')?.value || title;
+                        // Only return if there's actual content
+                        if (!title && !btnText && cards.length === 0) {
+                            return null; // Will be filtered out
+                        }
+                        return {
+                            btnText: btnText,
+                            type: sq.querySelector('.sq-type')?.value || 'video',
+                            title: title,
+                            nextLabel: sq.querySelector('.sq-next-label')?.value || '',
+                            backLabel: sq.querySelector('.sq-back-label')?.value || '',
+                            cards: cards
+                        };
+                    }).filter(sq => sq !== null) // Remove empty sidequests
+                };
+            }
         });
     }
     
