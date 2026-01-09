@@ -4881,7 +4881,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     finalOutput += `slide_id: ${slideIdx + 1}\n`;
                     finalOutput += `title: **${slide.title}**\n`;
                     finalOutput += `type: sidequest\n`;
-                    if (slide.backLabel && slide.backLabel !== 'Return to main path') {
+                    // Always include backLabel if it exists
+                    if (slide.backLabel) {
                         finalOutput += `backLabel: ${slide.backLabel}\n`;
                     }
                     finalOutput += `---\n${slide.content}`;
