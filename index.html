@@ -2531,10 +2531,22 @@
       if (currentSlideIdx < 0) currentSlideIdx = 0;
       
       // Calculate overall percentage
-      // Slide 1 = 0%, Slide 2 = 1/(n-1), ..., Last slide = 100%
-      const percent = totalSlides > 1 
-        ? Math.round((currentSlideIdx / (totalSlides - 1)) * 100)
-        : 100;
+      // First slide (idx 0) = 0%, Last slide (idx totalSlides-1) = 100%
+      // Use smart calculation: ensure first is 0% and last is exactly 100%
+      let percent = 0;
+      if (totalSlides === 1) {
+        // Only one slide: show 100% when on it
+        percent = 100;
+      } else if (currentSlideIdx === 0) {
+        // First slide: exactly 0%
+        percent = 0;
+      } else if (currentSlideIdx === totalSlides - 1) {
+        // Last slide: exactly 100%
+        percent = 100;
+      } else {
+        // Middle slides: interpolate between 0% and 100%
+        percent = Math.round((currentSlideIdx / (totalSlides - 1)) * 100);
+      }
       
       document.getElementById('progress-percent').textContent = `${percent}%`;
       
@@ -2591,10 +2603,19 @@
         } else if (currentPos >= slidesSoFar) {
           // Current position is within this section
           const posInSection = currentPos - slidesSoFar;
-          // Fill based on position within section (0 = 0%, last = 100%)
+          // Fill based on position within section
+          // First slide in section = 0%, Last slide in section = 100%
           if (slidesInSection === 1) {
-            fillPercent = 100; // If only one slide in section and we're on it, fill it
+            // Only one slide in section: fill to 100% when on it
+            fillPercent = 100;
+          } else if (posInSection === 0) {
+            // First slide in section: 0% fill
+            fillPercent = 0;
+          } else if (posInSection === slidesInSection - 1) {
+            // Last slide in section: 100% fill
+            fillPercent = 100;
           } else {
+            // Middle slides: interpolate
             fillPercent = (posInSection / (slidesInSection - 1)) * 100;
           }
         }
