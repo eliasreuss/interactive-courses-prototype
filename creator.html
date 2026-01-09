@@ -2299,12 +2299,25 @@ document.addEventListener('DOMContentLoaded', () => {
                         cards.push({ content: mainContent });
                     }
                     sq.querySelectorAll('.sq-step-card').forEach(step => {
-                        cards.push({
+                        const cardData = {
                             title: step.querySelector('.sq-step-title-input')?.value || '',
                             content: step.querySelector('.sq-step-content')?.value || '',
                             nextLabel: step.querySelector('.sq-step-next-label')?.value || '',
                             backLabel: step.querySelector('.sq-step-back-label')?.value || ''
+                        };
+                        // Include links if present
+                        const stepLinks = [];
+                        step.querySelectorAll('.sq-step-links-container .link-row').forEach(link => {
+                            const btnText = link.querySelector('.link-btn-text').value;
+                            const url = link.querySelector('.link-url').value;
+                            if (btnText && url) {
+                                stepLinks.push({ buttonText: btnText, url: url });
+                            }
                         });
+                        if (stepLinks.length > 0) {
+                            cardData.links = stepLinks;
+                        }
+                        cards.push(cardData);
                     });
                         const title = sq.querySelector('.sq-title')?.value || '';
                         const btnText = sq.querySelector('.sq-btn-text')?.value || title;
@@ -2544,7 +2557,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     markdown += `slide_id: ${slideIdx + 1}\n`;
                     markdown += `title: **${slide.title}**\n`;
                     markdown += `type: sidequest\n`;
-                    markdown += `---\n${slide.content}\n---\n`;
+                    markdown += `---\n${slide.content}`;
+                    
+                    // Add links if present (inside content block)
+                    if (slide.links && slide.links.length > 0) {
+                        slide.links.forEach(link => {
+                            markdown += `\n> [next:flow] ${link.buttonText} -> ${link.url}`;
+                        });
+                    }
+                    
+                    markdown += `\n---\n`;
                     
                     // Add navigation to next slide if not the last
                     if (slideIdx < sq.slides.length - 1) {
@@ -3403,6 +3425,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const stepTitle = typeof ci === 'object' ? (ci.title || '') : '';
                 const stepNextLabel = typeof ci === 'object' ? (ci.nextLabel || '') : '';
                 const stepBackLabel = typeof ci === 'object' ? (ci.backLabel || '') : '';
+                const stepLinks = typeof ci === 'object' ? (ci.links || []) : [];
                 
                 // We need to get the actual sidequest row element after it's appended
                 // So we'll create the step manually here with full fields
@@ -3431,18 +3454,30 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                         </div>
                     </div>
-                    <div class="sq-step-buttons-section">
-                        <div class="sq-step-button-group">
-                            <label>Leave sidequest button text</label>
-                            <input type="text" class="sq-step-button-input sq-step-back-label" placeholder="Return to main path" value="${stepBackLabel}">
-                        </div>
-                        <div class="sq-step-button-group">
-                            <label>Next step button text</label>
-                            <input type="text" class="sq-step-button-input sq-step-next-label" placeholder="Next" value="${stepNextLabel}">
-                        </div>
-                    </div>
+            <div class="sq-step-buttons-section">
+                <div class="sq-step-button-group">
+                    <label>Leave sidequest button text</label>
+                    <input type="text" class="sq-step-button-input sq-step-back-label" placeholder="Return to main path" value="${stepBackLabel}">
+                </div>
+                <div class="sq-step-button-group">
+                    <label>Next step button text</label>
+                    <input type="text" class="sq-step-button-input sq-step-next-label" placeholder="Next" value="${stepNextLabel}">
+                </div>
+            </div>
+            <div class="sq-step-links-section" style="margin-top: 12px;">
+                <button type="button" class="btn-connection add-sq-step-link-btn" style="font-size: 13px; padding: 6px 12px;">Add Link</button>
+                <div class="sq-step-links-container" style="margin-top: 8px;"></div>
+            </div>
                 `;
                 stepsContainer.appendChild(stepCard);
+                
+                // Add links if present
+                if (stepLinks.length > 0) {
+                    const linksContainer = stepCard.querySelector('.sq-step-links-container');
+                    stepLinks.forEach(link => {
+                        addLinkToSidequestStep(stepCard, link.buttonText || link.btnText, link.url);
+                    });
+                }
             }
         }
         
@@ -3503,6 +3538,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     <input type="text" class="sq-step-button-input sq-step-next-label" placeholder="Next" value="${nextLabel}">
                 </div>
             </div>
+            <div class="sq-step-links-section" style="margin-top: 12px;">
+                <button type="button" class="btn-connection add-sq-step-link-btn" style="font-size: 13px; padding: 6px 12px;">Add Link</button>
+                <div class="sq-step-links-container" style="margin-top: 8px;"></div>
+            </div>
         `;
         stepsContainer.appendChild(stepCard);
     }
@@ -3519,6 +3558,17 @@ document.addEventListener('DOMContentLoaded', () => {
     function addLinkToNode(nodeCard, btnText = '', url = '') {
         const container = nodeCard.querySelector('.connections-container');
         // Make sure the container is visible when adding links
+        container.style.display = 'block';
+        const newLink = linkTemplate.content.cloneNode(true);
+        newLink.querySelector('.link-btn-text').value = btnText;
+        newLink.querySelector('.link-url').value = url;
+        container.appendChild(newLink);
+    }
+    
+    function addLinkToSidequestStep(stepCard, btnText = '', url = '') {
+        const container = stepCard.querySelector('.sq-step-links-container');
+        if (!container) return;
+        // Make sure container is visible
         container.style.display = 'block';
         const newLink = linkTemplate.content.cloneNode(true);
         newLink.querySelector('.link-btn-text').value = btnText;
@@ -4454,6 +4504,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const sidequestRow = e.target.closest('.sidequest-row');
             if (sidequestRow) addStepToSidequest(sidequestRow);
         }
+        // Add link to sidequest step
+        else if (e.target.classList.contains('add-sq-step-link-btn')) {
+            const stepCard = e.target.closest('.sq-step-card');
+            if (stepCard) addLinkToSidequestStep(stepCard);
+        }
         // Sidequest media dropdown toggle
         else if (e.target.classList.contains('sq-media-toggle')) {
             const dropdown = e.target.nextElementSibling;
@@ -4701,10 +4756,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     const stepTitle = (step.querySelector('.sq-step-title-input')?.value || '').trim();
                     const stepContent = (step.querySelector('.sq-step-content')?.value || '').trim();
                     if (stepContent) {
-                                slides.push({
-                                    title: stepTitle || sqTitle,
-                                    content: stepContent
-                                });
+                        const stepData = {
+                            title: stepTitle || sqTitle,
+                            content: stepContent
+                        };
+                        // Include links if present
+                        const stepLinks = [];
+                        step.querySelectorAll('.sq-step-links-container .link-row').forEach(link => {
+                            const btnText = link.querySelector('.link-btn-text').value;
+                            const url = link.querySelector('.link-url').value;
+                            if (btnText && url) {
+                                stepLinks.push({ buttonText: btnText, url: url });
+                            }
+                        });
+                        if (stepLinks.length > 0) {
+                            stepData.links = stepLinks;
+                        }
+                        slides.push(stepData);
                     }
                 });
                 
@@ -4751,15 +4819,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     finalOutput += `slide_id: ${slideIdx + 1}\n`;
                     finalOutput += `title: **${slide.title}**\n`;
                     finalOutput += `type: sidequest\n`;
-                    finalOutput += `---\n${slide.content}\n---\n`;
+                    finalOutput += `---\n${slide.content}`;
+                    
+                    // Add links if present (inside content block)
+                    if (slide.links && slide.links.length > 0) {
+                        slide.links.forEach(link => {
+                            finalOutput += `\n> [next:flow] ${link.buttonText} -> ${link.url}`;
+                        });
+                    }
+                    
+                    finalOutput += `\n---\n`;
                     
                     // Add navigation to next slide if not the last
                     if (slideIdx < sq.slides.length - 1) {
                         finalOutput += `> [next] Continue -> ${slideIdx + 2}\n`;
                     }
-                    
+
                     finalOutput += '\n';
-        });
+                });
             });
         }
         
@@ -4894,12 +4971,25 @@ document.addEventListener('DOMContentLoaded', () => {
                             cards.push({ content: mainContent });
                         }
                         sq.querySelectorAll('.sq-step-card').forEach(step => {
-                            cards.push({
+                            const cardData = {
                                 title: step.querySelector('.sq-step-title-input')?.value || '',
                                 content: step.querySelector('.sq-step-content')?.value || '',
                                 nextLabel: step.querySelector('.sq-step-next-label')?.value || '',
                                 backLabel: step.querySelector('.sq-step-back-label')?.value || ''
+                            };
+                            // Include links if present
+                            const stepLinks = [];
+                            step.querySelectorAll('.sq-step-links-container .link-row').forEach(link => {
+                                const btnText = link.querySelector('.link-btn-text').value;
+                                const url = link.querySelector('.link-url').value;
+                                if (btnText && url) {
+                                    stepLinks.push({ buttonText: btnText, url: url });
+                                }
                             });
+                            if (stepLinks.length > 0) {
+                                cardData.links = stepLinks;
+                            }
+                            cards.push(cardData);
                         });
                         const title = sq.querySelector('.sq-title')?.value || '';
                         const btnText = sq.querySelector('.sq-btn-text')?.value || title;
@@ -5022,7 +5112,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                 title: c.title,
                                 nextLabel: c.nextLabel,
                                 prevLabel: c.prevLabel,
-                                content: c.content
+                                content: c.content,
+                                links: c.links || []
                             })),
                             sq.nextLabel,
                             sq.backLabel
