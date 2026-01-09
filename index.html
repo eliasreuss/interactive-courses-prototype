@@ -2852,8 +2852,9 @@
       }
 
       // Flow links (external course links) - add to action buttons like sidequests
-      if (mainNodeData && mainNodeData.flowLinks) {
-        mainNodeData.flowLinks.forEach(flowLink => {
+      const flowLinks = (mainNodeData && mainNodeData.flowLinks) || n.flowLinks;
+      if (flowLinks) {
+        flowLinks.forEach(flowLink => {
           const btn = document.createElement('button');
           // Style flow links as filled dark-green buttons like sidequests
           btn.className = 'btn btn-secondary';
