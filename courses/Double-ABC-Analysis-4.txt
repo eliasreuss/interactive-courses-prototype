@@ -188,7 +188,7 @@ Once everything has a double ABC category, it starts to become genuinely useful.
 
 Here are a few practical ways it can help:
 
-![image/size:largepx/align:center/frame:none](double-abc-analysis/Analysis-Help.png)
+![image/size:large/align:center/frame:none](double-abc-analysis/Analysis-Help.png)
 ---
 > [next] Continue -> 13
 
@@ -275,10 +275,10 @@ Here’s a quick explanation of each special category:
 
 slide_id: 19
 index_title: What's next?
-title: **Congratulations! You’ve completed the first of four flows in the learning path.**
+title: **Congrats! You’ve completed the first of five flows in the learning path**
 type: main
 ---
-Here’s a quick recap of what you’ve covered:
+**Here’s a quick recap of what you’ve covered:**
 
 -The purpose of the double ABC analysis — and why it matters
 -What the double ABC analysis is and how it works
@@ -287,7 +287,7 @@ Here’s a quick recap of what you’ve covered:
 
 **You’re off to a great start. Let’s keep going!**
 
-![image/size:450px/align:stack-right/frame:none](double-abc-analysis/Congrats-ABC.png)
+![image/size:large/align:right/frame:none](double-abc-analysis/ABC-cover-illu.png)
 ---
 
 [flow-specific-side-quests]
@@ -297,6 +297,7 @@ Here’s a quick recap of what you’ve covered:
 slide_id: 1
 title: **The company's ABC categorization depends on the purpose**
 type: sidequest
+backLabel: Return to main path
 ---
 -If the company wants to increase delivery reliability and/or reduce inventory, the recommended dimensions are consumption, order lines, and possibly standard deviation.
 
@@ -310,18 +311,19 @@ type: sidequest
 slide_id: 1
 title: **No problem, we'll go through how to open it step by step**
 type: sidequest
+backLabel: Return to course
 ---
 First, open Inact Now and log in.
 
 You can do this either by clicking "Open Inact Now", or by opening it in a separate window.
-
 > [next:flow] Open Inact Now -> https://inactnow.io/app/#/
-> [next] I'm logged in, continue -> 2
 ---
+> [next] I'm logged in, continue -> 2
 
 slide_id: 2
-title: **Finding and opening your Double ABC Analysis**
+title: **Finding and opening your double ABC analysis**
 type: sidequest
+backLabel: Return to course
 ---
 **Let's check if your organization has already set the Insight up for you.**
 
@@ -329,26 +331,27 @@ type: sidequest
 
 ![image/size:medium/align:left](double-abc-analysis/Nav-Bar-Insights.png)
 
-2. Use the search bar to look for "Double ABC Analysis"
+2. Use the search bar to look for "double ABC analysis"
 
 ![video:motion graphic/size:medium/align:left](double-abc-analysis/SearchABCInsight.mp4)
 
--If it appears, click it—you're all set! Head back to the main path.
+-If it appears, click it—you're all set! Head back to the main course path.
 -If it doesn't appear, no worries—we'll walk through how to create it yourself.
 ---
-> [next] Continue -> 3
+> [next] It didn't appear -> 3
 
 slide_id: 3
-title: **Creating your Double ABC Analysis Insight**
+title: **Creating your double ABC analysis Insight**
 type: sidequest
+backLabel: Return to course
 ---
-**Creating your Double ABC Analysis Insight is as easy as 1–2–3 with the ready-made template:**
+**Creating your double ABC analysis Insight is easy with the ready-made template:**
 
 1. Click "New Insight."
-2. Select the Double ABC Analysis template under "Stock Policy."
+2. Select the double ABC analysis template under "Stock Policy."
 3. Name your Insight, choose your data source, and click "Create." Now you should be able to find your new Insight in the "Insights" tab.
 
-![video:motion graphic/size:medium/align:center](double-abc-analysis/CreateABCInsight.mp4)
+![video:motion graphic/size:medium/align:left](double-abc-analysis/CreateABCInsight.mp4)
 ---
 
 [id:s3/topic: Quick tip]
@@ -356,6 +359,7 @@ type: sidequest
 slide_id: 1
 title: **Quick tip**
 type: sidequest
+backLabel: Return to main path
 ---
 **Tip: If you're ever unsure what a category means, just click the "i" icon in Inact Now for a quick explanation.**
 
