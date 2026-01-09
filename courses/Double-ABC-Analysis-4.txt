@@ -292,17 +292,6 @@ Here’s a quick recap of what you’ve covered:
 
 [flow-specific-side-quests]
 
-[id:s1/topic: Quick tip]
-
-slide_id: 1
-title: **Quick tip**
-type: sidequest
----
-**Tip: If you’re ever unsure what a category means, just click the “i” icon in Inact Now for a quick explanation.**
-
-![image/size:medium/align:center](double-abc-analysis/SmallTip.png)
----
-
 [id:s2/topic: No problem, we'll go through how to open it step by step]
 
 slide_id: 1

@@ -2972,7 +2972,7 @@
     (async function() {
       try {
         const urlParams = new URLSearchParams(window.location.search);
-        const courseFile = urlParams.get('course') || 'Double-ABC-Analysis-3.txt';
+        const courseFile = urlParams.get('course') || 'Double-ABC-Analysis-4.txt';
         const cacheParam = Date.now();
         const requestUrl = `courses/${courseFile}?v=${cacheParam}`;
         const response = await fetch(requestUrl);

@@ -2432,7 +2432,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (isFirstSlideInTopic && currentTopicName) {
                     markdown += `[id:${currentTopicId}/topic: ${currentTopicName}]\n\n`;
                     isFirstSlideInTopic = false;
-                }
+            }
                 
                 // Build slide content
                 let content = '';
@@ -2477,12 +2477,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         while (slideAfterSection < courseData.length && 
                                courseData[slideAfterSection].type !== 'slide') {
                             slideAfterSection++;
-                        }
+            }
                         if (slideAfterSection < courseData.length) {
                             const nextId = slideIdMap.get(slideAfterSection);
                             const buttonText = nodeData.nextButtonText || 'Continue';
                             markdown += `> [next] ${buttonText} -> ${nextId}\n`;
-                        }
+            }
                         break;
                     }
                     nextIndex++;
@@ -4517,7 +4517,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const titleCenter = card.querySelector('.node-title-center')?.checked;
                 const titleAlign = titleCenter ? 'center' : 'left';
             const type = card.querySelector('.node-type').value;
-                
+            
                 if (!slideId) return;
                 
                 // Output topic header if this is the first slide in a topic
@@ -4628,9 +4628,9 @@ document.addEventListener('DOMContentLoaded', () => {
                                     title: stepTitle || sqTitle,
                                     content: stepContent
                                 });
-                            }
-                        });
-                        
+                    }
+                });
+                
                         if (slides.length > 0) {
                             sidequestSlides.push({
                                 id: sqId,
@@ -4656,8 +4656,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             // If it's not a URL, treat as sidequest target (slide ID)
                             finalOutput += `> [sidequest] ${btnText} -> ${url}\n`;
                         }
-                    }
-                });
+                }
+            });
                 
             finalOutput += '\n';
             }
@@ -4682,7 +4682,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                     
                     finalOutput += '\n';
-                });
+        });
             });
         }
         
