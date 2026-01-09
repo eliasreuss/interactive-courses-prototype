@@ -2095,6 +2095,12 @@
         </div>
         </div>
         
+        <!-- Links Section -->
+        <div class="sidequest-links-section" style="margin-top: 12px;">
+            <button type="button" class="btn-connection add-sq-main-link-btn" style="font-size: 13px; padding: 6px 12px;">Add Link</button>
+            <div class="sidequest-links-container" style="margin-top: 8px;"></div>
+        </div>
+        
         <!-- Steps Container (for multi-step sidequests) -->
         <div class="sq-steps-container"></div>
         
@@ -3414,6 +3420,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const c0 = cards[0];
             if (typeof c0 === 'object') {
                 mainTextarea.value = c0.content || '';
+                // Add links from first card if present
+                if (c0.links && c0.links.length > 0) {
+                    const linksContainer = newSQ.querySelector('.sidequest-links-container');
+                    if (linksContainer) {
+                        c0.links.forEach(link => {
+                            const newLink = linkTemplate.content.cloneNode(true);
+                            newLink.querySelector('.link-btn-text').value = link.buttonText || link.btnText || '';
+                            newLink.querySelector('.link-url').value = link.url || '';
+                            linksContainer.appendChild(newLink);
+                        });
+                    }
+                }
             } else {
                 mainTextarea.value = c0;
             }
@@ -4513,6 +4531,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const stepCard = e.target.closest('.sq-step-card');
             if (stepCard) addLinkToSidequestStep(stepCard);
         }
+        // Add link to main sidequest content (first slide)
+        else if (e.target.classList.contains('add-sq-main-link-btn')) {
+            const sidequestRow = e.target.closest('.sidequest-row');
+            if (sidequestRow) {
+                const container = sidequestRow.querySelector('.sidequest-links-container');
+                if (container) {
+                    container.style.display = 'block';
+                    const newLink = linkTemplate.content.cloneNode(true);
+                    container.appendChild(newLink);
+                }
+            }
+        }
         // Sidequest media dropdown toggle
         else if (e.target.classList.contains('sq-media-toggle')) {
             const dropdown = e.target.nextElementSibling;
@@ -4749,10 +4779,23 @@ document.addEventListener('DOMContentLoaded', () => {
                         // Main content textarea (first slide)
                 const mainContent = (sq.querySelector('.sidequest-content-textarea')?.value || '').trim();
                 if (mainContent) {
-                            slides.push({
+                            const mainSlideData = {
                                 title: sqTitle,
                                 content: mainContent
+                            };
+                            // Include links from main content if present
+                            const mainLinks = [];
+                            sq.querySelectorAll('.sidequest-links-container .link-row').forEach(link => {
+                                const btnText = link.querySelector('.link-btn-text').value;
+                                const url = link.querySelector('.link-url').value;
+                                if (btnText && url) {
+                                    mainLinks.push({ buttonText: btnText, url: url });
+                                }
                             });
+                            if (mainLinks.length > 0) {
+                                mainSlideData.links = mainLinks;
+                            }
+                            slides.push(mainSlideData);
                 }
                 
                         // Additional step cards
