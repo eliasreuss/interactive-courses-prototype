@@ -5028,7 +5028,20 @@ document.addEventListener('DOMContentLoaded', () => {
                         const cards = [];
                         const mainContent = sq.querySelector('.sidequest-content-textarea')?.value || '';
                         if (mainContent) {
-                            cards.push({ content: mainContent });
+                            const mainCardData = { content: mainContent };
+                            // Include links from main content if present
+                            const mainLinks = [];
+                            sq.querySelectorAll('.sidequest-links-container .link-row').forEach(link => {
+                                const btnText = link.querySelector('.link-btn-text').value;
+                                const url = link.querySelector('.link-url').value;
+                                if (btnText && url) {
+                                    mainLinks.push({ buttonText: btnText, url: url });
+                                }
+                            });
+                            if (mainLinks.length > 0) {
+                                mainCardData.links = mainLinks;
+                            }
+                            cards.push(mainCardData);
                         }
                         sq.querySelectorAll('.sq-step-card').forEach(step => {
                             const cardData = {
