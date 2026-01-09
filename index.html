@@ -507,16 +507,27 @@
     .content-images-container .size-x-small { max-width: 15%; flex-basis: 15%; }
     .content-images-container .size-small { max-width: 25%; flex-basis: 25%; }
     .content-images-container .size-medium { max-width: 50%; flex-basis: 50%; }
-    /* Default responsive: > 1500px 70% (changed to 80% default), 0-1500px 100% */
+    /* Responsive large images:
+       - >1500px: 80% (spacious on big screens)
+       - 1200-1500px: 90% (balanced)
+       - <1200px: 100% (full width on smaller screens)
+    */
     .content-images-container .size-large { 
-      max-width: 80%; 
-      flex-basis: 80%; 
+      max-width: 100%; 
+      flex-basis: 100%; 
     }
     
-    @media (max-width: 1500px) {
+    @media (min-width: 1200px) {
       .content-images-container .size-large {
-        max-width: 100%;
-        flex-basis: 100%;
+        max-width: 90%;
+        flex-basis: 90%;
+      }
+    }
+    
+    @media (min-width: 1500px) {
+      .content-images-container .size-large {
+        max-width: 80%;
+        flex-basis: 80%;
       }
     }
     .content-images-container .size-fourth { flex: 0 0 calc((100% - 72px) / 4); max-width: calc((100% - 72px) / 4); }
@@ -730,10 +741,6 @@
       .card-text-content.stacked-mode {
         padding: clamp(24px, 2.5vw, 40px) clamp(40px, 4.5vw, 72px);
       }
-      .content-images-container .size-large {
-        max-width: 90%;
-        flex-basis: 90%;
-      }
       .content-images-container:has(.size-third) {
         max-width: 90%;
         margin-left: auto;
@@ -792,10 +799,6 @@
       .content-images-container {
         gap: clamp(12px, 1.5vw, 24px);
         margin: clamp(16px, 2.5vw, 32px) 0;
-      }
-      .content-images-container .size-large {
-        max-width: 80%;
-        flex-basis: 80%;
       }
       .content-images-container:has(.size-third) {
         max-width: 80%;
