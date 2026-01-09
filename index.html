@@ -1997,6 +1997,32 @@
             }
 
             if (isContent) {
+                // Check if this is a navigation line inside content (for sidequests)
+                if (line.startsWith('>')) {
+                    const navMatch = line.match(/^>\s*\[([^\]]+)\]\s*(.+?)\s*->\s*(.+)$/);
+                    if (navMatch) {
+                        const navType = navMatch[1].trim().toLowerCase();
+                        const buttonText = navMatch[2].trim();
+                        const target = navMatch[3].trim();
+                        
+                        if (navType === 'next:flow') {
+                            // External flow link - add to flowLinks
+                            if (!currentBlock.flowLinks) currentBlock.flowLinks = [];
+                            currentBlock.flowLinks.push({ buttonText, url: target });
+                            continue; // Don't add to content
+                        } else if (navType === 'next') {
+                            // Regular next navigation
+                            const targetId = parseInt(target);
+                            if (!isNaN(targetId)) {
+                                currentBlock.connections[buttonText] = targetId;
+                            } else {
+                                currentBlock.connections[buttonText] = target;
+                            }
+                            continue; // Don't add to content
+                        }
+                    }
+                }
+                // Add line to content if it's not a navigation line we handled
                 currentBlock.content = (currentBlock.content || '') + line + '\n';
             } else {
                     // Parse navigation buttons: > [next] Label -> target
