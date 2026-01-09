@@ -4792,11 +4792,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         // Main content textarea (first slide)
                 const mainContent = (sq.querySelector('.sidequest-content-textarea')?.value || '').trim();
                 const mainBackLabel = (sq.querySelector('.sq-back-label')?.value || '').trim();
+                const mainNextLabel = (sq.querySelector('.sq-next-label')?.value || '').trim();
                 if (mainContent) {
                             const mainSlideData = {
                                 title: sqTitle,
                                 content: mainContent,
-                                backLabel: mainBackLabel || 'Return to main path'
+                                backLabel: mainBackLabel || 'Return to main path',
+                                nextLabel: mainNextLabel
                             };
                             // Include links from main content if present
                             const mainLinks = [];
@@ -4818,11 +4820,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     const stepTitle = (step.querySelector('.sq-step-title-input')?.value || '').trim();
                     const stepContent = (step.querySelector('.sq-step-content')?.value || '').trim();
                     const stepBackLabel = (step.querySelector('.sq-step-back-label')?.value || '').trim();
+                    const stepNextLabel = (step.querySelector('.sq-step-next-label')?.value || '').trim();
                     if (stepContent) {
                         const stepData = {
                             title: stepTitle || sqTitle,
                             content: stepContent,
-                            backLabel: stepBackLabel || mainBackLabel || 'Return to main path'
+                            backLabel: stepBackLabel || mainBackLabel || 'Return to main path',
+                            nextLabel: stepNextLabel
                         };
                         // Include links if present
                         const stepLinks = [];
@@ -4904,7 +4908,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     // Add navigation to next slide if not the last
                     if (slideIdx < sq.slides.length - 1) {
-                        finalOutput += `> [next] Continue -> ${slideIdx + 2}\n`;
+                        const nextBtnText = slide.nextLabel || 'Continue';
+                        finalOutput += `> [next] ${nextBtnText} -> ${slideIdx + 2}\n`;
                     }
 
                     finalOutput += '\n';
