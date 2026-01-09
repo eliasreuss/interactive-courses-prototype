@@ -4848,8 +4848,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
             
-                // Process flow links (external URLs)
+                // Process flow links (external URLs) - exclude links from sidequest containers
             card.querySelectorAll('.link-row').forEach(link => {
+                // Skip links that are inside sidequest containers
+                if (link.closest('.sidequest-row') || link.closest('.sq-step-card')) {
+                    return;
+                }
                 const btnText = link.querySelector('.link-btn-text').value;
                 const url = link.querySelector('.link-url').value;
                     // Flow links are external URLs (http/https) that aren't sidequest targets
