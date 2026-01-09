@@ -2072,6 +2072,8 @@
                             } else if (key === 'title') {
                                 // Remove leading # from titles
                                 currentBlock.title = value.replace(/^#\s*/, '');
+                            } else if (key === 'backLabel') {
+                                currentBlock.backLabel = value;
                             } else if (key === 'section' || key === 'parent') {
                             currentBlock.isSection = ['true', 'yes', '1'].includes(value.toLowerCase()); 
                             } else {
@@ -3048,7 +3050,8 @@
                 cardIndex: slideIdx,
                 numCards: nodes.length,
                 prevId: previousId,
-                nextId: null
+                nextId: null,
+                backLabel: sqNode.backLabel || 'Return to main path'
               };
               
               nodeById.set(nodeId, sideQuestNode);

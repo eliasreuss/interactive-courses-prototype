@@ -4791,10 +4791,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         
                         // Main content textarea (first slide)
                 const mainContent = (sq.querySelector('.sidequest-content-textarea')?.value || '').trim();
+                const mainBackLabel = (sq.querySelector('.sq-back-label')?.value || '').trim();
                 if (mainContent) {
                             const mainSlideData = {
                                 title: sqTitle,
-                                content: mainContent
+                                content: mainContent,
+                                backLabel: mainBackLabel || 'Return to main path'
                             };
                             // Include links from main content if present
                             const mainLinks = [];
@@ -4879,6 +4881,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     finalOutput += `slide_id: ${slideIdx + 1}\n`;
                     finalOutput += `title: **${slide.title}**\n`;
                     finalOutput += `type: sidequest\n`;
+                    if (slide.backLabel && slide.backLabel !== 'Return to main path') {
+                        finalOutput += `backLabel: ${slide.backLabel}\n`;
+                    }
                     finalOutput += `---\n${slide.content}`;
                     
                     // Add links if present (inside content block)
