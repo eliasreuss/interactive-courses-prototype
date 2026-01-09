@@ -108,7 +108,7 @@
     
     .progress-segment {
       height: 10px;
-      flex: 1;
+      flex: 1; /* Default equal width, will be overridden by inline style for proportional sizing */
       background: var(--color-unvisited);
       border-radius: 5px;
       position: relative;
@@ -2576,15 +2576,13 @@
       }
       
       // Set proportional widths for segments based on slide count
+      // Use flex-grow so segments scale proportionally while respecting gaps
       parentSections.forEach((section, sectionIdx) => {
         const segment = progressBar.children[sectionIdx];
         if (!segment) return;
         const slideCount = slidesPerSection[sectionIdx];
-        // Calculate proportional flex-basis (percentage of total)
-        const flexBasis = totalSlidesForSegments > 0 
-          ? (slideCount / totalSlidesForSegments) * 100 
-          : (100 / parentSections.length); // Fallback to equal if no slides
-        segment.style.flex = `0 0 ${flexBasis}%`;
+        // Use flex-grow based on slide count for proportional sizing
+        segment.style.flex = `${slideCount} 1 0%`;
       });
       
       // Build flat list of slide IDs in order
