@@ -4817,10 +4817,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 sq.querySelectorAll('.sq-step-card').forEach(step => {
                     const stepTitle = (step.querySelector('.sq-step-title-input')?.value || '').trim();
                     const stepContent = (step.querySelector('.sq-step-content')?.value || '').trim();
+                    const stepBackLabel = (step.querySelector('.sq-step-back-label')?.value || '').trim();
                     if (stepContent) {
                         const stepData = {
                             title: stepTitle || sqTitle,
-                            content: stepContent
+                            content: stepContent,
+                            backLabel: stepBackLabel || mainBackLabel || 'Return to main path'
                         };
                         // Include links if present
                         const stepLinks = [];
