@@ -2605,11 +2605,15 @@
           const posInSection = currentPos - slidesSoFar;
           // Fill based on position within section
           // First slide in section = 0%, Last slide in section = 100%
-          if (slidesInSection === 1) {
-            // Only one slide in section: fill to 100% when on it
+          // Special case: if this is the very first slide of the entire course, keep it at 0%
+          if (currentPos === 0) {
+            // Very first slide: 0% fill (empty bar)
+            fillPercent = 0;
+          } else if (slidesInSection === 1) {
+            // Only one slide in section (but not the first slide): fill to 100% when on it
             fillPercent = 100;
           } else if (posInSection === 0) {
-            // First slide in section: 0% fill
+            // First slide in section (but not the very first): 0% fill
             fillPercent = 0;
           } else if (posInSection === slidesInSection - 1) {
             // Last slide in section: 100% fill
