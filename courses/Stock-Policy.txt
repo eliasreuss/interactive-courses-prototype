@@ -125,7 +125,7 @@ In the **Safety Stock** course, you’ll learn how to:
 slide_id: 1
 title: ****How to open the insight****
 type: sidequest
-backLabel: Return to main path
+backLabel: Return to course
 ---
 The interactive tutorial below will help you opening the insight:
 
