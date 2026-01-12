@@ -1,0 +1,97 @@
+[id:1/topic: Intro]
+
+slide_id: 1
+index_title: Welcome
+title: 
+type: hero
+---
+hero_image: stock-policy/Stock-Policy-Hero.png
+hero_subtitle: Welcome to the flow:
+hero_title: Stock Policy
+hero_body: In this course, we move from understanding your data to making decisions with it. We will explore how to establish clear, effective policies that differentiate between which items to keep on the shelf and which to phase out.
+
+**Let’s get started!**
+---
+> [next] Let's do it! -> 2
+
+slide_id: 2
+index_title: The ultimate question
+title: **The ultimate question**
+type: main
+---
+The first question an organisation should ask themselves when it comes to inventory management is: 
+
+**Which items actually deserve a spot on our shelves?**
+
+It sounds simple, but without a clear, data-driven answer to this question, you are essentially guessing. And when an organization guesses, they risk filling their inventory with products that add no value, while possibly standing in the way of those that do.
+![image/size:large/align:right/frame:none](stock-policy/What-To-Stock.png)
+---
+> [next] Continue -> 3
+
+slide_id: 3
+index_title: The pain
+title: **What happens if we don’t operate with a clear stock policy?**
+type: main
+---
+When we don't have a strict answer to "what to stock," the result is a messy inventory that hurts the bottom line. Without a differentiated policy, we often see two painful extremes happening at the same time:
+
+![image/size:large/align:center/frame:none](stock-policy/Pain.png)
+
+It is the worst of both worlds: high costs and poor service.
+---
+> [next] Continue -> 4
+
+[id:2/topic: The solution]
+
+slide_id: 4
+index_title: What's the cure?
+title: **The solution**
+type: main
+---
+The cure for this is to stop treating every item equally. We need to apply different policies based on the ABC categories you learned.
+
+**For your A-items** — those with high, stable demand — you'll almost always want to keep them in stock. This is the best way to guarantee high service levels for your most important products and customers.
+
+**For your C-items**, those with lumpy demand and high uncertainty, the opposite is true. Making them “buy-to-order” or “make-to-order” is often the smartest move to avoid tying up cash in items that might not sell for months.
+
+![image/size:large/align:center/frame:none](stock-policy/A-C-Items.png)
+---
+> [next] Continue -> 5
+
+slide_id: 5
+index_title: The value of a good stock policy
+title: **The strategic value of a good stock policy**
+type: main
+---
+By applying those specific rules - stocking the winners and ordering or making the sporadic items on demand, you are actively managing the trade-offs between service and capital. A well-defined stock policy serves four distinct strategic purposes:
+
+![image/size:large/align:center/frame:none](stock-policy/Four-Purposes.png)
+---
+> [next] Continue -> 6
+
+[id:3/topic: How can Inact Now help us?]
+
+slide_id: 6
+index_title: Opening the insight: Stock Policy, Non Stock Items
+title: How can Inact Now help us?
+type: main
+---
+Let's dive into your Inact Now. Here, we can pinpoint your biggest opportunities and risks, which is the key to defining the right stock policy for each category.
+
+We will open the Insight: “Stock Policy | Non Stock Items”
+
+**Do you know how to open the Insight?**
+---
+> [sidequest] No, help me! -> s1
+
+[flow-specific-side-quests]
+
+[id:s1/topic: How to open the insight]
+
+slide_id: 1
+title: **How to open the insight**
+type: sidequest
+backLabel: Return to main path
+---
+The interactive tutorial below will help you opening the insight:
+---
