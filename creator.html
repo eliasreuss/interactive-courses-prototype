@@ -2234,6 +2234,33 @@ document.addEventListener('DOMContentLoaded', () => {
         return prefix ? `${prefix}${raw}` : raw;
     }
     
+    // Update image paths in content to use current assets folder
+    function updateContentImagePaths(content) {
+        if (!content) return content;
+        const currentAssetsFolder = getAssetsFolder();
+        if (!currentAssetsFolder) return content; // No assets folder set, keep as-is
+        
+        // Match image markdown: ![alt/size/align](path)
+        return content.replace(/!\[([^\]]+)\]\(([^)]+)\)/g, (match, altText, imagePath) => {
+            // Skip external URLs
+            if (/^(https?:)?\/\//i.test(imagePath) || /^data:/i.test(imagePath)) {
+                return match;
+            }
+            
+            // If path already has a folder prefix, replace it with current assets folder
+            // Otherwise, add current assets folder prefix
+            const pathParts = imagePath.split('/');
+            if (pathParts.length > 1) {
+                // Has a folder prefix - replace it
+                const filename = pathParts[pathParts.length - 1];
+                return `![${altText}](${currentAssetsFolder}${filename})`;
+            } else {
+                // No folder prefix - add current assets folder
+                return `![${altText}](${currentAssetsFolder}${imagePath})`;
+            }
+        });
+    }
+    
     // Tab switching
     headerTabs.forEach(tab => {
         tab.addEventListener('click', () => {
@@ -2472,13 +2499,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 if (type === 'hero') {
                     const parts = [];
-                    if (nodeData.heroImage) parts.push(`hero_image: ${nodeData.heroImage}`);
+                    if (nodeData.heroImage) {
+                        // Update hero image path to use current assets folder
+                        let heroImagePath = nodeData.heroImage.trim();
+                        const currentAssetsFolder = getAssetsFolder();
+                        // Skip external URLs
+                        if (!/^(https?:)?\/\//i.test(heroImagePath) && !/^data:/i.test(heroImagePath)) {
+                            // If path has a folder prefix, replace it with current assets folder
+                            const pathParts = heroImagePath.split('/');
+                            if (pathParts.length > 1) {
+                                const filename = pathParts[pathParts.length - 1];
+                                heroImagePath = currentAssetsFolder ? `${currentAssetsFolder}${filename}` : filename;
+                            } else {
+                                // No folder prefix - add current assets folder
+                                heroImagePath = currentAssetsFolder ? `${currentAssetsFolder}${heroImagePath}` : heroImagePath;
+                            }
+                        }
+                        parts.push(`hero_image: ${heroImagePath}`);
+                    }
                     if (nodeData.heroSubtitle) parts.push(`hero_subtitle: ${nodeData.heroSubtitle}`);
                     if (nodeData.heroTitle) parts.push(`hero_title: ${nodeData.heroTitle}`);
                     if (nodeData.heroBody) parts.push(`hero_body: ${nodeData.heroBody}`);
                     content = parts.join('\n');
                 } else {
-                    content = nodeData.content || '';
+                    // Update image paths in content to use current assets folder
+                    content = updateContentImagePaths(nodeData.content || '');
                 }
                 
                 // Build slide output
@@ -2540,7 +2585,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 if (card.content) {
                                     slides.push({
                                         title: card.title || sq.title || 'Sidequest',
-                                        content: card.content
+                                        content: updateContentImagePaths(card.content)
                 });
             }
         });
@@ -2576,6 +2621,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     markdown += `slide_id: ${slideIdx + 1}\n`;
                     markdown += `title: **${slide.title}**\n`;
                     markdown += `type: sidequest\n`;
+                    // Content already has image paths updated via updateContentImagePaths
                     markdown += `---\n${slide.content}`;
                     
                     // Add links if present (inside content block)
@@ -3485,16 +3531,16 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                         </div>
                     </div>
-            <div class="sq-step-buttons-section">
-                <div class="sq-step-button-group">
-                    <label>Leave sidequest button text</label>
-                    <input type="text" class="sq-step-button-input sq-step-back-label" placeholder="Return to main path" value="${stepBackLabel}">
-                </div>
-                <div class="sq-step-button-group">
-                    <label>Next step button text</label>
-                    <input type="text" class="sq-step-button-input sq-step-next-label" placeholder="Next" value="${stepNextLabel}">
-                </div>
-            </div>
+                    <div class="sq-step-buttons-section">
+                        <div class="sq-step-button-group">
+                            <label>Leave sidequest button text</label>
+                            <input type="text" class="sq-step-button-input sq-step-back-label" placeholder="Return to main path" value="${stepBackLabel}">
+                        </div>
+                        <div class="sq-step-button-group">
+                            <label>Next step button text</label>
+                            <input type="text" class="sq-step-button-input sq-step-next-label" placeholder="Next" value="${stepNextLabel}">
+                        </div>
+                    </div>
             <div class="sq-step-links-section" style="margin-top: 12px;">
                 <button type="button" class="btn-connection add-sq-step-link-btn" style="font-size: 13px; padding: 6px 12px;">Add Link</button>
                 <div class="sq-step-links-container" style="margin-top: 8px;"></div>
