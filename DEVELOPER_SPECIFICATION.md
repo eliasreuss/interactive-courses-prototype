@@ -419,6 +419,7 @@ This document provides complete technical specifications for the Interactive Lea
 - **Hover Transform**: `translateY(-1px)`
 - **Box Shadow**: `0 2px 8px rgba(48,70,66,0.18)`
 - **Hover Box Shadow**: `0 4px 12px rgba(48,70,66,0.28)`
+- **Used For**: Sidequest buttons, link buttons (flow links)
 
 #### Outline Button (.btn-outline)
 - **Background**: `#FFFFFF`
