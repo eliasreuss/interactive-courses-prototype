@@ -1,4 +1,4 @@
-[id:1/topic: Intro]
+[id:1/topic: Introduction]
 
 slide_id: 1
 index_title: Welcome
@@ -24,7 +24,7 @@ The first question an organisation should ask themselves when it comes to invent
 **Which items actually deserve a spot on our shelves?**
 
 It sounds simple, but without a clear, data-driven answer to this question, you are essentially guessing. And when an organization guesses, they risk filling their inventory with products that add no value, while possibly standing in the way of those that do.
-![image/size:large/align:right/frame:none](stock-policy/What-To-Stock.png)
+![image/size:400px/align:right/frame:none](stock-policy/What-To-Stock.png)
 ---
 > [next] Continue -> 3
 
@@ -35,7 +35,7 @@ type: main
 ---
 When we don't have a strict answer to "what to stock," the result is a messy inventory that hurts the bottom line. Without a differentiated policy, we often see two painful extremes happening at the same time:
 
-![image/size:large/align:center/frame:none](stock-policy/Pain.png)
+![image/size:400px/align:center/frame:none](stock-policy/Pain.png)
 
 It is the worst of both worlds: high costs and poor service.
 ---
@@ -54,7 +54,7 @@ The cure for this is to stop treating every item equally. We need to apply diffe
 
 **For your C-items**, those with lumpy demand and high uncertainty, the opposite is true. Making them “buy-to-order” or “make-to-order” is often the smartest move to avoid tying up cash in items that might not sell for months.
 
-![image/size:large/align:center/frame:none](stock-policy/A-C-Items.png)
+![image/size:625px/align:right/frame:none](stock-policy/A-C-Items-2.png)
 ---
 > [next] Continue -> 5
 
@@ -72,26 +72,62 @@ By applying those specific rules - stocking the winners and ordering or making t
 [id:3/topic: How can Inact Now help us?]
 
 slide_id: 6
-index_title: Opening the insight: Stock Policy, Non Stock Items
-title: How can Inact Now help us?
+index_title: Opening the insight: “Stock Policy | Non Stock Items”
+title: **How can Inact Now help us?**
 type: main
 ---
-Let's dive into your Inact Now. Here, we can pinpoint your biggest opportunities and risks, which is the key to defining the right stock policy for each category.
+Let's dive into your Inact Now. Here, we can pinpoint your biggest opportunities and risks, which is the key to defining the right stock policy for each double ABC category.
 
 We will open the Insight: “Stock Policy | Non Stock Items”
 
 **Do you know how to open the Insight?**
 ---
+> [next] Yes, it's open. Continue! -> 7
 > [sidequest] No, help me! -> s1
+
+slide_id: 7
+index_title: Using the insight: “Stock Policy | Non Stock Items”
+title: **Using the insight: “Stock Policy | Non Stock Items”**
+type: main
+---
+Go through the interactive tutorial below to learn how to use Inact Now to establish better stock policies:
+
+[supademo: Insight walkthrough - Stock Policy, Non Stock Items](https://app.supademo.com/embed/cmhyo4vfn4q9r17y04epcgbrp?embed_v=2&utm_source=embed)
+---
+> [next] I've completed the tutorial, continue! -> 8
+
+[id:4/topic: Outro]
+
+slide_id: 8
+index_title: What's next?
+title: **Congratulations! You’ve completed the second of five flows in the learning path.**
+type: main
+---
+You’ve learned how to set clear boundaries for your inventory - defining exactly which products earn a spot on the shelf and which should be bought to order or made to order.
+
+Now that you know **what to stock**, the next step is determining **how much stock** - and how to handle the unexpected.
+
+In the **Safety Stock** course, you’ll learn how to:
+
+-Handle uncertainty in demand and lead times
+-Calculate the optimal safety stock for your items
+-Protect service levels without bloating your inventory
+
+**Let’s keep going!**
+
+![image/size:large/align:right/frame:none](stock-policy/Stock-Policy-Hero.png)
+---
 
 [flow-specific-side-quests]
 
-[id:s1/topic: How to open the insight]
+[id:s1/topic: **How to open the insight**]
 
 slide_id: 1
-title: **How to open the insight**
+title: ****How to open the insight****
 type: sidequest
 backLabel: Return to main path
 ---
 The interactive tutorial below will help you opening the insight:
+
+[supademo: Opening insight: Non Stock Items](https://app.supademo.com/embed/cmhewx0fd4h53fatikfj045gf?embed_v=2&utm_source=embed)
 ---

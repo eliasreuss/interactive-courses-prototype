@@ -22,7 +22,7 @@ index_title: The vital few and the trivial many
 title: **ABC analysis:** The vital few and the trivial many
 type: main
 ---
-**To understand Double ABC, it helps to first recall the basics of classic ABC analysis.**
+**To understand double ABC analysis, it helps to first recall the basics of classic ABC analysis.**
 
 ABC analysis is built on the Pareto principle (80/20 rule), which shows that a small portion of items usually accounts for most of the value.
 
@@ -83,7 +83,7 @@ Each product gets **two scores**, A / B / C, for each variable. These two scores
 
 This helps you quickly see which products are the most important and decide how to manage them.
 
-**Tip:** You can use Double ABC with any two variables you want — for example, revenue and lead time, or sales and criticality.
+**Tip:** You can use double ABC with any two variables you want — for example, revenue and lead time, or sales and criticality.
 
 ![image/size:400px/align:stack-right](double-abc-analysis/ABC-Analysis.png)
 ---
@@ -166,11 +166,11 @@ type: main
 ---
 **And just like that, every product in your inventory will be assigned a double ABC category.**
 
-Where a single ABC analysis may look at demand alone, Double ABC adds a second lens: cost of inventory. It shows you both how predictable a products demand is - and how expensive it is to hold. 
+Where a single ABC analysis may look at demand alone, double ABC adds a second lens: cost of inventory. It shows you both how predictable a products demand is - and how expensive it is to hold. 
 
 **Note:** Cost of inventory and demand are just examples of variables you can use for the analysis. The best choice of variables will always depend on your specific goals.
 
-**Click the left button to explore how Double ABC works in more detail, and how choosing different variables can support different goals** 
+**Click the left button to explore how double ABC works in more detail, and how choosing different variables can support different goals** 
 
 If you feel comfortable with the concept, click continue to keep going.
 
@@ -199,14 +199,15 @@ index_title: Let’s take look at your own analysis
 title: **Let’s take look at your own analysis**
 type: main
 ---
-So far, we’ve looked at what Double ABC can do.
+So far, we’ve looked at what double ABC can do.
 
 Now let’s apply it to your own inventory - in Inact Now, we’ve already set up a double ABC analysis for you. Let’s take a look at your own stock, and see how your products are distributed across the different categories. 
 
-**Do you know how to open your Double ABC insight?**
+**Do you know how to open your double ABC insight?**
 ---
 > [next] Yes, continue -> 14
 > [sidequest] No, show me -> s2
+> [next:flow] Open Inact Now -> https://inactnow.io/app/#/
 
 slide_id: 14
 index_title: Opening the double ABC insight
@@ -218,6 +219,7 @@ Great! Now’s the time to open your double ABC analysis insight so you can foll
 Click the “Open Inact Now” button, or open it manually in a separate window. Then open your insight.
 ---
 > [next] It's open, continue -> 15
+> [next:flow] Open Inact Now -> https://inactnow.io/app/#/
 
 slide_id: 15
 index_title: Interpreting the insight
@@ -278,16 +280,17 @@ index_title: What's next?
 title: **Congrats! You’ve completed the first of five flows in the learning path**
 type: main
 ---
-**Here’s a quick recap of what you’ve covered:**
+You’ve learned how double ABC analysis reveals which items truly drive value, and which ones don’t.
 
--The purpose of the double ABC analysis — and why it matters
--What the double ABC analysis is and how it works
--How the analysis is visualized in Inact Now — including hands-on exploration
--What the special categories are, and why they help give a fuller picture
+Next, you’ll put those insights to work.
 
-**You’re off to a great start. Let’s keep going!**
+In the **Stock Policy** course, you’ll learn how to:
 
-![image/size:large/align:right/frame:none](double-abc-analysis/ABC-cover-illu.png)
+- Decide which items to actively stock
+- Identify which items to reduce or phase out
+- Apply double ABC results to practical inventory decisions
+
+You’ve had a great start - **let’s keep going!**
 ---
 
 [flow-specific-side-quests]
@@ -311,19 +314,19 @@ backLabel: Return to main path
 slide_id: 1
 title: **No problem, we'll go through how to open it step by step**
 type: sidequest
-backLabel: Return to course
+backLabel: Return to main path
 ---
 First, open Inact Now and log in.
 
 You can do this either by clicking "Open Inact Now", or by opening it in a separate window.
 > [next:flow] Open Inact Now -> https://inactnow.io/app/#/
 ---
-> [next] I'm logged in, continue -> 2
+> [next] Continue -> 2
 
 slide_id: 2
 title: **Finding and opening your double ABC analysis**
 type: sidequest
-backLabel: Return to course
+backLabel: Return to main path
 ---
 **Let's check if your organization has already set the Insight up for you.**
 
@@ -338,12 +341,12 @@ backLabel: Return to course
 -If it appears, click it—you're all set! Head back to the main course path.
 -If it doesn't appear, no worries—we'll walk through how to create it yourself.
 ---
-> [next] It didn't appear -> 3
+> [next] Continue -> 3
 
 slide_id: 3
 title: **Creating your double ABC analysis Insight**
 type: sidequest
-backLabel: Return to course
+backLabel: Return to main path
 ---
 **Creating your double ABC analysis Insight is easy with the ready-made template:**
 

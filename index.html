@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>Interactive Learning Flow</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -3010,7 +3013,8 @@
     (async function() {
       try {
         const urlParams = new URLSearchParams(window.location.search);
-        const courseFile = urlParams.get('course') || 'Double-ABC-Analysis-4.txt';
+        const courseFile = urlParams.get('course') || 'Stock-Policy.txt';
+        console.log('Loading course:', courseFile, 'from URL params:', urlParams.get('course'));
         const cacheParam = Date.now();
         const requestUrl = `courses/${courseFile}?v=${cacheParam}`;
         const response = await fetch(requestUrl);
