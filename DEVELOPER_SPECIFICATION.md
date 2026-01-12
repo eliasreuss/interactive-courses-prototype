@@ -1,5 +1,3 @@
-# Interactive Learning Flow - Developer Specification Sheet
-
 ## Overview
 This document provides complete technical specifications for the Interactive Learning Flow prototype, including dimensions, typography, colors, spacing, responsive breakpoints, and component details.
 
@@ -138,7 +136,7 @@ This document provides complete technical specifications for the Interactive Lea
 - **Large Screens (1441px - 1920px) Padding**: `clamp(20px, 2.5vw, 48px) clamp(100px, 12vw, 180px)`
 
 #### Card Title
-- **Margin Bottom**: `clamp(16px, 2vw, 28px)`
+- **Margin Bottom**: `clamp(20px, 2.5vw, 36px)` (increased spacing from content)
 - **Margin Top**: `0`
 
 #### Card Content
@@ -185,20 +183,29 @@ This document provides complete technical specifications for the Interactive Lea
 - **Small**: `25%` width
 - **Medium**: `50%` width
 - **Large**: `100%` width (base)
-  - **Above 1500px**: `70%` width
-  - **Below 1500px**: `100%` width
+  - **Above 1500px**: `90%` width
+  - **1200px - 1500px**: `95%` width
+  - **Below 1200px**: `100%` width
   - **Medium Screens (901px - 1440px)**: `80%` width
 - **Third**: `calc((100% - 64px) / 3)` (always 3 columns, no wrap)
   - **Above 1500px**: `calc((80% - 64px) / 3)`
   - **Below 1500px**: `calc((100% - 64px) / 3)`
   - **Medium Screens**: Container `80%` width, margin auto
 - **Fourth**: `calc((100% - 96px) / 4)`
+- **Custom Pixel Sizes**: Images can use pixel-based sizes (e.g., `size:400px`, `size:625px`) for precise control
 
-#### Stacked Images
-- **Gap**: `30px` (horizontal), `15px` (vertical)
+#### Stacked Images (align:right, align:stack-right)
+- **Gap**: `clamp(32px, 4vw, 56px)` (between text and image)
 - **Max Width**: `clamp(320px, 45%, 800px)`
 - **Medium Screens Max Width**: `clamp(280px, 40%, 700px)`
 - **Border Radius**: `15px`
+- **Stacked Mode Padding**: When `align:right` or `align:stack-right` is used, card padding is reduced:
+  - Base: `clamp(32px, 4vw, 64px)` vertical, `clamp(32px, 4vw, 64px)` horizontal
+  - Large (>1440px): `clamp(48px, 5.5vw, 88px)` vertical, `clamp(48px, 5.5vw, 88px)` horizontal
+  - Medium (1441-1920px): `clamp(40px, 4.5vw, 72px)` vertical, `clamp(40px, 4.5vw, 72px)` horizontal
+  - Medium (901-1440px): `clamp(24px, 3vw, 48px)` vertical, `clamp(24px, 3vw, 48px)` horizontal
+  - Small (<900px): `clamp(20px, 2.5vw, 36px)` vertical, `clamp(20px, 2.5vw, 36px)` horizontal
+- **Responsive**: On screens <900px, switches to `flex-direction: column` (stacked vertically)
 
 #### Quote Block
 - **Grid Columns**: `clamp(24px, 2.5vw, 40px) 1fr`
@@ -231,8 +238,13 @@ This document provides complete technical specifications for the Interactive Lea
 - **Segment Height**: `10px`
 - **Segment Border Radius**: `5px`
 - **Segment Gap**: `16px`
+- **Segment Sizing**: Segments are proportional to the number of slides in each section (uses `flex-grow` with CSS custom property `--segment-flex-grow`)
 - **Percent Font Size**: `14px`
 - **Percent Font Weight**: `600`
+- **Progress Calculation**: Starts at 0% on first slide, ends at 100% on last slide
+- **Segment Fill**: Each segment fills from 0% to 100% as user progresses through that section
+- **Fill Transition**: `0.6s cubic-bezier(0.4, 0, 0.2, 1)`
+- **Fill Color**: `#304642` (dark green)
 
 ---
 
@@ -330,6 +342,9 @@ This document provides complete technical specifications for the Interactive Lea
 
 ### Progress Bar
 - **Segment Count**: Dynamic (based on course structure)
+- **Segment Sizing**: Segments are proportional to the number of slides in each section (uses `flex-grow` with CSS custom property `--segment-flex-grow`)
+- **Progress Calculation**: Starts at 0% on first slide, ends at 100% on last slide
+- **Segment Fill**: Each segment fills from 0% to 100% as user progresses through that section
 - **Fill Transition**: `0.6s cubic-bezier(0.4, 0, 0.2, 1)`
 - **Fill Color**: `#304642` (dark green)
 
@@ -413,6 +428,12 @@ This document provides complete technical specifications for the Interactive Lea
 - **Hover Transform**: `translateY(-1px)`
 - **Box Shadow**: `0 2px 8px rgba(0,0,0,0.06)`
 - **Hover Box Shadow**: `0 4px 12px rgba(0,0,0,0.10)`
+
+#### Link Button (Flow Links)
+- **Style**: Uses `.btn-secondary` class (dark green background, white text)
+- **Content**: Text only (no arrow SVG icon)
+- **Behavior**: Opens link in new tab/window (`window.open(url, '_blank')`)
+- **Placement**: Appears in action buttons area (alongside sidequest buttons)
 
 ### Hero Slide
 - **Layout**: Flexbox, row
@@ -542,14 +563,6 @@ This document provides complete technical specifications for the Interactive Lea
 
 ## 10. Technical Notes
 
-### CSS Variables
-All spacing, typography, and colors use CSS custom properties (variables) for easy theming and maintenance.
-
-### Flexbox Layout
-- Main layout uses flexbox for responsive behavior
-- Content cards use flexbox column layout
-- Hero layout uses flexbox row layout
-
 ### Clamp Function
 Extensively used for fluid typography and spacing that scales smoothly between breakpoints.
 
@@ -567,51 +580,24 @@ Extensively used for fluid typography and spacing that scales smoothly between b
 - Sidebar: `5`
 - Content: `1` (default)
 
----
+### Markdown Format
+- **New Format**: Uses `[id:X/topic: Name]` for sections, `slide_id:`, `index_title:`, `title:`, `type:` for slides
+- **Navigation Types**: 
+  - `> [next] Label -> Target` for main path navigation
+  - `> [sidequest] Label -> Target` for sidequest buttons
+  - `> [next:flow] Label -> URL` for external link buttons (flow links)
+- **Image Sizes**: Supports predefined sizes (`x-small`, `small`, `medium`, `large`, `third`, `fourth`) and custom pixel sizes (e.g., `size:400px`, `size:625px`)
+- **Image Alignment**: Supports `left`, `center`, `right`, `stack-right`, `stack-right-top`
+- **Hero Slides**: Type `hero` with `hero_image:`, `hero_subtitle:`, `hero_title:`, `hero_body:` fields
+- **Sidequests**: Defined in `[flow-specific-side-quests]` section with `[id:sX/topic: Name]` format
+- **Assets Folder**: Creator supports assets folder prefix (e.g., `stock-policy/`) that automatically prefixes image paths
 
-## 11. Browser Support
-
-### Modern Browsers
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-### CSS Features Used
-- CSS Custom Properties (CSS Variables)
-- `clamp()` function
-- `calc()` function
-- Flexbox
-- CSS Grid (for quotes)
-- `prefers-reduced-motion` media query
-- `@media` queries
-
----
-
-## 12. Export Checklist
-
-When implementing, ensure:
-- [ ] All color values match exactly
-- [ ] Typography uses fluid `clamp()` values
-- [ ] Spacing uses fluid `clamp()` values where specified
-- [ ] All breakpoints are implemented
-- [ ] Image optimization CSS is applied (except hero images)
-- [ ] Animations respect `prefers-reduced-motion`
-- [ ] Buttons have proper hover states
-- [ ] TOC indicators have correct states and colors
-- [ ] Progress bar fills correctly (0% to 100%)
-- [ ] Hero layout uses correct flex ratios
-- [ ] Responsive image sizes are implemented
-- [ ] Card scroll wrapper is implemented
-- [ ] Footer buttons truncate on small screens
+### Creator Features
+- **Assets Folder Input**: Allows setting a folder prefix (e.g., `stock-policy/`) that automatically prefixes image paths when inserting media
+- **Hero Toggle**: Toggle on first slide to make it a hero intro slide
+- **Index Title**: Separate field for TOC display title (different from slide title)
+- **Link Buttons**: Can add external link buttons that open in new tabs
+- **Sidequest Navigation**: Custom labels for "Next" and "Return to main path" buttons in sidequests
+- **Markdown Generation**: Automatically updates image paths to use current assets folder setting when generating markdown
 
 ---
-
-## Contact & Questions
-
-For questions about this specification, refer to the prototype files:
-- `index.html` - Main player implementation
-- `creator.html` - Creator tool implementation
-
-All measurements are in pixels unless otherwise specified. Fluid values using `clamp()` should be implemented as specified to ensure proper scaling across viewport sizes.
-
