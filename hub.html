@@ -359,8 +359,6 @@
       width: 192px;
       height: 192px;
       border-radius: 15px;
-      background-size: cover;
-      background-position: center;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -371,11 +369,27 @@
       overflow: hidden;
     }
 
+    /* Background photo layer (with brightness/saturation tuning) */
+    .course-thumbnail::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: var(--thumb-url);
+      background-size: cover;
+      background-position: center;
+      /* Tune photo look to match reference: slightly dim + slightly desaturated */
+      filter: brightness(0.75) saturate(0.75) contrast(1.05);
+      transform: scale(1.02); /* avoid edge seams */
+      z-index: 0;
+    }
+
+    /* Subtle dark overlay for legibility + consistency */
     .course-thumbnail::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.2);
+      background: rgba(0, 0, 0, 0.18);
+      z-index: 1;
     }
 
 
@@ -383,7 +397,7 @@
       width: 75px;
       height: 75px;
       position: relative;
-      z-index: 1;
+      z-index: 2;
       display: block;
     }
 
@@ -516,7 +530,7 @@
         description: 'Get the big picture: what to stock, how much to stock, and how much to order — and why balance matters.',
         duration: '8 min',
         file: 'Intro.txt',
-        thumbnail: 'images/intro/Intro-Path-Cover-2.png'
+        thumbnail: 'path-images/annie-spratt-pwCOO8pDo1c-unsplash.jpg'
       },
       {
         id: 'double-abc',
@@ -524,7 +538,7 @@
         description: 'Turn messy inventory into clear priorities — learn the model, the special categories, and how it looks in Inact.',
         duration: '15 min',
         file: 'Double-ABC-Analysis-4.txt',
-        thumbnail: 'images/double-abc-analysis/Double-ABC-Hero.png'
+        thumbnail: 'path-images/christian-crocker-7ls0DhnAJvw-unsplash.jpg'
       },
       {
         id: 'stock-policy',
@@ -532,7 +546,7 @@
         description: 'Decide what belongs on the shelf vs. buy‑to‑order — then apply it in the “Non Stock Items” insight.',
         duration: '10 min',
         file: 'Stock-Policy.txt',
-        thumbnail: 'images/stock-policy/Stock-Policy-Hero.png'
+        thumbnail: 'path-images/todd-trapani-30JlzcKwnVo-unsplash.jpg'
       },
       {
         id: 'safety-stock',
@@ -540,7 +554,7 @@
         description: 'Set the right buffer — understand variance, lead time, and service level, then calculate optimal safety stock.',
         duration: '12 min',
         file: 'Safety-Stock.txt',
-        thumbnail: 'images/safety-stock/Safety-Stock-Hero.png'
+        thumbnail: 'path-images/ethereal-optics-kIGlisWodSo-unsplash.jpg'
       },
       {
         id: 'reorder-point',
@@ -548,7 +562,7 @@
         description: 'Know when to reorder — learn the reorder point formula and how to manage it automatically in Inact Now.',
         duration: '10 min',
         file: 'Reorder-Point.txt',
-        thumbnail: 'images/reorder-point/Reorder-Point-Hero.png'
+        thumbnail: 'path-images/avi-richards-pdrckQDTxWY-unsplash.jpg'
       },
       {
         id: 'reorder-quantity',
@@ -556,7 +570,7 @@
         description: 'Know how much to order — avoid MOQ/EOQ traps and balance unit price, demand, and inventory turnover.',
         duration: '12 min',
         file: 'Reorder-Quantity.txt',
-        thumbnail: 'images/reorder-quantity/Reorder-Quantity-Hero.png'
+        thumbnail: 'path-images/bady-abbas-5HI7Ea3yD-w-unsplash.jpg'
       }
     ];
     function parseMinutes(durationText) {
@@ -632,7 +646,7 @@
               ${progressIndicator}
             </div>
           </div>
-          <div class="course-thumbnail" style="background-image: url('${course.thumbnail}')">
+          <div class="course-thumbnail" style="--thumb-url: url('${course.thumbnail}')">
             <img src="SVGs/Flow-Icon.svg" alt="Flow" class="flow-icon">
           </div>
         </div>
