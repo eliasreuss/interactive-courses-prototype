@@ -2904,6 +2904,15 @@
 
       // Navigation buttons
       if (n.type === 'main' || n.type === 'flip-cards' || n.type === 'hero' || !n.type) {
+        // Detect if this is the last slide in the flow (exclude section titles)
+        const slideNodes = courseData.filter(node => {
+          if (node.isSection === true) return false;
+          const t = node.type || 'main';
+          return t === 'main' || t === 'flip-cards' || t === 'hero';
+        });
+        const currentIdx = slideNodes.findIndex(node => String(node.id) === String(n.id));
+        const isLastSlide = currentIdx >= 0 && currentIdx === slideNodes.length - 1;
+
         // Previous button
               if (mainPathHistory.length > 1) {
                 const prevBtn = document.createElement('button');
@@ -2923,6 +2932,44 @@
                   }
                 };
           navBtns.appendChild(prevBtn);
+        }
+
+        // If this is the last slide, show hub CTAs (3 buttons total)
+        if (isLastSlide) {
+          // Return to learning path (green)
+          const returnHubBtn = document.createElement('button');
+          returnHubBtn.className = 'btn btn-secondary';
+          returnHubBtn.innerHTML = `<span>Return to learning path</span>`;
+          returnHubBtn.onclick = () => {
+            window.location.href = 'hub.html';
+          };
+          navBtns.appendChild(returnHubBtn);
+
+          // Continue to next course (orange)
+          const nextBtn = document.createElement('button');
+          nextBtn.className = 'btn btn-primary';
+
+          // Determine the next course in the learning path
+          const idx = learningPathOrder.indexOf(currentCourseFile || '');
+          const nextCourseFile = idx >= 0 && idx < learningPathOrder.length - 1 ? learningPathOrder[idx + 1] : null;
+          const nextLabel = nextCourseFile ? 'Continue to next course' : 'Finish learning path';
+
+          nextBtn.innerHTML = `
+            <span>${nextLabel}</span>
+            <svg width="12" height="18" viewBox="0 0 12 18" fill="none">
+              <path d="M2 2L9 9L2 16" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          `;
+          nextBtn.onclick = () => {
+            if (nextCourseFile) {
+              window.location.href = `index.html?course=${encodeURIComponent(nextCourseFile)}&from=hub`;
+            } else {
+              window.location.href = 'hub.html';
+            }
+          };
+          navBtns.appendChild(nextBtn);
+
+          return; // Ensure exactly 3 buttons total on the last slide (Prev + Return + Continue)
         }
 
         // Continue/Next button
@@ -3015,6 +3062,7 @@
     // ========== HUB INTEGRATION ==========
     let currentCourseId = null;
     let cameFromHub = false;
+    let currentCourseFile = null;
     
     // Map course filenames to IDs for hub integration
     const courseFileToId = {
@@ -3025,6 +3073,16 @@
       'Reorder-Point.txt': 'reorder-point',
       'Reorder-Quantity.txt': 'reorder-quantity'
     };
+
+    // Learning path order (used for the last-slide CTA)
+    const learningPathOrder = [
+      'Intro.txt',
+      'Double-ABC-Analysis-4.txt',
+      'Stock-Policy.txt',
+      'Safety-Stock.txt',
+      'Reorder-Point.txt',
+      'Reorder-Quantity.txt'
+    ];
     
     function saveCourseProgressToHub(progress, completed = false) {
       if (!currentCourseId) return;
@@ -3037,6 +3095,7 @@
       try {
         const urlParams = new URLSearchParams(window.location.search);
         const courseFile = urlParams.get('course') || 'Intro.txt';
+        currentCourseFile = courseFile;
         cameFromHub = urlParams.get('from') === 'hub';
         currentCourseId = courseFileToId[courseFile] || courseFile.replace('.txt', '').toLowerCase();
         

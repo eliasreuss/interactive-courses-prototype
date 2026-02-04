@@ -224,6 +224,7 @@
       border-radius: 15px;
       box-shadow: var(--shadow-card);
       transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
     }
 
     .course-card:hover {
@@ -256,10 +257,10 @@
     }
 
     .course-description {
-      font-size: 20px;
-      font-weight: 500;
+      font-size: 16px;
+      font-weight: 400;
       color: var(--color-text-secondary);
-      line-height: 28px;
+      line-height: 24px;
     }
 
     .course-actions {
@@ -616,16 +617,17 @@
     function renderCourseCard(course) {
       const { completed, progress } = getCourseProgress(course.id);
       const progressIndicator = renderProgressIndicator(progress, completed);
+      const href = `index.html?course=${course.file}&from=hub`;
       
       return `
-        <div class="course-card" data-course-id="${course.id}">
+        <div class="course-card" data-course-id="${course.id}" data-href="${href}">
           <div class="course-info">
             <div class="course-header">
               <h2 class="course-title">${course.title}</h2>
               <p class="course-description">${course.description}</p>
             </div>
             <div class="course-actions">
-              <a href="index.html?course=${course.file}&from=hub" class="btn-open">Open flow</a>
+              <a href="${href}" class="btn-open">Open flow</a>
               <span class="duration-tag">${course.duration}</span>
               ${progressIndicator}
             </div>
@@ -669,6 +671,16 @@
     function renderCourses() {
       const container = document.getElementById('course-list');
       container.innerHTML = courses.map(renderCourseCard).join('');
+
+      // Make clicking anywhere on the card open the flow (except interactive elements)
+      container.querySelectorAll('.course-card').forEach(card => {
+        card.addEventListener('click', (ev) => {
+          const interactive = ev.target && ev.target.closest && ev.target.closest('a, button, input, textarea, select, label');
+          if (interactive) return;
+          const href = card.getAttribute('data-href');
+          if (href) window.location.href = href;
+        });
+      });
       
       // Update flow count
       document.getElementById('flow-count').textContent = `${courses.length} Flows`;
