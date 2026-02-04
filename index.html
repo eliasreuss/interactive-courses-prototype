@@ -3013,7 +3013,7 @@
     (async function() {
       try {
         const urlParams = new URLSearchParams(window.location.search);
-        const courseFile = urlParams.get('course') || 'Stock-Policy.txt';
+        const courseFile = urlParams.get('course') || 'Reorder-Quantity.txt';
         console.log('Loading course:', courseFile, 'from URL params:', urlParams.get('course'));
         const cacheParam = Date.now();
         const requestUrl = `courses/${courseFile}?v=${cacheParam}`;

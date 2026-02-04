@@ -253,6 +253,8 @@ This document provides complete technical specifications for the Interactive Lea
 ### Breakpoint Structure
 1. **Mobile**: `≤ 680px`
 2. **Tablet**: `681px - 768px`
+#vi behøver ikke de her lige nu ^
+
 3. **Narrow Desktop**: `769px - 900px`
 4. **Medium Desktop**: `901px - 980px`
 5. **Standard Desktop**: `981px - 1440px`
@@ -545,23 +547,6 @@ This document provides complete technical specifications for the Interactive Lea
 
 ---
 
-## 9. Accessibility
-
-### Reduced Motion
-- All animations respect `prefers-reduced-motion: reduce`
-- When reduced motion is preferred, animations are disabled or simplified
-
-### Focus States
-- Buttons and interactive elements should have visible focus states
-- Use browser default focus styles or custom focus rings
-
-### Color Contrast
-- Primary text (`#111111`) on white background: WCAG AAA compliant
-- UI dark (`#304642`) on white: WCAG AA compliant
-- Accent (`#FF5A00`) on white: WCAG AA compliant
-
----
-
 ## 10. Technical Notes
 
 ### Clamp Function
@@ -592,13 +577,5 @@ Extensively used for fluid typography and spacing that scales smoothly between b
 - **Hero Slides**: Type `hero` with `hero_image:`, `hero_subtitle:`, `hero_title:`, `hero_body:` fields
 - **Sidequests**: Defined in `[flow-specific-side-quests]` section with `[id:sX/topic: Name]` format
 - **Assets Folder**: Creator supports assets folder prefix (e.g., `stock-policy/`) that automatically prefixes image paths
-
-### Creator Features
-- **Assets Folder Input**: Allows setting a folder prefix (e.g., `stock-policy/`) that automatically prefixes image paths when inserting media
-- **Hero Toggle**: Toggle on first slide to make it a hero intro slide
-- **Index Title**: Separate field for TOC display title (different from slide title)
-- **Link Buttons**: Can add external link buttons that open in new tabs
-- **Sidequest Navigation**: Custom labels for "Next" and "Return to main path" buttons in sidequests
-- **Markdown Generation**: Automatically updates image paths to use current assets folder setting when generating markdown
 
 ---
