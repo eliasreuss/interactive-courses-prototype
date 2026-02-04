@@ -1038,6 +1038,17 @@
       align-items: center;
       justify-content: center;
     }
+
+    /* Supademo embeds: always full width of the content area */
+    .supademo-wrapper {
+      width: 100%;
+      max-width: 100%;
+      margin: clamp(18px, 2.5vw, 32px) 0;
+    }
+    .supademo-container {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
     
     .modal-content {
       background: #fff;
@@ -1547,6 +1558,7 @@
         const lines = content.split('\n');
         let textHtml = '';
         let stackedMedia = [];
+        let supademoBlocks = [];
         let inList = false;
         const processBold = (str) => str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
@@ -1560,11 +1572,12 @@
           if (inList) { textHtml += '</ul>'; inList = false; }
           const title = supademoMatch[1].trim();
           const url = supademoMatch[2].trim();
-          textHtml += `<div class="supademo-wrapper">
+          // In stacked-right layouts, render Supademo as a full-width block (not constrained to the text column)
+          supademoBlocks.push(`<div class="supademo-wrapper">
             <div class="supademo-container" style="position: relative; box-sizing: content-box; max-height: 80vh; width: 100%; aspect-ratio: 2.0556745182012848;">
               <iframe src="${url}" loading="lazy" title="${title}" allow="clipboard-write" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px;"></iframe>
             </div>
-          </div>`;
+          </div>`);
           continue;
         }
 
@@ -1635,6 +1648,7 @@
                 <div class="text-content">${textHtml}</div>
                 ${stackedMediaHtml}
             </div>
+            ${supademoBlocks.join('\n')}
         `;
         initLottieWithin(element);
     }
@@ -3089,7 +3103,7 @@
       const key = `course_progress_${currentCourseId}`;
       localStorage.setItem(key, JSON.stringify({ completed, progress }));
     }
-    
+
     // ========== INITIALIZATION ==========
     (async function() {
       try {
