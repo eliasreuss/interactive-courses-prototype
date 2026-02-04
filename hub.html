@@ -134,11 +134,12 @@
     .sidebar {
       width: 320px;
       background: var(--color-card-bg);
-      padding: 36px 36px 36px 36px;
+      /* Closer to header (match Figma spacing) */
+      padding: 28px 36px 36px 36px;
       flex-shrink: 0;
       display: flex;
       flex-direction: column;
-      gap: 36px;
+      gap: 24px;
     }
 
     .lp-title {
@@ -216,7 +217,8 @@
     .course-card {
       display: flex;
       align-items: stretch;
-      gap: 24px;
+      /* Match Figma spacing between text and thumbnail */
+      gap: 105px;
       padding: 24px;
       background: var(--color-card-bg);
       border-radius: 15px;
@@ -234,8 +236,9 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 16px;
-      min-height: 144px;
+      /* Match the thumbnail height so header sits at top and actions at bottom */
+      min-height: 192px;
+      gap: 0;
       padding: 0;
     }
 
@@ -253,10 +256,10 @@
     }
 
     .course-description {
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 500;
       color: var(--color-text-secondary);
-      line-height: 1.4;
+      line-height: 28px;
     }
 
     .course-actions {
@@ -360,6 +363,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      /* Match Figma: internal padding around the icon */
+      padding: 24px;
       flex-shrink: 0;
       position: relative;
       overflow: hidden;
@@ -378,6 +383,7 @@
       height: 75px;
       position: relative;
       z-index: 1;
+      display: block;
     }
 
     /* Responsive */
@@ -387,7 +393,7 @@
         height: 160px;
       }
       
-      .share-btn {
+      .flow-icon {
         width: 60px;
         height: 60px;
       }
@@ -505,8 +511,8 @@
     const courses = [
       {
         id: 'intro',
-        title: 'Introduction to Inact',
-        description: 'Learn the fundamentals of inventory management and the three key questions every organization must answer.',
+        title: 'Intro to Inact Now - the why',
+        description: 'Get the big picture: what to stock, how much to stock, and how much to order — and why balance matters.',
         duration: '8 min',
         file: 'Intro.txt',
         thumbnail: 'images/intro/Intro-Path-Cover-2.png'
@@ -514,7 +520,7 @@
       {
         id: 'double-abc',
         title: 'Double ABC Analysis',
-        description: 'Understand how to categorize your inventory using the Pareto principle and two-dimensional ABC analysis.',
+        description: 'Turn messy inventory into clear priorities — learn the model, the special categories, and how it looks in Inact.',
         duration: '15 min',
         file: 'Double-ABC-Analysis-4.txt',
         thumbnail: 'images/double-abc-analysis/Double-ABC-Hero.png'
@@ -522,7 +528,7 @@
       {
         id: 'stock-policy',
         title: 'Stock Policy',
-        description: 'Decide which items deserve a spot on your shelves and which should be ordered on demand.',
+        description: 'Decide what belongs on the shelf vs. buy‑to‑order — then apply it in the “Non Stock Items” insight.',
         duration: '10 min',
         file: 'Stock-Policy.txt',
         thumbnail: 'images/stock-policy/Stock-Policy-Hero.png'
@@ -530,7 +536,7 @@
       {
         id: 'safety-stock',
         title: 'Safety Stock',
-        description: 'Build a buffer against uncertainty - learn how to determine optimal safety stock levels for your items.',
+        description: 'Set the right buffer — understand variance, lead time, and service level, then calculate optimal safety stock.',
         duration: '12 min',
         file: 'Safety-Stock.txt',
         thumbnail: 'images/safety-stock/Safety-Stock-Hero.png'
@@ -538,7 +544,7 @@
       {
         id: 'reorder-point',
         title: 'Reorder Point',
-        description: 'Master the timing of your orders - know exactly when to place a new purchase order.',
+        description: 'Know when to reorder — learn the reorder point formula and how to manage it automatically in Inact Now.',
         duration: '10 min',
         file: 'Reorder-Point.txt',
         thumbnail: 'images/reorder-point/Reorder-Point-Hero.png'
@@ -546,12 +552,24 @@
       {
         id: 'reorder-quantity',
         title: 'Reorder Quantity',
-        description: 'Move from knowing when to order to deciding exactly how much to buy for each replenishment.',
+        description: 'Know how much to order — avoid MOQ/EOQ traps and balance unit price, demand, and inventory turnover.',
         duration: '12 min',
         file: 'Reorder-Quantity.txt',
         thumbnail: 'images/reorder-quantity/Reorder-Quantity-Hero.png'
       }
     ];
+    function parseMinutes(durationText) {
+      const m = String(durationText || '').match(/(\d+)\s*min/i);
+      return m ? parseInt(m[1], 10) : 0;
+    }
+
+    function formatTotalTime(totalMinutes) {
+      if (!Number.isFinite(totalMinutes) || totalMinutes <= 0) return '';
+      if (totalMinutes < 60) return `${totalMinutes} min`;
+      const hours = totalMinutes / 60;
+      return `${hours.toFixed(1)} Hours`;
+    }
+
 
     // Get progress from localStorage
     function getCourseProgress(courseId) {
@@ -654,6 +672,11 @@
       
       // Update flow count
       document.getElementById('flow-count').textContent = `${courses.length} Flows`;
+
+      // Update total time (sum of all flow minutes)
+      const totalMinutes = courses.reduce((sum, c) => sum + parseMinutes(c.duration), 0);
+      const totalTimeEl = document.getElementById('total-time');
+      if (totalTimeEl) totalTimeEl.textContent = formatTotalTime(totalMinutes);
       
       updateTotalProgress();
     }
