@@ -34,6 +34,30 @@
       color: var(--color-primary);
     }
 
+    /* Desktop: keep sidebar fixed and only scroll the course list */
+    @media (min-width: 901px) {
+      html, body {
+        height: 100%;
+        overflow: hidden; /* prevent whole-page scrolling */
+      }
+      .main-container {
+        height: calc(100vh - 68px); /* header height (matches min-height calc below) */
+        overflow: hidden;
+      }
+      .sidebar {
+        position: sticky;
+        top: 0;
+        height: 100%;
+        overflow: hidden; /* keep sidebar fixed; no internal scroll needed */
+        align-self: flex-start;
+      }
+      .content-area {
+        height: 100%;
+        overflow-y: auto; /* scroll cards */
+        -webkit-overflow-scrolling: touch;
+      }
+    }
+
     /* Header */
     .header {
       display: flex;
