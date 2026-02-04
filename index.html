@@ -1048,6 +1048,8 @@
     .supademo-container {
       width: 100% !important;
       max-width: 100% !important;
+      /* Prevent aspect-ratio + max-height from shrinking width on large screens */
+      max-height: none !important;
     }
     
     .modal-content {
