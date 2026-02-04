@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>Learning Path - Using Inact for Inventory Management</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #304642;
+      --color-accent: #FF5A00;
+      --color-bg: #FAFAFA;
+      --color-card-bg: #FFFFFF;
+      --color-muted: #A5A5A5;
+      --color-text-secondary: rgba(48, 70, 66, 0.55);
+      --color-tag-bg: #EAEAEA;
+      --color-progress-bg: #D9D9D9;
+      --font-family: 'Poppins', sans-serif;
+      --shadow-card: 0px 4px 10px rgba(0, 0, 0, 0.10);
+      --shadow-header: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background: var(--color-bg);
+      min-height: 100vh;
+      color: var(--color-primary);
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 32px;
+      background: var(--color-card-bg);
+      box-shadow: var(--shadow-header);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .logo span {
+      color: var(--color-accent);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--color-primary);
+      font-size: 14px;
+      font-weight: 400;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      opacity: 1;
+      font-weight: 600;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-login {
+      padding: 8px 20px;
+      background: var(--color-accent);
+      color: white;
+      border: none;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: var(--font-family);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-login:hover {
+      background: #e04e00;
+    }
+
+    .profile-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--color-accent);
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .profile-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: white;
+    }
+
+    /* Main Layout */
+    .main-container {
+      display: flex;
+      min-height: calc(100vh - 68px);
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 320px;
+      background: var(--color-card-bg);
+      padding: 90px 36px 36px 36px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    .lp-title {
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--color-primary);
+      line-height: 1.2;
+    }
+
+    .lp-description {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--color-primary);
+      line-height: 1.5;
+      margin-top: 12px;
+    }
+
+    .progress-section {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .progress-label {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 13px;
+      background: var(--color-progress-bg);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: var(--color-accent);
+      border-radius: 100px;
+      transition: width 0.4s ease;
+    }
+
+    .meta-info {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .meta-text {
+      color: var(--color-muted);
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    .meta-dot {
+      width: 4px;
+      height: 4px;
+      background: var(--color-muted);
+      border-radius: 9999px;
+    }
+
+    /* Content Area */
+    .content-area {
+      flex: 1;
+      padding: 36px 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* Course Card */
+    .course-card {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 24px;
+      background: var(--color-card-bg);
+      border-radius: 15px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .course-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .course-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 144px;
+    }
+
+    .course-header {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .course-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--color-primary);
+      line-height: 1.45;
+    }
+
+    .course-description {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      line-height: 1.4;
+    }
+
+    .course-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-open {
+      padding: 8px 16px;
+      background: var(--color-accent);
+      color: white;
+      border: none;
+      border-radius: 100px;
+      font-size: 16px;
+      font-weight: 600;
+      font-family: var(--font-family);
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-open:hover {
+      background: #e04e00;
+      transform: translateY(-1px);
+    }
+
+    .duration-tag {
+      padding: 8px 16px;
+      background: var(--color-tag-bg);
+      border-radius: 100px;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--color-primary);
+    }
+
+    /* Completion indicator */
+    .completion-indicator {
+      width: 34px;
+      height: 34px;
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .completion-indicator.completed {
+      background: var(--color-primary);
+    }
+
+    .completion-indicator.completed svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .completion-indicator.in-progress {
+      background: transparent;
+      border: 3px solid var(--color-accent);
+      position: relative;
+    }
+
+    .completion-indicator.not-started {
+      background: transparent;
+      border: 3px solid var(--color-progress-bg);
+    }
+
+    /* Progress ring for in-progress */
+    .progress-ring {
+      width: 34px;
+      height: 34px;
+      position: relative;
+    }
+
+    .progress-ring svg {
+      transform: rotate(-90deg);
+    }
+
+    .progress-ring circle {
+      fill: none;
+      stroke-width: 3;
+    }
+
+    .progress-ring .bg {
+      stroke: var(--color-progress-bg);
+    }
+
+    .progress-ring .progress {
+      stroke: var(--color-accent);
+      stroke-linecap: round;
+      transition: stroke-dashoffset 0.4s ease;
+    }
+
+    /* Course thumbnail */
+    .course-thumbnail {
+      width: 192px;
+      height: 192px;
+      border-radius: 15px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .course-thumbnail::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .share-btn {
+      width: 75px;
+      height: 75px;
+      background: rgba(255, 255, 255, 0.30);
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+      transition: background 0.2s;
+    }
+
+    .share-btn:hover {
+      background: rgba(255, 255, 255, 0.45);
+    }
+
+    .share-btn svg {
+      width: 28px;
+      height: 28px;
+      fill: #F0F4E8;
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+      .course-thumbnail {
+        width: 160px;
+        height: 160px;
+      }
+      
+      .share-btn {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .main-container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        padding: 36px;
+      }
+
+      .course-card {
+        flex-direction: column-reverse;
+        gap: 16px;
+      }
+
+      .course-thumbnail {
+        width: 100%;
+        height: 180px;
+      }
+
+      .course-info {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header {
+        padding: 12px 16px;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .sidebar {
+        padding: 24px;
+      }
+
+      .lp-title {
+        font-size: 24px;
+      }
+
+      .content-area {
+        padding: 24px;
+      }
+
+      .course-title {
+        font-size: 20px;
+      }
+
+      .course-description {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">Inact <span>learn</span></div>
+      <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#" class="active">Learning Paths</a>
+        <a href="#">Catalog</a>
+        <a href="#">Dictionary</a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <button class="btn-login">Login</button>
+      <div class="profile-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="main-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="lp-header">
+        <h1 class="lp-title">Using Inact for Inventory Management</h1>
+        <p class="lp-description">Learn how to use Inact Now for Inventory Management. This learning path will take you through the key concepts and tools.</p>
+      </div>
+
+      <div class="progress-section">
+        <div class="progress-label">Progress</div>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="total-progress" style="width: 0%"></div>
+        </div>
+        <div class="meta-info">
+          <span class="meta-text">Learning Path</span>
+          <span class="meta-dot"></span>
+          <span class="meta-text" id="flow-count">6 Flows</span>
+          <span class="meta-dot"></span>
+          <span class="meta-text" id="total-time">1.5 Hours</span>
+          <span class="meta-dot"></span>
+          <span class="meta-text">Beginner</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Course List -->
+    <main class="content-area" id="course-list">
+      <!-- Courses will be dynamically inserted here -->
+    </main>
+  </div>
+
+  <script>
+    // Course data - edit this to add/modify courses
+    const courses = [
+      {
+        id: 'intro',
+        title: 'Intro to Inact Now - the why',
+        description: 'An introduction to Inact Now and why it matters for inventory management.',
+        duration: '8 min',
+        file: 'Intro.txt',
+        thumbnail: 'images/intro/Intro-Path-Cover-2.png'
+      },
+      {
+        id: 'double-abc',
+        title: 'Double ABC Analysis',
+        description: 'An interactive flow that takes you through the double ABC analysis methodology.',
+        duration: '15 min',
+        file: 'Double-ABC-Analysis-4.txt',
+        thumbnail: 'images/double-abc-analysis/Cover.png'
+      },
+      {
+        id: 'stock-policy',
+        title: 'Stock Policy',
+        description: 'Learn how to establish clear and effective policies for your inventory.',
+        duration: '10 min',
+        file: 'Stock-Policy.txt',
+        thumbnail: 'images/stock-policy/Stock-Policy-Hero.png'
+      },
+      {
+        id: 'safety-stock',
+        title: 'Safety Stock',
+        description: 'An interactive flow that takes you through how to use Inact Now to help you establish safety stock levels.',
+        duration: '12 min',
+        file: 'Safety-Stock.txt',
+        thumbnail: 'images/safety-stock/Safety-Stock-Hero.png'
+      },
+      {
+        id: 'reorder-point',
+        title: 'Reorder Point',
+        description: 'An interactive flow that takes you through how to use Inact Now to help you establish reorder points.',
+        duration: '10 min',
+        file: 'Reorder-Point.txt',
+        thumbnail: 'images/reorder-point/Reorder-Point-Hero.png'
+      },
+      {
+        id: 'reorder-quantity',
+        title: 'Reorder Quantity',
+        description: 'Learn how to determine optimal reorder quantities for your inventory items.',
+        duration: '12 min',
+        file: 'Reorder-Quantity.txt',
+        thumbnail: 'images/reorder-quantity/Reorder-Quantity-Hero.png'
+      }
+    ];
+
+    // Get progress from localStorage
+    function getCourseProgress(courseId) {
+      const key = `course_progress_${courseId}`;
+      const saved = localStorage.getItem(key);
+      return saved ? JSON.parse(saved) : { completed: false, progress: 0 };
+    }
+
+    // Save progress to localStorage
+    function saveCourseProgress(courseId, progress, completed = false) {
+      const key = `course_progress_${courseId}`;
+      localStorage.setItem(key, JSON.stringify({ completed, progress }));
+    }
+
+    // Render progress indicator
+    function renderProgressIndicator(progress, completed) {
+      if (completed) {
+        return `
+          <div class="completion-indicator completed">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+        `;
+      } else if (progress > 0) {
+        const circumference = 2 * Math.PI * 13;
+        const offset = circumference - (progress / 100) * circumference;
+        return `
+          <div class="progress-ring">
+            <svg width="34" height="34" viewBox="0 0 34 34">
+              <circle class="bg" cx="17" cy="17" r="13"/>
+              <circle class="progress" cx="17" cy="17" r="13" 
+                stroke-dasharray="${circumference}" 
+                stroke-dashoffset="${offset}"/>
+            </svg>
+          </div>
+        `;
+      } else {
+        return `<div class="completion-indicator not-started"></div>`;
+      }
+    }
+
+    // Render course card
+    function renderCourseCard(course) {
+      const { completed, progress } = getCourseProgress(course.id);
+      const progressIndicator = renderProgressIndicator(progress, completed);
+      
+      return `
+        <div class="course-card" data-course-id="${course.id}">
+          <div class="course-info">
+            <div class="course-header">
+              <h2 class="course-title">${course.title}</h2>
+              <p class="course-description">${course.description}</p>
+            </div>
+            <div class="course-actions">
+              <a href="index.html?course=${course.file}&from=hub" class="btn-open">Open flow</a>
+              <span class="duration-tag">${course.duration}</span>
+              ${progressIndicator}
+            </div>
+          </div>
+          <div class="course-thumbnail" style="background-image: url('${course.thumbnail}')">
+            <div class="share-btn">
+              <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Calculate total progress
+    function calculateTotalProgress() {
+      let totalProgress = 0;
+      let completedCount = 0;
+      
+      courses.forEach(course => {
+        const { completed, progress } = getCourseProgress(course.id);
+        if (completed) {
+          totalProgress += 100;
+          completedCount++;
+        } else {
+          totalProgress += progress;
+        }
+      });
+      
+      return {
+        percentage: totalProgress / courses.length,
+        completed: completedCount,
+        total: courses.length
+      };
+    }
+
+    // Update total progress bar
+    function updateTotalProgress() {
+      const { percentage } = calculateTotalProgress();
+      document.getElementById('total-progress').style.width = `${percentage}%`;
+    }
+
+    // Render all courses
+    function renderCourses() {
+      const container = document.getElementById('course-list');
+      container.innerHTML = courses.map(renderCourseCard).join('');
+      
+      // Update flow count
+      document.getElementById('flow-count').textContent = `${courses.length} Flows`;
+      
+      updateTotalProgress();
+    }
+
+    // Check URL for returning from a course
+    function checkReturnFromCourse() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const completedCourse = urlParams.get('completed');
+      const progressCourse = urlParams.get('progress_course');
+      const progressValue = urlParams.get('progress_value');
+      
+      if (completedCourse) {
+        saveCourseProgress(completedCourse, 100, true);
+        // Clean URL
+        window.history.replaceState({}, '', 'hub.html');
+      }
+      
+      if (progressCourse && progressValue) {
+        saveCourseProgress(progressCourse, parseInt(progressValue), false);
+        window.history.replaceState({}, '', 'hub.html');
+      }
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      checkReturnFromCourse();
+      renderCourses();
+    });
+  </script>
+
+</body>
+</html>
+
