@@ -134,7 +134,7 @@
     .sidebar {
       width: 320px;
       background: var(--color-card-bg);
-      padding: 90px 36px 36px 36px;
+      padding: 36px 36px 36px 36px;
       flex-shrink: 0;
       display: flex;
       flex-direction: column;
@@ -215,7 +215,7 @@
     /* Course Card */
     .course-card {
       display: flex;
-      align-items: center;
+      align-items: stretch;
       gap: 24px;
       padding: 24px;
       background: var(--color-card-bg);
@@ -236,6 +236,7 @@
       justify-content: space-between;
       gap: 16px;
       min-height: 144px;
+      padding: 0;
     }
 
     .course-header {
@@ -371,28 +372,12 @@
       background: rgba(0, 0, 0, 0.2);
     }
 
-    .share-btn {
+
+    .flow-icon {
       width: 75px;
       height: 75px;
-      background: rgba(255, 255, 255, 0.30);
-      border-radius: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
       position: relative;
       z-index: 1;
-      transition: background 0.2s;
-    }
-
-    .share-btn:hover {
-      background: rgba(255, 255, 255, 0.45);
-    }
-
-    .share-btn svg {
-      width: 28px;
-      height: 28px;
-      fill: #F0F4E8;
     }
 
     /* Responsive */
@@ -504,9 +489,7 @@
           <span class="meta-dot"></span>
           <span class="meta-text" id="flow-count">6 Flows</span>
           <span class="meta-dot"></span>
-          <span class="meta-text" id="total-time">1.5 Hours</span>
-          <span class="meta-dot"></span>
-          <span class="meta-text">Beginner</span>
+          <span class="meta-text" id="total-time">1h 7min</span>
         </div>
       </div>
     </aside>
@@ -522,8 +505,8 @@
     const courses = [
       {
         id: 'intro',
-        title: 'Intro to Inact Now - the why',
-        description: 'An introduction to Inact Now and why it matters for inventory management.',
+        title: 'Introduction to Inact',
+        description: 'Learn the fundamentals of inventory management and the three key questions every organization must answer.',
         duration: '8 min',
         file: 'Intro.txt',
         thumbnail: 'images/intro/Intro-Path-Cover-2.png'
@@ -531,15 +514,15 @@
       {
         id: 'double-abc',
         title: 'Double ABC Analysis',
-        description: 'An interactive flow that takes you through the double ABC analysis methodology.',
+        description: 'Understand how to categorize your inventory using the Pareto principle and two-dimensional ABC analysis.',
         duration: '15 min',
         file: 'Double-ABC-Analysis-4.txt',
-        thumbnail: 'images/double-abc-analysis/Cover.png'
+        thumbnail: 'images/double-abc-analysis/Double-ABC-Hero.png'
       },
       {
         id: 'stock-policy',
         title: 'Stock Policy',
-        description: 'Learn how to establish clear and effective policies for your inventory.',
+        description: 'Decide which items deserve a spot on your shelves and which should be ordered on demand.',
         duration: '10 min',
         file: 'Stock-Policy.txt',
         thumbnail: 'images/stock-policy/Stock-Policy-Hero.png'
@@ -547,7 +530,7 @@
       {
         id: 'safety-stock',
         title: 'Safety Stock',
-        description: 'An interactive flow that takes you through how to use Inact Now to help you establish safety stock levels.',
+        description: 'Build a buffer against uncertainty - learn how to determine optimal safety stock levels for your items.',
         duration: '12 min',
         file: 'Safety-Stock.txt',
         thumbnail: 'images/safety-stock/Safety-Stock-Hero.png'
@@ -555,7 +538,7 @@
       {
         id: 'reorder-point',
         title: 'Reorder Point',
-        description: 'An interactive flow that takes you through how to use Inact Now to help you establish reorder points.',
+        description: 'Master the timing of your orders - know exactly when to place a new purchase order.',
         duration: '10 min',
         file: 'Reorder-Point.txt',
         thumbnail: 'images/reorder-point/Reorder-Point-Hero.png'
@@ -563,7 +546,7 @@
       {
         id: 'reorder-quantity',
         title: 'Reorder Quantity',
-        description: 'Learn how to determine optimal reorder quantities for your inventory items.',
+        description: 'Move from knowing when to order to deciding exactly how much to buy for each replenishment.',
         duration: '12 min',
         file: 'Reorder-Quantity.txt',
         thumbnail: 'images/reorder-quantity/Reorder-Quantity-Hero.png'
@@ -630,9 +613,7 @@
             </div>
           </div>
           <div class="course-thumbnail" style="background-image: url('${course.thumbnail}')">
-            <div class="share-btn">
-              <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
-            </div>
+            <img src="SVGs/Flow-Icon.svg" alt="Flow" class="flow-icon">
           </div>
         </div>
       `;
