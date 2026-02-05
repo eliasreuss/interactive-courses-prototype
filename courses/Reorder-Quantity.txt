@@ -171,10 +171,16 @@ The interactive tutorial below will go through how to use the "Reorder Quantity"
 
 slide_id: 12
 index_title: Congrats!
-title: **Congrats! You've finished the learning path: Inact for inventory management.**
+title: **Congratulations! You’ve completed the Reorder Quantity course**
 type: main
 ---
-Noget her.
+You’ve mastered the balancing act of the Reorder Quantity - learning to resist the "tunnel vision" of unit price discounts to ensure you also prioritize demand and inventory turnover.
+
+You have successfully completed the learning path. You are ready to start optimizing your purchasing decisions in Inact.
+
+**Time to put this into practice!**
+
+![image/size:large/align:right/frame:none](reorder-quantity/Reorder-Quantity-Hero.png)
 ---
 
 [flow-specific-side-quests]

@@ -1,0 +1,3328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Interactive Learning Flow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #FAFAFA;
+      --color-card-bg: #FFFFFF;
+      --color-primary-text: #111111;  /* Black for card content */
+      --color-ui-dark: #304642;       /* Dark green for UI elements */
+      --color-accent: #FF5A00;
+      --color-muted: #6E6E6E;
+      --color-unvisited: #D7D7D7;
+      --color-dropdown-bg: #F6F6F6;
+      --font-family: 'Poppins', sans-serif;
+      --shadow-card: 0px 2px 8px rgba(0, 0, 0, 0.04), 0px 4px 16px rgba(0, 0, 0, 0.06);
+      
+      /* Fluid typography - scales smoothly from 768px to 1920px viewport */
+      --font-size-title: clamp(1.5rem, 1.2rem + 0.8vw, 2.5rem);
+      --font-size-body: clamp(0.95rem, 0.9rem + 0.3vw, 1.35rem);
+      --font-size-small: clamp(0.85rem, 0.8rem + 0.15vw, 1.05rem);
+      
+      /* Fluid spacing */
+      --spacing-content: clamp(20px, 2.5vw, 48px);
+    }
+    
+    * { box-sizing: border-box; }
+    
+    html, body {
+      height: 100%; margin: 0; padding: 0; 
+      background: var(--color-bg); 
+      font-family: var(--font-family); 
+      color: var(--color-primary-text);
+    }
+    
+    /* ========== MAIN LAYOUT ========== */
+    .app-container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      width: 100vw;
+    }
+    
+    /* ========== HEADER ========== */
+    .app-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 32px;
+      background: #fff;
+      border-radius: 0 0 25px 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 10;
+    }
+    
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+    
+    .back-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: none;
+      border: none;
+      font-family: var(--font-family);
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--color-ui-dark);
+      cursor: pointer;
+      padding: 8px 0;
+      white-space: nowrap;
+    }
+    
+    .back-btn:hover {
+      color: var(--color-accent);
+    }
+    
+    .header-divider {
+      width: 1px;
+      height: 24px;
+      background: #D7D7D7;
+      flex-shrink: 0;
+    }
+    
+    /* Progress Bar */
+    .progress-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex: 1;
+      margin: 0 24px;
+    }
+    
+    .progress-bar {
+      display: flex;
+      gap: 16px;
+      flex: 1;
+    }
+    
+    .progress-segment {
+      height: 10px;
+      flex: 1; /* Default equal width, will be overridden by inline style for proportional sizing */
+      background: var(--color-unvisited);
+      border-radius: 5px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .progress-segment-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0;
+      border-radius: 5px;
+      background: var(--color-ui-dark);
+      transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .progress-percent {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-ui-dark);
+      white-space: nowrap;
+    }
+    
+    .header-right {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      gap: 16px;
+    }
+    
+    .flow-name {
+      font-size: 14px;
+      color: var(--color-ui-dark);
+    }
+    
+    .flow-name span {
+      font-weight: 600;
+    }
+    
+    /* ========== MAIN CONTENT AREA ========== */
+    .main-content {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+      min-height: 0; /* Allow flex item to shrink */
+    }
+    
+    /* ========== SIDEBAR (Table of Contents) ========== */
+    .sidebar {
+      width: 320px;
+      flex-shrink: 0;
+      padding: 24px 12px 24px 24px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-height: 0; /* Allow flex item to shrink below content size */
+      max-height: 100%; /* Constrain to parent height */
+    }
+    
+    /* TOC Section (Parent) */
+    .toc-section {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: var(--shadow-card);
+      overflow: visible; /* Allow content to be visible for scrolling */
+      flex-shrink: 0; /* Prevent sections from shrinking */
+    }
+    
+    .toc-section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .toc-section-header:hover {
+      background: #fafafa;
+    }
+    
+    .toc-section-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .toc-indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 100px;
+      flex-shrink: 0;
+    }
+    
+    .toc-indicator.completed {
+      background: var(--color-ui-dark) url('SVGs/CheckMark.svg') no-repeat center center;
+      background-size: 60%;
+      border: none;
+    }
+    
+    .toc-indicator.completed::after {
+      display: none;
+    }
+    
+    .toc-indicator.active {
+      background: var(--color-ui-dark);
+    }
+    
+    .toc-indicator.current-node {
+      background: var(--color-accent);
+    }
+    
+    .toc-section-title.current-text {
+      color: var(--color-accent);
+      font-weight: 600;
+    }
+    
+    .toc-indicator.unvisited {
+      background: var(--color-unvisited);
+    }
+    
+    .toc-section-title {
+      font-size: clamp(13px, 0.8rem + 0.2vw, 15px);
+      font-weight: 400;
+      color: var(--color-ui-dark);
+    }
+    
+    .toc-section.expanded .toc-section-title {
+      font-weight: 600;
+    }
+    
+    .toc-chevron {
+      width: 12px;
+      height: 12px;
+      transition: transform 0.2s;
+    }
+    
+    .toc-chevron path {
+      stroke: var(--color-unvisited);
+    }
+    
+    .toc-section.expanded .toc-chevron {
+      transform: rotate(180deg);
+    }
+    
+    .toc-section.expanded .toc-chevron path {
+      stroke: var(--color-ui-dark);
+    }
+    
+    /* TOC Children (Dropdown) */
+    .toc-children {
+      display: none;
+      background: var(--color-dropdown-bg);
+      padding: 12px 16px;
+      flex-direction: column;
+      gap: 16px;
+      overflow: visible; /* Allow content to be visible */
+    }
+    
+    .toc-section.expanded .toc-children {
+      display: flex;
+    }
+    
+    .toc-child {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    
+    .toc-child:hover {
+      opacity: 0.7;
+    }
+    
+    .toc-child-indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 9999px;
+      flex-shrink: 0;
+    }
+    
+    .toc-child-indicator.active {
+      background: var(--color-accent);
+    }
+    
+    .toc-child-indicator.visited {
+      background: var(--color-ui-dark) url('SVGs/CheckMark.svg') no-repeat center center;
+      background-size: 60%;
+      border: none;
+    }
+    
+    .toc-child-indicator.unvisited {
+      background: var(--color-unvisited);
+      border: none;
+    }
+    
+    .toc-child-indicator.sidequest {
+      background: transparent;
+      border: none;
+    }
+    
+    .toc-child-title {
+      font-size: clamp(11px, 0.7rem + 0.15vw, 13px);
+      font-weight: 400;
+      color: var(--color-muted);
+    }
+    
+    .toc-child.unvisited .toc-child-title {
+      color: var(--color-unvisited);
+    }
+    
+    .toc-child.visited .toc-child-title {
+      color: var(--color-muted);
+    }
+    
+    .toc-child.active .toc-child-title {
+      color: var(--color-accent);
+      font-weight: 600;
+    }
+
+    /* Sidequest step dots */
+    .toc-step-dots {
+      margin-left: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .toc-step-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 9999px;
+      background: var(--color-unvisited);
+      opacity: 0.9;
+      cursor: pointer;
+    }
+    .toc-step-dot.visited {
+      background: var(--color-ui-dark);
+      opacity: 0.9;
+    }
+    .toc-step-dot.active {
+      background: var(--color-accent);
+      opacity: 1;
+    }
+    .toc-step-dot:hover { opacity: 0.7; }
+    
+    /* ========== CONTENT CARD AREA ========== */
+    .content-area {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      padding: 24px 24px 24px 12px;
+      overflow: hidden;
+    }
+    
+    .content-card {
+      flex: 1;
+      background: var(--color-card-bg);
+      border-radius: 18px;
+      box-shadow: 0 4px 32px 0 rgba(60,60,60,0.07);
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      min-width: 0;
+      transition: box-shadow 220ms ease, transform 220ms ease;
+    }
+    .content-card.is-animating {
+      animation: cardIn 360ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    }
+    @keyframes cardIn {
+      from { opacity: 0.92; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Scrollable wrapper - scroll on the full card width so scrollbar is at edge */
+    .card-scroll-wrapper {
+      flex: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .card-text-content {
+      padding: var(--spacing-content);
+      flex: 1;
+      /* Center content and limit width for readability on large screens */
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    
+    /* Hero mode: reduced padding for full-bleed look */
+    .card-scroll-wrapper:has(.hero-mode) {
+      align-items: center;
+      justify-content: center;
+    }
+    .card-text-content.hero-mode {
+      /* Slightly less side padding vs normal slides */
+      padding: clamp(14px, 1.6vw, 24px);
+      max-width: none;
+      flex: 0 1 auto;
+    }
+    
+    /* Stacked images mode: reduced padding for two-column layout */
+    .card-text-content.stacked-mode {
+      padding: clamp(20px, 2.2vw, 36px) clamp(32px, 4vw, 64px);
+      max-width: none;
+    }
+    
+    #card-title {
+      font-size: var(--font-size-title);
+      font-weight: normal;
+      margin: 0 0 clamp(20px, 2.5vw, 36px) 0;
+      color: var(--color-primary-text);
+    }
+    #card-title.is-animating { animation: contentIn 360ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+    
+    #card-content {
+      font-size: var(--font-size-body);
+      color: var(--color-primary-text);
+      line-height: 1.55;
+    }
+    #card-content.is-animating { animation: contentIn 420ms cubic-bezier(0.2, 0.8, 0.2, 1) 40ms both; }
+    @keyframes contentIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    #card-content p { margin: 0; }
+    #card-content strong { font-weight: 600; }
+    #card-content ul {
+      list-style: none;
+      padding-left: 1em;
+      margin: 1em 0;
+    }
+    #card-content li {
+      padding-left: 1.2em;
+      position: relative;
+      margin-bottom: 0.5em;
+    }
+    #card-content li::before {
+      content: '•';
+      color: var(--color-primary-text);
+      font-weight: bold;
+      font-size: 1.1em;
+      position: absolute;
+      left: 0;
+      top: -0.1em;
+    }
+    
+    /* Spacing for paragraph breaks (empty lines in source) */
+    #card-content .paragraph-break {
+      height: 1em;
+    }
+    
+    /* Quote component */
+    .quote-block { display: grid; grid-template-columns: clamp(24px, 2.5vw, 40px) 1fr; gap: clamp(8px, 1vw, 16px); align-items: start; margin: clamp(16px, 2vw, 32px) 0; }
+    .quote-mark { color: var(--color-accent); font-weight: 700; font-size: clamp(24px, 2vw, 36px); line-height: 1; }
+    .quote-text { font-style: italic; opacity: 0.9; font-size: var(--font-size-body); }
+    .quote-author { color: #8a8f87; font-size: var(--font-size-small); margin-top: 6px; }
+    
+    /* Media containers */
+    .content-images-container {
+      display: flex; gap: clamp(16px, 2vw, 32px); justify-content: center; margin: clamp(20px, 3vw, 40px) 0; flex-wrap: wrap; align-items: center;
+    }
+    .content-images-container img { 
+      max-width: 100%; 
+      height: auto; 
+      display: block;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: high-quality;
+      -ms-interpolation-mode: bicubic;
+    }
+    .content-images-container .img-container {
+      display: flex; justify-content: center; border-radius: 15px; overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08), 0 3px 8px rgba(0,0,0,0.08);
+      background: #fff; flex: 1 1 auto;
+      transition: transform 220ms ease, box-shadow 220ms ease;
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .content-images-container .img-container:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 34px rgba(0,0,0,0.10), 0 4px 12px rgba(0,0,0,0.08);
+      }
+    }
+    .content-images-container .img-container.no-frame,
+    .content-with-stacked-images .stacked-images .img-container.no-frame {
+      background: transparent; box-shadow: none; border-radius: 0;
+    }
+    .content-images-container .size-x-small { max-width: 15%; flex-basis: 15%; }
+    .content-images-container .size-small { max-width: 25%; flex-basis: 25%; }
+    .content-images-container .size-medium { max-width: 50%; flex-basis: 50%; }
+    /* Responsive large images:
+       - >1500px: 80% (spacious on big screens)
+       - 1200-1500px: 90% (balanced)
+       - <1200px: 100% (full width on smaller screens)
+    */
+    .content-images-container .size-large { 
+      max-width: 100%; 
+      flex-basis: 100%; 
+    }
+    
+    @media (min-width: 1200px) {
+      .content-images-container .size-large {
+        max-width: 95%;
+        flex-basis: 95%;
+      }
+    }
+    
+    @media (min-width: 1500px) {
+      .content-images-container .size-large {
+        max-width: 90%;
+        flex-basis: 90%;
+      }
+    }
+    .content-images-container .size-fourth { flex: 0 0 calc((100% - 72px) / 4); max-width: calc((100% - 72px) / 4); }
+    .content-images-container.align-left { justify-content: flex-start; }
+    .content-images-container.align-center { justify-content: center; }
+    .content-images-container.align-right { justify-content: flex-end; }
+    
+    /* Third images: always 3 columns, never wrap */
+    .content-images-container:has(.size-third) {
+      flex-wrap: nowrap;
+    }
+    .content-images-container .size-third { 
+      flex: 1 1 0; 
+      min-width: 0; /* Allow shrinking below content size */
+    }
+    
+    /* Responsive images - scale with viewport */
+    
+    .img-container video { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block; }
+    .img-container .lottie-anim { width: 100%; height: 100%; display: block; }
+    
+    /* Stacked images layout */
+    .content-with-stacked-images { 
+      display: flex; 
+      gap: clamp(32px, 4vw, 56px); 
+      align-items: center; 
+      width: 100%;
+    }
+    .content-with-stacked-images.top-aligned { align-items: flex-start; }
+    .content-with-stacked-images .text-content { 
+      flex: 1; 
+      min-width: 0; /* Allow text to shrink */
+    }
+    .content-with-stacked-images .stacked-images {
+      display: flex; 
+      flex-direction: column; 
+      gap: 15px; 
+      flex-shrink: 0; 
+      max-width: clamp(320px, 45%, 800px);
+      min-width: 0; /* Prevent overflow */
+      margin-left: auto;
+    }
+    .content-with-stacked-images .stacked-images .img-container {
+      width: 100%;
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 15px; 
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08), 0 3px 8px rgba(0,0,0,0.08);
+      background: #fff;
+      box-sizing: border-box;
+    }
+    .content-with-stacked-images .stacked-images .img-container.no-frame {
+      background: transparent;
+      box-shadow: none;
+      border-radius: 0;
+    }
+    .content-with-stacked-images .stacked-images img { 
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      height: auto;
+      width: auto;
+      object-fit: contain;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: high-quality;
+      -ms-interpolation-mode: bicubic;
+    }
+    .content-with-stacked-images .stacked-images video {
+      max-width: 100%;
+      max-height: 100%;
+      height: auto;
+      width: auto;
+      object-fit: contain;
+    }
+    .content-with-stacked-images .stacked-images .lottie-anim {
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+    }
+    
+    /* Hero slide layout */
+    .hero-layout {
+      display: flex;
+      gap: clamp(44px, 5vw, 88px);
+      align-items: center;
+      width: 100%;
+      max-width: 1520px;
+      margin: 0 auto;
+      min-height: clamp(420px, 58vh, 720px);
+    }
+    .hero-image-side {
+      flex: 1.25;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-image-side img {
+      max-width: 100%;
+      max-height: 64vh;
+      object-fit: contain;
+      transform-origin: 50% 50%;
+      will-change: transform, opacity;
+    }
+    .hero-text-side {
+      flex: 0.95;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: clamp(12px, 1.5vw, 20px);
+      will-change: transform, opacity;
+    }
+    .hero-subtitle {
+      font-size: var(--font-size-body);
+      color: var(--color-primary-text);
+      margin: 0;
+      font-weight: 400;
+    }
+    .hero-title {
+      font-size: clamp(1.75rem, 1.5rem + 2vw, 2.75rem);
+      font-weight: 700;
+      color: var(--color-primary-text);
+      margin: 0;
+      line-height: 1.2;
+    }
+    .hero-body {
+      font-size: var(--font-size-body);
+      color: var(--color-primary-text);
+      line-height: 1.6;
+      margin: 8px 0 0 0;
+    }
+
+    /* Subtle hero animations */
+    .hero-layout .hero-image-side img {
+      animation: heroImageIn 720ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    }
+    .hero-layout .hero-text-side {
+      animation: heroTextIn 720ms cubic-bezier(0.2, 0.8, 0.2, 1) 80ms both;
+    }
+    @keyframes heroImageIn {
+      from { opacity: 0; transform: translateX(-10px) scale(0.985); }
+      to   { opacity: 1; transform: translateX(0) scale(1); }
+    }
+    @keyframes heroTextIn {
+      from { opacity: 0; transform: translateX(10px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    /* Hero illustration: subtle looping "float" */
+    .hero-layout .hero-image-side img {
+      /* Run entry first, then float forever */
+      animation:
+        heroImageIn 720ms cubic-bezier(0.2, 0.8, 0.2, 1) both,
+        heroFloat 7s cubic-bezier(0.60, 0, 0.70, 1) 800ms infinite;
+    }
+    @keyframes heroFloat {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-8px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .content-card.is-animating,
+      #card-title.is-animating,
+      #card-content.is-animating {
+        animation: none !important;
+      }
+      .content-images-container .img-container,
+      .hero-image-side img {
+        transition: none !important;
+      }
+      .hero-layout .hero-image-side img,
+      .hero-layout .hero-text-side {
+        animation: none !important;
+      }
+    }
+    
+    /* Large screens (>1440px) - use more space, reduce margins */
+    @media (min-width: 1441px) {
+      .sidebar {
+        width: 380px;
+        padding: 28px 16px 28px 28px;
+      }
+      .toc-section-title {
+        font-size: 16px;
+      }
+      .toc-child-title {
+        font-size: 14px;
+      }
+      .card-text-content {
+        max-width: 1400px;
+      }
+      .card-text-content.stacked-mode {
+        padding: clamp(28px, 3vw, 48px) clamp(48px, 5.5vw, 88px);
+      }
+      .hero-layout {
+        max-width: 1600px;
+      }
+      .content-area {
+        padding: 28px 28px 28px 16px;
+        gap: 28px;
+      }
+    }
+    
+    /* Screens up to 1920px - increase card padding to narrow content */
+    @media (min-width: 1441px) and (max-width: 1920px) {
+      .card-text-content {
+        padding: var(--spacing-content) clamp(100px, 12vw, 180px);
+      }
+      .card-text-content.stacked-mode {
+        padding: clamp(24px, 2.5vw, 40px) clamp(40px, 4.5vw, 72px);
+      }
+      .content-images-container:has(.size-third) {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    
+    /* Medium screens (13" laptops like MacBook Air) */
+    @media (min-width: 901px) and (max-width: 1440px) {
+      :root {
+        --font-size-title: clamp(1.4rem, 1.1rem + 0.6vw, 2rem);
+        --font-size-body: clamp(0.9rem, 0.85rem + 0.25vw, 1.15rem);
+        --spacing-content: clamp(18px, 2vw, 36px);
+      }
+      .app-header {
+        padding: 12px 24px;
+      }
+      .sidebar {
+        width: 280px;
+        padding: 20px 10px 20px 20px;
+      }
+      .hero-layout {
+        gap: clamp(32px, 3.5vw, 64px);
+        min-height: clamp(360px, 50vh, 600px);
+        max-width: 1200px;
+      }
+      .hero-title {
+        font-size: clamp(1.5rem, 1.3rem + 1.5vw, 2.2rem);
+      }
+      .hero-image-side img {
+        max-height: 55vh;
+      }
+      .card-text-content {
+        max-width: 1000px;
+      }
+      .content-area {
+        padding: 20px 20px 20px 10px;
+        gap: 20px;
+      }
+      .card-footer {
+        padding: 14px 20px;
+      }
+      .footer-logo {
+        height: 24px;
+      }
+      .footer-right {
+        gap: 10px;
+      }
+      .btn {
+        padding: 8px 18px;
+        font-size: clamp(0.8rem, 0.75rem + 0.15vw, 0.95rem);
+      }
+      .progress-container {
+        margin: 0 16px;
+      }
+      .content-images-container {
+        gap: clamp(12px, 1.5vw, 24px);
+        margin: clamp(16px, 2.5vw, 32px) 0;
+      }
+      .content-images-container:has(.size-third) {
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .content-with-stacked-images {
+        gap: 24px;
+      }
+      .content-with-stacked-images .stacked-images {
+        max-width: clamp(280px, 40%, 700px);
+      }
+      .card-text-content.stacked-mode {
+        padding: clamp(18px, 2vw, 28px) clamp(24px, 3vw, 48px);
+      }
+    }
+    
+    @media (max-width: 900px) {
+      .hero-layout {
+        flex-direction: column;
+        gap: 28px;
+        min-height: auto;
+      }
+      .hero-image-side {
+        order: -1;
+      }
+      .card-text-content.stacked-mode {
+        padding: clamp(16px, 2vw, 24px) clamp(20px, 2.5vw, 36px);
+      }
+      .content-with-stacked-images {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .content-with-stacked-images .stacked-images {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+    
+    /* Flip cards */
+    .flip-card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(12px, 1.5vw, 24px); padding: clamp(12px, 1.5vw, 24px) 0; }
+    .flip-card { display: grid; grid-template-areas: "stack"; cursor: pointer; }
+    .flip-card-front, .flip-card-back {
+      grid-area: stack; display: flex; justify-content: center; align-items: center;
+      padding: clamp(16px, 1.5vw, 24px); min-height: clamp(120px, 12vw, 180px); box-sizing: border-box; font-size: var(--font-size-body);
+      transition: opacity 0.4s ease; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+    .flip-card-front { background-color: #f8f9fa; color: var(--color-primary-text); opacity: 1; text-align: center; flex-direction: column; }
+    .flip-card-back { background-color: var(--color-card-bg); color: var(--color-primary-text); opacity: 0; }
+    .flip-card.flipped .flip-card-front { opacity: 0; }
+    .flip-card.flipped .flip-card-back { opacity: 1; }
+    .flip-card-front p, .flip-card-back p { margin: 0; }
+    
+    /* ========== CARD FOOTER (inside content card) ========== */
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 32px;
+      border-top: 1px solid #eee;
+      margin-top: auto;
+      flex-shrink: 0;
+    }
+    
+    .footer-left {
+        display: flex;
+        align-items: center;
+      gap: 16px;
+    }
+    
+    .footer-logo {
+      height: 28px;
+      opacity: 0.4;
+    }
+    
+    .footer-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+      justify-content: flex-end;
+      min-width: 0;
+    }
+
+    /* Prevent footer buttons from wrapping into multiple lines on small screens */
+    @media (max-width: 680px) {
+      .footer-right {
+        flex-wrap: nowrap;
+        overflow: hidden;
+        min-width: 0;
+      }
+      .footer-right .btn {
+        min-width: 0;               /* allow flex items to shrink */
+        max-width: clamp(96px, 28vw, 180px);
+      }
+    }
+    
+    .footer-divider {
+      width: 1px;
+      height: 24px;
+      background: #D7D7D7;
+      margin: 0 4px;
+    }
+    
+    /* Button styles */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: clamp(8px, 1vw, 12px) clamp(16px, 2vw, 28px);
+      border-radius: 500px;
+      font-family: var(--font-family);
+      font-size: var(--font-size-small);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+      white-space: nowrap;         /* keep button text on one line */
+      overflow: hidden;            /* enable ellipsis */
+      text-overflow: ellipsis;
+      min-width: 0;                /* allow shrinking inside flex containers */
+      max-width: 100%;
+      flex: 0 1 auto;
+    }
+    
+    .btn-primary {
+      background: var(--color-accent);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(255,90,0,0.18);
+    }
+    
+    .btn-primary:hover {
+      background: #e04e00;
+      box-shadow: 0 4px 12px rgba(255,90,0,0.28);
+      transform: translateY(-1px);
+    }
+    
+    .btn-secondary {
+      background: var(--color-ui-dark);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(48,70,66,0.18);
+    }
+    
+    .btn-secondary:hover {
+      background: #2a3c39;
+      box-shadow: 0 4px 12px rgba(48,70,66,0.28);
+      transform: translateY(-1px);
+    }
+    
+    .btn-outline {
+      background: #fff;
+      color: #8A8A8A;
+      border: 1px solid #8A8A8A;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    
+    .btn-outline:hover {
+      border-color: #6f6f6f;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+      transform: translateY(-1px);
+    }
+    
+    .btn svg {
+      width: 10px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    /* Truncate inner label when buttons include a <span> */
+    .btn > span {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    /* Narrow desktop/tablet (TOC still visible): keep Previous/Continue reachable */
+    @media (max-width: 980px) and (min-width: 769px) {
+      .sidebar { width: 280px; }
+      .content-area { padding: 16px 16px 16px 8px; gap: 16px; }
+      .card-text-content { padding: 28px 28px; }
+      .card-footer { padding: 14px 18px; }
+      .footer-left { display: none; } /* reclaim space */
+      .footer-right { gap: 10px; flex-wrap: nowrap; }
+      .btn { padding: 10px 16px; }
+      .footer-right .btn { max-width: clamp(92px, 20vw, 180px); }
+    }
+    
+    /* Resource link button */
+    .resource-link-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      margin-top: 20px; padding: 12px 28px; background-color: var(--color-accent);
+      color: white; text-decoration: none; border-radius: 50px; font-weight: 600;
+      box-shadow: 0 2px 8px 0 rgba(255,90,0,0.2); transition: all 0.2s;
+    }
+    .resource-link-btn:hover { background-color: #e04e00; transform: translateY(-2px); box-shadow: 0 4px 12px 0 rgba(255,90,0,0.3); }
+
+    /* Embed panel */
+    #embed-panel {
+      width: 50%;
+      max-width: 600px;
+      min-width: 380px;
+      background: var(--color-card-bg);
+      border-radius: 18px;
+      box-shadow: 0 4px 32px 0 rgba(60,60,60,0.07);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    #embed-panel.visible { display: flex; }
+    
+    /* When embed is visible, shrink the content card */
+    .content-area:has(#embed-panel.visible) .content-card {
+      flex: 1;
+      min-width: 400px;
+    }
+    #embed-header { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; border-bottom: 1px solid #eee; gap: 8px; }
+    #embed-title { font-weight: 600; }
+    #embed-actions { display: flex; align-items: center; gap: 8px; }
+    #embed-close { background: transparent; border: none; border-radius: 6px; width: 28px; height: 28px; cursor: pointer; font-size: 18px; line-height: 28px; }
+    #embed-open-external { background: var(--color-accent); color: #fff; border: none; border-radius: 8px; padding: 6px 10px; cursor: pointer; font-weight: 600; }
+    #embed-iframe { flex: 1 1 auto; width: 100%; border: 0; }
+    
+    /* Supademo modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Supademo embeds: full width, prominent size */
+    .supademo-wrapper {
+      width: 100%;
+      max-width: 100%;
+      margin: clamp(24px, 3vw, 40px) 0;
+    }
+    .supademo-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      max-height: none !important;
+      /* Override inline aspect-ratio for larger display */
+      aspect-ratio: 16 / 10 !important;
+      min-height: 400px;
+    }
+    .supademo-container iframe {
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    }
+    
+    @media (min-width: 1200px) {
+      .supademo-container {
+        min-height: 500px;
+      }
+    }
+    
+    @media (min-width: 1600px) {
+      .supademo-container {
+        min-height: 580px;
+      }
+    }
+    
+    .modal-content {
+      background: #fff;
+      padding: 32px;
+      border-radius: 16px;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+    }
+    
+    @media (max-width: 900px) {
+      .sidebar { width: 280px; }
+      .flip-card-grid { grid-template-columns: 1fr; }
+    }
+    
+    @media (max-width: 768px) {
+      .sidebar { display: none; }
+      .content-area { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-left">
+        <button class="back-btn" id="back-btn">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span id="back-btn-text">Back</span>
+        </button>
+        <div class="header-divider"></div>
+    </div>
+      <div class="progress-container">
+        <div class="progress-bar" id="progress-bar">
+          <!-- Progress segments will be generated dynamically -->
+        </div>
+        <span class="progress-percent" id="progress-percent">0%</span>
+      </div>
+      <div class="header-right">
+        <div class="header-divider"></div>
+        <div class="flow-name">Flow: <span id="flow-title">Loading...</span></div>
+      </div>
+    </header>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Sidebar (Table of Contents) -->
+      <aside class="sidebar" id="sidebar">
+        <!-- TOC sections will be generated dynamically -->
+      </aside>
+      
+      <!-- Content Area -->
+      <div class="content-area">
+        <div class="content-card" id="content-card">
+          <div class="card-scroll-wrapper">
+          <div class="card-text-content">
+                <h2 id="card-title">Loading...</h2>
+                <div id="card-content"></div>
+            </div>
+            </div>
+          
+          <!-- Footer (inside card) -->
+          <footer class="card-footer">
+            <div class="footer-left">
+              <img src="SVGs/IN-logo.svg" alt="IN Logo" class="footer-logo">
+            </div>
+            <div class="footer-right" id="footer-nav-buttons">
+              <!-- Action buttons and nav buttons will be added dynamically -->
+            </div>
+          </footer>
+        </div>
+
+        <!-- Embed Panel (for resources) -->
+        <div id="embed-panel" aria-label="Embedded resource panel">
+          <div id="embed-header">
+            <span id="embed-title">Resource</span>
+            <div id="embed-actions">
+              <button id="embed-open-external" title="Open in new tab">Open in new tab</button>
+              <button id="embed-close" title="Close">×</button>
+            </div>
+          </div>
+          <iframe id="embed-iframe" allow="fullscreen; clipboard-write; autoplay; storage-access"></iframe>
+        </div>
+    </div>
+  </div>
+  
+  <!-- Supademo Modal -->
+  <div id="supademo-modal" class="modal-overlay">
+    <div class="modal-content">
+      <h3 style="margin: 0 0 12px 0; font-size: 20px; color: var(--color-primary-text);">Finished the demo?</h3>
+      <p style="margin: 0 0 24px 0; font-size: 15px; color: var(--color-muted); line-height: 1.5;">Have you completed the interactive guide?</p>
+      <div style="display: flex; gap: 12px; justify-content: center;">
+        <button id="supademo-cancel" class="btn btn-outline">No, stay</button>
+        <button id="supademo-confirm" class="btn btn-secondary">Yes, continue</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://unpkg.com/lottie-web@5.12.2/build/player/lottie.min.js"></script>
+  <script>
+    // ========== GLOBAL STATE ==========
+    let courseData = [];
+    let activeNodeId = '1';
+    let visitedNodes = new Set();
+    let mainPathHistory = [];
+    let skipHistoryPush = false;
+    let nodeById = new Map();
+    let parentSections = []; // For TOC - parent nodes with their children
+    let pendingSupademoNavigation = null;
+    // Per-sidequest return pointer (targetId -> main slide id)
+    let sidequestReturnByTargetId = new Map();
+    
+    // ========== SUPADEMO HELPERS ==========
+    function hasSupademoContent(text) {
+      return text && /\[supademo:/i.test(text);
+    }
+    
+    function showSupademoModal(navigationCallback) {
+      pendingSupademoNavigation = navigationCallback;
+      const modal = document.getElementById('supademo-modal');
+      if (modal) modal.style.display = 'flex';
+    }
+    
+    // ========== CONTENT RENDERING ==========
+    function renderContent(element, text, nodeType = 'main') {
+        if (nodeType === 'flip-cards') {
+            renderFlipCards(element, text);
+            return;
+        }
+        if (nodeType === 'hero') {
+            renderHeroSlide(element, text);
+            return;
+        }
+        let content = text || '';
+        content = content.replace(/^(?:\s*\[(?:title|next|prev):[^\]]+\]\s*\n)+/i, '');
+      
+        try {
+          element.removeAttribute('data-resource-url');
+          element.removeAttribute('data-resource-title');
+          element.removeAttribute('data-buttons');
+          element.innerHTML = '';
+        } catch (_) {}
+
+      // Quote blocks
+        const quoteRegex = /\[quote\][\s\S]*?\[\/quote\]/g;
+      if (quoteRegex.test(content)) {
+          const parts = content.split(quoteRegex);
+          const quotes = content.match(quoteRegex) || [];
+          let html = '';
+          for (let i = 0; i < parts.length; i++) {
+            const part = parts[i];
+            if (part && part.trim()) {
+              const temp = document.createElement('div');
+              renderContentNormal(temp, part.trim());
+              html += temp.innerHTML;
+            }
+            const q = quotes[i];
+            if (q) {
+              const textMatch = q.match(/text:\s*(.*)/);
+              const authorMatch = q.match(/author:\s*(.*)/);
+              const qText = textMatch ? textMatch[1].trim() : '';
+              const qAuthor = authorMatch ? authorMatch[1].trim() : '';
+              html += `<div class="quote-block"><div class="quote-mark">❝</div><div><div class="quote-text">${qText}</div>${qAuthor ? `<div class="quote-author">— ${qAuthor}</div>` : ''}</div></div>`;
+            }
+          }
+          element.innerHTML = html;
+          return;
+        }
+
+      // Inline buttons
+        const buttonRegex = /\[button:([^\]]+)\]\((https?:\/\/[^\s)]+)\)/gi;
+        const buttonDefs = [];
+        let strippedContent = content.replace(buttonRegex, (m, label, url) => {
+          buttonDefs.push({ buttonText: label.trim(), url: url.trim() });
+          return '';
+        }).trim();
+
+        strippedContent = strippedContent.replace(/\[(image|video|lottie)([^\]]*)\]\(([^)]+)\)/gi, '![$1$2]($3)');
+
+      // YouTube
+        const youtubeRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]{11})/;
+        const youtubeMatch = strippedContent.match(youtubeRegex);
+        if (youtubeMatch) {
+            const videoId = youtubeMatch[1];
+            element.innerHTML = `<div style="position: relative; width: 100%; padding-top: 56.25%; background: #eee; border-radius: 8px; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+            if (buttonDefs.length) element.setAttribute('data-buttons', JSON.stringify(buttonDefs));
+            return;
+        }
+      
+        if (strippedContent.startsWith('http://') || strippedContent.startsWith('https://')) {
+            element.innerHTML = '';
+            element.setAttribute('data-resource-url', strippedContent);
+            element.setAttribute('data-resource-title', 'Open Resource');
+            if (buttonDefs.length) element.setAttribute('data-buttons', JSON.stringify(buttonDefs));
+            return;
+        }
+ 
+        // Check for columns FIRST - columns take priority over stacked media
+        const hasColumns = /\{columns\}/.test(strippedContent);
+        
+        if (hasColumns) {
+            // Content has columns - use column-aware rendering
+            renderContentNormal(element, strippedContent);
+        } else {
+            // No columns - check for stacked media
+        const imageRegex = /!\[(.*?)\]\(([^)\s]+)\)/g;
+        const allImages = [...strippedContent.matchAll(imageRegex)];
+        const hasStackedMedia = allImages.some(img => {
+            const attrs = img[1].split('/').slice(1);
+            return attrs.some(attr => {
+                const attrLower = attr.toLowerCase();
+                return attrLower.includes('align:stack-right') || 
+                       attrLower.includes('align:stack-right-top') ||
+                       attrLower === 'align:right' ||
+                       attrLower.startsWith('align:right/');
+            });
+        });
+ 
+        if (hasStackedMedia) {
+            renderContentWithStackedImages(element, strippedContent);
+        } else {
+            renderContentNormal(element, strippedContent);
+            }
+        }
+        if (buttonDefs.length) element.setAttribute('data-buttons', JSON.stringify(buttonDefs));
+    }
+
+    function renderContentNormal(element, content) {
+      let html = '';
+      const processBold = (str) => str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      
+      // Check if content has columns
+      const hasColumns = /\{columns\}/.test(content);
+      
+      if (hasColumns) {
+        // Process content with columns
+        html = processContentWithColumns(content, processBold);
+      } else {
+        // Process content without columns (original logic)
+        html = processSimpleContent(content, processBold);
+      }
+
+      element.innerHTML = html;
+      initLottieWithin(element);
+    }
+    
+    // Process content that contains {columns} blocks
+    function processContentWithColumns(content, processBold) {
+      let html = '';
+      let remaining = content;
+      
+      while (remaining.length > 0) {
+        const columnsStart = remaining.indexOf('{columns}');
+        
+        if (columnsStart === -1) {
+          // No more columns, process remaining content
+          html += processSimpleContent(remaining, processBold);
+          break;
+        }
+        
+        // Process content before columns
+        if (columnsStart > 0) {
+          html += processSimpleContent(remaining.substring(0, columnsStart), processBold);
+        }
+        
+        // Find end of columns block
+        const columnsEnd = remaining.indexOf('{/columns}', columnsStart);
+        if (columnsEnd === -1) {
+          // Malformed columns, just process rest as text
+          html += processSimpleContent(remaining.substring(columnsStart), processBold);
+          break;
+        }
+        
+        // Extract and process columns block
+        const columnsContent = remaining.substring(columnsStart + 9, columnsEnd); // 9 = '{columns}'.length
+        html += renderColumnsBlock(columnsContent, processBold);
+        
+        // Continue with rest of content
+        remaining = remaining.substring(columnsEnd + 10); // 10 = '{/columns}'.length
+      }
+      
+      return html;
+    }
+    
+    // Render a {columns} block
+    function renderColumnsBlock(columnsContent, processBold) {
+      const columnParts = columnsContent.split(/\{column\}/).filter(p => p.trim());
+      let columnsHtml = '<div class="columns-container" style="display: flex; gap: 24px; align-items: center;">';
+      
+      columnParts.forEach(colContent => {
+        const cleanContent = colContent.replace(/\{\/column\}/g, '').trim();
+        if (cleanContent) {
+          const tempDiv = document.createElement('div');
+          renderColumnContent(tempDiv, cleanContent);
+          columnsHtml += `<div class="column" style="flex: 1;">${tempDiv.innerHTML}</div>`;
+        }
+      });
+      
+      columnsHtml += '</div>';
+      return columnsHtml;
+    }
+    
+    // Process simple content (no columns)
+    function processSimpleContent(content, processBold) {
+      let html = '';
+      const lines = content.split('\n');
+      let inList = false;
+
+      for (const line of lines) {
+        const trimmedLine = line.trim();
+        
+        // Handle <br/> tags - add vertical space
+        if (trimmedLine === '<br/>' || trimmedLine === '<br>') {
+          if (inList) { html += '</ul>'; inList = false; }
+          html += '<div class="paragraph-break"></div>';
+          continue;
+        }
+        
+        // Empty line = paragraph break (user pressed enter)
+        if (trimmedLine === '') {
+          if (inList) { html += '</ul>'; inList = false; }
+          html += '<div class="paragraph-break"></div>';
+          continue;
+        }
+        
+        const isListItem = trimmedLine.startsWith('* ') || trimmedLine.startsWith('- ') || (trimmedLine.startsWith('-') && trimmedLine.length > 1 && trimmedLine[1] !== '-');
+
+        if (isListItem) {
+          if (!inList) { html += '<ul>'; inList = true; }
+          const listItemContent = processBold(trimmedLine.startsWith('- ') ? trimmedLine.substring(2) : trimmedLine.substring(1));
+          html += `<li>${listItemContent}</li>`;
+        } else {
+          if (inList) { html += '</ul>'; inList = false; }
+
+          // Supademo embed
+          const supademoMatch = trimmedLine.match(/\[supademo:\s*([^\]]+)\]\(([^)]+)\)/i);
+          if (supademoMatch) {
+            const title = supademoMatch[1].trim();
+            const url = supademoMatch[2].trim();
+            html += `<div class="supademo-wrapper">
+              <div class="supademo-container" style="position: relative; box-sizing: content-box; width: 100%;">
+                <iframe src="${url}" loading="lazy" title="${title}" allow="clipboard-write" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+              </div>
+            </div>`;
+            continue;
+          }
+
+          const imageRegex = /!\[(.*?)\]\(([^)\s]+)\)/g;
+          const mediaItems = [...line.matchAll(imageRegex)];
+
+          if (mediaItems.length > 0) {
+            let combinedAttrs = [];
+            mediaItems.forEach(imgMatch => {
+              const allData = imgMatch[1].split('/');
+              combinedAttrs = combinedAttrs.concat(allData.slice(1));
+            });
+
+            let alignClass = 'align-center';
+            combinedAttrs.forEach(attr => {
+              const [key, value] = attr.split(':');
+              if (key === 'align') alignClass = `align-${value.trim()}`;
+            });
+
+            let mediaHtml = `<div class="content-images-container ${alignClass}">`;
+            mediaItems.forEach(match => {
+              mediaHtml += renderMediaItem(match);
+            });
+            mediaHtml += '</div>';
+            html += mediaHtml;
+          } else {
+            html += `<p>${processBold(trimmedLine)}</p>`;
+          }
+        }
+      }
+
+      if (inList) html += '</ul>';
+      return html;
+    }
+    
+    // Helper to render content within columns
+    function renderColumnContent(element, content) {
+      const processBold = (str) => str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      let html = '';
+      const lines = content.split('\n');
+      let inList = false;
+      
+      for (const line of lines) {
+        const trimmedLine = line.trim();
+        
+        // Empty line = paragraph break
+        if (!trimmedLine) {
+          if (inList) { html += '</ul>'; inList = false; }
+          html += '<div class="paragraph-break"></div>';
+          continue;
+        }
+        
+        // Check for media items (images/videos)
+        const imageRegex = /!\[(.*?)\]\(([^)\s]+)\)/g;
+        const mediaItems = [...line.matchAll(imageRegex)];
+        
+        if (mediaItems.length > 0) {
+          if (inList) { html += '</ul>'; inList = false; }
+          let mediaHtml = `<div class="content-images-container align-center">`;
+          mediaItems.forEach(match => {
+            mediaHtml += renderMediaItem(match);
+          });
+          mediaHtml += '</div>';
+          html += mediaHtml;
+        } else if (trimmedLine.startsWith('* ') || trimmedLine.startsWith('- ')) {
+          if (!inList) { html += '<ul>'; inList = true; }
+          const listItemContent = processBold(trimmedLine.startsWith('- ') ? trimmedLine.substring(2) : trimmedLine.substring(1));
+          html += `<li>${listItemContent}</li>`;
+        } else {
+          if (inList) { html += '</ul>'; inList = false; }
+          html += `<p>${processBold(trimmedLine)}</p>`;
+        }
+      }
+      
+      if (inList) html += '</ul>';
+      element.innerHTML = html;
+    }
+    
+    // Helper to render a single media item
+    function renderMediaItem(match) {
+              const allData = match[1].split('/');
+              const attributes = allData.slice(1);
+      const fileRef = match[2];
+      
+      // Determine media type from attributes or file extension
+      let mediaType = 'image';
+      let altText = allData[0].trim();
+      
+      // Check for type: attribute
+      attributes.forEach(attr => {
+        const [key, value] = attr.split(':');
+        if (key && key.trim().toLowerCase() === 'type') {
+          mediaType = (value || '').trim().toLowerCase();
+        }
+      });
+      
+      // Also check first segment for type
+      const firstSegment = allData[0].toLowerCase();
+      if (firstSegment === 'video' || firstSegment.startsWith('video:')) {
+        mediaType = 'video';
+        altText = allData[0].split(':').slice(1).join(':').trim() || 'video';
+      } else if (firstSegment === 'lottie' || firstSegment.startsWith('lottie:')) {
+        mediaType = 'lottie';
+        altText = allData[0].split(':').slice(1).join(':').trim() || 'animation';
+      } else if (firstSegment.includes('motion graphic') || firstSegment.includes('animation')) {
+        mediaType = 'video';
+        altText = firstSegment;
+      }
+      
+      // Check file extension for video/lottie
+      if (/\.(mp4|webm|mov|ogg)(\?|$)/i.test(fileRef)) {
+        mediaType = 'video';
+      } else if (/\.json(\?|$)/i.test(fileRef)) {
+        mediaType = 'lottie';
+      }
+      
+      // Determine source - external URL or local file
+      const isExternalUrl = fileRef.startsWith('http://') || fileRef.startsWith('https://');
+              const v = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? Date.now() : '1.0';
+      const src = isExternalUrl ? fileRef : `images/${fileRef}?v=${v}`;
+              
+              let sizeClass = 'size-large';
+              let style = '';
+              let frameClass = '';
+              let wantsControls = false;
+
+              attributes.forEach(attr => {
+                const [key, value] = attr.split(':');
+                const k = (key || '').trim().toLowerCase();
+                const vv = (value || '').trim().toLowerCase();
+                if (k === 'size') {
+                  const sizeValue = (value || '').trim();
+                  if (sizeValue.endsWith('px')) {
+                    style = `height: ${sizeValue}; width: auto;`;
+                    sizeClass = '';
+                  } else {
+                    sizeClass = `size-${sizeValue}`;
+                  }
+                } else if (k === 'frame' || k === 'border' || k === 'style') {
+                  if (['none', 'no', 'off', 'plain', '0'].includes(vv)) frameClass = 'no-frame';
+                } else if (k === 'controls' || (k === 'play' && ['click', 'manual'].includes(vv)) || (k === 'autoplay' && ['off', 'false', 'no'].includes(vv)) || (k === 'sound' && ['on', 'true', 'yes'].includes(vv))) {
+                  wantsControls = true;
+                }
+              });
+              
+      if (mediaType === 'video') {
+                if (wantsControls) {
+          return `<div class="img-container ${sizeClass} ${frameClass}" style="${style}"><video controls style="width:100%;height:auto;" src="${src}" title="${altText}"></video></div>`;
+                } else {
+          return `<div class="img-container ${sizeClass} ${frameClass}" style="${style}"><video autoplay loop muted playsinline style="width:100%;height:auto;" src="${src}" title="${altText}"></video></div>`;
+                }
+      } else if (mediaType === 'lottie') {
+        return `<div class="img-container ${sizeClass} ${frameClass}" style="${style}"><div class="lottie-anim" data-src="${src}" data-loop="true" data-autoplay="true" aria-label="${altText}"></div></div>`;
+              } else {
+        return `<div class="img-container ${sizeClass} ${frameClass}" style="${style}"><img src="${src}" alt="${altText}" style="${style}"></div>`;
+      }
+    }
+
+    function renderContentWithStackedImages(element, content) {
+        const lines = content.split('\n');
+        let textHtml = '';
+        let stackedMedia = [];
+        let supademoBlocks = [];
+        let inList = false;
+        const processBold = (str) => str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+        for (const line of lines) {
+            const trimmedLine = line.trim();
+            const isListItem = trimmedLine.startsWith('* ') || trimmedLine.startsWith('- ') || (trimmedLine.startsWith('-') && trimmedLine.length > 1 && trimmedLine[1] !== '-');
+
+        // Supademo
+        const supademoMatch = trimmedLine.match(/\[supademo:\s*([^\]]+)\]\(([^)]+)\)/i);
+        if (supademoMatch) {
+          if (inList) { textHtml += '</ul>'; inList = false; }
+          const title = supademoMatch[1].trim();
+          const url = supademoMatch[2].trim();
+          // In stacked-right layouts, render Supademo as a full-width block (not constrained to the text column)
+          supademoBlocks.push(`<div class="supademo-wrapper">
+            <div class="supademo-container" style="position: relative; box-sizing: content-box; width: 100%;">
+              <iframe src="${url}" loading="lazy" title="${title}" allow="clipboard-write" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+            </div>
+          </div>`);
+          continue;
+        }
+
+            const mediaRegex = /!\[(.*?)\]\(([^)\s]+)\)/g;
+            const mediaItems = [...line.matchAll(mediaRegex)];
+
+            if (mediaItems.length > 0) {
+                let hasStackedOnThisLine = false;
+                mediaItems.forEach(match => {
+                    const allData = match[1].split('/');
+                    const attributes = allData.slice(1);
+                    const isStacked = attributes.some(attr => {
+                        const attrLower = attr.toLowerCase();
+                        return attrLower.includes('align:stack-right') || 
+                               attrLower.includes('align:stack-right-top') ||
+                               attrLower === 'align:right' ||
+                               attrLower.startsWith('align:right/');
+                    });
+                    
+                    if (isStacked) {
+                        hasStackedOnThisLine = true;
+                        stackedMedia.push(renderStackedMediaItem(match));
+                    }
+                });
+
+                if (!hasStackedOnThisLine) {
+                    let combinedAttrs = [];
+                    mediaItems.forEach(match => {
+                        const allData = match[1].split('/');
+              combinedAttrs = combinedAttrs.concat(allData.slice(1));
+                    });
+
+                    let alignClass = 'align-center';
+                    combinedAttrs.forEach(attr => {
+                        const [key, value] = attr.split(':');
+              if (key === 'align') alignClass = `align-${value.trim()}`;
+                    });
+
+                    let mediaHtml = `<div class="content-images-container ${alignClass}">`;
+                    mediaItems.forEach(match => {
+                        mediaHtml += renderMediaItem(match);
+                    });
+                    mediaHtml += '</div>';
+                    textHtml += mediaHtml;
+                }
+            } else if (isListItem) {
+          if (!inList) { textHtml += '<ul>'; inList = true; }
+                const listItemContent = processBold(trimmedLine.startsWith('- ') ? trimmedLine.substring(2) : trimmedLine.substring(1));
+                textHtml += `<li>${listItemContent}</li>`;
+            } else {
+          if (inList) { textHtml += '</ul>'; inList = false; }
+                if (trimmedLine === '') {
+                    // Empty line = paragraph break (user pressed enter)
+                    textHtml += '<div class="paragraph-break"></div>';
+                } else if (trimmedLine !== '') {
+                    textHtml += `<p>${processBold(line)}</p>`;
+                }
+            }
+        }
+
+      if (inList) textHtml += '</ul>';
+
+      const stackedMediaHtml = stackedMedia.length > 0 ? `<div class="stacked-images">${stackedMedia.join('')}</div>` : '';
+        const shouldTopAlign = /align:stack-right-top|valign:top/i.test(content);
+
+        element.innerHTML = `
+            <div class="content-with-stacked-images${shouldTopAlign ? ' top-aligned' : ''}">
+                <div class="text-content">${textHtml}</div>
+                ${stackedMediaHtml}
+            </div>
+            ${supademoBlocks.join('\n')}
+        `;
+        initLottieWithin(element);
+    }
+    
+    // Helper to render stacked media items (right-aligned)
+    function renderStackedMediaItem(match) {
+        const allData = match[1].split('/');
+        const attributes = allData.slice(1);
+                        const fileRef = match[2];
+        
+        // Determine media type
+        let mediaType = 'image';
+        let altText = allData[0].trim();
+        
+        const firstSegment = allData[0].toLowerCase();
+        if (firstSegment === 'video' || firstSegment.startsWith('video:') || firstSegment.includes('motion graphic')) {
+            mediaType = 'video';
+            altText = allData[0].split(':').slice(1).join(':').trim() || allData[0].trim();
+        } else if (firstSegment === 'lottie' || firstSegment.startsWith('lottie:')) {
+            mediaType = 'lottie';
+            altText = allData[0].split(':').slice(1).join(':').trim() || 'animation';
+        }
+        
+        // Check for type: attribute
+        attributes.forEach(attr => {
+            const [key, value] = attr.split(':');
+            if (key && key.trim().toLowerCase() === 'type') {
+                mediaType = (value || '').trim().toLowerCase();
+            }
+        });
+        
+        if (/\.(mp4|webm|mov|ogg)(\?|$)/i.test(fileRef)) mediaType = 'video';
+        else if (/\.json(\?|$)/i.test(fileRef)) mediaType = 'lottie';
+        
+        const isExternalUrl = fileRef.startsWith('http://') || fileRef.startsWith('https://');
+                        const v = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? Date.now() : '1.0';
+        const src = isExternalUrl ? fileRef : `images/${fileRef}?v=${v}`;
+                        
+                        let sizeClass = 'size-medium';
+                        let style = '';
+                        let frameClass = '';
+              let wantsControls = false;
+              
+                        attributes.forEach(attr => {
+                            const [key, value] = attr.split(':');
+                            const k = (key || '').trim().toLowerCase();
+                const vv = (value || '').trim().toLowerCase();
+                            if (k === 'size') {
+                const sizeValue = (value || '').trim();
+                                if (sizeValue.endsWith('px')) {
+                                    style = `height: ${sizeValue}; width: auto;`;
+                                    sizeClass = '';
+                                } else {
+                                    sizeClass = `size-${sizeValue}`;
+                                }
+                            } else if (k === 'frame' || k === 'border' || k === 'style') {
+                  if (['none', 'no', 'off', 'plain', '0'].includes(vv)) frameClass = 'no-frame';
+                } else if (k === 'controls' || (k === 'play' && ['click', 'manual'].includes(vv))) {
+                                wantsControls = true;
+                            }
+                        });
+                        
+        if (mediaType === 'video') {
+                            if (wantsControls) {
+                return `<div class="img-container ${sizeClass} ${frameClass}" style="${style}"><video controls style="width:100%;height:auto;" src="${src}" title="${altText}"></video></div>`;
+                            } else {
+                return `<div class="img-container ${sizeClass} ${frameClass}" style="${style}"><video autoplay loop muted playsinline style="width:100%;height:auto;" src="${src}" title="${altText}"></video></div>`;
+                            }
+        } else if (mediaType === 'lottie') {
+            return `<div class="img-container ${sizeClass} ${frameClass}" style="${style}"><div class="lottie-anim" data-src="${src}" data-loop="true" data-autoplay="true" aria-label="${altText}"></div></div>`;
+                        } else {
+            return `<div class="img-container ${sizeClass} ${frameClass}" style="${style}"><img src="${src}" alt="${altText}" style="${style}"></div>`;
+        }
+    }
+
+    function renderHeroSlide(element, text) {
+        // Parse hero content:
+        // hero_image: path/to/image.png
+        // hero_subtitle: Subtitle text
+        // hero_title: Main title
+        // hero_body: Body text (can be multiline)
+        const content = text || '';
+        
+        const imageMatch = content.match(/hero_image:\s*(.+)/);
+        const subtitleMatch = content.match(/hero_subtitle:\s*(.+)/);
+        const titleMatch = content.match(/hero_title:\s*(.+)/);
+        const bodyMatch = content.match(/hero_body:\s*([\s\S]*?)(?=\n(?:hero_|$)|$)/);
+        
+        const imagePath = imageMatch ? imageMatch[1].trim() : '';
+        const subtitle = subtitleMatch ? subtitleMatch[1].trim() : '';
+        const title = titleMatch ? titleMatch[1].trim() : '';
+        const body = bodyMatch ? bodyMatch[1].trim() : '';
+        
+        // Build image URL
+        let imgSrc = '';
+        if (imagePath) {
+            if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
+                imgSrc = imagePath;
+                                } else {
+                imgSrc = `images/${imagePath}`;
+            }
+        }
+        
+        // Build HTML
+        let html = '<div class="hero-layout">';
+        
+        // Image side
+        html += '<div class="hero-image-side">';
+        if (imgSrc) {
+            html += `<img src="${imgSrc}" alt="${title || 'Hero image'}">`;
+        }
+        html += '</div>';
+        
+        // Text side
+        html += '<div class="hero-text-side">';
+        if (subtitle) {
+            html += `<p class="hero-subtitle">${subtitle}</p>`;
+        }
+        if (title) {
+            // Process bold markers in title
+            const processedTitle = title.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            html += `<h1 class="hero-title">${processedTitle}</h1>`;
+        }
+        if (body) {
+            // Process bold markers and line breaks in body
+            const processedBody = body
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\n\n/g, '</p><p class="hero-body">')
+                .replace(/\n/g, '<br>');
+            html += `<p class="hero-body">${processedBody}</p>`;
+        }
+        html += '</div>';
+        
+        html += '</div>';
+        
+        element.innerHTML = html;
+    }
+
+    function renderFlipCards(element, text) {
+        const cardsData = [];
+        let introHtml = '';
+        let working = text || '';
+        const introMatch = working.match(/\[intro\]\n([\s\S]*?)\n\[\/intro\]\n?/);
+        if (introMatch) {
+            const introText = introMatch[1].trim();
+            const temp = document.createElement('div');
+            renderContentNormal(temp, introText);
+            introHtml = temp.innerHTML;
+            working = working.replace(introMatch[0], '');
+        }
+        const cardBlocks = working.split('[card-separator]');
+        const processBold = (str) => str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        
+        cardBlocks.forEach(block => {
+            const trimmedBlock = block.trim();
+            if (!trimmedBlock.startsWith('[card]')) return;
+
+            let front = 'Click to reveal';
+            let back = '';
+            
+        const lines = trimmedBlock.split('\n').slice(1);
+            let currentKey = '';
+            let contentBuffer = '';
+
+            lines.forEach(line => {
+                const frontMatch = line.match(/^front:\s*(.*)/);
+                const backMatch = line.match(/^back:\s*(.*)/);
+
+                if (frontMatch) {
+            if (currentKey === 'back') { back = contentBuffer.trim(); contentBuffer = ''; }
+                    currentKey = 'front';
+                    contentBuffer = frontMatch[1];
+                } else if (backMatch) {
+            if (currentKey === 'front') { front = contentBuffer.trim(); contentBuffer = ''; }
+                    currentKey = 'back';
+                    contentBuffer = backMatch[1];
+                } else {
+                    contentBuffer += '\n' + line;
+                }
+            });
+
+        if (currentKey === 'front') front = contentBuffer.trim();
+        else if (currentKey === 'back') back = contentBuffer.trim();
+        if (!front) front = 'Click to reveal';
+
+            cardsData.push({ front, back });
+        });
+
+        let html = '';
+      if (introHtml) html += `<div style="margin-bottom: 12px;">${introHtml}</div>`;
+        html += '<div class="flip-card-grid">';
+        cardsData.forEach(card => {
+            const frontParts = card.front.split('\n');
+            const frontTitle = frontParts[0];
+            const frontSubtitle = frontParts.slice(1).join('<br>');
+
+            let frontHtml = `<p><strong>${processBold(frontTitle)}</strong></p>`;
+            if (frontSubtitle) {
+                frontHtml += `<p style="font-size: 0.8em; opacity: 0.7; margin-top: 8px;">${processBold(frontSubtitle)}</p>`;
+            }
+
+            html += `
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-front">${frontHtml}</div>
+            <div class="flip-card-back"><p>${processBold(card.back)}</p></div>
+                </div>
+            `;
+        });
+        html += '</div>';
+        element.innerHTML = html;
+    }
+
+    function initLottieWithin(root) {
+      if (!window.lottie || !root) return;
+      const nodes = root.querySelectorAll('.lottie-anim:not([data-lottie-initialized])');
+      nodes.forEach(el => {
+        const path = el.getAttribute('data-src');
+        if (!path) return;
+        const isStackedRight = !!el.closest('.stacked-images');
+        const preserve = isStackedRight ? 'xMinYMin meet' : 'xMidYMid meet';
+        window.lottie.loadAnimation({
+          container: el,
+          renderer: 'svg',
+          loop: el.getAttribute('data-loop') !== 'false',
+          autoplay: el.getAttribute('data-autoplay') !== 'false',
+          path,
+          rendererSettings: { preserveAspectRatio: preserve, progressiveLoad: true }
+        });
+        el.setAttribute('data-lottie-initialized', '1');
+      });
+    }
+
+    // ========== EMBED PANEL ==========
+    function openInEmbed(url, title = 'Resource') {
+      const panel = document.getElementById('embed-panel');
+      const iframe = document.getElementById('embed-iframe');
+      const titleEl = document.getElementById('embed-title');
+      if (!panel || !iframe) { window.open(url, '_blank'); return; }
+      titleEl.textContent = title;
+      iframe.src = url;
+      panel.classList.add('visible');
+    }
+
+    function handleResourceClick(e, url, title) {
+      if (e && (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1)) {
+        window.open(url, '_blank');
+        return false;
+      }
+      openInEmbed(url, title || 'Resource');
+      return false;
+    }
+
+    // ========== PARSER ==========
+    function parseFlowScript(text) {
+        const mainNodes = [];
+        const sidequestNodes = [];
+        let currentTopic = null;
+        let currentBlock = null;
+        let isInSidequestSection = false;
+        
+        // Split into main content and sidequest section
+        const sidequestMarker = '[flow-specific-side-quests]';
+        const sidequestIndex = text.indexOf(sidequestMarker);
+        let mainText = text;
+        let sidequestText = '';
+        
+        if (sidequestIndex !== -1) {
+            mainText = text.substring(0, sidequestIndex);
+            sidequestText = text.substring(sidequestIndex + sidequestMarker.length);
+        }
+        
+        // Parse main content
+        parseSection(mainText, mainNodes, false);
+        
+        // Parse sidequests
+        if (sidequestText.trim()) {
+            parseSection(sidequestText, sidequestNodes, true);
+        }
+        
+        function parseSection(sectionText, nodesArray, isSidequest) {
+            const lines = sectionText.split('\n');
+            let currentBlock = null;
+            let currentTopic = null;
+        let isContent = false;
+            let inSidequestContent = false;
+            let currentSidequestContent = null;
+            const sidequestContents = []; // Store sidequest content blocks for later linking
+            
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i];
+                const trimmedLine = line.trim();
+                
+                // Check for old format sidequest content: [side-quest-content:type:title|back=Label]
+                const sqContentMatch = trimmedLine.match(/^\[side-quest-content:([^:]+):([^\]|]+)(?:\|back=([^\]]+))?\]$/);
+                if (sqContentMatch) {
+                    // Save current block before switching to sidequest content
+                    if (currentBlock && !inSidequestContent) {
+                        nodesArray.push(currentBlock);
+                        currentBlock = null;
+                    }
+                    inSidequestContent = true;
+                isContent = false;
+                    currentSidequestContent = {
+                        type: sqContentMatch[1].trim().toLowerCase(),
+                        title: sqContentMatch[2].trim(),
+                        backLabel: sqContentMatch[3] ? sqContentMatch[3].trim() : 'Return to main path',
+                        content: ''
+                    };
+                    continue;
+                }
+                
+                // Handle sidequest content parsing
+                if (inSidequestContent) {
+                    if (trimmedLine === '---') {
+                        if (!isContent) {
+                            isContent = true;
+                        } else {
+                            // End of sidequest content block
+                            sidequestContents.push(currentSidequestContent);
+                            currentSidequestContent = null;
+                            inSidequestContent = false;
+                            isContent = false;
+                        }
+                        continue;
+                    }
+                    if (isContent && currentSidequestContent) {
+                        // Parse [title: ...] inside sidequest content
+                        const titleMatch = trimmedLine.match(/^\[title:\s*(.+)\]$/);
+                        if (titleMatch) {
+                            currentSidequestContent.displayTitle = titleMatch[1].trim();
+                        } else {
+                            currentSidequestContent.content += line + '\n';
+                        }
+                    }
+                    continue;
+                }
+                
+                // Check for topic header: [id:1/topic: Introduction]
+                const topicMatch = trimmedLine.match(/^\[id:([^\/]+)\/topic:\s*(.+?)\]$/);
+                if (topicMatch) {
+                    if (currentBlock) nodesArray.push(currentBlock);
+                    currentTopic = {
+                        id: topicMatch[1].trim(),
+                        name: topicMatch[2].trim()
+                    };
+                    currentBlock = null;
+                    isContent = false;
+                    continue;
+                }
+                
+                // Check for slide_id (new format) or id (old format)
+                if (trimmedLine.startsWith('slide_id:') || trimmedLine.startsWith('id:')) {
+                    if (currentBlock) nodesArray.push(currentBlock);
+                    const idValue = trimmedLine.split(':').slice(1).join(':').trim();
+                    currentBlock = { 
+                        connections: {}, 
+                        sideQuests: [],
+                        topic: currentTopic,
+                        isSidequest: isSidequest
+                    };
+                    // For sidequests, use topic id + slide_id
+                    if (isSidequest && currentTopic) {
+                        currentBlock.id = currentTopic.id;
+                        currentBlock.slideId = parseInt(idValue) || 1;
+                    } else {
+                        currentBlock.id = parseInt(idValue) || idValue;
+                    }
+                    isContent = false;
+                    continue;
+            }
+
+            if (!currentBlock) continue;
+
+                if (trimmedLine === '---') {
+                isContent = !isContent;
+                continue;
+            }
+
+            if (isContent) {
+                // Check if this is a navigation line inside content (for sidequests)
+                if (line.startsWith('>')) {
+                    const navMatch = line.match(/^>\s*\[([^\]]+)\]\s*(.+?)\s*->\s*(.+)$/);
+                    if (navMatch) {
+                        const navType = navMatch[1].trim().toLowerCase();
+                        const buttonText = navMatch[2].trim();
+                        const target = navMatch[3].trim();
+                        
+                        if (navType === 'next:flow') {
+                            // External flow link - add to flowLinks
+                            if (!currentBlock.flowLinks) currentBlock.flowLinks = [];
+                            currentBlock.flowLinks.push({ buttonText, url: target });
+                            continue; // Don't add to content
+                        } else if (navType === 'next') {
+                            // Regular next navigation
+                            const targetId = parseInt(target);
+                            if (!isNaN(targetId)) {
+                                currentBlock.connections[buttonText] = targetId;
+                            } else {
+                                currentBlock.connections[buttonText] = target;
+                            }
+                            continue; // Don't add to content
+                        }
+                    }
+                }
+                // Add line to content if it's not a navigation line we handled
+                currentBlock.content = (currentBlock.content || '') + line + '\n';
+            } else {
+                    // Parse navigation buttons: > [next] Label -> target
+                if (line.startsWith('>')) {
+                        // New format: > [type] Label -> target
+                        const navMatch = line.match(/^>\s*\[([^\]]+)\]\s*(.+?)\s*->\s*(.+)$/);
+                        if (navMatch) {
+                            const navType = navMatch[1].trim().toLowerCase();
+                            const buttonText = navMatch[2].trim();
+                            const target = navMatch[3].trim();
+                            
+                            if (navType === 'next') {
+                                // Regular next navigation
+                                const targetId = parseInt(target);
+                                if (!isNaN(targetId)) {
+                                    currentBlock.connections[buttonText] = targetId;
+                                } else {
+                                    // External link or string target
+                                    currentBlock.connections[buttonText] = target;
+                                }
+                            } else if (navType === 'next:flow') {
+                                // External flow link
+                                if (!currentBlock.flowLinks) currentBlock.flowLinks = [];
+                                currentBlock.flowLinks.push({ buttonText, url: target });
+                            } else if (navType === 'sidequest') {
+                                // Sidequest link
+                                currentBlock.sideQuests.push({ 
+                                    buttonText, 
+                                    targetId: target,
+                                    type: 'sidequest'
+                                });
+                            }
+                        } else {
+                            // Old format: > Label -> target
+                            const oldMatch = line.match(/^>\s*(.+?)\s*->\s*(.+)$/);
+                            if (oldMatch) {
+                                const buttonText = oldMatch[1].trim();
+                                const target = oldMatch[2].trim();
+                                
+                                // Check if target is a sidequest reference: [type:title]
+                                const sidequestMatch = target.match(/^\[([^:]+):(.+)\]$/);
+                                if (sidequestMatch) {
+                                    const sqType = sidequestMatch[1].trim().toLowerCase();
+                                    const sqTitle = sidequestMatch[2].trim();
+                                    if (!currentBlock.sideQuests) currentBlock.sideQuests = [];
+                                    currentBlock.sideQuests.push({
+                                        buttonText: buttonText,
+                                        type: sqType,
+                                        title: sqTitle,
+                                        fullTitle: sqTitle
+                                    });
+                                } else {
+                                    const targetId = parseInt(target);
+                                    if (!isNaN(targetId)) {
+                                        currentBlock.connections[buttonText] = targetId;
+                                    }
+                                }
+                            }
+                    }
+                } else {
+                        // Parse properties
+                        const colonIdx = line.indexOf(':');
+                        if (colonIdx > 0) {
+                            const key = line.substring(0, colonIdx).trim();
+                            const value = line.substring(colonIdx + 1).trim();
+                            
+                            if (key === 'title-align') {
+                                currentBlock['title-align'] = value.toLowerCase();
+                            } else if (key === 'index_title') {
+                                currentBlock.indexTitle = value;
+                            } else if (key === 'type') {
+                                currentBlock.type = value;
+                            } else if (key === 'title') {
+                                // Remove leading # from titles
+                                currentBlock.title = value.replace(/^#\s*/, '');
+                            } else if (key === 'backLabel') {
+                                currentBlock.backLabel = value;
+                            } else if (key === 'section' || key === 'parent') {
+                            currentBlock.isSection = ['true', 'yes', '1'].includes(value.toLowerCase()); 
+                            } else {
+                                currentBlock[key] = value;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            if (currentBlock) nodesArray.push(currentBlock);
+            
+            // Link sidequest contents to their buttons
+            if (sidequestContents.length > 0) {
+                nodesArray.forEach(node => {
+                    if (node.sideQuests) {
+                        node.sideQuests.forEach(sq => {
+                            // Find matching sidequest content by type
+                            const matchingContent = sidequestContents.find(sqc => 
+                                sqc.type === sq.type && 
+                                (sq.title.toLowerCase().includes(sqc.title.toLowerCase()) || 
+                                 sqc.title.toLowerCase().includes(sq.type))
+                            );
+                            if (matchingContent) {
+                                sq.content = matchingContent.content.trim();
+                                sq.backLabel = matchingContent.backLabel;
+                                sq.displayTitle = matchingContent.displayTitle || sq.title;
+                            }
+                        });
+                    }
+                });
+            }
+        }
+        
+        // Process content to handle columns and external URLs
+        mainNodes.forEach(node => {
+            if (node.content) {
+                node.content = node.content.trim();
+            }
+        });
+        
+        sidequestNodes.forEach(node => {
+            if (node.content) {
+                node.content = node.content.trim();
+            }
+        });
+        
+        // Store sidequests in a map for lookup
+        window.sidequestNodesMap = new Map();
+        sidequestNodes.forEach(node => {
+            const key = node.id;
+            if (!window.sidequestNodesMap.has(key)) {
+                window.sidequestNodesMap.set(key, []);
+            }
+            window.sidequestNodesMap.get(key).push(node);
+        });
+        
+        return mainNodes;
+    }
+
+    // ========== TOC (Table of Contents) ==========
+    function buildTOCStructure(courseData) {
+      parentSections = [];
+      let currentTopic = null;
+      let currentTopicId = null; // raw topic id from markdown (e.g. "2")
+      
+      courseData.forEach(node => {
+        if (!node.id) return;
+        
+        // Check if this node starts a new topic
+        if (node.topic) {
+          const rawTopicId = String(node.topic.id);
+          if (!currentTopic || currentTopicId !== rawTopicId) {
+          currentTopic = {
+            // Namespace topic IDs so they can't collide with numeric slide IDs (e.g. topic "3" vs slide "3")
+            id: `topic:${rawTopicId}`,
+            topicId: rawTopicId,
+            name: node.topic.name,
+            children: [],
+            sideQuests: []
+          };
+          currentTopicId = rawTopicId;
+          parentSections.push(currentTopic);
+        }
+        }
+        
+        // Get the title for TOC (prefer indexTitle, fall back to title)
+        const tocTitle = node.indexTitle || toPlainTitle(node.title);
+        
+        if (currentTopic) {
+          // Add slide under current topic
+          currentTopic.children.push({
+            id: String(node.id),
+            title: tocTitle,
+            sideQuests: node.sideQuests || []
+          });
+        } else {
+          // No topic yet, create a standalone section
+          parentSections.push({
+            id: String(node.id),
+            title: tocTitle,
+            isSection: false,
+            children: [],
+            sideQuests: node.sideQuests || []
+          });
+        }
+      });
+      
+      // Update topics to use their name as title
+      parentSections.forEach(section => {
+        if (section.name) {
+          section.title = section.name;
+          section.isSection = true;
+        }
+      });
+    }
+
+    function toPlainTitle(rawTitle) {
+            if (!rawTitle) return '';
+            let t = String(rawTitle);
+            t = t.replace(/<br\s*\/?>(\s*)?/gi, ' ');
+            t = t.replace(/\*\*(.*?)\*\*/g, '$1');
+            t = t.replace(/<[^>]+>/g, '');
+            return t.trim();
+        }
+
+    function renderTOC() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.innerHTML = '';
+
+      function getSidequestStepIds({ isNewFormat, targetId, parentId, type, sqIdx }) {
+        // New format: sq-<targetId>-<slideNum>
+        if (isNewFormat && targetId && window.sidequestNodesMap && window.sidequestNodesMap.has(String(targetId))) {
+          const nodes = window.sidequestNodesMap.get(String(targetId)) || [];
+          return nodes.map((_, i) => `sq-${targetId}-${i + 1}`);
+        }
+        // Old format: <parentId>-<type>-<idx>-<cardIdx>
+        const ids = [];
+        if (!parentId || !type) return ids;
+        for (let i = 0; i < 50; i++) { // hard cap to avoid infinite loops
+          const id = `${parentId}-${type}-${sqIdx}-${i}`;
+          if (!nodeById.has(String(id))) break;
+          ids.push(String(id));
+        }
+        return ids;
+      }
+      
+      parentSections.forEach((section, sectionIdx) => {
+        const hasChildren = section.children.length > 0 || section.sideQuests.length > 0;
+        // Section is expanded if active node is inside it
+        const isExpanded = isNodeInSection(activeNodeId, section);
+        const sectionCompleted = isSectionCompleted(section);
+        // For section titles (isSection: true), they are never the "active page" since they're not slides
+        // For standalone slides (isSection: false), they can be the active page
+        const isSectionTitle = section.isSection === true;
+        const isSlideActive = !isSectionTitle && activeNodeId === section.id;
+        
+        const sectionEl = document.createElement('div');
+        sectionEl.className = `toc-section${isExpanded ? ' expanded' : ''}`;
+        sectionEl.dataset.sectionId = section.id;
+        sectionEl.dataset.isSection = isSectionTitle ? 'true' : 'false';
+        
+        // Determine indicator state
+        let indicatorClass = 'unvisited';
+        if (isSlideActive) {
+            // This is a standalone slide (not a section title) and it's active
+            indicatorClass = 'active current-node';
+        } else if (sectionCompleted) {
+            indicatorClass = 'completed';
+        } else if (isExpanded) {
+            indicatorClass = 'active'; // Dark when expanded/in-progress
+        }
+
+        // For section titles, clicking anywhere toggles. For slides, clicking navigates.
+        const clickHandler = isSectionTitle 
+            ? `toggleSection('${section.id}')`
+            : `handleSlideClick('${section.id}')`;
+
+        sectionEl.innerHTML = `
+          <div class="toc-section-header" onclick="${clickHandler}">
+            <div class="toc-section-left">
+              <div class="toc-indicator ${indicatorClass}"></div>
+              <span class="toc-section-title ${isSlideActive ? 'current-text' : ''}">${section.title}</span>
+            </div>
+            ${hasChildren ? `
+              <div class="toc-chevron-container" onclick="toggleSectionOnly(event, '${section.id}')" style="padding: 8px; margin: -8px; cursor: pointer;">
+                <svg class="toc-chevron" viewBox="0 0 12 12" fill="none">
+                  <path d="M3 4.5L6 7.5L9 4.5" stroke="#D7D7D7" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+            ` : ''}
+          </div>
+          ${hasChildren ? `<div class="toc-children"></div>` : ''}
+        `;
+        
+        if (hasChildren) {
+          const childrenContainer = sectionEl.querySelector('.toc-children');
+          
+          // Add main node children
+          section.children.forEach(child => {
+            const isChildActive = activeNodeId === child.id;
+            const childVisited = visitedNodes.has(child.id);
+            
+            let childIndicatorClass = 'unvisited';
+            if (isChildActive) childIndicatorClass = 'active';
+            else if (childVisited) childIndicatorClass = 'visited';
+            
+            const childEl = document.createElement('div');
+            let childClass = 'toc-child';
+            if (isChildActive) childClass += ' active';
+            else if (childVisited) childClass += ' visited';
+            else childClass += ' unvisited';
+            childEl.className = childClass;
+            childEl.onclick = (e) => {
+                e.stopPropagation(); // Prevent bubbling to parent
+                updateView(child.id);
+            };
+            childEl.innerHTML = `
+              <div class="toc-child-indicator ${childIndicatorClass}"></div>
+              <span class="toc-child-title">${child.title}</span>
+            `;
+            childrenContainer.appendChild(childEl);
+            
+            // Add sidequests for this child
+            if (child.sideQuests && child.sideQuests.length > 0) {
+              child.sideQuests.forEach((sq, sqIdx) => {
+                // New format sidequests use nodes like: sq-<targetId>-<slideNum>
+                // Old format sidequests use nodes like: <parentId>-<type>-<idx>-<cardIdx>
+                const isNewFormat = !!sq.targetId;
+                const sqId = isNewFormat ? `sq-${sq.targetId}-1` : `${child.id}-${sq.type}-${sqIdx}-0`;
+                const sqPrefix = isNewFormat ? `sq-${sq.targetId}-` : sqId.substring(0, sqId.lastIndexOf('-') + 1);
+                
+                // Get step IDs first (needed for visited check)
+                const stepIds = getSidequestStepIds({
+                  isNewFormat,
+                  targetId: sq.targetId,
+                  parentId: child.id,
+                  type: sq.type,
+                  sqIdx
+                });
+                
+                const isSqActive = activeNodeId === sqId || activeNodeId.startsWith(sqPrefix); // handle multi-card/slide sidequests
+                const sqVisited = visitedNodes.has(String(sqId)) || stepIds.some(id => visitedNodes.has(String(id)));
+                let sqClass = 'toc-child';
+                if (isSqActive) sqClass += ' active';
+                else if (sqVisited) sqClass += ' visited';
+                else sqClass += ' unvisited';
+                const sqEl = document.createElement('div');
+                sqEl.className = sqClass;
+                sqEl.style.paddingLeft = '12px';
+                sqEl.onclick = (e) => {
+                    e.stopPropagation();
+                    updateView(sqId);
+                };
+                const leftWrap = document.createElement('div');
+                leftWrap.style.display = 'flex';
+                leftWrap.style.alignItems = 'center';
+                leftWrap.style.gap = '10px';
+                leftWrap.innerHTML = `
+                  <div class="toc-child-indicator sidequest"></div>
+                  <span class="toc-child-title">${sq.buttonText || sq.title}</span>
+                `;
+                sqEl.appendChild(leftWrap);
+
+                // Step dots (one per sidequest step)
+                const dots = document.createElement('div');
+                dots.className = 'toc-step-dots';
+                // Always show at least one dot (even for 1-step sidequests)
+                const stepsToRender = stepIds.length > 0 ? stepIds : [sqId];
+                stepsToRender.forEach((stepId, i) => {
+                  const dot = document.createElement('span');
+                  dot.className = 'toc-step-dot' +
+                    (visitedNodes.has(String(stepId)) ? ' visited' : '') +
+                    (activeNodeId === String(stepId) ? ' active' : '');
+                  dot.title = `Step ${i + 1}`;
+                  dot.onclick = (ev) => {
+                    ev.stopPropagation();
+                    updateView(String(stepId));
+                  };
+                  dots.appendChild(dot);
+                });
+                // Place dots right after the title (inside leftWrap) like the design
+                leftWrap.appendChild(dots);
+                childrenContainer.appendChild(sqEl);
+              });
+            }
+          });
+          
+          // Add sidequests for the parent section itself
+          if (section.sideQuests && section.sideQuests.length > 0) {
+            section.sideQuests.forEach((sq, sqIdx) => {
+              const isNewFormat = !!sq.targetId;
+              const sqId = isNewFormat ? `sq-${sq.targetId}-1` : `${section.id}-${sq.type}-${sqIdx}-0`;
+              const sqPrefix = isNewFormat ? `sq-${sq.targetId}-` : sqId.substring(0, sqId.lastIndexOf('-') + 1);
+              const isSqActive = activeNodeId === sqId || activeNodeId.startsWith(sqPrefix);
+              const stepIds = getSidequestStepIds({
+                isNewFormat,
+                targetId: sq.targetId,
+                parentId: section.id,
+                type: sq.type,
+                sqIdx
+              });
+              const sqVisited = visitedNodes.has(String(sqId)) || stepIds.some(id => visitedNodes.has(String(id)));
+              let sqClass = 'toc-child';
+              if (isSqActive) sqClass += ' active';
+              else if (sqVisited) sqClass += ' visited';
+              else sqClass += ' unvisited';
+              const sqEl = document.createElement('div');
+              sqEl.className = sqClass;
+              sqEl.onclick = (e) => {
+                  e.stopPropagation();
+                  updateView(sqId);
+              };
+              const leftWrap = document.createElement('div');
+              leftWrap.style.display = 'flex';
+              leftWrap.style.alignItems = 'center';
+              leftWrap.style.gap = '10px';
+              leftWrap.innerHTML = `
+                <div class="toc-child-indicator sidequest"></div>
+                <span class="toc-child-title">${sq.buttonText || sq.title}</span>
+              `;
+              sqEl.appendChild(leftWrap);
+
+              const dots = document.createElement('div');
+              dots.className = 'toc-step-dots';
+              const stepsToRender = stepIds.length > 0 ? stepIds : [sqId];
+              stepsToRender.forEach((stepId, i) => {
+                const dot = document.createElement('span');
+                dot.className = 'toc-step-dot' +
+                  (visitedNodes.has(String(stepId)) ? ' visited' : '') +
+                  (activeNodeId === String(stepId) ? ' active' : '');
+                dot.title = `Step ${i + 1}`;
+                dot.onclick = (ev) => {
+                  ev.stopPropagation();
+                  updateView(String(stepId));
+                };
+                dots.appendChild(dot);
+              });
+              leftWrap.appendChild(dots);
+              childrenContainer.appendChild(sqEl);
+            });
+          }
+        }
+        
+        sidebar.appendChild(sectionEl);
+      });
+    }
+
+    function handleSlideClick(slideId) {
+        // Navigate to a standalone slide (not a section title)
+        updateView(slideId);
+    }
+
+    function toggleSectionOnly(event, sectionId) {
+      event.stopPropagation();
+      toggleSection(sectionId);
+    }
+
+    function toggleSection(sectionId) {
+      const sectionEl = document.querySelector(`.toc-section[data-section-id="${sectionId}"]`);
+      if (sectionEl) {
+        sectionEl.classList.toggle('expanded');
+      }
+    }
+
+    function isNodeInSection(nodeId, section) {
+      // For topic sections (isSection), the section itself is not a slide.
+      // Never treat a direct ID match as "in section" to avoid collisions (topic "3" vs slide "3").
+      if (!section.isSection && section.id === nodeId) return true;
+      
+      // Check if active node is one of this section's children
+      if (section.children.some(c => c.id === nodeId)) return true;
+      
+      // Check if active node is a sidequest belonging to this section or its children
+      if (nodeId.includes('-')) {
+        // Sidequest IDs have format: parentId-type-index-cardIdx
+        // Extract the parent ID (everything before the first dash that isn't part of a multi-digit number)
+        const parts = nodeId.split('-');
+        if (parts.length >= 4) {
+          const parentId = parts[0];
+          // Check if the sidequest's parent is this section or one of its children
+          if (section.id === parentId) return true;
+          if (section.children.some(c => c.id === parentId)) return true;
+        }
+        
+        // Also check for new format: sq-targetId-slideNum
+        if (nodeId.startsWith('sq-')) {
+          const sqParts = nodeId.split('-');
+          if (sqParts.length >= 3) {
+            // The sidequest belongs to whichever section contains the return node
+            const returnNode = window.sidequestReturnNode;
+            if (returnNode) {
+              if (section.children.some(c => c.id === returnNode)) return true;
+            }
+          }
+        }
+      }
+      
+      return false;
+    }
+
+    function isSectionCompleted(section) {
+      // For section titles, only children need to be visited (title itself is not a slide)
+      // For standalone slides, the slide itself needs to be visited
+      if (section.isSection) {
+        // Section title: completed when all children are visited
+        return section.children.length > 0 && section.children.every(c => visitedNodes.has(c.id));
+      } else {
+        // Standalone slide: completed when the slide and all children are visited
+        if (!visitedNodes.has(section.id)) return false;
+        return section.children.every(c => visitedNodes.has(c.id));
+      }
+    }
+    
+    // Navigate to a node, skipping section titles (navigate to first slide in section instead)
+    function navigateToNode(nodeId) {
+      const node = nodeById.get(String(nodeId));
+      if (node && node.isSection === true) {
+        // This is a section title, find the first slide in this section
+        const section = parentSections.find(s => s.id === String(nodeId));
+        if (section && section.children.length > 0) {
+          updateView(section.children[0].id);
+          return;
+        }
+      }
+      updateView(String(nodeId));
+    }
+
+    // ========== PROGRESS ==========
+    // Track last main node for sidequest progress
+    let lastMainNodeId = '1';
+    
+    function updateProgress() {
+      // Get all actual slides (excluding section titles) in order
+      const slideNodes = courseData.filter(n => {
+        const nodeType = n.type || 'main';
+        if (n.isSection === true) return false;
+        return nodeType === 'main' || nodeType === 'flip-cards' || nodeType === 'hero';
+      });
+      const totalSlides = slideNodes.length;
+      if (totalSlides === 0) return;
+      
+      // Check if current node is a sidequest
+      const currentNode = nodeById.get(activeNodeId);
+      const isSidequest = (currentNode && currentNode.type === 'sidequest') || 
+                          activeNodeId.includes('-') || 
+                          activeNodeId.startsWith('sq-');
+      
+      // Use last main node if we're in a sidequest
+      const effectiveNodeId = isSidequest ? lastMainNodeId : activeNodeId;
+      if (!isSidequest) {
+        lastMainNodeId = activeNodeId;
+      }
+      
+      // Find current slide index (0-based)
+      let currentSlideIdx = slideNodes.findIndex(n => String(n.id) === String(effectiveNodeId));
+      if (currentSlideIdx < 0) currentSlideIdx = 0;
+      
+      // Calculate overall percentage
+      // First slide (idx 0) = 0%, Last slide (idx totalSlides-1) = 100%
+      // Use smart calculation: ensure first is 0% and last is exactly 100%
+      let percent = 0;
+      if (totalSlides === 1) {
+        // Only one slide: show 100% when on it
+        percent = 100;
+      } else if (currentSlideIdx === 0) {
+        // First slide: exactly 0%
+        percent = 0;
+      } else if (currentSlideIdx === totalSlides - 1) {
+        // Last slide: exactly 100%
+        percent = 100;
+      } else {
+        // Middle slides: interpolate between 0% and 100%
+        percent = Math.round((currentSlideIdx / (totalSlides - 1)) * 100);
+      }
+      
+      document.getElementById('progress-percent').textContent = `${percent}%`;
+      
+      // Save progress to hub (mark completed if 100%)
+      saveCourseProgressToHub(percent, percent === 100);
+      
+      // Update progress bar segments
+      const progressBar = document.getElementById('progress-bar');
+      
+      // Calculate total slides for proportional segment sizing
+      let totalSlidesForSegments = 0;
+      const slidesPerSection = [];
+      parentSections.forEach(section => {
+        const slideCount = section.isSection ? section.children.length : 1;
+        slidesPerSection.push(slideCount);
+        totalSlidesForSegments += slideCount;
+      });
+      
+      // Create segments if needed
+      if (progressBar.children.length !== parentSections.length) {
+        progressBar.innerHTML = '';
+        parentSections.forEach((section, idx) => {
+          const segment = document.createElement('div');
+          segment.className = 'progress-segment';
+          const fill = document.createElement('div');
+          fill.className = 'progress-segment-fill';
+          segment.appendChild(fill);
+          progressBar.appendChild(segment);
+        });
+      }
+      
+      // Set proportional widths for segments based on slide count
+      // Use flex-grow so segments scale proportionally while respecting gaps
+      parentSections.forEach((section, sectionIdx) => {
+        const segment = progressBar.children[sectionIdx];
+        if (!segment) return;
+        const slideCount = slidesPerSection[sectionIdx];
+        // Use flex-grow based on slide count for proportional sizing
+        segment.style.flex = `${slideCount} 1 0%`;
+      });
+      
+      // Build flat list of slide IDs in order
+      const allSlideIds = [];
+      parentSections.forEach(section => {
+        if (section.isSection) {
+          section.children.forEach(child => allSlideIds.push(String(child.id)));
+        } else {
+          allSlideIds.push(String(section.id));
+        }
+      });
+      
+      // Find current position in flat list
+      let currentPos = allSlideIds.indexOf(String(effectiveNodeId));
+      if (currentPos < 0) currentPos = 0;
+      
+      // Track cumulative slide count for segment fill calculation
+      let slidesSoFar = 0;
+      
+      parentSections.forEach((section, sectionIdx) => {
+        const segment = progressBar.children[sectionIdx];
+        if (!segment) return;
+        const fill = segment.querySelector('.progress-segment-fill');
+        if (!fill) return;
+        
+        // Count slides in this section
+        const slidesInSection = section.isSection 
+          ? section.children.length 
+          : 1;
+        
+        // Determine fill for this segment
+        let fillPercent = 0;
+        
+        if (currentPos >= slidesSoFar + slidesInSection) {
+          // Current position is past this entire section
+          fillPercent = 100;
+        } else if (currentPos >= slidesSoFar) {
+          // Current position is within this section
+          const posInSection = currentPos - slidesSoFar;
+          // Fill based on position within section
+          // First slide in section = 0%, Last slide in section = 100%
+          // Special case: if this is the very first slide of the entire course, keep it at 0%
+          if (currentPos === 0) {
+            // Very first slide: 0% fill (empty bar)
+            fillPercent = 0;
+          } else if (slidesInSection === 1) {
+            // Only one slide in section (but not the first slide): fill to 100% when on it
+            fillPercent = 100;
+          } else if (posInSection === 0) {
+            // First slide in section (but not the very first): 0% fill
+            fillPercent = 0;
+          } else if (posInSection === slidesInSection - 1) {
+            // Last slide in section: 100% fill
+            fillPercent = 100;
+          } else {
+            // Middle slides: interpolate
+            fillPercent = (posInSection / (slidesInSection - 1)) * 100;
+          }
+        }
+        // else: current position is before this section, fillPercent stays 0
+        
+        fill.style.width = `${Math.min(100, Math.max(0, fillPercent))}%`;
+        slidesSoFar += slidesInSection;
+      });
+    }
+
+    // ========== MAIN VIEW UPDATE ==========
+        function updateView(nodeId) {
+      activeNodeId = nodeId;
+      visitedNodes.add(nodeId);
+      
+      const n = nodeById.get(nodeId);
+      if (!n) {
+        console.error(`Node with id "${nodeId}" not found.`);
+        return;
+      }
+
+      // Update history for main nodes
+      if (n.type === 'main' || n.type === 'flip-cards' || n.type === 'hero' || !n.type) {
+            if (!skipHistoryPush) {
+              const last = mainPathHistory[mainPathHistory.length - 1];
+              if (last !== n.id) mainPathHistory.push(n.id);
+            }
+            skipHistoryPush = false;
+          }
+          
+      // Scroll content card to top
+      const contentCard = document.getElementById('content-card');
+      if (contentCard) contentCard.scrollTop = 0;
+      
+      // Trigger subtle "slide enter" animations
+      const cardEl = document.getElementById('content-card');
+      const cardTitleAnimEl = document.getElementById('card-title');
+      const cardContentAnimEl = document.getElementById('card-content');
+      try {
+        [cardEl, cardTitleAnimEl, cardContentAnimEl].forEach(el => el && el.classList.remove('is-animating'));
+        // Force reflow so animation restarts
+        void (cardEl && cardEl.offsetWidth);
+        [cardEl, cardTitleAnimEl, cardContentAnimEl].forEach(el => el && el.classList.add('is-animating'));
+      } catch (_) {}
+      
+      // Update title - hide for hero slides (title is embedded in hero content)
+          const cardTitleEl = document.getElementById('card-title');
+          const cardTextContent = document.querySelector('.card-text-content');
+          
+          if (n.type === 'hero') {
+            // Hero slides: hide title, reduce padding for full-bleed look
+            cardTitleEl.style.display = 'none';
+            cardTextContent.classList.add('hero-mode');
+          } else {
+            cardTextContent.classList.remove('hero-mode');
+          if (n['title-align'] && String(n['title-align']).toLowerCase() === 'center') {
+            cardTitleEl.style.textAlign = 'center';
+          } else {
+            cardTitleEl.style.textAlign = '';
+          }
+      
+              const processBold = (str) => str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      
+      if (n.title && n.title.trim() !== '') {
+            cardTitleEl.innerHTML = processBold(n.title);
+            cardTitleEl.style.display = '';
+          } else {
+            cardTitleEl.textContent = '';
+            cardTitleEl.style.display = 'none';
+            }
+          }
+
+      // Check if content has stacked images (align:right or align:stack-right)
+          const hasStackedImages = n.content && /align:(stack-right|right)/i.test(n.content);
+
+      // Update content
+          const cardContentEl = document.getElementById('card-content');
+          renderContent(cardContentEl, n.content, n.type);
+          
+      // Apply stacked-mode class for reduced margins
+          if (hasStackedImages && n.type !== 'hero') {
+            cardTextContent.classList.add('stacked-mode');
+          } else {
+            cardTextContent.classList.remove('stacked-mode');
+          }
+
+      // Update footer buttons
+      updateFooterButtons(n);
+      
+      // Update TOC
+      renderTOC();
+      
+      // Update progress
+      updateProgress();
+    }
+
+    function updateFooterButtons(n) {
+      const navBtns = document.getElementById('footer-nav-buttons');
+      navBtns.innerHTML = '';
+
+      const cardContentEl = document.getElementById('card-content');
+      const resourceUrl = cardContentEl.getAttribute('data-resource-url');
+      const resourceTitle = cardContentEl.getAttribute('data-resource-title') || 'Open Resource';
+      const inlineButtonsJson = cardContentEl.getAttribute('data-buttons');
+      
+      const mainNodeData = courseData.find(d => String(d.id) === n.id);
+      
+      // Collect action buttons (sidequests, links, etc.)
+      const actionButtons = [];
+      
+      // Sidequest buttons (both new and old format)
+      if ((n.type === 'main' || n.type === 'flip-cards' || n.type === 'hero' || !n.type) && mainNodeData && mainNodeData.sideQuests) {
+        mainNodeData.sideQuests.forEach((sq, index) => {
+          const btn = document.createElement('button');
+          // Style sidequest actions as filled dark-green buttons (per design)
+          btn.className = 'btn btn-secondary';
+          btn.innerHTML = sq.buttonText;
+          btn.onclick = () => {
+            // Store return node for sidequest BEFORE navigating
+            window.sidequestReturnNode = n.id;
+            if (sq && sq.targetId) {
+              sidequestReturnByTargetId.set(String(sq.targetId), String(n.id));
+            }
+            
+            // Check if sidequest target is an ID like "s1" or a number (new format)
+            const targetId = sq.targetId || sq.id;
+            if (targetId && window.sidequestNodesMap && window.sidequestNodesMap.has(targetId)) {
+              // Navigate to first slide of this sidequest
+              const sqNodes = window.sidequestNodesMap.get(targetId);
+              if (sqNodes.length > 0) {
+                updateView(`sq-${targetId}-1`);
+              }
+            } else {
+              // Old format - navigate to inline sidequest content
+              const sqNodeId = `${n.id}-${sq.type}-${index}-0`;
+              updateView(sqNodeId);
+            }
+          };
+          actionButtons.push(btn);
+        });
+      }
+      
+      // Handle inline buttons
+          if (inlineButtonsJson) {
+              try {
+                  const btns = JSON.parse(inlineButtonsJson);
+                  btns.forEach(b => {
+            const btn = document.createElement('button');
+            btn.className = 'btn btn-secondary';
+            btn.innerHTML = b.buttonText || 'Open';
+            btn.onclick = (ev) => { ev.preventDefault(); openInEmbed(b.url, b.buttonText || 'Open'); };
+            actionButtons.push(btn);
+                  });
+              } catch (_) {}
+        cardContentEl.removeAttribute('data-buttons');
+          }
+      
+          if (resourceUrl) {
+              const btn = document.createElement('button');
+        btn.className = 'btn btn-secondary';
+        btn.innerHTML = resourceTitle;
+              btn.onclick = (ev) => handleResourceClick(ev, resourceUrl, resourceTitle);
+        actionButtons.push(btn);
+        cardContentEl.removeAttribute('data-resource-url');
+        cardContentEl.removeAttribute('data-resource-title');
+      }
+
+      // Handle links from node data
+      if (mainNodeData && mainNodeData.links) {
+        mainNodeData.links.forEach(link => {
+          const btn = document.createElement('button');
+          btn.className = 'btn btn-secondary';
+          btn.innerHTML = link.buttonText;
+          btn.onclick = (ev) => {
+            if ((link.target || 'newtab') === 'embed') {
+              openInEmbed(link.url, link.buttonText);
+              return;
+            }
+            window.open(link.url, '_blank');
+          };
+          actionButtons.push(btn);
+        });
+      }
+
+      // Flow links (external course links) - add to action buttons like sidequests
+      const flowLinks = (mainNodeData && mainNodeData.flowLinks) || n.flowLinks;
+      if (flowLinks) {
+        flowLinks.forEach(flowLink => {
+          const btn = document.createElement('button');
+          // Style flow links as filled dark-green buttons like sidequests
+          btn.className = 'btn btn-secondary';
+          btn.innerHTML = `<span>${flowLink.buttonText}</span>`;
+          btn.onclick = () => {
+            // Open in new tab/window
+            window.open(flowLink.url, '_blank');
+          };
+          actionButtons.push(btn);
+        });
+      }
+
+      // Add action buttons first
+      actionButtons.forEach(btn => navBtns.appendChild(btn));
+
+      // Check for flow links (external course links)
+      const hasFlowLinks = (mainNodeData && mainNodeData.flowLinks && mainNodeData.flowLinks.length > 0) || (n.flowLinks && n.flowLinks.length > 0);
+      const hasNavButtons = (n.type === 'main' || n.type === 'flip-cards' || n.type === 'hero' || n.type === 'sidequest' || !n.type) && 
+                           (mainPathHistory.length > 1 || Object.keys(n.connections || {}).length > 0 || hasFlowLinks);
+
+      // Add divider if there are action buttons and we'll have nav buttons
+      if (actionButtons.length > 0 && hasNavButtons) {
+        const divider = document.createElement('div');
+        divider.className = 'footer-divider';
+        navBtns.appendChild(divider);
+      }
+
+      // Navigation buttons
+      if (n.type === 'main' || n.type === 'flip-cards' || n.type === 'hero' || !n.type) {
+        // Detect if this is the last slide in the flow (exclude section titles)
+        const slideNodes = courseData.filter(node => {
+          if (node.isSection === true) return false;
+          const t = node.type || 'main';
+          return t === 'main' || t === 'flip-cards' || t === 'hero';
+        });
+        const currentIdx = slideNodes.findIndex(node => String(node.id) === String(n.id));
+        const isLastSlide = currentIdx >= 0 && currentIdx === slideNodes.length - 1;
+
+        // Previous button
+              if (mainPathHistory.length > 1) {
+                const prevBtn = document.createElement('button');
+          prevBtn.className = 'btn btn-outline';
+          prevBtn.innerHTML = `
+            <svg width="12" height="18" viewBox="0 0 12 18" fill="none" style="transform: rotate(180deg);">
+              <path d="M2 2L9 9L2 16" stroke="#8A8A8A" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            <span>Previous</span>
+          `;
+                prevBtn.onclick = () => {
+                  if (mainPathHistory.length > 1) {
+                    mainPathHistory.pop();
+                    const prevNodeId = mainPathHistory[mainPathHistory.length - 1];
+                    skipHistoryPush = true;
+                    updateView(prevNodeId);
+                  }
+                };
+          navBtns.appendChild(prevBtn);
+        }
+
+        // If this is the last slide, show hub CTAs (3 buttons total)
+        if (isLastSlide) {
+          // Return to learning path (green)
+          const returnHubBtn = document.createElement('button');
+          returnHubBtn.className = 'btn btn-secondary';
+          returnHubBtn.innerHTML = `<span>Return to learning path</span>`;
+          returnHubBtn.onclick = () => {
+            window.location.href = 'hub.html';
+          };
+          navBtns.appendChild(returnHubBtn);
+
+          // Continue to next course (orange)
+          const nextBtn = document.createElement('button');
+          nextBtn.className = 'btn btn-primary';
+
+          // Determine the next course in the learning path
+          const idx = learningPathOrder.indexOf(currentCourseFile || '');
+          const nextCourseFile = idx >= 0 && idx < learningPathOrder.length - 1 ? learningPathOrder[idx + 1] : null;
+          const nextLabel = nextCourseFile ? 'Continue to next course' : 'Finish learning path';
+
+          nextBtn.innerHTML = `
+            <span>${nextLabel}</span>
+            <svg width="12" height="18" viewBox="0 0 12 18" fill="none">
+              <path d="M2 2L9 9L2 16" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          `;
+          nextBtn.onclick = () => {
+            if (nextCourseFile) {
+              window.location.href = `index.html?course=${encodeURIComponent(nextCourseFile)}&from=hub`;
+            } else {
+              window.location.href = 'hub.html';
+            }
+          };
+          navBtns.appendChild(nextBtn);
+
+          return; // Ensure exactly 3 buttons total on the last slide (Prev + Return + Continue)
+        }
+
+        // Continue/Next button
+        for (const [label, targetId] of Object.entries(n.connections || {})) {
+                      const btn = document.createElement('button');
+          btn.className = 'btn btn-primary';
+          btn.innerHTML = `
+            <span>${label}</span>
+            <svg width="12" height="18" viewBox="0 0 12 18" fill="none">
+              <path d="M2 2L9 9L2 16" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          `;
+          btn.onclick = () => {
+            if (hasSupademoContent(n.content)) {
+              showSupademoModal(() => navigateToNode(targetId));
+                      } else {
+              navigateToNode(targetId);
+            }
+          };
+          navBtns.appendChild(btn);
+              }
+          } else if (n.type === 'sidequest') {
+        // Sidequest navigation
+              if (n.prevId) {
+                const prevBtn = document.createElement('button');
+          prevBtn.className = 'btn btn-outline';
+          prevBtn.innerHTML = `
+            <svg width="12" height="18" viewBox="0 0 12 18" fill="none" style="transform: rotate(180deg);">
+              <path d="M2 2L9 9L2 16" stroke="#8A8A8A" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            <span>Previous</span>
+          `;
+                prevBtn.onclick = () => updateView(n.prevId);
+          navBtns.appendChild(prevBtn);
+              }
+        
+              if (n.nextId) {
+                const nextBtn = document.createElement('button');
+          nextBtn.className = 'btn btn-secondary';
+          nextBtn.innerHTML = `
+            <span>${n.nextLabel || 'Next'}</span>
+            <svg width="12" height="18" viewBox="0 0 12 18" fill="none">
+              <path d="M2 2L9 9L2 16" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          `;
+          nextBtn.onclick = () => {
+            if (hasSupademoContent(n.content)) {
+              showSupademoModal(() => navigateToNode(n.nextId));
+            } else {
+              navigateToNode(n.nextId);
+            }
+          };
+          navBtns.appendChild(nextBtn);
+        }
+        
+        const returnBtn = document.createElement('button');
+        returnBtn.className = 'btn btn-primary';
+        returnBtn.innerHTML = `
+          <span>${n.backLabel || 'Return to main path'}</span>
+          <svg width="12" height="18" viewBox="0 0 12 18" fill="none">
+            <path d="M2 2L9 9L2 16" stroke="white" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        `;
+        returnBtn.onclick = () => {
+          // For new-format sidequests, prefer the per-targetId return pointer
+          let returnNode = null;
+          if (n.id && String(n.id).startsWith('sq-')) {
+            const parts = String(n.id).split('-'); // ["sq", "<targetId>", "<slideNum>"]
+            const targetId = parts.length >= 2 ? parts[1] : null;
+            if (targetId && sidequestReturnByTargetId.has(String(targetId))) {
+              returnNode = sidequestReturnByTargetId.get(String(targetId));
+            }
+          }
+          // Fallbacks: node parentId, then global stored return node
+          returnNode = returnNode || n.parentId || window.sidequestReturnNode;
+
+          if (returnNode) {
+            updateView(String(returnNode));
+            return;
+          }
+
+          // Final fallback: first non-section slide
+          const firstSlide = courseData.find(node => node && node.id != null && node.isSection !== true);
+          updateView(String(firstSlide ? firstSlide.id : '1'));
+        };
+        navBtns.appendChild(returnBtn);
+      }
+    }
+
+    // ========== HUB INTEGRATION ==========
+    let currentCourseId = null;
+    let cameFromHub = false;
+    let currentCourseFile = null;
+    
+    // Map course filenames to IDs for hub integration
+    const courseFileToId = {
+      'Intro.txt': 'intro',
+      'Double-ABC-Analysis-4.txt': 'double-abc',
+      'Stock-Policy.txt': 'stock-policy',
+      'Safety-Stock.txt': 'safety-stock',
+      'Reorder-Point.txt': 'reorder-point',
+      'Reorder-Quantity.txt': 'reorder-quantity'
+    };
+
+    // Learning path order (used for the last-slide CTA)
+    const learningPathOrder = [
+      'Intro.txt',
+      'Double-ABC-Analysis-4.txt',
+      'Stock-Policy.txt',
+      'Safety-Stock.txt',
+      'Reorder-Point.txt',
+      'Reorder-Quantity.txt'
+    ];
+    
+    function saveCourseProgressToHub(progress, completed = false) {
+      if (!currentCourseId) return;
+      const key = `course_progress_${currentCourseId}`;
+      localStorage.setItem(key, JSON.stringify({ completed, progress }));
+    }
+
+    // ========== INITIALIZATION ==========
+    (async function() {
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const courseFile = urlParams.get('course') || 'Intro.txt';
+        currentCourseFile = courseFile;
+        cameFromHub = urlParams.get('from') === 'hub';
+        currentCourseId = courseFileToId[courseFile] || courseFile.replace('.txt', '').toLowerCase();
+        
+        // Set up back button
+        const backBtn = document.getElementById('back-btn');
+        const backBtnText = document.getElementById('back-btn-text');
+        if (cameFromHub && backBtn) {
+          backBtnText.textContent = 'Learning Path';
+          backBtn.onclick = () => {
+            window.location.href = 'hub.html';
+          };
+        } else if (backBtn) {
+          backBtn.onclick = () => window.history.back();
+        }
+        
+        console.log('Loading course:', courseFile, 'from URL params:', urlParams.get('course'));
+        const cacheParam = Date.now();
+        const requestUrl = `courses/${courseFile}?v=${cacheParam}`;
+        const response = await fetch(requestUrl);
+        if (!response.ok) throw new Error(`Failed to fetch ${requestUrl} (status ${response.status})`);
+        const text = await response.text();
+        courseData = parseFlowScript(text);
+        if (!courseData || courseData.length === 0) throw new Error("Parsing resulted in no valid course data.");
+        
+        // Set flow title
+        const flowTitle = courseFile.replace('.txt', '').replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+        document.getElementById('flow-title').textContent = flowTitle;
+        
+        // Build node map
+        courseData.forEach(mainNodeData => {
+          if (!mainNodeData.id) return;
+          const mainNode = { ...mainNodeData, id: String(mainNodeData.id), type: mainNodeData.type || 'main' };
+          nodeById.set(mainNode.id, mainNode);
+          
+          // Add sidequests to nodeById (old format with inline content)
+          if (mainNodeData.sideQuests) {
+            mainNodeData.sideQuests.forEach((sqData, index) => {
+              // Skip if this is new format (just a reference)
+              if (sqData.targetId && !sqData.cards) return;
+              
+              const cards = Array.isArray(sqData.cards) && sqData.cards.length ? sqData.cards : [sqData.content || ''];
+              let previousId = null;
+              
+              cards.forEach((card, cardIdx) => {
+                const cardContent = typeof card === 'object' ? (card.content || '') : card;
+                const cardNext = typeof card === 'object' ? (card.nextLabel || '') : '';
+                const cardPrev = typeof card === 'object' ? (card.prevLabel || '') : '';
+                const sideQuestId = `${mainNodeData.id}-${sqData.type}-${index}-${cardIdx}`;
+                const cardTitle = typeof card === 'object' ? (card.title || '') : (sqData.title || '');
+                
+                const sideQuestNode = {
+                  ...sqData,
+                  id: sideQuestId,
+                  type: 'sidequest',
+                  parentId: String(mainNodeData.id),
+                  content: cardContent,
+                  cardIndex: cardIdx,
+                  numCards: cards.length,
+                  title: cardTitle,
+                  nextLabel: cardNext || sqData.nextLabel || '',
+                  backLabel: cardPrev || sqData.backLabel || '',
+                  prevId: previousId || null,
+                  nextId: null
+                };
+                
+                nodeById.set(sideQuestNode.id, sideQuestNode);
+                
+                if (previousId) {
+                  const prevNode = nodeById.get(previousId);
+                  if (prevNode) prevNode.nextId = sideQuestId;
+                }
+                previousId = sideQuestId;
+              });
+            });
+          }
+        });
+        
+        // Add sidequest nodes from the new format (parsed from [flow-specific-side-quests] section)
+        if (window.sidequestNodesMap) {
+          window.sidequestNodesMap.forEach((nodes, sqId) => {
+            let previousId = null;
+            nodes.forEach((sqNode, slideIdx) => {
+              const nodeId = `sq-${sqId}-${slideIdx + 1}`;
+              
+              // Extract nextLabel from connections if available
+              let nextLabel = '';
+              if (sqNode.connections) {
+                  const nextSlideNum = slideIdx + 2;
+                  for (const [label, target] of Object.entries(sqNode.connections)) {
+                      if (target == nextSlideNum) {
+                          nextLabel = label;
+                          break;
+                      }
+                  }
+              }
+
+              const sideQuestNode = {
+                ...sqNode,
+                id: nodeId,
+                type: 'sidequest',
+                parentId: window.sidequestReturnNode || '1',
+                cardIndex: slideIdx,
+                numCards: nodes.length,
+                prevId: previousId,
+                nextId: null,
+                nextLabel: nextLabel,
+                backLabel: sqNode.backLabel || 'Return to main path'
+              };
+              
+              nodeById.set(nodeId, sideQuestNode);
+              
+              if (previousId) {
+                const prevNode = nodeById.get(previousId);
+                if (prevNode) prevNode.nextId = nodeId;
+              }
+              previousId = nodeId;
+            });
+          });
+        }
+        
+        // Build TOC structure
+        buildTOCStructure(courseData);
+        
+        // Initialize - find the first actual slide (not a section title)
+        const firstSlide = courseData.find(n => n && n.id != null && n.isSection !== true);
+        activeNodeId = String(firstSlide ? firstSlide.id : '1');
+        visitedNodes.add(activeNodeId);
+        mainPathHistory = [activeNodeId];
+        lastMainNodeId = activeNodeId;
+
+        updateView(activeNodeId);
+        
+      } catch (error) {
+        console.error('Error loading or parsing course file:', error);
+        document.getElementById('card-title').textContent = 'Error';
+        document.getElementById('card-content').innerHTML = `Could not load the course. ${String(error && error.message || error)}. <br/>Tip: hard refresh (Ctrl/Cmd+Shift+R) if this was just deployed.`;
+      }
+    })();
+
+    // ========== EVENT LISTENERS ==========
+    document.addEventListener('DOMContentLoaded', () => {
+      // Supademo modal
+      const modal = document.getElementById('supademo-modal');
+      const confirmBtn = document.getElementById('supademo-confirm');
+      const cancelBtn = document.getElementById('supademo-cancel');
+      
+      if (confirmBtn) {
+        confirmBtn.addEventListener('click', () => {
+          if (modal) modal.style.display = 'none';
+          if (pendingSupademoNavigation) {
+            pendingSupademoNavigation();
+            pendingSupademoNavigation = null;
+          }
+        });
+      }
+      
+      if (cancelBtn) {
+        cancelBtn.addEventListener('click', () => {
+          if (modal) modal.style.display = 'none';
+          pendingSupademoNavigation = null;
+        });
+      }
+      
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            modal.style.display = 'none';
+            pendingSupademoNavigation = null;
+          }
+        });
+      }
+      
+      // Embed panel
+      const closeBtn = document.getElementById('embed-close');
+      const openExternalBtn = document.getElementById('embed-open-external');
+      
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          const panel = document.getElementById('embed-panel');
+          const iframe = document.getElementById('embed-iframe');
+          if (iframe) iframe.src = 'about:blank';
+          if (panel) panel.classList.remove('visible');
+        });
+      }
+      
+      if (openExternalBtn) {
+        openExternalBtn.addEventListener('click', () => {
+          const iframe = document.getElementById('embed-iframe');
+          const url = iframe && iframe.src ? iframe.src : null;
+          if (url) window.open(url, '_blank');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
