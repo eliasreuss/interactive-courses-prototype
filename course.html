@@ -2975,7 +2975,7 @@
           returnHubBtn.className = 'btn btn-secondary';
           returnHubBtn.innerHTML = `<span>Return to learning path</span>`;
           returnHubBtn.onclick = () => {
-            window.location.href = 'hub.html';
+            window.location.href = 'index.html';
           };
           navBtns.appendChild(returnHubBtn);
 
@@ -2996,9 +2996,9 @@
           `;
           nextBtn.onclick = () => {
             if (nextCourseFile) {
-              window.location.href = `index.html?course=${encodeURIComponent(nextCourseFile)}&from=hub`;
+              window.location.href = `course.html?course=${encodeURIComponent(nextCourseFile)}&from=hub`;
             } else {
-              window.location.href = 'hub.html';
+              window.location.href = 'index.html';
             }
           };
           navBtns.appendChild(nextBtn);
@@ -3139,7 +3139,7 @@
         if (cameFromHub && backBtn) {
           backBtnText.textContent = 'Learning Path';
           backBtn.onclick = () => {
-            window.location.href = 'hub.html';
+            window.location.href = 'index.html';
           };
         } else if (backBtn) {
           backBtn.onclick = () => window.history.back();
