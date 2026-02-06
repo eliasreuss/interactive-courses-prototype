@@ -588,19 +588,54 @@
       border-radius: 50%;
       border: 1px solid rgba(255, 255, 255, 0.3);
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s var(--transition-smooth), background 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.4s var(--transition-smooth), background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Animated stroke ring */
+    .course-icon-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 82px;
+      height: 82px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .course-icon-ring circle {
+      fill: none;
+      stroke: var(--color-accent);
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      /* Circumference = 2 * PI * 38 ≈ 239 */
+      stroke-dasharray: 239;
+      stroke-dashoffset: 239;
+      transform: rotate(-90deg);
+      transform-origin: center;
+      transition: stroke-dashoffset 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      filter: drop-shadow(0 0 6px rgba(255, 90, 0, 0.4));
+    }
+
+    .course-card:hover .course-icon-ring circle {
+      stroke-dashoffset: 0;
     }
 
     .course-icon-wrapper img {
       width: 36px;
       height: 36px;
       opacity: 0.95;
+      transition: transform 0.3s var(--transition-smooth);
     }
 
     .course-card:hover .course-icon-wrapper {
-      transform: translate(-50%, -50%) scale(1.08);
+      transform: translate(-50%, -50%) scale(1.05);
       background: rgba(255, 255, 255, 0.22);
       box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .course-card:hover .course-icon-wrapper img {
+      transform: scale(1.05);
     }
 
     /* Completion indicator */
@@ -995,6 +1030,9 @@
           </div>
           <div class="course-thumbnail" style="--thumb-url: url('${course.thumbnail}')">
             <span class="course-number">${courseNumber}</span>
+            <svg class="course-icon-ring" viewBox="0 0 82 82">
+              <circle cx="41" cy="41" r="38"/>
+            </svg>
             <div class="course-icon-wrapper">
               <img src="SVGs/Course-Icon.svg" alt="">
             </div>
