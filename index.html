@@ -554,8 +554,8 @@
       left: 12px;
       width: 32px;
       height: 32px;
-      display: flex; 
-      align-items: center; 
+      display: flex;
+      align-items: center;
       justify-content: center;
       font-size: 14px;
       font-weight: 400;
@@ -568,6 +568,24 @@
       z-index: 5;
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
       line-height: 1;
+    }
+
+    /* Course icon centered on thumbnail */
+    .course-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 56px;
+      height: 56px;
+      z-index: 3;
+      opacity: 0.9;
+      transition: transform 0.3s var(--transition-smooth), opacity 0.3s ease;
+    }
+
+    .course-card:hover .course-icon {
+      transform: translate(-50%, -50%) scale(1.08);
+      opacity: 1;
     }
 
     /* Completion indicator */
@@ -962,6 +980,7 @@
           </div>
           <div class="course-thumbnail" style="--thumb-url: url('${course.thumbnail}')">
             <span class="course-number">${courseNumber}</span>
+            <img src="SVGs/Course-Icon.svg" alt="" class="course-icon">
           </div>
         </div>
       `;
