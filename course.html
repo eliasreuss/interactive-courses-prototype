@@ -736,7 +736,7 @@
       }
     }
     
-    /* Screens up to 1920px - increase card padding to narrow content */
+    /* Screens 1441-1920px - increase card padding to narrow content */
     @media (min-width: 1441px) and (max-width: 1920px) {
       .card-text-content {
         padding: var(--spacing-content) clamp(100px, 12vw, 180px);
@@ -750,6 +750,25 @@
       }
       .content-images-container:has(.size-third) {
         max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    
+    /* Very large screens (>1920px) - even larger margins for comfortable reading */
+    @media (min-width: 1921px) {
+      .card-text-content {
+        padding: var(--spacing-content) clamp(180px, 15vw, 280px);
+      }
+      .card-text-content.stacked-mode {
+        padding: clamp(32px, 3vw, 56px) clamp(56px, 6vw, 100px);
+      }
+      .content-images-container .size-large {
+        max-width: 85%;
+        flex-basis: 85%;
+      }
+      .content-images-container:has(.size-third) {
+        max-width: 85%;
         margin-left: auto;
         margin-right: auto;
       }
