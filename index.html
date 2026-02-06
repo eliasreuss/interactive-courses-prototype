@@ -40,7 +40,7 @@
     }
 
     body {
-      font-family: var(--font-family);
+      font-family: var(--font-family); 
       background: var(--color-bg);
       min-height: 100vh;
       color: var(--color-primary);
@@ -102,7 +102,7 @@
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(48, 70, 66, 0.08);
     }
-
+    
     .header-left {
       display: flex;
       align-items: center;
@@ -161,7 +161,7 @@
       height: 12px;
       opacity: 0.5;
     }
-
+    
     .header-right {
       display: flex;
       align-items: center;
@@ -184,7 +184,7 @@
       display: flex;
       min-height: calc(100vh - 72px);
     }
-
+    
     /* Sidebar */
     .sidebar {
       width: 360px;
@@ -255,10 +255,12 @@
       flex-direction: column;
       gap: 16px;
       padding: 24px;
-      background: var(--color-card-bg);
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       border-radius: var(--radius-md);
       box-shadow: 0 2px 8px rgba(48, 70, 66, 0.04);
-      border: 1px solid rgba(48, 70, 66, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.5);
     }
 
     .progress-header {
@@ -329,7 +331,7 @@
       flex-direction: column;
       gap: 20px;
     }
-
+    
     #course-list {
       display: flex;
       flex-direction: column;
@@ -525,7 +527,7 @@
 
     .btn-open:hover {
       background: #e85200;
-      transform: translateY(-2px);
+        transform: translateY(-2px);
       box-shadow: 0 6px 20px var(--color-accent-glow);
     }
 
@@ -552,8 +554,8 @@
       left: 12px;
       width: 32px;
       height: 32px;
-      display: flex;
-      align-items: center;
+      display: flex; 
+      align-items: center; 
       justify-content: center;
       font-size: 14px;
       font-weight: 400;
@@ -778,9 +780,9 @@
 </head>
 <body>
 
-  <!-- Header -->
+    <!-- Header -->
   <header class="header">
-    <div class="header-left">
+      <div class="header-left">
       <div class="logo">Inact <span>learn</span></div>
       <nav class="nav">
         <a href="#" class="locked">Home<svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></a>
@@ -788,13 +790,13 @@
         <a href="#" class="locked">Catalog<svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></a>
         <a href="#" class="locked">Dictionary<svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></a>
       </nav>
-    </div>
-    <div class="header-right">
+      </div>
+      <div class="header-right">
       <span class="beta-tag">BETA</span>
-    </div>
-  </header>
-
-  <!-- Main Content -->
+      </div>
+    </header>
+    
+    <!-- Main Content -->
   <div class="main-container">
     <!-- Sidebar -->
     <aside class="sidebar">
@@ -802,22 +804,22 @@
         <div class="lp-eyebrow">Learning Path</div>
         <h1 class="lp-title">Using Inact for Inventory Management</h1>
         <p class="lp-description">Master the key concepts and tools for effective inventory management with Inact Now.</p>
-      </div>
-
+            </div>
+          
       <div class="progress-section">
         <div class="progress-header">
           <div class="progress-label">Your Progress</div>
           <div class="progress-percent" id="total-progress-percent">0%</div>
-        </div>
+            </div>
         <div class="progress-bar-container">
           <div class="progress-bar-fill" id="total-progress" style="width: 0%"></div>
-        </div>
+            </div>
         <div class="meta-info">
           <span class="meta-text" id="flow-count">6 courses</span>
           <span class="meta-dot"></span>
           <span class="meta-text" id="total-time">1.1 Hours</span>
         </div>
-      </div>
+            </div>
     </aside>
 
     <!-- Course List -->
@@ -827,7 +829,7 @@
       </div>
     </main>
   </div>
-
+  
   <script>
     // Course data - edit this to add/modify courses
     const courses = [
@@ -914,7 +916,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="20 6 9 17 4 12"></polyline>
             </svg>
-          </div>
+              </div>
         `;
       } else if (progress > 0) {
         const circumference = 2 * Math.PI * 14;
@@ -927,9 +929,9 @@
                 stroke-dasharray="${circumference}" 
                 stroke-dashoffset="${offset}"/>
             </svg>
-          </div>
-        `;
-      } else {
+                </div>
+            `;
+                        } else {
         // Don't render anything for not-started courses
         return '';
       }
@@ -950,13 +952,13 @@
               <div class="course-title-row">
                 <h2 class="course-title">${course.title}</h2>
                 <span class="course-duration">${course.duration}</span>
-              </div>
-              <p class="course-description">${course.description}</p>
             </div>
+              <p class="course-description">${course.description}</p>
+              </div>
             <div class="course-actions">
               <a href="${href}" class="btn-open">${ctaText}<svg viewBox="0 0 7 11" fill="none"><path d="M1 1L5 5.5L1 10" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></a>
               ${progressIndicator}
-            </div>
+          </div>
           </div>
           <div class="course-thumbnail" style="--thumb-url: url('${course.thumbnail}')">
             <span class="course-number">${courseNumber}</span>
@@ -975,7 +977,7 @@
         if (completed) {
           totalProgress += 100;
           completedCount++;
-        } else {
+      } else {
           totalProgress += progress;
         }
       });
@@ -1032,7 +1034,7 @@
 
     // Check URL for returning from a course
     function checkReturnFromCourse() {
-      const urlParams = new URLSearchParams(window.location.search);
+        const urlParams = new URLSearchParams(window.location.search);
       const completedCourse = urlParams.get('completed');
       const progressCourse = urlParams.get('progress_course');
       const progressValue = urlParams.get('progress_value');
