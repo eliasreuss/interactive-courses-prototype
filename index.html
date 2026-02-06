@@ -255,10 +255,10 @@
       flex-direction: column;
       gap: 16px;
       padding: 24px;
-      background: #F9F9F4;
+      background: linear-gradient(145deg, #FDFCF8 0%, #F6F5EF 100%);
       border-radius: var(--radius-md);
-      box-shadow: 0 2px 8px rgba(48, 70, 66, 0.04);
-      border: 1px solid rgba(48, 70, 66, 0.08);
+      box-shadow: 0 4px 12px rgba(48, 70, 66, 0.06), 0 1px 3px rgba(48, 70, 66, 0.04);
+      border: 1px solid rgba(48, 70, 66, 0.1);
     }
 
     .progress-header {
@@ -352,7 +352,7 @@
       }
       
       #course-list .course-card .course-thumbnail {
-        width: 100%;
+      width: 100%;
         height: 200px;
         border-radius: var(--radius-lg) var(--radius-lg) 0 0;
       }
@@ -449,9 +449,9 @@
     }
 
     .course-info {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
+      flex: 1; 
+      display: flex; 
+      flex-direction: column; 
       justify-content: space-between;
       min-height: 180px;
       gap: 0;
@@ -539,7 +539,7 @@
       color: var(--color-muted);
       letter-spacing: 0.3px;
       padding: 4px 10px;
-      background: #F9F9F4;
+      background: var(--color-tag-bg);
       border-radius: 100px;
       flex-shrink: 0;
       white-space: nowrap;
@@ -870,7 +870,7 @@
         <div class="lp-eyebrow">Learning Path</div>
         <h1 class="lp-title">Using Inact for Inventory Management</h1>
         <p class="lp-description">Master the key concepts and tools for effective inventory management with Inact Now.</p>
-            </div>
+                </div>
           
       <div class="progress-section">
         <div class="progress-header">
@@ -879,12 +879,12 @@
             </div>
         <div class="progress-bar-container">
           <div class="progress-bar-fill" id="total-progress" style="width: 0%"></div>
-            </div>
+              </div>
         <div class="meta-info">
           <span class="meta-text" id="flow-count">6 courses</span>
           <span class="meta-dot"></span>
           <span class="meta-text" id="total-time">1.1 Hours</span>
-        </div>
+          </div>
             </div>
     </aside>
 
@@ -996,8 +996,8 @@
                 stroke-dashoffset="${offset}"/>
             </svg>
                 </div>
-            `;
-                        } else {
+          `;
+            } else {
         // Don't render anything for not-started courses
         return '';
       }
