@@ -571,21 +571,36 @@
     }
 
     /* Course icon centered on thumbnail */
-    .course-icon {
+    .course-icon-wrapper {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 56px;
-      height: 56px;
+      width: 72px;
+      height: 72px;
       z-index: 3;
-      opacity: 0.9;
-      transition: transform 0.3s var(--transition-smooth), opacity 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s var(--transition-smooth), background 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .course-card:hover .course-icon {
+    .course-icon-wrapper img {
+      width: 36px;
+      height: 36px;
+      opacity: 0.95;
+    }
+
+    .course-card:hover .course-icon-wrapper {
       transform: translate(-50%, -50%) scale(1.08);
-      opacity: 1;
+      background: rgba(255, 255, 255, 0.22);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
     }
 
     /* Completion indicator */
@@ -980,7 +995,9 @@
           </div>
           <div class="course-thumbnail" style="--thumb-url: url('${course.thumbnail}')">
             <span class="course-number">${courseNumber}</span>
-            <img src="SVGs/Course-Icon.svg" alt="" class="course-icon">
+            <div class="course-icon-wrapper">
+              <img src="SVGs/Course-Icon.svg" alt="">
+            </div>
           </div>
         </div>
       `;
