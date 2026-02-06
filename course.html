@@ -755,20 +755,20 @@
       }
     }
     
-    /* Very large screens (>1920px) - even larger margins for comfortable reading */
+    /* Very large screens (>1920px) - larger margins for comfortable reading */
     @media (min-width: 1921px) {
       .card-text-content {
-        padding: var(--spacing-content) clamp(180px, 15vw, 280px);
+        padding: var(--spacing-content) clamp(120px, 10vw, 200px);
       }
       .card-text-content.stacked-mode {
-        padding: clamp(32px, 3vw, 56px) clamp(56px, 6vw, 100px);
+        padding: clamp(28px, 3vw, 48px) clamp(48px, 5vw, 80px);
       }
       .content-images-container .size-large {
-        max-width: 85%;
-        flex-basis: 85%;
+        max-width: 90%;
+        flex-basis: 90%;
       }
       .content-images-container:has(.size-third) {
-        max-width: 85%;
+        max-width: 90%;
         margin-left: auto;
         margin-right: auto;
       }
