@@ -100,7 +100,7 @@
       top: 0;
       z-index: 100;
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(48, 70, 66, 0.08);
+      border-bottom: 0.5px solid rgba(48, 70, 66, 0.08);
     }
     
     .header-left {
@@ -255,7 +255,7 @@
       flex-direction: column;
       gap: 16px;
       padding: 24px;
-      background: linear-gradient(145deg, #F9F8F3 0%, #EFEEE6 100%);
+      background: #FFFFFF;
       border-radius: var(--radius-md);
       box-shadow: 0 4px 12px rgba(48, 70, 66, 0.06), 0 1px 3px rgba(48, 70, 66, 0.04);
       border: 1px solid rgba(48, 70, 66, 0.1);
@@ -286,7 +286,7 @@
     .progress-bar-container {
       width: 100%;
       height: 8px;
-      background: #FFFFFF;
+      background: #EBEBEB;
       border-radius: 100px;
       overflow: hidden;
     }
@@ -534,15 +534,27 @@
     }
 
     .course-duration {
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--color-muted);
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 300;
+      color: white;
       letter-spacing: 0.3px;
-      padding: 4px 10px;
-      background: var(--color-tag-bg);
+      padding: 0 14px;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       border-radius: 100px;
       flex-shrink: 0;
       white-space: nowrap;
+      z-index: 5;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+      line-height: 1;
     }
 
     /* Course number badge */
@@ -588,34 +600,9 @@
       transition: transform 0.4s var(--transition-smooth), background 0.3s ease, box-shadow 0.3s ease;
     }
 
-    /* Animated stroke ring */
+    /* Animated stroke ring — hidden */
     .course-icon-ring {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 82px;
-      height: 82px;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .course-icon-ring circle {
-      fill: none;
-      stroke: var(--color-accent);
-      stroke-width: 2.5;
-      stroke-linecap: round;
-      /* Circumference = 2 * PI * 38 ≈ 239 */
-      stroke-dasharray: 239;
-      stroke-dashoffset: 239;
-      transform: rotate(-90deg);
-      transform-origin: center;
-      transition: stroke-dashoffset 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-      filter: drop-shadow(0 0 6px rgba(255, 90, 0, 0.4));
-    }
-
-    .course-card:hover .course-icon-ring circle {
-      stroke-dashoffset: 0;
+      display: none;
     }
 
     .course-icon-wrapper img {
@@ -1016,7 +1003,6 @@
             <div class="course-header">
               <div class="course-title-row">
                 <h2 class="course-title">${course.title}</h2>
-                <span class="course-duration">${course.duration}</span>
             </div>
               <p class="course-description">${course.description}</p>
               </div>
@@ -1027,6 +1013,7 @@
           </div>
           <div class="course-thumbnail" style="--thumb-url: url('${course.thumbnail}')">
             <span class="course-number">${courseNumber}</span>
+            <span class="course-duration">${course.duration}</span>
             <svg class="course-icon-ring" viewBox="0 0 82 82">
               <circle cx="41" cy="41" r="38"/>
             </svg>

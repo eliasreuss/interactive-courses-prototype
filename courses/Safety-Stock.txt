@@ -158,15 +158,50 @@ Note: the service levels on the illustration is only meant to spark the right wa
 [id:6/topic: Inside Inact Now]
 
 slide_id: 11
-index_title: The Safety Stock insight
-title: **Establishing safety stock levels in Inact Now**
+index_title: How can Inact Now help us?
+title: **How can Inact Now help us?**
 type: main
 ---
-Supademo her:
+In Inact Now, there are two insights that are especially helpful for establishing and managing safety stock levels per category in your organization. 
+
+The first one allows you to simulate different service levels, to see how it affects how expensive your inventory will be.
+
+Let’s open the insight “Safety Stock / Simulation” and take a look.
+
+Do you know how to open the insight?
 ---
-> [next] Continue -> 12
+> [next] Yes, continue -> 12
+> [sidequest] No, help me -> s1
 
 slide_id: 12
+index_title: Insight: Safety Stock / Simulation
+title: **Insight: Safety Stock / Simulation**
+type: main
+---
+Go through the interactive tutorial below to see how we can use Inact Now to simulate different service levels:
+
+[supademo: Insight: Safety Stock Simulation](https://app.supademo.com/embed/cmlb0od6v3p73vhwzylb5iood?embed_v=2&utm_source=embed)
+---
+> [next] Continue -> 13
+
+slide_id: 13
+index_title: Insight: Safety Stock
+title: **Insight: Safety Stock**
+type: main
+---
+Simulations provide the big picture. Now let’s look closer at a single scenario.
+
+Using the “Safety Stock” insight, you can drill down to individual products and see exactly how much safety stock is required for each item. If your organization already uses safety stock, you can compare the levels currently set in your ERP system with the levels calculated by Inact Now.
+
+Go through the interactive tutorial below to get a walkthrough of the "Safety Stock" insight in Inact Now:
+
+[supademo: Insight walkthrough: Safety Stock](https://app.supademo.com/embed/cmlf4up2g0ux3zqp09ssw5woa?embed_v=2&utm_source=embed)
+---
+> [next] Continue -> 14
+
+[id:7/topic: What's next?]
+
+slide_id: 14
 index_title: What's next?
 title: **Congratulations! You’ve completed the Safety Stock course.**
 title-align: center
@@ -181,4 +216,20 @@ In the next course, **Reorder Point**, you’ll learn how to do just that.
 **Let’s keep going!**
 
 ![image/size:large/align:right/frame:none](safety-stock/Safety-Stock-Hero.png)
+---
+
+[flow-specific-side-quests]
+
+[id:s1/topic: Opening the insight: Safety Stock / Simulation]
+
+slide_id: 1
+title: **Opening the insight: Safety Stock / Simulation**
+type: sidequest
+backLabel: Return to course
+---
+Go through the interactive tutorial below to see how to open the insight:
+
+<div style="position: relative; box-sizing: content-box; max-height: 80vh; max-height: 80svh; width: 100%; aspect-ratio: 1.78; padding: 40px 0 40px 0;">
+  <iframe src="https://app.supademo.com/embed/cmlawzyeq3gqyvhwzfnskr50r?embed_v=2&utm_source=embed" loading="lazy" title="Opening the Insight: Safety Stock Simulation" allow="clipboard-write" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
 ---
