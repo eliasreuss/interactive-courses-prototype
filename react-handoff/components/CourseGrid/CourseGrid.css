@@ -1,7 +1,7 @@
 /*
  * CourseGrid styles
  *
- * Single-column by default, 3-column grid on wide screens.
+ * 1 column (< 700px) → 2 columns (≥ 700px) → 3 columns (≥ 1200px).
  */
 
 .course-grid-wrapper {
@@ -18,12 +18,19 @@
   gap: 20px;
 }
 
+/* Medium screens → 2×N grid */
+@media (min-width: 700px) {
+  .course-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
 /* Wide screen → 3×N grid */
 @media (min-width: 1200px) {
   .course-grid {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
   }
 }
 

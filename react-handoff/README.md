@@ -161,8 +161,17 @@ Both include `::before` (top edge highlight) and `::after` (left edge highlight)
 - **Progress bars**: `width` transition with `0.8s` cubic-bezier.
 
 ### Responsive Breakpoints
-| Width | `--page-margin` |
-|-------|----------------|
+
+**Grid layout:**
+| Width | Layout |
+|-------|--------|
+| < 700px | 1 column |
+| ≥ 700px | 2 columns |
+| ≥ 1200px | 3 columns |
+
+**Page margins (`--page-margin`):**
+| Width | Margin |
+|-------|--------|
 | Default | 40px |
 | ≥1400px | 120px |
 | ≥1600px | 180px |
