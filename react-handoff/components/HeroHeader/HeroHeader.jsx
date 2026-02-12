@@ -52,7 +52,7 @@ export default function HeroHeader({
   useEffect(() => {
     if (progressLabelRef.current) {
       progressLabelRef.current.style.left = `${pct}%`;
-      progressLabelRef.current.style.opacity = pct > 0 ? '1' : '0';
+      progressLabelRef.current.style.opacity = '1';
     }
   }, [pct]);
 
@@ -146,7 +146,7 @@ export default function HeroHeader({
           ref={progressLabelRef}
           style={{
             left: `${pct}%`,
-            opacity: pct > 0 ? 1 : 0,
+            opacity: 1,
           }}
         >
           {pct}%

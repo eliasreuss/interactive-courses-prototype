@@ -174,7 +174,7 @@
       border: 1px solid rgb(202, 202, 202);
       border-radius: 500px;
       white-space: nowrap;
-      opacity: 0;
+      opacity: 1;
       transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
     }
 
@@ -1258,7 +1258,7 @@
       const pctEl = document.getElementById('total-progress-percent');
       if (pctEl) {
         pctEl.textContent = `${pct}%`;
-        pctEl.style.opacity = pct > 0 ? '1' : '0';
+        pctEl.style.opacity = '1';
         pctEl.style.left = `${pct}%`;
         pctEl.style.transform = 'translateX(-50%)';
       }
