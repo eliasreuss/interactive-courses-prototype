@@ -1,0 +1,255 @@
+/*
+ * CourseCard styles
+ *
+ * Rounded card with thumbnail, glass-morphism pills,
+ * progress bar, and hover micro-interactions.
+ */
+
+/* ════════════════════════════════════════════════
+   Card container
+   ════════════════════════════════════════════════ */
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 17.76px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  background: transparent;
+  box-shadow: 0 10px 28px rgba(48, 70, 66, 0.14);
+  transition:
+    transform 420ms var(--transition-smooth),
+    box-shadow 420ms var(--transition-smooth);
+  /* Scroll-reveal animation start state */
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+/* Visible state (toggled via IntersectionObserver — see CourseGrid) */
+.course-card.visible {
+  animation: cardEnter 0.55s var(--transition-smooth) forwards;
+}
+
+/* Stagger delays (nth-child set by CSS, or via inline style) */
+.course-card:nth-child(1) { animation-delay: 0.04s; }
+.course-card:nth-child(2) { animation-delay: 0.10s; }
+.course-card:nth-child(3) { animation-delay: 0.16s; }
+.course-card:nth-child(4) { animation-delay: 0.06s; }
+.course-card:nth-child(5) { animation-delay: 0.12s; }
+.course-card:nth-child(6) { animation-delay: 0.18s; }
+
+@keyframes cardEnter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 56px rgba(48, 70, 66, 0.22);
+}
+
+/* Bold CTA for the "next" course */
+.course-card--next .course-card__cta {
+  font-weight: 700;
+}
+
+/* ════════════════════════════════════════════════
+   Thumbnail area
+   ════════════════════════════════════════════════ */
+
+.course-card__top {
+  height: 160px;
+  background: linear-gradient(var(--grad-dir, 135deg), #C9D0BF 0%, #ECECE2 100%);
+  position: relative;
+  overflow: hidden;
+  border-top-left-radius: 17.76px;
+  border-top-right-radius: 17.76px;
+}
+
+/* No gradient overlay on thumbnails */
+.course-card__top::before {
+  display: none;
+}
+
+.course-card__thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 0;
+  transition: transform 420ms var(--transition-smooth);
+}
+
+.course-card:hover .course-card__thumb {
+  transform: scale(1.04);
+}
+
+/* Duration pill (top-right) */
+.course-card__duration {
+  position: absolute;
+  top: 19px;
+  right: 19px;
+  padding: 9px 19px;
+  border-radius: 118px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  z-index: 3;
+}
+
+/* Center icon circle */
+.course-card__icon {
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  border-radius: 118px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -40%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition:
+    transform 350ms var(--transition-smooth),
+    box-shadow 350ms var(--transition-smooth);
+}
+
+.course-card:hover .course-card__icon {
+  transform: translate(-50%, -40%) scale(1.08);
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.18);
+}
+
+.course-card__icon img {
+  width: 32px;
+  height: 26px;
+  display: block;
+}
+
+/* ════════════════════════════════════════════════
+   Progress bar
+   ════════════════════════════════════════════════ */
+
+.course-card__progress {
+  height: 6px;
+  background: rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.course-card__progress-fill {
+  height: 100%;
+  width: 0%;
+  background: rgba(48, 70, 66, 1);
+  border-radius: 0 6px 6px 0;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* When 100% complete, fill has no rounded right corners */
+.course-card__progress--completed .course-card__progress-fill {
+  width: 100%;
+  background: rgba(48, 70, 66, 1);
+  border-radius: 0;
+}
+
+/* ════════════════════════════════════════════════
+   Info / bottom area
+   ════════════════════════════════════════════════ */
+
+.course-card__bottom {
+  padding: 24px;
+  background: white;
+  border-bottom-right-radius: 17.76px;
+  border-bottom-left-radius: 17.76px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.course-card__title {
+  color: var(--color-primary);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.2px;
+  transition: color 200ms ease;
+}
+
+.course-card:hover .course-card__title {
+  color: var(--color-primary-light);
+}
+
+.course-card__description {
+  color: rgba(48, 70, 66, 0.55);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.course-card__cta-row {
+  margin-top: auto;
+  padding-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.course-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-primary);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 26px;
+  text-decoration: none;
+  transition: gap 250ms var(--transition-smooth);
+}
+
+.course-card__cta--bold {
+  font-weight: 700;
+}
+
+.course-card:hover .course-card__cta {
+  gap: 14px;
+}
+
+.course-card__cta-arrow {
+  width: 15px;
+  height: 15px;
+  display: block;
+  flex-shrink: 0;
+  transition: transform 250ms var(--transition-smooth);
+}
+
+.course-card:hover .course-card__cta-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* ════════════════════════════════════════════════
+   Responsive
+   ════════════════════════════════════════════════ */
+
+@media (max-width: 600px) {
+  .course-card__title { font-size: 18px; }
+  .course-card__description { font-size: 14px; }
+}
+

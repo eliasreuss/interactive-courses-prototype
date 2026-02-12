@@ -1,0 +1,42 @@
+/*
+ * CourseGrid styles
+ *
+ * Single-column by default, 3-column grid on wide screens.
+ */
+
+.course-grid-wrapper {
+  flex: 1;
+  padding: 0 var(--page-margin) var(--page-margin);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.course-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Wide screen → 3×N grid */
+@media (min-width: 1200px) {
+  .course-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+/* ── Responsive padding ── */
+@media (max-width: 900px) {
+  .course-grid-wrapper {
+    padding: 0 32px 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .course-grid-wrapper {
+    padding: 0 20px 20px;
+  }
+}
+

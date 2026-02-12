@@ -27,6 +27,45 @@
       --radius-md: 14px;
       --radius-sm: 10px;
       --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+      /* Responsive spacing */
+      --page-margin: 40px;
+      --page-margin-top: 20px;
+    }
+
+    /* Scale margins for larger screens */
+    @media (min-width: 1400px) {
+      :root {
+        --page-margin: 120px;
+        --page-margin-top: 20px;
+      }
+    }
+
+    @media (min-width: 1600px) {
+      :root {
+        --page-margin: 180px;
+        --page-margin-top: 20px;
+      }
+    }
+
+    @media (min-width: 1920px) {
+      :root {
+        --page-margin: 280px;
+        --page-margin-top: 20px;
+      }
+    }
+
+    @media (min-width: 2200px) {
+      :root {
+        --page-margin: 380px;
+        --page-margin-top: 20px;
+      }
+    }
+
+    @media (min-width: 2560px) {
+      :root {
+        --page-margin: 480px;
+        --page-margin-top: 20px;
+      }
     }
 
     * {
@@ -48,44 +87,320 @@
       background-size: 24px 24px;
     }
 
-    /* Desktop: keep sidebar fixed and only scroll the course list */
-    @media (min-width: 901px) {
-      html, body {
-        height: 100%;
+    /* Hero Header */
+    .hero-header {
+      background:
+        linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+        var(--color-primary);
+      background-size: 120px 120px, 120px 120px, 100% 100%;
+      border-radius: 25px;
+      margin: var(--page-margin-top) var(--page-margin) 20px;
+      padding: 47px 63px;
+      position: relative;
         overflow: hidden;
-      }
-      .main-container {
-        height: calc(100vh - 72px);
-        overflow: hidden;
-      }
-      .sidebar {
-        position: sticky;
-        top: 0;
-        height: 100%;
-        overflow: hidden;
-        align-self: flex-start;
-      }
-      .content-area {
-        height: 100%;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: thin;
-        scrollbar-color: var(--color-progress-bg) transparent;
-      }
-      .content-area::-webkit-scrollbar {
-        width: 8px;
-      }
-      .content-area::-webkit-scrollbar-track {
-        background: transparent;
-      }
-      .content-area::-webkit-scrollbar-thumb {
-        background: var(--color-progress-bg);
-        border-radius: 4px;
-      }
-      .content-area::-webkit-scrollbar-thumb:hover {
-        background: var(--color-muted);
-      }
+      min-height: 280px;
+      box-shadow:
+        0 18px 48px rgba(0, 0, 0, 0.18),
+        0 2px 10px rgba(0, 0, 0, 0.10);
     }
+
+    .hero-graphs {
+      position: absolute;
+      right: -72px;
+      bottom: -48px;
+      width: min(54%, 720px);
+      height: auto;
+      pointer-events: auto;
+      user-select: none;
+      z-index: 1;
+      display: block;
+      image-rendering: -webkit-optimize-contrast;
+      transform-origin: bottom right;
+      transform: translateZ(0);
+      will-change: transform;
+      transition: transform 350ms cubic-bezier(0.34, 1.4, 0.64, 1);
+      cursor: default;
+    }
+
+    .hero-graphs:hover {
+      transform: translateY(-12px) rotate(-2deg);
+    }
+
+    /* Progress bar at bottom of hero */
+    .hero-progress {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      z-index: 4;
+      height: 12px;
+    }
+
+    .hero-progress-track {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.18);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgb(202, 202, 202);
+      border-bottom: none;
+      border-radius: 20px 20px 0 0;
+        overflow: hidden;
+      position: relative;
+      }
+
+    .hero-progress-fill {
+        height: 100%;
+      width: 0%;
+      background: var(--color-primary);
+      border: 1px solid rgb(202, 202, 202);
+      border-radius: 20px 20px 0 0;
+      transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hero-progress-label {
+      position: absolute;
+      top: -38px;
+      left: 0%;
+      transform: translateX(-50%);
+      background: var(--color-primary);
+      color: white;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 1;
+      padding: 6px 10px;
+      border: 1px solid rgb(202, 202, 202);
+      border-radius: 500px;
+      white-space: nowrap;
+      opacity: 0;
+      transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+    }
+
+    /* Outer triangle (stroke) */
+    .hero-progress-label::before {
+      content: '';
+      position: absolute;
+      bottom: -7px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-top: 7px solid rgb(202, 202, 202);
+    }
+
+    /* Inner triangle (fill) */
+    .hero-progress-label::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid var(--color-primary);
+    }
+
+    .hero-content {
+      width: min(520px, 100%);
+      display: inline-flex;
+      flex-direction: column;
+      gap: 31px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-tags {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* Glass utility (used for hero tags and card pills) */
+    .glass {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(7px);
+      -webkit-backdrop-filter: blur(7px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 0 0px 0px rgba(255, 255, 255, 0);
+      position: relative;
+        overflow: hidden;
+    }
+
+    .glass::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.8),
+        transparent
+      );
+      pointer-events: none;
+    }
+
+    .glass::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1px;
+        height: 100%;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.8),
+        transparent,
+        rgba(255, 255, 255, 0.3)
+      );
+      pointer-events: none;
+    }
+
+    .glass > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-tag {
+      padding: 9px 21px;
+      border-radius: 500px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      word-wrap: break-word;
+    }
+
+    .hero-tag.primary {
+      font-weight: 700;
+    }
+
+    .hero-tag-icon {
+      width: 16px;
+      height: 15px;
+      display: block;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .hero-title {
+      color: white;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 42px;
+      letter-spacing: -0.78px;
+      word-wrap: break-word;
+    }
+
+    .hero-description {
+      color: white;
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 27px;
+      max-width: 470px;
+      word-wrap: break-word;
+    }
+
+    .hero-actions {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-start {
+      padding: 9px 21px;
+      background: white;
+      border-radius: 500px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--color-primary);
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 24px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-family);
+      transition: all 0.2s var(--transition-smooth);
+      word-wrap: break-word;
+    }
+
+    .btn-start:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-start-label {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Use the SVG file, but tint it via mask so it matches Figma (#304642) */
+    .btn-start-arrow {
+      width: 7px;
+      height: 14px;
+      background: var(--color-primary);
+      -webkit-mask-image: url('SVGs/ButtonArrow.svg');
+      mask-image: url('SVGs/ButtonArrow.svg');
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      mask-position: center;
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      display: inline-block;
+      flex: 0 0 auto;
+    }
+
+    .btn-icon {
+      width: 42px;
+      height: 42px;
+      padding: 10px 12px;
+      background: white;
+      border-radius: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s var(--transition-smooth);
+    }
+
+    .btn-icon:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-icon-img {
+      width: 20px;
+      height: 20px;
+      display: block;
+    }
+
+    /* Progress UI removed per new design */
 
     /* Header */
     .header {
@@ -182,149 +497,14 @@
     /* Main Layout */
     .main-container {
       display: flex;
+      flex-direction: column;
       min-height: calc(100vh - 72px);
-    }
-
-    /* Sidebar */
-    .sidebar {
-      width: 360px;
-      background: var(--color-sidebar-bg);
-      padding: 40px 36px 48px 40px;
-      flex-shrink: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-      border-right: 1px solid rgba(48, 70, 66, 0.06);
-      position: relative;
-    }
-
-    /* Decorative accent line */
-    .sidebar::before {
-      content: '';
-      position: absolute;
-      top: 40px;
-      left: 0;
-      width: 4px;
-      height: 140px;
-      background: linear-gradient(180deg, var(--color-accent) 0%, rgba(255, 90, 0, 0.2) 100%);
-      border-radius: 0 4px 4px 0;
-    }
-
-    .lp-header {
-      padding-left: 4px;
-    }
-
-    .lp-eyebrow {
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      color: var(--color-accent);
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .lp-eyebrow::before {
-      content: '';
-      width: 16px;
-      height: 2px;
-      background: var(--color-accent);
-      border-radius: 1px;
-    }
-
-    .lp-title {
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--color-primary);
-      line-height: 1.25;
-      letter-spacing: -0.5px;
-    }
-
-    .lp-description {
-      font-size: 15px;
-      font-weight: 400;
-      color: var(--color-text-secondary);
-      line-height: 1.6;
-      margin-top: 16px;
-    }
-
-    .progress-section {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      padding: 24px;
-      background: var(--color-card-bg);
-      border-radius: var(--radius-md);
-      box-shadow: 0 2px 8px rgba(48, 70, 66, 0.04);
-      border: 1px solid rgba(48, 70, 66, 0.08);
-    }
-
-    .progress-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .progress-label {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--color-primary);
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-    }
-
-    .progress-percent {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--color-primary);
-      font-variant-numeric: tabular-nums;
-      letter-spacing: -0.5px;
-    }
-
-    .progress-bar-container {
-      width: 100%;
-      height: 8px;
-      background: var(--color-progress-bg);
-      border-radius: 100px;
-      overflow: hidden;
-    }
-
-    .progress-bar-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-      border-radius: 100px;
-      transition: width 0.6s var(--transition-smooth);
-    }
-
-    .meta-info {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      padding-top: 8px;
-      border-top: 1px solid rgba(48, 70, 66, 0.06);
-    }
-
-    .meta-text {
-      color: var(--color-muted);
-      font-size: 12px;
-      font-weight: 500;
-    }
-
-    .meta-dot {
-      width: 3px;
-      height: 3px;
-      background: var(--color-muted);
-      border-radius: 9999px;
-      opacity: 0.5;
     }
 
     /* Content Area */
     .content-area {
       flex: 1;
-      padding: 40px 48px;
+      padding: 0 var(--page-margin) var(--page-margin);
       display: flex;
       flex-direction: column;
       gap: 20px;
@@ -336,87 +516,41 @@
       gap: 20px;
     }
 
-    /* Wide screen 2x2 grid layout */
+    /* Wide screen 3x3 grid layout */
     @media (min-width: 1200px) {
       #course-list {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
-      }
-      
-      /* All cards - vertical layout with image on top */
-      #course-list .course-card {
-        flex-direction: column-reverse;
-        padding: 0;
-        gap: 0;
-      }
-      
-      #course-list .course-card .course-thumbnail {
-        width: 100%;
-        height: 200px;
-        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-      }
-      
-      #course-list .course-card .course-info {
-        padding: 24px;
-        min-height: auto;
-        gap: 16px;
-      }
-      
-      #course-list .course-card .course-title {
-        font-size: 20px;
-      }
-      
-      #course-list .course-card .course-description {
-        font-size: 14px;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-      }
-      
-      /* Accent on top for grid cards */
-      #course-list .course-card::before {
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: auto;
-        width: auto;
-        height: 4px;
-        transform: scaleX(0);
-        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-      }
-      
-      #course-list .course-card:hover::before {
-        transform: scaleX(1);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
       }
     }
 
-    /* Course Card */
+    /* Course Card (Figma style) */
     .course-card {
       display: flex;
-      align-items: stretch;
-      gap: 48px;
-      padding: 28px;
-      background: var(--color-card-bg);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-card);
-      transition: all 0.35s var(--transition-smooth);
+      flex-direction: column;
+      border-radius: 17.76px;
+      overflow: hidden;
       cursor: pointer;
       position: relative;
-      overflow: hidden;
+      background: transparent;
+      box-shadow: 0 10px 28px rgba(48, 70, 66, 0.14);
+      transition: transform 420ms var(--transition-smooth), box-shadow 420ms var(--transition-smooth);
       opacity: 0;
-      transform: translateY(20px);
-      animation: cardEnter 0.5s var(--transition-smooth) forwards;
+      transform: translateY(24px);
+      /* cards revealed by IntersectionObserver */
     }
 
-    .course-card:nth-child(1) { animation-delay: 0.05s; }
-    .course-card:nth-child(2) { animation-delay: 0.1s; }
-    .course-card:nth-child(3) { animation-delay: 0.15s; }
-    .course-card:nth-child(4) { animation-delay: 0.2s; }
-    .course-card:nth-child(5) { animation-delay: 0.25s; }
-    .course-card:nth-child(6) { animation-delay: 0.3s; }
+    .course-card.visible {
+      animation: cardEnter 0.55s var(--transition-smooth) forwards;
+    }
+
+    .course-card:nth-child(1) { animation-delay: 0.04s; }
+    .course-card:nth-child(2) { animation-delay: 0.10s; }
+    .course-card:nth-child(3) { animation-delay: 0.16s; }
+    .course-card:nth-child(4) { animation-delay: 0.06s; }
+    .course-card:nth-child(5) { animation-delay: 0.12s; }
+    .course-card:nth-child(6) { animation-delay: 0.18s; }
 
     @keyframes cardEnter {
       to {
@@ -425,59 +559,171 @@
       }
     }
 
-    /* Subtle left accent on hover */
-    .course-card::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      background: var(--color-accent);
-      transform: scaleY(0);
-      transition: transform 0.3s var(--transition-smooth);
-      border-radius: 0 4px 4px 0;
-    }
-
     .course-card:hover {
       transform: translateY(-6px);
-      box-shadow: var(--shadow-card-hover);
+      box-shadow: 0 22px 56px rgba(48, 70, 66, 0.22);
     }
 
-    .course-card:hover::before {
-      transform: scaleY(1);
+    /* ---- Card top (thumbnail) ---- */
+    .course-card-top {
+      height: 160px;
+      background: linear-gradient(var(--grad-dir, 135deg), #C9D0BF 0%, #ECECE2 100%);
+      position: relative;
+      overflow: hidden;
+      border-top-left-radius: 17.76px;
+      border-top-right-radius: 17.76px;
     }
 
-    .course-info {
-      flex: 1;
+    .course-card-thumb {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      z-index: 0;
+      transition: transform 420ms var(--transition-smooth);
+    }
+
+    .course-card:hover .course-card-thumb {
+      transform: scale(1.04);
+    }
+
+    /* No gradient overlay on thumbnails */
+    .course-card-top::before {
+      display: none;
+    }
+
+    /* Per-card gradient directions */
+    .course-card:nth-child(1) .course-card-top { --grad-dir: 135deg; }
+    .course-card:nth-child(2) .course-card-top { --grad-dir: 200deg; }
+    .course-card:nth-child(3) .course-card-top { --grad-dir: 310deg; }
+    .course-card:nth-child(4) .course-card-top { --grad-dir: 60deg; }
+    .course-card:nth-child(5) .course-card-top { --grad-dir: 250deg; }
+    .course-card:nth-child(6) .course-card-top { --grad-dir: 170deg; }
+
+    /* Dark glass override for card elements – dark green undertone */
+    .course-duration-pill.glass,
+    .course-icon-circle.glass {
+      background: rgba(48, 70, 66, 0.45);
+      border-color: rgba(255, 255, 255, 0.12);
+      box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+    }
+
+    .course-duration-pill.glass::before,
+    .course-icon-circle.glass::before {
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+      );
+    }
+
+    .course-duration-pill.glass::after,
+    .course-icon-circle.glass::after {
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.3),
+        transparent,
+        rgba(255, 255, 255, 0.1)
+      );
+    }
+
+    .course-duration-pill {
+      position: absolute;
+      top: 19px;
+      right: 19px;
+      padding: 9px 19px;
+      border-radius: 118px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      z-index: 3;
+    }
+
+    .course-icon-circle {
+      width: 60px;
+      height: 60px;
+      padding: 10px;
+      border-radius: 118px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -40%);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      transition: transform 350ms var(--transition-smooth), box-shadow 350ms var(--transition-smooth);
+    }
+
+    .course-card:hover .course-icon-circle {
+      transform: translate(-50%, -40%) scale(1.08);
+      box-shadow: 0 0 24px rgba(255, 255, 255, 0.18);
+    }
+
+    .course-icon-circle img {
+      width: 32px;
+      height: 26px;
+      display: block;
+    }
+
+    /* ---- Card progress bar ---- */
+    .card-progress {
+      height: 6px;
+      background: rgba(0, 0, 0, 0.12);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .card-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: rgba(48, 70, 66, 1);
+      border-radius: 0 6px 6px 0;
+      transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .card-progress.completed .card-progress-fill {
+      width: 100%;
+      background: rgba(48, 70, 66, 1);
+      border-radius: 0;
+    }
+
+    /* Bold CTA for the next course to take */
+    .course-card.next-course .course-cta {
+      font-weight: 700;
+    }
+
+    /* ---- Card bottom (info) ---- */
+    .course-card-bottom {
+      padding: 24px;
+      background: white;
+      border-bottom-right-radius: 17.76px;
+      border-bottom-left-radius: 17.76px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      min-height: 180px;
-      gap: 0;
-      padding: 4px 0;
-    }
-
-    .course-header {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .course-title-row {
-      display: flex;
-      align-items: baseline;
       gap: 12px;
-      flex-wrap: nowrap;
+      flex: 1;
     }
 
     .course-title {
+      color: var(--color-primary);
       font-size: 22px;
       font-weight: 600;
-      color: var(--color-primary);
-      line-height: 1.35;
-      letter-spacing: -0.3px;
-      transition: color 0.2s ease;
+      line-height: 32px;
+      letter-spacing: -0.2px;
+      transition: color 200ms ease;
     }
 
     .course-card:hover .course-title {
@@ -485,88 +731,54 @@
     }
 
     .course-description {
-      font-size: 15px;
-      font-weight: 400;
-      color: var(--color-text-secondary);
-      line-height: 1.6;
-      max-width: 480px;
+      color: rgba(48, 70, 66, 0.55);
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 24px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
-    .course-actions {
+    .course-cta-row {
+      margin-top: auto;
+      padding-top: 8px;
       display: flex;
       align-items: center;
+      justify-content: flex-end;
+    }
+
+    .course-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--color-primary);
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 26px;
+      text-decoration: none;
+      transition: gap 250ms var(--transition-smooth);
+    }
+
+    .course-card:hover .course-cta {
       gap: 14px;
     }
 
-    .btn-open {
-      padding: 10px 18px;
-      background: var(--color-accent);
-      color: white;
-      border: none;
-      border-radius: 100px;
-      font-size: 13px;
-      font-weight: 600;
-      font-family: var(--font-family);
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.25s var(--transition-smooth);
-      box-shadow: 0 2px 8px var(--color-accent-glow);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .btn-open svg {
-      width: 7px;
-      height: 11px;
+    .course-cta-arrow {
+      width: 15px;
+      height: 15px;
+      display: block;
       flex-shrink: 0;
-      transition: transform 0.2s var(--transition-smooth);
+      transition: transform 250ms var(--transition-smooth);
     }
 
-    .btn-open:hover {
-      background: #e85200;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px var(--color-accent-glow);
+    .course-card:hover .course-cta-arrow {
+      transform: translate(2px, -2px);
     }
 
-    .btn-open:hover svg {
-      transform: translateX(3px);
-    }
-
-    .course-duration {
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--color-muted);
-      letter-spacing: 0.3px;
-      padding: 4px 10px;
-      background: var(--color-tag-bg);
-      border-radius: 100px;
-      flex-shrink: 0;
-      white-space: nowrap;
-    }
-
-    /* Course number badge */
-    .course-number {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      width: 32px;
-      height: 32px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      font-weight: 400;
-      color: white;
-      background: rgba(255, 255, 255, 0.18);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      border-radius: 50%;
-      z-index: 5;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-      line-height: 1;
-    }
+    /* Legacy elements no longer used */
 
     /* Completion indicator */
     .completion-indicator {
@@ -625,19 +837,7 @@
       transition: stroke-dashoffset 0.6s var(--transition-smooth);
     }
 
-    /* Course thumbnail */
-    .course-thumbnail {
-      width: 180px;
-      height: 180px;
-      border-radius: var(--radius-md);
-      flex-shrink: 0;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.35s var(--transition-smooth);
-      background-image: var(--thumb-url);
-      background-size: cover;
-      background-position: center;
-    }
+    /* Legacy thumbnail no longer used */
 
     /* Dark overlay for cohesion */
     .course-thumbnail::before {
@@ -664,69 +864,42 @@
 
     /* Responsive - medium screens (list layout) */
     @media (min-width: 901px) and (max-width: 1199px) {
-      .course-card {
-        gap: 32px;
-      }
-      
-      .course-thumbnail {
-        width: 180px;
-        height: 180px;
-      }
+      /* keep 1-column list at this breakpoint */
     }
 
     /* Tablet and mobile */
     @media (max-width: 900px) {
-      .main-container {
-        flex-direction: column;
+      .hero-header {
+        margin: 16px 24px 16px;
+        padding: 40px;
+        min-height: auto;
       }
 
-      .sidebar {
-        width: 100%;
-        padding: 32px;
-        border-right: none;
-        border-bottom: 1px solid rgba(48, 70, 66, 0.06);
+      .hero-title {
+        font-size: 31px;
       }
 
-      .sidebar::before {
-        display: none;
+      .hero-description {
+        font-size: 17px;
+      }
+
+      .hero-graphs {
+        width: min(60%, 520px);
+        right: -56px;
+        bottom: -40px;
+        opacity: 0.95;
+      }
+
+      .hero-progress {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 320px;
       }
 
       .content-area {
-        padding: 32px;
+        padding: 0 32px 32px;
       }
 
-      .course-card {
-        flex-direction: column-reverse;
-        gap: 20px;
-        padding: 24px;
-      }
-
-      .course-thumbnail {
-        width: 100%;
-        height: 200px;
-        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-      }
-
-      .course-info {
-        min-height: auto;
-        padding: 0;
-      }
-      
-      /* Top accent for mobile cards */
-      .course-card::before {
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: auto;
-        width: auto;
-        height: 4px;
-        transform: scaleX(0);
-        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-      }
-      
-      .course-card:hover::before {
-        transform: scaleX(1);
-      }
     }
 
     @media (max-width: 600px) {
@@ -738,16 +911,48 @@
         display: none;
       }
 
-      .sidebar {
-        padding: 24px;
+      .hero-header {
+        margin: 12px 16px 12px;
+        padding: 32px 24px;
       }
 
-      .lp-title {
+      .hero-tags {
+        gap: 10px;
+      }
+
+      .hero-tag {
+        padding: 8px 16px;
+        font-size: 13px;
+      }
+
+      .hero-title {
         font-size: 24px;
       }
 
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .hero-graphs {
+        display: none;
+      }
+
+      .hero-progress {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 260px;
+      }
+
+      .hero-content {
+        gap: 28px;
+      }
+
+      .hero-text {
+        gap: 20px;
+      }
+
       .content-area {
-        padding: 20px;
+        padding: 0 20px 20px;
       }
 
       .course-title {
@@ -796,29 +1001,46 @@
 
   <!-- Main Content -->
   <div class="main-container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="lp-header">
-        <div class="lp-eyebrow">Learning Path</div>
-        <h1 class="lp-title">Using Inact for Inventory Management</h1>
-        <p class="lp-description">Master the key concepts and tools for effective inventory management with Inact Now.</p>
+    <!-- Hero Header -->
+    <section class="hero-header">
+      <div class="hero-content">
+        <div class="hero-tags">
+          <div class="hero-tag glass primary">
+            <img class="hero-tag-icon" src="SVGs/Learning-Path.svg" alt="" aria-hidden="true">
+            <span>Learning Path</span>
+          </div>
+          <div class="hero-tag glass" id="flow-count">6 resources</div>
+          <div class="hero-tag glass" id="total-time">1.1 hours</div>
       </div>
 
-      <div class="progress-section">
-        <div class="progress-header">
-          <div class="progress-label">Your Progress</div>
-          <div class="progress-percent" id="total-progress-percent">0%</div>
+        <div class="hero-text">
+          <h1 class="hero-title">Inact for Inventory Management</h1>
+          <p class="hero-description">Learn the core principles and practical tools of effective inventory management with Inact Now, and apply them in your daily operations.</p>
         </div>
-        <div class="progress-bar-container">
-          <div class="progress-bar-fill" id="total-progress" style="width: 0%"></div>
+
+        <div class="hero-actions">
+          <a href="#" class="btn-start" id="start-btn">
+            <span class="btn-start-label" id="start-btn-label">Start</span>
+            <span class="btn-start-arrow" aria-hidden="true"></span>
+          </a>
+          <button class="btn-icon" aria-label="Bookmark">
+            <img class="btn-icon-img" src="SVGs/Bookmark.svg" alt="" aria-hidden="true">
+          </button>
+          <button class="btn-icon" aria-label="Share">
+            <img class="btn-icon-img" src="SVGs/Share.svg" alt="" aria-hidden="true">
+          </button>
         </div>
-        <div class="meta-info">
-          <span class="meta-text" id="flow-count">6 courses</span>
-          <span class="meta-dot"></span>
-          <span class="meta-text" id="total-time">1.1 Hours</span>
         </div>
+      <img class="hero-graphs" src="images/BottomRightGraphs.png" alt="" aria-hidden="true">
+
+      <!-- Progress bar at bottom of header -->
+      <div class="hero-progress">
+        <div class="hero-progress-track">
+          <div class="hero-progress-fill" id="total-progress"></div>
       </div>
-    </aside>
+        <span class="hero-progress-label" id="total-progress-percent">0%</span>
+      </div>
+    </section>
 
     <!-- Course List -->
     <main class="content-area">
@@ -833,51 +1055,51 @@
     const courses = [
       {
         id: 'intro',
-        title: 'Introduction to Inact for inventory management',
-        description: 'Get the big picture: what to stock, how much to stock, and how much to order — and why balance matters.',
+        title: 'Intro to Inact - Inventory',
+        description: 'The big picture of inventory: what to stock, how much, and why balance matters.',
         duration: '8 min',
         file: 'Intro.txt',
-        thumbnail: 'path-images/Intro.png'
+        thumbnail: 'path-images/IIntro.png'
       },
       {
         id: 'double-abc',
         title: 'Double ABC Analysis',
-        description: 'Turn messy inventory into clear priorities — learn the model, the special categories, and how it looks in Inact.',
+        description: 'Turn messy inventory into clear priorities with the Double ABC model.',
         duration: '15 min',
         file: 'Double-ABC-Analysis-4.txt',
-        thumbnail: 'path-images/ABCanalysis.png'
+        thumbnail: 'path-images/DABC.png'
       },
       {
         id: 'stock-policy',
         title: 'Stock Policy',
-        description: 'Decide what belongs on the shelf vs. buy‑to‑order — then apply it in the "Non Stock Items" insight.',
+        description: 'Decide what belongs on the shelf vs. buy-to-order and apply it in Inact.',
         duration: '10 min',
         file: 'Stock-Policy.txt',
-        thumbnail: 'path-images/StockPolicy.png'
+        thumbnail: 'path-images/SP.png'
       },
       {
         id: 'safety-stock',
         title: 'Safety Stock',
-        description: 'Set the right buffer — understand variance, lead time, and service level, then calculate optimal safety stock.',
+        description: 'Set the right buffer using variance, lead time, and service level.',
         duration: '12 min',
         file: 'Safety-Stock.txt',
-        thumbnail: 'path-images/SafetyStock.png'
+        thumbnail: 'path-images/SS.png'
       },
       {
         id: 'reorder-point',
         title: 'Reorder Point',
-        description: 'Know when to reorder — learn the reorder point formula and how to manage it automatically in Inact Now.',
+        description: 'Learn the reorder point formula and automate it in Inact Now.',
         duration: '10 min',
         file: 'Reorder-Point.txt',
-        thumbnail: 'path-images/ReorderPoint.png'
+        thumbnail: 'path-images/RP.png'
       },
       {
         id: 'reorder-quantity',
         title: 'Reorder Quantity',
-        description: 'Know how much to order — avoid MOQ/EOQ traps and balance unit price, demand, and inventory turnover.',
+        description: 'Find the right order size by balancing price, demand, and turnover.',
         duration: '12 min',
         file: 'Reorder-Quantity.txt',
-        thumbnail: 'path-images/ReorderQuantity.png'
+        thumbnail: 'path-images/RQ.png'
       }
     ];
 
@@ -890,7 +1112,7 @@
       if (!Number.isFinite(totalMinutes) || totalMinutes <= 0) return '';
       if (totalMinutes < 60) return `${totalMinutes} min`;
       const hours = totalMinutes / 60;
-      return `${hours.toFixed(1)} Hours`;
+      return `${hours.toFixed(1)} hours`;
     }
 
     // Get progress from localStorage
@@ -935,31 +1157,44 @@
       }
     }
 
+    // Find the earliest unfinished course id
+    function getNextCourseId() {
+      for (const course of courses) {
+        const { completed } = getCourseProgress(course.id);
+        if (!completed) return course.id;
+      }
+      return null;
+    }
+
     // Render course card
-    function renderCourseCard(course, index) {
+    function renderCourseCard(course, index, nextCourseId) {
       const { completed, progress } = getCourseProgress(course.id);
-      const progressIndicator = renderProgressIndicator(progress, completed);
       const href = `course.html?course=${course.file}&from=hub`;
-      const ctaText = completed ? 'Review' : (progress > 0 ? 'Continue course' : 'Begin course');
-      const courseNumber = index + 1;
+      const ctaText = completed ? 'Review course' : (progress > 0 ? 'Continue course' : 'Start course');
+      
+      const pct = completed ? 100 : progress;
+      const barClass = completed ? 'card-progress completed' : 'card-progress';
+      const isNext = course.id === nextCourseId;
       
       return `
-        <div class="course-card" data-course-id="${course.id}" data-href="${href}" tabindex="0">
-          <div class="course-info">
-            <div class="course-header">
-              <div class="course-title-row">
-                <h2 class="course-title">${course.title}</h2>
-                <span class="course-duration">${course.duration}</span>
+        <div class="course-card${isNext ? ' next-course' : ''}" data-course-id="${course.id}" data-href="${href}" tabindex="0">
+          <div class="course-card-top">
+            <img class="course-card-thumb" src="${course.thumbnail}" alt="" aria-hidden="true">
+            <div class="course-duration-pill glass"><span>${course.duration}</span></div>
+            <div class="course-icon-circle glass">
+              <img src="SVGs/Course-Icon.svg" alt="" aria-hidden="true">
               </div>
-              <p class="course-description">${course.description}</p>
-            </div>
-            <div class="course-actions">
-              <a href="${href}" class="btn-open">${ctaText}<svg viewBox="0 0 7 11" fill="none"><path d="M1 1L5 5.5L1 10" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></a>
-              ${progressIndicator}
-            </div>
           </div>
-          <div class="course-thumbnail" style="--thumb-url: url('${course.thumbnail}')">
-            <span class="course-number">${courseNumber}</span>
+          <div class="${barClass}"><div class="card-progress-fill" style="width:${pct}%"></div></div>
+          <div class="course-card-bottom">
+            <h2 class="course-title">${course.title}</h2>
+              <p class="course-description">${course.description}</p>
+            <div class="course-cta-row">
+              <a href="${href}" class="course-cta">
+                <span>${ctaText}</span>
+                <img class="course-cta-arrow" src="SVGs/Up-Arrow.svg" alt="" aria-hidden="true">
+              </a>
+            </div>
           </div>
         </div>
       `;
@@ -991,15 +1226,31 @@
     function updateTotalProgress() {
       const { percentage } = calculateTotalProgress();
       const pct = Math.max(0, Math.min(100, Math.round(percentage)));
-      document.getElementById('total-progress').style.width = `${pct}%`;
+      const barEl = document.getElementById('total-progress');
+      if (barEl) barEl.style.width = `${pct}%`;
       const pctEl = document.getElementById('total-progress-percent');
-      if (pctEl) pctEl.textContent = `${pct}%`;
+      if (pctEl) {
+        pctEl.textContent = `${pct}%`;
+        pctEl.style.opacity = pct > 0 ? '1' : '0';
+        pctEl.style.left = `${pct}%`;
+        pctEl.style.transform = 'translateX(-50%)';
+      }
+    }
+
+    // Get the first uncompleted course, or the first course if all are completed
+    function getNextCourse() {
+      for (const course of courses) {
+        const { completed } = getCourseProgress(course.id);
+        if (!completed) return course;
+      }
+      return courses[0]; // All completed, return first
     }
 
     // Render all courses
     function renderCourses() {
       const container = document.getElementById('course-list');
-      container.innerHTML = courses.map((course, index) => renderCourseCard(course, index)).join('');
+      const nextCourseId = getNextCourseId();
+      container.innerHTML = courses.map((course, index) => renderCourseCard(course, index, nextCourseId)).join('');
 
       // Make clicking anywhere on the card open the course (except interactive elements)
       container.querySelectorAll('.course-card').forEach(card => {
@@ -1020,12 +1271,26 @@
       });
       
       // Update course count
-      document.getElementById('flow-count').textContent = `${courses.length} courses`;
+      document.getElementById('flow-count').textContent = `${courses.length} resources`;
 
       // Update total time (sum of all course minutes)
       const totalMinutes = courses.reduce((sum, c) => sum + parseMinutes(c.duration), 0);
       const totalTimeEl = document.getElementById('total-time');
       if (totalTimeEl) totalTimeEl.textContent = formatTotalTime(totalMinutes);
+
+      // Update start button to link to next uncompleted course
+      const nextCourse = getNextCourse();
+      const startBtn = document.getElementById('start-btn');
+      const startBtnLabel = document.getElementById('start-btn-label');
+      if (startBtn && nextCourse) {
+        startBtn.href = `course.html?course=${nextCourse.file}&from=hub`;
+        const { completed, progress } = getCourseProgress(nextCourse.id);
+        if (startBtnLabel) {
+          if (completed) startBtnLabel.textContent = 'Review';
+          else if (progress > 0) startBtnLabel.textContent = 'Continue';
+          else startBtnLabel.textContent = 'Start';
+        }
+      }
       
       updateTotalProgress();
     }
@@ -1049,10 +1314,30 @@
       }
     }
 
+    // Scroll-reveal: cards animate in when they enter the viewport
+    function observeCards() {
+      const cards = document.querySelectorAll('.course-card');
+      if (!('IntersectionObserver' in window)) {
+        // fallback: show all immediately
+        cards.forEach(c => c.classList.add('visible'));
+        return;
+      }
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      cards.forEach(card => observer.observe(card));
+    }
+
     // Initialize
     document.addEventListener('DOMContentLoaded', () => {
       checkReturnFromCourse();
       renderCourses();
+      observeCards();
     });
   </script>
 

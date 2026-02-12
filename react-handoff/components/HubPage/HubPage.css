@@ -1,0 +1,17 @@
+/*
+ * HubPage layout
+ * Wraps nav + hero + grid into a full-height page.
+ */
+
+.hub-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.hub-page__body {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 72px);
+}
+
