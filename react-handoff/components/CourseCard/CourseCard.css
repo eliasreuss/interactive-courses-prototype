@@ -51,9 +51,29 @@
   box-shadow: 0 22px 56px rgba(48, 70, 66, 0.22);
 }
 
-/* Bold CTA for the "next" course */
+/* ── Highlighted "next course" card ── */
+.course-card--next {
+  border: 2px solid transparent;
+  background-image:
+    linear-gradient(white, white),
+    linear-gradient(135deg, rgba(255, 90, 0, 0.45) 0%, rgba(255, 90, 0, 0.12) 50%, rgba(255, 90, 0, 0.35) 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 10px 32px rgba(255, 90, 0, 0.12), 0 2px 8px rgba(255, 90, 0, 0.08);
+}
+
+.course-card--next:hover {
+  box-shadow: 0 22px 56px rgba(255, 90, 0, 0.18), 0 4px 12px rgba(255, 90, 0, 0.10);
+}
+
 .course-card--next .course-card__cta {
   font-weight: 700;
+  color: var(--color-accent);
+}
+
+.course-card--next .course-card__cta-arrow {
+  /* Tint the SVG arrow to accent orange */
+  filter: brightness(0) saturate(100%) invert(44%) sepia(89%) saturate(3000%) hue-rotate(11deg) brightness(101%) contrast(105%);
 }
 
 /* ════════════════════════════════════════════════
