@@ -24,9 +24,11 @@ type: main
 ---
 **To understand double ABC analysis, it helps to first recall the basics of classic ABC analysis.**
 
-ABC analysis is built on the Pareto principle (80/20 rule), which shows that a small portion of items usually accounts for most of the value.
+ABC analysis is based on the Pareto principle (the 80/20 rule): a small share of items usually accounts for most of the total value.
 
-For example, in a warehouse, a handful of products (the “A” items) may generate the majority of sales or inventory value, while many other products (the “B” and “C” items) contribute far less.
+We see this pattern in everyday life. Most people wear about 20% of their clothes 80% of the time, and we typically call 20% of our contacts most frequently.
+
+In inventory management, the same logic applies. In a warehouse, a small number of products (A items) often generate the majority of sales or inventory value, while a larger number of products (B and C items) contribute significantly less.
 
 ![image/size:500px/align:right/frame:none](double-abc-analysis/Single-ABC.png)
 ---
@@ -60,7 +62,7 @@ type: main
 ---
 Now you know the theory behind an ABC analysis, but there’s more:
 
-**The double ABC analysis looks at two variables at the same time instead of just one.** These could for example be:
+**The double ABC analysis looks at two variables at the same time instead of just one.** In the inventory solution in Inact Now, these are:
 
 **1. Cost of inventory** – how much the product cost us over the last 12 months (total cost of goods).
 **2. Demand** – how often the product was sold or used in the last 12 months (consumption lines).
@@ -207,6 +209,7 @@ Now let’s apply it to your own inventory - in Inact Now, we’ve already set u
 ---
 > [next] Yes, continue -> 14
 > [sidequest] No, show me -> s2
+> [next:flow] Open Inact Now -> https://inactnow.io/app/#/
 > [next:flow] Open Inact Now -> https://inactnow.io/app/#/
 
 slide_id: 14

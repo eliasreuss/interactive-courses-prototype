@@ -29,7 +29,7 @@
  *    - assets/images/BottomRightGraphs.png
  */
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import './HeroHeader.css';
 
 /* ── Asset imports (adjust paths to match your project) ── */
@@ -45,16 +45,7 @@ export default function HeroHeader({
   nextCourseFile = '',
   ctaLabel = 'Start',
 }) {
-  const progressLabelRef = useRef(null);
   const pct = Math.max(0, Math.min(100, Math.round(totalProgress)));
-
-  /* Animate progress label position */
-  useEffect(() => {
-    if (progressLabelRef.current) {
-      progressLabelRef.current.style.left = `${pct}%`;
-      progressLabelRef.current.style.opacity = '1';
-    }
-  }, [pct]);
 
   /* Derived data */
   const resourceCount = courses.length;
@@ -99,11 +90,10 @@ export default function HeroHeader({
           </p>
         </div>
 
-        {/* Action buttons */}
+        {/* Action buttons + inline progress */}
         <div className="hero-actions">
           <a href={courseUrl} className="btn-start">
             <span className="btn-start__label">{ctaLabel}</span>
-            {/* Arrow is rendered via CSS mask-image for color tinting */}
             <span className="btn-start__arrow" aria-hidden="true" />
           </a>
           <button className="btn-icon" aria-label="Bookmark">
@@ -122,6 +112,19 @@ export default function HeroHeader({
               aria-hidden="true"
             />
           </button>
+
+          {/* Progress bar — inline */}
+          <div className="hero-progress">
+            <div className="hero-progress__track">
+              <div
+                className="hero-progress__fill"
+                style={{ width: `${pct}%` }}
+              />
+            </div>
+            <span className="hero-progress__label">
+              {pct}%
+            </span>
+          </div>
         </div>
       </div>
 
@@ -132,26 +135,6 @@ export default function HeroHeader({
         alt=""
         aria-hidden="true"
       />
-
-      {/* ── Progress bar at bottom edge ── */}
-      <div className="hero-progress">
-        <div className="hero-progress__track">
-          <div
-            className="hero-progress__fill"
-            style={{ width: `${pct}%` }}
-          />
-        </div>
-        <span
-          className="hero-progress__label"
-          ref={progressLabelRef}
-          style={{
-            left: `${pct}%`,
-            opacity: 1,
-          }}
-        >
-          {pct}%
-        </span>
-      </div>
     </section>
   );
 }

@@ -127,26 +127,24 @@
       transform: translateY(-12px) rotate(-2deg);
     }
 
-    /* Progress bar at bottom of hero */
+    /* Progress bar — inline next to action buttons */
     .hero-progress {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 800px;
-      z-index: 4;
-      height: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+      min-width: 120px;
+      max-width: 260px;
     }
 
     .hero-progress-track {
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.18);
+      flex: 1;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.18);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      border: 1px solid rgb(202, 202, 202);
-      border-bottom: none;
-      border-radius: 20px 20px 0 0;
+      border: 1.5px solid rgba(255, 255, 255, 0.35);
+      border-radius: 500px;
         overflow: hidden;
       position: relative;
       }
@@ -154,56 +152,18 @@
     .hero-progress-fill {
         height: 100%;
       width: 0%;
-      background: var(--color-primary);
-      border: 1px solid rgb(202, 202, 202);
-      border-radius: 20px 20px 0 0;
+      background: var(--color-accent);
+      border-radius: 500px;
       transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .hero-progress-label {
-      position: absolute;
-      top: -38px;
-      left: 0%;
-      transform: translateX(-50%);
-      background: var(--color-primary);
       color: white;
-      font-size: 11px;
-      font-weight: 500;
+      font-size: 15px;
+      font-weight: 600;
       line-height: 1;
-      padding: 6px 10px;
-      border: 1px solid rgb(202, 202, 202);
-      border-radius: 500px;
       white-space: nowrap;
-      opacity: 1;
-      transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
-    }
-
-    /* Outer triangle (stroke) */
-    .hero-progress-label::before {
-      content: '';
-      position: absolute;
-      bottom: -7px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 0;
-      height: 0;
-      border-left: 7px solid transparent;
-      border-right: 7px solid transparent;
-      border-top: 7px solid rgb(202, 202, 202);
-    }
-
-    /* Inner triangle (fill) */
-    .hero-progress-label::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 0;
-      height: 0;
-      border-left: 6px solid transparent;
-      border-right: 6px solid transparent;
-      border-top: 6px solid var(--color-primary);
+      transition: opacity 0.4s ease;
     }
 
     .hero-content {
@@ -322,8 +282,8 @@
     }
 
     .hero-actions {
-      display: inline-flex;
-      align-items: flex-start;
+      display: flex;
+      align-items: center;
       gap: 16px;
       flex-wrap: wrap;
     }
@@ -917,12 +877,6 @@
         opacity: 0.95;
       }
 
-      .hero-progress {
-        left: 50%;
-        transform: translateX(-50%);
-        width: 320px;
-      }
-
       .content-area {
         padding: 0 32px 32px;
       }
@@ -962,12 +916,6 @@
 
       .hero-graphs {
         display: none;
-      }
-
-      .hero-progress {
-        left: 50%;
-        transform: translateX(-50%);
-        width: 260px;
       }
 
       .hero-content {
@@ -1056,17 +1004,17 @@
           <button class="btn-icon" aria-label="Share">
             <img class="btn-icon-img" src="SVGs/Share.svg" alt="" aria-hidden="true">
           </button>
+
+          <!-- Progress bar inline with buttons -->
+          <div class="hero-progress">
+            <div class="hero-progress-track">
+              <div class="hero-progress-fill" id="total-progress"></div>
         </div>
+            <span class="hero-progress-label" id="total-progress-percent">0%</span>
+        </div>
+      </div>
         </div>
       <img class="hero-graphs" src="images/BottomRightGraphs.png" alt="" aria-hidden="true">
-
-      <!-- Progress bar at bottom of header -->
-      <div class="hero-progress">
-        <div class="hero-progress-track">
-          <div class="hero-progress-fill" id="total-progress"></div>
-      </div>
-        <span class="hero-progress-label" id="total-progress-percent">0%</span>
-      </div>
     </section>
 
     <!-- Course List -->
@@ -1258,9 +1206,6 @@
       const pctEl = document.getElementById('total-progress-percent');
       if (pctEl) {
         pctEl.textContent = `${pct}%`;
-        pctEl.style.opacity = '1';
-        pctEl.style.left = `${pct}%`;
-        pctEl.style.transform = 'translateX(-50%)';
       }
     }
 
