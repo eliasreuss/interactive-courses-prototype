@@ -19,7 +19,7 @@ export const courses = [
     description: 'The big picture of inventory: what to stock, how much, and why balance matters.',
     duration: '8 min',
     file: 'Intro.txt',
-    thumbnail: '/assets/images/path-images/IIntro.png',
+    thumbnail: '/assets/images/Course-thumbnails/IIntro.png',
   },
   {
     id: 'double-abc',
@@ -27,7 +27,7 @@ export const courses = [
     description: 'Turn messy inventory into clear priorities with the Double ABC model.',
     duration: '15 min',
     file: 'Double-ABC-Analysis-4.txt',
-    thumbnail: '/assets/images/path-images/DABC.png',
+    thumbnail: '/assets/images/Course-thumbnails/DABC.png',
   },
   {
     id: 'stock-policy',
@@ -35,7 +35,7 @@ export const courses = [
     description: 'Decide what belongs on the shelf vs. buy-to-order and apply it in Inact.',
     duration: '10 min',
     file: 'Stock-Policy.txt',
-    thumbnail: '/assets/images/path-images/SP.png',
+    thumbnail: '/assets/images/Course-thumbnails/SP.png',
   },
   {
     id: 'safety-stock',
@@ -43,7 +43,7 @@ export const courses = [
     description: 'Set the right buffer using variance, lead time, and service level.',
     duration: '12 min',
     file: 'Safety-Stock.txt',
-    thumbnail: '/assets/images/path-images/SS.png',
+    thumbnail: '/assets/images/Course-thumbnails/SS.png',
   },
   {
     id: 'reorder-point',
@@ -51,7 +51,7 @@ export const courses = [
     description: 'Learn the reorder point formula and automate it in Inact Now.',
     duration: '10 min',
     file: 'Reorder-Point.txt',
-    thumbnail: '/assets/images/path-images/RP.png',
+    thumbnail: '/assets/images/Course-thumbnails/RP.png',
   },
   {
     id: 'reorder-quantity',
@@ -59,7 +59,7 @@ export const courses = [
     description: 'Find the right order size by balancing price, demand, and turnover.',
     duration: '12 min',
     file: 'Reorder-Quantity.txt',
-    thumbnail: '/assets/images/path-images/RQ.png',
+    thumbnail: '/assets/images/Course-thumbnails/RQ.png',
   },
 ];
 

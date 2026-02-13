@@ -29,7 +29,7 @@ react-handoff/
 │   │
 │   └── images/
 │       ├── BottomRightGraphs.png     ← Hero decorative image
-│       └── path-images/              ← Course card thumbnails
+│       └── Course-thumbnails/              ← Course card thumbnails
 │           ├── IIntro.png
 │           ├── DABC.png
 │           ├── SP.png

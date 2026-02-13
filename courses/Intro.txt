@@ -7,7 +7,7 @@ type: hero
 hero_image: intro/Intro-Path-Cover-2.png
 hero_subtitle: Welcome to the learning path:
 hero_title: Introduction to Inact for Inventory Management
-hero_body: This is the intro to a six-part learning path. By the end, you’ll understand the fundamentals of inventory management and be ready to use Inact Now confidently in your daily work!
+hero_body: This is the intro to a five-part learning path. By the end, you’ll understand the fundamentals of inventory management and be ready to use Inact Now confidently in your daily work!
 ---
 > [next] Let's do it! -> 2
 
@@ -70,9 +70,9 @@ index_title: The learning path
 title: **The learning path**
 type: main
 ---
-Here are the five flows we’ll cover:
+Here are the five subjects we’ll cover:
 
 ![image/size:large/align:center/frame:none](intro/Learning-Path-Overview.png)
 
-From here, you can continue to the first flow, “Double ABC Analysis,” or return to your dashboard.
+From here, you can continue to the first course, “Double ABC Analysis,” or return to the learning path overview.
 ---

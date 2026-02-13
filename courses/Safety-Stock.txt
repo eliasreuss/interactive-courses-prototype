@@ -55,7 +55,7 @@ In the chart, the A-item is important to the business and has stable, predictabl
 
 The C-item behaves very differently. Demand is low most of the time, with occasional spikes. If we add safety stock to cover those rare spikes, we often end up holding far too much inventory “just in case,” increasing the risk of excess stock or deadstock.
 
-High-variance items should therefore be handled carefully. Instead of increasing safety stock, it is often better to accept longer lead times or lower service levels on C-items, while keeping strong protection where it truly matters - the stable, high-value A-items.
+High-variance items should therefore be handled carefully. Instead of increasing safety stock, it is often better to accept longer lead times or lower service levels on C-items (if we should stock them at all), while keeping strong protection where it truly matters - the stable, high-value A-items.
 
 ![image/size:600px/align:right/frame:none](safety-stock/A-C-Items.png)
 ---
@@ -70,26 +70,17 @@ type: main
 ---
 Another important factor that affects safety stock is lead time. Even if demand is stable and service levels are well-defined, longer lead times mean you need more stock to cover the period until the next delivery arrives.
 
-![image/size:400px/align:right/frame:none](safety-stock/Truck.png)
----
-> [next] Continue -> 6
-
-slide_id: 6
-index_title: Lead time: example
-title: **Lead time: example**
-type: main
----
 Here is an example of how lead time can affect safety stock.
 
 When the lead time is reduced from 60 days to 40 days, the required safety stock drops from 289 units to 236 units, an 18% reduction. This shows that even moderate improvements in lead time can have a meaningful impact on inventory levels.
 
 ![image/size:large/align:center/frame:none](safety-stock/Lead-Time-Example.png)
 ---
-> [next] Continue -> 7
+> [next] Continue -> 6
 
 [id:5/topic: Service level]
 
-slide_id: 7
+slide_id: 6
 index_title: Service level
 title: **Service level**
 type: main
@@ -104,9 +95,9 @@ Unlike the other two variables, service level is a strategic decision. It is the
 
 ![image/size:400px/align:right/frame:none](safety-stock/Waiter.png)
 ---
-> [next] Continue -> 8
+> [next] Continue -> 7
 
-slide_id: 8
+slide_id: 7
 index_title: Why not aim for 100%?
 title: **Why not aim for 100%?**
 type: main
@@ -123,9 +114,9 @@ Each additional percentage point of service requires disproportionately more sto
 
 ![image/size:large/align:center/frame:none](safety-stock/Service-Cost-Graph.png)
 ---
-> [next] Continue -> 9
+> [next] Continue -> 8
 
-slide_id: 9
+slide_id: 8
 index_title: Service level: example
 title: **Service level and safety stock: a practical example**
 type: main
@@ -138,9 +129,9 @@ This shows how even a relatively small change in service level can lead to a muc
 
 ![image/size:large/align:center/frame:none](safety-stock/Service-Level-Example.png)
 ---
-> [next] Continue -> 10
+> [next] Continue -> 9
 
-slide_id: 10
+slide_id: 9
 index_title: Differentiated service model
 title: **So, what do we do?**
 type: main
@@ -153,11 +144,11 @@ Note: the service levels on the illustration is only meant to spark the right wa
 
 ![image/size:large/align:center/frame:none](safety-stock/Service-Model.png)
 ---
-> [next] Continue -> 11
+> [next] Continue -> 10
 
 [id:6/topic: Inside Inact Now]
 
-slide_id: 11
+slide_id: 10
 index_title: How can Inact Now help us?
 title: **How can Inact Now help us?**
 type: main
@@ -170,10 +161,10 @@ Let’s open the insight “Safety Stock / Simulation” and take a look.
 
 Do you know how to open the insight?
 ---
-> [next] Yes, continue -> 12
+> [next] Yes, continue -> 11
 > [sidequest] No, help me -> s1
 
-slide_id: 12
+slide_id: 11
 index_title: Insight: Safety Stock / Simulation
 title: **Insight: Safety Stock / Simulation**
 type: main
@@ -182,9 +173,9 @@ Go through the interactive tutorial below to see how we can use Inact Now to sim
 
 [supademo: Insight: Safety Stock Simulation](https://app.supademo.com/embed/cmlb0od6v3p73vhwzylb5iood?embed_v=2&utm_source=embed)
 ---
-> [next] Continue -> 13
+> [next] Continue -> 12
 
-slide_id: 13
+slide_id: 12
 index_title: Insight: Safety Stock
 title: **Insight: Safety Stock**
 type: main
@@ -197,11 +188,11 @@ Go through the interactive tutorial below to get a walkthrough of the "Safety St
 
 [supademo: Insight walkthrough: Safety Stock](https://app.supademo.com/embed/cmlf4up2g0ux3zqp09ssw5woa?embed_v=2&utm_source=embed)
 ---
-> [next] Continue -> 14
+> [next] Continue -> 13
 
 [id:7/topic: What's next?]
 
-slide_id: 14
+slide_id: 13
 index_title: What's next?
 title: **Congratulations! You’ve completed the Safety Stock course.**
 title-align: center
@@ -225,7 +216,7 @@ In the next course, **Reorder Point**, you’ll learn how to do just that.
 slide_id: 1
 title: **Opening the insight: Safety Stock / Simulation**
 type: sidequest
-backLabel: Return to course
+backLabel: Return to main path
 ---
 Go through the interactive tutorial below to see how to open the insight:
 

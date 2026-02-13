@@ -7,7 +7,7 @@ title-align: center
 type: hero
 ---
 hero_image: double-abc-analysis/Double-ABC-Hero.png
-hero_subtitle: Welcome to the flow:
+hero_subtitle: Welcome to the course:
 hero_title: Double ABC Analysis
 hero_body: In this course you will explore what the double ABC analysis is , why it matters, how it looks in Inact Now and what the sepcial categories are. 
 
@@ -84,8 +84,6 @@ Each product gets **two scores**, A / B / C, for each variable. These two scores
 -**CB** = low cost of inventory, medium demand
 
 This helps you quickly see which products are the most important and decide how to manage them.
-
-**Tip:** You can use double ABC with any two variables you want — for example, revenue and lead time, or sales and criticality.
 
 ![image/size:400px/align:stack-right](double-abc-analysis/ABC-Analysis.png)
 ---
@@ -209,47 +207,23 @@ Now let’s apply it to your own inventory - in Inact Now, we’ve already set u
 ---
 > [next] Yes, continue -> 14
 > [sidequest] No, show me -> s2
-> [next:flow] Open Inact Now -> https://inactnow.io/app/#/
-> [next:flow] Open Inact Now -> https://inactnow.io/app/#/
 
 slide_id: 14
-index_title: Opening the double ABC insight
-title: **Open your double ABC analysis insight**
-type: main
----
-Great! Now’s the time to open your double ABC analysis insight so you can follow along with the rest of the session.
-
-Click the “Open Inact Now” button, or open it manually in a separate window. Then open your insight.
----
-> [next] It's open, continue -> 15
-> [next:flow] Open Inact Now -> https://inactnow.io/app/#/
-
-slide_id: 15
 index_title: Interpreting the insight
 title: **Great... What are we looking at?**
 type: main
 ---
-What you’re looking at is called an **insight.**
+What you’re looking at is called an **insight.** Insights are simple, powerful views that give you a clear understanding of your data.
 
-Insights are simple, powerful views that give you a clear understanding of your data.
- After completing these courses, you’ll be able to **create, edit, and share your own Insights**, giving you full control over what you see – and how you see it.
+This brief video walks you through how to navigate and interpret the double ABC analysis insight in Inact Now.
 
-But for now, let’s focus on this Insight we've prepared for you.
+![video:Explainer video/size:large/align:center/frame:none/controls](double-abc-analysis/Double-ABC-Explainer-2.1.mp4)
 ---
-> [next] Continue -> 16
-
-slide_id: 16
-index_title: Video: double ABC insight explained
-title: **The double ABC insight explained**
-type: main
----
-This brief video walks you through how to navigate and interpret your double ABC analysis insight in Inact Now.![video:Explainer video/size:large/align:center/frame:none/controls](double-abc-analysis/Double-ABC-Explainer-2.1.mp4)
----
-> [next] Continue -> 17
+> [next] Continue -> 15
 
 [id:5/topic: Special categories]
 
-slide_id: 17
+slide_id: 15
 index_title: What are special categories?
 title: **What about items that don’t quite fit?**
 type: main
@@ -262,9 +236,9 @@ That’s why the Inact Now view goes **beyond the standard nine categories.** We
 
 ![lottie:motion graphic/size:950px/align:stack-right-top/frame:none](double-abc-analysis/ANIFRAME.json)
 ---
-> [next] Continue -> 18
+> [next] Continue -> 16
 
-slide_id: 18
+slide_id: 16
 index_title: Each special category explained
 title: **The special categories**
 type: main
@@ -273,19 +247,21 @@ Here’s a quick explanation of each special category:
 
 ![image/size:large/align:center/frame:none](double-abc-analysis/Special-Categories.png)
 ---
-> [next] Continue -> 19
+> [next] Continue -> 17
 > [sidequest] What if I forget? -> s3
 
 [id:6/topic: Whats next?]
 
-slide_id: 19
+slide_id: 17
 index_title: What's next?
-title: **Congrats! You’ve completed the first of five flows in the learning path**
+title: **Congrats! You’ve completed the first of five courses in the learning path**
 type: main
 ---
-You’ve learned how double ABC analysis reveals which items truly drive value, and which ones don’t.
+You’ve learned how to use Double ABC Analysis to diagnose your inventory and identify the items that truly drive value. But this is just the starting point.
 
-Next, you’ll put those insights to work.
+Double ABC Analysis only begins creating real value when you use it to answer the three critical questions: What to stock? How much to stock? How much to order?
+
+From this point forward, every remaining course will build on these questions.
 
 In the **Stock Policy** course, you’ll learn how to:
 
@@ -294,6 +270,8 @@ In the **Stock Policy** course, you’ll learn how to:
 - Apply double ABC results to practical inventory decisions
 
 You’ve had a great start - **let’s keep going!**
+
+![image/size:large/align:right/frame:none](double-abc-analysis/Double-ABC-Hero.png)
 ---
 
 [flow-specific-side-quests]
@@ -317,47 +295,12 @@ backLabel: Return to main path
 slide_id: 1
 title: **No problem, we'll go through how to open it step by step**
 type: sidequest
-backLabel: Return to main path
+backLabel: Return to course
 ---
-First, open Inact Now and log in.
+Follow the interactive tutorial below to learn how to open the Double ABC Analysis insight:
 
-You can do this either by clicking "Open Inact Now", or by opening it in a separate window.
+[supademo: Analyze Inventory with Double ABC Analysis in inactnow](https://app.supademo.com/embed/cmlkq60730rk45yi3804t4s2v?embed_v=2&utm_source=embed)
 > [next:flow] Open Inact Now -> https://inactnow.io/app/#/
----
-> [next] Continue -> 2
-
-slide_id: 2
-title: **Finding and opening your double ABC analysis**
-type: sidequest
-backLabel: Return to main path
----
-**Let's check if your organization has already set the Insight up for you.**
-
-1. In the top navigation bar, click "Insights."
-
-![image/size:medium/align:left](double-abc-analysis/Nav-Bar-Insights.png)
-
-2. Use the search bar to look for "double ABC analysis"
-
-![video:motion graphic/size:medium/align:left](double-abc-analysis/SearchABCInsight.mp4)
-
--If it appears, click it—you're all set! Head back to the main course path.
--If it doesn't appear, no worries—we'll walk through how to create it yourself.
----
-> [next] Continue -> 3
-
-slide_id: 3
-title: **Creating your double ABC analysis Insight**
-type: sidequest
-backLabel: Return to main path
----
-**Creating your double ABC analysis Insight is easy with the ready-made template:**
-
-1. Click "New Insight."
-2. Select the double ABC analysis template under "Stock Policy."
-3. Name your Insight, choose your data source, and click "Create." Now you should be able to find your new Insight in the "Insights" tab.
-
-![video:motion graphic/size:medium/align:left](double-abc-analysis/CreateABCInsight.mp4)
 ---
 
 [id:s3/topic: Quick tip]

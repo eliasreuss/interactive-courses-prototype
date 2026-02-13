@@ -24,7 +24,7 @@
  *  Assets needed:
  *    - assets/svgs/Course-Icon.svg
  *    - assets/svgs/Up-Arrow.svg
- *    - Thumbnail images from assets/images/path-images/
+ *    - Thumbnail images from assets/images/Course-thumbnails/
  */
 
 import React from 'react';

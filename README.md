@@ -72,7 +72,7 @@ course.html           # Individual course viewer
 creator.html          # Visual course creator
 courses/              # Exported .txt course files
 images/               # Course content images + hero graphics
-path-images/          # Course card thumbnail images
+Course-thumbnails/          # Course card thumbnail images
 SVGs/                 # Icon assets (Learning-Path, Bookmark, Share, etc.)
 react-handoff/        # React component package (see below)
 ```

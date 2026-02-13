@@ -6,7 +6,7 @@ title:
 type: hero
 ---
 hero_image: stock-policy/Stock-Policy-Hero.png
-hero_subtitle: Welcome to the flow:
+hero_subtitle: Welcome to the course:
 hero_title: Stock Policy
 hero_body: In this course, we move from understanding your data to making decisions with it. We will explore how to establish clear, effective policies that differentiate between which items to keep on the shelf and which to phase out.
 
@@ -100,7 +100,7 @@ Go through the interactive tutorial below to learn how to use Inact Now to estab
 
 slide_id: 8
 index_title: What's next?
-title: **Congratulations! You’ve completed the second of five flows in the learning path.**
+title: **Congratulations! You’ve completed the second of five courses in the learning path.**
 type: main
 ---
 You’ve learned how to set clear boundaries for your inventory - defining exactly which products earn a spot on the shelf and which should be bought to order or made to order.
