@@ -757,11 +757,20 @@
     
     /* Very large screens (>1920px) - larger margins for comfortable reading */
     @media (min-width: 1921px) {
+      .sidebar {
+        width: 420px;
+        padding: 32px 18px 32px 32px;
+      }
+      .content-area {
+        padding: 32px 32px 32px 18px;
+        gap: 32px;
+      }
       .card-text-content {
-        padding: var(--spacing-content) clamp(120px, 10vw, 200px);
+        padding: var(--spacing-content) clamp(160px, 14vw, 300px);
+        max-width: 1600px;
       }
       .card-text-content.stacked-mode {
-        padding: clamp(28px, 3vw, 48px) clamp(48px, 5vw, 80px);
+        padding: clamp(32px, 3vw, 56px) clamp(56px, 6vw, 100px);
       }
       .content-images-container .size-large {
         max-width: 90%;
@@ -771,6 +780,42 @@
         max-width: 90%;
         margin-left: auto;
         margin-right: auto;
+      }
+    }
+    
+    /* Ultra-wide screens (>2200px) */
+    @media (min-width: 2200px) {
+      .sidebar {
+        width: 460px;
+        padding: 36px 20px 36px 36px;
+      }
+      .content-area {
+        padding: 36px 36px 36px 20px;
+        gap: 36px;
+      }
+      .card-text-content {
+        padding: var(--spacing-content) clamp(220px, 16vw, 420px);
+      }
+      .card-text-content.stacked-mode {
+        padding: clamp(36px, 3.5vw, 64px) clamp(64px, 7vw, 120px);
+      }
+    }
+    
+    /* 4K+ screens (>2560px) */
+    @media (min-width: 2560px) {
+      .sidebar {
+        width: 500px;
+        padding: 40px 24px 40px 40px;
+      }
+      .content-area {
+        padding: 40px 40px 40px 24px;
+        gap: 40px;
+      }
+      .card-text-content {
+        padding: var(--spacing-content) clamp(300px, 18vw, 560px);
+      }
+      .card-text-content.stacked-mode {
+        padding: clamp(40px, 4vw, 72px) clamp(72px, 8vw, 140px);
       }
     }
     
@@ -2720,34 +2765,41 @@
         
         // Determine fill for this segment
         let fillPercent = 0;
+        let isCurrentSection = false;
         
         if (currentPos >= slidesSoFar + slidesInSection) {
           // Current position is past this entire section
           fillPercent = 100;
         } else if (currentPos >= slidesSoFar) {
           // Current position is within this section
+          isCurrentSection = true;
           const posInSection = currentPos - slidesSoFar;
-          // Fill based on position within section
-          // First slide in section = 0%, Last slide in section = 100%
-          // Special case: if this is the very first slide of the entire course, keep it at 0%
           if (currentPos === 0) {
             // Very first slide: 0% fill (empty bar)
             fillPercent = 0;
           } else if (slidesInSection === 1) {
-            // Only one slide in section (but not the first slide): fill to 100% when on it
-            fillPercent = 100;
+            // Single-slide section: only fill if this is the very last section.
+            // Otherwise stay at 0% — it fills to 100% when we move PAST it.
+            const isLastSection = sectionIdx === parentSections.length - 1;
+            fillPercent = isLastSection ? 100 : 0;
           } else if (posInSection === 0) {
-            // First slide in section (but not the very first): 0% fill
             fillPercent = 0;
           } else if (posInSection === slidesInSection - 1) {
-            // Last slide in section: 100% fill
             fillPercent = 100;
           } else {
-            // Middle slides: interpolate
             fillPercent = (posInSection / (slidesInSection - 1)) * 100;
           }
         }
         // else: current position is before this section, fillPercent stays 0
+        
+        // Add a delay on the very last segment so the second-to-last and last
+        // bars fill sequentially rather than simultaneously.
+        const isLastSection = sectionIdx === parentSections.length - 1;
+        if (isCurrentSection && isLastSection && slidesInSection === 1 && currentPos > 0) {
+          fill.style.transitionDelay = '0.45s';
+        } else {
+          fill.style.transitionDelay = '0s';
+        }
         
         fill.style.width = `${Math.min(100, Math.max(0, fillPercent))}%`;
         slidesSoFar += slidesInSection;

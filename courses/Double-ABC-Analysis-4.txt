@@ -207,6 +207,7 @@ Now let’s apply it to your own inventory - in Inact Now, we’ve already set u
 ---
 > [next] Yes, continue -> 14
 > [sidequest] No, show me -> s2
+> [next:flow] Open Inact Now -> https://inactnow.io/app/#/
 
 slide_id: 14
 index_title: Interpreting the insight
@@ -257,11 +258,11 @@ index_title: What's next?
 title: **Congrats! You’ve completed the first of five courses in the learning path**
 type: main
 ---
-You’ve learned how to use Double ABC Analysis to diagnose your inventory and identify the items that truly drive value. But this is just the starting point.
+You’ve learned how to use Double ABC Analysis to diagnose your inventory and identify the items that truly drive value. **But this is just the starting point.**
 
-Double ABC Analysis only begins creating real value when you use it to answer the three critical questions: What to stock? How much to stock? How much to order?
+Double ABC Analysis only begins creating real value when you use it to answer the three critical questions: **What to stock? How much to stock? How much to order?**
 
-From this point forward, every remaining course will build on these questions.
+From this point forward, the remaining courses will build on these questions.
 
 In the **Stock Policy** course, you’ll learn how to:
 
@@ -295,7 +296,7 @@ backLabel: Return to main path
 slide_id: 1
 title: **No problem, we'll go through how to open it step by step**
 type: sidequest
-backLabel: Return to course
+backLabel: Return to main path
 ---
 Follow the interactive tutorial below to learn how to open the Double ABC Analysis insight:
 
