@@ -2700,6 +2700,12 @@
       // Save progress to hub (mark completed if 100%)
       saveCourseProgressToHub(percent, percent === 100);
       
+      if (percent === 100) {
+        clearCoursePosition();
+      } else {
+        saveCoursePosition();
+      }
+      
       // Update progress bar segments
       const progressBar = document.getElementById('progress-bar');
       
@@ -3199,6 +3205,29 @@
       localStorage.setItem(key, JSON.stringify({ completed, progress }));
     }
 
+    function saveCoursePosition() {
+      if (!currentCourseId) return;
+      const key = `course_position_${currentCourseId}`;
+      localStorage.setItem(key, JSON.stringify({
+        activeNodeId,
+        visitedNodes: [...visitedNodes],
+        mainPathHistory: [...mainPathHistory],
+        lastMainNodeId
+      }));
+    }
+
+    function loadCoursePosition() {
+      if (!currentCourseId) return null;
+      const key = `course_position_${currentCourseId}`;
+      const saved = localStorage.getItem(key);
+      return saved ? JSON.parse(saved) : null;
+    }
+
+    function clearCoursePosition() {
+      if (!currentCourseId) return;
+      localStorage.removeItem(`course_position_${currentCourseId}`);
+    }
+
     // ========== INITIALIZATION ==========
     (async function() {
       try {
@@ -3326,12 +3355,21 @@
         // Build TOC structure
         buildTOCStructure(courseData);
         
-        // Initialize - find the first actual slide (not a section title)
+        // Initialize - restore saved position or start from first slide
         const firstSlide = courseData.find(n => n && n.id != null && n.isSection !== true);
-        activeNodeId = String(firstSlide ? firstSlide.id : '1');
-        visitedNodes.add(activeNodeId);
-        mainPathHistory = [activeNodeId];
-        lastMainNodeId = activeNodeId;
+        const savedPosition = loadCoursePosition();
+        
+        if (savedPosition && savedPosition.activeNodeId && nodeById.has(String(savedPosition.activeNodeId))) {
+          activeNodeId = String(savedPosition.activeNodeId);
+          visitedNodes = new Set(savedPosition.visitedNodes || []);
+          mainPathHistory = savedPosition.mainPathHistory || [activeNodeId];
+          lastMainNodeId = savedPosition.lastMainNodeId || activeNodeId;
+        } else {
+          activeNodeId = String(firstSlide ? firstSlide.id : '1');
+          visitedNodes.add(activeNodeId);
+          mainPathHistory = [activeNodeId];
+          lastMainNodeId = activeNodeId;
+        }
 
         updateView(activeNodeId);
         
