@@ -1,0 +1,127 @@
+[id:1/topic: Welcome]
+
+slide_id: 1
+index_title: Welcome
+title: 
+type: hero
+---
+hero_image: suppliers-intro/Intro-Hero-Placeholder.png
+hero_subtitle: Welcome to the learning path:
+hero_title: **Supplier Management with Inact Now**
+hero_body: This is the intro to a four-part learning path. By the end, you will understand how to move beyond routine purchasing and adopt a more strategic approach. You’ll learn how to use Inact Now to manage your supplier portfolio, analyze purchasing data, and negotiate with greater confidence.
+
+**Let’s get started!**
+---
+> [next] Continue -> 2
+
+[id:2/topic: The trap]
+
+slide_id: 2
+index_title: The trap of routine purchasing
+title: **The trap of routine purchasing**
+type: main
+---
+Most of the time, purchasing feels like a routine, reactive task.
+
+When things get busy, it is easy to focus only on the immediate needs: placing orders to fill empty shelves and putting out daily fires just to keep the business running.
+
+This is the trap of routine purchasing. It keeps the lights on, but it keeps procurement acting as a simple support function rather than looking at the bigger picture.
+
+![image/size:450px/align:right/frame:none](suppliers-intro/Hamster-Wheel.png)
+---
+> [next] Continue -> 3
+
+slide_id: 3
+index_title: Three costly consequences
+title: **Three costly consequences**
+type: main
+---
+Failing to look at the bigger picture comes with costly consequences. When you manage suppliers without clear data, your business suffers in three critical ways:
+![image 1/size:third/align:center/frame:none](suppliers-intro/Inflated-Costs.png) ![image 2/size:third/align:center/frame:none](suppliers-intro/Supply-Disruptions.png) ![image 3/size:third/align:center/frame:none](suppliers-intro/Wasted-Time.png)
+---
+> [next] Continue -> 4
+
+[id:3/topic: The good news]
+
+slide_id: 4
+index_title: The good news
+title: **The good news**
+type: main
+---
+The good news is that these symptoms aren’t unfixable - organizations can evolve through different levels of maturity over time.
+
+As an organization grows, procurement needs to grow with it. The focus shifts from chasing the lowest price to coordinating sourcing efforts, lowering total cost of ownership, and eventually optimizing the entire value chain.
+
+We must actively move along this roadmap from being a reactive order-handler to a strategic partner. But how do we do that?
+
+![image/size:450px/align:right/frame:none](suppliers-intro/Roadmap.png)
+---
+> [next] Continue -> 5
+
+slide_id: 5
+index_title: The balancing act
+title: **The balancing act**
+type: main
+---
+**We need to shift our mindset to value chain thinking.** This shift transforms procurement from a simple support function into a key business driver of competitiveness, innovation, and sustainability.
+
+Fulfilling this role means balancing three critical elements:
+
+![image/size:large/align:center/frame:none](suppliers-intro/Triangle.png)
+---
+> [next] Continue -> 6
+
+[id:4/topic: The reward]
+
+slide_id: 6
+index_title: The financial reward
+title: **The financial reward**
+type: main
+---
+Why does this strategic shift matter? Because procurement is a powerful profit center.
+
+The DuPont model clearly illustrates how strategic purchasing directly impacts a company’s overall return on capital employed (ROCE):
+
+![image/size:large/align:center/frame:none](suppliers-intro/DuPont.png)
+---
+> [next] Continue -> 7
+
+slide_id: 7
+index_title: Turning supply chain into a competitive advantage
+title: **Turning supply chain into a competitive advantage**
+type: main
+---
+Beyond just the financial numbers, working strategically transforms your supply chain from a reactive support function into a true competitive advantage.
+
+By mastering this approach, you will achieve five key objectives:
+
+![image/size:large/align:center/frame:none](suppliers-intro/Five-Objectives.png)
+---
+> [next] Continue -> 8
+
+[id:5/topic: What's next]
+
+slide_id: 8
+index_title: What’s to come
+title: **What’s to come**
+type: main
+---
+To achieve these five objectives and drive that bottom-line impact, we need to implement a systematic, long-term approach.
+
+In this learning path, we break this down into three core pillars using Inact Now:
+
+![image 1/size:third/align:center/frame:none](suppliers-intro/Supplier-Performance.png) ![image 2/size:third/align:center/frame:none](suppliers-intro/Spend-Analysis.png) ![image 3/size:third/align:center/frame:none](suppliers-intro/Supplier-Negotiation.png)
+---
+> [next] Continue -> 9
+
+slide_id: 9
+index_title: Congratulations!
+title: **Congratulations, you have completed the first course in the learning path!**
+type: main
+---
+In the next course: **Supplier Performance**, you will learn how to use Inact Now to track delivery performance, inventory turnover ratio, and spend per supplier. Benchmark them against "best in class" and address poor performance.
+
+**Let’s keep going!**
+
+![image/size:large/align:right/frame:none](suppliers-intro/Intro-Hero-Placeholder.png)
+---

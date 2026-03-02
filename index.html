@@ -993,7 +993,7 @@
     function renderCourseCard(course, index) {
       const { completed, progress } = getCourseProgress(course.id);
       const progressIndicator = renderProgressIndicator(progress, completed);
-      const href = `course.html?course=${course.file}&from=hub`;
+      const href = `course.html?course=${course.file}&path=inventory&hub=index.html&from=hub`;
       const ctaText = completed ? 'Review' : (progress > 0 ? 'Continue course' : 'Begin course');
       const courseNumber = index + 1;
       
@@ -1100,12 +1100,12 @@
       if (completedCourse) {
         saveCourseProgress(completedCourse, 100, true);
         // Clean URL
-        window.history.replaceState({}, '', 'hub.html');
+        window.history.replaceState({}, '', 'index.html');
       }
       
       if (progressCourse && progressValue) {
         saveCourseProgress(progressCourse, parseInt(progressValue), false);
-        window.history.replaceState({}, '', 'hub.html');
+        window.history.replaceState({}, '', 'index.html');
       }
     }
 

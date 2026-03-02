@@ -1164,7 +1164,7 @@
     <!-- Header -->
     <header class="app-header">
       <div class="header-left">
-        <button class="back-btn" id="back-btn" onclick="window.location.href='hub.html'">
+        <button class="back-btn" id="back-btn">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
@@ -3056,7 +3056,7 @@
           returnHubBtn.className = 'btn btn-secondary';
           returnHubBtn.innerHTML = `<span>Return to learning path</span>`;
           returnHubBtn.onclick = () => {
-            window.location.href = 'hub.html';
+            window.location.href = hubPage;
           };
           navBtns.appendChild(returnHubBtn);
 
@@ -3065,6 +3065,7 @@
           nextBtn.className = 'btn btn-primary';
 
           // Determine the next course in the learning path
+          const learningPathOrder = learningPathOrders[coursePath] || [];
           const idx = learningPathOrder.indexOf(currentCourseFile || '');
           const nextCourseFile = idx >= 0 && idx < learningPathOrder.length - 1 ? learningPathOrder[idx + 1] : null;
           const nextLabel = nextCourseFile ? 'Continue to next course' : 'Finish learning path';
@@ -3077,9 +3078,9 @@
           `;
           nextBtn.onclick = () => {
             if (nextCourseFile) {
-              window.location.href = `course.html?course=${encodeURIComponent(nextCourseFile)}&from=hub`;
+              window.location.href = `course.html?course=${encodeURIComponent(nextCourseFile)}&path=${encodeURIComponent(coursePath)}&hub=${encodeURIComponent(hubPage)}&from=hub`;
             } else {
-              window.location.href = 'hub.html';
+              window.location.href = hubPage;
             }
           };
           navBtns.appendChild(nextBtn);
@@ -3178,6 +3179,8 @@
     let currentCourseId = null;
     let cameFromHub = false;
     let currentCourseFile = null;
+    let hubPage = 'hub.html';
+    let coursePath = 'inventory';
     
     // Map course filenames to IDs for hub integration
     const courseFileToId = {
@@ -3186,18 +3189,26 @@
       'Stock-Policy.txt': 'stock-policy',
       'Safety-Stock.txt': 'safety-stock',
       'Reorder-Point.txt': 'reorder-point',
-      'Reorder-Quantity.txt': 'reorder-quantity'
+      'Reorder-Quantity.txt': 'reorder-quantity',
+      'Suppliers-Intro.txt': 'suppliers-intro',
+      'Supplier-Performance.txt': 'supplier-performance'
     };
 
-    // Learning path order (used for the last-slide CTA)
-    const learningPathOrder = [
-      'Intro.txt',
-      'Double-ABC-Analysis-4.txt',
-      'Stock-Policy.txt',
-      'Safety-Stock.txt',
-      'Reorder-Point.txt',
-      'Reorder-Quantity.txt'
-    ];
+    // Learning path orders (keyed by coursePath, used for the last-slide CTA)
+    const learningPathOrders = {
+      inventory: [
+        'Intro.txt',
+        'Double-ABC-Analysis-4.txt',
+        'Stock-Policy.txt',
+        'Safety-Stock.txt',
+        'Reorder-Point.txt',
+        'Reorder-Quantity.txt'
+      ],
+      supplier: [
+        'Suppliers-Intro.txt',
+        'Supplier-Performance.txt'
+      ]
+    };
     
     function saveCourseProgressToHub(progress, completed = false) {
       if (!currentCourseId) return;
@@ -3236,6 +3247,8 @@
         currentCourseFile = courseFile;
         cameFromHub = urlParams.get('from') === 'hub';
         currentCourseId = courseFileToId[courseFile] || courseFile.replace('.txt', '').toLowerCase();
+        hubPage = urlParams.get('hub') || 'hub.html';
+        coursePath = urlParams.get('path') || 'inventory';
         
         // Set up back button
         const backBtn = document.getElementById('back-btn');
@@ -3243,13 +3256,12 @@
         if (backBtn) {
           backBtnText.textContent = 'Learning Path';
           backBtn.onclick = () => {
-            window.location.href = 'hub.html';
+            window.location.href = hubPage;
           };
         }
-        
         console.log('Loading course:', courseFile, 'from URL params:', urlParams.get('course'));
         const cacheParam = Date.now();
-        const requestUrl = `courses/${courseFile}?v=${cacheParam}`;
+        const requestUrl = `courses/${coursePath}/${courseFile}?v=${cacheParam}`;
         const response = await fetch(requestUrl);
         if (!response.ok) throw new Error(`Failed to fetch ${requestUrl} (status ${response.status})`);
         const text = await response.text();

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <title>Learning Path - Using Inact for Inventory Management</title>
+  <title>Learning Path - Supplier Management with Inact Now</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -27,12 +27,10 @@
       --radius-md: 14px;
       --radius-sm: 10px;
       --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-      /* Responsive spacing */
       --page-margin: 40px;
       --page-margin-top: 20px;
     }
 
-    /* Scale margins for larger screens */
     @media (min-width: 1400px) {
       :root {
         --page-margin: 120px;
@@ -87,7 +85,6 @@
       background-size: 24px 24px;
     }
 
-    /* Hero Header */
     .hero-header {
       background:
         linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
@@ -109,7 +106,7 @@
       position: absolute;
       right: -72px;
       bottom: -48px;
-      width: min(54%, 720px);
+      width: min(48%, 700px);
       height: auto;
       pointer-events: auto;
       user-select: none;
@@ -127,7 +124,6 @@
       transform: translateY(-12px) rotate(-2deg);
     }
 
-    /* Progress bar — inline next to action buttons */
     .hero-progress {
       display: flex;
       align-items: center;
@@ -182,7 +178,6 @@
       flex-wrap: wrap;
     }
 
-    /* Glass utility (used for hero tags and card pills) */
     .glass {
       background: rgba(255, 255, 255, 0.06);
       backdrop-filter: blur(7px);
@@ -318,7 +313,6 @@
       justify-content: center;
     }
 
-    /* Use the SVG file, but tint it via mask so it matches Figma (#304642) */
     .btn-start-arrow {
       width: 7px;
       height: 14px;
@@ -360,9 +354,6 @@
       display: block;
     }
 
-    /* Progress UI removed per new design */
-
-    /* Header */
     .header {
       display: flex;
       align-items: center;
@@ -454,14 +445,12 @@
       letter-spacing: 1px;
     }
 
-    /* Main Layout */
     .main-container {
       display: flex;
       flex-direction: column;
       min-height: calc(100vh - 72px);
     }
 
-    /* Content Area */
     .content-area {
       flex: 1;
       padding: 0 var(--page-margin) var(--page-margin);
@@ -476,7 +465,6 @@
       gap: 20px;
     }
 
-    /* Medium screens → 2-column grid */
     @media (min-width: 700px) {
       #course-list {
         display: grid;
@@ -485,14 +473,12 @@
       }
     }
 
-    /* Wide screen → 3-column grid */
     @media (min-width: 1200px) {
       #course-list {
         grid-template-columns: repeat(3, 1fr);
       }
     }
 
-    /* Course Card (Figma style) */
     .course-card {
       display: flex;
       flex-direction: column;
@@ -505,7 +491,6 @@
       transition: transform 420ms var(--transition-smooth), box-shadow 420ms var(--transition-smooth);
       opacity: 0;
       transform: translateY(24px);
-      /* cards revealed by IntersectionObserver */
     }
 
     .course-card.visible {
@@ -515,9 +500,6 @@
     .course-card:nth-child(1) { animation-delay: 0.04s; }
     .course-card:nth-child(2) { animation-delay: 0.10s; }
     .course-card:nth-child(3) { animation-delay: 0.16s; }
-    .course-card:nth-child(4) { animation-delay: 0.06s; }
-    .course-card:nth-child(5) { animation-delay: 0.12s; }
-    .course-card:nth-child(6) { animation-delay: 0.18s; }
 
     @keyframes cardEnter {
       to {
@@ -531,7 +513,6 @@
       box-shadow: 0 22px 56px rgba(48, 70, 66, 0.22);
     }
 
-    /* ---- Card top (thumbnail) ---- */
     .course-card-top {
       height: 160px;
       background: linear-gradient(var(--grad-dir, 135deg), #C9D0BF 0%, #ECECE2 100%);
@@ -556,20 +537,14 @@
       transform: scale(1.04);
     }
 
-    /* No gradient overlay on thumbnails */
     .course-card-top::before {
       display: none;
     }
 
-    /* Per-card gradient directions */
     .course-card:nth-child(1) .course-card-top { --grad-dir: 135deg; }
     .course-card:nth-child(2) .course-card-top { --grad-dir: 200deg; }
     .course-card:nth-child(3) .course-card-top { --grad-dir: 310deg; }
-    .course-card:nth-child(4) .course-card-top { --grad-dir: 60deg; }
-    .course-card:nth-child(5) .course-card-top { --grad-dir: 250deg; }
-    .course-card:nth-child(6) .course-card-top { --grad-dir: 170deg; }
 
-    /* Dark glass override for card elements – dark green undertone */
     .course-duration-pill.glass,
     .course-icon-circle.glass {
       background: rgba(48, 70, 66, 0.45);
@@ -643,7 +618,6 @@
       display: block;
     }
 
-    /* ---- Card progress bar ---- */
     .card-progress {
       height: 6px;
       background: rgba(0, 0, 0, 0.12);
@@ -667,7 +641,6 @@
       border-radius: 0;
     }
 
-    /* ── Highlighted "next course" card ── */
     .course-card.next-course {
       border: 2px solid transparent;
       background-image:
@@ -688,11 +661,9 @@
     }
 
     .course-card.next-course .course-cta-arrow {
-      /* Tint the SVG arrow to accent orange */
       filter: brightness(0) saturate(100%) invert(44%) sepia(89%) saturate(3000%) hue-rotate(11deg) brightness(101%) contrast(105%);
     }
 
-    /* ---- Card bottom (info) ---- */
     .course-card-bottom {
       padding: 24px;
       background: white;
@@ -765,9 +736,6 @@
       transform: translate(2px, -2px);
     }
 
-    /* Legacy elements no longer used */
-
-    /* Completion indicator */
     .completion-indicator {
       width: 36px;
       height: 36px;
@@ -793,7 +761,6 @@
       height: 16px;
     }
 
-    /* Progress ring for in-progress */
     .progress-ring {
       width: 36px;
       height: 36px;
@@ -824,37 +791,6 @@
       transition: stroke-dashoffset 0.6s var(--transition-smooth);
     }
 
-    /* Legacy thumbnail no longer used */
-
-    /* Dark overlay for cohesion */
-    .course-thumbnail::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        160deg,
-        rgba(0, 0, 0, 0.35) 0%,
-        rgba(0, 0, 0, 0.4) 50%,
-        rgba(0, 0, 0, 0.55) 100%
-      );
-      z-index: 1;
-      transition: opacity 0.35s var(--transition-smooth);
-    }
-
-    .course-card:hover .course-thumbnail::before {
-      opacity: 0.75;
-    }
-
-    .course-card:hover .course-thumbnail {
-      transform: scale(1.02);
-    }
-
-    /* Responsive - medium screens (list layout) */
-    @media (min-width: 901px) and (max-width: 1199px) {
-      /* keep 1-column list at this breakpoint */
-    }
-
-    /* Tablet and mobile */
     @media (max-width: 900px) {
       .hero-header {
         margin: 16px 24px 16px;
@@ -880,7 +816,6 @@
       .content-area {
         padding: 0 32px 32px;
       }
-
     }
 
     @media (max-width: 600px) {
@@ -943,7 +878,6 @@
       }
     }
 
-    /* Focus states for accessibility */
     a:focus-visible,
     button:focus-visible {
       outline: 2px solid var(--color-accent);
@@ -984,13 +918,13 @@
             <img class="hero-tag-icon" src="SVGs/Learning-Path.svg" alt="" aria-hidden="true">
             <span>Learning Path</span>
           </div>
-          <div class="hero-tag glass" id="flow-count">6 resources</div>
-          <div class="hero-tag glass" id="total-time">1.1 hours</div>
+          <div class="hero-tag glass" id="flow-count">3 resources</div>
+          <div class="hero-tag glass" id="total-time">40 min</div>
       </div>
 
         <div class="hero-text">
-          <h1 class="hero-title">Inact for Inventory Management</h1>
-          <p class="hero-description">Learn the core principles and practical tools of effective inventory management with Inact Now, and apply them in your daily operations.</p>
+          <h1 class="hero-title">Supplier Management with Inact Now</h1>
+          <p class="hero-description">Learn how to evaluate, negotiate with, and manage suppliers effectively using Inact Now's procurement tools.</p>
         </div>
 
         <div class="hero-actions">
@@ -1005,7 +939,6 @@
             <img class="btn-icon-img" src="SVGs/Share.svg" alt="" aria-hidden="true">
           </button>
 
-          <!-- Progress bar inline with buttons -->
           <div class="hero-progress">
             <div class="hero-progress-track">
               <div class="hero-progress-fill" id="total-progress"></div>
@@ -1014,7 +947,7 @@
         </div>
       </div>
         </div>
-      <img class="hero-graphs" src="images/BottomRightGraphs.png" alt="" aria-hidden="true">
+      <img class="hero-graphs" src="images/SuppliersHeaderGraphic.png" alt="" aria-hidden="true">
     </section>
 
     <!-- Course List -->
@@ -1026,55 +959,22 @@
   </div>
 
   <script>
-    // Course data - edit this to add/modify courses
     const courses = [
       {
-        id: 'intro',
-        title: 'Intro to Inact - Inventory',
-        description: 'The big picture of inventory: what to stock, how much, and why balance matters.',
-        duration: '8 min',
-        file: 'Intro.txt',
-        thumbnail: 'Course-thumbnails/IIntro.png'
+        id: 'suppliers-intro',
+        title: 'Intro to Supplier Management',
+        description: '',
+        duration: '5 min',
+        file: 'Suppliers-Intro.txt',
+        thumbnail: 'Course-thumbnails/SpendAnalysis.png'
       },
       {
-        id: 'double-abc',
-        title: 'Double ABC Analysis',
-        description: 'Turn messy inventory into clear priorities with the Double ABC model.',
-        duration: '15 min',
-        file: 'Double-ABC-Analysis-4.txt',
-        thumbnail: 'Course-thumbnails/DABC.png'
-      },
-      {
-        id: 'stock-policy',
-        title: 'Stock Policy',
-        description: 'Decide what belongs on the shelf vs. buy-to-order and apply it in Inact.',
-        duration: '10 min',
-        file: 'Stock-Policy.txt',
-        thumbnail: 'Course-thumbnails/SP.png'
-      },
-      {
-        id: 'safety-stock',
-        title: 'Safety Stock',
-        description: 'Set the right buffer using variance, lead time, and service level.',
+        id: 'supplier-performance',
+        title: 'Supplier Performance',
+        description: '',
         duration: '12 min',
-        file: 'Safety-Stock.txt',
-        thumbnail: 'Course-thumbnails/SS.png'
-      },
-      {
-        id: 'reorder-point',
-        title: 'Reorder Point',
-        description: 'Learn the reorder point formula and automate it in Inact Now.',
-        duration: '10 min',
-        file: 'Reorder-Point.txt',
-        thumbnail: 'Course-thumbnails/RP.png'
-      },
-      {
-        id: 'reorder-quantity',
-        title: 'Reorder Quantity',
-        description: 'Find the right order size by balancing price, demand, and turnover.',
-        duration: '12 min',
-        file: 'Reorder-Quantity.txt',
-        thumbnail: 'Course-thumbnails/RQ.png'
+        file: 'Supplier-Performance.txt',
+        thumbnail: 'Course-thumbnails/Supplier-Performance.png'
       }
     ];
 
@@ -1090,20 +990,17 @@
       return `${hours.toFixed(1)} hours`;
     }
 
-    // Get progress from localStorage
     function getCourseProgress(courseId) {
       const key = `course_progress_${courseId}`;
       const saved = localStorage.getItem(key);
       return saved ? JSON.parse(saved) : { completed: false, progress: 0 };
     }
 
-    // Save progress to localStorage
     function saveCourseProgress(courseId, progress, completed = false) {
       const key = `course_progress_${courseId}`;
       localStorage.setItem(key, JSON.stringify({ completed, progress }));
     }
 
-    // Render progress indicator
     function renderProgressIndicator(progress, completed) {
       if (completed) {
         return `
@@ -1127,12 +1024,10 @@
           </div>
         `;
       } else {
-        // Don't render anything for not-started courses
         return '';
       }
     }
 
-    // Find the earliest unfinished course id
     function getNextCourseId() {
       for (const course of courses) {
         const { completed } = getCourseProgress(course.id);
@@ -1141,10 +1036,9 @@
       return null;
     }
 
-    // Render course card
     function renderCourseCard(course, index, nextCourseId) {
       const { completed, progress } = getCourseProgress(course.id);
-      const href = `course.html?course=${course.file}&path=inventory&hub=hub.html&from=hub`;
+      const href = `course.html?course=${course.file}&path=supplier&hub=supplier-hub.html&from=hub`;
       const ctaText = completed ? 'Review course' : (progress > 0 ? 'Continue course' : 'Start course');
       
       const pct = completed ? 100 : progress;
@@ -1175,7 +1069,6 @@
       `;
     }
 
-    // Calculate total progress
     function calculateTotalProgress() {
       let totalProgress = 0;
       let completedCount = 0;
@@ -1197,7 +1090,6 @@
       };
     }
 
-    // Update total progress bar
     function updateTotalProgress() {
       const { percentage } = calculateTotalProgress();
       const pct = Math.max(0, Math.min(100, Math.round(percentage)));
@@ -1209,22 +1101,19 @@
       }
     }
 
-    // Get the first uncompleted course, or the first course if all are completed
     function getNextCourse() {
       for (const course of courses) {
         const { completed } = getCourseProgress(course.id);
         if (!completed) return course;
       }
-      return courses[0]; // All completed, return first
+      return courses[0];
     }
 
-    // Render all courses
     function renderCourses() {
       const container = document.getElementById('course-list');
       const nextCourseId = getNextCourseId();
       container.innerHTML = courses.map((course, index) => renderCourseCard(course, index, nextCourseId)).join('');
 
-      // Make clicking anywhere on the card open the course (except interactive elements)
       container.querySelectorAll('.course-card').forEach(card => {
         const handleOpen = (ev) => {
           const interactive = ev.target && ev.target.closest && ev.target.closest('a, button, input, textarea, select, label');
@@ -1242,20 +1131,17 @@
         });
       });
       
-      // Update course count
       document.getElementById('flow-count').textContent = `${courses.length} resources`;
 
-      // Update total time (sum of all course minutes)
       const totalMinutes = courses.reduce((sum, c) => sum + parseMinutes(c.duration), 0);
       const totalTimeEl = document.getElementById('total-time');
       if (totalTimeEl) totalTimeEl.textContent = formatTotalTime(totalMinutes);
 
-      // Update start button to link to next uncompleted course
       const nextCourse = getNextCourse();
       const startBtn = document.getElementById('start-btn');
       const startBtnLabel = document.getElementById('start-btn-label');
       if (startBtn && nextCourse) {
-        startBtn.href = `course.html?course=${nextCourse.file}&path=inventory&hub=hub.html&from=hub`;
+        startBtn.href = `course.html?course=${nextCourse.file}&path=supplier&hub=supplier-hub.html&from=hub`;
         const { completed, progress } = getCourseProgress(nextCourse.id);
         if (startBtnLabel) {
           if (completed) startBtnLabel.textContent = 'Review';
@@ -1267,7 +1153,6 @@
       updateTotalProgress();
     }
 
-    // Check URL for returning from a course
     function checkReturnFromCourse() {
       const urlParams = new URLSearchParams(window.location.search);
       const completedCourse = urlParams.get('completed');
@@ -1276,21 +1161,18 @@
       
       if (completedCourse) {
         saveCourseProgress(completedCourse, 100, true);
-        // Clean URL
-        window.history.replaceState({}, '', 'hub.html');
+        window.history.replaceState({}, '', 'supplier-hub.html');
       }
       
       if (progressCourse && progressValue) {
         saveCourseProgress(progressCourse, parseInt(progressValue), false);
-        window.history.replaceState({}, '', 'hub.html');
+        window.history.replaceState({}, '', 'supplier-hub.html');
       }
     }
 
-    // Scroll-reveal: cards animate in when they enter the viewport
     function observeCards() {
       const cards = document.querySelectorAll('.course-card');
       if (!('IntersectionObserver' in window)) {
-        // fallback: show all immediately
         cards.forEach(c => c.classList.add('visible'));
         return;
       }
@@ -1305,7 +1187,6 @@
       cards.forEach(card => observer.observe(card));
     }
 
-    // Initialize
     document.addEventListener('DOMContentLoaded', () => {
       checkReturnFromCourse();
       renderCourses();
