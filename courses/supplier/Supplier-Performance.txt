@@ -1,137 +1,160 @@
-[id:1/topic: Welcome]
+[id:1/topic: Introduction to supplier performance]
 
 slide_id: 1
-index_title: Welcome
+index_title: Welcome to the course
 title: 
 type: hero
 ---
 hero_image: supplier-performance/SP-Hero.png
 hero_subtitle: Welcome to the course:
 hero_title: **Supplier Performance**
-hero_body: Measure, compare, and improve your supplier performance. In this course, you will learn how to monitor your suppliers, benchmark them against the best-in-class, and identify exactly where they are underperforming.
+hero_body: In this course, you will learn about supplier categorization, performance benchmarking and root-cause analysis to improve supplier performance using Inact Now.
 
 **Let’s get started!**
 ---
 > [next] Let's do it! -> 2
 
-[id:2/topic: The problem]
-
 slide_id: 2
-index_title: Not all suppliers are created equal.
-title: **Not all suppliers are created equal**
-type: main
----
-As suppliers become a critical part of your value chain, relying on invoice price alone is a dangerous trap. Without objective data, purchasing decisions are driven by gut instinct, old habits, and the lowest bidder.
-
-This subjective approach ignores the total cost of ownership. A "cheap" supplier who delivers late or sends poor quality goods is not saving you money, they are draining value from your chain.
-
-To protect your margins, you must look beyond the price tag and assess the true cost of performance. **Without this visibility, you are effectively flying blind.**
-
-![image/size:450px/align:right/frame:none](supplier-performance/Trap.png)
----
-> [next] Continue -> 3
-
-slide_id: 3
-index_title: The cost of flying blind
-title: **The cost of flying blind**
-type: main
----
-**And the cost of flying blind is high.**
-
-When you manage suppliers without clear performance data, the consequences ripple through your entire organization.
-
-Uncertainty forces you to hold expensive safety stock just to compensate for unreliability you haven't measured. Without shared data, you’re working in the dark - trading strategic planning for daily firefighting.
-
-Ultimately, these inefficiencies surface as the worst possible outcome: empty shelves and disappointed customers.
-![image/size:450px/align:right/frame:none](supplier-performance/Struggle.png)
----
-> [next] Continue -> 4
-
-[id:3/topic: The solution]
-
-slide_id: 4
 index_title: What gets measured gets managed
 title: **What gets measured gets managed**
 type: main
 ---
-**To solve this, we need to track hard data.** By actively monitoring metrics like delivery reliability, turnover rates, and spend, you shift from guessing to knowing.
+To improve supplier performance, you need to track hard data. Active monitoring shifts your approach from guessing to knowing. 
 
-By moving to a data-driven approach, you gain the objective insight needed for: 
+This data-driven approach gives you three key advantages:
 ![image 1/size:third/align:center/frame:none](supplier-performance/Better-Decision-Making.png) ![image 2/size:third/align:center/frame:none](supplier-performance/Improved-Communication.png) ![image 3/size:third/align:center/frame:none](supplier-performance/Supplier-Motivation.png)
+---
+> [next] Continue -> 3
+
+slide_id: 3
+index_title: What do we measure?
+title: **What do we measure?**
+type: main
+---
+To get a complete picture, we track five key metrics for every supplier. Let's walk through them one by one.
+![image/size:large/align:center/frame:none](supplier-performance/Five-Metrics-Complete.png)
+---
+> [next] Continue -> 4
+
+[id:2/topic: The five metrics we measure]
+
+slide_id: 4
+index_title: OTD Inbound Confirmed
+title: **1. OTD Inbound Confirmed**
+type: main
+---
+This metric tracks the percentage of orders delivered on time, based on the confirmed delivery date, over the past 12 months. It’s essential for maintaining strong service levels and reliable operations. 
+
+**Here is how it is calculated:**
+![image/size:large/align:center/frame:none](supplier-performance/OTD-Calc.png)
+![image/size:large/align:center/frame:none](supplier-performance/OTD-Metric.png)
 ---
 > [next] Continue -> 5
 
 slide_id: 5
+index_title: Spend and Inventory Value
+title: **2 & 3. Spend and Inventory Value**
+type: main
+---
+Next, we look at the financial footprint of the supplier:
+
+-**Spend** is the total monetary value of goods purchased from the supplier.
+-**Inventory Value** is the amount of capital currently tied up in this supplier's goods in your stock.
+![image/size:large/align:center/frame:none](supplier-performance/Spend-IV-Metric.png)
+---
+> [next] Continue -> 6
+
+slide_id: 6
+index_title: Inventory Turnover Ratio
+title: **4. Inventory Turnover Ratio**
+type: main
+---
+This metric shows how efficiently you are moving a supplier's goods. It measures how many times the supplier’s inventory is sold and replaced over a 12-month period. A healthy ratio means capital isn't tied up unnecessarily. 
+
+**Here is the calculation:**
+![image/size:large/align:center/frame:none](supplier-performance/ITR-Calc.png)
+![image/size:large/align:center/frame:none](supplier-performance/ITR-Metric.png)
+---
+> [next] Continue -> 7
+
+slide_id: 7
+index_title: Products A/B/C/Dead
+title: **5. Products A/B/C/Dead**
+type: main
+---
+Finally, we analyze the double ABC category distribution of the products you buy from this supplier. This metric shows how their products are spread across the double ABC categories, revealing whether the supplier mainly provides critical, high-impact items or slow-moving stock.
+![image/size:large/align:center/frame:none](supplier-performance/Metric-ABC.png)
+---
+> [next] Continue -> 8
+
+[id:3/topic: Supplier Categorization]
+
+slide_id: 8
 index_title: Where should I focus my energy?
 title: **Where should I focus my energy?**
 type: main
 ---
-But with hundreds of suppliers, where do you start? 
+Now that you know what to measure, where do you start? With hundreds of suppliers, you can't tackle them all at once. 
 
-**You start by finding the ones that matter most, and the ones that matter least.**
+You need to focus your energy where it creates the biggest impact. 
 
-Doing this helps you focus your energy in the right places. Just like we categorize items, we must categorize our suppliers.
+**Just as we categorize items, we must categorize our suppliers to find the ones that matter most.**
 ![/size:450px/align:right/frame:none](supplier-performance/ABC-Suppliers.png)
 ---
-> [next] Continue -> 6
+> [next] Continue -> 9
 
-[id:4/topic: Step 1: Supplier Categorisation]
-
-slide_id: 6
-index_title: Step 1: Supplier Categorisation
-title: **Step 1: Supplier Categorisation**
+slide_id: 9
+index_title: Categorizing your suppliers
+title: **Categorizing your suppliers**
 type: main
 ---
 Often, the 80/20 rule applies to your suppliers: around 20% of your vendors will account for 80% of your total spend and volume. These are your A-suppliers.
 
 Let’s take a look at the Supplier Categorisation Insight. This helps us find the strategic suppliers that actually drive our business, rather than wasting time on the "long tail" of small vendors.
 
-**Do you know how to open the insight?**
 ![image/size:450px/align:right/frame:none](supplier-performance/PC.png)
----
-> [next] Continue -> 7
-> [sidequest] No, show me -> s1
-
-slide_id: 7
-index_title: Insight walkthrough
-title: **Insight walkthrough: Supplier Categorisation**
-type: main
----
-The interactive tutorial below will guide you through how to use the "Supplier Categorisation" Insight to identify your most important suppliers:
-
-[supademo: Insight walkthrough: Supplier Categorization](https://app.supademo.com/embed/cmlzb3cv927rb1435rm7m2309?embed_v=2&utm_source=embed)
----
-> [next] Continue -> 8
-
-[id:5/topic: Step 2: Benchmarking the top suppliers]
-
-slide_id: 8
-index_title: Step 2: Benchmarking the top suppliers
-title: **Step 2: Benchmarking the top suppliers**
-type: main
----
-Once we have identified our most important suppliers, we need to compare them. By benchmarking your top vendors against each other, you can quickly spot the outliers. In Inact Now, we look at five different metrics that we measure and compare our suppliers on:
-
-![image/size:large/align:center/frame:none](supplier-performance/Five-Metrics.png)
----
-> [next] Continue -> 9
-
-slide_id: 9
-index_title: Insight walkthrough
-title: **Insight walkthrough: Supplier Performance Benchmark: Suppliers**
-type: main
----
-Let’s see it action, and take a look at the insight: Supplier Performance Benchmark - Suppliers. The interactive tutorial below will show you how to compare individual suppliers to each other and against your benchmark.
-
-[supademo: Insight Walkthrough: Supplier Performance Benchmark: Suppliers](https://app.supademo.com/embed/cmm4tbjoq284xdtfhwq2cqowj?embed_v=2&utm_source=embed)
 ---
 > [next] Continue -> 10
 
-[id:6/topic: Step 3: Drilling down to the products]
-
 slide_id: 10
-index_title: Step 3: Drilling down to the products
-title: **Step 3: Drilling down to the products**
+index_title: Insight walkthrough: Supplier Categorisation
+title: **Insight walkthrough: Supplier Categorisation**
+type: main
+---
+The interactive tutorial below will guide you through how to use the "Supplier Categorisation" Insight to identify your most important suppliers. If the window appears too small, click the full-screen button in the top right corner.
+[supademo: Insight walkthrough: Supplier Categorization](https://app.supademo.com/embed/cmlzb3cv927rb1435rm7m2309?embed_v=2&utm_source=embed)
+---
+> [next] Continue -> 11
+
+[id:4/topic: Benchmarking and root cause analysis]
+
+slide_id: 11
+index_title: Benchmarking and root cause analysis
+title: **Benchmarking and root cause analysis**
+type: main
+---
+Once you’ve identified your A-suppliers, the next step is to understand how they are performing in detail.
+
+By analyzing the key metrics, you can uncover the underlying drivers of performance. 
+
+This helps identify potential root causes behind issues like slow-moving stock, excess inventory, or service challenges, and provides a clear starting point for targeted improvement.
+![image/size:450px/align:right/frame:none](supplier-performance/Metrics-Zoom.png)
+---
+> [next] Continue -> 12
+
+slide_id: 12
+index_title: Insight walkthrough: Supplier Performance Benchmark - Suppliers
+title: **Insight walkthrough: Supplier Performance Benchmark - Suppliers**
+type: main
+---
+Let’s see it action, and take a look at the insight: Supplier Performance Benchmark - Suppliers. If the window appears too small, click the full-screen button in the top right corner.
+[supademo: Insight Walkthrough: Supplier Performance Benchmark: Suppliers](https://app.supademo.com/embed/cmm4tbjoq284xdtfhwq2cqowj?embed_v=2&utm_source=embed)
+---
+> [next] Continue -> 13
+
+slide_id: 13
+index_title: Drilling down to the products
+title: **Drilling down to the products**
 type: main
 ---
 When you find a top supplier that is underperforming, you need to know exactly why. This is where the supplier framework and the inventory framework come together.
@@ -141,23 +164,23 @@ We drill down to the item level. Is the supplier's low turnover ratio caused by 
 Let’s take a look at the insight: Supplier Performance Benchmark - Products.
 ![image/size:450px/align:right/frame:none](supplier-performance/PC.png)
 ---
-> [next] Continue -> 11
+> [next] Continue -> 14
 
-slide_id: 11
-index_title: Insight walkthrough
-title: **Insight walkthrough - Supplier Performance Benchmark: Products**
+slide_id: 14
+index_title: Insight walkthrough: Supplier Performance Benchmark - Products
+title: **Insight walkthrough - Supplier Performance Benchmark - Products**
 type: main
 ---
-The interactive tutorial below will guide you through how to use the "Supplier Performance Benchmark: Products" Insight:
+The interactive tutorial below will guide you through how to use the "Supplier Performance Benchmark: Products" Insight. If the window appears too small, click the full-screen button in the top right corner.
 
 [supademo: Insight walkthrough: Supplier Performance Benchmark: Products](https://app.supademo.com/embed/cmm90doar5n4gdtfh9g7327jl?embed_v=2&utm_source=embed)
 ---
-> [next] Continue -> 12
+> [next] Continue -> 15
 
-[id:7/topic: What's next?]
+[id:5/topic: What's next?]
 
-slide_id: 12
-index_title: Congratulations!
+slide_id: 15
+index_title: Congratulations! You've completed the course
 title: **Congratulations! You have completed the Supplier Performance course.**
 type: main
 ---
@@ -167,16 +190,4 @@ Next up, we will look at how to map out exactly where your money is going in the
 
 **Let’s keep going!**
 ![image/size:large/align:right/frame:none](supplier-performance/SP-Hero.png)
----
-
-[flow-specific-side-quests]
-
-[id:s1/topic: Opening the insight: Supplier Categorisation]
-
-slide_id: 1
-title: **Opening the insight: Supplier Categorisation**
-type: sidequest
-backLabel: Return to course
----
-Supademo her
 ---
