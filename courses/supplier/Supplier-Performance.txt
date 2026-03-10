@@ -184,7 +184,7 @@ index_title: Congratulations! You've completed the course
 title: **Congratulations! You have completed the Supplier Performance course.**
 type: main
 ---
-You now understand how to categorize your most important suppliers, benchmark their top-level performance, and drill all the way down to the item level to find actionable improvements.
+You now understand how to categorize your most important suppliers, benchmark their performance, and drill all the way down to the item level to find actionable improvements.
 
 Next up, we will look at how to map out exactly where your money is going in the Spend Analysis course.
 
