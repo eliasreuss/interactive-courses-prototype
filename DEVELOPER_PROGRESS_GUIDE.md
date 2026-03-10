@@ -1,3 +1,7 @@
+---
+layout: null
+---
+{% raw %}
 # Course Progress & Resume — Developer Guide
 
 This document explains how the prototype saves and restores user progress, and how to implement the same behavior in the React app **before login exists**. All progress is stored in the browser's `localStorage` and survives page reloads and hard refreshes.
@@ -138,7 +142,7 @@ export function clearCoursePosition(courseId: string): void {
 
 ---
 
-### 2. Hook for the hub (course cards)
+### 2. Hook for the learning path hub (course cards)
 
 Create `src/hooks/useCourseProgress.ts`:
 
@@ -483,3 +487,4 @@ These match the prototype so behavior stays consistent.
 - Progress is **per browser, per device**. Switching devices or browsers starts from scratch.
 - Clearing site data removes all progress.
 - No cross-device sync until you add a backend and login.
+{% endraw %}
