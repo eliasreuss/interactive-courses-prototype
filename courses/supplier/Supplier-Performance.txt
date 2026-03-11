@@ -43,7 +43,7 @@ index_title: OTD Inbound Confirmed
 title: **1. OTD Inbound Confirmed**
 type: main
 ---
-This metric tracks the percentage of orders delivered on time, based on the confirmed delivery date, over the past 12 months. It’s essential for maintaining strong service levels and reliable operations. 
+**OTD inbound confirmed** tracks the percentage of orders delivered on time, based on the confirmed delivery date, over the past 12 months. It’s essential for maintaining strong service levels and reliable operations. 
 
 **Here is how it is calculated:**
 ![image/size:large/align:center/frame:none](supplier-performance/OTD-Calc.png)
@@ -59,7 +59,7 @@ type: main
 Next, we look at the financial footprint of the supplier:
 
 -**Spend** is the total monetary value of goods purchased from the supplier.
--**Inventory Value** is the amount of capital currently tied up in this supplier's goods in your stock.
+-**Inventory value** is the amount of capital currently tied up in this supplier's goods in your stock.
 ![image/size:large/align:center/frame:none](supplier-performance/Spend-IV-Metric.png)
 ---
 > [next] Continue -> 6
@@ -69,7 +69,7 @@ index_title: Inventory Turnover Ratio
 title: **4. Inventory Turnover Ratio**
 type: main
 ---
-This metric shows how efficiently you are moving a supplier's goods. It measures how many times the supplier’s inventory is sold and replaced over a 12-month period. A healthy ratio means capital isn't tied up unnecessarily. 
+**Inventory turnover ratio** shows how efficiently you are moving a supplier's goods. It measures how many times the supplier’s inventory is sold and replaced over a 12-month period. A healthy ratio means capital isn't tied up unnecessarily. 
 
 **Here is the calculation:**
 ![image/size:large/align:center/frame:none](supplier-performance/ITR-Calc.png)
