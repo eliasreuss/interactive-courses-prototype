@@ -500,6 +500,7 @@
     .course-card:nth-child(1) { animation-delay: 0.04s; }
     .course-card:nth-child(2) { animation-delay: 0.10s; }
     .course-card:nth-child(3) { animation-delay: 0.16s; }
+    .course-card:nth-child(4) { animation-delay: 0.08s; }
 
     @keyframes cardEnter {
       to {
@@ -544,6 +545,7 @@
     .course-card:nth-child(1) .course-card-top { --grad-dir: 135deg; }
     .course-card:nth-child(2) .course-card-top { --grad-dir: 200deg; }
     .course-card:nth-child(3) .course-card-top { --grad-dir: 310deg; }
+    .course-card:nth-child(4) .course-card-top { --grad-dir: 60deg; }
 
     .course-duration-pill.glass,
     .course-icon-circle.glass {
@@ -966,7 +968,7 @@
         description: 'The big picture of supplier management and what this learning path covers.',
         duration: '5 min',
         file: 'Suppliers-Intro.txt',
-        thumbnail: 'Course-thumbnails/SpendAnalysis.png'
+        thumbnail: 'Course-thumbnails/Supplier-Intro.png'
       },
       {
         id: 'supplier-performance',
@@ -975,6 +977,14 @@
         duration: '12 min',
         file: 'Supplier-Performance.txt',
         thumbnail: 'Course-thumbnails/Supplier-Performance.png'
+      },
+      {
+        id: 'spend-analysis',
+        title: 'Spend Analysis',
+        description: 'Uncover inefficiencies and reduce costs using spend data in Inact Now.',
+        duration: '10 min',
+        file: 'Spend-Analysis.txt',
+        thumbnail: 'Course-thumbnails/SpendAnalysis.png'
       }
     ];
 

@@ -233,7 +233,7 @@ When people first see their double ABC analysis, a common question often comes u
 
 For example, new products often appear as low-performing (like CC) simply because they haven’t had time to generate sales. That doesn’t mean they lack potential.
 
-That’s why the Inact Now view goes **beyond the standard nine categories.** We’ve added **six extra classifications** to capture special cases—like new, discontinued, or strategic items—so you can act with more nuance.
+That’s why the Inact Now view goes **beyond the standard nine categories.** We’ve added **five extra classifications** to capture special cases—like new, discontinued, or strategic items—so you can act with more nuance.
 
 ![lottie:motion graphic/size:950px/align:stack-right-top/frame:none](double-abc-analysis/ANIFRAME.json)
 ---

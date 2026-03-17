@@ -64,7 +64,8 @@ On-Time Delivery (OTD) measures how consistently suppliers deliver goods or serv
 With On-Time Delivery Performance in Inact Now you create a transparent and structured approach to supplier performance management and the root-cause analysis to improve it.
 
 **Here is how it is calculated:**
-![image/size:large/align:center/frame:none](supplier-performance/OTD-Calc.png) ![image/size:large/align:center/frame:none](supplier-performance/OTD-Metric.png)
+![image/size:large/align:center/frame:none](supplier-performance/OTD-Calc.png)
+![image/size:large/align:center/frame:none](supplier-performance/OTD-Metric.png)
 ---
 > [next] Continue -> 6
 
@@ -102,7 +103,8 @@ The inventory turnover ratio is a reflection of your stocking policies, lead tim
 With Inact Now you gain the full overview of your inventory and the root-cause analysis that allows you to improve supplier performance. 
 
 **Here is the calculation:**
-![image/size:large/align:center/frame:none](supplier-performance/ITR-Calc.png) ![image/size:large/align:center/frame:none](supplier-performance/ITR-Metric.png)
+![image/size:large/align:center/frame:none](supplier-performance/ITR-Calc.png)
+![image/size:large/align:center/frame:none](supplier-performance/ITR-Metric.png)
 ---
 > [next] Continue -> 9
 
