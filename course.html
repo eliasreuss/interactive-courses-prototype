@@ -481,7 +481,13 @@
     
     /* Media containers */
     .content-images-container {
-      display: flex; gap: clamp(16px, 2vw, 32px); justify-content: center; margin: clamp(20px, 3vw, 40px) 0; flex-wrap: wrap; align-items: center;
+      display: flex; gap: clamp(8px, 1vw, 16px); justify-content: center; margin: clamp(20px, 3vw, 40px) 0; flex-wrap: wrap; align-items: center;
+    }
+    /* Even tighter spacing for 2-image rows */
+    .content-images-container:has(.size-third),
+    .content-images-container:nth-child(2),
+    .content-images-container:has(> .img-container:nth-child(2):last-child) {
+      gap: clamp(4px, 0.5vw, 8px);
     }
     .content-images-container img { 
       max-width: 100%; 
@@ -3191,7 +3197,8 @@
       'Reorder-Point.txt': 'reorder-point',
       'Reorder-Quantity.txt': 'reorder-quantity',
       'Suppliers-Intro.txt': 'suppliers-intro',
-      'Supplier-Performance.txt': 'supplier-performance'
+      'Supplier-Performance.txt': 'supplier-performance',
+      'Spend-Analysis.txt': 'spend-analysis'
     };
 
     // Learning path orders (keyed by coursePath, used for the last-slide CTA)
@@ -3206,7 +3213,8 @@
       ],
       supplier: [
         'Suppliers-Intro.txt',
-        'Supplier-Performance.txt'
+        'Supplier-Performance.txt',
+        'Spend-Analysis.txt'
       ]
     };
     
