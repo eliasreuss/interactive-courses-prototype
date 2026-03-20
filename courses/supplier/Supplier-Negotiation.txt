@@ -1,0 +1,126 @@
+[id:1/topic: Introduction]
+
+slide_id: 1
+index_title: Welcome to the course: Supplier Negotiation
+title: 
+type: hero
+---
+hero_image: supplier-negotiation/Supplier-Negotiation-Hero.png
+hero_subtitle: Welcome to the course:
+hero_title: Supplier Negotiation
+hero_body: This is the final course in your learning path. We now have full transparency on our suppliers, their performance, and our spend. We know who we buy from and how they perform.
+
+In this course, you will learn how to use that transparency in your supplier negotiations.
+
+**Let’s get started.**
+---
+> [next] Continue -> 2
+
+[id:2/topic: The three steps in your negotiation strategy]
+
+slide_id: 2
+index_title: Introducing the three steps
+title: **The three steps in your negotiation strategy**
+type: main
+---
+Before entering the meeting room, we recommend using this three-step model:
+![image/size:large/align:center/frame:none](supplier-negotiation/Three-Steps.png)
+
+**Let’s break down step 1: defining the goal.**
+---
+> [next] Continue -> 3
+
+slide_id: 3
+index_title: Step 1: Define the goal
+title: **Step 1: Define the goal**
+type: main
+---
+Your goal ultimately determines which levers you should pull, and which double ABC categories you need to focus on.
+
+Therefore, the first thing you need to do is define what you want to achieve. Below are four of the most common goals in procurement:
+![image/size:large/align:center/frame:none](supplier-negotiation/Define-The-Goal.png)
+
+**Once you know your goal, the next question is: which variables can help you achieve it?**
+---
+> [next] Continue -> 4
+
+slide_id: 4
+index_title: Step 2: Selecting the variables
+title: **Step 2: Selecting the variables**
+type: main
+---
+Once you have a clear goal, you need to identify which variables you can use to achieve it. Pulling different levers leads to different results.
+
+For example, you can negotiate:
+![image/size:large/align:center/frame:none](supplier-negotiation/Selecting-The-Variables.png)
+
+**But which products should you focus on based on your goal?**
+---
+> [next] Continue -> 5
+
+slide_id: 5
+index_title: Step 3: The differentiated strategy, AA and AB products
+title: **Step 3: The differentiated strategy**
+type: main
+---
+This is where it all comes together.
+
+You need to negotiate using different variables across different double ABC categories—based on your goal.
+![image/size:650px/align:right/frame:none](supplier-negotiation/Differentiated-Strategy.png)
+---
+> [next] Continue -> 6
+
+[id:3/topic: Negotiating based on ABC categories]
+
+slide_id: 6
+index_title: AA and AB products
+title: **AA and AB products**
+type: main
+---
+For example, if your goal is earnings, you should focus on high-volume, high-value items - **AA and AB products.** Here, your key variables are cost price, volume and reliabiliy.
+
+Because you buy large quantities, you have strong leverage. You can accept a higher MOQ (volume commitment) in exchange for the lowest possible cost price. Since demand is stable, the risk is low—and even a small reduction in cost price can have a significant impact. Having reliable deliveries is essential for customer satisfaction.
+
+![image/size:650px/align:right/frame:none](supplier-negotiation/AA-AB.png)
+---
+> [next] Continue -> 7
+
+slide_id: 7
+index_title: CC, BC and AC products
+title: **CC, BC and AC products**
+type: main
+---
+On the other hand, if your goal is to reduce the amount of money tied up in inventory, you should focus on **BC and CC items.**
+
+These are low-value items purchased infrequently. The goal is to stay flexible and avoid excess stock. Aim for short lead times, low minimum order quantities, or BTO/MTO setups. If a supplier cannot offer this, it is often easy to switch to one who can.
+
+**AC items** are high-value and also purchased infrequently, which means they can tie up a lot of cash if they sit in stock. Focus on longer payment terms so you pay closer to when the item is sold, and try to reduce risk with lower MOQs or shorter lead times.
+![image/size:650px/align:right/frame:none](supplier-negotiation/CC-BC-AC.png)
+---
+> [next] Continue -> 8
+
+slide_id: 8
+index_title: CA and CB products
+title: **CA and CB products**
+type: main
+---
+**CA and CB items** are low-value products with steady demand. The goal is simple: keep them flowing without disruption.
+
+Even though they do not drive large profits, running out can cause real problems, such as unsatisfied customers. Focus on reliability and efficiency—ensure stable supply, and aim for larger, less frequent orders to reduce administrative work.
+![image/size:650px/align:right/frame:none](supplier-negotiation/CA-CB.png)
+---
+> [next] Continue -> 9
+
+[id:4/topic: How can Inact Now help?]
+
+slide_id: 9
+index_title: How can Inact Now help me?
+title: **How can Inact Now help me?**
+type: main
+---
+As you can see, different goals call for different variables - which in turn determine which ABC categories to focus on.
+
+So, how do we use Inact Now to identify the right suppliers to negotiate with - and the right products to focus on?
+
+In this tutorial, we will walk you through...
+---
