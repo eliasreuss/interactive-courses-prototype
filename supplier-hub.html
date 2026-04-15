@@ -969,13 +969,13 @@
         title: 'Intro to Supplier Management',
         description: 'The big picture of supplier management and what this learning path covers.',
         duration: '5 min',
-        file: 'Suppliers-Intro.txt',
+        file: 'Suppliers-Intro-2.txt',
         thumbnail: 'Course-thumbnails/Supplier-Intro.png'
       },
       {
         id: 'supplier-performance',
         title: 'Supplier Performance',
-        description: 'Measure and compare your suppliers using five key metrics in Inact Now.',
+        description: 'Measure and compare your suppliers using five key performance indicators in Inact Now.',
         duration: '12 min',
         file: 'Supplier-Performance.txt',
         thumbnail: 'Course-thumbnails/Supplier-Performance.png'
@@ -1196,15 +1196,36 @@
         cards.forEach(c => c.classList.add('visible'));
         return;
       }
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        cards.forEach(c => c.classList.add('visible'));
+        return;
+      }
+      const reveal = (entry, observer) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      };
+      try {
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => reveal(entry, obs));
+        }, {
+          rootMargin: '0px 0px 480px 0px',
+          threshold: 0.01,
         });
-      }, { threshold: 0.15 });
-      cards.forEach(card => observer.observe(card));
+        cards.forEach(card => observer.observe(card));
+        requestAnimationFrame(() => {
+          const vh = window.innerHeight || document.documentElement.clientHeight;
+          const margin = 500;
+          cards.forEach(card => {
+            if (card.classList.contains('visible')) return;
+            const r = card.getBoundingClientRect();
+            if (r.top < vh + margin && r.bottom > -margin) card.classList.add('visible');
+          });
+        });
+      } catch (e) {
+        cards.forEach(c => c.classList.add('visible'));
+      }
     }
 
     document.addEventListener('DOMContentLoaded', () => {

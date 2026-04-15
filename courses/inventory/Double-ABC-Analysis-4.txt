@@ -208,6 +208,7 @@ Now let’s apply it to your own inventory - in Inact Now, we’ve already set u
 > [next] Yes, continue -> 14
 > [sidequest] No, show me -> s2
 > [next:flow] Open Inact Now -> https://inactnow.io/app/#/
+> [next:flow] Open Inact Now -> https://inactnow.io/app/#/
 
 slide_id: 14
 index_title: Interpreting the insight
@@ -218,7 +219,7 @@ What you’re looking at is called an **insight.** Insights are simple, powerful
 
 This brief video walks you through how to navigate and interpret the double ABC analysis insight in Inact Now.
 
-![video:Explainer video/size:large/align:center/frame:none/controls](double-abc-analysis/Double-ABC-Explainer-2.1.mp4)
+![video/size:large/align:center/controls:true](https://www.youtube.com/watch?v=BU9jqDaHVv0)
 ---
 > [next] Continue -> 15
 
@@ -235,7 +236,7 @@ For example, new products often appear as low-performing (like CC) simply becaus
 
 That’s why the Inact Now view goes **beyond the standard nine categories.** We’ve added **five extra classifications** to capture special cases—like new, discontinued, or strategic items—so you can act with more nuance.
 
-![lottie:motion graphic/size:950px/align:stack-right-top/frame:none](double-abc-analysis/ANIFRAME.json)
+![video/size:large/align:right/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/special-categories-animation.mp4)
 ---
 > [next] Continue -> 16
 

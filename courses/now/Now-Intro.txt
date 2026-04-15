@@ -1,0 +1,40 @@
+slide_id: 1
+index_title: Welcome to the learning path
+title: 
+type: hero
+---
+hero_image: now-intro/Now-Intro-Hero.png
+hero_subtitle: Welcome to the learning path:
+hero_title: **Inact Now Fundamentals**
+hero_body: In this learning path, you will get a complete overview of the Inact Now platform. You will learn how to navigate your dashboards, interpret key insights, and turn your data into actionable tasks.
+
+**Let’s get started!**
+---
+> [next] Continue -> 2
+
+slide_id: 2
+index_title: What is Inact Now?
+title: **What is Inact Now?**
+type: main
+---
+At its core, Inact Now helps you move from gut-feeling decisions to procurement driven by clear, easy-to-understand data. It has already helped companies unlock hundreds of millions in savings.
+
+It works in two ways:
+![image/size:large/align:center/frame:none](now-intro/Two-Ways.png)
+
+This learning path focuses entirely on the tool itself. You will learn how to navigate Inact Now and confidently use its core features in your daily work.
+---
+> [next] Continue -> 3
+
+slide_id: 3
+index_title: The four pillars of the platform
+title: **The four pillars of the platform**
+type: main
+---
+To help you get the most out of Inact Now, this learning path will walk you through its four main areas:
+![image/size:large/align:center/frame:none](now-intro/Four-Pillars.png)
+
+While the platform offers much more than just these four areas, they are the essential building blocks you need to get started.
+
+**Ready to start learning?**
+---

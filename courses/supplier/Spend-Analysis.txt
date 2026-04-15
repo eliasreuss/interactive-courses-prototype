@@ -1,4 +1,4 @@
-[id:1/topic: Introduction]
+[id:1/topic: Welcome: Spend Analysis]
 
 slide_id: 1
 index_title: Welcome to the course: Spend Analysis
@@ -8,7 +8,7 @@ type: hero
 hero_image: spend-analysis/Spend-Analysis-Hero.png
 hero_subtitle: Welcome to the course:
 hero_title: Spend Analysis
-hero_body: By the end of this course, you will know how to use spend data to uncover inefficiencies, identify consolidation opportunities, and take concrete actions to reduce costs in your supply chain.
+hero_body: The spend analysis in Inact Now turns raw purchasing data into actionable insights – enabling you to understand spend patterns across categories and suppliers and identify cost-saving opportunities.  
 
 **Let’s get started!**
 ---
@@ -28,14 +28,12 @@ However, many procurement teams lack transparency. They see the total spend, but
 ---
 > [next] Continue -> 3
 
-[id:2/topic: What is a spend analysis?]
-
 slide_id: 3
 index_title: Asking the right questions
 title: **Asking the right questions**
 type: main
 ---
-To fix this blindness, we need to conduct a structured spend analysis. This starts by establishing an overview to answer four critical questions:
+To fix this blindness, we need to conduct a structured spend analysis. This starts by establishing an overview to answer three critical questions:
 ![image/size:large/align:center/frame:none](spend-analysis/WWWW.png)
 Once you map your data against these questions, inefficiencies that were previously hidden suddenly become obvious.
 ---
@@ -53,59 +51,23 @@ But most importantly, the platform connects the dots. You can drill down to see 
 ---
 > [next] Continue -> 5
 
-[id:3/topic: The "long tail"]
+[id:2/topic: The spend analysis in Inact Now]
 
 slide_id: 5
-index_title: Identifying your "long tail" of spend
-title: **Identifying your "long tail" of spend**
-type: main
----
-Let's look at a practical example. When you analyze "Who are we buying from?", you often discover a common trap: Supplier Fragmentation.
-
-As companies grow, they naturally accumulate suppliers. You might find you are buying simple office supplies from 50 different vendors.
-
-This is known as the "Long Tail." While it might seem harmless, this fragmentation dilutes your focus. You end up with a chaotic web of small transactions rather than a few strong, strategic partnerships.
-![image/size:450px/align:right/frame:none](spend-analysis/Long-Tail.png)
----
-> [next] Continue -> 6
-
-slide_id: 6
-index_title: The hidden costs of the "long tail"
-title: **The hidden costs of the "long tail"**
-type: main
----
-Identifying this "Long Tail" through spend analysis is crucial because ignoring it has expensive consequences:
-![image 1/size:480px/align:center/frame:none](spend-analysis/Weakened-Negotiating-Power.png) ![image 2/size:480px/align:center/frame:none](spend-analysis/Administrative-Burden.png)
-The fix: By using data to spot this, you can consolidate spend, become a "VIP customer" to fewer suppliers, and immediately improve your margin.
----
-> [next] Continue -> 7
-
-[id:4/topic: The spend analysis in Inact Now]
-
-slide_id: 7
 index_title: How can we use Inact Now to help us?
 title: **How can we use Inact Now to help us?**
 type: main
 ---
-So, how do we conduct this analysis in practice? Let's take a look at the “Spend Analysis” Insight in Inact Now. In this walkthrough, we will show you how to interpret the data to gain full transparency and identify actionable opportunities - such as supplier consolidation.
+So, how do we conduct this analysis in practice? Let's take a look at the “Spend Analysis” Insight in Inact Now. In this walkthrough, we will show you how to interpret the data to gain full transparency and identify actionable opportunities.
 
 If the window appears too small, click the button in the top right corner to enter full screen.
 [supademo: Spend Analysis: Insight Walkthrough](https://app.supademo.com/embed/cmmj7ort82jagzdh1isoce83c?embed_v=2&utm_source=embed)
 ---
-> [next] Continue -> 8
+> [next] Continue -> 6
 
-slide_id: 8
-index_title: Spend Analysis Trend?
-title: **Spend Analysis Trend?**
-type: main
----
-Supademo på Spend Analysis Trend her?
----
-> [next] Continue -> 9
+[id:3/topic: What's next?]
 
-[id:5/topic: What's next?]
-
-slide_id: 9
+slide_id: 6
 index_title: Congratulations!
 title: **Congratulations! You have completed the Spend Analysis course**
 type: main

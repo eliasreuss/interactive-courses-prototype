@@ -1,0 +1,52 @@
+slide_id: 1
+index_title: Welcome to the course
+title: 
+type: hero
+---
+hero_image: now-home/Home-Hero.png
+hero_subtitle: Welcome to the course:
+hero_title: Home
+hero_body: The Home screen is your personal command center in Inact Now. It is the first thing you see when you log in, and it serves as the central hub for everything you need to do your job.
+
+In this course, we will explore how to navigate your starting point, and see how Dashboards, Insights, and Actions are all connected.
+
+**Let’s dive in!**
+---
+> [next] Continue -> 2
+
+slide_id: 2
+index_title: What is on your home screen?
+title: **What is on your home screen?**
+type: main
+---
+When you log in to Inact Now, your Home tab will look something like the example on the right.
+
+This page is built around three distinct sections: **Dashboards, Actions, and Insights.** Because the platform is tailored to your specific role, your view is personalized.
+
+Depending on your specific tasks and what has been shared with you, you might see all three of these sections, just one or two, or none at all.
+![image/size:450px/align:right/frame:none](now-home/Home-Overview.png)
+---
+> [next] Continue -> 3
+
+slide_id: 3
+index_title: Your shortcuts to what matters
+title: **Your shortcuts to what matters**
+type: main
+---
+As we just saw, your Home screen features three sectionss - each acting as a shortcut to your most important work. One click takes you straight where you need to go. Here are short explanations of each part:
+![image/size:large/align:center/frame:none](now-home/Roadmap.png)
+
+In the following courses, we will take a deep dive into all three.
+---
+> [next] Continue -> 4
+
+slide_id: 4
+index_title: Congratulations! You’ve completed the Home course
+title: **Congratulations! You’ve completed the Home course**
+type: main
+---
+You have successfully completed the first step in the learning path! You now understand how your Home screen connects you to the most important parts of your platform.  Next up is the Insights course. Here, we’ll take a closer look at what these deep-dive templates can do. You’ll learn how to view and filter your data, and explore practical examples you can apply directly to your own inventory.
+
+**Let’s keep going!**
+![image/size:large/align:right/frame:none](now-home/Home-Hero.png)
+---

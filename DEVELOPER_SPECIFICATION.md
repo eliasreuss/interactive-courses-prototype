@@ -577,5 +577,10 @@ Extensively used for fluid typography and spacing that scales smoothly between b
 - **Hero Slides**: Type `hero` with `hero_image:`, `hero_subtitle:`, `hero_title:`, `hero_body:` fields
 - **Sidequests**: Defined in `[flow-specific-side-quests]` section with `[id:sX/topic: Name]` format
 - **Assets Folder**: Creator supports assets folder prefix (e.g., `stock-policy/`) that automatically prefixes image paths
+- **YouTube Embeds**: Paste a YouTube URL as the image source to embed a video. Two modes:
+  - **Click-to-play** (longer videos with sound): Add `controls:true` — renders a standard YouTube player the user clicks to start.
+    `![video/size:large/controls:true](https://www.youtube.com/watch?v=VIDEO_ID)`
+  - **Auto-playing animation** (short, silent loops): Default when no `controls` attribute — renders a muted, looping, borderless YouTube embed that acts like a GIF.
+    `![video/size:large](https://www.youtube.com/watch?v=VIDEO_ID)`
 
 ---

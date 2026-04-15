@@ -1290,19 +1290,42 @@
     function observeCards() {
       const cards = document.querySelectorAll('.course-card');
       if (!('IntersectionObserver' in window)) {
-        // fallback: show all immediately
         cards.forEach(c => c.classList.add('visible'));
         return;
       }
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        cards.forEach(c => c.classList.add('visible'));
+        return;
+      }
+      // rootMargin must use px (vh/% in rootMargin is not reliable across browsers).
+      // Extends below the fold so row 2 can reveal without a full scroll.
+      const reveal = (entry, observer) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      };
+      try {
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => reveal(entry, obs));
+        }, {
+          rootMargin: '0px 0px 480px 0px',
+          threshold: 0.01,
         });
-      }, { threshold: 0.15 });
-      cards.forEach(card => observer.observe(card));
+        cards.forEach(card => observer.observe(card));
+        // If IO doesn’t fire before paint (some browsers), reveal cards that are on/near screen
+        requestAnimationFrame(() => {
+          const vh = window.innerHeight || document.documentElement.clientHeight;
+          const margin = 500;
+          cards.forEach(card => {
+            if (card.classList.contains('visible')) return;
+            const r = card.getBoundingClientRect();
+            if (r.top < vh + margin && r.bottom > -margin) card.classList.add('visible');
+          });
+        });
+      } catch (e) {
+        cards.forEach(c => c.classList.add('visible'));
+      }
     }
 
     // Initialize

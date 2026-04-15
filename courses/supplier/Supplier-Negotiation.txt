@@ -79,7 +79,7 @@ type: main
 ---
 For example, if your goal is earnings, you should focus on high-volume, high-value items - **AA and AB products.** Here, your key variables are cost price, volume and reliabiliy.
 
-Because you buy large quantities, you have strong leverage. You can accept a higher MOQ (volume commitment) in exchange for the lowest possible cost price. Since demand is stable, the risk is low—and even a small reduction in cost price can have a significant impact. Having reliable deliveries is essential for customer satisfaction.
+Because you buy large quantities, you have strong leverage. You can accept a higher MOQ (volume commitment) in exchange for the lowest possible cost price. Since demand is stable, the risk is low, and even a small reduction in cost price can have a significant impact. Having reliable deliveries is essential for customer satisfaction.
 
 ![image/size:650px/align:right/frame:none](supplier-negotiation/AA-AB.png)
 ---
@@ -106,7 +106,7 @@ type: main
 ---
 **CA and CB items** are low-value products with steady demand. The goal is simple: keep them flowing without disruption.
 
-Even though they do not drive large profits, running out can cause real problems, such as unsatisfied customers. Focus on reliability and efficiency—ensure stable supply, and aim for larger, less frequent orders to reduce administrative work.
+Even though they do not drive large profits, running out can cause real problems, such as unsatisfied customers. Focus on reliability and efficiency to ensure stable supply, and aim for larger, less frequent orders to reduce administrative work.
 ![image/size:650px/align:right/frame:none](supplier-negotiation/CA-CB.png)
 ---
 > [next] Continue -> 9
@@ -118,9 +118,24 @@ index_title: How can Inact Now help me?
 title: **How can Inact Now help me?**
 type: main
 ---
-As you can see, different goals call for different variables - which in turn determine which ABC categories to focus on.
+As you can see, different goals call for different variables, which in turn determine which ABC categories to focus on.
 
-So, how do we use Inact Now to identify the right suppliers to negotiate with - and the right products to focus on?
+So, how do we use Inact Now to identify these opportunities?
 
-In this tutorial, we will walk you through...
+In this tutorial, we will walk you through how to use the Supplier Negotiation insight. If the window appears too small, click the button in the top right corner to expand it.  
+[supademo: Insight Walkthrough: Supplier Negotiation Framework](https://app.supademo.com/embed/cmn61ncu54lf9z3qm2yudyzz5?embed_v=2&utm_source=embed)
+---
+> [next] Continue -> 10
+
+[id:5/topic: Congratulations! You've completed the course]
+
+slide_id: 10
+index_title: Congrats!
+title: **Congratulations! You have completed the supplier negotiation course**
+type: main
+---
+This was the final course in the Supplier Management learning path. You’ve learned how to identify your most important suppliers, evaluate their performance, analyze your spend, and use these insights to negotiate more effectively with your suppliers.
+
+**Now it's time for action!**
+![image/size:large/align:right/frame:none](supplier-negotiation/Supplier-Negotiation-Hero.png)
 ---

@@ -1,0 +1,46 @@
+slide_id: 1
+index_title: Welcome to Supplier Management with Inact Now
+title: 
+type: hero
+---
+hero_image: suppliers-intro-2/hero.png
+hero_subtitle: Welcome to the learning path:
+hero_title: **Supplier Management with Inact Now**
+hero_body: This is the intro to a four-part learning path. By the end, you will understand how to move beyond routine purchasing and adopt a more strategic approach. You will see exactly how to use Inact Now to measure supplier performance, analyze your spending patterns, and use those insights to negotiate better agreements.
+
+**Let’s get started!**
+---
+> [next] Continue -> 2
+
+slide_id: 2
+index_title: From routine to strategic purchasing
+title: **From routine to strategic purchasing**
+type: main
+---
+Routine purchasing is reactive. It focuses on placing orders and keeping things running, without looking at the larger picture. When you buy without clear data, you are often missing hidden costs, accepting poor supplier performance, and leaving money on the table.
+
+Strategic purchasing changes this. It uses data to give you full transparency. Instead of just tracking total costs, you can see exactly where your money is going, how your suppliers actually perform, and where you can optimize. This shifts purchasing from a daily administrative task into a key driver of company profitability.
+![image/size:550px/align:right/frame:none](suppliers-intro-2/Supply-Chain.png)
+---
+> [next] Continue -> 3
+
+slide_id: 3
+index_title: How we get there
+title: **How we get there**
+type: main
+---
+To move from reactive to strategic, you need a structured approach. Over the next three courses, we will break this down into actionable steps using Inact Now:
+![image/size:large/align:center/frame:none](suppliers-intro-2/Roadmap.png)
+---
+> [next] Continue -> 4
+
+slide_id: 4
+index_title: Congratulations, you have completed the introduction
+title: **Congratulations, you have completed the introduction**
+type: main
+---
+Now, it is time to take the first step. In the next course, Supplier Performance, you will learn how to identify your most important vendors and track the key performance indicators that impact your bottom line.
+
+**Let’s do it!**
+![image/size:large/align:right/frame:none](suppliers-intro-2/Hero.png)
+---

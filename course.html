@@ -276,6 +276,7 @@
     
     .toc-section.expanded .toc-children {
       display: flex;
+      border-radius: 0 0 15px 15px;
     }
     
     .toc-child {
@@ -558,7 +559,39 @@
     
     /* Responsive images - scale with viewport */
     
-    .img-container video { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block; }
+    .img-container video {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      border-radius: 10px;
+    }
+
+    /* YouTube embed containers */
+    .yt-embed {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .yt-embed iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+      border-radius: 10px;
+    }
+    .yt-embed.yt-animation {
+      pointer-events: none;
+    }
+    .content-images-container .img-container:has(> video):not(.no-frame),
+    .content-with-stacked-images .stacked-images .img-container:has(> video):not(.no-frame) {
+      border-radius: 10px;
+    }
     .img-container .lottie-anim { width: 100%; height: 100%; display: block; }
     
     /* Stacked images layout */
@@ -616,6 +649,7 @@
       height: auto;
       width: auto;
       object-fit: contain;
+      border-radius: 10px;
     }
     .content-with-stacked-images .stacked-images .lottie-anim {
       width: 100%;
@@ -1131,7 +1165,7 @@
       min-height: 400px;
     }
     .supademo-container iframe {
-      border-radius: 12px;
+      border-radius: 10px;
       box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
     }
     
@@ -1328,12 +1362,13 @@
 
         strippedContent = strippedContent.replace(/\[(image|video|lottie)([^\]]*)\]\(([^)]+)\)/gi, '![$1$2]($3)');
 
-      // YouTube
-        const youtubeRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]{11})/;
-        const youtubeMatch = strippedContent.match(youtubeRegex);
-        if (youtubeMatch) {
+      // YouTube (raw URL as entire slide content — always click-to-play)
+      // Only match when the YouTube URL is essentially the whole content (not inside ![…](…) markdown)
+        const strippedForYtCheck = strippedContent.replace(/!\[[^\]]*\]\([^)]+\)/g, '').trim();
+        const youtubeMatch = strippedForYtCheck.match(YT_URL_RE);
+        if (youtubeMatch && strippedForYtCheck.replace(YT_URL_RE, '').trim().length === 0) {
             const videoId = youtubeMatch[1];
-            element.innerHTML = `<div style="position: relative; width: 100%; padding-top: 56.25%; background: #eee; border-radius: 8px; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+            element.innerHTML = `<div class="yt-embed"><iframe src="https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1&vq=hd1080" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
             if (buttonDefs.length) element.setAttribute('data-buttons', JSON.stringify(buttonDefs));
             return;
         }
@@ -1571,6 +1606,20 @@
       element.innerHTML = html;
     }
     
+    const YT_URL_RE = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]{11})/;
+
+    function extractYouTubeId(url) {
+      const m = url.match(YT_URL_RE);
+      return m ? m[1] : null;
+    }
+
+    function renderYouTubeEmbed(videoId, sizeClass, frameClass, style) {
+      return `<div class="img-container ${sizeClass} ${frameClass}" style="${style}">` +
+        `<div class="yt-embed">` +
+        `<iframe src="https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1&vq=hd1080" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` +
+        `</div></div>`;
+    }
+
     // Helper to render a single media item
     function renderMediaItem(match) {
               const allData = match[1].split('/');
@@ -1608,6 +1657,10 @@
       } else if (/\.json(\?|$)/i.test(fileRef)) {
         mediaType = 'lottie';
       }
+
+      // Check if fileRef is a YouTube URL
+      const ytId = extractYouTubeId(fileRef);
+      if (ytId) mediaType = 'youtube';
       
       // Determine source - external URL or local file
       const isExternalUrl = fileRef.startsWith('http://') || fileRef.startsWith('https://');
@@ -1617,7 +1670,6 @@
               let sizeClass = 'size-large';
               let style = '';
               let frameClass = '';
-              let wantsControls = false;
 
               attributes.forEach(attr => {
                 const [key, value] = attr.split(':');
@@ -1633,17 +1685,13 @@
                   }
                 } else if (k === 'frame' || k === 'border' || k === 'style') {
                   if (['none', 'no', 'off', 'plain', '0'].includes(vv)) frameClass = 'no-frame';
-                } else if (k === 'controls' || (k === 'play' && ['click', 'manual'].includes(vv)) || (k === 'autoplay' && ['off', 'false', 'no'].includes(vv)) || (k === 'sound' && ['on', 'true', 'yes'].includes(vv))) {
-                  wantsControls = true;
                 }
               });
-              
-      if (mediaType === 'video') {
-                if (wantsControls) {
-          return `<div class="img-container ${sizeClass} ${frameClass}" style="${style}"><video controls style="width:100%;height:auto;" src="${src}" title="${altText}"></video></div>`;
-                } else {
+
+      if (mediaType === 'youtube') {
+        return renderYouTubeEmbed(ytId, sizeClass, frameClass, style);
+      } else if (mediaType === 'video') {
           return `<div class="img-container ${sizeClass} ${frameClass}" style="${style}"><video autoplay loop muted playsinline style="width:100%;height:auto;" src="${src}" title="${altText}"></video></div>`;
-                }
       } else if (mediaType === 'lottie') {
         return `<div class="img-container ${sizeClass} ${frameClass}" style="${style}"><div class="lottie-anim" data-src="${src}" data-loop="true" data-autoplay="true" aria-label="${altText}"></div></div>`;
               } else {
@@ -1779,6 +1827,9 @@
         
         if (/\.(mp4|webm|mov|ogg)(\?|$)/i.test(fileRef)) mediaType = 'video';
         else if (/\.json(\?|$)/i.test(fileRef)) mediaType = 'lottie';
+
+        const ytId = extractYouTubeId(fileRef);
+        if (ytId) mediaType = 'youtube';
         
         const isExternalUrl = fileRef.startsWith('http://') || fileRef.startsWith('https://');
                         const v = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? Date.now() : '1.0';
@@ -1787,7 +1838,6 @@
                         let sizeClass = 'size-medium';
                         let style = '';
                         let frameClass = '';
-              let wantsControls = false;
               
                         attributes.forEach(attr => {
                             const [key, value] = attr.split(':');
@@ -1803,17 +1853,13 @@
                                 }
                             } else if (k === 'frame' || k === 'border' || k === 'style') {
                   if (['none', 'no', 'off', 'plain', '0'].includes(vv)) frameClass = 'no-frame';
-                } else if (k === 'controls' || (k === 'play' && ['click', 'manual'].includes(vv))) {
-                                wantsControls = true;
-                            }
+                }
                         });
-                        
-        if (mediaType === 'video') {
-                            if (wantsControls) {
-                return `<div class="img-container ${sizeClass} ${frameClass}" style="${style}"><video controls style="width:100%;height:auto;" src="${src}" title="${altText}"></video></div>`;
-                            } else {
-                return `<div class="img-container ${sizeClass} ${frameClass}" style="${style}"><video autoplay loop muted playsinline style="width:100%;height:auto;" src="${src}" title="${altText}"></video></div>`;
-                            }
+
+        if (mediaType === 'youtube') {
+            return renderYouTubeEmbed(ytId, sizeClass, frameClass, style);
+        } else if (mediaType === 'video') {
+            return `<div class="img-container ${sizeClass} ${frameClass}" style="${style}"><video autoplay loop muted playsinline style="width:100%;height:auto;" src="${src}" title="${altText}"></video></div>`;
         } else if (mediaType === 'lottie') {
             return `<div class="img-container ${sizeClass} ${frameClass}" style="${style}"><div class="lottie-anim" data-src="${src}" data-loop="true" data-autoplay="true" aria-label="${altText}"></div></div>`;
                         } else {
@@ -2314,8 +2360,8 @@
         }
         }
         
-        // Get the title for TOC (prefer indexTitle, fall back to title)
-        const tocTitle = node.indexTitle || toPlainTitle(node.title);
+        // Get the title for TOC (prefer indexTitle, fall back to title); never bold, strip ** and tags
+        const tocTitle = toPlainTitle(node.indexTitle || node.title);
         
         if (currentTopic) {
           // Add slide under current topic
@@ -2350,6 +2396,7 @@
             let t = String(rawTitle);
             t = t.replace(/<br\s*\/?>(\s*)?/gi, ' ');
             t = t.replace(/\*\*(.*?)\*\*/g, '$1');
+            t = t.replace(/\*\*/g, '');
             t = t.replace(/<[^>]+>/g, '');
             return t.trim();
         }
@@ -3200,9 +3247,15 @@
       'Reorder-Point.txt': 'reorder-point',
       'Reorder-Quantity.txt': 'reorder-quantity',
       'Suppliers-Intro.txt': 'suppliers-intro',
+      'Suppliers-Intro-2.txt': 'suppliers-intro',
       'Supplier-Performance.txt': 'supplier-performance',
       'Spend-Analysis.txt': 'spend-analysis',
-      'Supplier-Negotiation.txt': 'supplier-negotiation'
+      'Supplier-Negotiation.txt': 'supplier-negotiation',
+      'Now-Intro.txt': 'now-intro',
+      'Now-Home.txt': 'now-home',
+      'Now-Insights.txt': 'now-insights',
+      'Now-Actions.txt': 'now-actions',
+      'Now-Dashboards.txt': 'now-dashboards'
     };
 
     // Learning path orders (keyed by coursePath, used for the last-slide CTA)
@@ -3216,10 +3269,17 @@
         'Reorder-Quantity.txt'
       ],
       supplier: [
-        'Suppliers-Intro.txt',
+        'Suppliers-Intro-2.txt',
         'Supplier-Performance.txt',
         'Spend-Analysis.txt',
         'Supplier-Negotiation.txt'
+      ],
+      now: [
+        'Now-Intro.txt',
+        'Now-Home.txt',
+        'Now-Insights.txt',
+        'Now-Actions.txt',
+        'Now-Dashboards.txt'
       ]
     };
     

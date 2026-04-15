@@ -52,7 +52,7 @@ To execute those four steps effectively, we need a consistent way to measure suc
 ---
 > [next] Continue -> 5
 
-[id:2/topic: The five metrics we measure]
+[id:2/topic: Key Performance Indicators]
 
 slide_id: 5
 index_title: KPI 1: On-time delivery performance (OTD)
@@ -158,7 +158,7 @@ The interactive tutorial below will guide you through how to use the "Supplier C
 ---
 > [next] Continue -> 13
 
-[id:4/topic: Benchmarking and root cause analysis]
+[id:4/topic: Supplier benchmark & root cause analysis]
 
 slide_id: 13
 index_title: Benchmarking and root cause analysis
@@ -167,7 +167,7 @@ type: main
 ---
 Once you’ve identified your A-suppliers, the next step is to understand how they are performing in detail.
 
-By analyzing the key metrics, you can uncover the underlying drivers of performance. 
+By analyzing the key performance indicators, you can uncover the underlying drivers of performance. 
 
 This helps identify potential root causes behind issues like slow-moving stock, excess inventory, or service challenges, and provides a clear starting point for targeted improvement.
 ![image/size:450px/align:right/frame:none](supplier-performance/Metrics-Zoom.png)
