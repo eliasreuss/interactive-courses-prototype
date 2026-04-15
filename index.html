@@ -4,29 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <title>Learning Path - Using Inact for Inventory Management</title>
+  <title>Inact — Learning prototypes</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --color-primary: #304642;
       --color-primary-light: #3d5a54;
       --color-accent: #FF5A00;
-      --color-accent-glow: rgba(255, 90, 0, 0.25);
       --color-bg: #FAFAFA;
       --color-card-bg: #FFFFFF;
       --color-muted: #8A9A97;
       --color-text-secondary: rgba(48, 70, 66, 0.6);
-      --color-tag-bg: #F0F0F0;
-      --color-progress-bg: #EBEBEB;
-      --color-sidebar-bg: linear-gradient(180deg, #FFFFFF 0%, #F8FAF9 100%);
       --font-family: 'Poppins', sans-serif;
       --shadow-card: 0 2px 8px rgba(48, 70, 66, 0.06), 0 8px 24px rgba(48, 70, 66, 0.08);
       --shadow-card-hover: 0 8px 16px rgba(48, 70, 66, 0.08), 0 24px 48px rgba(48, 70, 66, 0.12);
-      --shadow-header: 0 1px 0 rgba(48, 70, 66, 0.06);
       --radius-lg: 20px;
-      --radius-md: 14px;
-      --radius-sm: 10px;
       --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+      --page-margin: 40px;
+      --page-margin-top: 20px;
+    }
+
+    @media (min-width: 1400px) {
+      :root { --page-margin: 120px; }
+    }
+    @media (min-width: 1600px) {
+      :root { --page-margin: 180px; }
+    }
+    @media (min-width: 1920px) {
+      :root { --page-margin: 280px; }
     }
 
     * {
@@ -35,12 +40,8 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      font-family: var(--font-family); 
+      font-family: var(--font-family);
       background: var(--color-bg);
       min-height: 100vh;
       color: var(--color-primary);
@@ -48,1073 +49,114 @@
       background-size: 24px 24px;
     }
 
-    /* Desktop: keep sidebar fixed and only scroll the course list */
-    @media (min-width: 901px) {
-      html, body {
-        height: 100%;
-        overflow: hidden;
-      }
-      .main-container {
-        height: calc(100vh - 72px);
-        overflow: hidden;
-      }
-      .sidebar {
-        position: sticky;
-        top: 0;
-        height: 100%;
-        overflow: hidden;
-        align-self: flex-start;
-      }
-      .content-area {
-        height: 100%;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: thin;
-        scrollbar-color: var(--color-progress-bg) transparent;
-      }
-      .content-area::-webkit-scrollbar {
-        width: 8px;
-      }
-      .content-area::-webkit-scrollbar-track {
-        background: transparent;
-      }
-      .content-area::-webkit-scrollbar-thumb {
-        background: var(--color-progress-bg);
-        border-radius: 4px;
-      }
-      .content-area::-webkit-scrollbar-thumb:hover {
-        background: var(--color-muted);
-      }
+    .hero-header {
+      background:
+        linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+        var(--color-primary);
+      background-size: 120px 120px, 120px 120px, 100% 100%;
+      border-radius: 25px;
+      margin: var(--page-margin-top) var(--page-margin) 28px;
+      padding: 40px 48px;
+      box-shadow:
+        0 18px 48px rgba(0, 0, 0, 0.18),
+        0 2px 10px rgba(0, 0, 0, 0.10);
     }
 
-    /* Header */
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 40px;
-      background: rgba(255, 255, 255, 0.95);
-      box-shadow: var(--shadow-header);
-      border-radius: 0 0 25px 25px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(12px);
-      border-bottom: 0.5px solid rgba(48, 70, 66, 0.08);
-    }
-    
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-    }
-
-    .logo {
-      font-size: 22px;
+    .hero-title {
+      color: #fff;
+      font-size: 32px;
       font-weight: 700;
-      color: var(--color-primary);
-      letter-spacing: -0.5px;
+      line-height: 1.15;
+      letter-spacing: -0.6px;
+      margin-bottom: 10px;
     }
 
-    .logo span {
-      color: var(--color-accent);
-      font-weight: 600;
+    .hero-description {
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 1.45;
+      max-width: 520px;
     }
 
-    .nav {
+    .nav-wrap {
+      margin: 0 var(--page-margin) 48px;
+    }
+
+    .nav-grid {
+      display: grid;
+      gap: 20px;
+      max-width: 900px;
+    }
+
+    @media (min-width: 720px) {
+      .nav-grid {
+        max-width: none;
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .nav-tile {
       display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .nav a {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      min-height: 140px;
+      padding: 24px 22px;
+      background: var(--color-card-bg);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
       text-decoration: none;
       color: var(--color-primary);
-      font-size: 14px;
-      font-weight: 500;
-      padding: 8px 16px;
-      border-radius: 100px;
-      transition: all 0.2s var(--transition-smooth);
-      opacity: 0.65;
+      border: 1px solid rgba(48, 70, 66, 0.06);
+      transition: transform 0.2s var(--transition-smooth), box-shadow 0.2s var(--transition-smooth);
     }
 
-    .nav a:hover {
-      opacity: 1;
-      background: var(--color-tag-bg);
+    .nav-tile:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-card-hover);
     }
 
-    .nav a.active {
-      opacity: 1;
-      background: var(--color-tag-bg);
-      color: var(--color-primary);
+    .nav-tile-title {
+      font-size: 17px;
       font-weight: 600;
+      line-height: 1.35;
+      letter-spacing: -0.2px;
     }
 
-    .nav a.locked {
+    .nav-tile-arrow {
+      margin-top: 16px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-accent);
       display: inline-flex;
       align-items: center;
       gap: 6px;
     }
-
-    .nav a.locked .lock-icon {
-      width: 12px;
-      height: 12px;
-      opacity: 0.5;
-    }
-    
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .beta-tag {
-      padding: 8px 16px;
-      background: var(--color-primary);
-      color: white;
-      border-radius: 10px;
-      font-size: 13px;
-      font-weight: 700;
-      font-family: var(--font-family);
-      letter-spacing: 1px;
-    }
-
-    /* Main Layout */
-    .main-container {
-      display: flex;
-      min-height: calc(100vh - 72px);
-    }
-    
-    /* Sidebar */
-    .sidebar {
-      width: 360px;
-      background: var(--color-sidebar-bg);
-      padding: 40px 36px 48px 40px;
-      flex-shrink: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-      border-right: 1px solid rgba(48, 70, 66, 0.06);
-      position: relative;
-    }
-
-    /* Decorative accent line */
-    .sidebar::before {
-      content: '';
-      position: absolute;
-      top: 40px;
-      left: 0;
-      width: 4px;
-      height: 140px;
-      background: linear-gradient(180deg, var(--color-accent) 0%, rgba(255, 90, 0, 0.2) 100%);
-      border-radius: 0 4px 4px 0;
-    }
-
-    .lp-header {
-      padding-left: 4px;
-    }
-
-    .lp-eyebrow {
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      color: var(--color-accent);
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .lp-eyebrow::before {
-      content: '';
-      width: 16px;
-      height: 2px;
-      background: var(--color-accent);
-      border-radius: 1px;
-    }
-
-    .lp-title {
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--color-primary);
-      line-height: 1.25;
-      letter-spacing: -0.5px;
-    }
-
-    .lp-description {
-      font-size: 15px;
-      font-weight: 400;
-      color: var(--color-text-secondary);
-      line-height: 1.6;
-      margin-top: 16px;
-    }
-
-    .progress-section {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      padding: 24px;
-      background: #FFFFFF;
-      border-radius: var(--radius-md);
-      box-shadow: 0 4px 12px rgba(48, 70, 66, 0.06), 0 1px 3px rgba(48, 70, 66, 0.04);
-      border: 1px solid rgba(48, 70, 66, 0.1);
-    }
-
-    .progress-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .progress-label {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--color-primary);
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-    }
-
-    .progress-percent {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--color-primary);
-      font-variant-numeric: tabular-nums;
-      letter-spacing: -0.5px;
-    }
-
-    .progress-bar-container {
-      width: 100%;
-      height: 8px;
-      background: #EBEBEB;
-      border-radius: 100px;
-      overflow: hidden;
-    }
-
-    .progress-bar-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-      border-radius: 100px;
-      transition: width 0.6s var(--transition-smooth);
-    }
-
-    .meta-info {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      padding-top: 8px;
-      border-top: 1px solid rgba(48, 70, 66, 0.06);
-    }
-
-    .meta-text {
-      color: var(--color-muted);
-      font-size: 12px;
-      font-weight: 500;
-    }
-
-    .meta-dot {
-      width: 3px;
-      height: 3px;
-      background: var(--color-muted);
-      border-radius: 9999px;
-      opacity: 0.5;
-    }
-
-    /* Content Area */
-    .content-area {
-      flex: 1;
-      padding: 40px 48px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    
-    #course-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    /* Wide screen 2x2 grid layout */
-    @media (min-width: 1200px) {
-      #course-list {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
-      }
-      
-      /* All cards - vertical layout with image on top */
-      #course-list .course-card {
-        flex-direction: column-reverse;
-        padding: 0;
-        gap: 0;
-      }
-      
-      #course-list .course-card .course-thumbnail {
-      width: 100%;
-        height: 200px;
-        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-      }
-      
-      #course-list .course-card .course-info {
-        padding: 24px;
-        min-height: auto;
-        gap: 16px;
-      }
-      
-      #course-list .course-card .course-title {
-        font-size: 20px;
-      }
-      
-      #course-list .course-card .course-description {
-        font-size: 14px;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-      }
-      
-      /* Accent on top for grid cards */
-      #course-list .course-card::before {
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: auto;
-        width: auto;
-        height: 4px;
-        transform: scaleX(0);
-        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-      }
-      
-      #course-list .course-card:hover::before {
-        transform: scaleX(1);
-      }
-    }
-
-    /* Course Card */
-    .course-card {
-      display: flex;
-      align-items: stretch;
-      gap: 48px;
-      padding: 28px;
-      background: var(--color-card-bg);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-card);
-      transition: all 0.35s var(--transition-smooth);
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: cardEnter 0.5s var(--transition-smooth) forwards;
-    }
-
-    .course-card:nth-child(1) { animation-delay: 0.05s; }
-    .course-card:nth-child(2) { animation-delay: 0.1s; }
-    .course-card:nth-child(3) { animation-delay: 0.15s; }
-    .course-card:nth-child(4) { animation-delay: 0.2s; }
-    .course-card:nth-child(5) { animation-delay: 0.25s; }
-    .course-card:nth-child(6) { animation-delay: 0.3s; }
-
-    @keyframes cardEnter {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Subtle left accent on hover */
-    .course-card::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      background: var(--color-accent);
-      transform: scaleY(0);
-      transition: transform 0.3s var(--transition-smooth);
-      border-radius: 0 4px 4px 0;
-    }
-
-    .course-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-card-hover);
-    }
-
-    .course-card:hover::before {
-      transform: scaleY(1);
-    }
-
-    .course-info {
-      flex: 1; 
-      display: flex; 
-      flex-direction: column; 
-      justify-content: space-between;
-      min-height: 180px;
-      gap: 0;
-      padding: 4px 0;
-    }
-
-    .course-header {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .course-title-row {
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
-      flex-wrap: nowrap;
-    }
-
-    .course-title {
-      font-size: 22px;
-      font-weight: 600;
-      color: var(--color-primary);
-      line-height: 1.35;
-      letter-spacing: -0.3px;
-      transition: color 0.2s ease;
-    }
-
-    .course-card:hover .course-title {
-      color: var(--color-primary-light);
-    }
-
-    .course-description {
-      font-size: 15px;
-      font-weight: 400;
-      color: var(--color-text-secondary);
-      line-height: 1.6;
-      max-width: 480px;
-    }
-
-    .course-actions {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .btn-open {
-      padding: 10px 18px;
-      background: var(--color-accent);
-      color: white;
-      border: none;
-      border-radius: 100px;
-      font-size: 13px;
-      font-weight: 600;
-      font-family: var(--font-family);
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.25s var(--transition-smooth);
-      box-shadow: 0 2px 8px var(--color-accent-glow);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .btn-open svg {
-      width: 7px;
-      height: 11px;
-      flex-shrink: 0;
-      transition: transform 0.2s var(--transition-smooth);
-    }
-
-    .btn-open:hover {
-      background: #e85200;
-        transform: translateY(-2px);
-      box-shadow: 0 6px 20px var(--color-accent-glow);
-    }
-
-    .btn-open:hover svg {
-      transform: translateX(3px);
-    }
-
-    .course-duration {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      height: 32px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      font-weight: 300;
-      color: white;
-      letter-spacing: 0.3px;
-      padding: 0 14px;
-      background: rgba(255, 255, 255, 0.18);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-radius: 100px;
-      flex-shrink: 0;
-      white-space: nowrap;
-      z-index: 5;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-      line-height: 1;
-    }
-
-    /* Course number badge */
-    .course-number {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      width: 32px;
-      height: 32px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      font-weight: 300;
-      color: white;
-      background: rgba(255, 255, 255, 0.18);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-radius: 50%;
-      border: none;
-      z-index: 5;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-      line-height: 1;
-    }
-
-    /* Course icon centered on thumbnail */
-    .course-icon-wrapper {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 72px;
-      height: 72px;
-      z-index: 3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-radius: 50%;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-      transition: transform 0.4s var(--transition-smooth), background 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    /* Animated stroke ring — hidden */
-    .course-icon-ring {
-      display: none;
-    }
-
-    .course-icon-wrapper img {
-      width: 36px;
-      height: 36px;
-      opacity: 0.95;
-      transition: transform 0.3s var(--transition-smooth);
-    }
-
-    .course-card:hover .course-icon-wrapper {
-      transform: translate(-50%, -50%) scale(1.05);
-      background: rgba(255, 255, 255, 0.22);
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
-    }
-
-    .course-card:hover .course-icon-wrapper img {
-      transform: scale(1.05);
-    }
-
-    /* Completion indicator */
-    .completion-indicator {
-      width: 36px;
-      height: 36px;
-      border-radius: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: transform 0.2s var(--transition-smooth);
-    }
-
-    .completion-indicator:hover {
-      transform: scale(1.1);
-    }
-
-    .completion-indicator.completed {
-      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-      box-shadow: 0 2px 8px rgba(48, 70, 66, 0.2);
-    }
-
-    .completion-indicator.completed svg {
-      width: 16px;
-      height: 16px;
-    }
-
-    /* Progress ring for in-progress */
-    .progress-ring {
-      width: 36px;
-      height: 36px;
-      position: relative;
-      transition: transform 0.2s var(--transition-smooth);
-    }
-
-    .progress-ring:hover {
-      transform: scale(1.1);
-    }
-
-    .progress-ring svg {
-      transform: rotate(-90deg);
-    }
-
-    .progress-ring circle {
-      fill: none;
-      stroke-width: 3;
-    }
-
-    .progress-ring .bg {
-      stroke: var(--color-progress-bg);
-    }
-
-    .progress-ring .progress {
-      stroke: var(--color-primary);
-      stroke-linecap: round;
-      transition: stroke-dashoffset 0.6s var(--transition-smooth);
-    }
-
-    /* Course thumbnail */
-    .course-thumbnail {
-      width: 180px;
-      height: 180px;
-      border-radius: var(--radius-md);
-      flex-shrink: 0;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.35s var(--transition-smooth);
-      background-image: var(--thumb-url);
-      background-size: cover;
-      background-position: center;
-    }
-
-    /* Dark overlay for cohesion */
-    .course-thumbnail::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        160deg,
-        rgba(0, 0, 0, 0.35) 0%,
-        rgba(0, 0, 0, 0.4) 50%,
-        rgba(0, 0, 0, 0.55) 100%
-      );
-      z-index: 1;
-      transition: opacity 0.35s var(--transition-smooth);
-    }
-
-    .course-card:hover .course-thumbnail::before {
-      opacity: 0.75;
-    }
-
-    .course-card:hover .course-thumbnail {
-      transform: scale(1.02);
-    }
-
-    /* Responsive - medium screens (list layout) */
-    @media (min-width: 901px) and (max-width: 1199px) {
-      .course-card {
-        gap: 32px;
-      }
-      
-      .course-thumbnail {
-        width: 180px;
-        height: 180px;
-      }
-    }
-
-    /* Tablet and mobile */
-    @media (max-width: 900px) {
-      .main-container {
-        flex-direction: column;
-      }
-
-      .sidebar {
-        width: 100%;
-        padding: 32px;
-        border-right: none;
-        border-bottom: 1px solid rgba(48, 70, 66, 0.06);
-      }
-
-      .sidebar::before {
-        display: none;
-      }
-
-      .content-area {
-        padding: 32px;
-      }
-
-      .course-card {
-        flex-direction: column-reverse;
-        gap: 20px;
-        padding: 24px;
-      }
-
-      .course-thumbnail {
-        width: 100%;
-        height: 200px;
-        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-      }
-
-      .course-info {
-        min-height: auto;
-        padding: 0;
-      }
-      
-      /* Top accent for mobile cards */
-      .course-card::before {
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: auto;
-        width: auto;
-        height: 4px;
-        transform: scaleX(0);
-        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-      }
-      
-      .course-card:hover::before {
-        transform: scaleX(1);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .header {
-        padding: 12px 20px;
-      }
-
-      .nav {
-        display: none;
-      }
-
-      .sidebar {
-        padding: 24px;
-      }
-
-      .lp-title {
-        font-size: 24px;
-      }
-
-      .content-area {
-        padding: 20px;
-      }
-
-      .course-title {
-        font-size: 18px;
-      }
-
-      .course-description {
-        font-size: 14px;
-      }
-
-      .course-actions {
-        flex-wrap: wrap;
-      }
-    }
-
-    /* Focus states for accessibility */
-    a:focus-visible,
-    button:focus-visible {
-      outline: 2px solid var(--color-accent);
-      outline-offset: 2px;
-    }
-
-    .course-card:focus-visible {
-      outline: 2px solid var(--color-accent);
-      outline-offset: 4px;
-    }
   </style>
 </head>
 <body>
+  <header class="hero-header">
+    <h1 class="hero-title">Inact learning paths</h1>
+    <p class="hero-description">Prototype navigation. Choose a path to open its hub.</p>
+  </header>
 
-    <!-- Header -->
-  <header class="header">
-      <div class="header-left">
-      <div class="logo">Inact <span>learn</span></div>
-      <nav class="nav">
-        <a href="#" class="locked">Home<svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></a>
-        <a href="#" class="active">Learning Paths</a>
-        <a href="#" class="locked">Catalog<svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></a>
-        <a href="#" class="locked">Dictionary<svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></a>
-      </nav>
-      </div>
-      <div class="header-right">
-      <span class="beta-tag">BETA</span>
-      </div>
-    </header>
-    
-    <!-- Main Content -->
-  <div class="main-container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="lp-header">
-        <div class="lp-eyebrow">Learning Path</div>
-        <h1 class="lp-title">Using Inact for Inventory Management</h1>
-        <p class="lp-description">Master the key concepts and tools for effective inventory management with Inact Now.</p>
-                </div>
-          
-      <div class="progress-section">
-        <div class="progress-header">
-          <div class="progress-label">Your Progress</div>
-          <div class="progress-percent" id="total-progress-percent">0%</div>
-            </div>
-        <div class="progress-bar-container">
-          <div class="progress-bar-fill" id="total-progress" style="width: 0%"></div>
-              </div>
-        <div class="meta-info">
-          <span class="meta-text" id="flow-count">6 courses</span>
-          <span class="meta-dot"></span>
-          <span class="meta-text" id="total-time">1.1 Hours</span>
-          </div>
-            </div>
-    </aside>
-
-    <!-- Course List -->
-    <main class="content-area">
-      <div id="course-list">
-        <!-- Courses will be dynamically inserted here -->
-      </div>
-    </main>
-  </div>
-  
-  <script>
-    // Course data - edit this to add/modify courses
-    const courses = [
-      {
-        id: 'intro',
-        title: 'Introduction to Inact for inventory management',
-        description: 'Get the big picture: what to stock, how much to stock, and how much to order — and why balance matters.',
-        duration: '8 min',
-        file: 'Intro.txt',
-        thumbnail: 'Course-thumbnails/Intro.png'
-      },
-      {
-        id: 'double-abc',
-        title: 'Double ABC Analysis',
-        description: 'Turn messy inventory into clear priorities — learn the model, the special categories, and how it looks in Inact.',
-        duration: '15 min',
-        file: 'Double-ABC-Analysis-4.txt',
-        thumbnail: 'Course-thumbnails/ABCanalysis.png'
-      },
-      {
-        id: 'stock-policy',
-        title: 'Stock Policy',
-        description: 'Decide what belongs on the shelf vs. buy‑to‑order — then apply it in the "Non Stock Items" insight.',
-        duration: '10 min',
-        file: 'Stock-Policy.txt',
-        thumbnail: 'Course-thumbnails/StockPolicy.png'
-      },
-      {
-        id: 'safety-stock',
-        title: 'Safety Stock',
-        description: 'Set the right buffer — understand variance, lead time, and service level, then calculate optimal safety stock.',
-        duration: '12 min',
-        file: 'Safety-Stock.txt',
-        thumbnail: 'Course-thumbnails/SafetyStock.png'
-      },
-      {
-        id: 'reorder-point',
-        title: 'Reorder Point',
-        description: 'Know when to reorder — learn the reorder point formula and how to manage it automatically in Inact Now.',
-        duration: '10 min',
-        file: 'Reorder-Point.txt',
-        thumbnail: 'Course-thumbnails/ReorderPoint.png'
-      },
-      {
-        id: 'reorder-quantity',
-        title: 'Reorder Quantity',
-        description: 'Know how much to order — avoid MOQ/EOQ traps and balance unit price, demand, and inventory turnover.',
-        duration: '12 min',
-        file: 'Reorder-Quantity.txt',
-        thumbnail: 'Course-thumbnails/ReorderQuantity.png'
-      }
-    ];
-
-    function parseMinutes(durationText) {
-      const m = String(durationText || '').match(/(\d+)\s*min/i);
-      return m ? parseInt(m[1], 10) : 0;
-    }
-
-    function formatTotalTime(totalMinutes) {
-      if (!Number.isFinite(totalMinutes) || totalMinutes <= 0) return '';
-      if (totalMinutes < 60) return `${totalMinutes} min`;
-      const hours = totalMinutes / 60;
-      return `${hours.toFixed(1)} Hours`;
-    }
-
-    // Get progress from localStorage
-    function getCourseProgress(courseId) {
-      const key = `course_progress_${courseId}`;
-      const saved = localStorage.getItem(key);
-      return saved ? JSON.parse(saved) : { completed: false, progress: 0 };
-    }
-
-    // Save progress to localStorage
-    function saveCourseProgress(courseId, progress, completed = false) {
-      const key = `course_progress_${courseId}`;
-      localStorage.setItem(key, JSON.stringify({ completed, progress }));
-    }
-
-    // Render progress indicator
-    function renderProgressIndicator(progress, completed) {
-      if (completed) {
-        return `
-          <div class="completion-indicator completed">
-            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-              </div>
-        `;
-      } else if (progress > 0) {
-        const circumference = 2 * Math.PI * 14;
-        const offset = circumference - (progress / 100) * circumference;
-        return `
-          <div class="progress-ring">
-            <svg width="36" height="36" viewBox="0 0 36 36">
-              <circle class="bg" cx="18" cy="18" r="14"/>
-              <circle class="progress" cx="18" cy="18" r="14" 
-                stroke-dasharray="${circumference}" 
-                stroke-dashoffset="${offset}"/>
-            </svg>
-                </div>
-          `;
-            } else {
-        // Don't render anything for not-started courses
-        return '';
-      }
-    }
-
-    // Render course card
-    function renderCourseCard(course, index) {
-      const { completed, progress } = getCourseProgress(course.id);
-      const progressIndicator = renderProgressIndicator(progress, completed);
-      const href = `course.html?course=${course.file}&path=inventory&hub=index.html&from=hub`;
-      const ctaText = completed ? 'Review' : (progress > 0 ? 'Continue course' : 'Begin course');
-      const courseNumber = index + 1;
-      
-      return `
-        <div class="course-card" data-course-id="${course.id}" data-href="${href}" tabindex="0">
-          <div class="course-info">
-            <div class="course-header">
-              <div class="course-title-row">
-                <h2 class="course-title">${course.title}</h2>
-            </div>
-              <p class="course-description">${course.description}</p>
-              </div>
-            <div class="course-actions">
-              <a href="${href}" class="btn-open">${ctaText}<svg viewBox="0 0 7 11" fill="none"><path d="M1 1L5 5.5L1 10" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></a>
-              ${progressIndicator}
-          </div>
-          </div>
-          <div class="course-thumbnail" style="--thumb-url: url('${course.thumbnail}')">
-            <span class="course-number">${courseNumber}</span>
-            <span class="course-duration">${course.duration}</span>
-            <svg class="course-icon-ring" viewBox="0 0 82 82">
-              <circle cx="41" cy="41" r="38"/>
-            </svg>
-            <div class="course-icon-wrapper">
-              <img src="SVGs/Course-Icon.svg" alt="">
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
-    // Calculate total progress
-    function calculateTotalProgress() {
-      let totalProgress = 0;
-      let completedCount = 0;
-      
-      courses.forEach(course => {
-        const { completed, progress } = getCourseProgress(course.id);
-        if (completed) {
-          totalProgress += 100;
-          completedCount++;
-      } else {
-          totalProgress += progress;
-        }
-      });
-      
-      return {
-        percentage: totalProgress / courses.length,
-        completed: completedCount,
-        total: courses.length
-      };
-    }
-
-    // Update total progress bar
-    function updateTotalProgress() {
-      const { percentage } = calculateTotalProgress();
-      const pct = Math.max(0, Math.min(100, Math.round(percentage)));
-      document.getElementById('total-progress').style.width = `${pct}%`;
-      const pctEl = document.getElementById('total-progress-percent');
-      if (pctEl) pctEl.textContent = `${pct}%`;
-    }
-
-    // Render all courses
-    function renderCourses() {
-      const container = document.getElementById('course-list');
-      container.innerHTML = courses.map((course, index) => renderCourseCard(course, index)).join('');
-
-      // Make clicking anywhere on the card open the course (except interactive elements)
-      container.querySelectorAll('.course-card').forEach(card => {
-        const handleOpen = (ev) => {
-          const interactive = ev.target && ev.target.closest && ev.target.closest('a, button, input, textarea, select, label');
-          if (interactive) return;
-          const href = card.getAttribute('data-href');
-          if (href) window.location.href = href;
-        };
-        
-        card.addEventListener('click', handleOpen);
-        card.addEventListener('keydown', (ev) => {
-          if (ev.key === 'Enter' || ev.key === ' ') {
-            ev.preventDefault();
-            handleOpen(ev);
-          }
-        });
-      });
-      
-      // Update course count
-      document.getElementById('flow-count').textContent = `${courses.length} courses`;
-
-      // Update total time (sum of all course minutes)
-      const totalMinutes = courses.reduce((sum, c) => sum + parseMinutes(c.duration), 0);
-      const totalTimeEl = document.getElementById('total-time');
-      if (totalTimeEl) totalTimeEl.textContent = formatTotalTime(totalMinutes);
-      
-      updateTotalProgress();
-    }
-
-    // Check URL for returning from a course
-    function checkReturnFromCourse() {
-        const urlParams = new URLSearchParams(window.location.search);
-      const completedCourse = urlParams.get('completed');
-      const progressCourse = urlParams.get('progress_course');
-      const progressValue = urlParams.get('progress_value');
-      
-      if (completedCourse) {
-        saveCourseProgress(completedCourse, 100, true);
-        // Clean URL
-        window.history.replaceState({}, '', 'index.html');
-      }
-      
-      if (progressCourse && progressValue) {
-        saveCourseProgress(progressCourse, parseInt(progressValue), false);
-        window.history.replaceState({}, '', 'index.html');
-      }
-    }
-
-    // Initialize
-    document.addEventListener('DOMContentLoaded', () => {
-      checkReturnFromCourse();
-      renderCourses();
-    });
-  </script>
-
+  <main class="nav-wrap">
+    <div class="nav-grid">
+      <a class="nav-tile" href="hub.html">
+        <span class="nav-tile-title">Inact for inventory management</span>
+        <span class="nav-tile-arrow">Open learning path →</span>
+      </a>
+      <a class="nav-tile" href="supplier-hub.html">
+        <span class="nav-tile-title">Inact for supplier management</span>
+        <span class="nav-tile-arrow">Open learning path →</span>
+      </a>
+      <a class="nav-tile" href="now-hub.html">
+        <span class="nav-tile-title">Inact Now fundamentals</span>
+        <span class="nav-tile-arrow">Open learning path →</span>
+      </a>
+    </div>
+  </main>
 </body>
 </html>

@@ -3339,7 +3339,7 @@
         if (!response.ok) throw new Error(`Failed to fetch ${requestUrl} (status ${response.status})`);
         const text = await response.text();
         courseData = parseFlowScript(text);
-        if (!courseData || courseData.length === 0) throw new Error("Parsing resulted in no valid course data.");
+        if (!courseData || courseData.length === 0) { const e = new Error("Parsing resulted in no valid course data."); e.isEmpty = true; throw e; }
         
         // Set flow title
         const flowTitle = courseFile.replace('.txt', '').replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
@@ -3460,8 +3460,25 @@
         
       } catch (error) {
         console.error('Error loading or parsing course file:', error);
-        document.getElementById('card-title').textContent = 'Error';
-        document.getElementById('card-content').innerHTML = `Could not load the course. ${String(error && error.message || error)}. <br/>Tip: hard refresh (Ctrl/Cmd+Shift+R) if this was just deployed.`;
+        if (error && error.isEmpty) {
+          document.getElementById('card-title').textContent = '';
+          document.getElementById('card-content').innerHTML = `
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:48px 24px;text-align:center;">
+              <div style="width:52px;height:52px;border-radius:50%;background:rgba(48,70,66,0.07);display:flex;align-items:center;justify-content:center;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="9" stroke="#304642" stroke-width="1.6" stroke-opacity="0.4"/>
+                  <path d="M12 7v5.5l3 3" stroke="#304642" stroke-width="1.6" stroke-linecap="round" stroke-opacity="0.4"/>
+                </svg>
+              </div>
+              <div>
+                <div style="font-size:18px;font-weight:600;color:#304642;letter-spacing:-0.3px;margin-bottom:6px;">Coming soon</div>
+                <div style="font-size:14px;font-weight:400;color:rgba(48,70,66,0.55);line-height:1.5;max-width:280px;">This course is being prepared.<br>Check back soon.</div>
+              </div>
+            </div>`;
+        } else {
+          document.getElementById('card-title').textContent = 'Error';
+          document.getElementById('card-content').innerHTML = `Could not load the course. ${String(error && error.message || error)}.<br/><span style="opacity:0.6;font-size:13px;">Tip: hard refresh (Ctrl/Cmd+Shift+R) if this was just deployed.</span>`;
+        }
       }
     })();
 
