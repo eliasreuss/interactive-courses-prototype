@@ -47,7 +47,7 @@ index_title: What do we measure?
 title: **What do we measure?**
 type: main
 ---
-To execute those four steps effectively, we need a consistent way to measure success. To get a complete picture, we track five core key performance indicators (KPIs) for every supplier. Let's walk through them one by one.
+To execute those previous four steps effectively, we need a consistent way to measure success. To get a complete picture, we track five core key performance indicators (KPIs) for every supplier. Let's walk through them one by one.
 ![image/size:large/align:center/frame:none](supplier-performance/Five-Metrics-Complete.png)
 ---
 > [next] Continue -> 5
@@ -55,8 +55,8 @@ To execute those four steps effectively, we need a consistent way to measure suc
 [id:2/topic: Key Performance Indicators]
 
 slide_id: 5
-index_title: KPI 1: On-time delivery performance (OTD)
-title: **KPI 1: On-time delivery performance (OTD) **
+index_title: On-time delivery performance (OTD)
+title: **On-time delivery performance (OTD) **
 type: main
 ---
 On-Time Delivery (OTD) measures how consistently suppliers deliver goods or services at the agreed time. It is one of the most important indicators of supplier performance because it directly affects a company’s ability to operate efficiently, meet customer expectations, and manage costs. 
@@ -70,8 +70,8 @@ With On-Time Delivery Performance in Inact Now you create a transparent and stru
 > [next] Continue -> 6
 
 slide_id: 6
-index_title: KPI 2: Procurement spend
-title: **KPI 2: Procurement spend **
+index_title: Procurement spend
+title: **Procurement spend **
 type: main
 ---
 For most companies, 50–80% of total costs are related to the procurement spend. Spend analysis is the process of collecting, classifying, and analyzing a company’s purchasing data to understand how much money is spent, with which suppliers, and on what types of goods or services. 
@@ -82,8 +82,8 @@ With Inact Now you gain the insights to work strategically with your supplier po
 > [next] Continue -> 7
 
 slide_id: 7
-index_title: KPI 3: Inventory value
-title: **KPI 3: Inventory value**
+index_title: Inventory value
+title: **Inventory value**
 type: main
 ---
 The inventory holding cost is a reflection of your supplier portfolio and performance. Working strategically with your suppliers can lower working capital, reduce obsolescence and improve profit margins.        
@@ -94,8 +94,8 @@ With Inact Now you gain the full overview of your inventory holding cost on supp
 > [next] Continue -> 8
 
 slide_id: 8
-index_title: KPI 4: Inventory turnover ratio
-title: **KPI 4: Inventory turnover ratio**
+index_title: Inventory turnover ratio
+title: **Inventory turnover ratio**
 type: main
 ---
 The inventory turnover ratio is a reflection of your stocking policies, lead times and volume. Working strategically with your supplier portfolio can improve your inventory turnover ratio without compromising service towards customers. 
@@ -109,8 +109,8 @@ With Inact Now you gain the full overview of your inventory and the root-cause a
 > [next] Continue -> 9
 
 slide_id: 9
-index_title: KPI 5: ABC analysis
-title: **KPI 5: ABC analysis**
+index_title: ABC analysis
+title: **ABC analysis**
 type: main
 ---
 The ABC analysis is a great framework in supplier performance management. The analysis creates transparency and helps you and your supplier to focus efforts on the areas with the greatest financial and operational impact. 

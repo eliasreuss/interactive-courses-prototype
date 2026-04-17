@@ -33,7 +33,7 @@ index_title: Your shortcuts to what matters
 title: **Your shortcuts to what matters**
 type: main
 ---
-As we just saw, your Home screen features three sectionss - each acting as a shortcut to your most important work. One click takes you straight where you need to go. Here are short explanations of each part:
+Each of these sections acts as a shortcut to your most important work. One click takes you straight where you need to go. Here are short explanations of each part:
 ![image/size:large/align:center/frame:none](now-home/Roadmap.png)
 
 In the following courses, we will take a deep dive into all three.
@@ -45,7 +45,9 @@ index_title: Congratulations! You’ve completed the Home course
 title: **Congratulations! You’ve completed the Home course**
 type: main
 ---
-You have successfully completed the first step in the learning path! You now understand how your Home screen connects you to the most important parts of your platform.  Next up is the Insights course. Here, we’ll take a closer look at what these deep-dive templates can do. You’ll learn how to view and filter your data, and explore practical examples you can apply directly to your own inventory.
+You have successfully completed the first step in the learning path! You now understand how your Home screen connects you to the most important parts of your platform.  
+
+Next up is the Insights course. Here, we’ll take a closer look at what these deep-dive templates can do. You’ll learn how to view and filter your data, and explore practical examples you can apply directly to your own inventory.
 
 **Let’s keep going!**
 ![image/size:large/align:right/frame:none](now-home/Home-Hero.png)

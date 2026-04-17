@@ -190,6 +190,12 @@
       padding: 12px 16px;
       cursor: pointer;
       transition: background 0.2s;
+      /* Match section radius so hover fill respects corners (parent uses overflow: visible) */
+      border-radius: 15px;
+    }
+
+    .toc-section.expanded .toc-section-header {
+      border-radius: 15px 15px 0 0;
     }
     
     .toc-section-header:hover {
@@ -2936,6 +2942,13 @@
       // Update content
           const cardContentEl = document.getElementById('card-content');
           renderContent(cardContentEl, n.content, n.type);
+
+      // Force-reload any Supademo iframes so they always start from step 1
+      cardContentEl.querySelectorAll('iframe[src*="supademo"]').forEach(iframe => {
+        const src = iframe.src;
+        iframe.src = '';
+        requestAnimationFrame(() => { iframe.src = src; });
+      });
           
       // Apply stacked-mode class for reduced margins
           if (hasStackedImages && n.type !== 'hero') {

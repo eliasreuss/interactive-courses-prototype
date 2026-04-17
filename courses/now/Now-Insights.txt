@@ -55,8 +55,7 @@ Now that your Insight is open, let's look at how to navigate it. The first thing
 Depending on what you want to achieve, you might prefer to see your data as a structured table, a comparative matrix, or a visual trend. Views let you switch between different formats easily.
 
 Click through the tutorial below to get an overview of the different views:
-
-[Supademo: Insight Views (Matrix, KPI, Grid, Trend, Sum)] + TILFØJE COLUMNS
+[supademo: Insight Views](https://app.supademo.com/embed/cmnx95fhd032liq7pyejxpqja?embed_v=2&utm_source=embed)
 ---
 > [next] Continue -> 5
 
@@ -84,8 +83,7 @@ type: main
 Let's take a look at how this works in practice.
 
 In the interactive tutorial below, we will show you how to apply slicers and filters to effectively segment your data. We will also cover how to use the sorting function - a simple but powerful way to instantly bring the most critical data right to the top of your screen.
-
-[Supademo: Slicers, Filters, and Sorting]
+[supademo: Insights: Using filters and slicers](https://app.supademo.com/embed/cmo1b6cxk17ppru18p3a0cpjp?embed_v=2&utm_source=embed)
 ---
 > [next] Continue -> 7
 
@@ -110,9 +108,8 @@ type: main
 ---
 When you click all the way down to a specific product, supplier or customer, you will find a wealth of information. Just like the main overview, this detailed level has its own unique views to help you make sense of the data.
 
-Click through the short tutorial below to see this in action.
-
-KORT SUPADEMO: CLICKING DEEPER TILL YOU FIND: Performance, TREND; profit, TRANSACTIONS, INFO;
+Click through the short tutorial below to see this in action. If the tutorial appears too small, click the button in the top right corner to make it full screen.
+[supademo: Analyze Supplier Performance and Financial Data on inactnow](https://app.supademo.com/embed/cmo1egchb1gduru18fps00b3s?embed_v=2&utm_source=embed)
 ---
 > [next] Continue -> 9
 
