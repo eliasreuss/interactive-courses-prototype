@@ -12,21 +12,31 @@ hero_body: This is the intro to a five-part learning path. By the end, you’ll 
 > [next] Let's do it! -> 2
 
 slide_id: 2
-index_title: The three pillars of inventory management
-title: **The three pillars of inventory management**
+index_title: What to Stock? How Much to Stock? How Much to Order?
+title: **The Three Pillars of Inventory Management**
 type: main
 ---
 At its core, inventory optimization boils down to answering three questions:
 
-![image 1/size:third/align:center/frame:none](intro/What-To-Stock.png) ![image 2/size:third/align:center/frame:none](intro/How-Much-To-Stock.png) ![image 3/size:third/align:center/frame:none](intro/How-Much-To-Order.png)
+{columns}
+{column}
+![image 1/size:third/align:center/frame:none](intro/What-To-Stock.png)
+{/column}
+{column}
+![image 2/size:third/align:center/frame:none](intro/How-Much-To-Stock.png)
+{/column}
+{column}
+![image 3/size:third/align:center/frame:none](intro/How-Much-To-Order.png)
+{/column}
+{/columns}
 
 These are simple questions, but they don’t have simple answers. While everyone in the organization wants the company to succeed, different departments are often aiming for different targets.
 ---
 > [next] Continue -> 3
 
 slide_id: 3
-index_title: Different departments, different targets
-title: **Different departments, different targets**
+index_title: Inventory is Big Politics
+title: **Different Departments, Different Targets**
 type: main
 ---
 **You have probably seen this dynamic before:**
@@ -38,23 +48,33 @@ This tug of war between priorities makes it essential to find the right balance 
 > [next] Continue -> 4
 
 slide_id: 4
-index_title: The cost of imbalance
-title: **The cost of imbalance**
+index_title: Excess Inventory & Obsolescence
+title: **The Cost of Imbalance**
 type: main
 ---
 But finding the right balance is hard, and the consequences for failing are costly.
 
 In fact, most companies are sitting on 15-35% excess inventory as a result of their balancing act failing. This silently drains resources in three critical ways: 
 
-![image 1/size:third/align:center/frame:none](intro/Rising-Inventory-Capital.png) ![image 2/size:third/align:center/frame:none](intro/Too-Low-Turnover-Rate.png) ![image 3/size:third/align:center/frame:none](intro/Obsolete-Goods-And-Write-Offs.png)
+{columns}
+{column}
+![image 1/size:third/align:center/frame:none](intro/Rising-Inventory-Capital.png)
+{/column}
+{column}
+![image 2/size:third/align:center/frame:none](intro/Too-Low-Turnover-Rate.png)
+{/column}
+{column}
+![image 3/size:third/align:center/frame:none](intro/Obsolete-Goods-And-Write-Offs.png)
+{/column}
+{/columns}
 
 Throughout this learning path, you’ll explore practical ways to prevent these costs and regain control of your inventory.
 ---
 > [next] Continue -> 5
 
 slide_id: 5
-index_title: The strategy
-title: **The strategy**
+index_title: Getting Inventory Right
+title: **Getting Inventory Right**
 type: main
 ---
 This is the goal: Inventory management that keeps the right products in stock - using optimal reorder points and quantities - without binding unnecessary capital. 
@@ -66,8 +86,8 @@ So, if you’re ready, let’s take a look at what we will go through in the lea
 > [next] Continue -> 6
 
 slide_id: 6
-index_title: The learning path
-title: **The learning path**
+index_title: 5 Steps to Manage Inventory
+title: **The Learning Path**
 type: main
 ---
 Here are the five subjects we’ll cover:

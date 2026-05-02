@@ -1,7 +1,7 @@
 [id:1/topic: Introduction to Insights]
 
 slide_id: 1
-index_title: Welcome to the course
+index_title: Welcome to the Course
 title: 
 type: hero
 ---
@@ -23,8 +23,8 @@ Insights allow you to deeply analyze specific areas of your supply chain. You ca
 
 **You will encounter two main types in the platform:**
 
--**Pre-built templates:** Ready-to-use analyses covering the most common procurement and inventory use cases.
--**Custom Insights:** Tailored analyses built specifically by your company to match your unique workflows.
+* **Pre-built templates:** Ready-to-use analyses covering the most common procurement and inventory use cases.
+* **Custom Insights:** Tailored analyses built specifically by your company to match your unique workflows.
 
 Most importantly, every Insight connects directly to your organization’s ERP system and updates automatically every day. This ensures that regardless of the Insight you are using, you are always turning your most accurate, up-to-date data into clear answers.
 ![image/size:550px/align:right/frame:none](now-insights/Insights-Icon.png)
@@ -46,8 +46,8 @@ Because your Home screen acts as your command center, your most important Insigh
 [id:2/topic: Views]
 
 slide_id: 4
-index_title: Understanding views
-title: **Understanding views**
+index_title: Understanding Views
+title: **Understanding Views**
 type: main
 ---
 Now that your Insight is open, let's look at how to navigate it. The first thing you need to understand is **views**. An Insight allows you to look at the exact same data through several different lenses.
@@ -59,11 +59,11 @@ Click through the tutorial below to get an overview of the different views:
 ---
 > [next] Continue -> 5
 
-[id:3/topic: Slicers and filters]
+[id:3/topic: Slicers and Filters]
 
 slide_id: 5
-index_title: What are slicers and filters?
-title: **What are slicers and filters?**
+index_title: What Are Slicers and Filters?
+title: **What Are Slicers and Filters?**
 type: main
 ---
 Now that you know how to change **how** your data is displayed using views, let’s look at how to control **what** data is displayed.
@@ -76,8 +76,8 @@ For example, you can choose to look only at your "A" products or filter for all 
 > [next] Continue -> 6
 
 slide_id: 6
-index_title: Using slicers and filters
-title: **Using slicers and filters**
+index_title: Using Slicers and Filters
+title: **Using Slicers and Filters**
 type: main
 ---
 Let's take a look at how this works in practice.
@@ -87,23 +87,23 @@ In the interactive tutorial below, we will show you how to apply slicers and fil
 ---
 > [next] Continue -> 7
 
-[id:4/topic: One click deeper]
+[id:4/topic: One Click Deeper]
 
 slide_id: 7
-index_title: One click deeper
-title: **One click deeper**
+index_title: One Click Deeper
+title: **One Click Deeper**
 type: main
 ---
 Filtering your data is a great start, but true transparency requires going from broad categories down to the atomic level. We call this going one click deeper.
 
-Let's say you are looking at your double ABC analysis. You want to see your most critical items, so you click on the AA category. You then sort the items by total cost of goods consumed to find the biggest contributor. From there, you click directly on the top item to dive into its individual performance. This process takes you from a broad category right down to the atomic level.
+Let's say you are looking at your Double ABC Analysis. You want to see your most critical items, so you click on the AA category. You then sort the items by total cost of goods consumed to find the biggest contributor. From there, you click directly on the top item to dive into its individual performance. This process takes you from a broad category right down to the atomic level.
 ![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/One-click-deeper.gif.mp4)
 ---
 > [next] Continue -> 8
 
 slide_id: 8
-index_title: Analysing atoms
-title: **Analysing atoms**
+index_title: Analysing Atoms
+title: **Analysing Atoms**
 type: main
 ---
 When you click all the way down to a specific product, supplier or customer, you will find a wealth of information. Just like the main overview, this detailed level has its own unique views to help you make sense of the data.
@@ -113,10 +113,10 @@ Click through the short tutorial below to see this in action. If the tutorial ap
 ---
 > [next] Continue -> 9
 
-[id:5/topic: Using Insights: Real world example]
+[id:5/topic: Using Insights: Real World Example]
 
 slide_id: 9
-index_title: Using Insights: Real world example
+index_title: Using Insights: Real World Example
 title: **Using Insights: Example**
 type: main
 ---
@@ -129,15 +129,15 @@ If the window appears too small, click the full-screen button in the top right c
 ---
 > [next] Continue -> 10
 
-[id:6/topic: What's next?]
+[id:6/topic: What's Next?]
 
 slide_id: 10
-index_title: Congratulations! You have completed the insights course
-title: **Congratulations! You have completed the insights course**
+index_title: Congratulations! You Have Completed the Insights Course
+title: **Congratulations! You Have Completed the Insights Course**
 type: main
 ---
 You now know how to navigate the core analytical engine of the platform. You understand how to change your views, apply slicers and filters, and click deeper.
 
-In the next course, we will explore actions. You will learn how you can use the platform to receive and execute on clear, tailored, daily tasks.
+In the next course, we will explore Actions. You will learn how you can use the platform to receive and execute on clear, tailored, daily tasks.
 ![image/size:large/align:right/frame:none](now-insights/Insights-Hero.png)
 ---

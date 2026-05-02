@@ -436,7 +436,7 @@
     
     #card-title {
       font-size: var(--font-size-title);
-      font-weight: normal;
+      font-weight: 700;
       margin: 0 0 clamp(20px, 2.5vw, 36px) 0;
       color: var(--color-primary-text);
     }
@@ -1166,9 +1166,9 @@
       width: 100% !important;
       max-width: 100% !important;
       max-height: none !important;
-      /* Override inline aspect-ratio for larger display */
-      aspect-ratio: 16 / 10 !important;
-      min-height: 400px;
+      /* Match typical web captures (e.g. 1920×1080); 16:10 stretches the player and misaligns hotspots */
+      aspect-ratio: 16 / 9 !important;
+      min-height: 360px;
     }
     .supademo-container iframe {
       border-radius: 10px;
@@ -1177,13 +1177,13 @@
     
     @media (min-width: 1200px) {
       .supademo-container {
-        min-height: 500px;
+        min-height: 480px;
       }
     }
     
     @media (min-width: 1600px) {
       .supademo-container {
-        min-height: 580px;
+        min-height: 540px;
       }
     }
     
@@ -1313,7 +1313,7 @@
     }
     
     // ========== CONTENT RENDERING ==========
-    function renderContent(element, text, nodeType = 'main') {
+    function renderContent(element, text, nodeType = 'main', layout = '') {
         if (nodeType === 'flip-cards') {
             renderFlipCards(element, text);
             return;
@@ -1389,29 +1389,27 @@
  
         // Check for columns FIRST - columns take priority over stacked media
         const hasColumns = /\{columns\}/.test(strippedContent);
-        
+
         if (hasColumns) {
             // Content has columns - use column-aware rendering
             renderContentNormal(element, strippedContent);
         } else {
-            // No columns - check for stacked media
-        const imageRegex = /!\[(.*?)\]\(([^)\s]+)\)/g;
-        const allImages = [...strippedContent.matchAll(imageRegex)];
-        const hasStackedMedia = allImages.some(img => {
-            const attrs = img[1].split('/').slice(1);
-            return attrs.some(attr => {
-                const attrLower = attr.toLowerCase();
-                return attrLower.includes('align:stack-right') || 
-                       attrLower.includes('align:stack-right-top') ||
-                       attrLower === 'align:right' ||
-                       attrLower.startsWith('align:right/');
-            });
-        });
- 
-        if (hasStackedMedia) {
-            renderContentWithStackedImages(element, strippedContent);
-        } else {
-            renderContentNormal(element, strippedContent);
+            // standard-2-col layout or align:right in content → stacked (text + right image)
+            const isStacked = layout === 'standard-2-col' || (() => {
+                const imageRegex = /!\[(.*?)\]\(([^)\s]+)\)/g;
+                return [...strippedContent.matchAll(imageRegex)].some(img => {
+                    return img[1].split('/').slice(1).some(attr => {
+                        const a = attr.toLowerCase();
+                        return a === 'align:right' ||
+                               a.startsWith('align:right/');
+                    });
+                });
+            })();
+
+            if (isStacked) {
+                renderContentWithStackedImages(element, strippedContent);
+            } else {
+                renderContentNormal(element, strippedContent);
             }
         }
         if (buttonDefs.length) element.setAttribute('data-buttons', JSON.stringify(buttonDefs));
@@ -1515,11 +1513,11 @@
           continue;
         }
         
-        const isListItem = trimmedLine.startsWith('* ') || trimmedLine.startsWith('- ') || (trimmedLine.startsWith('-') && trimmedLine.length > 1 && trimmedLine[1] !== '-');
+        const isListItem = trimmedLine.startsWith('* ');
 
         if (isListItem) {
           if (!inList) { html += '<ul>'; inList = true; }
-          const listItemContent = processBold(trimmedLine.startsWith('- ') ? trimmedLine.substring(2) : trimmedLine.substring(1));
+          const listItemContent = processBold(trimmedLine.substring(2));
           html += `<li>${listItemContent}</li>`;
         } else {
           if (inList) { html += '</ul>'; inList = false; }
@@ -1598,9 +1596,9 @@
           });
           mediaHtml += '</div>';
           html += mediaHtml;
-        } else if (trimmedLine.startsWith('* ') || trimmedLine.startsWith('- ')) {
+        } else if (trimmedLine.startsWith('* ')) {
           if (!inList) { html += '<ul>'; inList = true; }
-          const listItemContent = processBold(trimmedLine.startsWith('- ') ? trimmedLine.substring(2) : trimmedLine.substring(1));
+          const listItemContent = processBold(trimmedLine.substring(2));
           html += `<li>${listItemContent}</li>`;
         } else {
           if (inList) { html += '</ul>'; inList = false; }
@@ -1617,6 +1615,15 @@
     function extractYouTubeId(url) {
       const m = url.match(YT_URL_RE);
       return m ? m[1] : null;
+    }
+
+    /** Local course assets live under images/; CMS assets use root-relative learn/... */
+    function assetSrcFromRef(fileRef, v) {
+      const ref = (fileRef || '').trim();
+      if (!ref) return '';
+      if (ref.startsWith('http://') || ref.startsWith('https://')) return ref;
+      if (ref.startsWith('learn/')) return `/${ref}?v=${v}`;
+      return `images/${ref}?v=${v}`;
     }
 
     function renderYouTubeEmbed(videoId, sizeClass, frameClass, style) {
@@ -1669,9 +1676,8 @@
       if (ytId) mediaType = 'youtube';
       
       // Determine source - external URL or local file
-      const isExternalUrl = fileRef.startsWith('http://') || fileRef.startsWith('https://');
-              const v = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? Date.now() : '1.0';
-      const src = isExternalUrl ? fileRef : `images/${fileRef}?v=${v}`;
+      const v = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? Date.now() : '1.0';
+      const src = assetSrcFromRef(fileRef, v);
               
               let sizeClass = 'size-large';
               let style = '';
@@ -1715,7 +1721,7 @@
 
         for (const line of lines) {
             const trimmedLine = line.trim();
-            const isListItem = trimmedLine.startsWith('* ') || trimmedLine.startsWith('- ') || (trimmedLine.startsWith('-') && trimmedLine.length > 1 && trimmedLine[1] !== '-');
+            const isListItem = trimmedLine.startsWith('* ');
 
         // Supademo
         const supademoMatch = trimmedLine.match(/\[supademo:\s*([^\]]+)\]\(([^)]+)\)/i);
@@ -1742,9 +1748,7 @@
                     const attributes = allData.slice(1);
                     const isStacked = attributes.some(attr => {
                         const attrLower = attr.toLowerCase();
-                        return attrLower.includes('align:stack-right') || 
-                               attrLower.includes('align:stack-right-top') ||
-                               attrLower === 'align:right' ||
+                        return attrLower === 'align:right' ||
                                attrLower.startsWith('align:right/');
                     });
                     
@@ -1776,7 +1780,7 @@
                 }
             } else if (isListItem) {
           if (!inList) { textHtml += '<ul>'; inList = true; }
-                const listItemContent = processBold(trimmedLine.startsWith('- ') ? trimmedLine.substring(2) : trimmedLine.substring(1));
+                const listItemContent = processBold(trimmedLine.substring(2));
                 textHtml += `<li>${listItemContent}</li>`;
             } else {
           if (inList) { textHtml += '</ul>'; inList = false; }
@@ -1792,7 +1796,7 @@
       if (inList) textHtml += '</ul>';
 
       const stackedMediaHtml = stackedMedia.length > 0 ? `<div class="stacked-images">${stackedMedia.join('')}</div>` : '';
-        const shouldTopAlign = /align:stack-right-top|valign:top/i.test(content);
+        const shouldTopAlign = /valign:top/i.test(content);
 
         element.innerHTML = `
             <div class="content-with-stacked-images${shouldTopAlign ? ' top-aligned' : ''}">
@@ -1837,9 +1841,8 @@
         const ytId = extractYouTubeId(fileRef);
         if (ytId) mediaType = 'youtube';
         
-        const isExternalUrl = fileRef.startsWith('http://') || fileRef.startsWith('https://');
                         const v = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? Date.now() : '1.0';
-        const src = isExternalUrl ? fileRef : `images/${fileRef}?v=${v}`;
+        const src = assetSrcFromRef(fileRef, v);
                         
                         let sizeClass = 'size-medium';
                         let style = '';
@@ -1894,11 +1897,8 @@
         // Build image URL
         let imgSrc = '';
         if (imagePath) {
-            if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
-                imgSrc = imagePath;
-                                } else {
-                imgSrc = `images/${imagePath}`;
-            }
+            const v = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? Date.now() : '1.0';
+            imgSrc = assetSrcFromRef(imagePath, v);
         }
         
         // Build HTML
@@ -1907,7 +1907,7 @@
         // Image side
         html += '<div class="hero-image-side">';
         if (imgSrc) {
-            html += `<img src="${imgSrc}" alt="${title || 'Hero image'}">`;
+            html += `<img src="${imgSrc}" alt="${escapeHtml(toPlainTitle(title)) || 'Hero image'}">`;
         }
         html += '</div>';
         
@@ -1917,9 +1917,8 @@
             html += `<p class="hero-subtitle">${subtitle}</p>`;
         }
         if (title) {
-            // Process bold markers in title
-            const processedTitle = title.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-            html += `<h1 class="hero-title">${processedTitle}</h1>`;
+            const displayTitle = toPlainTitle(title);
+            html += `<h1 class="hero-title">${escapeHtml(displayTitle)}</h1>`;
         }
         if (body) {
             // Process bold markers and line breaks in body
@@ -2272,12 +2271,14 @@
                             if (key === 'title-align') {
                                 currentBlock['title-align'] = value.toLowerCase();
                             } else if (key === 'index_title') {
-                                currentBlock.indexTitle = value;
+                                currentBlock.indexTitle = toPlainTitle(value);
                             } else if (key === 'type') {
                                 currentBlock.type = value;
+                            } else if (key === 'layout') {
+                                currentBlock.layout = value.toLowerCase();
                             } else if (key === 'title') {
-                                // Remove leading # from titles
-                                currentBlock.title = value.replace(/^#\s*/, '');
+                                // Remove leading # and **…**; slide titles are bold via CSS
+                                currentBlock.title = toPlainTitle(value.replace(/^#\s*/, ''));
                             } else if (key === 'backLabel') {
                                 currentBlock.backLabel = value;
                             } else if (key === 'section' || key === 'parent') {
@@ -2406,6 +2407,15 @@
             t = t.replace(/<[^>]+>/g, '');
             return t.trim();
         }
+
+    function escapeHtml(s) {
+      if (s == null) return '';
+      return String(s)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
 
     function renderTOC() {
       const sidebar = document.getElementById('sidebar');
@@ -2820,11 +2830,14 @@
       const cardEl = document.getElementById('content-card');
       const cardTitleAnimEl = document.getElementById('card-title');
       const cardContentAnimEl = document.getElementById('card-content');
+      const hasSupademo = n.content && /\[supademo:\s*[^\]]+\]\(/i.test(n.content);
       try {
         [cardEl, cardTitleAnimEl, cardContentAnimEl].forEach(el => el && el.classList.remove('is-animating'));
         // Force reflow so animation restarts
         void (cardEl && cardEl.offsetWidth);
-        [cardEl, cardTitleAnimEl, cardContentAnimEl].forEach(el => el && el.classList.add('is-animating'));
+        // Supademo (and similar embeds) measure layout for hotspots; avoid CSS transform on ancestors while they init
+        const animEls = hasSupademo ? [cardTitleAnimEl] : [cardEl, cardTitleAnimEl, cardContentAnimEl];
+        animEls.forEach(el => el && el.classList.add('is-animating'));
       } catch (_) {}
       
       // Update title - hide for hero slides (title is embedded in hero content)
@@ -2837,35 +2850,40 @@
             cardTextContent.classList.add('hero-mode');
           } else {
             cardTextContent.classList.remove('hero-mode');
-          if (n['title-align'] && String(n['title-align']).toLowerCase() === 'center') {
-            cardTitleEl.style.textAlign = 'center';
-          } else {
-            cardTitleEl.style.textAlign = '';
-          }
-      
-              const processBold = (str) => str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-      
-      if (n.title && n.title.trim() !== '') {
-            cardTitleEl.innerHTML = processBold(n.title);
-            cardTitleEl.style.display = '';
-          } else {
-            cardTitleEl.textContent = '';
-            cardTitleEl.style.display = 'none';
+            if (n['title-align'] && String(n['title-align']).toLowerCase() === 'center') {
+              cardTitleEl.style.textAlign = 'center';
+            } else {
+              cardTitleEl.style.textAlign = '';
+            }
+
+            if (n.title && n.title.trim() !== '') {
+              cardTitleEl.textContent = toPlainTitle(n.title);
+              cardTitleEl.style.display = '';
+            } else {
+              cardTitleEl.textContent = '';
+              cardTitleEl.style.display = 'none';
             }
           }
 
-      // Check if content has stacked images (align:right or align:stack-right)
-          const hasStackedImages = n.content && /align:(stack-right|right)/i.test(n.content);
+      // Determine stacked layout: explicit layout field takes precedence over content scanning
+          const hasStackedImages = n.layout === 'standard-2-col' ||
+            (n.content && /align:right/i.test(n.content));
 
       // Update content
           const cardContentEl = document.getElementById('card-content');
-          renderContent(cardContentEl, n.content, n.type);
+          renderContent(cardContentEl, n.content, n.type, n.layout || '');
 
-      // Force-reload any Supademo iframes so they always start from step 1
-      cardContentEl.querySelectorAll('iframe[src*="supademo"]').forEach(iframe => {
-        const src = iframe.src;
-        iframe.src = '';
-        requestAnimationFrame(() => { iframe.src = src; });
+      // Fresh Supademo session (step 1) without blanking src (avoids half-loaded player + misaligned overlays)
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          cardContentEl.querySelectorAll('iframe[src*="supademo"]').forEach(iframe => {
+            try {
+              const u = new URL(iframe.getAttribute('src') || iframe.src);
+              u.searchParams.set('_inact_rs', String(Date.now()));
+              iframe.src = u.toString();
+            } catch (_) {}
+          });
+        });
       });
           
       // Apply stacked-mode class for reduced margins

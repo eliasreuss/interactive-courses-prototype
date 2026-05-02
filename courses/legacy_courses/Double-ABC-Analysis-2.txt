@@ -29,10 +29,10 @@ For example, in a warehouse, a handful of products (the “A” items) may gener
 
 ABC analysis helps identify which inventory items matter most by classifying them into three categories:
 
--**A items:** the few, high-value drivers
--**B items:** the moderate contributors
--**C items:** the many, low-value items
-![image/size:800px/align:stack-right/frame:none](double-abc-analysis/ABC-Fiskere.png)
+* **A items:** the few, high-value drivers
+* **B items:** the moderate contributors
+* **C items:** the many, low-value items
+![image/size:800px/align:right/frame:none](double-abc-analysis/ABC-Fiskere.png)
 ---
 > Continue -> 4
 
@@ -44,9 +44,9 @@ If we for example look at the total consumption lines of all our products over t
 
 **We can group them into the three categories:**
 
--**A products** – the top ~10% of products that make up 80% of total demand
--**B products** – the next ~20% of products that cover 15% of demand
--**C products** – the remaining ~70% of products that add up to only 5% of demand
+* **A products** – the top ~10% of products that make up 80% of total demand
+* **B products** – the next ~20% of products that cover 15% of demand
+* **C products** – the remaining ~70% of products that add up to only 5% of demand
 
 And that’s the idea behind ABC analysis: a few products matter most, while most matter much less.
 
@@ -54,7 +54,7 @@ Want to learn more about the 80/20 rule or ABC method? **Watch the short video.*
 
 Feeling comfortable with the concept? Perfect — **let’s move on.**
 
-![image/size:400px/align:stack-right/frame:none](double-abc-analysis/Single-ABC-Vizz.png)
+![image/size:400px/align:right/frame:none](double-abc-analysis/Single-ABC-Vizz.png)
 ---
 > Continue -> 20
 > Watch video: The ABC Analysis -> [video:The ABC Analysis]
@@ -80,8 +80,8 @@ This is how it works:
 
 Each product gets **two scores**, A / B / C, for each variable. These two scores are combined into a two-letter category. For example:
 
--**AA** = high cost of inventory, high demand
--**CB** = low cost of inventory, medium demand
+* **AA** = high cost of inventory, high demand
+* **CB** = low cost of inventory, medium demand
 
 This helps you quickly see which products are the most important and decide how to manage them.
 
@@ -89,7 +89,7 @@ This helps you quickly see which products are the most important and decide how 
 
 Watch the video for a full walkthrough, or continue to see an example.
 
-![image/size:400px/align:stack-right](double-abc-analysis/ABC-Analysis.png)
+![image/size:400px/align:right](double-abc-analysis/ABC-Analysis.png)
 ---
 > Show me an example -> 6
 > Watch video: Double ABC Analysis -> [video:Double ABC Analysis]
@@ -105,7 +105,7 @@ High cost of inventory, high demand
 
 → Your everyday heroes. Like copy paper in an office. Easy to manage. Low risk.
 
-![image/size:400px/align:stack-right/frame:none](double-abc-analysis/ABC-Example-1.png)
+![image/size:400px/align:right/frame:none](double-abc-analysis/ABC-Example-1.png)
 ---
 > Continue -> 7
 
@@ -120,7 +120,7 @@ High cost of inventory, low demand
 
 → Big-ticket items sold occasionally. Like a copy machine. Valuable but riskier to stock, as they tie up significant capital with little predictability on when — or how many — will sell.
 
-![image/size:400px/align:stack-right/frame:none](double-abc-analysis/ABC-Example-2.png)
+![image/size:400px/align:right/frame:none](double-abc-analysis/ABC-Example-2.png)
 ---
 > Continue -> 8
 
@@ -134,7 +134,7 @@ type: main
 Low cost of inventory, high demand
 
 → Often overlooked, but critical for customer experience. Like paperclips or screws in production.
-![image/size:400px/align:stack-right/frame:none](double-abc-analysis/ABC-Example-3.png)
+![image/size:400px/align:right/frame:none](double-abc-analysis/ABC-Example-3.png)
 ---
 > Continue -> 9
 
@@ -149,7 +149,7 @@ Low cost of inventory, low demand
 
 → Rarely sells. Like plastic sleeves. Important to manage carefully – or phase out.
 
-![image/size:400px/align:stack-right/frame:none](double-abc-analysis/ABC-Example-4.png)
+![image/size:400px/align:right/frame:none](double-abc-analysis/ABC-Example-4.png)
 ---
 > Continue -> 10
 
@@ -167,7 +167,7 @@ Where a single ABC analysis may look at demand alone, Double ABC adds a second l
 
 If you feel comfortable with the concept, click continue to see what the analysis can help you with. 
 
-![image/size:400px/align:stack-right/frame:none](double-abc-analysis/ABC-Example-Final.png)
+![image/size:400px/align:right/frame:none](double-abc-analysis/ABC-Example-Final.png)
 ---
 > Continue -> 11
 > Show me examples of different axes -> [case:The company’s ABC categorization depends on the purpose.]
@@ -208,7 +208,7 @@ Let’s take a look at your own stock – and see how your products are distribu
 > No, show me -> [video:No problem, we’ll go through how to open it step by step]
 
 id: 14
-title: **Open your Double ABC Analysis insight to follow along with the rest of the session**
+title: **Open Your Double ABC Analysis Insight to Follow Along with the rest of the session**
 type: main
 ---
 Great! Now’s the time to open your Double ABC Analysis insight so you can follow along with the rest of the session.
@@ -232,7 +232,7 @@ But for now, let’s focus on this Insight we've prepared for you.
 > Continue -> 16
 
 id: 16
-title: **The Double ABC insight explained**
+title: **The Double ABC Insight Explained**
 type: main
 ---
 This brief video walks you through how to navigate and interpret your double ABC analysis insight in Inact Now.![video:Explainer video/size:large/align:center/frame:none/controls](double-abc-analysis/Double-ABC-Explainer-2.1.mp4)
@@ -251,7 +251,7 @@ That’s why the Inact Now view goes **beyond the standard nine categories.** We
 
 **Let’s explore these categories and see how they guide smarter decisions.**
 
-![lottie:motion graphic/size:950px/align:stack-right-top/frame:none](double-abc-analysis/ANIFRAME.json)
+![lottie:motion graphic/size:950px/align:right/valign:top/frame:none](double-abc-analysis/ANIFRAME.json)
 ---
 > Explain the special categories -> 18
 
@@ -271,13 +271,13 @@ type: main
 ---
 Here’s a quick recap of what you’ve covered:
 
--The purpose of the Double ABC Analysis — and why it matters
--What the Double ABC Analysis is and how it works
--How the analysis is visualized in Inact Now — including hands-on exploration
--What the special categories are, and why they help give a fuller picture
+* The purpose of the Double ABC Analysis — and why it matters
+* What the Double ABC Analysis is and how it works
+* How the analysis is visualized in Inact Now — including hands-on exploration
+* What the special categories are, and why they help give a fuller picture
 
 **You’re off to a great start. Let’s keep going!**
-![image/size:450px/align:stack-right/frame:none](double-abc-analysis/Congrats-ABC.png)
+![image/size:450px/align:right/frame:none](double-abc-analysis/Congrats-ABC.png)
 ---
 
 [side-quest-content:video:The ABC Analysis]
@@ -293,11 +293,11 @@ https://www.youtube.com/watch?v=26VCBmuyOU4&t=9s
 [side-quest-content:case:The company’s ABC categorization depends on the purpose.]
 ---
 [title: **The company’s ABC categorization depends on the purpose.**]
--If the company wants to increase delivery reliability and/or reduce inventory, the recommended dimensions are consumption, order lines, and possibly standard deviation.
+* If the company wants to increase delivery reliability and/or reduce inventory, the recommended dimensions are consumption, order lines, and possibly standard deviation.
 
--As a starting point, the ABC model is set up according to 80 / 15 / 5 %, after which fixed thresholds can be established if needed. Fixed thresholds make it easier to communicate to the rest of the organization – e.g., an AA item is defined as having consumption > 250,000 DKK and 50 order lines per year.
+* As a starting point, the ABC model is set up according to 80 / 15 / 5 %, after which fixed thresholds can be established if needed. Fixed thresholds make it easier to communicate to the rest of the organization – e.g., an AA item is defined as having consumption > 250,000 DKK and 50 order lines per year.
 
--The more commercial dimensions are added to the analysis when the company wants to analyze the product life cycle and sales.
+* The more commercial dimensions are added to the analysis when the company wants to analyze the product life cycle and sales.
 ---
 
 [side-quest-content:video:No problem, we’ll go through how to open it step by step]
@@ -322,8 +322,8 @@ You can do this either by clicking “Open Inact Now”, or by opening it in a s
 
 !![video:motion graphic/size:medium/align:left](double-abc-analysis/SearchABCInsight.mp4)
 
--If it appears, click it—you’re all set! Head back to the main path.
--If it doesn’t appear, no worries—we’ll walk through how to create it yourself.
+* If it appears, click it—you’re all set! Head back to the main path.
+* If it doesn’t appear, no worries—we’ll walk through how to create it yourself.
 [sq-card-separator]
 [title: **Creating your Double ABC Analysis Insight**]
 **Creating your Double ABC Analysis Insight is as easy as 1–2–3 with the ready-made template:**

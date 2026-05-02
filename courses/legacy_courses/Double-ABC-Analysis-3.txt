@@ -41,13 +41,13 @@ If we for example look at our products demand, we see that a small share of prod
 
 **We can group them into the three categories:**
 
--**A products** – the top ~10% of products that make up 80% of total demand
--**B products** – the next ~20% of products that cover 15% of demand
--**C products** – the remaining ~70% of products that add up to only 5% of demand
+* **A products** – the top ~10% of products that make up 80% of total demand
+* **B products** – the next ~20% of products that cover 15% of demand
+* **C products** – the remaining ~70% of products that add up to only 5% of demand
 
 And that’s the idea behind ABC analysis: a few products matter most, while most matter much less.
 
-![image/size:400px/align:stack-right/frame:none](double-abc-analysis/Single-ABC-Vizz.png)
+![image/size:400px/align:right/frame:none](double-abc-analysis/Single-ABC-Vizz.png)
 ---
 > [next] Continue -> 4
 
@@ -78,14 +78,14 @@ This is how it works:
 
 Each product gets **two scores**, A / B / C, for each variable. These two scores are combined into a two-letter category. For example:
 
--**AA** = high cost of inventory, high demand
--**CB** = low cost of inventory, medium demand
+* **AA** = high cost of inventory, high demand
+* **CB** = low cost of inventory, medium demand
 
 This helps you quickly see which products are the most important and decide how to manage them.
 
 **Tip:** You can use Double ABC with any two variables you want — for example, revenue and lead time, or sales and criticality.
 
-![image/size:400px/align:stack-right](double-abc-analysis/ABC-Analysis.png)
+![image/size:400px/align:right](double-abc-analysis/ABC-Analysis.png)
 ---
 > [next] Show me an example -> 6
 
@@ -114,7 +114,7 @@ High cost of inventory, high demand
 
 → Your everyday heroes. Like copy paper in an office. Easy to manage. Low risk.
 
-![image/size:400px/align:stack-right/frame:none](double-abc-analysis/ABC-Example-1.png)
+![image/size:400px/align:right/frame:none](double-abc-analysis/ABC-Example-1.png)
 ---
 > [next] Continue -> 8
 
@@ -128,7 +128,7 @@ High cost of inventory, low demand
 
 → Big-ticket items sold occasionally. Like a copy machine. Valuable but riskier to stock, as they tie up significant capital with little predictability on when — or how many — will sell.
 
-![image/size:400px/align:stack-right/frame:none](double-abc-analysis/ABC-Example-2.png)
+![image/size:400px/align:right/frame:none](double-abc-analysis/ABC-Example-2.png)
 ---
 > [next] Continue -> 9
 
@@ -141,7 +141,7 @@ type: main
 Low cost of inventory, high demand
 
 → Often overlooked, but critical for customer experience. Like paperclips or screws in production.
-![image/size:400px/align:stack-right/frame:none](double-abc-analysis/ABC-Example-3.png)
+![image/size:400px/align:right/frame:none](double-abc-analysis/ABC-Example-3.png)
 ---
 > [next] Continue -> 10
 
@@ -155,7 +155,7 @@ Low cost of inventory, low demand
 
 → Rarely sells. Like plastic sleeves. Important to manage carefully – or phase out.
 
-![image/size:400px/align:stack-right/frame:none](double-abc-analysis/ABC-Example-4.png)
+![image/size:400px/align:right/frame:none](double-abc-analysis/ABC-Example-4.png)
 ---
 > [next] Continue -> 11
 
@@ -209,8 +209,8 @@ Now let’s apply it to your own inventory - in Inact Now, we’ve already set u
 > [sidequest] No, show me -> s2
 
 slide_id: 14
-index_title: Opening the double ABC insight
-title: **Open your double ABC analysis insight**
+index_title: Opening the Double ABC Insight
+title: **Open Your Double ABC Analysis Insight**
 type: main
 ---
 Great! Now’s the time to open your double ABC analysis insight so you can follow along with the rest of the session.
@@ -220,7 +220,7 @@ Click the “Open Inact Now” button, or open it manually in a separate window.
 > [next] It's open, continue -> 15
 
 slide_id: 15
-index_title: Interpreting the insight
+index_title: Interpreting the Insight
 title: **Great... What are we looking at?**
 type: main
 ---
@@ -234,8 +234,8 @@ But for now, let’s focus on this Insight we've prepared for you.
 > [next] Continue -> 16
 
 slide_id: 16
-index_title: Video: double ABC insight explained
-title: **The Double ABC insight explained**
+index_title: Video: Double ABC Insight Explained
+title: **The Double ABC Insight Explained**
 type: main
 ---
 This brief video walks you through how to navigate and interpret your double ABC analysis insight in Inact Now.![video:Explainer video/size:large/align:center/frame:none/controls](double-abc-analysis/Double-ABC-Explainer-2.1.mp4)
@@ -255,7 +255,7 @@ For example, new products often appear as low-performing (like CC) simply becaus
 
 That’s why the Inact Now view goes **beyond the standard nine categories.** We’ve added **six extra classifications** to capture special cases—like new, discontinued, or strategic items—so you can act with more nuance.
 
-![lottie:motion graphic/size:950px/align:stack-right-top/frame:none](double-abc-analysis/ANIFRAME.json)
+![lottie:motion graphic/size:950px/align:right/valign:top/frame:none](double-abc-analysis/ANIFRAME.json)
 ---
 > [next] Continue -> 18
 
@@ -280,14 +280,14 @@ type: main
 ---
 Here’s a quick recap of what you’ve covered:
 
--The purpose of the Double ABC Analysis — and why it matters
--What the Double ABC Analysis is and how it works
--How the analysis is visualized in Inact Now — including hands-on exploration
--What the special categories are, and why they help give a fuller picture
+* The purpose of the Double ABC Analysis — and why it matters
+* What the Double ABC Analysis is and how it works
+* How the analysis is visualized in Inact Now — including hands-on exploration
+* What the special categories are, and why they help give a fuller picture
 
 **You’re off to a great start. Let’s keep going!**
 
-![image/size:450px/align:stack-right/frame:none](double-abc-analysis/Congrats-ABC.png)
+![image/size:450px/align:right/frame:none](double-abc-analysis/Congrats-ABC.png)
 ---
 
 [flow-specific-side-quests]

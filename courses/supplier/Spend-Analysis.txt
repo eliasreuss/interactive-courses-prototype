@@ -15,8 +15,8 @@ hero_body: The spend analysis in Inact Now turns raw purchasing data into action
 > [next] Continue -> 2
 
 slide_id: 2
-index_title: The hidden potential in your supply chain
-title: **The hidden potential in your supply chain**
+index_title: The Hidden Potential in Your Supply Chain
+title: **The Hidden Potential in Your Supply Chain**
 type: main
 ---
 There are two main ways to improve your company’s profit margin: You can either raise prices on your products, or you can lower your costs.
@@ -29,8 +29,8 @@ However, many procurement teams lack transparency. They see the total spend, but
 > [next] Continue -> 3
 
 slide_id: 3
-index_title: Asking the right questions
-title: **Asking the right questions**
+index_title: Asking the Right Questions
+title: **Asking the Right Questions**
 type: main
 ---
 To fix this blindness, we need to conduct a structured spend analysis. This starts by establishing an overview to answer three critical questions:
@@ -40,8 +40,8 @@ Once you map your data against these questions, inefficiencies that were previou
 > [next] Continue -> 4
 
 slide_id: 4
-index_title: See the full picture
-title: **See the full picture**
+index_title: See the Full Picture
+title: **See the Full Picture**
 type: main
 ---
 In your spend analysis in Inact Now, you will immediately see your spend broken down by **categories** (what are we buying?) and **suppliers** (who are we buying from?). You can also track your spend development over time to see exactly when and how purchase patterns change.
@@ -51,11 +51,11 @@ But most importantly, the platform connects the dots. You can drill down to see 
 ---
 > [next] Continue -> 5
 
-[id:2/topic: The spend analysis in Inact Now]
+[id:2/topic: The Spend Analysis in Inact Now]
 
 slide_id: 5
-index_title: How can we use Inact Now to help us?
-title: **How can we use Inact Now to help us?**
+index_title: How Can We Use Inact Now to Help Us?
+title: **How Can We Use Inact Now to Help Us?**
 type: main
 ---
 So, how do we conduct this analysis in practice? Let's take a look at the “Spend Analysis” Insight in Inact Now. In this walkthrough, we will show you how to interpret the data to gain full transparency and identify actionable opportunities.
@@ -65,7 +65,7 @@ If the window appears too small, click the button in the top right corner to ent
 ---
 > [next] Continue -> 6
 
-[id:3/topic: What's next?]
+[id:3/topic: What's Next?]
 
 slide_id: 6
 index_title: Congratulations!

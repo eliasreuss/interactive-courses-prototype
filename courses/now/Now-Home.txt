@@ -1,5 +1,5 @@
 slide_id: 1
-index_title: Welcome to the course
+index_title: Welcome to the Course
 title: 
 type: hero
 ---
@@ -15,8 +15,8 @@ In this course, we will explore how to navigate your starting point, and see how
 > [next] Continue -> 2
 
 slide_id: 2
-index_title: What is on your home screen?
-title: **What is on your home screen?**
+index_title: What Is on Your Home Screen?
+title: **What Is on Your Home Screen?**
 type: main
 ---
 When you log in to Inact Now, your Home tab will look something like the example on the right.
@@ -29,8 +29,8 @@ Depending on your specific tasks and what has been shared with you, you might se
 > [next] Continue -> 3
 
 slide_id: 3
-index_title: Your shortcuts to what matters
-title: **Your shortcuts to what matters**
+index_title: Your Shortcuts to What Matters
+title: **Your Shortcuts to What Matters**
 type: main
 ---
 Each of these sections acts as a shortcut to your most important work. One click takes you straight where you need to go. Here are short explanations of each part:
@@ -41,13 +41,13 @@ In the following courses, we will take a deep dive into all three.
 > [next] Continue -> 4
 
 slide_id: 4
-index_title: Congratulations! You’ve completed the Home course
-title: **Congratulations! You’ve completed the Home course**
+index_title: Congratulations! You’ve Completed the Home Course
+title: **Congratulations! You’ve Completed the Home Course**
 type: main
 ---
 You have successfully completed the first step in the learning path! You now understand how your Home screen connects you to the most important parts of your platform.  
 
-Next up is the Insights course. Here, we’ll take a closer look at what these deep-dive templates can do. You’ll learn how to view and filter your data, and explore practical examples you can apply directly to your own inventory.
+Next up is the Insights Course. Here, we’ll take a closer look at what these deep-dive templates can do. You’ll learn how to view and filter your data, and explore practical examples you can apply directly to your own inventory.
 
 **Let’s keep going!**
 ![image/size:large/align:right/frame:none](now-home/Home-Hero.png)

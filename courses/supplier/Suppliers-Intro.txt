@@ -14,11 +14,11 @@ hero_body: This is the intro to a four-part learning path. By the end, you will 
 ---
 > [next] Continue -> 2
 
-[id:2/topic: The trap]
+[id:2/topic: The Trap]
 
 slide_id: 2
-index_title: The trap of routine purchasing
-title: **The trap of routine purchasing**
+index_title: The Trap of Routine Purchasing
+title: **The Trap of Routine Purchasing**
 type: main
 ---
 Most of the time, purchasing feels like a routine, reactive task.
@@ -32,8 +32,8 @@ This is the trap of routine purchasing. It keeps the lights on, but it keeps pro
 > [next] Continue -> 3
 
 slide_id: 3
-index_title: Three costly consequences
-title: **Three costly consequences**
+index_title: Three Costly Consequences
+title: **Three Costly Consequences**
 type: main
 ---
 Failing to look at the bigger picture comes with costly consequences. When you manage suppliers without clear data, your business suffers in three critical ways:
@@ -41,11 +41,11 @@ Failing to look at the bigger picture comes with costly consequences. When you m
 ---
 > [next] Continue -> 4
 
-[id:3/topic: The good news]
+[id:3/topic: The Good News]
 
 slide_id: 4
-index_title: The good news
-title: **The good news**
+index_title: The Good News
+title: **The Good News**
 type: main
 ---
 The good news is that these symptoms aren’t unfixable - organizations can evolve through different levels of maturity over time.
@@ -59,8 +59,8 @@ We must actively move along this roadmap from being a reactive order-handler to 
 > [next] Continue -> 5
 
 slide_id: 5
-index_title: The balancing act
-title: **The balancing act**
+index_title: The Balancing Act
+title: **The Balancing Act**
 type: main
 ---
 **We need to shift our mindset to value chain thinking.** This shift transforms procurement from a simple support function into a key business driver of competitiveness, innovation, and sustainability.
@@ -71,11 +71,11 @@ Fulfilling this role means balancing three critical elements:
 ---
 > [next] Continue -> 6
 
-[id:4/topic: The reward]
+[id:4/topic: The Reward]
 
 slide_id: 6
-index_title: The financial reward
-title: **The financial reward**
+index_title: The Financial Reward
+title: **The Financial Reward**
 type: main
 ---
 Why does this strategic shift matter? Because procurement is a powerful profit center.
@@ -87,8 +87,8 @@ The DuPont model clearly illustrates how strategic purchasing directly impacts a
 > [next] Continue -> 7
 
 slide_id: 7
-index_title: Turning supply chain into a competitive advantage
-title: **Turning supply chain into a competitive advantage**
+index_title: Turning Supply Chain Into a Competitive Advantage
+title: **Turning Supply Chain Into a Competitive Advantage**
 type: main
 ---
 Beyond just the financial numbers, working strategically transforms your supply chain from a reactive support function into a true competitive advantage.
@@ -99,11 +99,11 @@ By mastering this approach, you will achieve five key objectives:
 ---
 > [next] Continue -> 8
 
-[id:5/topic: What's next]
+[id:5/topic: What's Next]
 
 slide_id: 8
-index_title: What’s to come
-title: **What’s to come**
+index_title: What’s to Come
+title: **What’s to Come**
 type: main
 ---
 To achieve these five objectives and drive that bottom-line impact, we need to implement a systematic, long-term approach.
@@ -116,7 +116,7 @@ In this learning path, we break this down into three core pillars using Inact No
 
 slide_id: 9
 index_title: Congratulations!
-title: **Congratulations, you have completed the first course in the learning path!**
+title: **Congratulations, You Have Completed the First Course in the Learning Path!**
 type: main
 ---
 In the next course: **Supplier Performance**, you will learn how to use Inact Now to track delivery performance, inventory turnover ratio, and spend per supplier. Benchmark them against "best in class" and address poor performance.

@@ -1,0 +1,83 @@
+[id:1/topic: Welcome to the Course: Actions]
+
+slide_id: 1
+index_title: Welcome to the Course: Actions
+title: 
+type: hero
+---
+hero_image: now-actions/Actions-Hero.png
+hero_subtitle: Welcome to the Course:
+hero_title: Actions
+hero_body: Insights help you identify opportunities. Actions help you take action. In this course, you will learn how to use Actions, automated task lists that highlight what needs your attention today.
+
+**Let’s get started!**
+---
+> [next] Continue -> 2
+
+slide_id: 2
+index_title: What Are Actions?
+title: What Are Actions?
+type: main
+layout: standard-2-col
+---
+You can think of actions as automated to-do lists. They continuously monitor your data in the background, and whenever something requires your attention, it is automatically added to your list. 
+
+**This ensures you always know what to focus on.**
+![image/size:550px/align:right/frame:none](now-actions/Action-Table.png)
+---
+> [next] Continue -> 3
+
+slide_id: 3
+index_title: Where Do Actions Come From?
+title: Where Do Actions Come From?
+type: main
+layout: standard-2-col
+---
+**Each action list is based on filters defined by its creator.** 
+
+For example, you or a colleague might create a list to help keep stock levels under control. In that case, you can set a rule so that any item within a specific category, such as CC items, that exceeds a chosen inventory value threshold, for example 100,000, appears on the list as a to-do item.
+
+Think of it like a net that only catches the specific fish you are looking for.
+![image/size:500px/align:right/frame:none](now-actions/Create-Action.png)
+---
+> [next] Continue -> 4
+
+slide_id: 4
+index_title: How Do I Access an Action?
+title: How Do I Access an Action?
+type: main
+---
+Getting to your Actions is incredibly simple.
+
+Just like your Insights, your most important Actions are pinned in your Home screen for easy access. To open one, simply click on its name directly from your Home view.
+![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/export-1776713402944.mp4)
+---
+> [next] Continue -> 5
+
+[id:2/topic: Navigating Actions]
+
+slide_id: 5
+index_title: Navigating Actions
+title: Navigating Actions
+type: main
+---
+Go through the tutorial below to get an overview of how to navigate Actions effectively:
+[supademo: Navigating Actions](https://app.supademo.com/embed/cmo8jbn9q1l4jl2dybl60r5vt?embed_v=2&utm_source=embed)
+---
+> [next] Continue -> 6
+
+[id:3/topic: What's Next?]
+
+slide_id: 6
+index_title: Congratulations! You Have Completed the Actions Course
+title: Congratulations! You Have Completed the Actions Course
+type: main
+layout: standard-2-col
+---
+You now know how to work with Action lists,  how to navigate, sort through, and act on your tasks.
+
+In the next course, we will explore dashboards.
+
+**Let’s keep going!**
+![image/size:large/align:right/frame:none](now-actions/Actions-Hero.png)
+---

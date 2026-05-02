@@ -194,12 +194,12 @@ This document provides complete technical specifications for the Interactive Lea
 - **Fourth**: `calc((100% - 96px) / 4)`
 - **Custom Pixel Sizes**: Images can use pixel-based sizes (e.g., `size:400px`, `size:625px`) for precise control
 
-#### Stacked Images (align:right, align:stack-right)
+#### Stacked Images (align:right)
 - **Gap**: `clamp(32px, 4vw, 56px)` (between text and image)
 - **Max Width**: `clamp(320px, 45%, 800px)`
 - **Medium Screens Max Width**: `clamp(280px, 40%, 700px)`
 - **Border Radius**: `15px`
-- **Stacked Mode Padding**: When `align:right` or `align:stack-right` is used, card padding is reduced:
+- **Stacked Mode Padding**: When `align:right` is used, card padding is reduced:
   - Base: `clamp(32px, 4vw, 64px)` vertical, `clamp(32px, 4vw, 64px)` horizontal
   - Large (>1440px): `clamp(48px, 5.5vw, 88px)` vertical, `clamp(48px, 5.5vw, 88px)` horizontal
   - Medium (1441-1920px): `clamp(40px, 4.5vw, 72px)` vertical, `clamp(40px, 4.5vw, 72px)` horizontal
@@ -573,7 +573,7 @@ Extensively used for fluid typography and spacing that scales smoothly between b
   - `> [sidequest] Label -> Target` for sidequest buttons
   - `> [next:flow] Label -> URL` for external link buttons (flow links)
 - **Image Sizes**: Supports predefined sizes (`x-small`, `small`, `medium`, `large`, `third`, `fourth`) and custom pixel sizes (e.g., `size:400px`, `size:625px`)
-- **Image Alignment**: Supports `left`, `center`, `right`, `stack-right`, `stack-right-top`
+- **Image Alignment**: Supports `left`, `center`, `right`. For stacked text+image layouts, use `align:right` on the media; add `valign:top` in the same attribute path for top-aligned stacked layouts (e.g. `align:right/valign:top`).
 - **Hero Slides**: Type `hero` with `hero_image:`, `hero_subtitle:`, `hero_title:`, `hero_body:` fields
 - **Sidequests**: Defined in `[flow-specific-side-quests]` section with `[id:sX/topic: Name]` format
 - **Assets Folder**: Creator supports assets folder prefix (e.g., `stock-policy/`) that automatically prefixes image paths

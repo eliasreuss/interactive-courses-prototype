@@ -33,7 +33,7 @@ That balance is hard - but mastering it is key to
 running a healthy, profitable business.
 {/column}
 {column}
-![motion graphic/type:video/size:350px/align:stack-right/frame:none](https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/rN0W64K4ipau8gxv/videoblocks-motion-falling-shapes-in-a-2d-style-animation-with-liquid-effect_rqeldoc5zo__17248fcd7f79706cce4a748204720c27__P360.mp4)
+![motion graphic/type:video/size:350px/align:right/frame:none](https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/rN0W64K4ipau8gxv/videoblocks-motion-falling-shapes-in-a-2d-style-animation-with-liquid-effect_rqeldoc5zo__17248fcd7f79706cce4a748204720c27__P360.mp4)
 {/column}
 {/columns}
 ---

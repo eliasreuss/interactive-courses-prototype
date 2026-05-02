@@ -1,0 +1,209 @@
+[id:1/topic: Introduction to Supplier Performance]
+
+slide_id: 1
+index_title: Welcome to the Course
+title: 
+type: hero
+---
+hero_image: learn/images/104/76d793a8329422a590052e802fb60592eed511c87b32e040450c2d73ee160696
+hero_subtitle: Welcome to the course:
+hero_title: Supplier Performance
+hero_body: In this course, you will learn about supplier categorization, performance benchmarking and root-cause analysis to improve supplier performance using Inact Now.
+
+**Let’s get started!**
+---
+> [next] Let's do it! -> 2
+
+slide_id: 2
+index_title: Why Supplier Performance Matters
+title: Why Supplier Performance Matters
+layout: standard-2-col
+type: main
+---
+Before we dive into the specific tools and strategies, let's establish why getting this right is so crucial to our success.
+
+Suppliers play a critical role in the success of any company. While they are often viewed simply as providers of goods or services, suppliers are in reality key partners that influence a company’s financial performance, ability to innovate, and overall competitiveness. 
+
+In many organizations, a large share of total spending goes to external suppliers. This means that the way a company manages its supplier base can have a direct and significant impact on profitability, operational performance, and long-term strategic growth. 
+![image/size:450px/align:right/frame:none](learn/images/108/8503abbe8d59f8f51dc4921089f9adf31efff945afd918fb43e13a48b361a6d9)
+---
+> [next] Continue -> 3
+
+slide_id: 3
+index_title: Turning Strategy Into Action
+title: Turning Strategy Into Action
+type: main
+---
+Given their massive impact on our bottom line, working actively with suppliers is a must. This course will show you how to use Inact Now to make this a structured process.
+
+Specifically, you will learn how to: 
+![image/size:large/align:center/frame:none](learn/images/103/2fb491557afb8d27bd2accf5c1c62a5d78c1654b80b0ffb35ca74a55add4612f)
+
+**Let's do it!**
+---
+> [next] Continue -> 4
+
+slide_id: 4
+index_title: What Do We Measure?
+title: What Do We Measure?
+type: main
+---
+To execute those previous four steps effectively, we need a consistent way to measure success. To get a complete picture, we track five core key performance indicators (KPIs) for every supplier. Let's walk through them one by one.
+![image/size:large/align:center/frame:none](learn/images/92/17519d72e15f5286aca3e3179d1a47dfb8ab061a2412d6d738b87a9cfa97df88)
+---
+> [next] Continue -> 5
+
+[id:2/topic: Key Performance Indicators]
+
+slide_id: 5
+index_title: On-Time Delivery Performance (OTD)
+title: On-Time Delivery Performance (OTD)
+type: main
+---
+On-Time Delivery (OTD) measures how consistently suppliers deliver goods or services at the agreed time. It is one of the most important indicators of supplier performance because it directly affects a company’s ability to operate efficiently, meet customer expectations, and manage costs. 
+
+With On-Time Delivery Performance in Inact Now you create a transparent and structured approach to supplier performance management and the root-cause analysis to improve it.
+
+**Here is how it is calculated:**
+
+![image 1/size:large/align:center/frame:none](learn/images/100/f2029fd869ce5a3ebabbc6b05b02ffa9a49100662264fb7d1518b5f5b562613e)
+
+![image 2/size:large/align:center/frame:none](learn/images/101/12c260e5ae164531540f29cf3c5d0da6a2c0efea8cd6d88109620204b32eaa61)
+---
+> [next] Continue -> 6
+
+slide_id: 6
+index_title: Procurement Spend
+title: Procurement Spend
+type: main
+---
+For most companies, 50–80% of total costs are related to the procurement spend. Spend analysis is the process of collecting, classifying, and analyzing a company’s purchasing data to understand how much money is spent, with which suppliers, and on what types of goods or services. 
+
+With Inact Now you gain the insights to work strategically with your supplier portfolio, identify cost-saving opportunities and improve supplier negotiations. 
+![image/size:large/align:center/frame:none](learn/images/105/417e0d26920688579046fde5f66d3537d9b1b77df387ee327d5b63456e22b89c)
+---
+> [next] Continue -> 7
+
+slide_id: 7
+index_title: Inventory Value
+title: Inventory Value
+type: main
+---
+The inventory holding cost is a reflection of your supplier portfolio and performance. Working strategically with your suppliers can lower working capital, reduce obsolescence and improve profit margins.        
+
+With Inact Now you gain the full overview of your inventory holding cost on supplier level and enable a structured approach to lowering your working capital.
+![image/size:large/align:center/frame:none](learn/images/97/fc75889a20e0ced830b9745be5291aef8230b89c19ef3ab23cc4bb49f79bcee9)
+---
+> [next] Continue -> 8
+
+slide_id: 8
+index_title: Inventory Turnover Ratio
+title: Inventory Turnover Ratio
+type: main
+---
+The inventory turnover ratio is a reflection of your stocking policies, lead times and volume. Working strategically with your supplier portfolio can improve your inventory turnover ratio without compromising service towards customers. 
+
+With Inact Now you gain the full overview of your inventory and the root-cause analysis that allows you to improve supplier performance. 
+
+**Here is the calculation:**
+
+![image 1/size:large/align:center/frame:none](learn/images/95/aa6b6022701ca6d70280da4db94d66944ab9dd6a6f0bb2dd072bf3a0b7570cc6)
+
+![image 2/size:large/align:center/frame:none](learn/images/96/93f2ba346a22c2949e5f19c1f837df0474d94cad880ff46e5d0758c97ff58146)
+---
+> [next] Continue -> 9
+
+slide_id: 9
+index_title: ABC Analysis
+title: ABC Analysis
+type: main
+---
+The ABC analysis is a great framework in supplier performance management. The analysis creates transparency and helps you and your supplier to focus efforts on the areas with the greatest financial and operational impact. 
+
+The ABC Analysis in Inact Now identify your suppliers’ A, B and C items and help you negotiate better prices, delivery terms and order quantities. 
+![image/size:large/align:center/frame:none](learn/images/98/dadf1b73c6133f503679c5a107da5f120c5b6de74273dd329710709880b9eabe)
+---
+> [next] Continue -> 10
+
+[id:3/topic: Supplier Categorization]
+
+slide_id: 10
+index_title: Where Should I Focus My Energy?
+title: Where Should I Focus My Energy?
+layout: standard-2-col
+type: main
+---
+Now that you know what to measure, where do you start? With hundreds of suppliers, you can't tackle them all at once. 
+
+You need to focus your energy where it creates the biggest impact. 
+
+**Just as we categorize items, we must categorize our suppliers to find the ones that matter most.**
+![image/size:450px/align:right/frame:none](learn/images/90/669f7f04d5fc6479d569e99517cc05431b183a7e2ae47a97f6f044bd37d48310)
+---
+> [next] Continue -> 11
+
+slide_id: 11
+index_title: Supplier Categorisation
+title: Supplier Categorisation
+layout: standard-2-col
+type: main
+---
+Often, the 80/20 rule applies to your suppliers: around 20% of your vendors will account for 80% of your total spend and volume. These are your A-suppliers.
+
+Let’s take a look at the Supplier Categorisation Insight. This helps us find the strategic suppliers that actually drive our business, rather than wasting time on the "long tail" of small vendors.
+![image/size:450px/align:right/frame:none](learn/images/102/82ccd211c910d2a429fa8e8da77a825c87e08c5113074248b520ce932176f5e9)
+---
+> [next] Continue -> 12
+
+slide_id: 12
+index_title: Insight walkthrough: Supplier Categorisation
+title: Insight walkthrough: Supplier Categorisation
+type: main
+---
+The interactive tutorial below will guide you through how to use the "Supplier Categorisation" Insight to identify your most important suppliers. If the window appears too small, click the full-screen button in the top right corner.
+[supademo: Insight walkthrough: Supplier Categorization](https://app.supademo.com/embed/cmlzb3cv927rb1435rm7m2309?embed_v=2&utm_source=embed)
+---
+> [next] Continue -> 13
+
+[id:4/topic: Supplier Benchmark & Root Cause Analysis]
+
+slide_id: 13
+index_title: Benchmarking and Root Cause Analysis
+title: Benchmarking and Root Cause Analysis
+layout: standard-2-col
+type: main
+---
+Once you’ve identified your A-suppliers, the next step is to understand how they are performing in detail.
+
+By analyzing the key performance indicators, you can uncover the underlying drivers of performance. 
+
+This helps identify potential root causes behind issues like slow-moving stock, excess inventory, or service challenges, and provides a clear starting point for targeted improvement.
+![image/size:450px/align:right/frame:none](learn/images/99/9cb8bf32969e6700262a9a6ff1786030b730c31ddf8044a654e2610b511f4601)
+---
+> [next] Continue -> 14
+
+slide_id: 14
+index_title: Insight walkthrough - Supplier Performance Benchmark: Products
+title: Insight walkthrough - Supplier Performance Benchmark: Products
+type: main
+---
+Let’s see it action, and take a look at the insight: Supplier Performance Benchmark - Products. If the window appears too small, click the full-screen button in the top right corner.
+[supademo: Supplier Performance Benchmark: Products - Insight Walkthrough](https://app.supademo.com/embed/cmmtbxsjv0jl7f3u9rujr0a4g?embed_v=2&utm_source=embed)
+---
+> [next] Continue -> 15
+
+[id:5/topic: What's Next?]
+
+slide_id: 15
+index_title: Congratulations! You've Completed the Course
+title: Congratulations! You have completed the Supplier Performance course.
+layout: standard-2-col
+type: main
+---
+You now understand how to categorize your most important suppliers, benchmark their performance, and drill all the way down to the item level to find actionable improvements.
+
+Next up, we will look at how to map out exactly where your money is going in the Spend Analysis course.
+
+**Let’s keep going!**
+![image/size:large/align:right/frame:none](learn/images/104/76d793a8329422a590052e802fb60592eed511c87b32e040450c2d73ee160696)
+---

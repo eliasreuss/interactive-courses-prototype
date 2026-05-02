@@ -10,19 +10,19 @@ hero_subtitle: Welcome to the course:
 hero_title: Reorder Point
 hero_body: In the previous course, we focused on safety stock. Now, we’ll focus on timing. We’ll cover: 
 
-- What a reorder point is and why it’s important
-- How it is calculated
-- How to track and manage it in Inact Now
+* What a reorder point is and why it’s important
+* How it is calculated
+* How to track and manage it in Inact Now
 
 **Let’s get started!**
 ---
 > [next] Start course -> 2
 
-[id:2/topic: What is a reorder point?]
+[id:2/topic: What Is a Reorder Point?]
 
 slide_id: 2
-index_title: What is a reorder point?
-title: **What is a reorder point?**
+index_title: What Is a Reorder Point?
+title: **What Is a Reorder Point?**
 type: main
 ---
 The reorder point is the inventory level at which you place a new purchase order. It does not determine how much you order - only when you order.
@@ -34,8 +34,8 @@ You can think of it like the low-fuel warning in a car. The light turns on befor
 > [next] Continue -> 3
 
 slide_id: 3
-index_title: How it's calculated
-title: **How is the reorder point calculated?**
+index_title: How It's Calculated
+title: **How Is the Reorder Point Calculated?**
 type: main
 ---
 The reorder point is easy to calculate.
@@ -53,15 +53,15 @@ By including safety stock, you reorder early enough to stay in stock - even when
 [id:3/topic: Using Inact Now]
 
 slide_id: 4
-index_title: Looking at our own data
-title: **Let’s look at our own data**
+index_title: Looking at Our Own Data
+title: **Let’s Look at Our Own Data**
 type: main
 ---
 Calculating a reorder point for one product is simple. Managing it across many products requires automation.
 
 Inact Now tracks sales patterns, lead times, and safety stock to keep reorder points updated - every day. 
 
-Let’s take a look at the Reorder Point insight in Inact Now. Do you know how to open the insight?
+Let’s take a look at the Reorder Point Insight in Inact Now. Do you know how to open the Insight?
 
 ![image/size:350px/align:right/frame:none](reorder-point/Desktop.png)
 ---
@@ -69,21 +69,21 @@ Let’s take a look at the Reorder Point insight in Inact Now. Do you know how t
 > [sidequest] No, show me how -> s1
 
 slide_id: 5
-index_title: Navigating insight: Reorder Point
-title: **Navigating insight: Reorder Point**
+index_title: Navigating Insight: Reorder Point
+title: **Navigating Insight: Reorder Point**
 type: main
 ---
-The interactive tutorial below will teach you how to use the Reorder Point insight:
+The interactive tutorial below will teach you how to use the Reorder Point Insight:
 
 [supademo: Navigating Insight: Reorder Point(Copy)](https://app.supademo.com/embed/cml7yn5xj01s02u0iy5dxbmlw?embed_v=2&utm_source=embed)
 ---
 > [next] Continue -> 6
 
-[id:4/topic: What's next?]
+[id:4/topic: What's Next?]
 
 slide_id: 6
 index_title: Congrats!
-title: **Congratulations! You’ve completed the Reorder Point course**
+title: **Congratulations! You’ve Completed the Reorder Point Course**
 type: main
 ---
 You’ve learned how to calculate the Reorder Point - and how to actively manage it in Inact.
@@ -99,14 +99,14 @@ In the next course, **Reorder Quantity**, you’ll learn how to calculate the ri
 
 [flow-specific-side-quests]
 
-[id:s1/topic: **Opening the insight: Reorder Point**]
+[id:s1/topic: Opening the Insight: Reorder Point]
 
 slide_id: 1
-title: ****Opening the insight: Reorder Point****
+title: **Opening the Insight: Reorder Point**
 type: sidequest
 backLabel: Return to course
 ---
-The interactive tutorial below will teach you how to open the insight:
+The interactive tutorial below will teach you how to open the Insight:
 
 [supademo: Opening the insight: Reorder Point](https://app.supademo.com/embed/cmkfl0jw9142yw7p2xd06kzut?embed_v=2&utm_source=embed)
 ---

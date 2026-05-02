@@ -1,5 +1,5 @@
 slide_id: 1
-index_title: Welcome to the learning path
+index_title: Welcome to the Learning Path
 title: 
 type: hero
 ---
@@ -13,22 +13,35 @@ hero_body: In this learning path, you will get a complete overview of the Inact 
 > [next] Continue -> 2
 
 slide_id: 2
-index_title: What is Inact Now?
-title: **What is Inact Now?**
+index_title: The Cost of Growth
+title: The Cost of Growth
 type: main
+layout: standard-2-col
 ---
-At its core, Inact Now helps you move from gut-feeling decisions to procurement driven by clear, easy-to-understand data. It has already helped companies unlock hundreds of millions in savings.
+As a business grows, its supply chain naturally becomes more complex. You have to manage more customers, a wider range of products, and an expanding network of suppliers.
 
-It works in two ways:
-![image/size:large/align:center/frame:none](now-intro/Two-Ways.png)
-
-This learning path focuses entirely on the tool itself. You will learn how to navigate Inact Now and confidently use its core features in your daily work.
+For operational teams, this complexity often leads to lost overviews, reactive firefighting, and decisions based on gut-feeling rather than facts.
+![image/size:550px/align:right/frame:none](now-intro/Complex-Supplychain.png)
 ---
 > [next] Continue -> 3
 
 slide_id: 3
-index_title: The four pillars of the platform
-title: **The four pillars of the platform**
+index_title: What is Inact Now?
+title: How does Inact Now help?
+type: main
+---
+To cut through this complexity, Inact Now is designed to give you back control. It helps you move from reactive, gut-feeling decisions to daily operations driven by clear data, best practices, and a shared language across commercial and operational teams.
+
+**It works in two ways:**
+![image/size:large/align:center/frame:none](now-intro/Two-Ways.png)
+
+This learning path focuses entirely on the tool itself. You will learn how to navigate Inact Now and confidently use its core features in your daily work.
+---
+> [next] Continue -> 4
+
+slide_id: 4
+index_title: The Four Pillars of the Platform
+title: **The Four Pillars of the Platform**
 type: main
 ---
 To help you get the most out of Inact Now, this learning path will walk you through its four main areas:

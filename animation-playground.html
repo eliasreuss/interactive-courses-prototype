@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animation playground</title>
+  <style>
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: #fafafa;
+    }
+
+    .hero-graphic-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    /* 1. Continuous floating effect for the entire graphic */
+    @keyframes levitate {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .hero-graphic {
+      max-width: 100%;
+      height: auto;
+      /* Animates continuously on a 6-second loop */
+      animation: levitate 6s ease-in-out infinite; 
+    }
+
+    /* 2. Continuous expand / contract on the nodes */
+    @keyframes breathe {
+      0%, 100% {
+        transform: scale(1);
+        filter: brightness(1);
+      }
+      50% {
+        transform: scale(1.25);
+        filter: brightness(1.18);
+      }
+    }
+
+    .animated-node {
+      animation: breathe 6s ease-in-out infinite;
+    }
+
+    /* Stagger the breathing delays so they pulse at slightly different times */
+    .animated-node:nth-of-type(1) { animation-delay: 0s; }
+    .animated-node:nth-of-type(2) { animation-delay: -1s; }
+    .animated-node:nth-of-type(3) { animation-delay: -2s; }
+    .animated-node:nth-of-type(4) { animation-delay: -3s; }
+  </style>
+</head>
+<body>
+  <div class="hero-graphic-container">
+    <svg
+      class="hero-graphic"
+      width="476"
+      height="495"
+      viewBox="0 0 476 495"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g filter="url(#filter0_d_746_1664)">
+        <!-- Lines -->
+        <line y1="-2" x2="366.068" y2="-2" transform="matrix(0.870198 -0.492702 0.48508 0.87447 101 413.363)" stroke="#304642" stroke-width="4"/>
+        <line y1="-2" x2="269.487" y2="-2" transform="matrix(0.963251 0.268602 -0.263537 0.964649 162.597 143)" stroke="#304642" stroke-width="4"/>
+        <line y1="-2" x2="196.017" y2="-2" transform="matrix(0.87097 -0.491336 0.483722 0.875222 156.127 124.856)" stroke="#304642" stroke-width="4"/>
+
+        <!-- Nodes -->
+        <ellipse
+          class="animated-node"
+          style="transform-origin: 61.0875px 428.614px"
+          cx="61.0875"
+          cy="428.614"
+          rx="51.0875"
+          ry="51.6135"
+          fill="#FF5A00"
+        />
+        <ellipse
+          class="animated-node"
+          style="transform-origin: 433.989px 219.319px"
+          cx="433.989"
+          cy="219.319"
+          rx="31.9894"
+          ry="32.3188"
+          fill="#304642"
+        />
+        <ellipse
+          class="animated-node"
+          style="transform-origin: 141.589px 131.205px"
+          cx="141.589"
+          cy="131.205"
+          rx="26.7374"
+          ry="27.0127"
+          fill="#304642"
+        />
+        <ellipse
+          class="animated-node"
+          style="transform-origin: 336.867px 21.4358px"
+          cx="336.867"
+          cy="21.4358"
+          rx="14.8011"
+          ry="15.4358"
+          fill="#304642"
+        />
+      </g>
+
+      <!-- Drop Shadow Definitions -->
+      <defs>
+        <filter id="filter0_d_746_1664" x="0" y="0" width="475.979" height="494.227" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+          <feOffset dy="4"/>
+          <feGaussianBlur stdDeviation="5"/>
+          <feComposite in2="hardAlpha" operator="out"/>
+          <feColorMatrix type="matrix" values="0 0 0 0 0.188235 0 0 0 0 0.27451 0 0 0 0 0.258824 0 0 0 0.15 0"/>
+          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_746_1664"/>
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_746_1664" result="shape"/>
+        </filter>
+      </defs>
+    </svg>
+  </div>
+</body>
+</html>

@@ -15,8 +15,8 @@ hero_body: In this course, we move from understanding your data to making decisi
 > [next] Let's do it! -> 2
 
 slide_id: 2
-index_title: The ultimate question
-title: **The ultimate question**
+index_title: The Ultimate Question
+title: **The Ultimate Question**
 type: main
 ---
 The first question an organisation should ask themselves when it comes to inventory management is: 
@@ -29,8 +29,8 @@ It sounds simple, but without a clear, data-driven answer to this question, you 
 > [next] Continue -> 3
 
 slide_id: 3
-index_title: The pain
-title: **What happens if we don’t operate with a clear stock policy?**
+index_title: The Pain
+title: **What Happens If We Don’t Operate with a Clear Stock Policy?**
 type: main
 ---
 When we don't have a strict answer to "what to stock," the result is a messy inventory that hurts the bottom line. Without a differentiated policy, we often see two painful extremes happening at the same time:
@@ -44,7 +44,7 @@ It is the worst of both worlds: high costs and poor service.
 [id:2/topic: The solution]
 
 slide_id: 4
-index_title: What's the cure?
+index_title: What's the Cure?
 title: **The solution**
 type: main
 ---
@@ -59,8 +59,8 @@ The cure for this is to stop treating every item equally. We need to apply diffe
 > [next] Continue -> 5
 
 slide_id: 5
-index_title: The value of a good stock policy
-title: **The strategic value of a good stock policy**
+index_title: The Value of a Good Stock Policy
+title: **The Strategic Value of a Good Stock Policy**
 type: main
 ---
 By applying those specific rules - stocking the winners and ordering or making the sporadic items on demand, you are actively managing the trade-offs between service and capital. A well-defined stock policy serves four distinct strategic purposes:
@@ -69,14 +69,14 @@ By applying those specific rules - stocking the winners and ordering or making t
 ---
 > [next] Continue -> 6
 
-[id:3/topic: How can Inact Now help us?]
+[id:3/topic: How Can Inact Now Help Us?]
 
 slide_id: 6
-index_title: Opening the insight: “Stock Policy | Non Stock Items”
+index_title: Opening the Insight: “Stock Policy | Non Stock Items”
 title: **How can Inact Now help us?**
 type: main
 ---
-Let's dive into your Inact Now. Here, we can pinpoint your biggest opportunities and risks, which is the key to defining the right stock policy for each double ABC category.
+Let's dive into your Inact Now. Here, we can pinpoint your biggest opportunities and risks, which is the key to defining the right stock policy for each Double ABC category.
 
 We will open the Insight: “Stock Policy | Non Stock Items”
 
@@ -86,8 +86,8 @@ We will open the Insight: “Stock Policy | Non Stock Items”
 > [sidequest] No, help me! -> s1
 
 slide_id: 7
-index_title: Using the insight: “Stock Policy | Non Stock Items”
-title: **Using the insight: “Stock Policy | Non Stock Items”**
+index_title: Using the Insight: “Stock Policy | Non Stock Items”
+title: **Using the Insight: “Stock Policy | Non Stock Items”**
 type: main
 ---
 Go through the interactive tutorial below to learn how to use Inact Now to establish better stock policies:
@@ -99,8 +99,8 @@ Go through the interactive tutorial below to learn how to use Inact Now to estab
 [id:4/topic: Outro]
 
 slide_id: 8
-index_title: What's next?
-title: **Congratulations! You’ve completed the second of five courses in the learning path.**
+index_title: What's Next?
+title: **Congratulations! You’ve Completed the Second of Five Courses in the Learning Path.**
 type: main
 ---
 You’ve learned how to set clear boundaries for your inventory - defining exactly which products earn a spot on the shelf and which should be bought to order or made to order.
@@ -109,9 +109,9 @@ Now that you know **what to stock**, the next step is determining **how much�
 
 In the **Safety Stock** course, you’ll learn how to:
 
--Handle uncertainty in demand and lead times
--Calculate the optimal safety stock for your items
--Protect service levels without bloating your inventory
+* Handle uncertainty in demand and lead times
+* Calculate the optimal safety stock for your items
+* Protect service levels without bloating your inventory
 
 **Let’s keep going!**
 
@@ -120,14 +120,14 @@ In the **Safety Stock** course, you’ll learn how to:
 
 [flow-specific-side-quests]
 
-[id:s1/topic: **How to open the insight**]
+[id:s1/topic: How to Open the Insight]
 
 slide_id: 1
-title: ****How to open the insight****
+title: **How to Open the Insight**
 type: sidequest
 backLabel: Return to course
 ---
-The interactive tutorial below will help you opening the insight:
+The interactive tutorial below will help you open the Insight:
 
 [supademo: Opening insight: Non Stock Items](https://app.supademo.com/embed/cmhewx0fd4h53fatikfj045gf?embed_v=2&utm_source=embed)
 ---

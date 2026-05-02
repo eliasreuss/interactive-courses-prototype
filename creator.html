@@ -2697,7 +2697,7 @@
             <div class="field-group title-field">
                 <label class="field-label">Slide Title (shown on slide)</label>
                 <div class="node-title-index-row">
-                    <input type="text" class="field-input node-title" placeholder="Use **text** for bold">
+                    <input type="text" class="field-input node-title" placeholder="Slide title">
                     <div class="index-title-wrap">
                         <button type="button" class="btn-index-title-popover" aria-label="Sidebar index title" aria-expanded="false" aria-haspopup="dialog" title="Optional title for sidebar / TOC">
                             <svg class="btn-index-title-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
@@ -2712,7 +2712,7 @@
                         <div class="index-title-panel" hidden role="dialog" aria-label="Index title for sidebar">
                             <label class="field-label">Index title (sidebar / TOC)</label>
                             <input type="text" class="field-input node-index-title" placeholder="Leave empty to use slide title">
-                            <p class="index-title-panel-hint">Shown in the course sidebar. If empty, the slide title is used (without ** formatting).</p>
+                            <p class="index-title-panel-hint">Shown in the course sidebar. If empty, the slide title is used.</p>
                         </div>
                     </div>
                 </div>
@@ -3397,12 +3397,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     // Update image paths in content to use current assets folder
                     content = updateContentImagePaths(nodeData.content || '');
+                    content = normalizeImageRowsToColumns(content);
                 }
                 
                 // Build slide output
-                const title = nodeData.title || '';
-                // indexTitle might not be in old format, so fallback to title
-                const indexTitle = nodeData.indexTitle || title.replace(/\*\*/g, '');
+                const title = tocPlainTitle(nodeData.title || '');
+                const indexTitle = nodeData.indexTitle ? tocPlainTitle(nodeData.indexTitle) : title;
                 markdown += `slide_id: ${slideId}\n`;
                 markdown += `index_title: ${indexTitle}\n`;
                 markdown += `title: ${title}\n`;
@@ -3411,6 +3411,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     markdown += `title-align: center\n`;
                 }
                 markdown += `type: ${type}\n`;
+                if (type !== 'hero' && /!\[[^\]]*\/align:right[^\]]*\]\([^)]+\)/.test(content)) {
+                    markdown += `layout: standard-2-col\n`;
+                }
                 markdown += `---\n${content.trim()}\n---\n`;
                 
                 // Auto-generate connection to next slide
@@ -3493,7 +3496,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 sq.slides.forEach((slide, slideIdx) => {
                     markdown += `slide_id: ${slideIdx + 1}\n`;
-                    markdown += `title: **${slide.title}**\n`;
+                    markdown += `title: ${tocPlainTitle(slide.title)}\n`;
                     markdown += `type: sidequest\n`;
                     // Content already has image paths updated via updateContentImagePaths
                     markdown += `---\n${slide.content}`;
@@ -4204,13 +4207,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const altText = prompt("Enter a short description (alt text):", "image");
             const size = prompt("Enter image size (e.g., x-small, small, medium, large, third, or a custom height like '150px'):", "large");
             if (!size) return;
-            const align = prompt("Enter image alignment (left, center, right, stack-right, or stack-right-top):", "center");
+            const align = prompt("Enter image alignment (left, center, or right):", "center");
             if (!align) return;
             const border = prompt("Frame? Type 'none' for no border/shadow, or leave blank:", "");
             
             let attributes = [];
             if (size) attributes.push(`size:${size.trim()}`);
-            if (align && ['left', 'center', 'right', 'stack-right', 'stack-right-top'].includes(align.trim())) {
+            if (align && ['left', 'center', 'right'].includes(align.trim())) {
                 attributes.push(`align:${align.trim()}`);
             }
             if (border && border.trim().length) attributes.push(`frame:${border.trim()}`);
@@ -4227,7 +4230,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const align = prompt("Enter row alignment (left, center, right):", "center");
             if (!align) return;
             const border = prompt("Frame? Type 'none' for no border/shadow, or leave blank for default:", "none");
-            const parts = [];
+            const cols = [];
             for (let i = 1; i <= count; i++) {
                 const file = prompt(`Image ${i} filename (e.g., img${i}.png):`);
                 if (!file) return;
@@ -4235,9 +4238,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const alt = prompt(`Image ${i} alt text:`, `image ${i}`) || `image ${i}`;
                 const attrs = [`size:${size.trim()}`, `align:${align.trim()}`];
                 if (border && border.trim().length) attrs.push(`frame:${border.trim()}`);
-                parts.push(`![${alt}/${attrs.join('/')}](${filePath})`);
+                cols.push(`{column}\n![${alt}/${attrs.join('/')}](${filePath})\n{/column}`);
             }
-            textToInsert = parts.join(' ') + '\n';
+            textToInsert = `{columns}\n${cols.join('\n')}\n{/columns}\n`;
         }
         else if (type === 'video-controls') {
             const ytUrl = prompt("Paste the YouTube link (video will have a play button and controls):");
@@ -4248,11 +4251,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const size = prompt("Size (x-small, small, medium, large, or e.g. '400px'):", "large");
             if (!size) return;
-            const align = prompt("Alignment (left, center, right, stack-right, stack-right-top):", "center");
+            const align = prompt("Alignment (left, center, right):", "center");
             if (!align) return;
 
             let attributes = [`size:${size.trim()}`];
-            if (align && ['left', 'center', 'right', 'stack-right', 'stack-right-top'].includes(align.trim())) {
+            if (align && ['left', 'center', 'right'].includes(align.trim())) {
                 attributes.push(`align:${align.trim()}`);
             }
 
@@ -4268,11 +4271,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const size = prompt("Size (x-small, small, medium, large, or e.g. '400px'):", "large");
             if (!size) return;
-            const align = prompt("Alignment (left, center, right, stack-right, stack-right-top):", "center");
+            const align = prompt("Alignment (left, center, right):", "center");
             if (!align) return;
 
             let attributes = [`size:${size.trim()}`];
-            if (align && ['left', 'center', 'right', 'stack-right', 'stack-right-top'].includes(align.trim())) {
+            if (align && ['left', 'center', 'right'].includes(align.trim())) {
                 attributes.push(`align:${align.trim()}`);
             }
             attributes.push('frame:none');
@@ -5359,13 +5362,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const altText = prompt("Enter a short description (alt text):", "image");
             const size = prompt("Enter image size (e.g., x-small, small, medium, large, third, or a custom height like '150px'):", "large");
             if (!size) return;
-            const align = prompt("Enter image alignment (left, center, right, stack-right, or stack-right-top):", "center");
+            const align = prompt("Enter image alignment (left, center, or right):", "center");
             if (!align) return;
             const border = prompt("Frame? Type 'none' for no border/shadow, or leave blank:", "");
 
             let attributes = [];
             if (size) attributes.push(`size:${size.trim()}`);
-            if (align && ['left', 'center', 'right', 'stack-right', 'stack-right-top'].includes(align.trim())) {
+            if (align && ['left', 'center', 'right'].includes(align.trim())) {
                 attributes.push(`align:${align.trim()}`);
             }
             if (border && border.trim().length) attributes.push(`frame:${border.trim()}`);
@@ -5386,11 +5389,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const size = prompt("Size (x-small, small, medium, large, or e.g. '400px'):", "large");
             if (!size) return;
-            const align = prompt("Alignment (left, center, right, stack-right, stack-right-top):", "center");
+            const align = prompt("Alignment (left, center, right):", "center");
             if (!align) return;
 
             let attributes = [`size:${size.trim()}`];
-            if (align && ['left', 'center', 'right', 'stack-right', 'stack-right-top'].includes(align.trim())) {
+            if (align && ['left', 'center', 'right'].includes(align.trim())) {
                 attributes.push(`align:${align.trim()}`);
             }
 
@@ -5409,11 +5412,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const size = prompt("Size (x-small, small, medium, large, or e.g. '400px'):", "large");
             if (!size) return;
-            const align = prompt("Alignment (left, center, right, stack-right, stack-right-top):", "center");
+            const align = prompt("Alignment (left, center, right):", "center");
             if (!align) return;
 
             let attributes = [`size:${size.trim()}`];
-            if (align && ['left', 'center', 'right', 'stack-right', 'stack-right-top'].includes(align.trim())) {
+            if (align && ['left', 'center', 'right'].includes(align.trim())) {
                 attributes.push(`align:${align.trim()}`);
             }
             attributes.push('frame:none');
@@ -5433,7 +5436,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const align = prompt("Enter row alignment (left, center, right):", "center");
             if (!align) return;
             const border = prompt("Frame? Type 'none' for no border/shadow, or leave blank for default:", "none");
-            const parts = [];
+            const cols = [];
             for (let i = 1; i <= count; i++) {
                 const file = prompt(`Image ${i} filename (e.g., img${i}.png):`);
                 if (!file) return;
@@ -5441,9 +5444,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const alt = prompt(`Image ${i} alt text:`, `image ${i}`) || `image ${i}`;
                 const attrs = [`size:${size.trim()}`, `align:${align.trim()}`];
                 if (border && border.trim().length) attrs.push(`frame:${border.trim()}`);
-                parts.push(`![${alt}/${attrs.join('/')}](${filePath})`);
+                cols.push(`{column}\n![${alt}/${attrs.join('/')}](${filePath})\n{/column}`);
             }
-            const row = parts.join(' ') + '\n';
+            const row = `{columns}\n${cols.join('\n')}\n{/columns}\n`;
             insertTextAtCursor(e.target, row);
             
             document.querySelectorAll('.media-dropdown.show').forEach(d => d.classList.remove('show'));
@@ -5688,6 +5691,20 @@ document.addEventListener('DOMContentLoaded', () => {
         e.target.value = '';
     });
     
+    // Convert old-format space-joined image rows to {columns} blocks.
+    // e.g. "![a/size:third/align:center](p1.png) ![b/...](p2.png)" →
+    //      "{columns}\n{column}\n![a/...](p1.png)\n{/column}\n..."
+    function normalizeImageRowsToColumns(content) {
+        return content.replace(
+            /^(!\[[^\]]*\]\([^)]+\))(\s+!\[[^\]]*\]\([^)]+\))+$/gm,
+            (line) => {
+                const images = [...line.matchAll(/!\[[^\]]*\]\([^)]+\)/g)].map(m => m[0]);
+                const cols = images.map(img => `{column}\n${img}\n{/column}`);
+                return `{columns}\n${cols.join('\n')}\n{/columns}`;
+            }
+        );
+    }
+
     generateBtn.addEventListener('click', () => {
         let finalOutput = '';
         const sidequestSlides = []; // Collect all sidequest slides for output at the end
@@ -5778,18 +5795,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     content = parts.join('\n');
             } else {
                 content = card.querySelector('.node-content').value;
+                content = normalizeImageRowsToColumns(content);
             }
 
                 // Build slide output in new format
                 const indexTitle = card.querySelector('.node-index-title')?.value || '';
                 finalOutput += `slide_id: ${slideId}\n`;
                 // Use custom index_title if provided, otherwise strip bold from title
-                finalOutput += `index_title: ${indexTitle || title.replace(/\*\*/g, '')}\n`;
-                finalOutput += `title: ${title}\n`;
+                const plainTitle = tocPlainTitle(title);
+                finalOutput += `index_title: ${indexTitle ? tocPlainTitle(indexTitle) : plainTitle}\n`;
+                finalOutput += `title: ${plainTitle}\n`;
                 if (titleAlign === 'center') {
                     finalOutput += `title-align: center\n`;
                 }
                 finalOutput += `type: ${type}\n`;
+                if (type !== 'hero' && /!\[[^\]]*\/align:right[^\]]*\]\([^)]+\)/.test(content)) {
+                    finalOutput += `layout: standard-2-col\n`;
+                }
                 finalOutput += `---\n${content.trim()}\n---\n`;
             
                 // Auto-generate connection to next element
@@ -5932,7 +5954,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 sq.slides.forEach((slide, slideIdx) => {
                     finalOutput += `slide_id: ${slideIdx + 1}\n`;
-                    finalOutput += `title: **${slide.title}**\n`;
+                    finalOutput += `title: ${tocPlainTitle(slide.title)}\n`;
                     finalOutput += `type: sidequest\n`;
                     // Always include backLabel if it exists
                     if (slide.backLabel) {
