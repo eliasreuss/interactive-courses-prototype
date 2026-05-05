@@ -1,0 +1,117 @@
+[id:1/topic: Welcome to the Course: Dashboards]
+
+slide_id: 1
+index_title: Welcome to the Course: Dashboards
+title: 
+type: hero
+---
+hero_image: now-dashboards/Dashboards-Hero.png
+hero_subtitle: Welcome to the course:
+hero_title: Dashboards
+hero_body: It’s time to look at the big picture.
+
+This final course focuses on dashboards. You will learn how to use these visual overviews to monitor your high-level metrics and track your overall performance at a glance.
+
+**Let’s get started!**
+---
+> [next] Continue -> 2
+
+slide_id: 2
+index_title: What Are Dashboards?
+title: What Are Dashboards?
+type: main
+---
+Dashboards are more than just generic overviews. Every Dashboard is built with a specific purpose in mind. They are based directly on your Insights and are designed to highlight your most important KPI’s and trends in one place. 
+
+A Dashboard is built using two main components: Widgets and Tables. Both of these parts are highly interactive.
+![image/size:large/align:center/frame:none](now-dashboards/Widgets-Tables.png)
+---
+> [next] Continue -> 3
+
+slide_id: 3
+index_title: A Quick Tip Before We Continue
+title: A Quick Tip Before We Continue
+type: main
+---
+Before we dive deeper into the elements of a Dashboard, here is a helpful tip.
+
+Dashboards can be customized to show many different overviews. To make sure you know exactly what you are looking at, simply click the "i" button. This reveals the specific Insights and data buckets that feed information directly into your Dashboard.
+![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Now-Dashboards/ClickingIDashboards.mp4)
+---
+> [next] Continue -> 4
+
+[id:2/topic: Widgets]
+
+slide_id: 4
+index_title: Understanding Widgets
+title: Understanding Widgets
+type: main
+layout: standard-2-col
+---
+Let's explore the individual parts of Dashboards. We will start with Widgets.
+
+Widgets are designed to give you instant answers. On the top left, you will see the KPI. On the top right, you will see your target and whether you are hitting it. If you want month-per-month numbers, simply hover over the trend line.
+![video/size:large/align:right/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Now-Dashboards/KPI.mp4)
+---
+> [next] Continue -> 5
+
+[id:3/topic: Tables]
+
+slide_id: 5
+index_title: Understanding Tables
+title: Understanding Tables
+type: main
+---
+Right below the Widgets, you will find Tables. These display your KPIs based on different categorizations. Your data might be grouped by ABC categories or by the responsible buyer. Tables can also show individual products, like a list of your top ten best-selling items.
+![image/size:large/align:center/frame:none](now-dashboards/Table.png)
+---
+> [next] Continue -> 6
+
+slide_id: 6
+index_title: Filtering On Categories
+title: Filtering On Categories
+type: main
+---
+If you click on any category in a table, it filters the entire Dashboard to show only that specific group. You will know a filter is active because the color of the Widgets change. 
+
+In the graphic, the data is currently filtered to show only A items.
+![image/size:large/align:center/frame:none](now-dashboards/Table-Filter.png)
+---
+> [next] Continue -> 7
+
+[id:4/topic: Slicers And Filters]
+
+slide_id: 7
+index_title: Using Slicers And Filters
+title: Using Slicers And Filters
+type: main
+---
+Dashboards work just like Insights when it comes to segmenting your data. You can always use the fixed Slicers at the top of the screen or add any custom Filter to get the exact view you need.
+![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Now-Dashboards/Dashboard-Filter.mp4)
+---
+> [next] Continue -> 8
+
+[id:5/topic: Going One Click Deeper]
+
+slide_id: 8
+index_title: Going One Click Deeper
+title: Going One Click Deeper
+type: main
+---
+The One Click Deeper concept also applies to Dashboards. If you click directly on a Widget or click the button next to a category or product in a Table, you will open a detailed Trend View for that specific data.
+![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Now-Dashboards/Dashboards-Trend.mp4)
+---
+> [next] Continue -> 9
+
+[id:6/topic: Congrats!]
+
+slide_id: 9
+index_title: Congratulations! You Have Completed The Dashboards Course
+title: Congratulations! You Have Completed The Dashboards Course
+type: main
+layout: standard-2-col
+---
+You now know how to navigate your Dashboards to monitor your most important KPIs and track your overall performance. You understand how to read Widgets to check your targets and navigate Tables. You also know how to apply Slicers and Filters to isolate specific areas, and how to drill down into the exact details behind any metric.
+
+![image/size:large/align:right/frame:none](now-dashboards/Dashboards-Hero.png)
+---
