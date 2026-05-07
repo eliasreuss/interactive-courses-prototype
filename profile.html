@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>Profile — Inact learn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    :root {
+      --color-primary: #304642;
+      --color-primary-light: #3d5a54;
+      --color-accent: #FF5A00;
+      --color-bg: #FAFAFA;
+      --color-card: #FFFFFF;
+      --color-muted: #8A9A97;
+      --color-secondary: rgba(48, 70, 66, 0.55);
+      --font: 'Poppins', sans-serif;
+      --shadow: 0 2px 8px rgba(48,70,66,.06), 0 8px 24px rgba(48,70,66,.08);
+      --shadow-lg: 0 8px 16px rgba(48,70,66,.08), 0 24px 48px rgba(48,70,66,.12);
+      --ease: cubic-bezier(0.4, 0, 0.2, 1);
+      --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+      /* Match hub course cards (.course-card in now-hub.html) */
+      --r: 17.76px;
+      --mar: 40px;
+    }
+
+    @media (min-width: 1400px) { :root { --mar: 120px; } }
+    @media (min-width: 1600px) { :root { --mar: 180px; } }
+    @media (min-width: 1920px) { :root { --mar: 280px; } }
+    @media (min-width: 2200px) { :root { --mar: 380px; } }
+    @media (min-width: 2560px) { :root { --mar: 480px; } }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--color-bg);
+      color: var(--color-primary);
+      min-height: 100vh;
+      background-image: radial-gradient(circle at 1px 1px, rgba(48,70,66,.03) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+
+    /* ─── Header ─── */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 40px;
+      background: rgba(255,255,255,.95);
+      border-bottom: 1px solid rgba(48,70,66,.08);
+      border-radius: 0 0 25px 25px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+
+    .header-left { display: flex; align-items: center; gap: 40px; }
+
+    .logo {
+      font-size: 22px; font-weight: 700; letter-spacing: -.5px;
+      color: var(--color-primary); text-decoration: none;
+    }
+    .logo span { color: var(--color-accent); font-weight: 600; }
+
+    nav { display: flex; gap: 4px; }
+
+    nav a {
+      text-decoration: none; color: var(--color-primary); font-size: 14px;
+      font-weight: 500; padding: 8px 16px; border-radius: 100px;
+      opacity: .6; transition: opacity .15s, background .15s;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    nav a:hover { opacity: 1; background: rgba(48,70,66,.06); }
+    nav a.active { opacity: 1; background: rgba(48,70,66,.08); font-weight: 600; }
+    nav a svg { width: 11px; height: 11px; opacity: .5; }
+
+    .header-right { display: flex; align-items: center; gap: 12px; }
+
+    .beta-tag {
+      padding: 7px 14px; background: var(--color-primary); color: #fff;
+      border-radius: 8px; font-size: 12px; font-weight: 700; letter-spacing: 1px;
+    }
+
+    .nav-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: #DCEAFE; color: #1e40af;
+      font-size: 13px; font-weight: 700; letter-spacing: .3px;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none; box-shadow: 0 2px 8px rgba(147,197,253,.45);
+      outline: 2px solid rgba(147,197,253,.4); outline-offset: 2px;
+      transition: transform .15s, box-shadow .15s;
+    }
+    .nav-avatar:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(147,197,253,.6); }
+
+    /* ─── Page ─── */
+    .page { display: flex; flex-direction: column; gap: 28px; padding-bottom: 64px; }
+
+    /* ─── Glass ─── */
+    .glass {
+      background: rgba(255,255,255,.07);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,.28);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.45), inset 0 -1px 0 rgba(255,255,255,.08);
+      position: relative; overflow: hidden;
+    }
+    .glass > * { position: relative; z-index: 1; }
+    .glass::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* ─── Hero ─── */
+    .hero {
+      margin: 20px var(--mar) 0;
+      border-radius: 25px;
+      background:
+        linear-gradient(to right, rgba(255,255,255,.07) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,.07) 1px, transparent 1px),
+        #304642;
+      background-size: 80px 80px, 80px 80px, 100% 100%;
+      box-shadow: 0 4px 24px rgba(48,70,66,.22), 0 1px 4px rgba(48,70,66,.12);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 180px;
+      position: relative;
+    }
+
+    .hero-left {
+      padding: 40px 52px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-name {
+      color: rgba(255,255,255,.95);
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -.9px;
+    }
+
+    .hero-pills {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .hero-avatar {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: #DCEAFE;
+      color: #1e40af;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 20px rgba(147,197,253,.45);
+    }
+
+    .hero-pill--role {
+      background: #DCEAFE;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border-color: rgba(96, 165, 250, 0.45);
+      box-shadow: 0 2px 10px rgba(30,64,175,.1), inset 0 1px 0 rgba(255,255,255,.7);
+      color: #1e40af;
+      font-weight: 600;
+    }
+
+    .hero-pill {
+      padding: 9px 21px;
+      border-radius: 500px;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(7px);
+      -webkit-backdrop-filter: blur(7px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+      color: rgba(255,255,255,.88);
+      font-size: 14px;
+      font-weight: 500;
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .hero-pill::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.8), transparent);
+      pointer-events: none;
+    }
+
+    .hero-pill::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 1px; height: 100%;
+      background: linear-gradient(180deg, rgba(255,255,255,.8), transparent, rgba(255,255,255,.3));
+      pointer-events: none;
+    }
+
+    .hero-person {
+      position: absolute;
+      right: 52px;
+      bottom: 0;
+      height: 100%;
+      width: auto;
+      display: block;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* ─── Section ─── */
+    .section {
+      padding: 0 var(--mar);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      color: var(--color-muted);
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -.3px;
+      color: var(--color-primary);
+    }
+
+    /* ─── KPI Strip ─── */
+    /* Single unified card, stats in a row — breaks the "5 identical boxes" pattern */
+    .kpi-strip {
+      background: var(--color-card);
+      border-radius: var(--r);
+      border: 1px solid rgba(48,70,66,.07);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      overflow: hidden;
+    }
+
+    .kpi-item {
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      transition: background .18s;
+      cursor: default;
+    }
+
+    .kpi-item:hover { background: rgba(48,70,66,.025); }
+
+    /* Vertical dividers between items */
+    .kpi-item + .kpi-item::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 24px; bottom: 24px;
+      width: 1px;
+      background: rgba(48,70,66,.07);
+    }
+
+    /* Large watermark icon */
+    .kpi-watermark {
+      position: absolute;
+      top: 20px; right: 20px;
+      width: 52px; height: 52px;
+      pointer-events: none;
+    }
+
+    /* Asset SVGs use white fills; silhouette + opacity reads on white cards like prior currentColor icons */
+    .kpi-watermark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      filter: brightness(0);
+      opacity: 0.055;
+    }
+
+    /* Optical balance: some assets fill the viewBox more than Courses/Tutorials */
+    .kpi-watermark--lp img {
+      transform: scale(0.78);
+      transform-origin: top right;
+    }
+    .kpi-watermark--videos img {
+      transform: scale(0.82);
+      transform-origin: top right;
+    }
+    .kpi-watermark--achievements img {
+      transform: scale(0.8);
+      transform-origin: top right;
+    }
+
+    .kpi-num {
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: -2px;
+      line-height: 1;
+    }
+
+    .kpi-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--color-secondary);
+      line-height: 1.35;
+    }
+
+    /* ─── Achievements panel ─── */
+    .achievements-panel {
+      border-radius: var(--r);
+      background: #FFFFFF;
+      border: 1px solid rgba(48,70,66,.08);
+      box-shadow: 0 2px 8px rgba(48,70,66,.05), 0 8px 32px rgba(48,70,66,.07);
+      padding: 52px 52px 64px;
+    }
+
+    .achievements-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 44px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(48,70,66,.08);
+    }
+
+    .achievements-header-text {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .achievements-label {
+      color: rgba(48,70,66,.45);
+    }
+
+    .achievements-title {
+      color: var(--color-primary);
+      font-weight: 700;
+      font-size: clamp(22px, 2.6vw, 34px);
+      letter-spacing: -0.6px;
+      line-height: 1.1;
+    }
+
+    .achievements-count {
+      font-size: clamp(40px, 4.5vw, 58px);
+      font-weight: 200;
+      letter-spacing: -3px;
+      color: rgba(48,70,66,.16);
+      line-height: 1;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .achievements-count strong {
+      font-weight: 700;
+      color: rgba(48,70,66,.52);
+    }
+
+    .achievements-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 48px 28px;
+    }
+
+    .achievement-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+      cursor: default;
+    }
+
+    .achievement-badge-wrap {
+      width: min(100%, 240px);
+      aspect-ratio: 1;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform .5s var(--ease-out-quart), filter .5s var(--ease-out-quart);
+      filter: drop-shadow(0 4px 12px rgba(48,70,66,.13)) drop-shadow(0 10px 28px rgba(48,70,66,.09));
+    }
+
+    .achievement-badge {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      transition: filter .5s var(--ease-out-quart);
+    }
+
+    .achievement-item.earned {
+      cursor: pointer;
+    }
+
+    .achievement-item.earned .achievement-badge-wrap:hover {
+      transform: translateY(-14px) scale(1.08) rotate(-1.5deg);
+      filter:
+        drop-shadow(0 2px 5px rgba(48,70,66,.24))
+        drop-shadow(0 18px 40px rgba(48,70,66,.18))
+        drop-shadow(0 0 52px rgba(255,90,0,.28))
+        drop-shadow(0 0 110px rgba(255,90,0,.13));
+    }
+
+    .achievement-item.earned .achievement-badge-wrap:hover .achievement-badge {
+      filter: brightness(1.09) saturate(1.12);
+    }
+
+    .achievement-item.locked .achievement-badge-wrap {
+      opacity: .38;
+      filter: drop-shadow(0 3px 8px rgba(48,70,66,.07));
+    }
+
+    .achievement-name {
+      font-size: clamp(13px, 1.3vw, 17px);
+      font-weight: 600;
+      line-height: 1.35;
+      text-align: center;
+      width: min(100%, 240px);
+      transition: transform .45s .06s var(--ease-out-quart);
+    }
+
+    .achievement-item.earned:hover .achievement-name {
+      transform: translateY(-6px);
+    }
+
+    .achievement-item.earned .achievement-name {
+      color: var(--color-primary);
+    }
+
+    .achievement-item.locked .achievement-name {
+      color: rgba(48,70,66,.32);
+      font-weight: 400;
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 1100px) {
+      .achievements-row { grid-template-columns: repeat(2, 1fr); gap: 48px 32px; }
+    }
+
+    @media (max-width: 900px) {
+      .hero { margin: 16px 24px 0; }
+      .hero-left { padding: 32px 40px; }
+      .hero-name { font-size: 32px; }
+      .achievements-panel { padding: 40px 32px 52px; }
+      .achievements-count { font-size: 40px; letter-spacing: -2px; }
+      .kpi-num { font-size: 38px; letter-spacing: -1.5px; }
+      .kpi-item { padding: 28px 20px; }
+    }
+
+    @media (max-width: 680px) {
+      .header { padding: 12px 20px; }
+      nav { display: none; }
+      .hero { margin: 12px 16px 0; }
+      .hero-left { padding: 28px 24px; gap: 14px; }
+      .hero-avatar { width: 52px; height: 52px; font-size: 16px; }
+      .hero-name { font-size: 26px; }
+      .section { padding: 0 16px; }
+      .achievements-panel { padding: 28px 24px 40px; }
+      .achievements-header { margin-bottom: 28px; padding-bottom: 20px; }
+      .achievements-count { display: none; }
+      .achievements-row { grid-template-columns: repeat(2, 1fr); gap: 28px 16px; }
+      .achievement-badge-wrap { width: min(100%, 160px); }
+      .achievement-name { font-size: 13px; width: min(100%, 160px); }
+      .kpi-strip { grid-template-columns: repeat(2, 1fr); }
+      .kpi-item:last-child { grid-column: 1 / -1; border-top: 1px solid rgba(48,70,66,.07); }
+      .kpi-item:last-child::before { display: none; }
+      .kpi-num { font-size: 32px; letter-spacing: -1px; }
+      .kpi-item { padding: 22px 18px; }
+    }
+
+    /* ─── Achievement overlay ─── */
+    .achievement-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .22s var(--ease-out-quart);
+    }
+
+    .achievement-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .achievement-overlay-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(22,32,28,.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .achievement-overlay-player {
+      position: relative;
+      z-index: 1;
+      width: 100vmin;
+      height: 100vmin;
+      pointer-events: none;
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    /* ─── Entrance animations ─── */
+    @keyframes up {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero { animation: up .5s var(--ease-out-quart) both; }
+
+    .kpi-strip {
+      opacity: 0;
+      animation: up .45s var(--ease-out-quart) .12s both;
+    }
+
+    .achievement-item {
+      opacity: 0;
+      animation: up .4s var(--ease-out-quart) both;
+    }
+    .achievement-item:nth-child(1) { animation-delay: .22s; }
+    .achievement-item:nth-child(2) { animation-delay: .29s; }
+    .achievement-item:nth-child(3) { animation-delay: .36s; }
+    .achievement-item:nth-child(4) { animation-delay: .43s; }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-left">
+    <a class="logo" href="now-hub.html">Inact <span>learn</span></a>
+    <nav>
+      <a href="#">Home
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </a>
+      <a href="now-hub.html">Learning Paths</a>
+      <a href="#">Catalog
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </a>
+      <a href="#">Dictionary
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </a>
+    </nav>
+  </div>
+  <div class="header-right">
+    <span class="beta-tag">BETA</span>
+    <a href="profile.html" class="nav-avatar" aria-label="Your profile">AJ</a>
+  </div>
+</header>
+
+<div class="page">
+
+  <!-- ─── Hero ─── -->
+  <section class="hero" aria-label="Profile overview">
+    <div class="hero-left">
+      <div class="hero-avatar" aria-hidden="true">AJ</div>
+      <h1 class="hero-name">Alex Johnson</h1>
+      <div class="hero-pills">
+        <span class="hero-pill hero-pill--role">Super User</span>
+      </div>
+    </div>
+    <img class="hero-person" src="header-icons/Profile-Header-SVG.svg" alt="" aria-hidden="true">
+  </section>
+
+  <!-- ─── KPI Strip ─── -->
+  <section class="section" aria-label="Learning progress">
+    <div class="kpi-strip">
+
+      <div class="kpi-item">
+        <div class="kpi-watermark kpi-watermark--lp" aria-hidden="true">
+          <img src="SVGs/ProfileViewKPIIcons/LearningPaths.svg" width="52" height="52" alt="">
+        </div>
+        <span class="kpi-num">2</span>
+        <span class="kpi-label">Learning Paths<br>Completed</span>
+      </div>
+
+      <div class="kpi-item">
+        <div class="kpi-watermark" aria-hidden="true">
+          <img src="SVGs/ProfileViewKPIIcons/Courses.svg" width="52" height="52" alt="">
+        </div>
+        <span class="kpi-num">4</span>
+        <span class="kpi-label">Courses<br>Completed</span>
+      </div>
+
+      <div class="kpi-item">
+        <div class="kpi-watermark" aria-hidden="true">
+          <img src="SVGs/ProfileViewKPIIcons/Tutorials.svg" width="52" height="52" alt="">
+        </div>
+        <span class="kpi-num">8</span>
+        <span class="kpi-label">Tutorials<br>Completed</span>
+      </div>
+
+      <div class="kpi-item">
+        <div class="kpi-watermark kpi-watermark--videos" aria-hidden="true">
+          <img src="SVGs/ProfileViewKPIIcons/Videos.svg" width="52" height="52" alt="">
+        </div>
+        <span class="kpi-num">12</span>
+        <span class="kpi-label">Videos<br>Watched</span>
+      </div>
+
+      <div class="kpi-item">
+        <div class="kpi-watermark kpi-watermark--achievements" aria-hidden="true">
+          <img src="SVGs/ProfileViewKPIIcons/Certificates.svg" width="52" height="52" alt="">
+        </div>
+        <span class="kpi-num">3</span>
+        <span class="kpi-label">Achievements<br>Unlocked</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── Achievements ─── -->
+  <section class="section" aria-labelledby="achievements-heading">
+    <div class="achievements-panel">
+      <div class="achievements-header">
+        <div class="achievements-header-text">
+          <p class="section-label achievements-label">3 of 4 earned</p>
+          <h2 class="achievements-title" id="achievements-heading">Achievements &amp; Certificates</h2>
+        </div>
+        <span class="achievements-count" aria-hidden="true"><strong>3</strong> / 4</span>
+      </div>
+      <div class="achievements-row" role="list">
+
+        <div class="achievement-item earned" role="listitem" data-achievement="inventory">
+          <div class="achievement-badge-wrap">
+            <img class="achievement-badge" src="Achievements/Inventory-Achievement.svg" alt="Inventory Management With Inact Now — earned">
+          </div>
+          <span class="achievement-name">Inventory Management With Inact Now</span>
+        </div>
+
+        <div class="achievement-item earned" role="listitem">
+          <div class="achievement-badge-wrap">
+            <img class="achievement-badge" src="Achievements/Supplier-Achievement.svg" alt="Supplier Management With Inact Now — earned">
+          </div>
+          <span class="achievement-name">Supplier Management With Inact Now</span>
+        </div>
+
+        <div class="achievement-item earned" role="listitem">
+          <div class="achievement-badge-wrap">
+            <img class="achievement-badge" src="Achievements/Inact-Now-Fundamentals-Achievement.svg" alt="Inact Now Fundamentals — earned">
+          </div>
+          <span class="achievement-name">Inact Now Fundamentals</span>
+        </div>
+
+        <div class="achievement-item locked" role="listitem" aria-label="Customer Management With Inact Now — not yet earned">
+          <div class="achievement-badge-wrap">
+            <img class="achievement-badge" src="Achievements/Empty-Achievement.svg" alt="" aria-hidden="true">
+          </div>
+          <span class="achievement-name">Customer Management With Inact Now</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+
+
+<!-- ─── Achievement overlay ─── -->
+<div id="achievement-overlay" class="achievement-overlay" role="dialog" aria-modal="true" aria-label="Achievement unlocked">
+  <div class="achievement-overlay-backdrop"></div>
+  <lottie-player
+    id="achievement-lottie"
+    class="achievement-overlay-player"
+    src="Achievements/Inventory-Achievement-Click-Animation.json"
+    background="transparent"
+    speed="1">
+  </lottie-player>
+</div>
+
+<script>
+  const overlay  = document.getElementById('achievement-overlay');
+  const player   = document.getElementById('achievement-lottie');
+  const trigger  = document.querySelector('[data-achievement="inventory"]');
+
+  function openOverlay() {
+    overlay.classList.add('active');
+    player.stop();
+    player.play();
+  }
+
+  function closeOverlay() {
+    overlay.classList.remove('active');
+    player.stop();
+  }
+
+  trigger.addEventListener('click', openOverlay);
+  overlay.querySelector('.achievement-overlay-backdrop').addEventListener('click', closeOverlay);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeOverlay(); });
+  player.addEventListener('complete', () => setTimeout(closeOverlay, 500));
+</script>
+
+</body>
+</html>

@@ -68,8 +68,8 @@ Right below the Widgets, you will find Tables. These display your KPIs based on 
 > [next] Continue -> 6
 
 slide_id: 6
-index_title: Filtering On Categories
-title: Filtering On Categories
+index_title: Filtering on Categories
+title: Filtering on Categories
 type: main
 ---
 If you click on any category in a table, it filters the entire Dashboard to show only that specific group. You will know a filter is active because the color of the Widgets change. 
@@ -82,8 +82,8 @@ In the graphic, the data is currently filtered to show only A items.
 [id:4/topic: Slicers And Filters]
 
 slide_id: 7
-index_title: Using Slicers And Filters
-title: Using Slicers And Filters
+index_title: Using Slicers and Filters
+title: Using Slicers and Filters
 type: main
 ---
 Dashboards work just like Insights when it comes to segmenting your data. You can always use the fixed Slicers at the top of the screen or add any custom Filter to get the exact view you need.
@@ -106,8 +106,8 @@ The One Click Deeper concept also applies to Dashboards. If you click directly o
 [id:6/topic: Congrats!]
 
 slide_id: 9
-index_title: Congratulations! You Have Completed The Dashboards Course
-title: Congratulations! You Have Completed The Dashboards Course
+index_title: Congratulations! You Have Completed the Dashboards Course
+title: Congratulations! You Have Completed the Dashboards Course
 type: main
 layout: standard-2-col
 ---
