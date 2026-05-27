@@ -7,6 +7,12 @@
   <title>Learning Path - Supplier Management with Inact Now</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    @property --bloom-r {
+      syntax: '<percentage>';
+      inherits: true;
+      initial-value: 0%;
+    }
+
     :root {
       --color-primary: #304642;
       --color-primary-light: #3d5a54;
@@ -346,21 +352,23 @@
       transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
+    .btn-start.is-blooming { --bloom-r: 170%; }
+
     @media (prefers-reduced-motion: no-preference) {
       .btn-start:hover .btn-start-label { transform: translateX(2px); }
       .btn-start:hover .btn-start-arrow { transform: translateX(8px); }
       .btn-start::before {
         content: '';
         position: absolute;
-        top: 0; left: -80%;
-        width: 55%; height: 100%;
-        background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.35) 50%, transparent 100%);
-        transform: skewX(-14deg);
+        inset: 0;
+        border-radius: inherit;
         pointer-events: none;
-      }
-      .btn-start:hover::before {
-        left: 145%;
-        transition: left 0.52s cubic-bezier(0.16, 1, 0.3, 1);
+        background: radial-gradient(
+          circle at var(--bloom-x, 50%) var(--bloom-y, 50%),
+          rgba(255,255,255,0.30) var(--bloom-r),
+          transparent calc(var(--bloom-r) + 14%)
+        );
+        transition: --bloom-r 0.55s cubic-bezier(0.16, 1, 0.3, 1);
       }
     }
 
@@ -1301,10 +1309,25 @@
       }
     }
 
+    function initBloomBtn(btn) {
+      if (!btn || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const setOrigin = (e) => {
+        const r = btn.getBoundingClientRect();
+        const x = Math.max(0, Math.min(100, (e.clientX - r.left) / r.width  * 100)).toFixed(1);
+        const y = Math.max(0, Math.min(100, (e.clientY - r.top)  / r.height * 100)).toFixed(1);
+        btn.style.setProperty('--bloom-x', x + '%');
+        btn.style.setProperty('--bloom-y', y + '%');
+      };
+      btn.addEventListener('mouseenter', (e) => { setOrigin(e); btn.classList.add('is-blooming'); });
+      btn.addEventListener('mousemove',  (e) => { setOrigin(e); });
+      btn.addEventListener('mouseleave', (e) => { setOrigin(e); btn.classList.remove('is-blooming'); });
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       checkReturnFromCourse();
       renderCourses();
       observeCards();
+      initBloomBtn(document.getElementById('start-btn'));
     });
   </script>
 

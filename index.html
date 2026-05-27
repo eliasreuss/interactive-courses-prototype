@@ -6,6 +6,12 @@
 <title>Inact Learn — Home</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+  @property --bloom-r {
+    syntax: '<percentage>';
+    inherits: true;
+    initial-value: 0%;
+  }
+
   :root {
     --color-primary: #304642;
     --color-primary-light: #3d5a54;
@@ -1195,19 +1201,21 @@
     filter: brightness(0.95);
     transition: transform 0.08s ease, filter 0.08s ease, box-shadow 0.08s ease;
   }
+  .lc-btn-cta.is-blooming { --bloom-r: 170%; }
+
   @media (prefers-reduced-motion: no-preference) {
     .lc-btn-cta::before {
       content: '';
       position: absolute;
-      top: 0; left: -80%;
-      width: 55%; height: 100%;
-      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.32) 50%, transparent 100%);
-      transform: skewX(-14deg);
+      inset: 0;
+      border-radius: inherit;
       pointer-events: none;
-    }
-    .lc-btn-cta:hover::before {
-      left: 145%;
-      transition: left 0.52s cubic-bezier(0.16, 1, 0.3, 1);
+      background: radial-gradient(
+        circle at var(--bloom-x, 50%) var(--bloom-y, 50%),
+        rgba(255,255,255,0.26) var(--bloom-r),
+        transparent calc(var(--bloom-r) + 14%)
+      );
+      transition: --bloom-r 0.55s cubic-bezier(0.16, 1, 0.3, 1);
     }
   }
 
@@ -1503,6 +1511,33 @@ function renderSolToggle() {
   });
 }
 
+function initBloomBtn(btn) {
+  if (!btn || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (btn._bloomCleanup) btn._bloomCleanup();
+
+  const setOrigin = (e) => {
+    const r = btn.getBoundingClientRect();
+    const x = Math.max(0, Math.min(100, (e.clientX - r.left) / r.width * 100)).toFixed(1);
+    const y = Math.max(0, Math.min(100, (e.clientY - r.top)  / r.height * 100)).toFixed(1);
+    btn.style.setProperty('--bloom-x', x + '%');
+    btn.style.setProperty('--bloom-y', y + '%');
+  };
+
+  const onEnter  = (e) => { setOrigin(e); btn.classList.add('is-blooming'); };
+  const onMove   = (e) => { setOrigin(e); };
+  const onLeave  = (e) => { setOrigin(e); btn.classList.remove('is-blooming'); };
+
+  btn.addEventListener('mouseenter', onEnter);
+  btn.addEventListener('mousemove',  onMove);
+  btn.addEventListener('mouseleave', onLeave);
+
+  btn._bloomCleanup = () => {
+    btn.removeEventListener('mouseenter', onEnter);
+    btn.removeEventListener('mousemove',  onMove);
+    btn.removeEventListener('mouseleave', onLeave);
+  };
+}
+
 function initCardParallax(card) {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (card._parallaxCleanup) card._parallaxCleanup();
@@ -1610,6 +1645,9 @@ function renderLearningCard() {
 
   // Parallax
   initCardParallax(card);
+
+  // Bloom on CTA button
+  initBloomBtn(card.querySelector('.lc-btn-cta'));
 
   // Progress bar + count-up
   requestAnimationFrame(() => {
