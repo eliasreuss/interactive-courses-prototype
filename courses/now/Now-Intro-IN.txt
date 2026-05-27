@@ -3,7 +3,7 @@ index_title: Welcome to the Learning Path
 title: 
 type: hero
 ---
-hero_image: now-intro/Now-Intro-Hero.png
+hero_image: learn/images/136/4f843a5723e01a750e77c9abfc24614b2ebc175b9f19b42608541301bf905d05
 hero_subtitle: Welcome to the learning path:
 hero_title: **Inact Now Fundamentals**
 hero_body: In this learning path, you will get a complete overview of the Inact Now platform. You will learn how to navigate your dashboards, interpret key insights, and turn your data into actionable tasks.
@@ -21,7 +21,7 @@ layout: standard-2-col
 As a business grows, its supply chain naturally becomes more complex. You have to manage more customers, a wider range of products, and an expanding network of suppliers.
 
 For operational teams, this complexity often leads to lost overviews, reactive firefighting, and decisions based on gut-feeling rather than facts.
-![image/size:550px/align:right/frame:none](now-intro/Complex-Supplychain.png)
+![image/size:550px/align:right/frame:none](learn/images/133/2023745b1b5d088bdae2e3d6b4685a7de6019ce7af49e9b8a027327d16380228)
 ---
 > [next] Continue -> 3
 
@@ -33,19 +33,39 @@ type: main
 To cut through this complexity, Inact Now is designed to give you back control. It helps you move from reactive, gut-feeling decisions to daily operations driven by clear data, best practices, and a shared language across commercial and operational teams.
 
 **It works in two ways:**
-![image/size:large/align:center/frame:none](now-intro/Two-Ways.png)
+![image/size:large/align:center/frame:none](learn/images/137/041662f1df5c248d2951fc084b9b2282d475da16017d518d6ab85a2f38cce3f0)
 
 This learning path focuses entirely on the tool itself. You will learn how to navigate Inact Now and confidently use its core features in your daily work.
 ---
 > [next] Continue -> 4
 
 slide_id: 4
+index_title: Where Does The Data Come From?
+title: Where Does The Data Come From?
+type: main
+---
+The data in Inact Now is sourced directly from your company's ERP system and refreshed every night. Before going live, Inact worked closely with your company to define a scope - determining exactly which data is included and how it's structured. Understanding this setup helps you get the most out of the platform.
+![image/size:large/align:center/frame:none](learn/images/134/6f894940ba8d6cf7419254a937f5688e0bdbaa956e2dd2bbda51cc7379db5da0)
+---
+> [next] Continue -> 5
+
+slide_id: 5
+index_title: Alleviating Confusion
+title: Alleviating Confusion
+type: main
+---
+If you know your company's ERP data well, you might notice that some columns have different names in Inact Now. Hovering over the "i" icon on any column will tell you exactly where that data comes from and anything else you need to know about it.
+![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Hover-I-Intro.mp4)
+---
+> [next] Continue -> 6
+
+slide_id: 6
 index_title: The Four Pillars of the Platform
-title: **The Four Pillars of the Platform**
+title: The Four Pillars of the Platform
 type: main
 ---
 To help you get the most out of Inact Now, this learning path will walk you through its four main areas:
-![image/size:large/align:center/frame:none](now-intro/Four-Pillars.png)
+![image/size:large/align:center/frame:none](learn/images/135/34795e0b9cfad77f90df6a6c3512768884843cb21a9248d5f100e58e11e40c0f)
 
 While the platform offers much more than just these four areas, they are the essential building blocks you need to get started.
 

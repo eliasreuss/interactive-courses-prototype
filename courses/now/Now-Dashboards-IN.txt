@@ -5,7 +5,7 @@ index_title: Welcome to the Course: Dashboards
 title: 
 type: hero
 ---
-hero_image: now-dashboards/Dashboards-Hero.png
+hero_image: learn/images/152/f4197d1566f8f32f2f9ba83b2e0a25a568df9be5df970dd18df1b453c6e29b87
 hero_subtitle: Welcome to the course:
 hero_title: Dashboards
 hero_body: It’s time to look at the big picture.
@@ -24,7 +24,7 @@ type: main
 Dashboards are more than just generic overviews. Every Dashboard is built with a specific purpose in mind. They are based directly on your Insights and are designed to highlight your most important KPI’s and trends in one place. 
 
 A Dashboard is built using two main components: Widgets and Tables. Both of these parts are highly interactive.
-![image/size:large/align:center/frame:none](now-dashboards/Widgets-Tables.png)
+![image/size:large/align:center/frame:none](learn/images/155/e5cd411eabbe121df61669cab2747c3849e5e19bf8f2e4dc100341c27a41c544)
 ---
 > [next] Continue -> 3
 
@@ -63,7 +63,7 @@ title: Understanding Tables
 type: main
 ---
 Right below the Widgets, you will find Tables. These display your KPIs based on different categorizations. Your data might be grouped by ABC categories or by the responsible buyer. Tables can also show individual products, like a list of your top ten best-selling items.
-![image/size:large/align:center/frame:none](now-dashboards/Table.png)
+![image/size:large/align:center/frame:none](learn/images/154/39daef84716763d6973fc53bbc94ae1772f7bd68420e93faae6e112e4c356dd4)
 ---
 > [next] Continue -> 6
 
@@ -75,7 +75,7 @@ type: main
 If you click on any category in a table, it filters the entire Dashboard to show only that specific group. You will know a filter is active because the color of the Widgets change. 
 
 In the graphic, the data is currently filtered to show only A items.
-![image/size:large/align:center/frame:none](now-dashboards/Table-Filter.png)
+![image/size:large/align:center/frame:none](learn/images/153/73e16ccd7479bed29f7fba743146c9d7f558a6e2ba984338ec20f2351ce72b84)
 ---
 > [next] Continue -> 7
 
@@ -113,5 +113,5 @@ layout: standard-2-col
 ---
 You now know how to navigate your Dashboards to monitor your most important KPIs and track your overall performance. You understand how to read Widgets to check your targets and navigate Tables. You also know how to apply Slicers and Filters to isolate specific areas, and how to drill down into the exact details behind any metric.
 
-![image/size:large/align:right/frame:none](now-dashboards/Dashboards-Hero.png)
+![image/size:large/align:right/frame:none](learn/images/152/f4197d1566f8f32f2f9ba83b2e0a25a568df9be5df970dd18df1b453c6e29b87)
 ---

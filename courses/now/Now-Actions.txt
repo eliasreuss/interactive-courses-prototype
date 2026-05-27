@@ -64,8 +64,9 @@ type: main
 Now you understand what Actions are and where the lists come from. Next, it’s time to learn how to use them in practice.
 
 Go through the tutorial below to get an overview of how to navigate Actions effectively:
-[supademo: Navigating Actions](https://app.supademo.com/embed/cmo8jbn9q1l4jl2dybl60r5vt?embed_v=2&utm_source=embed)
+[supademo: Navigating Actions](https://app.supademo.com/embed/cmows2lf801cjxr0jrous1srd?embed_v=2&utm_source=embed)
 ---
+
 > [next] Continue -> 6
 
 [id:3/topic: What's Next?]

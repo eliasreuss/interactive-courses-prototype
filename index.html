@@ -1,162 +1,1944 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <title>Inact — Learning prototypes</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --color-primary: #304642;
-      --color-primary-light: #3d5a54;
-      --color-accent: #FF5A00;
-      --color-bg: #FAFAFA;
-      --color-card-bg: #FFFFFF;
-      --color-muted: #8A9A97;
-      --color-text-secondary: rgba(48, 70, 66, 0.6);
-      --font-family: 'Poppins', sans-serif;
-      --shadow-card: 0 2px 8px rgba(48, 70, 66, 0.06), 0 8px 24px rgba(48, 70, 66, 0.08);
-      --shadow-card-hover: 0 8px 16px rgba(48, 70, 66, 0.08), 0 24px 48px rgba(48, 70, 66, 0.12);
-      --radius-lg: 20px;
-      --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-      --page-margin: 40px;
-      --page-margin-top: 20px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inact Learn — Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #304642;
+    --color-primary-light: #3d5a54;
+    --color-accent: #FF5A00;
+    --color-accent-glow: rgba(255, 90, 0, 0.25);
+    --color-bg: #F9F7F5;
+    --color-card-bg: #FFFFFF;
+    --color-muted: #8A9A97;
+    --color-text-secondary: rgba(48, 70, 66, 0.6);
+    --color-tag-bg: #F0F0F0;
+    --color-progress-bg: #EBEBEB;
+    --font-family: 'Poppins', sans-serif;
+    --shadow-card: 0 2px 8px rgba(48, 70, 66, 0.06), 0 8px 24px rgba(48, 70, 66, 0.08);
+    --shadow-card-hover: 0 8px 16px rgba(48, 70, 66, 0.08), 0 24px 48px rgba(48, 70, 66, 0.12);
+    --shadow-header: 0 1px 0 rgba(48, 70, 66, 0.06);
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --radius-sm: 10px;
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --page-margin: 60px;
+    --page-margin-top: 20px;
+  }
 
-    @media (min-width: 1400px) {
-      :root { --page-margin: 120px; }
-    }
-    @media (min-width: 1600px) {
-      :root { --page-margin: 180px; }
-    }
-    @media (min-width: 1920px) {
-      :root { --page-margin: 280px; }
-    }
+  @media (min-width: 1400px) { :root { --page-margin: 160px; } }
+  @media (min-width: 1600px) { :root { --page-margin: 220px; } }
+  @media (min-width: 1920px) { :root { --page-margin: 320px; } }
+  @media (min-width: 2200px) { :root { --page-margin: 420px; } }
+  @media (min-width: 2560px) { :root { --page-margin: 520px; } }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
-      font-family: var(--font-family);
-      background: var(--color-bg);
-      min-height: 100vh;
-      color: var(--color-primary);
-      background-image: radial-gradient(circle at 1px 1px, rgba(48, 70, 66, 0.03) 1px, transparent 0);
-      background-size: 24px 24px;
-    }
+  html { scroll-behavior: smooth; }
 
-    .hero-header {
-      background:
-        linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-        var(--color-primary);
-      background-size: 120px 120px, 120px 120px, 100% 100%;
-      border-radius: 25px;
-      margin: var(--page-margin-top) var(--page-margin) 28px;
-      padding: 40px 48px;
-      box-shadow:
-        0 18px 48px rgba(0, 0, 0, 0.18),
-        0 2px 10px rgba(0, 0, 0, 0.10);
-    }
+  body {
+    font-family: var(--font-family);
+    background: var(--color-bg);
+    min-height: 100vh;
+    color: var(--color-primary);
+    background-image: radial-gradient(circle at 1px 1px, rgba(48, 70, 66, 0.03) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
 
-    .hero-title {
-      color: #fff;
-      font-size: 32px;
-      font-weight: 700;
-      line-height: 1.15;
-      letter-spacing: -0.6px;
-      margin-bottom: 10px;
-    }
+  /* ── HEADER ─────────────────────────────────── */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 40px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: var(--shadow-header);
+    border-radius: 0 0 25px 25px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(48, 70, 66, 0.08);
+  }
 
-    .hero-description {
-      color: rgba(255, 255, 255, 0.88);
-      font-size: 17px;
-      font-weight: 300;
-      line-height: 1.45;
-      max-width: 520px;
-    }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
 
-    .nav-wrap {
-      margin: 0 var(--page-margin) 48px;
-    }
+  .logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--color-primary);
+    letter-spacing: -0.5px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .logo span { color: var(--color-accent); font-weight: 800; }
 
-    .nav-grid {
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 100px;
+    transition: all 0.2s var(--transition-smooth);
+    opacity: 0.65;
+  }
+  .nav a:hover { opacity: 1; background: var(--color-tag-bg); }
+  .nav a.active { opacity: 1; background: rgba(48, 70, 66, 0.08); font-weight: 600; }
+  .nav a.locked { display: inline-flex; align-items: center; gap: 6px; pointer-events: none; }
+  .nav a.locked .lock-icon { width: 12px; height: 12px; opacity: 0.5; }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .nav-notif-btn {
+    width: 36px; height: 36px;
+    background: var(--color-accent);
+    border-radius: 500px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.2s var(--transition-smooth), background 0.2s ease;
+  }
+  .nav-notif-btn:hover { transform: scale(1.08); background: #D94E00; }
+  .nav-notif-icon {
+    width: 12px; height: 16px;
+    border-radius: 1px;
+    border: 2px solid white;
+    display: block;
+  }
+
+  .nav-avatar {
+    width: 35px; height: 35px;
+    background: #D9EBFF;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: transform 0.2s var(--transition-smooth);
+  }
+  .nav-avatar:hover { transform: scale(1.08); }
+  .nav-avatar span {
+    color: #1F5591;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    font-family: var(--font-family);
+    letter-spacing: 0;
+  }
+
+  /* ── VIEWS ──────────────────────────────────── */
+  .view { display: none; }
+  .view.is-active { display: block; animation: viewIn 0.25s cubic-bezier(0.22, 1, 0.36, 1); }
+  @keyframes viewIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 72px);
+  }
+
+  /* ── HERO HEADER ────────────────────────────── */
+  .hero-header {
+    background: var(--color-primary);
+    border-radius: 25px;
+    margin: var(--page-margin-top) var(--page-margin) 20px;
+    padding: 47px 63px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25) inset, 0 18px 48px rgba(0, 0, 0, 0.14);
+    opacity: 0;
+    transform: translateY(16px);
+    animation: heroEnter 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.05s forwards;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Independent grid layer — translates opposite to cursor */
+  .hero-grid-layer {
+    position: absolute;
+    inset: -40px;
+    background:
+      linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 120px 120px;
+    pointer-events: none;
+    will-change: transform;
+  }
+  @media (hover: none) {
+    .hero-grid-layer {
+      inset: 0;
+      animation: gridAmbient 32s ease-in-out infinite alternate;
+    }
+  }
+  @keyframes gridAmbient {
+    from { transform: translate(-10px, -7px); }
+    to { transform: translate(10px, 7px); }
+  }
+  @keyframes heroEnter {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* No-progress state: center content vertically */
+  .hero-header.no-progress {
+    align-items: center;
+  }
+
+  .hero-content {
+    width: min(520px, 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+    will-change: transform;
+  }
+  .hero-content .hero-text { margin-bottom: 28px; }
+  .hero-content .hero-bar-row { margin-bottom: 20px; }
+
+  .hero-tags {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  /* Glass utility */
+  .glass {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+  .glass::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+    pointer-events: none;
+  }
+  .glass::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 1px; height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), transparent, rgba(255, 255, 255, 0.3));
+    pointer-events: none;
+  }
+  .glass > * { position: relative; z-index: 1; }
+
+  .hero-tag {
+    padding: 9px 21px;
+    border-radius: 500px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  .hero-tag.primary { font-weight: 700; }
+
+  .hero-tag-icon {
+    width: 16px; height: 15px;
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .hero-text { display: flex; flex-direction: column; gap: 12px; }
+
+  .hero-title {
+    color: white;
+    font-size: clamp(28px, 2.4vw + 0.5rem, 44px);
+    font-weight: 700;
+    line-height: 1.06;
+    letter-spacing: -0.04em;
+  }
+
+  .hero-next {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .hero-next-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1;
+  }
+  .hero-next-name {
+    font-size: 17px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.4;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-start {
+    padding: 9px 21px;
+    background: var(--color-accent);
+    border-radius: 500px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 24px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-family);
+    transition: all 0.2s var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-start::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: 0;
+    width: 45%; height: 200%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.24), transparent);
+    transform: skewX(-20deg) translateX(-250%);
+    animation: btnShimmer 5s ease-in-out 2.2s infinite;
+    pointer-events: none;
+  }
+  @keyframes btnShimmer {
+    0%, 78%, 100% { transform: skewX(-20deg) translateX(-250%); }
+    5% { opacity: 1; }
+    55% { transform: skewX(-20deg) translateX(480%); }
+  }
+  .btn-start:hover { transform: translateY(-2px); background: #D94E00; box-shadow: 0 6px 20px rgba(255, 90, 0, 0.35); }
+  .btn-start-arrow {
+    width: 7px; height: 14px;
+    background: white;
+    -webkit-mask-image: url('SVGs/ButtonArrow.svg');
+    mask-image: url('SVGs/ButtonArrow.svg');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    display: inline-block;
+    flex: 0 0 auto;
+  }
+
+  .btn-view {
+    padding: 9px 21px;
+    background: var(--color-primary);
+    border-radius: 500px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24px;
+    text-decoration: none;
+    border: 1px solid rgba(159, 159, 159, 0.5);
+    cursor: pointer;
+    font-family: var(--font-family);
+    transition: all 0.2s var(--transition-smooth);
+  }
+  .btn-view:hover { transform: translateY(-2px); background: #253835; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); }
+
+  /* Two-segment progress bar */
+  .hero-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .hero-bar {
+    display: flex;
+    height: 6px;
+    border-radius: 50px;
+    overflow: hidden;
+    flex: 1;
+    max-width: 380px;
+    gap: 0;
+  }
+  .hero-bar-done {
+    height: 100%;
+    background: #4F6662;
+    border-radius: 50px;
+    flex-shrink: 0;
+    min-width: 0;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .hero-bar-done:empty, .hero-bar-done[style*="width:0%"] { display: none; }
+  .hero-bar-remaining {
+    height: 100%;
+    background: var(--color-accent);
+    border-radius: 50px;
+    flex: 1;
+  }
+  .hero-bar-label {
+    color: rgba(255,255,255,0.5);
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.01em;
+  }
+
+  /* ── COURSE CHECKLIST PANEL ─────────────────── */
+  .hero-checklist {
+    background: #283B37;
+    box-shadow: inset 0 4px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    padding: 20px 22px;
+    min-width: 210px;
+    flex-shrink: 0;
+    opacity: 1;
+    transition: opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1) 0.35s;
+    position: relative;
+    z-index: 2;
+    will-change: transform;
+  }
+  @starting-style {
+    .hero-checklist { opacity: 0; }
+  }
+  .checklist-title {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.42);
+    margin-bottom: 18px;
+    line-height: 1;
+  }
+  .checklist-items { display: flex; flex-direction: column; gap: 11px; }
+  .checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+      opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1) calc(0.5s + var(--i, 0) * 0.08s),
+      transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) calc(0.5s + var(--i, 0) * 0.08s);
+  }
+  @starting-style {
+    .checklist-item { opacity: 0; transform: translateY(5px); }
+  }
+  .checklist-dot {
+    width: 22px; height: 22px;
+    border-radius: 100px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    font-size: 10px;
+    font-weight: 600;
+    color: white;
+    background: #405754;
+  }
+  .checklist-dot.is-done { background: #374e4a; }
+  .checklist-dot.is-active {
+    background: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(255, 90, 0, 0.3);
+    transition: box-shadow 0.6s cubic-bezier(0.22, 1, 0.36, 1) 1.1s;
+  }
+  @starting-style {
+    .checklist-dot.is-active { box-shadow: 0 0 0 0 rgba(255, 90, 0, 0); }
+  }
+  .checklist-label { font-size: 13px; color: rgba(255,255,255,0.88); font-weight: 400; line-height: 1.4; }
+  .checklist-item.is-done .checklist-label { color: rgba(255,255,255,0.28); text-decoration: line-through; }
+
+  /* ── CONTENT AREA ───────────────────────────── */
+  .content-area {
+    flex: 1;
+    padding: var(--page-margin-top) var(--page-margin) var(--page-margin);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .content-card {
+    background: white;
+    border-radius: 22px;
+    padding: 24px 28px 28px;
+    box-shadow: 0 2px 8px rgba(48, 70, 66, 0.05), 0 8px 24px rgba(48, 70, 66, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .section-label {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-primary);
+    letter-spacing: -0.2px;
+    margin-bottom: 4px;
+  }
+
+  .welcome-greeting {
+    color: var(--color-primary);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    opacity: 0.75;
+  }
+  .welcome-headline {
+    color: var(--color-primary);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: -0.3px;
+  }
+
+  /* ── PATH CARDS GRID ────────────────────────── */
+  #paths-grid, #catalog-grid, #bm-grid, #soon-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  @media (min-width: 700px) {
+    #paths-grid, #catalog-grid, #bm-grid, #soon-grid {
       display: grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
-      max-width: 900px;
+    }
+  }
+  @media (min-width: 1200px) {
+    #paths-grid, #catalog-grid, #bm-grid, #soon-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* ── SECTION LABEL WITH ICON ────────────────── */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label-icon {
+    width: 22px; height: 22px;
+    flex-shrink: 0;
+    opacity: 0.75;
+  }
+
+  /* ── COMING SOON SEPARATOR ──────────────────── */
+  .more-coming-soon {
+    font-size: 14px;
+    font-weight: 500;
+    font-style: italic;
+    color: rgba(48, 70, 66, 0.45);
+    padding: 4px 0 2px;
+  }
+
+  /* ── PATH CARD ──────────────────────────────── */
+  .course-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 17.76px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    background: transparent;
+    border: 1px solid var(--card-bdr, transparent);
+    box-shadow: 0 10px 28px rgba(48, 70, 66, 0.14);
+    transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 420ms cubic-bezier(0.22, 1, 0.36, 1);
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  .course-card.visible {
+    animation: cardEnter 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .course-card:nth-child(1) { animation-delay: 0.04s; }
+  .course-card:nth-child(2) { animation-delay: 0.10s; }
+  .course-card:nth-child(3) { animation-delay: 0.16s; }
+  .course-card:nth-child(4) { animation-delay: 0.22s; }
+  .course-card:nth-child(5) { animation-delay: 0.28s; }
+  .course-card:nth-child(6) { animation-delay: 0.34s; }
+  @keyframes cardEnter { to { opacity: 1; transform: translateY(0); } }
+
+  .course-card:hover { transform: translateY(-6px); box-shadow: 0 22px 56px var(--card-glow, rgba(48, 70, 66, 0.22)); }
+  .course-card:hover .course-title { color: oklch(0.38 0.05 165); }
+
+  /* In-progress card: orange gradient border */
+  .course-card.next-course {
+    border: 2px solid transparent;
+    background-image:
+      linear-gradient(white, white),
+      linear-gradient(135deg, rgba(255, 90, 0, 0.45) 0%, rgba(255, 90, 0, 0.12) 50%, rgba(255, 90, 0, 0.35) 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 10px 32px rgba(255, 90, 0, 0.12), 0 2px 8px rgba(255, 90, 0, 0.08);
+  }
+  .course-card.next-course:hover {
+    box-shadow: 0 22px 56px rgba(255, 90, 0, 0.18), 0 4px 12px rgba(255, 90, 0, 0.10);
+  }
+  .course-card.next-course .course-cta { color: var(--color-accent); }
+  .course-card.next-course .course-cta-arrow {
+    filter: brightness(0) saturate(100%) invert(44%) sepia(89%) saturate(3000%) hue-rotate(11deg) brightness(101%) contrast(105%);
+  }
+
+  /* ── COMING SOON CARD ───────────────────────── */
+  .course-card.is-soon {
+    cursor: default;
+    background: white;
+    box-shadow: none;
+    border: 1.5px dashed rgba(48, 70, 66, 0.22);
+    border-radius: 14px;
+    overflow: visible;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  .course-card.is-soon.visible { animation: cardEnter 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+  .course-card.is-soon:hover { transform: none; box-shadow: none; }
+
+  .soon-card-inner {
+    padding: 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .soon-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .soon-card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-primary);
+    line-height: 1.4;
+  }
+  .soon-card-lock {
+    width: 18px; height: 18px;
+    flex-shrink: 0;
+    opacity: 0.35;
+    margin-top: 2px;
+  }
+  .soon-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(48, 70, 66, 0.45);
+    font-size: 13px;
+    font-weight: 400;
+  }
+  .soon-card-clock {
+    width: 14px; height: 14px;
+    flex-shrink: 0;
+    opacity: 0.6;
+  }
+
+  /* Card thumbnail */
+  .course-card-top {
+    height: 160px;
+    background: linear-gradient(var(--grad-dir, 135deg), #2e4a44 0%, #3d5e55 100%);
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .course-card-thumb {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 420ms var(--transition-smooth);
+  }
+  .course-card:hover .course-card-thumb { transform: scale(1.04); }
+
+  /* Hub-style thumbnail with centered illustration */
+  .course-card-top.is-hub-thumb {
+    background-color: var(--card-bg, #FFFDF9);
+    background-image: radial-gradient(circle, rgba(0,0,0,0.065) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  .course-card-illu {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 82%;
+    max-width: 52%;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    transition: transform 420ms cubic-bezier(0.16,1,0.3,1);
+  }
+  .course-card:hover .course-card-illu {
+    transform: translate(-50%, -53%) scale(1.04);
+  }
+
+  /* Learning Path badge in thumbnail — hub pill style */
+  .lp-badge {
+    position: absolute;
+    top: 19px; left: 19px;
+    padding: 9px 19px;
+    border-radius: 118px;
+    background: var(--pill-bg, rgba(238, 224, 195, 0.30));
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 14px; font-weight: 500; line-height: 20px;
+    color: var(--pill-text, #2C2416);
+    z-index: 3;
+    pointer-events: none;
+  }
+  .lp-badge-icon {
+    width: 15px; height: 14px; flex-shrink: 0;
+    background-color: var(--pill-text, #2C2416);
+    -webkit-mask-image: url('SVGs/Learning-Path.svg');
+    mask-image: url('SVGs/Learning-Path.svg');
+    -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+    -webkit-mask-position: center; mask-position: center;
+    -webkit-mask-size: contain; mask-size: contain;
+    display: block;
+  }
+
+  /* Per-card gradient directions */
+  .course-card:nth-child(1) .course-card-top { --grad-dir: 135deg; }
+  .course-card:nth-child(2) .course-card-top { --grad-dir: 200deg; }
+  .course-card:nth-child(3) .course-card-top { --grad-dir: 310deg; }
+  .course-card:nth-child(4) .course-card-top { --grad-dir: 60deg; }
+  .course-card:nth-child(5) .course-card-top { --grad-dir: 250deg; }
+
+  .course-duration-pill {
+    position: absolute;
+    top: 19px; right: 19px;
+    padding: 9px 19px;
+    border-radius: 118px;
+    background: var(--pill-bg, rgba(238, 224, 195, 0.30));
+    display: inline-flex; align-items: center; justify-content: center;
+    color: var(--pill-text, #2C2416);
+    font-size: 14px; font-weight: 500; line-height: 20px;
+    z-index: 3; white-space: nowrap;
+  }
+
+  /* Accent bar between thumb and body */
+  .card-accent-bar {
+    height: 6px;
+    background: var(--color-primary);
+    flex-shrink: 0;
+  }
+
+  /* Progress bar */
+  .card-progress {
+    height: 6px;
+    background: rgba(0, 0, 0, 0.12);
+    position: relative;
+    flex-shrink: 0;
+  }
+  .card-progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--color-primary);
+    border-radius: 0 6px 6px 0;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .card-progress.completed .card-progress-fill { border-radius: 0; }
+
+  /* Card body */
+  .course-card-bottom {
+    padding: 28px;
+    background: white;
+    border-bottom-right-radius: 17.76px;
+    border-bottom-left-radius: 17.76px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    flex: 1;
+  }
+
+  .course-title {
+    color: var(--color-primary);
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: -0.4px;
+    margin-bottom: 10px;
+    transition: color 200ms ease;
+  }
+
+  .course-description {
+    color: rgba(48, 70, 66, 0.55);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .course-cta-row {
+    margin-top: auto;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .course-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-primary);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 22px;
+    text-decoration: none;
+    transition: gap 250ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .course-card:hover .course-cta { gap: 14px; }
+
+  .course-cta-arrow {
+    width: 15px; height: 15px;
+    display: block; flex-shrink: 0;
+    transition: transform 250ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .course-card:hover .course-cta-arrow { transform: translate(2px, -2px); }
+
+  /* ── CONTENT TYPE LABEL ─────────────────────── */
+  .card-bm-btn {
+    position: absolute;
+    top: 19px;
+    left: 19px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--pill-bg, rgba(238, 224, 195, 0.30));
+    border: none;
+    box-shadow: none;
+    cursor: default;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 3;
+    flex-shrink: 0;
+  }
+  .card-bm-btn svg {
+    width: 14px; height: 14px;
+    stroke: var(--pill-text, #2C2416);
+    fill: none;
+  }
+
+  /* ── CATALOG HEADER ─────────────────────────── */
+  /* (hero removed; section label lives inside content-card) */
+
+  /* ── BOOKMARKS SECTION ──────────────────────── */
+  #bm-section { display: none; }
+
+  /* ── RESPONSIVE ─────────────────────────────── */
+  @media (max-width: 900px) {
+    .hero-header { margin: 16px 24px 16px; padding: 40px; min-height: auto; }
+    .hero-title { font-size: 28px; line-height: 36px; }
+    .hero-description { font-size: 16px; }
+    .hero-checklist { display: none; }
+    .content-area { padding: 16px 24px 32px; }
+  }
+  @media (max-width: 600px) {
+    .header { padding: 12px 20px; }
+    .nav { display: none; }
+    .hero-header { margin: 12px 16px; padding: 32px 24px; }
+    .content-area { padding: 16px 16px 24px; }
+    .course-title { font-size: 19px; line-height: 28px; }
+    .course-description { font-size: 14px; line-height: 22px; }
+  }
+
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+  .course-card:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
+
+  /* ── CONTENT CARD ENTRANCE ─────────────────── */
+  .content-area > .content-card {
+    transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.18s, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.18s;
+  }
+  .content-area > .content-card:nth-child(2) {
+    transition-delay: 0.3s;
+  }
+  @starting-style {
+    .content-area > .content-card {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+  }
+
+  /* ── SECTION LABEL ICON ENTRANCE ────────────── */
+  .section-label-icon {
+    animation: iconPop 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.28s both;
+  }
+  @keyframes iconPop {
+    from { transform: scale(0.55); opacity: 0; }
+    to { transform: scale(1); opacity: 0.75; }
+  }
+
+  /* ── GRID FADE ON TAB FILTER ────────────────── */
+  #paths-grid {
+    transition: opacity 0.15s ease, transform 0.15s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  #paths-grid.grid-fading {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+
+  /* ── BOOKMARK POP ───────────────────────────── */
+  @keyframes bmPop {
+    0%   { transform: scale(1) rotate(0deg); }
+    30%  { transform: scale(1.5) rotate(-12deg); }
+    60%  { transform: scale(0.84) rotate(7deg); }
+    82%  { transform: scale(1.1) rotate(-3deg); }
+    100% { transform: scale(1) rotate(0deg); }
+  }
+  .course-bm-btn.bm-pop { animation: bmPop 0.44s cubic-bezier(0.22, 1, 0.36, 1); }
+
+  /* ── LOCK SHAKE ON HOVER ────────────────────── */
+  @keyframes lockShake {
+    0%, 100% { transform: rotate(0deg); }
+    15%  { transform: rotate(-9deg); }
+    35%  { transform: rotate(9deg); }
+    55%  { transform: rotate(-7deg); }
+    75%  { transform: rotate(7deg); }
+    90%  { transform: rotate(-2deg); }
+  }
+  .course-card.is-soon:hover .soon-card-lock {
+    animation: lockShake 0.46s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* ── PATH FILTER TABS — same pill style as sol-toggle ── */
+  .path-tabs {
+    display: inline-flex; align-items: center; gap: 2px;
+    background: rgba(255,255,255,0.80); border-radius: 100px;
+    padding: 5px;
+    outline: 1px solid rgba(208,213,197,0.50); outline-offset: -1px;
+    transition: box-shadow 0.4s cubic-bezier(0.16,1,0.3,1);
+  }
+  .path-tabs:has(.path-tab:hover) {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+  }
+
+  .path-tab {
+    position: relative; display: inline-flex; align-items: center; gap: 7px;
+    padding: 7px 14px; border-radius: 100px; border: none;
+    background: transparent; cursor: pointer;
+    font-family: var(--font-family); font-size: 13px;
+    font-weight: 500; line-height: 20px; color: #888888;
+    white-space: nowrap;
+    transition: color 0.25s cubic-bezier(0.16,1,0.3,1),
+                transform 0.3s cubic-bezier(0.16,1,0.3,1);
+  }
+  .path-tab:hover:not(.is-active) {
+    color: var(--sol-color, #555);
+    transform: translateY(-1px);
+  }
+  .path-tab:active {
+    transform: scale(0.95) translateY(0) !important;
+    transition-duration: 0.08s !important;
+  }
+  .path-tab.is-active {
+    color: var(--color-primary);
+    animation: sol-btn-pop 0.4s cubic-bezier(0.16,1,0.3,1) both;
+  }
+  .path-tab::before {
+    content: '';
+    position: absolute; inset: 0; border-radius: 100px; z-index: -2;
+    background: var(--sol-bg, transparent);
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.16,1,0.3,1);
+    pointer-events: none;
+  }
+  .path-tab:hover:not(.is-active)::before { opacity: 0.5; }
+
+  /* Catalog section header layout */
+  .catalog-header {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .path-tabs-wrap {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .path-tabs-wrap::-webkit-scrollbar { display: none; }
+
+  /* LP mask icon for section headings */
+  .lp-mask-icon {
+    background-color: var(--color-primary);
+    -webkit-mask-image: url('SVGs/Learning-Path.svg');
+    mask-image: url('SVGs/Learning-Path.svg');
+    -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+    -webkit-mask-position: center; mask-position: center;
+    -webkit-mask-size: contain; mask-size: contain;
+    opacity: 0.75;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+
+  /* ══════════════════════════════════════
+     HOME v2 — SOLUTION TOGGLE + LEARNING CARD
+     ══════════════════════════════════════ */
+  .sol-main {
+    flex: 1; max-width: 1100px; width: 100%;
+    margin: 0 auto; padding: 24px 40px 80px;
+    display: flex; flex-direction: column; gap: 24px;
+    zoom: 1.15;
+  }
+
+  .sol-toggle-wrap {
+    display: flex; justify-content: center;
+    overflow-x: auto; scrollbar-width: none; padding: 0 2px;
+  }
+  .sol-toggle-wrap::-webkit-scrollbar { display: none; }
+
+  .sol-toggle {
+    display: inline-flex; align-items: center; gap: 2px;
+    background: rgba(255,255,255,0.80); border-radius: 100px;
+    padding: 6px;
+    outline: 1px solid rgba(208,213,197,0.50); outline-offset: -1px;
+    transition: box-shadow 0.4s cubic-bezier(0.16,1,0.3,1);
+  }
+  .sol-toggle:has(.sol-btn:hover) {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+  }
+
+  .sol-btn {
+    position: relative; display: inline-flex; align-items: center; gap: 7px;
+    padding: 9px 16px; border-radius: 100px; border: none;
+    background: transparent; cursor: pointer;
+    font-family: var(--font-family); font-size: 14px;
+    font-weight: 500; line-height: 20px; color: #888888;
+    white-space: nowrap;
+    transition: color 0.25s cubic-bezier(0.16,1,0.3,1),
+                transform 0.3s cubic-bezier(0.16,1,0.3,1);
+  }
+  .sol-btn:hover:not(.is-active) {
+    color: var(--sol-color, #555);
+    transform: translateY(-1px);
+  }
+  .sol-btn:active {
+    transform: scale(0.95) translateY(0) !important;
+    transition-duration: 0.08s !important;
+  }
+  .sol-btn.is-active {
+    color: var(--color-primary);
+    animation: sol-btn-pop 0.4s cubic-bezier(0.16,1,0.3,1) both;
+  }
+
+  /* Hover tint preview via pseudo-element */
+  .sol-btn::before {
+    content: '';
+    position: absolute; inset: 0; border-radius: 100px; z-index: -2;
+    background: var(--sol-bg, transparent);
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.16,1,0.3,1);
+    pointer-events: none;
+  }
+  .sol-btn:hover:not(.is-active)::before { opacity: 0.5; }
+
+  @keyframes sol-btn-pop {
+    0%  { transform: scale(0.92); }
+    100% { transform: scale(1); }
+  }
+
+  .sol-btn-bg {
+    position: absolute; inset: 0; border-radius: 100px; z-index: -1;
+    transition: background 0.28s cubic-bezier(0.16,1,0.3,1);
+  }
+
+  .sol-dot {
+    width: 6px; height: 6px; border-radius: 2px; flex-shrink: 0;
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+  }
+  .sol-btn:hover .sol-dot            { transform: scale(1.5) rotate(45deg); }
+  .sol-btn.is-active .sol-dot        { transform: scale(1.25); }
+  .sol-btn.is-active:hover .sol-dot  { transform: scale(1.5) rotate(45deg); }
+
+  /* ── Learning card shell ── */
+  .learning-card {
+    border-radius: 22px; border: 1px solid transparent; overflow: hidden;
+    transition: background-color 350ms cubic-bezier(0.16,1,0.3,1),
+                border-color 350ms cubic-bezier(0.16,1,0.3,1);
+    view-transition-name: learning-card;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes lc-out { to { opacity:0; transform:scale(0.97); filter:blur(4px); } }
+    @keyframes lc-in  { from { opacity:0; transform:scale(0.97) translateY(10px); filter:blur(4px); } }
+    ::view-transition-old(learning-card) { animation: 180ms ease-in lc-out both; }
+    ::view-transition-new(learning-card) { animation: 420ms cubic-bezier(0.16,1,0.3,1) lc-in both; }
+    ::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+  }
+
+  .lc-inner {
+    display: flex; flex-direction: row; align-items: stretch;
+  }
+
+  .lc-left {
+    flex: 1; min-width: 0;
+    padding: 52px 52px 48px;
+    display: flex; flex-direction: column;
+  }
+
+  .lc-illu-wrap {
+    flex-shrink: 0; align-self: center;
+    margin: 0 48px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .lc-title {
+    font-size: 22px; font-weight: 700; line-height: 1.2;
+    letter-spacing: -0.02em; color: var(--color-primary);
+    margin: 0 0 10px;
+  }
+
+  .lc-desc {
+    font-size: 15px; color: var(--color-text-secondary);
+    line-height: 1.6; margin: 0 0 28px; max-width: 42ch;
+  }
+
+  .lc-prog-row {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 22px;
+  }
+  .lc-prog-bar {
+    flex: 1; height: 5px; border-radius: 99px;
+    background: rgba(48,70,66,0.12); overflow: hidden;
+  }
+  .lc-prog-fill {
+    height: 100%; border-radius: 99px; background: #304642; width: 0%;
+    transition: width 0.65s cubic-bezier(0.16,1,0.3,1) 0.1s;
+  }
+  .lc-prog-pct {
+    font-size: 14px; font-weight: 600; color: var(--color-primary);
+    min-width: 36px; text-align: right; font-variant-numeric: tabular-nums;
+  }
+
+  .lc-modules-box {
+    border-radius: 14px; background: rgba(0,0,0,0.035);
+    padding: 14px 16px; margin-bottom: 22px;
+  }
+  .lc-modules-label {
+    display: block; font-size: 11px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.04em;
+    color: var(--color-muted); margin-bottom: 10px;
+  }
+  .lc-module {
+    display: flex; align-items: center; gap: 10px;
+    padding: 6px 0; font-size: 13px;
+  }
+  .lc-module.is-done span { color: var(--color-muted); text-decoration: line-through; font-weight: 400; }
+  .lc-module.is-current span { color: var(--color-primary); font-weight: 600; }
+  .lc-module.is-upcoming span { color: var(--color-text-secondary); font-weight: 400; }
+  .lc-module-num {
+    width: 18px; height: 18px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9px; font-weight: 700; flex-shrink: 0;
+    color: var(--color-muted);
+  }
+  .lc-module.is-current .lc-module-num { background: #FF5A00; color: white; }
+  .lc-module-num svg { width: 10px; height: 10px; display: block; }
+
+  .lc-actions {
+    display: flex; align-items: center; gap: 8px;
+    flex-wrap: wrap; margin-top: auto;
+  }
+
+  .lc-btn-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 22px; border-radius: 100px; border: none; cursor: pointer;
+    font-family: var(--font-family); font-size: 14px; font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.28s cubic-bezier(0.16,1,0.3,1),
+                filter 0.22s ease,
+                box-shadow 0.28s cubic-bezier(0.16,1,0.3,1);
+  }
+  .lc-btn-cta:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.07);
+    box-shadow: 0 10px 28px rgba(48,70,66,0.16);
+  }
+  .lc-btn-cta:active {
+    transform: translateY(0px);
+    filter: brightness(0.95);
+    transition: transform 0.08s ease, filter 0.08s ease, box-shadow 0.08s ease;
+  }
+
+  .lc-btn-view {
+    display: inline-flex; align-items: center;
+    padding: 8px 18px; border-radius: 100px;
+    border: 1.5px solid rgba(48,70,66,0.15);
+    background: transparent; color: var(--color-text-secondary);
+    font-family: var(--font-family); font-size: 14px; font-weight: 500;
+    text-decoration: none; white-space: nowrap; flex-shrink: 0;
+    transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.15s;
+  }
+  .lc-btn-view:hover { color: var(--color-primary); transform: translateY(-1px); }
+
+  .lc-icon-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 8px 12px; border-radius: 100px;
+    border: 1.5px solid rgba(48,70,66,0.15);
+    background: transparent; cursor: pointer; color: var(--color-text-secondary);
+    transition: background 0.15s, transform 0.15s;
+  }
+  .lc-icon-btn:hover { background: rgba(48,70,66,0.08); transform: translateY(-2px); }
+  .lc-icon-btn.lc-bm:hover svg { transform: rotate(-18deg) scale(1.18); }
+  .lc-icon-btn.lc-share:hover svg { transform: rotate(14deg) scale(1.18); }
+  .lc-icon-btn svg { width: 16px; height: 16px; display: block; transition: transform 0.2s ease; }
+
+  .lc-illu {
+    width: 400px; height: auto; display: block; mix-blend-mode: multiply;
+  }
+
+  .lc-soon-card {
+    display: flex; flex-direction: row;
+    align-items: center; justify-content: space-between;
+    min-height: 300px; gap: 0;
+  }
+  .lc-soon-left {
+    flex: 1; padding: 48px 48px 48px 52px;
+    display: flex; flex-direction: column; gap: 10px; justify-content: center;
+  }
+  .lc-soon-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--color-muted); margin-bottom: 6px;
+  }
+  .lc-soon-title { font-size: 26px; font-weight: 700; color: var(--color-primary); line-height: 1.25; }
+  .lc-soon-sub { font-size: 14px; color: var(--color-muted); margin-top: 2px; }
+  .lc-soon-right {
+    width: 340px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    padding: 32px 40px 32px 0;
+  }
+
+  /* ── Card delight ──────────────────────────── */
+  @media (prefers-reduced-motion: no-preference) {
+    .lc-illu-wrap {
+      transition: transform 0.45s cubic-bezier(0.16,1,0.3,1);
+      will-change: transform;
     }
 
-    @media (min-width: 720px) {
-      .nav-grid {
-        max-width: none;
-        grid-template-columns: repeat(3, 1fr);
-      }
+    @keyframes lc-module-in {
+      from { opacity: 0; transform: translateX(-10px); }
+      to   { opacity: 1; transform: translateX(0); }
     }
+    .lc-modules-box.is-animating .lc-module {
+      opacity: 0;
+      animation: lc-module-in 0.38s cubic-bezier(0.16,1,0.3,1) forwards;
+    }
+    .lc-modules-box.is-animating .lc-module:nth-child(3) { animation-delay: 0.05s; }
+    .lc-modules-box.is-animating .lc-module:nth-child(4) { animation-delay: 0.10s; }
+    .lc-modules-box.is-animating .lc-module:nth-child(5) { animation-delay: 0.15s; }
+    .lc-modules-box.is-animating .lc-module:nth-child(6) { animation-delay: 0.20s; }
+    .lc-modules-box.is-animating .lc-module:nth-child(7) { animation-delay: 0.25s; }
+    .lc-modules-box.is-animating .lc-module:nth-child(8) { animation-delay: 0.30s; }
+  }
 
-    .nav-tile {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: space-between;
-      min-height: 140px;
-      padding: 24px 22px;
-      background: var(--color-card-bg);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-card);
-      text-decoration: none;
-      color: var(--color-primary);
-      border: 1px solid rgba(48, 70, 66, 0.06);
-      transition: transform 0.2s var(--transition-smooth), box-shadow 0.2s var(--transition-smooth);
-    }
-
-    .nav-tile:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-card-hover);
-    }
-
-    .nav-tile-title {
-      font-size: 17px;
-      font-weight: 600;
-      line-height: 1.35;
-      letter-spacing: -0.2px;
-    }
-
-    .nav-tile-arrow {
-      margin-top: 16px;
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--color-accent);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-  </style>
+  @media (max-width: 820px) {
+    .sol-main { padding: 20px 16px 60px; }
+    .lc-inner { flex-direction: column-reverse; }
+    .lc-left { padding: 28px 24px 32px; }
+    .lc-illu-wrap { margin: 28px auto 0; }
+    .lc-illu { width: 220px; }
+    .lc-btn-cta { padding: 12px 22px; }
+    .lc-btn-view, .lc-icon-btn { padding: 11px 18px; }
+    .lc-icon-btn { padding: 11px 14px; }
+  }
+</style>
 </head>
 <body>
-  <header class="hero-header">
-    <h1 class="hero-title">Inact learning paths</h1>
-    <p class="hero-description">Prototype navigation. Choose a path to open its hub.</p>
-  </header>
 
-  <main class="nav-wrap">
-    <div class="nav-grid">
-      <a class="nav-tile" href="hub.html">
-        <span class="nav-tile-title">Inact for inventory management</span>
-        <span class="nav-tile-arrow">Open learning path →</span>
-      </a>
-      <a class="nav-tile" href="supplier-hub.html">
-        <span class="nav-tile-title">Inact for supplier management</span>
-        <span class="nav-tile-arrow">Open learning path →</span>
-      </a>
-      <a class="nav-tile" href="now-hub.html">
-        <span class="nav-tile-title">Inact Now fundamentals</span>
-        <span class="nav-tile-arrow">Open learning path →</span>
-      </a>
+<header class="header">
+  <div class="header-left">
+    <a class="logo" id="logo-home" href="index.html">Inact <span>learn</span></a>
+    <nav class="nav">
+      <a href="index.html" id="nav-home" class="active">Home</a>
+      <a href="#" id="nav-paths">Learning Paths</a>
+      <a href="#" class="locked">Catalog<svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></a>
+      <a href="#" class="locked">Dictionary<svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></a>
+    </nav>
+  </div>
+  <div class="header-right">
+    <button class="nav-notif-btn" aria-label="Notifications"><span class="nav-notif-icon"></span></button>
+    <a href="profile.html" class="nav-avatar" aria-label="User profile"><span id="nav-initials">ER</span></a>
+  </div>
+</header>
+
+<div class="main-container">
+
+  <!-- ── HOME VIEW v2 ────────────────────────── -->
+  <div id="view-home" class="view is-active">
+    <main class="sol-main">
+      <div class="sol-toggle-wrap">
+        <div id="sol-toggle" class="sol-toggle"></div>
+      </div>
+      <div id="learning-card" class="learning-card"></div>
+    </main>
+  </div>
+
+  <!-- ── CATALOG VIEW ───────────────────────── -->
+  <div id="view-catalog" class="view">
+    <main class="content-area">
+      <div class="content-card">
+        <div class="catalog-header">
+          <div class="section-label">
+            <div class="section-label-icon lp-mask-icon" aria-hidden="true"></div>
+            All learning paths
+          </div>
+          <div class="path-tabs-wrap">
+            <div id="path-tabs" class="path-tabs" role="tablist"></div>
+          </div>
+        </div>
+        <div id="paths-grid"></div>
+        <div class="more-coming-soon" id="soon-label">More coming soon...</div>
+        <div id="soon-grid"></div>
+      </div>
+      <div class="content-card" id="bm-section" style="display:none">
+        <div class="section-label">
+          <svg class="section-label-icon" viewBox="0 0 24 24" fill="currentColor" style="opacity:0.75"><path d="M5 3h14a1 1 0 0 1 1 1v17.27a.5.5 0 0 1-.78.41L12 17.2l-7.22 4.48A.5.5 0 0 1 4 21.27V4a1 1 0 0 1 1-1z"/></svg>
+          Your bookmarked resources
+        </div>
+        <div id="bm-grid"></div>
+      </div>
+    </main>
+  </div>
+
+</div>
+
+<script>
+const USER = { firstName: 'Elias', initials: 'ER' };
+document.getElementById('nav-initials').textContent = USER.initials;
+
+const PATHS = [
+  {
+    id: 'now-fundamentals',
+    title: 'Inact Now Fundamentals',
+    desc: 'Get a complete overview of the Inact Now platform: dashboards, insights, and daily tasks.',
+    courseCount: 5, duration: '32 min',
+    thumbnail: 'LP-thumbnails/LP-Thumbnail-Inventory-Solution.png',
+    href: 'now-hub.html', pathParam: 'now', hubFile: 'now-hub.html',
+    courseIds: ['now-home','now-intro','now-insights','now-actions','now-dashboards'],
+    courseNames: ['Home','Intro','Insights','Actions','Dashboards'],
+    courseFiles: { 'now-home': 'Now-Home.txt', 'now-intro': 'Now-Intro.txt', 'now-insights': 'Now-Insights.txt', 'now-actions': 'Now-Actions.txt', 'now-dashboards': 'Now-Dashboards.txt' },
+    gradFrom: '#2e4a44', gradTo: '#4a6a60',
+    category: 'functionality'
+  },
+  {
+    id: 'inventory-management',
+    title: 'Inventory Management',
+    desc: 'A collection of six flows — learn how to use the Inventory template',
+    courseCount: 6, duration: '1 hr 7 min',
+    thumbnail: 'LP-thumbnails/LP-Thumbnail-Inventory-Solution.png',
+    href: 'hub.html', pathParam: 'inventory', hubFile: 'hub.html',
+    courseIds: ['intro','double-abc','stock-policy','safety-stock','reorder-point','reorder-quantity'],
+    courseNames: ['Intro','Double ABC Analysis','Stock Policy','Safety Stock','Reorder Point','Reorder Quantity'],
+    courseFiles: { 'intro': 'Intro.txt', 'double-abc': 'Double-ABC-Analysis-4.txt', 'stock-policy': 'Stock-Policy.txt', 'safety-stock': 'Safety-Stock.txt', 'reorder-point': 'Reorder-Point.txt', 'reorder-quantity': 'Reorder-Quantity.txt' },
+    gradFrom: '#243a38', gradTo: '#3a5850',
+    category: 'inventory'
+  },
+  {
+    id: 'supplier-management',
+    title: 'Supplier Management',
+    desc: 'Become an expert in Inact Now — learn all functionalities.',
+    courseCount: 5, duration: '45 min',
+    thumbnail: 'LP-thumbnails/LP-Thumbnail-Inventory-Solution.png',
+    href: 'supplier-hub.html', pathParam: 'supplier', hubFile: 'supplier-hub.html',
+    courseIds: ['supplier-intro','supplier-bench','supplier-cat','supplier-neg','supplier-actions'],
+    courseNames: ['Intro','Benchmarking','Categories','Negotiation','Actions'],
+    courseFiles: { 'supplier-intro': 'Suppliers-Intro-2.txt', 'supplier-bench': 'Supplier-Performance.txt', 'supplier-cat': 'Spend-Analysis.txt', 'supplier-neg': 'Supplier-Negotiation.txt', 'supplier-actions': 'Supplier-Negotiation.txt' },
+    gradFrom: '#2a3e30', gradTo: '#425e48',
+    category: 'suppliers'
+  },
+  {
+    id: 'spend-analysis',
+    title: 'Spend Analysis',
+    desc: 'Understand where your money goes with structured spend analytics across categories.',
+    courseCount: 4, duration: '28 min',
+    thumbnail: null, href: '#',
+    courseIds: [], courseNames: [],
+    comingSoon: true,
+    gradFrom: '#2e3048', gradTo: '#4a4c68',
+    category: 'products'
+  },
+  {
+    id: 'advanced-insights',
+    title: 'Inact for Customer Management',
+    desc: 'Dive deeper into customer-level analytics to drive commercial decisions.',
+    courseCount: 7, duration: '52 min',
+    thumbnail: null, href: '#',
+    courseIds: [], courseNames: [],
+    comingSoon: true,
+    gradFrom: '#303030', gradTo: '#505050',
+    category: 'customers'
+  },
+  {
+    id: 'end2end',
+    title: 'End2End',
+    desc: 'Follow a product from purchase order to customer delivery.',
+    courseCount: 4, duration: '35 min',
+    thumbnail: null, href: '#',
+    courseIds: [], courseNames: [],
+    comingSoon: true,
+    gradFrom: '#303030', gradTo: '#505050',
+    category: 'inventory'
+  },
+];
+
+const BM_KEY = 'lp_bookmarks';
+function getBookmarks() { try { return JSON.parse(localStorage.getItem(BM_KEY) || '[]'); } catch { return []; } }
+function saveBookmarks(bms) { localStorage.setItem(BM_KEY, JSON.stringify(bms)); }
+
+function getProgress(path) {
+  if (!path.courseIds || !path.courseIds.length) return { done: 0, total: 0, pct: 0, started: false };
+  const total = path.courseIds.length;
+  let done = 0;
+  for (const cid of path.courseIds) {
+    const raw = localStorage.getItem('course_progress_' + cid);
+    if (raw) { try { if (JSON.parse(raw).completed) done++; } catch { if (raw === 'completed') done++; } }
+  }
+  return { done, total, pct: Math.round((done / total) * 100), started: done > 0 };
+}
+
+function getActivePath() {
+  let best = null, bestPct = 0;
+  for (const p of PATHS) {
+    if (p.comingSoon) continue;
+    const g = getProgress(p);
+    if (g.started && g.pct < 100 && g.pct > bestPct) { best = p; bestPct = g.pct; }
+  }
+  if (!best) { for (const p of PATHS) { if (!p.comingSoon && p.courseIds.length) { best = p; break; } } }
+  return best;
+}
+
+// ── SOLUTION DATA ─────────────────────────────────────────────
+const SOLUTIONS = [
+  { key: 'inventory',    label: 'What to stock?',  pathId: 'inventory-management', illu: 'SVGs/LP-Illustrations/Inventory-Illustration.png',      toggleBg: '#FFF9EC', bg: '#FFFDF9', btn: '#EEE0C3', btnT: '#2C2416', bdr: '#EDE3CC', dot: '#EEE0C3', bar: '#B8964E' },
+  { key: 'suppliers',    label: 'How to source?',   pathId: 'supplier-management',  illu: 'SVGs/LP-Illustrations/Suppliers-Illustration.png',      toggleBg: '#F4EEFF', bg: '#FDFCFF', btn: '#E1DBEB', btnT: '#221D2E', bdr: '#D8D0E8', dot: '#E1DBEB', bar: '#7B68AA' },
+  { key: 'functionality',label: 'Using Inact Now',  pathId: 'now-fundamentals',     illu: 'SVGs/LP-Illustrations/Now-Illustration.png',            toggleBg: '#F1F6FF', bg: '#F5F9FF', btn: '#DBE9FF', btnT: '#1A2535', bdr: '#D0DFEF', dot: '#DBE9FF', bar: '#5888D0' },
+  { key: 'customers',    label: 'Who to serve?',    pathId: 'advanced-insights',    illu: 'SVGs/LP-Illustrations/ComingSoonIlluCustomers.png', soon: true, toggleBg: '#F1F4E9', bg: '#F8FAF4', btn: '#E3E8D8', btnT: '#222619', bdr: '#DDE3D0', dot: '#D0D5C5', bar: '#8A9672' },
+  { key: 'products',     label: 'What to offer?',   pathId: 'spend-analysis',       illu: 'SVGs/LP-Illustrations/ComingSoonIlluProducts.png',  soon: true, toggleBg: '#FFF9EC', bg: '#FFFDF9', btn: '#EEE0C3', btnT: '#2C2416', bdr: '#EDE3CC', dot: '#EEE0C3', bar: '#B8964E' },
+];
+
+let activeSolKey = 'inventory';
+
+function hexToRgba(hex, alpha) {
+  const r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+  return `rgba(${r},${g},${b},${alpha})`;
+}
+
+function getActiveSolKey() {
+  let bestKey = 'inventory', bestPct = -1;
+  for (const sol of SOLUTIONS) {
+    if (sol.soon) continue;
+    const path = PATHS.find(p => p.id === sol.pathId);
+    if (!path) continue;
+    const prog = getProgress(path);
+    if (prog.started && prog.pct > bestPct) { bestKey = sol.key; bestPct = prog.pct; }
+  }
+  return bestKey;
+}
+
+function renderSolToggle() {
+  const wrap = document.getElementById('sol-toggle');
+  if (!wrap) return;
+  wrap.innerHTML = SOLUTIONS.map(sol => {
+    const active = sol.key === activeSolKey;
+    return `<button class="sol-btn${active ? ' is-active' : ''}" data-sol="${sol.key}" aria-pressed="${active}"
+      style="--sol-color:${sol.bar};--sol-bg:${sol.toggleBg}">
+      <span class="sol-btn-bg" style="background:${active ? sol.toggleBg : 'transparent'}"></span>
+      <span class="sol-dot" style="background:${sol.dot}"></span>${sol.label}
+    </button>`;
+  }).join('');
+  wrap.querySelectorAll('.sol-btn').forEach(btn => {
+    btn.addEventListener('click', () => switchSolution(btn.dataset.sol));
+  });
+}
+
+function initCardParallax(card) {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (card._parallaxCleanup) card._parallaxCleanup();
+  const illuWrap = card.querySelector('.lc-illu-wrap');
+  if (!illuWrap) return;
+  const onMove = (e) => {
+    const r = card.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width  - 0.5;
+    const y = (e.clientY - r.top)  / r.height - 0.5;
+    illuWrap.style.transform = `translate(${x * 14}px, ${y * 9}px)`;
+  };
+  const onLeave = () => { illuWrap.style.transform = ''; };
+  card.addEventListener('mousemove', onMove);
+  card.addEventListener('mouseleave', onLeave);
+  card._parallaxCleanup = () => {
+    card.removeEventListener('mousemove', onMove);
+    card.removeEventListener('mouseleave', onLeave);
+  };
+}
+
+function renderLearningCard() {
+  const sol = SOLUTIONS.find(s => s.key === activeSolKey);
+  const card = document.getElementById('learning-card');
+  if (!card || !sol) return;
+  card.style.backgroundColor = sol.bg;
+  card.style.backgroundImage = `radial-gradient(circle, rgba(0,0,0,0.07) 1px, transparent 1px)`;
+  card.style.backgroundSize = '20px 20px';
+  card.style.borderColor = sol.bdr;
+
+  if (sol.soon) {
+    const path = PATHS.find(p => p.id === sol.pathId);
+    card.style.border = `1.5px dashed ${sol.bdr}`;
+    card.innerHTML = `<div class="lc-soon-card">
+      <div class="lc-soon-left">
+        <span class="lc-soon-badge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Coming soon
+        </span>
+        <div class="lc-soon-title">${path ? path.title : 'Coming soon'}</div>
+        <div class="lc-soon-sub">This learning path is on its way.</div>
+      </div>
+      ${sol.illu ? `<div class="lc-soon-right"><img src="${sol.illu}" alt="" aria-hidden="true" style="width:260px;height:auto;display:block;mix-blend-mode:multiply;opacity:0.55"></div>` : ''}
+    </div>`;
+    return;
+  }
+
+  card.style.border = `1px solid ${sol.bdr}`;
+  const path = PATHS.find(p => p.id === sol.pathId);
+  if (!path) return;
+  const prog = getProgress(path);
+  const ctaLabel = prog.pct === 100 ? 'Review path' : (prog.started ? 'Continue' : 'Start learning');
+
+  // Resolve CTA href: for Start/Continue, link to the next incomplete course; for Review, link to hub
+  function getNextCourseUrl(p) {
+    if (!p.courseFiles) return p.href;
+    const nextId = p.courseIds.find(cid => localStorage.getItem('course_progress_' + cid) === null && localStorage.getItem('course_' + cid + '_completed') !== 'true') || p.courseIds[0];
+    const file = p.courseFiles[nextId];
+    if (!file) return p.href;
+    return `course.html?course=${file}&path=${p.pathParam}&hub=${p.hubFile}&from=hub`;
+  }
+  const ctaHref = prog.pct === 100 ? path.href : getNextCourseUrl(path);
+
+  const moduleItems = path.courseIds.slice(0, 6).map((cid, i) => {
+    const name = path.courseNames[i] || ('Course ' + (i+1));
+    const done = i < prog.done;
+    const current = i === prog.done && prog.pct < 100;
+    const cls = done ? 'is-done' : current ? 'is-current' : 'is-upcoming';
+    const numContent = done
+      ? `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`
+      : (i + 1);
+    return `<div class="lc-module ${cls}"><div class="lc-module-num">${numContent}</div><span>${name}</span></div>`;
+  }).join('');
+
+  card.innerHTML = `<div class="lc-inner">
+    <div class="lc-left">
+      <div class="lc-title">${path.title}</div>
+      <div class="lc-desc">${path.desc}</div>
+      <div class="lc-prog-row">
+        <div class="lc-prog-bar"><div class="lc-prog-fill" data-pct="${prog.pct}"></div></div>
+        <div class="lc-prog-pct">0%</div>
+      </div>
+      <div class="lc-modules-box">
+        <span class="lc-modules-label">Your progress</span>
+        ${moduleItems}
+      </div>
+      <div class="lc-actions">
+        <a href="${ctaHref}" class="lc-btn-cta" style="background:${sol.btn};color:${sol.btnT}">${ctaLabel}</a>
+        <a href="${path.href}" class="lc-btn-view">View full path</a>
+        <button class="lc-icon-btn lc-bm" aria-label="Bookmark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14a1 1 0 0 1 1 1v17.27a.5.5 0 0 1-.78.41L12 17.2l-7.22 4.48A.5.5 0 0 1 4 21.27V4a1 1 0 0 1 1-1z"/></svg>
+        </button>
+        <button class="lc-icon-btn lc-share" aria-label="Share">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </button>
+      </div>
     </div>
-  </main>
+    <div class="lc-illu-wrap">
+      ${sol.illu ? `<img class="lc-illu" src="${sol.illu}" alt="" aria-hidden="true">` : ''}
+    </div>
+  </div>`;
+
+  // Stagger module entrance
+  const modulesBox = card.querySelector('.lc-modules-box');
+  if (modulesBox) modulesBox.classList.add('is-animating');
+
+  // Parallax
+  initCardParallax(card);
+
+  // Progress bar + count-up
+  requestAnimationFrame(() => {
+    const fill   = card.querySelector('.lc-prog-fill');
+    const pctEl  = card.querySelector('.lc-prog-pct');
+    if (!fill) return;
+    const target = parseFloat(fill.dataset.pct) || 0;
+    requestAnimationFrame(() => {
+      fill.style.width = target + '%';
+      if (!pctEl) return;
+      if (target === 0 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        pctEl.textContent = target + '%';
+        return;
+      }
+      const duration = 700;
+      const t0 = performance.now();
+      (function tick(now) {
+        const p = Math.min((now - t0) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        pctEl.textContent = Math.round(eased * target) + '%';
+        if (p < 1) requestAnimationFrame(tick);
+      })(performance.now());
+    });
+  });
+}
+
+function switchSolution(key) {
+  if ('startViewTransition' in document) {
+    document.startViewTransition(() => { activeSolKey = key; renderSolToggle(); renderLearningCard(); });
+  } else {
+    activeSolKey = key; renderSolToggle(); renderLearningCard();
+  }
+}
+
+function renderHero() {
+  const hero = document.getElementById('home-hero');
+  const path = getActivePath();
+  if (!path) { hero.style.display = 'none'; return; }
+
+  const prog = getProgress(path);
+  const nextName = prog.done < prog.total ? path.courseNames[prog.done] : null;
+
+  // Welcome block above hero
+  const h = new Date().getHours();
+  const greeting = h < 12 ? 'morning' : h < 17 ? 'afternoon' : 'evening';
+  const welcomeBlock = document.getElementById('home-welcome');
+  const welcomeSub = document.getElementById('welcome-sub');
+  if (welcomeBlock && welcomeSub) {
+    welcomeSub.textContent = 'Good ' + greeting + ', ' + USER.firstName + '!';
+    welcomeBlock.style.display = '';
+  }
+
+  document.getElementById('hero-title').textContent = path.title;
+  document.getElementById('hero-desc').innerHTML = nextName
+    ? '<span class="hero-next-label">Next course</span><span class="hero-next-name">' + nextName + '</span>'
+    : '<span class="hero-next-name">' + (prog.pct === 100 ? 'All courses completed.' : 'Start your first course.') + '</span>';
+
+  // Two-segment progress bar (animates in from 0)
+  const pct = prog.pct;
+  document.getElementById('hero-bar-row').innerHTML =
+    '<div class="hero-bar">' +
+      '<div class="hero-bar-done" style="width:0%" data-pct="' + pct + '"></div>' +
+      '<div class="hero-bar-remaining"></div>' +
+    '</div>' +
+    '<span class="hero-bar-label">' + prog.done + ' of ' + prog.total + ' courses – ' + pct + '%</span>';
+  requestAnimationFrame(() => {
+    const fill = document.querySelector('#hero-bar-row .hero-bar-done');
+    if (fill) requestAnimationFrame(() => { fill.style.width = fill.dataset.pct + '%'; });
+  });
+
+  // Buttons
+  const resumeBtn = document.getElementById('hero-resume-btn');
+  resumeBtn.href = path.href;
+  document.getElementById('hero-resume-label').textContent =
+    prog.started && prog.pct < 100 ? 'Resume learning path' : prog.pct === 100 ? 'Review path' : 'Start learning path';
+  document.getElementById('hero-view-btn').href = path.href;
+
+  // Checklist — "Your progress"
+  let cl = '<div class="checklist-title">What\'s in this path</div><div class="checklist-items">';
+  for (let i = 0; i < Math.min(path.courseIds.length, 7); i++) {
+    const name = path.courseNames[i] || ('Course ' + (i + 1));
+    const done = i < prog.done;
+    const active = i === prog.done;
+    const dotCls = done ? 'is-done' : active ? 'is-active' : '';
+    const itemCls = done ? ' is-done' : '';
+    const dotContent = done
+      ? '<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px"><polyline points="20 6 9 17 4 12"/></svg>'
+      : (i + 1);
+    cl += '<div class="checklist-item' + itemCls + '" style="--i:' + i + '"><div class="checklist-dot ' + dotCls + '">' + dotContent + '</div><span class="checklist-label">' + name + '</span></div>';
+  }
+  cl += '</div>';
+  document.getElementById('hero-checklist').innerHTML = cl;
+
+  hero.style.display = '';
+}
+
+let activePathTab = 'all';
+
+function renderPathTabs() {
+  const wrap = document.getElementById('path-tabs');
+  if (!wrap) return;
+  const allTab = { key: 'all', label: 'All', dot: null, toggleBg: 'rgba(48,70,66,0.08)', bar: 'var(--color-primary)' };
+  const tabs = [allTab, ...SOLUTIONS];
+  wrap.innerHTML = tabs.map(t => {
+    const active = t.key === activePathTab;
+    const dotHtml = t.dot ? '<span class="sol-dot" style="background:' + t.dot + '"></span>' : '';
+    return '<button class="path-tab' + (active ? ' is-active' : '') + '" data-tab="' + t.key + '" aria-selected="' + active + '"'
+      + ' style="--sol-color:' + (t.bar || 'var(--color-primary)') + ';--sol-bg:' + t.toggleBg + '">'
+      + '<span class="sol-btn-bg" style="background:' + (active ? t.toggleBg : 'transparent') + '"></span>'
+      + dotHtml + t.label
+      + '</button>';
+  }).join('');
+}
+
+function applyPathFilter(tab) {
+  activePathTab = tab;
+  renderPathTabs();
+  document.querySelectorAll('#paths-grid .course-card').forEach(card => {
+    card.style.display = (tab === 'all' || card.dataset.category === tab) ? '' : 'none';
+  });
+  let anySoon = false;
+  document.querySelectorAll('#soon-grid .course-card').forEach(card => {
+    const show = tab === 'all' || card.dataset.category === tab;
+    card.style.display = show ? '' : 'none';
+    if (show) anySoon = true;
+  });
+  const soonLabel = document.getElementById('soon-label');
+  const soonGrid = document.getElementById('soon-grid');
+  if (soonLabel) soonLabel.style.display = anySoon ? '' : 'none';
+  if (soonGrid) soonGrid.style.display = anySoon ? '' : 'none';
+}
+
+function toggleBookmark(id, e) {
+  if (e) { e.preventDefault(); e.stopPropagation(); }
+  const btn = e ? e.target.closest('[data-bm]') : null;
+  let bms = getBookmarks();
+  const idx = bms.indexOf(id);
+  const adding = idx === -1;
+  if (adding) bms.push(id); else bms.splice(idx, 1);
+  saveBookmarks(bms);
+  if (btn) {
+    btn.classList.toggle('is-bookmarked', adding);
+    btn.innerHTML = bmSvg(adding);
+    btn.classList.remove('bm-pop');
+    void btn.offsetWidth;
+    btn.classList.add('bm-pop');
+    setTimeout(() => render(), 400);
+  } else {
+    render();
+  }
+}
+
+function bmSvg(filled) {
+  return filled
+    ? '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3h14a1 1 0 0 1 1 1v17.27a.5.5 0 0 1-.78.41L12 17.2l-7.22 4.48A.5.5 0 0 1 4 21.27V4a1 1 0 0 1 1-1z"/></svg>'
+    : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14a1 1 0 0 1 1 1v17.27a.5.5 0 0 1-.78.41L12 17.2l-7.22 4.48A.5.5 0 0 1 4 21.27V4a1 1 0 0 1 1-1z"/></svg>';
+}
+
+function renderPathCard(path, bookmarks, isActive) {
+  if (path.comingSoon) {
+    const lockSvg = '<svg class="soon-card-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>';
+    const clockSvg = '<svg class="soon-card-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>';
+    return '<div class="course-card is-soon" tabindex="-1" data-category="' + (path.category || 'all') + '">'
+      + '<div class="soon-card-inner">'
+      + '<div class="soon-card-header"><span class="soon-card-title">' + path.title + '</span>' + lockSvg + '</div>'
+      + '<div class="soon-card-footer">' + clockSvg + 'Coming soon</div>'
+      + '</div>'
+      + '</div>';
+  }
+
+  const bm = bookmarks.includes(path.id);
+  const prog = getProgress(path);
+  const pct = prog.pct;
+  const ctaText = pct === 100 ? 'Review learning path' : (prog.started ? 'Continue learning path' : 'Open learning path');
+
+  // Find matching SOLUTIONS entry for hub-style thumbnail + pill colors
+  const sol = SOLUTIONS.find(s => s.pathId === path.id);
+  const pillBg  = sol ? hexToRgba(sol.btn, 0.30) : 'rgba(238,224,195,0.30)';
+  const pillTxt = sol ? sol.btnT : '#2C2416';
+
+  const thumbVars = sol
+    ? ('style="--card-bg:' + sol.bg + ';--pill-bg:' + pillBg + ';--pill-text:' + pillTxt + '"')
+    : ('style="background:linear-gradient(135deg,' + path.gradFrom + ',' + path.gradTo + ')"');
+  const cardBdr = sol ? sol.bdr : 'transparent';
+  const cardGlow = sol ? hexToRgba(sol.bar, 0.20) : 'rgba(48,70,66,0.22)';
+  const thumbClass = sol ? 'course-card-top is-hub-thumb' : 'course-card-top';
+
+  const illu = sol
+    ? '<img class="course-card-illu" src="' + sol.illu + '" alt="" aria-hidden="true">'
+    : '';
+  const durationPill = '<div class="course-duration-pill">' + path.duration + '</div>';
+
+  const isNext = isActive;
+  const cardCls = 'course-card' + (isNext ? ' next-course' : '');
+
+  const barHtml = prog.started && pct < 100
+    ? '<div class="card-progress"><div class="card-progress-fill" style="width:' + pct + '%"></div></div>'
+    : '<div class="card-accent-bar"></div>';
+
+  const arrowImg = '<img class="course-cta-arrow" src="SVGs/Up-Arrow.svg" alt="" aria-hidden="true">';
+  const bookmarkBtn = '<button class="card-bm-btn" tabindex="-1" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>';
+
+  return '<div class="' + cardCls + '" data-href="' + path.href + '" tabindex="0" data-category="' + (path.category || 'all') + '" style="--card-bdr:' + cardBdr + ';--card-glow:' + cardGlow + '">'
+    + '<div class="' + thumbClass + '" ' + thumbVars + '>'
+    + illu + durationPill + bookmarkBtn
+    + '</div>'
+    + barHtml
+    + '<div class="course-card-bottom">'
+    + '<h2 class="course-title">' + path.title + '</h2>'
+    + '<p class="course-description">' + path.desc + '</p>'
+    + '<div class="course-cta-row"><a href="' + path.href + '" class="course-cta">' + ctaText + arrowImg + '</a></div>'
+    + '</div>'
+    + '</div>';
+}
+
+function render() {
+  // Home view
+  activeSolKey = getActiveSolKey();
+  renderSolToggle();
+  renderLearningCard();
+
+  // Catalog view
+  renderPathTabs();
+  const bms = getBookmarks();
+  const activePath = getActivePath();
+
+  const mainPaths = PATHS.filter(p => !p.comingSoon);
+  const soonPaths = PATHS.filter(p => p.comingSoon);
+  const bmPaths = mainPaths.filter(p => bms.includes(p.id));
+
+  const pathsGrid = document.getElementById('paths-grid');
+  const soonGrid = document.getElementById('soon-grid');
+  const soonLabel = document.getElementById('soon-label');
+  const bmSection = document.getElementById('bm-section');
+  const bmGrid = document.getElementById('bm-grid');
+
+  if (pathsGrid) pathsGrid.innerHTML = mainPaths.map(p => renderPathCard(p, bms, activePath && p.id === activePath.id)).join('');
+  if (soonGrid) soonGrid.innerHTML = soonPaths.map(p => renderPathCard(p, bms, false)).join('');
+  if (soonLabel) soonLabel.style.display = soonPaths.length ? '' : 'none';
+  if (bmGrid) bmGrid.innerHTML = bmPaths.map(p => renderPathCard(p, bms, false)).join('');
+  if (bmSection) bmSection.style.display = bmPaths.length ? '' : 'none';
+
+  observeCards();
+  wireCards();
+}
+
+function wireCards() {
+  document.querySelectorAll('.course-card[data-href]').forEach(card => {
+    card.addEventListener('click', e => {
+      if (e.target.closest('[data-bm]') || e.target.closest('a')) return;
+      window.location.href = card.getAttribute('data-href');
+    });
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.location.href = card.getAttribute('data-href'); }
+    });
+  });
+  document.querySelectorAll('[data-bm]').forEach(btn => {
+    btn.addEventListener('click', e => toggleBookmark(btn.dataset.bm, e));
+  });
+}
+
+function observeCards() {
+  const cards = document.querySelectorAll('.course-card:not(.visible)');
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    cards.forEach(c => c.classList.add('visible')); return;
+  }
+  try {
+    const obs = new IntersectionObserver((entries, o) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); o.unobserve(entry.target); } });
+    }, { rootMargin: '0px 0px 480px 0px', threshold: 0.01 });
+    cards.forEach(c => obs.observe(c));
+    requestAnimationFrame(() => {
+      const vh = window.innerHeight;
+      cards.forEach(c => { if (!c.classList.contains('visible')) { const r = c.getBoundingClientRect(); if (r.top < vh + 500) c.classList.add('visible'); } });
+    });
+  } catch { cards.forEach(c => c.classList.add('visible')); }
+}
+
+function switchView(name) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('is-active'));
+  document.getElementById('nav-home').classList.toggle('active', name === 'home');
+  document.getElementById('nav-paths').classList.toggle('active', name === 'catalog');
+  document.getElementById('view-' + name).classList.add('is-active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  observeCards();
+}
+
+document.getElementById('nav-home').addEventListener('click', e => { e.preventDefault(); switchView('home'); });
+document.getElementById('nav-paths').addEventListener('click', e => { e.preventDefault(); switchView('catalog'); });
+document.getElementById('logo-home').addEventListener('click', e => { e.preventDefault(); switchView('home'); });
+
+// Path filter tab clicks (delegated — tabs rendered in HTML)
+document.getElementById('path-tabs').addEventListener('click', e => {
+  const btn = e.target.closest('.path-tab');
+  if (btn) applyPathFilter(btn.dataset.tab);
+});
+
+render();
+
+// ── HERO PARALLAX ─────────────────────────────────────────────
+(function() {
+  const noMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hasHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (noMotion || !hasHover) return;
+
+  let tx = 0, ty = 0, cx = 0, cy = 0, rafId = null;
+
+  function tick() {
+    const LERP = 0.075;
+    cx += (tx - cx) * LERP;
+    cy += (ty - cy) * LERP;
+
+    const grid = document.querySelector('.hero-grid-layer');
+    const content = document.querySelector('#home-hero .hero-content');
+    const checklist = document.querySelector('#home-hero .hero-checklist');
+
+    if (grid)     grid.style.transform     = `translate(${cx * -18}px, ${cy * -12}px)`;
+    if (content)  content.style.transform  = `translate(${cx * 7}px,  ${cy * 4}px)`;
+    if (checklist) checklist.style.transform = `translate(${cx * 16}px, ${cy * 10}px)`;
+
+    const stillMoving = Math.abs(tx - cx) > 0.0005 || Math.abs(ty - cy) > 0.0005
+                     || Math.abs(cx) > 0.0005 || Math.abs(cy) > 0.0005;
+    rafId = stillMoving ? requestAnimationFrame(tick) : null;
+  }
+
+  function start() { if (!rafId) rafId = requestAnimationFrame(tick); }
+
+  document.getElementById('home-hero').addEventListener('mousemove', e => {
+    const r = e.currentTarget.getBoundingClientRect();
+    tx = ((e.clientX - r.left) / r.width  - 0.5) * 2;
+    ty = ((e.clientY - r.top)  / r.height - 0.5) * 2;
+    start();
+  });
+
+  document.getElementById('home-hero').addEventListener('mouseleave', () => {
+    tx = 0; ty = 0; start();
+  });
+})();
+
+// Handle ?view= query param from hub navigation
+const initialView = new URLSearchParams(window.location.search).get('view');
+if (initialView === 'catalog') {
+  switchView('catalog');
+  window.history.replaceState({}, '', 'index.html');
+}
+</script>
 </body>
 </html>
