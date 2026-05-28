@@ -11,16 +11,6 @@
     inherits: true;
     initial-value: 0%;
   }
-  @property --track-x {
-    syntax: '<length>';
-    inherits: false;
-    initial-value: 0px;
-  }
-  @property --track-w {
-    syntax: '<length>';
-    inherits: false;
-    initial-value: 80px;
-  }
 
   :root {
     --color-primary: #304642;
@@ -985,33 +975,58 @@
     animation: lockShake 0.46s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  /* ── PATH FILTER TABS — same track style as sol-toggle ── */
+  /* ── PATH FILTER TABS — same pill style as sol-toggle ── */
   .path-tabs {
-    display: inline-flex; align-items: stretch;
-    position: relative;
+    display: inline-flex; align-items: center; gap: 4px;
+    background: rgba(255,255,255,0.80); border-radius: 100px;
+    padding: 7px;
+    outline: 1px solid rgba(208,213,197,0.50); outline-offset: -1px;
+    transition: box-shadow 0.4s cubic-bezier(0.16,1,0.3,1);
+  }
+  .path-tabs:has(.path-tab:hover) {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.08);
   }
 
   .path-tab {
     position: relative; display: inline-flex; align-items: center; gap: 10px;
-    padding: 10px 20px; border: none;
+    padding: 10px 20px; border-radius: 100px; border: none;
     background: transparent; cursor: pointer;
     font-family: var(--font-family); color: #888888;
-    white-space: nowrap; z-index: 1;
+    white-space: nowrap;
     transition: color 0.25s cubic-bezier(0.16,1,0.3,1),
                 transform 0.3s cubic-bezier(0.16,1,0.3,1);
   }
+  /* "All" tab — no name/tag structure, stays single line */
   .path-tab:not(:has(.sol-btn-text)) {
     font-size: 13px; font-weight: 500; line-height: 1;
   }
   .path-tab .sol-btn-name { color: #c0c0c0; }
   .path-tab .sol-btn-tag  { color: #555; }
-  .path-tab:hover:not(.is-active) .sol-btn-name { color: #aaa; }
+  .path-tab:hover:not(.is-active) .sol-btn-name { color: var(--sol-color, #999); opacity: 0.8; }
   .path-tab:hover:not(.is-active) .sol-btn-tag  { color: var(--sol-color, #333); }
-  .path-tab.is-active .sol-btn-name { color: var(--sol-color, var(--color-primary)); }
+  .path-tab.is-active .sol-btn-name { color: var(--sol-color, var(--color-primary)); opacity: 0.7; }
   .path-tab.is-active .sol-btn-tag  { color: var(--sol-color, var(--color-primary)); font-weight: 600; }
-  .path-tab:hover:not(.is-active) { color: var(--sol-color, #555); transform: translateY(-1px); }
-  .path-tab:active { transform: scale(0.95) translateY(0) !important; transition-duration: 0.08s !important; }
-  .path-tab.is-active { color: var(--color-primary); }
+  .path-tab:hover:not(.is-active) {
+    color: var(--sol-color, #555);
+    transform: translateY(-1px);
+  }
+  .path-tab:active {
+    transform: scale(0.95) translateY(0) !important;
+    transition-duration: 0.08s !important;
+  }
+  .path-tab.is-active {
+    color: var(--color-primary);
+    animation: sol-btn-pop 0.4s cubic-bezier(0.16,1,0.3,1) both;
+  }
+  .path-tab::before {
+    content: '';
+    position: absolute; inset: 0; border-radius: 100px; z-index: -2;
+    background: var(--sol-bg, transparent);
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.16,1,0.3,1);
+    pointer-events: none;
+  }
+  .path-tab:hover:not(.is-active)::before { opacity: 0.5; }
 
   /* Catalog section header layout */
   .catalog-header {
@@ -1057,35 +1072,24 @@
   .sol-toggle-wrap::-webkit-scrollbar { display: none; }
 
   .sol-toggle {
-    display: inline-flex; align-items: stretch;
-    position: relative;
+    display: inline-flex; align-items: center; gap: 4px;
+    background: rgba(255,255,255,0.80); border-radius: 100px;
+    padding: 7px;
+    outline: 1px solid rgba(208,213,197,0.50); outline-offset: -1px;
+    transition: box-shadow 0.4s cubic-bezier(0.16,1,0.3,1);
   }
-
-  /* Sliding color track — shared by sol-toggle and path-tabs */
-  .sol-track {
-    position: absolute;
-    top: 0; left: 0;
-    height: 100%;
-    width: var(--track-w);
-    transform: translateX(var(--track-x));
-    background: var(--track-bg, transparent);
-    border-radius: 14px;
-    transition:
-      --track-x 0.45s cubic-bezier(0.16,1,0.3,1),
-      --track-w 0.45s cubic-bezier(0.16,1,0.3,1),
-      background 0.28s cubic-bezier(0.16,1,0.3,1);
-    pointer-events: none;
-    z-index: 0;
+  .sol-toggle:has(.sol-btn:hover) {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.08);
   }
-  .sol-track.no-transition { transition: none !important; }
 
   .sol-btn {
-    position: relative; display: inline-flex; align-items: center;
-    padding: 12px 22px; border: none;
+    position: relative; display: inline-flex; align-items: center; gap: 10px;
+    padding: 10px 20px; border-radius: 100px; border: none;
     background: transparent; cursor: pointer;
-    font-family: var(--font-family); white-space: nowrap;
-    z-index: 1;
-    transition: transform 0.3s cubic-bezier(0.16,1,0.3,1);
+    font-family: var(--font-family);
+    color: #888888; white-space: nowrap;
+    transition: color 0.25s cubic-bezier(0.16,1,0.3,1),
+                transform 0.3s cubic-bezier(0.16,1,0.3,1);
   }
   .sol-btn-text {
     display: flex; flex-direction: column; gap: 3px; text-align: left;
@@ -1099,12 +1103,49 @@
     font-size: 13px; font-weight: 500; line-height: 1.25;
     color: #555; transition: color 0.25s cubic-bezier(0.16,1,0.3,1);
   }
-  .sol-btn:hover:not(.is-active) .sol-btn-name { color: #aaa; }
+  .sol-btn:hover:not(.is-active) .sol-btn-name { color: var(--sol-color, #999); opacity: 0.8; }
   .sol-btn:hover:not(.is-active) .sol-btn-tag  { color: var(--sol-color, #333); }
-  .sol-btn.is-active .sol-btn-name { color: var(--sol-color, var(--color-primary)); }
+  .sol-btn.is-active .sol-btn-name { color: var(--sol-color, var(--color-primary)); opacity: 0.7; }
   .sol-btn.is-active .sol-btn-tag  { color: var(--sol-color, var(--color-primary)); font-weight: 600; }
-  .sol-btn:hover:not(.is-active) { transform: translateY(-1px); }
-  .sol-btn:active { transform: scale(0.96) translateY(0) !important; transition-duration: 0.08s !important; }
+  .sol-btn:hover:not(.is-active) {
+    transform: translateY(-1px);
+  }
+  .sol-btn:active {
+    transform: scale(0.95) translateY(0) !important;
+    transition-duration: 0.08s !important;
+  }
+  .sol-btn.is-active {
+    animation: sol-btn-pop 0.4s cubic-bezier(0.16,1,0.3,1) both;
+  }
+
+  /* Hover tint preview via pseudo-element */
+  .sol-btn::before {
+    content: '';
+    position: absolute; inset: 0; border-radius: 100px; z-index: -2;
+    background: var(--sol-bg, transparent);
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.16,1,0.3,1);
+    pointer-events: none;
+  }
+  .sol-btn:hover:not(.is-active)::before { opacity: 0.5; }
+
+  @keyframes sol-btn-pop {
+    0%  { transform: scale(0.92); }
+    100% { transform: scale(1); }
+  }
+
+  .sol-btn-bg {
+    position: absolute; inset: 0; border-radius: 100px; z-index: -1;
+    transition: background 0.28s cubic-bezier(0.16,1,0.3,1);
+  }
+
+  .sol-dot {
+    width: 6px; height: 6px; border-radius: 2px; flex-shrink: 0;
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+  }
+  .sol-btn:hover .sol-dot            { transform: scale(1.5) rotate(45deg); }
+  .sol-btn.is-active .sol-dot        { transform: scale(1.25); }
+  .sol-btn.is-active:hover .sol-dot  { transform: scale(1.5) rotate(45deg); }
 
   /* ── Learning card shell ── */
   .learning-card {
@@ -1483,11 +1524,11 @@ function getActivePath() {
 
 // ── SOLUTION DATA ─────────────────────────────────────────────
 const SOLUTIONS = [
-  { key: 'inventory',    name: 'Inventory',    label: 'What to stock',   pathId: 'inventory-management', illu: 'SVGs/LP-Illustrations/Inventory-Illustration.png',      toggleBg: '#FFF9EC', bg: '#FFFDF9', btn: '#EEE0C3', btnT: '#2C2416', bdr: '#EDE3CC', dot: '#EEE0C3', bar: '#B8964E' },
-  { key: 'suppliers',    name: 'Suppliers',    label: 'How to source',   pathId: 'supplier-management',  illu: 'SVGs/LP-Illustrations/Suppliers-Illustration.png',      toggleBg: '#F4EEFF', bg: '#FDFCFF', btn: '#E1DBEB', btnT: '#221D2E', bdr: '#D8D0E8', dot: '#E1DBEB', bar: '#7B68AA' },
-  { key: 'customers',   name: 'Customers',    label: 'Who to serve',    pathId: 'advanced-insights',    illu: 'SVGs/LP-Illustrations/ComingSoonIlluCustomers.png', soon: true, toggleBg: '#F1F4E9', bg: '#F8FAF4', btn: '#E3E8D8', btnT: '#222619', bdr: '#DDE3D0', dot: '#D0D5C5', bar: '#8A9672' },
-  { key: 'products',    name: 'Products',     label: 'What to offer',   pathId: 'spend-analysis',       illu: 'SVGs/LP-Illustrations/ComingSoonIlluProducts.png',  soon: true, toggleBg: '#FFF9EC', bg: '#FFFDF9', btn: '#EEE0C3', btnT: '#2C2416', bdr: '#EDE3CC', dot: '#EEE0C3', bar: '#B8964E' },
-  { key: 'functionality', name: 'Functionality', label: 'Using Inact Now', pathId: 'now-fundamentals',   illu: 'SVGs/LP-Illustrations/Now-Illustration.png',            toggleBg: '#F1F6FF', bg: '#F5F9FF', btn: '#DBE9FF', btnT: '#1A2535', bdr: '#D0DFEF', dot: '#DBE9FF', bar: '#5888D0' },
+  { key: 'inventory',    name: 'Inventory',    label: 'What to stock?',  pathId: 'inventory-management', illu: 'SVGs/LP-Illustrations/Inventory-Illustration.png',      toggleBg: '#FFF9EC', bg: '#FFFDF9', btn: '#EEE0C3', btnT: '#2C2416', bdr: '#EDE3CC', dot: '#EEE0C3', bar: '#B8964E' },
+  { key: 'suppliers',    name: 'Suppliers',    label: 'How to source?',  pathId: 'supplier-management',  illu: 'SVGs/LP-Illustrations/Suppliers-Illustration.png',      toggleBg: '#F4EEFF', bg: '#FDFCFF', btn: '#E1DBEB', btnT: '#221D2E', bdr: '#D8D0E8', dot: '#E1DBEB', bar: '#7B68AA' },
+  { key: 'customers',   name: 'Customers',    label: 'Who to serve?',   pathId: 'advanced-insights',    illu: 'SVGs/LP-Illustrations/ComingSoonIlluCustomers.png', soon: true, toggleBg: '#F1F4E9', bg: '#F8FAF4', btn: '#E3E8D8', btnT: '#222619', bdr: '#DDE3D0', dot: '#D0D5C5', bar: '#8A9672' },
+  { key: 'products',    name: 'Products',     label: 'What to offer?',  pathId: 'spend-analysis',       illu: 'SVGs/LP-Illustrations/ComingSoonIlluProducts.png',  soon: true, toggleBg: '#FFF9EC', bg: '#FFFDF9', btn: '#EEE0C3', btnT: '#2C2416', bdr: '#EDE3CC', dot: '#EEE0C3', bar: '#B8964E' },
+  { key: 'functionality', name: 'Software',   label: 'How to use?',     pathId: 'now-fundamentals',     illu: 'SVGs/LP-Illustrations/Now-Illustration.png',            toggleBg: '#F1F6FF', bg: '#F5F9FF', btn: '#DBE9FF', btnT: '#1A2535', bdr: '#D0DFEF', dot: '#DBE9FF', bar: '#5888D0' },
 ];
 
 let activeSolKey = 'inventory';
@@ -1509,58 +1550,24 @@ function getActiveSolKey() {
   return bestKey;
 }
 
-function syncTrack(containerId, trackId) {
-  const track = document.getElementById(trackId);
-  const wrap  = document.getElementById(containerId);
-  if (!track || !wrap) return;
-  const activeBtn = wrap.querySelector('.is-active');
-  if (!activeBtn) return;
-  const wr = wrap.getBoundingClientRect();
-  const br = activeBtn.getBoundingClientRect();
-  track.style.setProperty('--track-x', (br.left - wr.left) + 'px');
-  track.style.setProperty('--track-w', br.width + 'px');
-  const solKey = activeBtn.dataset.sol || activeBtn.dataset.tab;
-  const sol = SOLUTIONS.find(s => s.key === solKey);
-  const bg = sol ? sol.toggleBg : (activeBtn.style.getPropertyValue('--sol-bg') || 'rgba(48,70,66,0.08)');
-  track.style.setProperty('--track-bg', bg);
-}
-
 function renderSolToggle() {
   const wrap = document.getElementById('sol-toggle');
   if (!wrap) return;
-
-  if (!wrap._built) {
-    wrap._built = true;
-    wrap.innerHTML = '<span id="sol-track" class="sol-track no-transition"></span>'
-      + SOLUTIONS.map(sol => {
-          const active = sol.key === activeSolKey;
-          return `<button class="sol-btn${active ? ' is-active' : ''}" data-sol="${sol.key}" aria-pressed="${active}"
-            style="--sol-color:${sol.bar};--sol-bg:${sol.toggleBg}">
-            <span class="sol-btn-text">
-              <span class="sol-btn-name">${sol.name}</span>
-              <span class="sol-btn-tag">${sol.label}</span>
-            </span>
-          </button>`;
-        }).join('');
-    wrap.addEventListener('click', e => {
-      const btn = e.target.closest('.sol-btn');
-      if (btn) switchSolution(btn.dataset.sol);
-    });
-    // Place track with no animation, then enable transitions
-    const track = document.getElementById('sol-track');
-    syncTrack('sol-toggle', 'sol-track');
-    void track.offsetWidth;
-    track.classList.remove('no-transition');
-    return;
-  }
-
-  // Subsequent renders: update active state only, let CSS transition animate the track
+  wrap.innerHTML = SOLUTIONS.map(sol => {
+    const active = sol.key === activeSolKey;
+    return `<button class="sol-btn${active ? ' is-active' : ''}" data-sol="${sol.key}" aria-pressed="${active}"
+      style="--sol-color:${sol.bar};--sol-bg:${sol.toggleBg}">
+      <span class="sol-btn-bg" style="background:${active ? sol.toggleBg : 'transparent'}"></span>
+      <span class="sol-dot" style="background:${sol.dot}"></span>
+      <span class="sol-btn-text">
+        <span class="sol-btn-name">${sol.name}</span>
+        <span class="sol-btn-tag">${sol.label}</span>
+      </span>
+    </button>`;
+  }).join('');
   wrap.querySelectorAll('.sol-btn').forEach(btn => {
-    const active = btn.dataset.sol === activeSolKey;
-    btn.classList.toggle('is-active', active);
-    btn.setAttribute('aria-pressed', active);
+    btn.addEventListener('click', () => switchSolution(btn.dataset.sol));
   });
-  syncTrack('sol-toggle', 'sol-track');
 }
 
 function initBloomBtn(btn) {
@@ -1727,12 +1734,10 @@ function renderLearningCard() {
 }
 
 function switchSolution(key) {
-  activeSolKey = key;
-  renderSolToggle(); // Track animates independently via CSS transition
   if ('startViewTransition' in document) {
-    document.startViewTransition(() => renderLearningCard());
+    document.startViewTransition(() => { activeSolKey = key; renderSolToggle(); renderLearningCard(); });
   } else {
-    renderLearningCard();
+    activeSolKey = key; renderSolToggle(); renderLearningCard();
   }
 }
 
@@ -1805,33 +1810,18 @@ function renderPathTabs() {
   if (!wrap) return;
   const allTab = { key: 'all', label: 'All', dot: null, toggleBg: 'rgba(48,70,66,0.08)', bar: 'var(--color-primary)' };
   const tabs = [allTab, ...SOLUTIONS];
-
-  if (!wrap._built) {
-    wrap._built = true;
-    wrap.innerHTML = '<span id="path-track" class="sol-track no-transition"></span>'
-      + tabs.map(t => {
-          const active = t.key === activePathTab;
-          const labelHtml = t.name
-            ? '<span class="sol-btn-text"><span class="sol-btn-name">' + t.name + '</span><span class="sol-btn-tag">' + t.label + '</span></span>'
-            : t.label;
-          return '<button class="path-tab' + (active ? ' is-active' : '') + '" data-tab="' + t.key + '" aria-selected="' + active + '"'
-            + ' style="--sol-color:' + (t.bar || 'var(--color-primary)') + ';--sol-bg:' + t.toggleBg + '">'
-            + labelHtml + '</button>';
-        }).join('');
-    const track = document.getElementById('path-track');
-    syncTrack('path-tabs', 'path-track');
-    void track.offsetWidth;
-    track.classList.remove('no-transition');
-    return;
-  }
-
-  // Update active states only
-  wrap.querySelectorAll('.path-tab').forEach(btn => {
-    const active = btn.dataset.tab === activePathTab;
-    btn.classList.toggle('is-active', active);
-    btn.setAttribute('aria-selected', active);
-  });
-  syncTrack('path-tabs', 'path-track');
+  wrap.innerHTML = tabs.map(t => {
+    const active = t.key === activePathTab;
+    const dotHtml = t.dot ? '<span class="sol-dot" style="background:' + t.dot + '"></span>' : '';
+    const labelHtml = t.name
+      ? '<span class="sol-btn-text"><span class="sol-btn-name">' + t.name + '</span><span class="sol-btn-tag">' + t.label + '</span></span>'
+      : t.label;
+    return '<button class="path-tab' + (active ? ' is-active' : '') + '" data-tab="' + t.key + '" aria-selected="' + active + '"'
+      + ' style="--sol-color:' + (t.bar || 'var(--color-primary)') + ';--sol-bg:' + t.toggleBg + '">'
+      + '<span class="sol-btn-bg" style="background:' + (active ? t.toggleBg : 'transparent') + '"></span>'
+      + dotHtml + labelHtml
+      + '</button>';
+  }).join('');
 }
 
 function applyPathFilter(tab) {
@@ -2025,12 +2015,6 @@ document.getElementById('path-tabs').addEventListener('click', e => {
 });
 
 render();
-
-// Reposition sliding tracks on resize
-window.addEventListener('resize', () => {
-  syncTrack('sol-toggle', 'sol-track');
-  syncTrack('path-tabs', 'path-track');
-});
 
 // ── HERO PARALLAX ─────────────────────────────────────────────
 (function() {
