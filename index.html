@@ -976,57 +976,46 @@
   }
 
   /* ── PATH FILTER TABS — same pill style as sol-toggle ── */
+  /* ── PATH FILTER TABS ── */
   .path-tabs {
-    display: inline-flex; align-items: center; gap: 4px;
-    background: rgba(255,255,255,0.80); border-radius: 100px;
-    padding: 7px;
-    outline: 1px solid rgba(208,213,197,0.50); outline-offset: -1px;
-    transition: box-shadow 0.4s cubic-bezier(0.16,1,0.3,1);
-  }
-  .path-tabs:has(.path-tab:hover) {
-    box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+    display: inline-flex; align-items: stretch; gap: 6px;
   }
 
   .path-tab {
     position: relative; display: inline-flex; align-items: center; gap: 10px;
-    padding: 10px 20px; border-radius: 100px; border: none;
+    padding: 10px 18px; border: none; border-radius: 14px;
     background: transparent; cursor: pointer;
     font-family: var(--font-family); color: #888888;
-    white-space: nowrap;
+    white-space: nowrap; z-index: 1;
     transition: color 0.25s cubic-bezier(0.16,1,0.3,1),
-                transform 0.3s cubic-bezier(0.16,1,0.3,1);
+                transform 0.32s cubic-bezier(0.16,1,0.3,1),
+                box-shadow 0.32s cubic-bezier(0.16,1,0.3,1);
   }
-  /* "All" tab — no name/tag structure, stays single line */
   .path-tab:not(:has(.sol-btn-text)) {
     font-size: 13px; font-weight: 500; line-height: 1;
   }
-  .path-tab .sol-btn-name { color: #c0c0c0; }
-  .path-tab .sol-btn-tag  { color: #555; }
-  .path-tab:hover:not(.is-active) .sol-btn-name { color: var(--sol-color, #999); opacity: 0.8; }
-  .path-tab:hover:not(.is-active) .sol-btn-tag  { color: var(--sol-color, #333); }
-  .path-tab.is-active .sol-btn-name { color: var(--sol-color, var(--color-primary)); opacity: 0.7; }
-  .path-tab.is-active .sol-btn-tag  { color: var(--sol-color, var(--color-primary)); font-weight: 600; }
-  .path-tab:hover:not(.is-active) {
-    color: var(--sol-color, #555);
-    transform: translateY(-1px);
-  }
-  .path-tab:active {
-    transform: scale(0.95) translateY(0) !important;
-    transition-duration: 0.08s !important;
-  }
-  .path-tab.is-active {
-    color: var(--color-primary);
-    animation: sol-btn-pop 0.4s cubic-bezier(0.16,1,0.3,1) both;
-  }
   .path-tab::before {
     content: '';
-    position: absolute; inset: 0; border-radius: 100px; z-index: -2;
-    background: var(--sol-bg, transparent);
-    opacity: 0;
-    transition: opacity 0.3s cubic-bezier(0.16,1,0.3,1);
+    position: absolute; inset: 0; border-radius: 14px;
+    background: var(--sol-bg, rgba(48,70,66,0.08));
+    opacity: 0.28; transition: opacity 0.28s cubic-bezier(0.16,1,0.3,1);
     pointer-events: none;
   }
   .path-tab:hover:not(.is-active)::before { opacity: 0.5; }
+  .path-tab.is-active::before { opacity: 1; }
+  .path-tab .sol-btn-name { color: #b8b8b8; }
+  .path-tab .sol-btn-tag  { color: #555; }
+  .path-tab:hover:not(.is-active) .sol-btn-name { color: var(--sol-color, #999); }
+  .path-tab:hover:not(.is-active) .sol-btn-tag  { color: var(--sol-color, #333); }
+  .path-tab.is-active .sol-btn-name { color: var(--sol-color, var(--color-primary)); }
+  .path-tab.is-active .sol-btn-tag  { color: var(--sol-color, var(--color-primary)); font-weight: 600; }
+  .path-tab:hover:not(.is-active) { color: var(--sol-color, #555); transform: translateY(-1px); }
+  .path-tab:active { transform: scale(0.97) translateY(0) !important; transition-duration: 0.08s !important; }
+  .path-tab.is-active {
+    color: var(--sol-color, var(--color-primary));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 16px var(--sol-glow, rgba(48,70,66,0.10));
+  }
 
   /* Catalog section header layout */
   .catalog-header {
@@ -1071,81 +1060,54 @@
   }
   .sol-toggle-wrap::-webkit-scrollbar { display: none; }
 
+  /* ── SOLUTION TOGGLE: answer-card style ── */
   .sol-toggle {
-    display: inline-flex; align-items: center; gap: 4px;
-    background: rgba(255,255,255,0.80); border-radius: 100px;
-    padding: 7px;
-    outline: 1px solid rgba(208,213,197,0.50); outline-offset: -1px;
-    transition: box-shadow 0.4s cubic-bezier(0.16,1,0.3,1);
-  }
-  .sol-toggle:has(.sol-btn:hover) {
-    box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+    display: inline-flex; align-items: stretch; gap: 6px;
   }
 
   .sol-btn {
-    position: relative; display: inline-flex; align-items: center; gap: 10px;
-    padding: 10px 20px; border-radius: 100px; border: none;
+    position: relative; display: inline-flex; align-items: center;
+    padding: 12px 20px; border: none; border-radius: 14px;
     background: transparent; cursor: pointer;
-    font-family: var(--font-family);
-    color: #888888; white-space: nowrap;
+    font-family: var(--font-family); white-space: nowrap; z-index: 1;
     transition: color 0.25s cubic-bezier(0.16,1,0.3,1),
-                transform 0.3s cubic-bezier(0.16,1,0.3,1);
+                transform 0.32s cubic-bezier(0.16,1,0.3,1),
+                box-shadow 0.32s cubic-bezier(0.16,1,0.3,1);
   }
+  /* Always-visible tinted card background per option */
+  .sol-btn::before {
+    content: '';
+    position: absolute; inset: 0; border-radius: 14px;
+    background: var(--sol-bg, #FFF9EC);
+    opacity: 0.28;
+    transition: opacity 0.28s cubic-bezier(0.16,1,0.3,1);
+    pointer-events: none;
+  }
+  .sol-btn:hover:not(.is-active)::before { opacity: 0.5; }
+  .sol-btn.is-active::before             { opacity: 1; }
+
   .sol-btn-text {
     display: flex; flex-direction: column; gap: 3px; text-align: left;
   }
   .sol-btn-name {
     font-size: 9px; font-weight: 600; line-height: 1;
     letter-spacing: 0.07em; text-transform: uppercase;
-    color: #c0c0c0; transition: color 0.25s cubic-bezier(0.16,1,0.3,1);
+    color: #b8b8b8; transition: color 0.25s cubic-bezier(0.16,1,0.3,1);
   }
   .sol-btn-tag {
     font-size: 13px; font-weight: 500; line-height: 1.25;
     color: #555; transition: color 0.25s cubic-bezier(0.16,1,0.3,1);
   }
-  .sol-btn:hover:not(.is-active) .sol-btn-name { color: var(--sol-color, #999); opacity: 0.8; }
+  .sol-btn:hover:not(.is-active) .sol-btn-name { color: var(--sol-color, #999); }
   .sol-btn:hover:not(.is-active) .sol-btn-tag  { color: var(--sol-color, #333); }
-  .sol-btn.is-active .sol-btn-name { color: var(--sol-color, var(--color-primary)); opacity: 0.7; }
+  .sol-btn.is-active .sol-btn-name { color: var(--sol-color, var(--color-primary)); }
   .sol-btn.is-active .sol-btn-tag  { color: var(--sol-color, var(--color-primary)); font-weight: 600; }
-  .sol-btn:hover:not(.is-active) {
-    transform: translateY(-1px);
-  }
-  .sol-btn:active {
-    transform: scale(0.95) translateY(0) !important;
-    transition-duration: 0.08s !important;
-  }
+  .sol-btn:hover:not(.is-active)   { transform: translateY(-1px); }
+  .sol-btn:active { transform: scale(0.97) translateY(0) !important; transition-duration: 0.08s !important; }
   .sol-btn.is-active {
-    animation: sol-btn-pop 0.4s cubic-bezier(0.16,1,0.3,1) both;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 16px var(--sol-glow, rgba(0,0,0,0.08));
   }
-
-  /* Hover tint preview via pseudo-element */
-  .sol-btn::before {
-    content: '';
-    position: absolute; inset: 0; border-radius: 100px; z-index: -2;
-    background: var(--sol-bg, transparent);
-    opacity: 0;
-    transition: opacity 0.3s cubic-bezier(0.16,1,0.3,1);
-    pointer-events: none;
-  }
-  .sol-btn:hover:not(.is-active)::before { opacity: 0.5; }
-
-  @keyframes sol-btn-pop {
-    0%  { transform: scale(0.92); }
-    100% { transform: scale(1); }
-  }
-
-  .sol-btn-bg {
-    position: absolute; inset: 0; border-radius: 100px; z-index: -1;
-    transition: background 0.28s cubic-bezier(0.16,1,0.3,1);
-  }
-
-  .sol-dot {
-    width: 6px; height: 6px; border-radius: 2px; flex-shrink: 0;
-    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
-  }
-  .sol-btn:hover .sol-dot            { transform: scale(1.5) rotate(45deg); }
-  .sol-btn.is-active .sol-dot        { transform: scale(1.25); }
-  .sol-btn.is-active:hover .sol-dot  { transform: scale(1.5) rotate(45deg); }
 
   /* ── Learning card shell ── */
   .learning-card {
@@ -1553,20 +1515,30 @@ function getActiveSolKey() {
 function renderSolToggle() {
   const wrap = document.getElementById('sol-toggle');
   if (!wrap) return;
-  wrap.innerHTML = SOLUTIONS.map(sol => {
-    const active = sol.key === activeSolKey;
-    return `<button class="sol-btn${active ? ' is-active' : ''}" data-sol="${sol.key}" aria-pressed="${active}"
-      style="--sol-color:${sol.bar};--sol-bg:${sol.toggleBg}">
-      <span class="sol-btn-bg" style="background:${active ? sol.toggleBg : 'transparent'}"></span>
-      <span class="sol-dot" style="background:${sol.dot}"></span>
-      <span class="sol-btn-text">
-        <span class="sol-btn-name">${sol.name}</span>
-        <span class="sol-btn-tag">${sol.label}</span>
-      </span>
-    </button>`;
-  }).join('');
+
+  if (!wrap._built) {
+    wrap._built = true;
+    wrap.innerHTML = SOLUTIONS.map(sol => {
+      const active = sol.key === activeSolKey;
+      return `<button class="sol-btn${active ? ' is-active' : ''}" data-sol="${sol.key}" aria-pressed="${active}"
+        style="--sol-color:${sol.bar};--sol-bg:${sol.toggleBg};--sol-glow:${hexToRgba(sol.bar, 0.14)}">
+        <span class="sol-btn-text">
+          <span class="sol-btn-name">${sol.name}</span>
+          <span class="sol-btn-tag">${sol.label}</span>
+        </span>
+      </button>`;
+    }).join('');
+    wrap.addEventListener('click', e => {
+      const btn = e.target.closest('.sol-btn');
+      if (btn) switchSolution(btn.dataset.sol);
+    });
+    return;
+  }
+
   wrap.querySelectorAll('.sol-btn').forEach(btn => {
-    btn.addEventListener('click', () => switchSolution(btn.dataset.sol));
+    const active = btn.dataset.sol === activeSolKey;
+    btn.classList.toggle('is-active', active);
+    btn.setAttribute('aria-pressed', active);
   });
 }
 
@@ -1734,10 +1706,12 @@ function renderLearningCard() {
 }
 
 function switchSolution(key) {
+  activeSolKey = key;
+  renderSolToggle();
   if ('startViewTransition' in document) {
-    document.startViewTransition(() => { activeSolKey = key; renderSolToggle(); renderLearningCard(); });
+    document.startViewTransition(() => renderLearningCard());
   } else {
-    activeSolKey = key; renderSolToggle(); renderLearningCard();
+    renderLearningCard();
   }
 }
 
@@ -1808,20 +1782,29 @@ let activePathTab = 'all';
 function renderPathTabs() {
   const wrap = document.getElementById('path-tabs');
   if (!wrap) return;
-  const allTab = { key: 'all', label: 'All', dot: null, toggleBg: 'rgba(48,70,66,0.08)', bar: 'var(--color-primary)' };
+  const allTab = { key: 'all', label: 'All', dot: null, toggleBg: 'rgba(48,70,66,0.08)', bar: 'var(--color-primary)', glow: 'rgba(48,70,66,0.10)' };
   const tabs = [allTab, ...SOLUTIONS];
-  wrap.innerHTML = tabs.map(t => {
-    const active = t.key === activePathTab;
-    const dotHtml = t.dot ? '<span class="sol-dot" style="background:' + t.dot + '"></span>' : '';
-    const labelHtml = t.name
-      ? '<span class="sol-btn-text"><span class="sol-btn-name">' + t.name + '</span><span class="sol-btn-tag">' + t.label + '</span></span>'
-      : t.label;
-    return '<button class="path-tab' + (active ? ' is-active' : '') + '" data-tab="' + t.key + '" aria-selected="' + active + '"'
-      + ' style="--sol-color:' + (t.bar || 'var(--color-primary)') + ';--sol-bg:' + t.toggleBg + '">'
-      + '<span class="sol-btn-bg" style="background:' + (active ? t.toggleBg : 'transparent') + '"></span>'
-      + dotHtml + labelHtml
-      + '</button>';
-  }).join('');
+
+  if (!wrap._built) {
+    wrap._built = true;
+    wrap.innerHTML = tabs.map(t => {
+      const active = t.key === activePathTab;
+      const glow = t.glow || hexToRgba(t.bar || '#304642', 0.14);
+      const labelHtml = t.name
+        ? '<span class="sol-btn-text"><span class="sol-btn-name">' + t.name + '</span><span class="sol-btn-tag">' + t.label + '</span></span>'
+        : t.label;
+      return '<button class="path-tab' + (active ? ' is-active' : '') + '" data-tab="' + t.key + '" aria-selected="' + active + '"'
+        + ' style="--sol-color:' + (t.bar || 'var(--color-primary)') + ';--sol-bg:' + t.toggleBg + ';--sol-glow:' + glow + '">'
+        + labelHtml + '</button>';
+    }).join('');
+    return;
+  }
+
+  wrap.querySelectorAll('.path-tab').forEach(btn => {
+    const active = btn.dataset.tab === activePathTab;
+    btn.classList.toggle('is-active', active);
+    btn.setAttribute('aria-selected', active);
+  });
 }
 
 function applyPathFilter(tab) {
