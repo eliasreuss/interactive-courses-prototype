@@ -589,12 +589,18 @@
   .course-card.visible {
     animation: cardEnter 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
-  .course-card:nth-child(1) { animation-delay: 0.04s; }
-  .course-card:nth-child(2) { animation-delay: 0.10s; }
-  .course-card:nth-child(3) { animation-delay: 0.16s; }
-  .course-card:nth-child(4) { animation-delay: 0.22s; }
-  .course-card:nth-child(5) { animation-delay: 0.28s; }
-  .course-card:nth-child(6) { animation-delay: 0.34s; }
+  /* LP stack: nth-child targets the wrapper */
+  .lp-stack-wrap:nth-child(1) .course-card { animation-delay: 0.04s; }
+  .lp-stack-wrap:nth-child(2) .course-card { animation-delay: 0.10s; }
+  .lp-stack-wrap:nth-child(3) .course-card { animation-delay: 0.16s; }
+  .lp-stack-wrap:nth-child(4) .course-card { animation-delay: 0.22s; }
+  .lp-stack-wrap:nth-child(5) .course-card { animation-delay: 0.28s; }
+  .lp-stack-wrap:nth-child(6) .course-card { animation-delay: 0.34s; }
+  /* Catalog grid without wrapper (bookmark grid, etc.) keeps original delays */
+  #catalog-grid .course-card:nth-child(1),
+  #bm-grid .course-card:nth-child(1) { animation-delay: 0.04s; }
+  #catalog-grid .course-card:nth-child(2),
+  #bm-grid .course-card:nth-child(2) { animation-delay: 0.10s; }
   @keyframes cardEnter { to { opacity: 1; transform: translateY(0); } }
 
   .course-card:hover { transform: translateY(-6px); box-shadow: 0 22px 56px var(--card-glow, rgba(48, 70, 66, 0.22)); }
@@ -919,6 +925,41 @@
     transform: translateY(7px);
   }
 
+  /* ── LP CARD STACK ──────────────────────────── */
+  /* box-shadow on the card itself: Y-offset = px below card bottom.
+     Grid gap (20px) gives room for both layers to show. */
+  .lp-stack-wrap {
+    position: relative;
+  }
+
+  .lp-stack-wrap .course-card {
+    box-shadow:
+      0 10px 28px rgba(48, 70, 66, 0.14),
+      0 10px 0 -5px #BDD0BF,
+      0 11px 2px -4px rgba(48, 70, 66, 0.20),
+      0 19px 0 -10px #9DBEA3,
+      0 20px 2px -9px rgba(48, 70, 66, 0.16);
+  }
+
+  .lp-stack-wrap .course-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+      0 22px 56px var(--card-glow, rgba(48, 70, 66, 0.22)),
+      0 10px 0 -5px #BDD0BF,
+      0 11px 2px -4px rgba(48, 70, 66, 0.20),
+      0 19px 0 -10px #9DBEA3,
+      0 20px 2px -9px rgba(48, 70, 66, 0.16);
+  }
+
+  .lp-stack-wrap .course-card.is-soon:hover {
+    transform: none;
+    box-shadow:
+      0 10px 0 -5px #BDD0BF,
+      0 11px 2px -4px rgba(48, 70, 66, 0.20),
+      0 19px 0 -10px #9DBEA3,
+      0 20px 2px -9px rgba(48, 70, 66, 0.16);
+  }
+
   /* ── BOOKMARK POP ───────────────────────────── */
   @keyframes bmPop {
     0%   { transform: scale(1) rotate(0deg); }
@@ -955,15 +996,24 @@
   }
 
   .path-tab {
-    position: relative; display: inline-flex; align-items: center; gap: 7px;
-    padding: 7px 14px; border-radius: 100px; border: none;
+    position: relative; display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 14px; border-radius: 100px; border: none;
     background: transparent; cursor: pointer;
-    font-family: var(--font-family); font-size: 13px;
-    font-weight: 500; line-height: 20px; color: #888888;
+    font-family: var(--font-family); color: #888888;
     white-space: nowrap;
     transition: color 0.25s cubic-bezier(0.16,1,0.3,1),
                 transform 0.3s cubic-bezier(0.16,1,0.3,1);
   }
+  /* "All" tab — no name/tag structure, stays single line */
+  .path-tab:not(:has(.sol-btn-text)) {
+    font-size: 13px; font-weight: 500; line-height: 20px;
+  }
+  .path-tab .sol-btn-name { color: #666; }
+  .path-tab .sol-btn-tag  { color: #aaa; }
+  .path-tab:hover:not(.is-active) .sol-btn-name { color: var(--sol-color, #555); }
+  .path-tab:hover:not(.is-active) .sol-btn-tag  { color: #777; }
+  .path-tab.is-active .sol-btn-name { color: var(--sol-color, var(--color-primary)); }
+  .path-tab.is-active .sol-btn-tag  { color: var(--color-primary); font-weight: 500; }
   .path-tab:hover:not(.is-active) {
     color: var(--sol-color, #555);
     transform: translateY(-1px);
@@ -1041,17 +1091,30 @@
   }
 
   .sol-btn {
-    position: relative; display: inline-flex; align-items: center; gap: 7px;
+    position: relative; display: inline-flex; align-items: center; gap: 8px;
     padding: 9px 16px; border-radius: 100px; border: none;
     background: transparent; cursor: pointer;
-    font-family: var(--font-family); font-size: 14px;
-    font-weight: 500; line-height: 20px; color: #888888;
-    white-space: nowrap;
+    font-family: var(--font-family);
+    color: #888888; white-space: nowrap;
     transition: color 0.25s cubic-bezier(0.16,1,0.3,1),
                 transform 0.3s cubic-bezier(0.16,1,0.3,1);
   }
+  .sol-btn-text {
+    display: flex; flex-direction: column; gap: 1px; text-align: left;
+  }
+  .sol-btn-name {
+    font-size: 13px; font-weight: 600; line-height: 1.25;
+    color: #666; transition: color 0.25s cubic-bezier(0.16,1,0.3,1);
+  }
+  .sol-btn-tag {
+    font-size: 11px; font-weight: 400; line-height: 1.3;
+    color: #aaa; transition: color 0.25s cubic-bezier(0.16,1,0.3,1);
+  }
+  .sol-btn:hover:not(.is-active) .sol-btn-name { color: var(--sol-color, #555); }
+  .sol-btn:hover:not(.is-active) .sol-btn-tag  { color: #777; }
+  .sol-btn.is-active .sol-btn-name { color: var(--sol-color, var(--color-primary)); }
+  .sol-btn.is-active .sol-btn-tag  { color: var(--color-primary); font-weight: 500; }
   .sol-btn:hover:not(.is-active) {
-    color: var(--sol-color, #555);
     transform: translateY(-1px);
   }
   .sol-btn:active {
@@ -1059,7 +1122,6 @@
     transition-duration: 0.08s !important;
   }
   .sol-btn.is-active {
-    color: var(--color-primary);
     animation: sol-btn-pop 0.4s cubic-bezier(0.16,1,0.3,1) both;
   }
 
@@ -1469,11 +1531,11 @@ function getActivePath() {
 
 // ── SOLUTION DATA ─────────────────────────────────────────────
 const SOLUTIONS = [
-  { key: 'inventory',    label: 'What to stock?',  pathId: 'inventory-management', illu: 'SVGs/LP-Illustrations/Inventory-Illustration.png',      toggleBg: '#FFF9EC', bg: '#FFFDF9', btn: '#EEE0C3', btnT: '#2C2416', bdr: '#EDE3CC', dot: '#EEE0C3', bar: '#B8964E' },
-  { key: 'suppliers',    label: 'How to source?',   pathId: 'supplier-management',  illu: 'SVGs/LP-Illustrations/Suppliers-Illustration.png',      toggleBg: '#F4EEFF', bg: '#FDFCFF', btn: '#E1DBEB', btnT: '#221D2E', bdr: '#D8D0E8', dot: '#E1DBEB', bar: '#7B68AA' },
-  { key: 'functionality',label: 'Using Inact Now',  pathId: 'now-fundamentals',     illu: 'SVGs/LP-Illustrations/Now-Illustration.png',            toggleBg: '#F1F6FF', bg: '#F5F9FF', btn: '#DBE9FF', btnT: '#1A2535', bdr: '#D0DFEF', dot: '#DBE9FF', bar: '#5888D0' },
-  { key: 'customers',    label: 'Who to serve?',    pathId: 'advanced-insights',    illu: 'SVGs/LP-Illustrations/ComingSoonIlluCustomers.png', soon: true, toggleBg: '#F1F4E9', bg: '#F8FAF4', btn: '#E3E8D8', btnT: '#222619', bdr: '#DDE3D0', dot: '#D0D5C5', bar: '#8A9672' },
-  { key: 'products',     label: 'What to offer?',   pathId: 'spend-analysis',       illu: 'SVGs/LP-Illustrations/ComingSoonIlluProducts.png',  soon: true, toggleBg: '#FFF9EC', bg: '#FFFDF9', btn: '#EEE0C3', btnT: '#2C2416', bdr: '#EDE3CC', dot: '#EEE0C3', bar: '#B8964E' },
+  { key: 'inventory',    name: 'Inventory',    label: 'What to stock',   pathId: 'inventory-management', illu: 'SVGs/LP-Illustrations/Inventory-Illustration.png',      toggleBg: '#FFF9EC', bg: '#FFFDF9', btn: '#EEE0C3', btnT: '#2C2416', bdr: '#EDE3CC', dot: '#EEE0C3', bar: '#B8964E' },
+  { key: 'suppliers',    name: 'Suppliers',    label: 'How to source',   pathId: 'supplier-management',  illu: 'SVGs/LP-Illustrations/Suppliers-Illustration.png',      toggleBg: '#F4EEFF', bg: '#FDFCFF', btn: '#E1DBEB', btnT: '#221D2E', bdr: '#D8D0E8', dot: '#E1DBEB', bar: '#7B68AA' },
+  { key: 'customers',   name: 'Customers',    label: 'Who to serve',    pathId: 'advanced-insights',    illu: 'SVGs/LP-Illustrations/ComingSoonIlluCustomers.png', soon: true, toggleBg: '#F1F4E9', bg: '#F8FAF4', btn: '#E3E8D8', btnT: '#222619', bdr: '#DDE3D0', dot: '#D0D5C5', bar: '#8A9672' },
+  { key: 'products',    name: 'Products',     label: 'What to offer',   pathId: 'spend-analysis',       illu: 'SVGs/LP-Illustrations/ComingSoonIlluProducts.png',  soon: true, toggleBg: '#FFF9EC', bg: '#FFFDF9', btn: '#EEE0C3', btnT: '#2C2416', bdr: '#EDE3CC', dot: '#EEE0C3', bar: '#B8964E' },
+  { key: 'functionality', name: 'Functionality', label: 'Using Inact Now', pathId: 'now-fundamentals',   illu: 'SVGs/LP-Illustrations/Now-Illustration.png',            toggleBg: '#F1F6FF', bg: '#F5F9FF', btn: '#DBE9FF', btnT: '#1A2535', bdr: '#D0DFEF', dot: '#DBE9FF', bar: '#5888D0' },
 ];
 
 let activeSolKey = 'inventory';
@@ -1503,7 +1565,11 @@ function renderSolToggle() {
     return `<button class="sol-btn${active ? ' is-active' : ''}" data-sol="${sol.key}" aria-pressed="${active}"
       style="--sol-color:${sol.bar};--sol-bg:${sol.toggleBg}">
       <span class="sol-btn-bg" style="background:${active ? sol.toggleBg : 'transparent'}"></span>
-      <span class="sol-dot" style="background:${sol.dot}"></span>${sol.label}
+      <span class="sol-dot" style="background:${sol.dot}"></span>
+      <span class="sol-btn-text">
+        <span class="sol-btn-name">${sol.name}</span>
+        <span class="sol-btn-tag">${sol.label}</span>
+      </span>
     </button>`;
   }).join('');
   wrap.querySelectorAll('.sol-btn').forEach(btn => {
@@ -1754,10 +1820,13 @@ function renderPathTabs() {
   wrap.innerHTML = tabs.map(t => {
     const active = t.key === activePathTab;
     const dotHtml = t.dot ? '<span class="sol-dot" style="background:' + t.dot + '"></span>' : '';
+    const labelHtml = t.name
+      ? '<span class="sol-btn-text"><span class="sol-btn-name">' + t.name + '</span><span class="sol-btn-tag">' + t.label + '</span></span>'
+      : t.label;
     return '<button class="path-tab' + (active ? ' is-active' : '') + '" data-tab="' + t.key + '" aria-selected="' + active + '"'
       + ' style="--sol-color:' + (t.bar || 'var(--color-primary)') + ';--sol-bg:' + t.toggleBg + '">'
       + '<span class="sol-btn-bg" style="background:' + (active ? t.toggleBg : 'transparent') + '"></span>'
-      + dotHtml + t.label
+      + dotHtml + labelHtml
       + '</button>';
   }).join('');
 }
@@ -1765,13 +1834,13 @@ function renderPathTabs() {
 function applyPathFilter(tab) {
   activePathTab = tab;
   renderPathTabs();
-  document.querySelectorAll('#paths-grid .course-card').forEach(card => {
-    card.style.display = (tab === 'all' || card.dataset.category === tab) ? '' : 'none';
+  document.querySelectorAll('#paths-grid .lp-stack-wrap').forEach(wrap => {
+    wrap.style.display = (tab === 'all' || wrap.dataset.category === tab) ? '' : 'none';
   });
   let anySoon = false;
-  document.querySelectorAll('#soon-grid .course-card').forEach(card => {
-    const show = tab === 'all' || card.dataset.category === tab;
-    card.style.display = show ? '' : 'none';
+  document.querySelectorAll('#soon-grid .lp-stack-wrap').forEach(wrap => {
+    const show = tab === 'all' || wrap.dataset.category === tab;
+    wrap.style.display = show ? '' : 'none';
     if (show) anySoon = true;
   });
   const soonLabel = document.getElementById('soon-label');
@@ -1807,13 +1876,16 @@ function bmSvg(filled) {
 }
 
 function renderPathCard(path, bookmarks, isActive) {
+  const cat = path.category || 'all';
   if (path.comingSoon) {
     const lockSvg = '<svg class="soon-card-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>';
     const clockSvg = '<svg class="soon-card-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>';
-    return '<div class="course-card is-soon" tabindex="-1" data-category="' + (path.category || 'all') + '">'
+    return '<div class="lp-stack-wrap" data-category="' + cat + '">'
+      + '<div class="course-card is-soon" tabindex="-1" data-category="' + cat + '">'
       + '<div class="soon-card-inner">'
       + '<div class="soon-card-header"><span class="soon-card-title">' + path.title + '</span>' + lockSvg + '</div>'
       + '<div class="soon-card-footer">' + clockSvg + 'Coming soon</div>'
+      + '</div>'
       + '</div>'
       + '</div>';
   }
@@ -1850,7 +1922,8 @@ function renderPathCard(path, bookmarks, isActive) {
   const arrowImg = '<img class="course-cta-arrow" src="SVGs/Up-Arrow.svg" alt="" aria-hidden="true">';
   const bookmarkBtn = '<button class="card-bm-btn" tabindex="-1" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>';
 
-  return '<div class="' + cardCls + '" data-href="' + path.href + '" tabindex="0" data-category="' + (path.category || 'all') + '" style="--card-bdr:' + cardBdr + ';--card-glow:' + cardGlow + '">'
+  return '<div class="lp-stack-wrap" data-category="' + cat + '">'
+    + '<div class="' + cardCls + '" data-href="' + path.href + '" tabindex="0" data-category="' + cat + '" style="--card-bdr:' + cardBdr + ';--card-glow:' + cardGlow + '">'
     + '<div class="' + thumbClass + '" ' + thumbVars + '>'
     + illu + durationPill + bookmarkBtn
     + '</div>'
@@ -1859,6 +1932,7 @@ function renderPathCard(path, bookmarks, isActive) {
     + '<h2 class="course-title">' + path.title + '</h2>'
     + '<p class="course-description">' + path.desc + '</p>'
     + '<div class="course-cta-row"><a href="' + path.href + '" class="course-cta">' + ctaText + arrowImg + '</a></div>'
+    + '</div>'
     + '</div>'
     + '</div>';
 }
