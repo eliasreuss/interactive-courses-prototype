@@ -746,16 +746,46 @@
   .course-card:nth-child(4) .course-card-top { --grad-dir: 60deg; }
   .course-card:nth-child(5) .course-card-top { --grad-dir: 250deg; }
 
-  .course-duration-pill {
+  /* ── CARD TOP BAR ───────────────────────────── */
+  .card-top-bar {
     position: absolute;
-    top: 19px; right: 19px;
-    padding: 9px 19px;
-    border-radius: 118px;
-    background: var(--pill-bg, rgba(238, 224, 195, 0.30));
+    top: 14px; left: 14px; right: 14px;
+    display: flex; align-items: center; justify-content: space-between;
+    z-index: 4; pointer-events: none;
+  }
+  .card-type-pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 7px 11px 7px 9px;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    font-size: 12px; font-weight: 600; line-height: 1;
+    color: var(--color-primary);
+    white-space: nowrap;
+  }
+  .card-type-icon {
+    display: inline-block;
+    width: 13px; height: 13px; flex-shrink: 0;
+    background-color: var(--color-primary);
+    -webkit-mask-image: url('SVGs/Learning-Path.svg');
+    mask-image: url('SVGs/Learning-Path.svg');
+    -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+    -webkit-mask-size: contain; mask-size: contain;
+    -webkit-mask-position: center; mask-position: center;
+  }
+  .card-top-right {
+    display: flex; align-items: center; gap: 6px;
+    pointer-events: all;
+  }
+  .course-duration-pill {
     display: inline-flex; align-items: center; justify-content: center;
-    color: var(--pill-text, #2C2416);
-    font-size: 14px; font-weight: 500; line-height: 20px;
-    z-index: 3; white-space: nowrap;
+    padding: 7px 11px;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    color: var(--color-primary);
+    font-size: 12px; font-weight: 500; line-height: 1;
+    white-space: nowrap;
   }
 
   /* Accent bar between thumb and body */
@@ -844,27 +874,20 @@
 
   /* ── CONTENT TYPE LABEL ─────────────────────── */
   .card-bm-btn {
-    position: absolute;
-    top: 19px;
-    left: 19px;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: var(--pill-bg, rgba(238, 224, 195, 0.30));
-    border: none;
-    box-shadow: none;
-    cursor: default;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-    z-index: 3;
-    flex-shrink: 0;
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 7px 9px;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    border: none; cursor: pointer; z-index: 4; flex-shrink: 0;
   }
   .card-bm-btn svg {
-    width: 14px; height: 14px;
-    stroke: var(--pill-text, #2C2416);
+    width: 13px; height: 13px;
+    stroke: var(--color-primary);
     fill: none;
+  }
+  .card-bm-btn.is-bookmarked svg {
+    fill: var(--color-primary);
   }
 
   /* ── CATALOG HEADER ─────────────────────────── */
@@ -1910,7 +1933,6 @@ function renderPathCard(path, bookmarks, isActive) {
   const illu = sol
     ? '<img class="course-card-illu" src="' + sol.illu + '" alt="" aria-hidden="true">'
     : '';
-  const durationPill = '<div class="course-duration-pill">' + path.duration + '</div>';
 
   const isNext = isActive;
   const cardCls = 'course-card' + (isNext ? ' next-course' : '');
@@ -1920,12 +1942,15 @@ function renderPathCard(path, bookmarks, isActive) {
     : '<div class="card-accent-bar"></div>';
 
   const arrowImg = '<img class="course-cta-arrow" src="SVGs/Up-Arrow.svg" alt="" aria-hidden="true">';
-  const bookmarkBtn = '<button class="card-bm-btn" tabindex="-1" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>';
+  const typePill = '<div class="card-type-pill"><span class="card-type-icon"></span>Learning Path</div>';
+  const durationEl = '<div class="course-duration-pill">' + path.duration + '</div>';
+  const bookmarkBtn = '<button class="card-bm-btn' + (bm ? ' is-bookmarked' : '') + '" data-bm="' + path.id + '" aria-label="' + (bm ? 'Remove bookmark' : 'Bookmark') + '"><svg viewBox="0 0 24 24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>';
+  const topBar = '<div class="card-top-bar">' + typePill + '<div class="card-top-right">' + durationEl + bookmarkBtn + '</div></div>';
 
   return '<div class="lp-stack-wrap" data-category="' + cat + '">'
     + '<div class="' + cardCls + '" data-href="' + path.href + '" tabindex="0" data-category="' + cat + '" style="--card-bdr:' + cardBdr + ';--card-glow:' + cardGlow + '">'
     + '<div class="' + thumbClass + '" ' + thumbVars + '>'
-    + illu + durationPill + bookmarkBtn
+    + illu + topBar
     + '</div>'
     + barHtml
     + '<div class="course-card-bottom">'

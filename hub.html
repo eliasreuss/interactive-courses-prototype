@@ -656,59 +656,43 @@
     }
 
 
-    /* Inventory-themed pill/circle overrides */
-    .course-duration-pill.glass,
-    .course-icon-circle.glass {
-      background: rgba(238, 224, 195, 0.30);
-      border: none;
-      box-shadow: none;
-      backdrop-filter: none;
-      -webkit-backdrop-filter: none;
+    /* Card top bar: type pill left, duration + bookmark right */
+    .card-top-bar {
+      position: absolute;
+      top: 14px; left: 14px; right: 14px;
+      display: flex; align-items: center; justify-content: space-between;
+      z-index: 4; pointer-events: none;
     }
-
-    .course-duration-pill.glass::before,
-    .course-icon-circle.glass::before,
-    .course-duration-pill.glass::after,
-    .course-icon-circle.glass::after { display: none; }
-
+    .card-type-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 7px 11px 7px 9px; border-radius: 100px;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      font-size: 12px; font-weight: 600; line-height: 1;
+      color: #304642; white-space: nowrap;
+    }
+    .card-type-icon-course {
+      display: inline-block;
+      width: 13px; height: 13px; flex-shrink: 0;
+      background-color: #304642;
+      -webkit-mask-image: url('SVGs/Course-Icon.svg');
+      mask-image: url('SVGs/Course-Icon.svg');
+      -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+      -webkit-mask-size: contain; mask-size: contain;
+      -webkit-mask-position: center; mask-position: center;
+    }
+    .card-top-right {
+      display: flex; align-items: center; gap: 6px; pointer-events: all;
+    }
     .course-duration-pill {
-      position: absolute;
-      top: 19px;
-      right: 19px;
-      padding: 9px 19px;
-      border-radius: 118px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: #2C2416;
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 20px;
-      z-index: 3;
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 7px 11px; border-radius: 100px;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      color: #304642; font-size: 12px; font-weight: 500; line-height: 1;
+      white-space: nowrap;
     }
-
-    .course-icon-circle {
-      width: 60px;
-      height: 60px;
-      padding: 10px;
-      border-radius: 118px;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -40%);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 3;
-      transition: transform 350ms var(--transition-smooth), box-shadow 350ms var(--transition-smooth);
-    }
-
-    .course-card:hover .course-icon-circle {
-      transform: translate(-50%, -40%) scale(1.08);
-      box-shadow: 0 0 18px rgba(255, 255, 255, 0.18);
-    }
-
-    .course-icon-circle img { display: none; }
+    .course-icon-circle { display: none; }
 
     /* ---- Card progress bar ---- */
     .card-progress {
@@ -806,16 +790,13 @@
     }
 
     .card-bm-btn {
-      position: absolute;
-      top: 19px; left: 19px;
-      width: 38px; height: 38px;
-      border-radius: 50%;
-      background: rgba(238, 224, 195, 0.30);
-      border: none; box-shadow: none;
-      cursor: default; display: flex; align-items: center; justify-content: center;
-      pointer-events: none; z-index: 3;
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 7px 9px; border-radius: 100px;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      border: none; cursor: pointer; z-index: 4;
     }
-    .card-bm-btn svg { width: 14px; height: 14px; stroke: #2C2416; fill: none; }
+    .card-bm-btn svg { width: 13px; height: 13px; stroke: #304642; fill: none; }
 
     .course-cta {
       display: inline-flex;
@@ -1235,11 +1216,13 @@
       return `
         <div class="course-card${isNext ? ' next-course' : ''}" data-course-id="${course.id}" data-href="${href}" tabindex="0">
           <div class="course-card-top">
-            <div class="course-duration-pill glass"><span>${course.duration}</span></div>
-            <div class="course-icon-circle glass">
-              <div class="course-icon-mask" aria-hidden="true"></div>
+            <div class="card-top-bar">
+              <div class="card-type-pill"><span class="card-type-icon-course"></span>Course</div>
+              <div class="card-top-right">
+                <div class="course-duration-pill">${course.duration}</div>
+                <button class="card-bm-btn" tabindex="-1" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>
+              </div>
             </div>
-            <button class="card-bm-btn" tabindex="-1" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>
           </div>
           <div class="${barClass}"><div class="card-progress-fill" style="width:${pct}%"></div></div>
           <div class="course-card-bottom">
