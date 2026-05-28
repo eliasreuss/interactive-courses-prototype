@@ -760,13 +760,13 @@
     background: rgba(255, 255, 255, 0.78);
     backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
     font-size: 12px; font-weight: 600; line-height: 1;
-    color: var(--color-primary);
+    color: var(--pill-text, var(--color-primary));
     white-space: nowrap;
   }
   .card-type-icon {
     display: inline-block;
     width: 13px; height: 13px; flex-shrink: 0;
-    background-color: var(--color-primary);
+    background-color: var(--pill-text, var(--color-primary));
     -webkit-mask-image: url('SVGs/Learning-Path.svg');
     mask-image: url('SVGs/Learning-Path.svg');
     -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
@@ -783,7 +783,7 @@
     border-radius: 100px;
     background: rgba(255, 255, 255, 0.78);
     backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-    color: var(--color-primary);
+    color: var(--pill-text, var(--color-primary));
     font-size: 12px; font-weight: 500; line-height: 1;
     white-space: nowrap;
   }
@@ -883,11 +883,11 @@
   }
   .card-bm-btn svg {
     width: 13px; height: 13px;
-    stroke: var(--color-primary);
+    stroke: var(--pill-text, var(--color-primary));
     fill: none;
   }
   .card-bm-btn.is-bookmarked svg {
-    fill: var(--color-primary);
+    fill: var(--pill-text, var(--color-primary));
   }
 
   /* ── CATALOG HEADER ─────────────────────────── */
@@ -1894,7 +1894,7 @@ function renderPathCard(path, bookmarks, isActive) {
   // Find matching SOLUTIONS entry for hub-style thumbnail + pill colors
   const sol = SOLUTIONS.find(s => s.pathId === path.id);
   const pillBg  = sol ? hexToRgba(sol.btn, 0.30) : 'rgba(238,224,195,0.30)';
-  const pillTxt = sol ? sol.btnT : '#2C2416';
+  const pillTxt = sol ? sol.bar : '#304642';
 
   const thumbVars = sol
     ? ('style="--card-bg:' + sol.bg + ';--pill-bg:' + pillBg + ';--pill-text:' + pillTxt + '"')
