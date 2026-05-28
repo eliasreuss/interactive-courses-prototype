@@ -754,19 +754,18 @@
     z-index: 4; pointer-events: none;
   }
   .card-type-pill {
-    display: inline-flex; align-items: center; gap: 6px;
-    padding: 7px 11px 7px 9px;
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 8px 14px 8px 12px;
     border-radius: 100px;
-    background: rgba(255, 255, 255, 0.78);
-    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-    font-size: 12px; font-weight: 600; line-height: 1;
-    color: var(--pill-text, var(--color-primary));
+    background: var(--pill-bg, rgba(238, 224, 195, 0.30));
+    font-size: 13px; font-weight: 600; line-height: 1;
+    color: #304642;
     white-space: nowrap;
   }
   .card-type-icon {
     display: inline-block;
-    width: 13px; height: 13px; flex-shrink: 0;
-    background-color: var(--pill-text, var(--color-primary));
+    width: 14px; height: 14px; flex-shrink: 0;
+    background-color: #304642;
     -webkit-mask-image: url('SVGs/Learning-Path.svg');
     mask-image: url('SVGs/Learning-Path.svg');
     -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
@@ -779,12 +778,11 @@
   }
   .course-duration-pill {
     display: inline-flex; align-items: center; justify-content: center;
-    padding: 7px 11px;
+    padding: 8px 14px;
     border-radius: 100px;
-    background: rgba(255, 255, 255, 0.78);
-    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-    color: var(--pill-text, var(--color-primary));
-    font-size: 12px; font-weight: 500; line-height: 1;
+    background: var(--pill-bg, rgba(238, 224, 195, 0.30));
+    color: #304642;
+    font-size: 13px; font-weight: 500; line-height: 1;
     white-space: nowrap;
   }
 
@@ -875,19 +873,18 @@
   /* ── CONTENT TYPE LABEL ─────────────────────── */
   .card-bm-btn {
     display: inline-flex; align-items: center; justify-content: center;
-    padding: 7px 9px;
+    padding: 8px 10px;
     border-radius: 100px;
-    background: rgba(255, 255, 255, 0.78);
-    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    background: var(--pill-bg, rgba(238, 224, 195, 0.30));
     border: none; cursor: pointer; z-index: 4; flex-shrink: 0;
   }
   .card-bm-btn svg {
-    width: 13px; height: 13px;
-    stroke: var(--pill-text, var(--color-primary));
+    width: 14px; height: 14px;
+    stroke: #304642;
     fill: none;
   }
   .card-bm-btn.is-bookmarked svg {
-    fill: var(--pill-text, var(--color-primary));
+    fill: #304642;
   }
 
   /* ── CATALOG HEADER ─────────────────────────── */
@@ -1894,7 +1891,7 @@ function renderPathCard(path, bookmarks, isActive) {
   // Find matching SOLUTIONS entry for hub-style thumbnail + pill colors
   const sol = SOLUTIONS.find(s => s.pathId === path.id);
   const pillBg  = sol ? hexToRgba(sol.btn, 0.30) : 'rgba(238,224,195,0.30)';
-  const pillTxt = sol ? sol.bar : '#304642';
+  const pillTxt = '#304642';
 
   const thumbVars = sol
     ? ('style="--card-bg:' + sol.bg + ';--pill-bg:' + pillBg + ';--pill-text:' + pillTxt + '"')
