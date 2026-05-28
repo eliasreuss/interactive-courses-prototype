@@ -1049,14 +1049,15 @@
      ══════════════════════════════════════ */
   .sol-main {
     flex: 1; max-width: 1100px; width: 100%;
-    margin: 0 auto; padding: 24px 40px 80px;
+    margin: 0 auto; padding: 32px 48px 80px;
     display: flex; flex-direction: column; gap: 24px;
-    zoom: 1.15;
   }
 
   .sol-toggle-wrap {
     display: flex; justify-content: center;
     overflow-x: auto; scrollbar-width: none; padding: 0 2px;
+    /* allow toggle to scroll rather than squish on narrow viewports */
+    -webkit-overflow-scrolling: touch;
   }
   .sol-toggle-wrap::-webkit-scrollbar { display: none; }
 
@@ -1108,6 +1109,9 @@
     transform: translateY(-2px);
     box-shadow: 0 5px 16px var(--sol-glow, rgba(0,0,0,0.08));
   }
+
+  /* Sol-btn must not shrink — let the toggle scroll instead */
+  .sol-btn { flex-shrink: 0; }
 
   /* ── Learning card shell ── */
   .learning-card {
@@ -1260,7 +1264,7 @@
   .lc-icon-btn svg { width: 16px; height: 16px; display: block; transition: transform 0.2s ease; }
 
   .lc-illu {
-    width: 400px; height: auto; display: block; mix-blend-mode: multiply;
+    width: clamp(200px, 30vw, 400px); height: auto; display: block; mix-blend-mode: multiply;
   }
 
   .lc-soon-card {
@@ -1280,7 +1284,7 @@
   .lc-soon-title { font-size: 26px; font-weight: 700; color: var(--color-primary); line-height: 1.25; }
   .lc-soon-sub { font-size: 14px; color: var(--color-muted); margin-top: 2px; }
   .lc-soon-right {
-    width: 340px; flex-shrink: 0;
+    width: clamp(160px, 28vw, 340px); flex-shrink: 0;
     display: flex; align-items: center; justify-content: center;
     padding: 32px 40px 32px 0;
   }
@@ -1308,15 +1312,66 @@
     .lc-modules-box.is-animating .lc-module:nth-child(8) { animation-delay: 0.30s; }
   }
 
+  /* ── Tablet breakpoint (≤820px) ── */
   @media (max-width: 820px) {
-    .sol-main { padding: 20px 16px 60px; }
+    .sol-main { padding: 20px 24px 60px; }
+    .sol-toggle-wrap { justify-content: flex-start; }
     .lc-inner { flex-direction: column-reverse; }
-    .lc-left { padding: 28px 24px 32px; }
-    .lc-illu-wrap { margin: 28px auto 0; }
-    .lc-illu { width: 220px; }
+    .lc-left { padding: 28px 28px 32px; }
+    .lc-illu-wrap { margin: 28px auto 0; padding-bottom: 8px; }
+    .lc-illu { width: clamp(160px, 50vw, 280px); }
+    .lc-soon-card { flex-direction: column-reverse; }
+    .lc-soon-right {
+      width: auto; padding: 24px 24px 0;
+      justify-content: center;
+    }
+    .lc-soon-right img { width: clamp(120px, 40vw, 220px) !important; }
+    .lc-soon-left { padding: 24px 28px 32px; }
     .lc-btn-cta { padding: 12px 22px; }
     .lc-btn-view, .lc-icon-btn { padding: 11px 18px; }
     .lc-icon-btn { padding: 11px 14px; }
+  }
+
+  /* ── Mobile breakpoint (≤480px) ── */
+  @media (max-width: 480px) {
+    /* Header */
+    .header { padding: 10px 16px; border-radius: 0 0 16px 16px; }
+    .header-left { gap: 12px; }
+    .logo { font-size: 18px; }
+
+    /* Hero */
+    .hero-header { margin: 10px 12px 12px; padding: 24px 20px; gap: 20px; }
+    .hero-title { font-size: clamp(22px, 5.5vw, 28px); }
+    .hero-actions { gap: 10px; }
+    .btn-start, .btn-view { font-size: 15px; padding: 8px 16px; }
+    .content-area { padding: 12px 12px 20px; }
+
+    /* Sol toggle + card */
+    .sol-main { padding: 14px 12px 40px; gap: 16px; }
+    .sol-toggle-wrap { justify-content: flex-start; padding: 0; }
+    .sol-btn { padding: 10px 14px; }
+    .sol-btn-tag { font-size: 12px; }
+    .lc-left { padding: 20px 16px 24px; }
+    .lc-title { font-size: 18px; }
+    .lc-desc { font-size: 14px; margin-bottom: 18px; }
+    .lc-modules-box { padding: 10px 12px; }
+    .lc-module { font-size: 12px; }
+    .lc-actions { gap: 6px; }
+    .lc-btn-cta { padding: 10px 18px; font-size: 13px; }
+    .lc-btn-view { padding: 9px 14px; font-size: 13px; }
+    .lc-illu-wrap { margin: 16px auto 0; }
+    .lc-illu { width: clamp(120px, 45vw, 200px); }
+
+    /* Catalog grid: 1 column */
+    #paths-grid, #catalog-grid, #bm-grid, #soon-grid {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* Course cards */
+    .course-card-top { height: 130px; }
+    .course-title { font-size: 17px; line-height: 24px; }
+    .course-card-bottom { padding: 20px; }
+    .content-card { padding: 16px 16px 20px; }
   }
 </style>
 </head>
