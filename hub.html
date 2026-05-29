@@ -93,6 +93,37 @@
       background-size: 24px 24px;
     }
 
+    /* ── Back button ── */
+    .back-btn-wrap {
+      margin: 16px var(--page-margin) 0;
+    }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 7px 14px 7px 10px; border-radius: 100px;
+      text-decoration: none;
+      font-family: var(--font-family); font-size: 14px; font-weight: 500;
+      color: #8A9A97;
+      position: relative;
+      transition: color 0.28s cubic-bezier(0.16,1,0.3,1),
+                  transform 0.2s cubic-bezier(0.16,1,0.3,1);
+    }
+    .back-btn::before {
+      content: ''; position: absolute; inset: 0; border-radius: 100px;
+      background: rgba(48,70,66,0.06);
+      transform: scale(0.82); opacity: 0;
+      transition: transform 0.35s cubic-bezier(0.16,1,0.3,1),
+                  opacity 0.25s ease;
+      pointer-events: none;
+    }
+    .back-btn:hover { color: #304642; }
+    .back-btn:hover::before { transform: scale(1); opacity: 1; }
+    .back-btn:active { transform: scale(0.95); transition-duration: 0.08s; }
+    .back-chevron {
+      display: inline-flex; flex-shrink: 0;
+      transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
+    }
+    .back-btn:hover .back-chevron { transform: translateX(-4px); }
+
     /* Hero Header */
     .hero-header {
       background-color: #FFFDF9;
@@ -265,7 +296,7 @@
       height: 15px;
       display: block;
       flex-shrink: 0;
-      background-color: var(--color-primary);
+      background-color: #304642;
       -webkit-mask-image: url('SVGs/Learning-Path.svg');
       mask-image: url('SVGs/Learning-Path.svg');
       -webkit-mask-repeat: no-repeat;
@@ -380,29 +411,28 @@
     }
 
     .btn-icon {
-      width: 42px;
-      height: 42px;
-      padding: 10px 12px;
-      background: rgba(238, 224, 195, 0.5);
-      border: 1.5px solid #EDE3CC;
-      border-radius: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.2s var(--transition-smooth);
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 42px; height: 42px; padding: 0;
+      border-radius: 500px; border: 1.5px solid rgba(48,70,66,0.15);
+      background: transparent; cursor: pointer; color: var(--color-muted);
+      transition: background 0.2s ease, transform 0.25s cubic-bezier(0.16,1,0.3,1), color 0.2s ease;
     }
-
     .btn-icon:hover {
+      background: rgba(48,70,66,0.08);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      color: var(--color-primary);
     }
-
-    .btn-icon-img {
-      width: 20px;
-      height: 20px;
-      display: block;
+    .btn-icon:active {
+      transform: scale(0.93) translateY(0) !important;
+      transition-duration: 0.08s !important;
     }
+    .btn-icon svg {
+      width: 16px; height: 16px; display: block;
+      transition: transform 0.2s ease;
+    }
+    .btn-icon.is-bm { cursor: default; }
+    .btn-icon.is-bm:hover svg { transform: rotate(-18deg) scale(1.18); }
+    .btn-icon.is-share:hover svg { transform: rotate(14deg) scale(1.18); }
 
     /* Progress UI removed per new design */
 
@@ -665,7 +695,7 @@
     }
     .card-type-pill {
       display: inline-flex; align-items: center; gap: 7px;
-      padding: 8px 14px 8px 12px; border-radius: 100px;
+      padding: 10px 14px 10px 12px; border-radius: 100px;
       background: rgba(238, 224, 195, 0.30);
       font-size: 13px; font-weight: 600; line-height: 1;
       color: #304642; white-space: nowrap;
@@ -685,7 +715,7 @@
     }
     .course-duration-pill {
       display: inline-flex; align-items: center; justify-content: center;
-      padding: 8px 14px; border-radius: 100px;
+      padding: 10px 14px; border-radius: 100px;
       background: rgba(238, 224, 195, 0.30);
       color: #304642; font-size: 13px; font-weight: 500; line-height: 1;
       white-space: nowrap;
@@ -801,7 +831,7 @@
       gap: 10px;
       color: var(--color-primary);
       font-size: 15px;
-      font-weight: 700;
+      font-weight: 500;
       line-height: 22px;
       text-decoration: none;
       transition: gap 250ms var(--transition-smooth);
@@ -1033,6 +1063,15 @@
 
   <!-- Main Content -->
   <div class="main-container">
+    <!-- Back navigation -->
+    <div class="back-btn-wrap">
+      <a id="back-btn" href="index.html?view=catalog" class="back-btn">
+        <svg class="back-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span id="back-btn-label">Back to learning paths</span>
+      </a>
+    </div>
     <!-- Hero Header -->
     <section class="hero-header">
       <div class="hero-content">
@@ -1055,11 +1094,11 @@
             <span class="btn-start-label" id="start-btn-label">Start</span>
             <span class="btn-start-arrow" aria-hidden="true"></span>
           </a>
-          <button class="btn-icon" aria-label="Bookmark">
-            <img class="btn-icon-img" src="SVGs/Bookmark.svg" alt="" aria-hidden="true">
+          <button class="btn-icon is-bm" aria-label="Bookmark">
+            <svg viewBox="0 0 14 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1H2C1.44772 1 1 1.44772 1 2V15.1745C1 15.9644 1.87272 16.4425 2.53837 16.0172L6.28636 13.6228C6.60517 13.4191 7.01163 13.4128 7.33663 13.6065L11.4881 16.0803C12.1547 16.4775 13 15.9972 13 15.2213V2C13 1.44772 12.5523 1 12 1Z"/></svg>
           </button>
-          <button class="btn-icon" aria-label="Share">
-            <img class="btn-icon-img" src="SVGs/Share.svg" alt="" aria-hidden="true">
+          <button class="btn-icon is-share" aria-label="Share">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
           </button>
 
           <!-- Progress bar inline with buttons -->
@@ -1405,10 +1444,32 @@
 
     // Initialize
     document.addEventListener('DOMContentLoaded', () => {
+      // Back button context
+      const origin = sessionStorage.getItem('hub-origin') || 'catalog';
+      const backBtn = document.getElementById('back-btn');
+      const backLabel = document.getElementById('back-btn-label');
+      if (backBtn) {
+        backBtn.href = 'index.html';
+        if (origin === 'home') {
+          if (backLabel) backLabel.textContent = 'Back to home';
+        } else {
+          if (backLabel) backLabel.textContent = 'Back to learning paths';
+          backBtn.addEventListener('click', () => sessionStorage.setItem('return-view', 'catalog'));
+        }
+      }
+
       checkReturnFromCourse();
       renderCourses();
       observeCards();
       initBloomBtn(document.getElementById('start-btn'));
+    });
+
+    const BM_SVG_OUTLINE = '<svg viewBox="0 0 14 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1H2C1.44772 1 1 1.44772 1 2V15.1745C1 15.9644 1.87272 16.4425 2.53837 16.0172L6.28636 13.6228C6.60517 13.4191 7.01163 13.4128 7.33663 13.6065L11.4881 16.0803C12.1547 16.4775 13 15.9972 13 15.2213V2C13 1.44772 12.5523 1 12 1Z"/></svg>';
+    window.addEventListener('pageshow', e => {
+      if (e.persisted) {
+        const bm = document.querySelector('.btn-icon.is-bm');
+        if (bm) bm.innerHTML = BM_SVG_OUTLINE;
+      }
     });
   </script>
 

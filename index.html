@@ -35,11 +35,17 @@
     --page-margin-top: 20px;
   }
 
-  @media (min-width: 1400px) { :root { --page-margin: 160px; } }
-  @media (min-width: 1600px) { :root { --page-margin: 220px; } }
-  @media (min-width: 1920px) { :root { --page-margin: 320px; } }
-  @media (min-width: 2200px) { :root { --page-margin: 420px; } }
-  @media (min-width: 2560px) { :root { --page-margin: 520px; } }
+  @media (min-width: 1400px) { :root { --page-margin: 100px; } }
+  @media (min-width: 1600px) { :root { --page-margin: 132px; } }
+  @media (min-width: 1920px) { :root { --page-margin: 176px; } }
+  @media (min-width: 2200px) { :root { --page-margin: 260px; } }
+  @media (min-width: 2560px) { :root { --page-margin: 360px; } }
+
+  @media (min-width: 1400px) { #view-catalog { --page-margin: 160px; } }
+  @media (min-width: 1600px) { #view-catalog { --page-margin: 220px; } }
+  @media (min-width: 1920px) { #view-catalog { --page-margin: 320px; } }
+  @media (min-width: 2200px) { #view-catalog { --page-margin: 420px; } }
+  @media (min-width: 2560px) { #view-catalog { --page-margin: 520px; } }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -128,10 +134,14 @@
   }
   .nav-notif-btn:hover { transform: scale(1.08); background: #D94E00; }
   .nav-notif-icon {
-    width: 12px; height: 16px;
-    border-radius: 1px;
-    border: 2px solid white;
-    display: block;
+    width: 14px; height: 18px;
+    display: block; flex-shrink: 0;
+    background-color: white;
+    -webkit-mask-image: url('SVGs/learn-bookmark-icon.svg');
+    mask-image: url('SVGs/learn-bookmark-icon.svg');
+    -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+    -webkit-mask-position: center; mask-position: center;
+    -webkit-mask-size: contain; mask-size: contain;
   }
 
   .nav-avatar {
@@ -559,7 +569,6 @@
   .section-label-icon {
     width: 22px; height: 22px;
     flex-shrink: 0;
-    opacity: 0.75;
   }
 
   /* ── COMING SOON SEPARATOR ──────────────────── */
@@ -755,7 +764,7 @@
   }
   .card-type-pill {
     display: inline-flex; align-items: center; gap: 7px;
-    padding: 8px 14px 8px 12px;
+    padding: 10px 14px 10px 12px;
     border-radius: 100px;
     background: var(--pill-bg, rgba(238, 224, 195, 0.30));
     font-size: 13px; font-weight: 600; line-height: 1;
@@ -778,7 +787,7 @@
   }
   .course-duration-pill {
     display: inline-flex; align-items: center; justify-content: center;
-    padding: 8px 14px;
+    padding: 10px 14px;
     border-radius: 100px;
     background: var(--pill-bg, rgba(238, 224, 195, 0.30));
     color: #304642;
@@ -856,7 +865,7 @@
     gap: 10px;
     color: var(--color-primary);
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 22px;
     text-decoration: none;
     transition: gap 250ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -876,7 +885,7 @@
     padding: 8px 10px;
     border-radius: 100px;
     background: var(--pill-bg, rgba(238, 224, 195, 0.30));
-    border: none; cursor: pointer; z-index: 4; flex-shrink: 0;
+    border: none; cursor: default; z-index: 4; flex-shrink: 0;
   }
   .card-bm-btn svg {
     width: 14px; height: 14px;
@@ -933,7 +942,7 @@
   }
   @keyframes iconPop {
     from { transform: scale(0.55); opacity: 0; }
-    to { transform: scale(1); opacity: 0.75; }
+    to { transform: scale(1); opacity: 1; }
   }
 
   /* ── GRID FADE ON TAB FILTER ────────────────── */
@@ -975,47 +984,43 @@
     animation: lockShake 0.46s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  /* ── PATH FILTER TABS — same pill style as sol-toggle ── */
   /* ── PATH FILTER TABS ── */
   .path-tabs {
-    display: inline-flex; align-items: stretch; gap: 6px;
+    display: inline-flex; align-items: center; gap: 4px;
+    background: rgba(255,255,255,0.80); border-radius: 100px;
+    padding: 7px;
+    outline: 1px solid rgba(208,213,197,0.50); outline-offset: -1px;
+    transition: box-shadow 0.4s cubic-bezier(0.16,1,0.3,1);
   }
+  .path-tabs:has(.path-tab:hover) { box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
 
   .path-tab {
     position: relative; display: inline-flex; align-items: center; gap: 10px;
-    padding: 10px 18px; border: none; border-radius: 14px;
+    padding: 10px 18px; border: none; border-radius: 100px;
     background: transparent; cursor: pointer;
     font-family: var(--font-family); color: #888888;
-    white-space: nowrap; z-index: 1;
+    white-space: nowrap;
     transition: color 0.25s cubic-bezier(0.16,1,0.3,1),
-                transform 0.32s cubic-bezier(0.16,1,0.3,1),
-                box-shadow 0.32s cubic-bezier(0.16,1,0.3,1);
+                transform 0.3s cubic-bezier(0.16,1,0.3,1);
   }
   .path-tab:not(:has(.sol-btn-text)) {
     font-size: 13px; font-weight: 500; line-height: 1;
   }
   .path-tab::before {
-    content: '';
-    position: absolute; inset: 0; border-radius: 14px;
-    background: var(--sol-bg, rgba(48,70,66,0.08));
-    opacity: 0.28; transition: opacity 0.28s cubic-bezier(0.16,1,0.3,1);
-    pointer-events: none;
+    content: ''; position: absolute; inset: 0; border-radius: 100px; z-index: -2;
+    background: var(--sol-bg, transparent); opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.16,1,0.3,1); pointer-events: none;
   }
   .path-tab:hover:not(.is-active)::before { opacity: 0.5; }
-  .path-tab.is-active::before { opacity: 1; }
   .path-tab .sol-btn-name { color: #b8b8b8; }
   .path-tab .sol-btn-tag  { color: #555; }
-  .path-tab:hover:not(.is-active) .sol-btn-name { color: var(--sol-color, #999); }
+  .path-tab:hover:not(.is-active) .sol-btn-name { color: var(--sol-color, #999); opacity: 0.8; }
   .path-tab:hover:not(.is-active) .sol-btn-tag  { color: var(--sol-color, #333); }
-  .path-tab.is-active .sol-btn-name { color: var(--sol-color, var(--color-primary)); }
+  .path-tab.is-active .sol-btn-name { color: var(--sol-color, var(--color-primary)); opacity: 0.7; }
   .path-tab.is-active .sol-btn-tag  { color: var(--sol-color, var(--color-primary)); font-weight: 600; }
   .path-tab:hover:not(.is-active) { color: var(--sol-color, #555); transform: translateY(-1px); }
   .path-tab:active { transform: scale(0.97) translateY(0) !important; transition-duration: 0.08s !important; }
-  .path-tab.is-active {
-    color: var(--sol-color, var(--color-primary));
-    transform: translateY(-2px);
-    box-shadow: 0 5px 16px var(--sol-glow, rgba(48,70,66,0.10));
-  }
+  .path-tab.is-active { animation: sol-btn-pop 0.4s cubic-bezier(0.16,1,0.3,1) both; }
 
   /* Catalog section header layout */
   .catalog-header {
@@ -1031,13 +1036,12 @@
 
   /* LP mask icon for section headings */
   .lp-mask-icon {
-    background-color: var(--color-primary);
+    background-color: #304642;
     -webkit-mask-image: url('SVGs/Learning-Path.svg');
     mask-image: url('SVGs/Learning-Path.svg');
     -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
     -webkit-mask-position: center; mask-position: center;
     -webkit-mask-size: contain; mask-size: contain;
-    opacity: 0.75;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -1048,7 +1052,7 @@
      HOME v2 — SOLUTION TOGGLE + LEARNING CARD
      ══════════════════════════════════════ */
   .sol-main {
-    flex: 1; max-width: 1100px; width: 100%;
+    flex: 1; max-width: 1200px; width: 100%;
     margin: 0 auto; padding: 32px 48px 80px;
     display: flex; flex-direction: column; gap: 24px;
   }
@@ -1061,57 +1065,49 @@
   }
   .sol-toggle-wrap::-webkit-scrollbar { display: none; }
 
-  /* ── SOLUTION TOGGLE: answer-card style ── */
+  /* ── SOLUTION TOGGLE ── */
   .sol-toggle {
-    display: inline-flex; align-items: stretch; gap: 6px;
+    display: inline-flex; align-items: center; gap: 4px;
+    background: rgba(255,255,255,0.80); border-radius: 100px;
+    padding: 7px;
+    outline: 1px solid rgba(208,213,197,0.50); outline-offset: -1px;
+    transition: box-shadow 0.4s cubic-bezier(0.16,1,0.3,1);
   }
 
   .sol-btn {
-    position: relative; display: inline-flex; align-items: center;
-    padding: 12px 20px; border: none; border-radius: 14px;
+    position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 11px 22px; border-radius: 100px; border: none; flex-shrink: 0;
     background: transparent; cursor: pointer;
-    font-family: var(--font-family); white-space: nowrap; z-index: 1;
+    font-family: var(--font-family); font-size: 14px; font-weight: 500;
+    color: #888888; white-space: nowrap;
     transition: color 0.25s cubic-bezier(0.16,1,0.3,1),
-                transform 0.32s cubic-bezier(0.16,1,0.3,1),
-                box-shadow 0.32s cubic-bezier(0.16,1,0.3,1);
+                transform 0.3s cubic-bezier(0.16,1,0.3,1);
   }
-  /* Always-visible tinted card background per option */
+  .sol-btn:hover:not(.is-active) { color: var(--sol-color, #333); transform: translateY(-1px); }
+  .sol-btn.is-active { color: var(--sol-color, var(--color-primary)); font-weight: 600; }
+  .sol-btn:active { transform: scale(0.95) translateY(0) !important; transition-duration: 0.08s !important; }
+  .sol-btn.is-active { animation: sol-btn-pop 0.4s cubic-bezier(0.16,1,0.3,1) both; }
   .sol-btn::before {
-    content: '';
-    position: absolute; inset: 0; border-radius: 14px;
-    background: var(--sol-bg, #FFF9EC);
-    opacity: 0.28;
-    transition: opacity 0.28s cubic-bezier(0.16,1,0.3,1);
-    pointer-events: none;
+    content: ''; position: absolute; inset: 0; border-radius: 100px; z-index: -2;
+    background: var(--sol-bg, transparent); opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.16,1,0.3,1); pointer-events: none;
   }
   .sol-btn:hover:not(.is-active)::before { opacity: 0.5; }
-  .sol-btn.is-active::before             { opacity: 1; }
-
-  .sol-btn-text {
-    display: flex; flex-direction: column; gap: 3px; text-align: left;
+  @keyframes sol-btn-pop {
+    0%  { transform: scale(0.92); }
+    100% { transform: scale(1); }
   }
-  .sol-btn-name {
-    font-size: 9px; font-weight: 600; line-height: 1;
-    letter-spacing: 0.07em; text-transform: uppercase;
-    color: #b8b8b8; transition: color 0.25s cubic-bezier(0.16,1,0.3,1);
+  .sol-btn-bg {
+    position: absolute; inset: 0; border-radius: 100px; z-index: -1;
+    transition: background 0.28s cubic-bezier(0.16,1,0.3,1);
   }
-  .sol-btn-tag {
-    font-size: 13px; font-weight: 500; line-height: 1.25;
-    color: #555; transition: color 0.25s cubic-bezier(0.16,1,0.3,1);
+  .sol-dot {
+    width: 6px; height: 6px; border-radius: 2px; flex-shrink: 0;
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
   }
-  .sol-btn:hover:not(.is-active) .sol-btn-name { color: var(--sol-color, #999); }
-  .sol-btn:hover:not(.is-active) .sol-btn-tag  { color: var(--sol-color, #333); }
-  .sol-btn.is-active .sol-btn-name { color: var(--sol-color, var(--color-primary)); }
-  .sol-btn.is-active .sol-btn-tag  { color: var(--sol-color, var(--color-primary)); font-weight: 600; }
-  .sol-btn:hover:not(.is-active)   { transform: translateY(-1px); }
-  .sol-btn:active { transform: scale(0.97) translateY(0) !important; transition-duration: 0.08s !important; }
-  .sol-btn.is-active {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 16px var(--sol-glow, rgba(0,0,0,0.08));
-  }
-
-  /* Sol-btn must not shrink — let the toggle scroll instead */
-  .sol-btn { flex-shrink: 0; }
+  .sol-btn:hover .sol-dot           { transform: scale(1.5) rotate(45deg); }
+  .sol-btn.is-active .sol-dot       { transform: scale(1.25); }
+  .sol-btn.is-active:hover .sol-dot { transform: scale(1.5) rotate(45deg); }
 
   /* ── Learning card shell ── */
   .learning-card {
@@ -1224,6 +1220,21 @@
   }
   .lc-btn-cta.is-blooming { --bloom-r: 170%; }
 
+  .lc-btn-arrow {
+    width: 6px; height: 12px;
+    background: currentColor;
+    -webkit-mask-image: url('SVGs/ButtonArrow.svg');
+    mask-image: url('SVGs/ButtonArrow.svg');
+    -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+    -webkit-mask-position: center; mask-position: center;
+    -webkit-mask-size: contain; mask-size: contain;
+    display: inline-block; flex: 0 0 auto;
+    transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .lc-btn-cta:hover .lc-btn-arrow { transform: translateX(4px); }
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     .lc-btn-cta::before {
       content: '';
@@ -1253,12 +1264,14 @@
 
   .lc-icon-btn {
     display: inline-flex; align-items: center; justify-content: center;
-    padding: 8px 12px; border-radius: 100px;
+    width: 38px; height: 38px; padding: 0; border-radius: 50%;
     border: 1.5px solid rgba(48,70,66,0.15);
     background: transparent; cursor: pointer; color: var(--color-text-secondary);
     transition: background 0.15s, transform 0.15s;
   }
   .lc-icon-btn:hover { background: rgba(48,70,66,0.08); transform: translateY(-2px); }
+  .lc-icon-btn.lc-bm { cursor: default; }
+  .lc-icon-btn.lc-bm:hover svg { transform: rotate(-18deg) scale(1.18); }
   .lc-icon-btn.lc-bm:hover svg { transform: rotate(-18deg) scale(1.18); }
   .lc-icon-btn.lc-share:hover svg { transform: rotate(14deg) scale(1.18); }
   .lc-icon-btn svg { width: 16px; height: 16px; display: block; transition: transform 0.2s ease; }
@@ -1269,24 +1282,35 @@
 
   .lc-soon-card {
     display: flex; flex-direction: row;
-    align-items: center; justify-content: space-between;
-    min-height: 300px; gap: 0;
+    align-items: stretch;
   }
   .lc-soon-left {
-    flex: 1; padding: 48px 48px 48px 52px;
-    display: flex; flex-direction: column; gap: 10px; justify-content: center;
+    flex: 1; min-width: 0;
+    padding: 52px 52px 48px;
+    display: flex; flex-direction: column; justify-content: center;
   }
   .lc-soon-badge {
     display: inline-flex; align-items: center; gap: 6px;
-    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;
-    color: var(--color-muted); margin-bottom: 6px;
+    font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em;
+    color: var(--color-muted); margin-bottom: 10px;
   }
-  .lc-soon-title { font-size: 26px; font-weight: 700; color: var(--color-primary); line-height: 1.25; }
-  .lc-soon-sub { font-size: 14px; color: var(--color-muted); margin-top: 2px; }
+  .lc-soon-title {
+    font-size: 22px; font-weight: 700; line-height: 1.2;
+    letter-spacing: -0.02em; color: var(--color-primary); margin: 0 0 10px;
+  }
+  .lc-soon-desc { font-size: 15px; color: var(--color-text-secondary); line-height: 1.6; margin: 0 0 28px; max-width: 42ch; }
+  .lc-soon-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 22px; border-radius: 100px; border: none; cursor: default;
+    font-family: var(--font-family); font-size: 14px; font-weight: 600;
+    background: rgba(48,70,66,0.10); color: rgba(48,70,66,0.45);
+    align-self: flex-start;
+  }
   .lc-soon-right {
-    width: clamp(160px, 28vw, 340px); flex-shrink: 0;
+    flex-shrink: 0; align-self: stretch;
+    margin: 0 48px;
     display: flex; align-items: center; justify-content: center;
-    padding: 32px 40px 32px 0;
+    padding: 32px 0;
   }
 
   /* ── Card delight ──────────────────────────── */
@@ -1321,12 +1345,8 @@
     .lc-illu-wrap { margin: 28px auto 0; padding-bottom: 8px; }
     .lc-illu { width: clamp(160px, 50vw, 280px); }
     .lc-soon-card { flex-direction: column-reverse; }
-    .lc-soon-right {
-      width: auto; padding: 24px 24px 0;
-      justify-content: center;
-    }
-    .lc-soon-right img { width: clamp(120px, 40vw, 220px) !important; }
-    .lc-soon-left { padding: 24px 28px 32px; }
+    .lc-soon-right { margin: 28px auto 0; padding: 0; }
+    .lc-soon-left { padding: 28px 28px 32px; }
     .lc-btn-cta { padding: 12px 22px; }
     .lc-btn-view, .lc-icon-btn { padding: 11px 18px; }
     .lc-icon-btn { padding: 11px 14px; }
@@ -1424,7 +1444,7 @@
       </div>
       <div class="content-card" id="bm-section" style="display:none">
         <div class="section-label">
-          <svg class="section-label-icon" viewBox="0 0 24 24" fill="currentColor" style="opacity:0.75"><path d="M5 3h14a1 1 0 0 1 1 1v17.27a.5.5 0 0 1-.78.41L12 17.2l-7.22 4.48A.5.5 0 0 1 4 21.27V4a1 1 0 0 1 1-1z"/></svg>
+          <svg class="section-label-icon" viewBox="0 0 14 18" fill="currentColor" style="opacity:0.75"><path d="M12 1H2C1.44772 1 1 1.44772 1 2V15.1745C1 15.9644 1.87272 16.4425 2.53837 16.0172L6.28636 13.6228C6.60517 13.4191 7.01163 13.4128 7.33663 13.6065L11.4881 16.0803C12.1547 16.4775 13 15.9972 13 15.2213V2C13 1.44772 12.5523 1 12 1Z"/></svg>
           Your bookmarked resources
         </div>
         <div id="bm-grid"></div>
@@ -1442,7 +1462,7 @@ const PATHS = [
   {
     id: 'now-fundamentals',
     title: 'Inact Now Fundamentals',
-    desc: 'Get a complete overview of the Inact Now platform: dashboards, insights, and daily tasks.',
+    desc: 'Overview and walkthrough of core Inact Now areas: home, insights, actions, and dashboards.',
     courseCount: 5, duration: '32 min',
     thumbnail: 'LP-thumbnails/LP-Thumbnail-Inventory-Solution.png',
     href: 'now-hub.html', pathParam: 'now', hubFile: 'now-hub.html',
@@ -1455,7 +1475,7 @@ const PATHS = [
   {
     id: 'inventory-management',
     title: 'Inventory Management',
-    desc: 'A collection of six flows — learn how to use the Inventory template',
+    desc: 'Learn the core principles and practical tools of effective inventory management with Inact Now, and apply them in your daily operations.',
     courseCount: 6, duration: '1 hr 7 min',
     thumbnail: 'LP-thumbnails/LP-Thumbnail-Inventory-Solution.png',
     href: 'hub.html', pathParam: 'inventory', hubFile: 'hub.html',
@@ -1468,20 +1488,20 @@ const PATHS = [
   {
     id: 'supplier-management',
     title: 'Supplier Management',
-    desc: 'Become an expert in Inact Now — learn all functionalities.',
-    courseCount: 5, duration: '45 min',
+    desc: 'Learn how to manage, negotiate and monitor your suppliers effectively using Inact Now.',
+    courseCount: 4, duration: '45 min',
     thumbnail: 'LP-thumbnails/LP-Thumbnail-Inventory-Solution.png',
     href: 'supplier-hub.html', pathParam: 'supplier', hubFile: 'supplier-hub.html',
-    courseIds: ['supplier-intro','supplier-bench','supplier-cat','supplier-neg','supplier-actions'],
-    courseNames: ['Intro','Benchmarking','Categories','Negotiation','Actions'],
-    courseFiles: { 'supplier-intro': 'Suppliers-Intro-2.txt', 'supplier-bench': 'Supplier-Performance.txt', 'supplier-cat': 'Spend-Analysis.txt', 'supplier-neg': 'Supplier-Negotiation.txt', 'supplier-actions': 'Supplier-Negotiation.txt' },
+    courseIds: ['suppliers-intro','supplier-performance','spend-analysis','supplier-negotiation'],
+    courseNames: ['Intro to Supplier Management','Supplier Performance','Spend Analysis','Supplier Negotiation'],
+    courseFiles: { 'suppliers-intro': 'Suppliers-Intro-2.txt', 'supplier-performance': 'Supplier-Performance.txt', 'spend-analysis': 'Spend-Analysis.txt', 'supplier-negotiation': 'Supplier-Negotiation.txt' },
     gradFrom: '#2a3e30', gradTo: '#425e48',
     category: 'suppliers'
   },
   {
     id: 'spend-analysis',
-    title: 'Spend Analysis',
-    desc: 'Understand where your money goes with structured spend analytics across categories.',
+    title: 'Inact for Product Management',
+    desc: 'Learn core principles, best practices and core tools to manage products with Inact Now.',
     courseCount: 4, duration: '28 min',
     thumbnail: null, href: '#',
     courseIds: [], courseNames: [],
@@ -1491,7 +1511,7 @@ const PATHS = [
   },
   {
     id: 'advanced-insights',
-    title: 'Inact for Customer Management',
+    title: 'Becoming a great admin',
     desc: 'Dive deeper into customer-level analytics to drive commercial decisions.',
     courseCount: 7, duration: '52 min',
     thumbnail: null, href: '#',
@@ -1502,8 +1522,8 @@ const PATHS = [
   },
   {
     id: 'end2end',
-    title: 'End2End',
-    desc: 'Follow a product from purchase order to customer delivery.',
+    title: 'End to End Intelligence',
+    desc: 'Get the ultimate overview over your supply chain. With the new End 2 End tool, you will be able to analyse the relationship between your products, suppliers and customers.',
     courseCount: 4, duration: '35 min',
     thumbnail: null, href: '#',
     courseIds: [], courseNames: [],
@@ -1513,6 +1533,10 @@ const PATHS = [
   },
 ];
 
+if (performance.getEntriesByType('navigation')[0]?.type === 'reload') {
+  Object.keys(localStorage).filter(k => k.startsWith('course_')).forEach(k => localStorage.removeItem(k));
+}
+
 const BM_KEY = 'lp_bookmarks';
 function getBookmarks() { try { return JSON.parse(localStorage.getItem(BM_KEY) || '[]'); } catch { return []; } }
 function saveBookmarks(bms) { localStorage.setItem(BM_KEY, JSON.stringify(bms)); }
@@ -1520,12 +1544,18 @@ function saveBookmarks(bms) { localStorage.setItem(BM_KEY, JSON.stringify(bms));
 function getProgress(path) {
   if (!path.courseIds || !path.courseIds.length) return { done: 0, total: 0, pct: 0, started: false };
   const total = path.courseIds.length;
-  let done = 0;
+  let done = 0, totalProgress = 0;
   for (const cid of path.courseIds) {
     const raw = localStorage.getItem('course_progress_' + cid);
-    if (raw) { try { if (JSON.parse(raw).completed) done++; } catch { if (raw === 'completed') done++; } }
+    if (raw) {
+      try {
+        const data = JSON.parse(raw);
+        if (data.completed) { done++; totalProgress += 100; }
+        else { totalProgress += (data.progress || 0); }
+      } catch { if (raw === 'completed') { done++; totalProgress += 100; } }
+    }
   }
-  return { done, total, pct: Math.round((done / total) * 100), started: done > 0 };
+  return { done, total, pct: Math.round(totalProgress / total), started: totalProgress > 0 };
 }
 
 function getActivePath() {
@@ -1543,8 +1573,8 @@ function getActivePath() {
 const SOLUTIONS = [
   { key: 'inventory',    name: 'Inventory',    label: 'What to stock?',  pathId: 'inventory-management', illu: 'SVGs/LP-Illustrations/Inventory-Illustration.png',      toggleBg: '#FFF9EC', bg: '#FFFDF9', btn: '#EEE0C3', btnT: '#2C2416', bdr: '#EDE3CC', dot: '#EEE0C3', bar: '#B8964E' },
   { key: 'suppliers',    name: 'Suppliers',    label: 'How to source?',  pathId: 'supplier-management',  illu: 'SVGs/LP-Illustrations/Suppliers-Illustration.png',      toggleBg: '#F4EEFF', bg: '#FDFCFF', btn: '#E1DBEB', btnT: '#221D2E', bdr: '#D8D0E8', dot: '#E1DBEB', bar: '#7B68AA' },
-  { key: 'customers',   name: 'Customers',    label: 'Who to serve?',   pathId: 'advanced-insights',    illu: 'SVGs/LP-Illustrations/ComingSoonIlluCustomers.png', soon: true, toggleBg: '#F1F4E9', bg: '#F8FAF4', btn: '#E3E8D8', btnT: '#222619', bdr: '#DDE3D0', dot: '#D0D5C5', bar: '#8A9672' },
-  { key: 'products',    name: 'Products',     label: 'What to offer?',  pathId: 'spend-analysis',       illu: 'SVGs/LP-Illustrations/ComingSoonIlluProducts.png',  soon: true, toggleBg: '#FFF9EC', bg: '#FFFDF9', btn: '#EEE0C3', btnT: '#2C2416', bdr: '#EDE3CC', dot: '#EEE0C3', bar: '#B8964E' },
+  { key: 'products',    name: 'Products',     label: 'What to offer?',  pathId: 'spend-analysis',       illu: 'SVGs/LP-Illustrations/Products-Illustration.png',   soon: true, toggleBg: '#F5E8E5', bg: '#F8F0EE', btn: '#E8CECA', btnT: '#3D1F1C', bdr: '#E0C5C1', dot: '#E8CECA', bar: '#A84C44' },
+  { key: 'customers',   name: 'Customers',    label: 'Who to serve?',   pathId: 'end2end',              illu: 'SVGs/LP-Illustrations/Customers-Illustration.png',  soon: true, toggleBg: '#F1F4E9', bg: '#F8FAF4', btn: '#E3E8D8', btnT: '#222619', bdr: '#DDE3D0', dot: '#D0D5C5', bar: '#8A9672' },
   { key: 'functionality', name: 'Software',   label: 'How to use?',     pathId: 'now-fundamentals',     illu: 'SVGs/LP-Illustrations/Now-Illustration.png',            toggleBg: '#F1F6FF', bg: '#F5F9FF', btn: '#DBE9FF', btnT: '#1A2535', bdr: '#D0DFEF', dot: '#DBE9FF', bar: '#5888D0' },
 ];
 
@@ -1570,30 +1600,17 @@ function getActiveSolKey() {
 function renderSolToggle() {
   const wrap = document.getElementById('sol-toggle');
   if (!wrap) return;
-
-  if (!wrap._built) {
-    wrap._built = true;
-    wrap.innerHTML = SOLUTIONS.map(sol => {
-      const active = sol.key === activeSolKey;
-      return `<button class="sol-btn${active ? ' is-active' : ''}" data-sol="${sol.key}" aria-pressed="${active}"
-        style="--sol-color:${sol.bar};--sol-bg:${sol.toggleBg};--sol-glow:${hexToRgba(sol.bar, 0.14)}">
-        <span class="sol-btn-text">
-          <span class="sol-btn-name">${sol.name}</span>
-          <span class="sol-btn-tag">${sol.label}</span>
-        </span>
-      </button>`;
-    }).join('');
-    wrap.addEventListener('click', e => {
-      const btn = e.target.closest('.sol-btn');
-      if (btn) switchSolution(btn.dataset.sol);
-    });
-    return;
-  }
-
+  wrap.innerHTML = SOLUTIONS.map(sol => {
+    const active = sol.key === activeSolKey;
+    return `<button class="sol-btn${active ? ' is-active' : ''}" data-sol="${sol.key}" aria-pressed="${active}"
+      style="--sol-color:${sol.bar};--sol-bg:${sol.toggleBg}">
+      <span class="sol-btn-bg" style="background:${active ? sol.toggleBg : 'transparent'}"></span>
+      <span class="sol-dot" style="background:${sol.dot}"></span>
+      ${sol.label}
+    </button>`;
+  }).join('');
   wrap.querySelectorAll('.sol-btn').forEach(btn => {
-    const active = btn.dataset.sol === activeSolKey;
-    btn.classList.toggle('is-active', active);
-    btn.setAttribute('aria-pressed', active);
+    btn.addEventListener('click', () => switchSolution(btn.dataset.sol));
   });
 }
 
@@ -1655,17 +1672,21 @@ function renderLearningCard() {
 
   if (sol.soon) {
     const path = PATHS.find(p => p.id === sol.pathId);
-    card.style.border = `1.5px dashed ${sol.bdr}`;
+    card.style.border = `1px solid ${sol.bdr}`;
     card.innerHTML = `<div class="lc-soon-card">
       <div class="lc-soon-left">
         <span class="lc-soon-badge">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          Coming soon
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          We're working on it! Come back soon...
         </span>
         <div class="lc-soon-title">${path ? path.title : 'Coming soon'}</div>
-        <div class="lc-soon-sub">This learning path is on its way.</div>
+        <div class="lc-soon-desc">${path ? path.desc : ''}</div>
+        <button class="lc-soon-btn" disabled>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Coming soon!
+        </button>
       </div>
-      ${sol.illu ? `<div class="lc-soon-right"><img src="${sol.illu}" alt="" aria-hidden="true" style="width:260px;height:auto;display:block;mix-blend-mode:multiply;opacity:0.55"></div>` : ''}
+      ${sol.illu ? `<div class="lc-soon-right"><img class="lc-illu" src="${sol.illu}" alt="" aria-hidden="true"></div>` : ''}
     </div>`;
     return;
   }
@@ -1684,7 +1705,7 @@ function renderLearningCard() {
     if (!file) return p.href;
     return `course.html?course=${file}&path=${p.pathParam}&hub=${p.hubFile}&from=hub`;
   }
-  const ctaHref = prog.pct === 100 ? path.href : getNextCourseUrl(path);
+  const ctaHref = prog.pct === 100 ? path.href + '?from=home' : getNextCourseUrl(path);
 
   const moduleItems = path.courseIds.slice(0, 6).map((cid, i) => {
     const name = path.courseNames[i] || ('Course ' + (i+1));
@@ -1710,10 +1731,10 @@ function renderLearningCard() {
         ${moduleItems}
       </div>
       <div class="lc-actions">
-        <a href="${ctaHref}" class="lc-btn-cta" style="background:${sol.btn};color:${sol.btnT}">${ctaLabel}</a>
-        <a href="${path.href}" class="lc-btn-view">View full path</a>
+        <a href="${ctaHref}" class="lc-btn-cta" style="background:${sol.btn};color:${sol.btnT}">${ctaLabel}<span class="lc-btn-arrow"></span></a>
+        <a href="${path.href}?from=home" class="lc-btn-view">View full path</a>
         <button class="lc-icon-btn lc-bm" aria-label="Bookmark">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14a1 1 0 0 1 1 1v17.27a.5.5 0 0 1-.78.41L12 17.2l-7.22 4.48A.5.5 0 0 1 4 21.27V4a1 1 0 0 1 1-1z"/></svg>
+          <svg viewBox="0 0 14 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1H2C1.44772 1 1 1.44772 1 2V15.1745C1 15.9644 1.87272 16.4425 2.53837 16.0172L6.28636 13.6228C6.60517 13.4191 7.01163 13.4128 7.33663 13.6065L11.4881 16.0803C12.1547 16.4775 13 15.9972 13 15.2213V2C13 1.44772 12.5523 1 12 1Z"/></svg>
         </button>
         <button class="lc-icon-btn lc-share" aria-label="Share">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
@@ -1734,6 +1755,10 @@ function renderLearningCard() {
 
   // Bloom on CTA button
   initBloomBtn(card.querySelector('.lc-btn-cta'));
+
+  // Store navigation origin for back button on hub pages
+  card.querySelector('.lc-btn-cta')?.addEventListener('click', () => sessionStorage.setItem('hub-origin', 'home'));
+  card.querySelector('.lc-btn-view')?.addEventListener('click', () => sessionStorage.setItem('hub-origin', 'home'));
 
   // Progress bar + count-up
   requestAnimationFrame(() => {
@@ -1761,12 +1786,10 @@ function renderLearningCard() {
 }
 
 function switchSolution(key) {
-  activeSolKey = key;
-  renderSolToggle();
   if ('startViewTransition' in document) {
-    document.startViewTransition(() => renderLearningCard());
+    document.startViewTransition(() => { activeSolKey = key; renderSolToggle(); renderLearningCard(); });
   } else {
-    renderLearningCard();
+    activeSolKey = key; renderSolToggle(); renderLearningCard();
   }
 }
 
@@ -1837,29 +1860,17 @@ let activePathTab = 'all';
 function renderPathTabs() {
   const wrap = document.getElementById('path-tabs');
   if (!wrap) return;
-  const allTab = { key: 'all', label: 'All', dot: null, toggleBg: 'rgba(48,70,66,0.08)', bar: 'var(--color-primary)', glow: 'rgba(48,70,66,0.10)' };
+  const allTab = { key: 'all', label: 'All', dot: null, toggleBg: 'rgba(48,70,66,0.08)', bar: 'var(--color-primary)' };
   const tabs = [allTab, ...SOLUTIONS];
-
-  if (!wrap._built) {
-    wrap._built = true;
-    wrap.innerHTML = tabs.map(t => {
-      const active = t.key === activePathTab;
-      const glow = t.glow || hexToRgba(t.bar || '#304642', 0.14);
-      const labelHtml = t.name
-        ? '<span class="sol-btn-text"><span class="sol-btn-name">' + t.name + '</span><span class="sol-btn-tag">' + t.label + '</span></span>'
-        : t.label;
-      return '<button class="path-tab' + (active ? ' is-active' : '') + '" data-tab="' + t.key + '" aria-selected="' + active + '"'
-        + ' style="--sol-color:' + (t.bar || 'var(--color-primary)') + ';--sol-bg:' + t.toggleBg + ';--sol-glow:' + glow + '">'
-        + labelHtml + '</button>';
-    }).join('');
-    return;
-  }
-
-  wrap.querySelectorAll('.path-tab').forEach(btn => {
-    const active = btn.dataset.tab === activePathTab;
-    btn.classList.toggle('is-active', active);
-    btn.setAttribute('aria-selected', active);
-  });
+  wrap.innerHTML = tabs.map(t => {
+    const active = t.key === activePathTab;
+    const dotHtml = t.dot ? '<span class="sol-dot" style="background:' + t.dot + '"></span>' : '';
+    const labelHtml = t.label;
+    return '<button class="path-tab' + (active ? ' is-active' : '') + '" data-tab="' + t.key + '" aria-selected="' + active + '"'
+      + ' style="--sol-color:' + (t.bar || 'var(--color-primary)') + ';--sol-bg:' + t.toggleBg + '">'
+      + '<span class="sol-btn-bg" style="background:' + (active ? t.toggleBg : 'transparent') + '"></span>'
+      + dotHtml + labelHtml + '</button>';
+  }).join('');
 }
 
 function applyPathFilter(tab) {
@@ -1902,8 +1913,8 @@ function toggleBookmark(id, e) {
 
 function bmSvg(filled) {
   return filled
-    ? '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3h14a1 1 0 0 1 1 1v17.27a.5.5 0 0 1-.78.41L12 17.2l-7.22 4.48A.5.5 0 0 1 4 21.27V4a1 1 0 0 1 1-1z"/></svg>'
-    : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14a1 1 0 0 1 1 1v17.27a.5.5 0 0 1-.78.41L12 17.2l-7.22 4.48A.5.5 0 0 1 4 21.27V4a1 1 0 0 1 1-1z"/></svg>';
+    ? '<svg viewBox="0 0 14 18" fill="currentColor"><path d="M12 1H2C1.44772 1 1 1.44772 1 2V15.1745C1 15.9644 1.87272 16.4425 2.53837 16.0172L6.28636 13.6228C6.60517 13.4191 7.01163 13.4128 7.33663 13.6065L11.4881 16.0803C12.1547 16.4775 13 15.9972 13 15.2213V2C13 1.44772 12.5523 1 12 1Z"/></svg>'
+    : '<svg viewBox="0 0 14 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1H2C1.44772 1 1 1.44772 1 2V15.1745C1 15.9644 1.87272 16.4425 2.53837 16.0172L6.28636 13.6228C6.60517 13.4191 7.01163 13.4128 7.33663 13.6065L11.4881 16.0803C12.1547 16.4775 13 15.9972 13 15.2213V2C13 1.44772 12.5523 1 12 1Z"/></svg>';
 }
 
 function renderPathCard(path, bookmarks, isActive) {
@@ -1952,11 +1963,11 @@ function renderPathCard(path, bookmarks, isActive) {
   const arrowImg = '<img class="course-cta-arrow" src="SVGs/Up-Arrow.svg" alt="" aria-hidden="true">';
   const typePill = '<div class="card-type-pill"><span class="card-type-icon"></span>Learning Path</div>';
   const durationEl = '<div class="course-duration-pill">' + path.duration + '</div>';
-  const bookmarkBtn = '<button class="card-bm-btn' + (bm ? ' is-bookmarked' : '') + '" data-bm="' + path.id + '" aria-label="' + (bm ? 'Remove bookmark' : 'Bookmark') + '"><svg viewBox="0 0 24 24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>';
+  const bookmarkBtn = '<button class="card-bm-btn" aria-label="Bookmark" tabindex="-1"><svg viewBox="0 0 14 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1H2C1.44772 1 1 1.44772 1 2V15.1745C1 15.9644 1.87272 16.4425 2.53837 16.0172L6.28636 13.6228C6.60517 13.4191 7.01163 13.4128 7.33663 13.6065L11.4881 16.0803C12.1547 16.4775 13 15.9972 13 15.2213V2C13 1.44772 12.5523 1 12 1Z"/></svg></button>';
   const topBar = '<div class="card-top-bar">' + typePill + '<div class="card-top-right">' + durationEl + bookmarkBtn + '</div></div>';
 
   return '<div class="lp-stack-wrap" data-category="' + cat + '">'
-    + '<div class="' + cardCls + '" data-href="' + path.href + '" tabindex="0" data-category="' + cat + '" style="--card-bdr:' + cardBdr + ';--card-glow:' + cardGlow + '">'
+    + '<div class="' + cardCls + '" data-href="' + path.href + '?from=catalog" tabindex="0" data-category="' + cat + '" style="--card-bdr:' + cardBdr + ';--card-glow:' + cardGlow + '">'
     + '<div class="' + thumbClass + '" ' + thumbVars + '>'
     + illu + topBar
     + '</div>'
@@ -1964,7 +1975,7 @@ function renderPathCard(path, bookmarks, isActive) {
     + '<div class="course-card-bottom">'
     + '<h2 class="course-title">' + path.title + '</h2>'
     + '<p class="course-description">' + path.desc + '</p>'
-    + '<div class="course-cta-row"><a href="' + path.href + '" class="course-cta">' + ctaText + arrowImg + '</a></div>'
+    + '<div class="course-cta-row"><a href="' + path.href + '?from=catalog" class="course-cta">' + ctaText + arrowImg + '</a></div>'
     + '</div>'
     + '</div>'
     + '</div>';
@@ -2005,14 +2016,19 @@ function wireCards() {
   document.querySelectorAll('.course-card[data-href]').forEach(card => {
     card.addEventListener('click', e => {
       if (e.target.closest('[data-bm]') || e.target.closest('a')) return;
+      sessionStorage.setItem('hub-origin', 'catalog');
       window.location.href = card.getAttribute('data-href');
     });
     card.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.location.href = card.getAttribute('data-href'); }
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        sessionStorage.setItem('hub-origin', 'catalog');
+        window.location.href = card.getAttribute('data-href');
+      }
     });
-  });
-  document.querySelectorAll('[data-bm]').forEach(btn => {
-    btn.addEventListener('click', e => toggleBookmark(btn.dataset.bm, e));
+    card.querySelectorAll('a[href]').forEach(link => {
+      link.addEventListener('click', () => sessionStorage.setItem('hub-origin', 'catalog'));
+    });
   });
 }
 
@@ -2094,12 +2110,15 @@ render();
   });
 })();
 
-// Handle ?view= query param from hub navigation
-const initialView = new URLSearchParams(window.location.search).get('view');
-if (initialView === 'catalog') {
-  switchView('catalog');
-  window.history.replaceState({}, '', 'index.html');
+// Handle return from hub pages
+const pendingView = sessionStorage.getItem('return-view');
+if (pendingView) {
+  sessionStorage.removeItem('return-view');
+  switchView(pendingView);
 }
+
+// Re-render when restored from bfcache so progress reflects current localStorage
+window.addEventListener('pageshow', e => { if (e.persisted) render(); });
 </script>
 </body>
 </html>
