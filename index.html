@@ -1276,6 +1276,83 @@
   .lc-icon-btn.lc-share:hover svg { transform: rotate(14deg) scale(1.18); }
   .lc-icon-btn svg { width: 16px; height: 16px; display: block; transition: transform 0.2s ease; }
 
+  /* ── SHARE POPOVER ───────────────────────────── */
+  .share-pop {
+    position: fixed; z-index: 9999;
+    width: 316px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 8px 40px rgba(48,70,66,0.14), 0 2px 10px rgba(48,70,66,0.07);
+    opacity: 0;
+    transform: scale(0.95) translateY(-6px);
+    transform-origin: top right;
+    pointer-events: none;
+    transition: opacity 0.18s cubic-bezier(0.22,1,0.36,1), transform 0.18s cubic-bezier(0.22,1,0.36,1);
+  }
+  .share-pop.is-open { opacity: 1; transform: scale(1) translateY(0); pointer-events: auto; }
+  .share-pop-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 18px 10px;
+  }
+  .share-pop-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase; color: #8A9A97;
+  }
+  .share-pop-close {
+    width: 26px; height: 26px; border: none; background: none; cursor: pointer;
+    color: #8A9A97; display: flex; align-items: center; justify-content: center;
+    border-radius: 8px; transition: background 0.15s, color 0.15s; padding: 0; flex-shrink: 0;
+  }
+  .share-pop-close:hover { background: rgba(48,70,66,0.07); color: #304642; }
+  .share-pop-name {
+    padding: 2px 18px 14px;
+    font-size: 14px; font-weight: 600; color: #304642; line-height: 1.3;
+  }
+  .share-pop-rule { height: 1px; background: rgba(48,70,66,0.08); margin: 0; }
+  .share-url-wrap {
+    display: flex; align-items: center; gap: 7px;
+    padding: 14px 18px 0;
+  }
+  .share-url-field {
+    flex: 1; min-width: 0;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1.5px solid rgba(48,70,66,0.12);
+    background: oklch(0.975 0.005 165);
+    font-family: 'Poppins', sans-serif; font-size: 11.5px; color: #8A9A97;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    cursor: default; outline: none;
+  }
+  .share-copy-btn {
+    padding: 8px 13px; border-radius: 10px; border: none;
+    background: #FF5A00; color: #FFFFFF;
+    font-family: 'Poppins', sans-serif; font-size: 12.5px; font-weight: 600;
+    cursor: pointer; white-space: nowrap; flex-shrink: 0;
+    transition: background 0.15s, transform 0.1s;
+  }
+  .share-copy-btn:hover { background: #D94E00; }
+  .share-copy-btn:active { transform: scale(0.96); }
+  .share-copy-btn.is-copied { background: #304642; }
+  .share-channels {
+    padding: 10px 18px 18px;
+    display: flex; flex-direction: column; gap: 7px;
+  }
+  .share-ch-btn {
+    display: flex; align-items: center; gap: 11px;
+    padding: 10px 13px;
+    border-radius: 12px; border: 1.5px solid rgba(48,70,66,0.1);
+    background: transparent;
+    font-family: 'Poppins', sans-serif; font-size: 13.5px; font-weight: 500; color: #304642;
+    cursor: pointer; text-align: left;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .share-ch-btn:hover { background: rgba(48,70,66,0.05); border-color: rgba(48,70,66,0.2); }
+  .share-ch-icon {
+    width: 34px; height: 34px; border-radius: 9px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .share-ch-icon svg { width: 17px; height: 17px; }
+
   .lc-illu {
     width: clamp(200px, 30vw, 400px); height: auto; display: block; mix-blend-mode: multiply;
   }
@@ -1466,9 +1543,9 @@ const PATHS = [
     courseCount: 5, duration: '32 min',
     thumbnail: 'LP-thumbnails/LP-Thumbnail-Inventory-Solution.png',
     href: 'now-hub.html', pathParam: 'now', hubFile: 'now-hub.html',
-    courseIds: ['now-home','now-intro','now-insights','now-actions','now-dashboards'],
-    courseNames: ['Home','Intro','Insights','Actions','Dashboards'],
-    courseFiles: { 'now-home': 'Now-Home.txt', 'now-intro': 'Now-Intro.txt', 'now-insights': 'Now-Insights.txt', 'now-actions': 'Now-Actions.txt', 'now-dashboards': 'Now-Dashboards.txt' },
+    courseIds: ['now-intro','now-home','now-insights','now-actions','now-dashboards'],
+    courseNames: ['Introduction','Home','Insights','Actions','Dashboards'],
+    courseFiles: { 'now-intro': 'Now-Intro.txt', 'now-home': 'Now-Home.txt', 'now-insights': 'Now-Insights.txt', 'now-actions': 'Now-Actions.txt', 'now-dashboards': 'Now-Dashboards.txt' },
     gradFrom: '#2e4a44', gradTo: '#4a6a60',
     category: 'functionality'
   },
@@ -1480,7 +1557,7 @@ const PATHS = [
     thumbnail: 'LP-thumbnails/LP-Thumbnail-Inventory-Solution.png',
     href: 'hub.html', pathParam: 'inventory', hubFile: 'hub.html',
     courseIds: ['intro','double-abc','stock-policy','safety-stock','reorder-point','reorder-quantity'],
-    courseNames: ['Intro','Double ABC Analysis','Stock Policy','Safety Stock','Reorder Point','Reorder Quantity'],
+    courseNames: ['Introduction','Double ABC Analysis','Stock Policy','Safety Stock','Reorder Point','Reorder Quantity'],
     courseFiles: { 'intro': 'Intro.txt', 'double-abc': 'Double-ABC-Analysis-4.txt', 'stock-policy': 'Stock-Policy.txt', 'safety-stock': 'Safety-Stock.txt', 'reorder-point': 'Reorder-Point.txt', 'reorder-quantity': 'Reorder-Quantity.txt' },
     gradFrom: '#243a38', gradTo: '#3a5850',
     category: 'inventory'
@@ -1500,8 +1577,8 @@ const PATHS = [
   },
   {
     id: 'spend-analysis',
-    title: 'Inact for Product Management',
-    desc: 'Learn core principles, best practices and core tools to manage products with Inact Now.',
+    title: 'Product Management',
+    desc: 'Monitor the product lifecycle and manage your products from cradle to grave with Inact Now.',
     courseCount: 4, duration: '28 min',
     thumbnail: null, href: '#',
     courseIds: [], courseNames: [],
@@ -1522,8 +1599,8 @@ const PATHS = [
   },
   {
     id: 'end2end',
-    title: 'End to End Intelligence',
-    desc: 'Get the ultimate overview over your supply chain. With the new End 2 End tool, you will be able to analyse the relationship between your products, suppliers and customers.',
+    title: 'End to End',
+    desc: 'Map the interdependencies between your products, customers and suppliers - and align the entire value chain with Inact Now.',
     courseCount: 4, duration: '35 min',
     thumbnail: null, href: '#',
     courseIds: [], courseNames: [],
@@ -1575,7 +1652,7 @@ const SOLUTIONS = [
   { key: 'suppliers',    name: 'Suppliers',    label: 'How to source?',  pathId: 'supplier-management',  illu: 'SVGs/LP-Illustrations/Suppliers-Illustration.png',      toggleBg: '#F4EEFF', bg: '#FDFCFF', btn: '#E1DBEB', btnT: '#221D2E', bdr: '#D8D0E8', dot: '#E1DBEB', bar: '#7B68AA' },
   { key: 'products',    name: 'Products',     label: 'What to offer?',  pathId: 'spend-analysis',       illu: 'SVGs/LP-Illustrations/Products-Illustration.png',   soon: true, toggleBg: '#F5E8E5', bg: '#F8F0EE', btn: '#E8CECA', btnT: '#3D1F1C', bdr: '#E0C5C1', dot: '#E8CECA', bar: '#A84C44' },
   { key: 'customers',   name: 'Customers',    label: 'Who to serve?',   pathId: 'end2end',              illu: 'SVGs/LP-Illustrations/Customers-Illustration.png',  soon: true, toggleBg: '#F1F4E9', bg: '#F8FAF4', btn: '#E3E8D8', btnT: '#222619', bdr: '#DDE3D0', dot: '#D0D5C5', bar: '#8A9672' },
-  { key: 'functionality', name: 'Software',   label: 'How to use?',     pathId: 'now-fundamentals',     illu: 'SVGs/LP-Illustrations/Now-Illustration.png',            toggleBg: '#F1F6FF', bg: '#F5F9FF', btn: '#DBE9FF', btnT: '#1A2535', bdr: '#D0DFEF', dot: '#DBE9FF', bar: '#5888D0' },
+  { key: 'functionality', name: 'Software',   label: 'Inact Now',     pathId: 'now-fundamentals',     illu: 'SVGs/LP-Illustrations/Now-Illustration.png',            toggleBg: '#F1F6FF', bg: '#F5F9FF', btn: '#DBE9FF', btnT: '#1A2535', bdr: '#D0DFEF', dot: '#DBE9FF', bar: '#5888D0' },
 ];
 
 let activeSolKey = 'inventory';
@@ -1736,7 +1813,7 @@ function renderLearningCard() {
         <button class="lc-icon-btn lc-bm" aria-label="Bookmark">
           <svg viewBox="0 0 14 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1H2C1.44772 1 1 1.44772 1 2V15.1745C1 15.9644 1.87272 16.4425 2.53837 16.0172L6.28636 13.6228C6.60517 13.4191 7.01163 13.4128 7.33663 13.6065L11.4881 16.0803C12.1547 16.4775 13 15.9972 13 15.2213V2C13 1.44772 12.5523 1 12 1Z"/></svg>
         </button>
-        <button class="lc-icon-btn lc-share" aria-label="Share">
+        <button class="lc-icon-btn lc-share" aria-label="Share" data-name="${path.title}" data-url="${location.origin}/${path.href}">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
         </button>
       </div>
@@ -1759,6 +1836,15 @@ function renderLearningCard() {
   // Store navigation origin for back button on hub pages
   card.querySelector('.lc-btn-cta')?.addEventListener('click', () => sessionStorage.setItem('hub-origin', 'home'));
   card.querySelector('.lc-btn-view')?.addEventListener('click', () => sessionStorage.setItem('hub-origin', 'home'));
+
+  // Wire share button
+  const shareBtn = card.querySelector('.lc-icon-btn.lc-share');
+  if (shareBtn) {
+    shareBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      window.openSharePop(shareBtn, shareBtn.dataset.name || 'Learning Path', shareBtn.dataset.url || window.location.href);
+    });
+  }
 
   // Progress bar + count-up
   requestAnimationFrame(() => {
@@ -2119,6 +2205,86 @@ if (pendingView) {
 
 // Re-render when restored from bfcache so progress reflects current localStorage
 window.addEventListener('pageshow', e => { if (e.persisted) render(); });
+
+// ── SHARE POPOVER ─────────────────────────────────────────────────────
+// Build the popover in JS so it's in the DOM immediately (no ordering dependency)
+(function() {
+  const el = document.createElement('div');
+  el.className = 'share-pop';
+  el.setAttribute('role', 'dialog');
+  el.setAttribute('aria-modal', 'false');
+  el.setAttribute('aria-label', 'Share');
+  el.innerHTML = `
+    <div class="share-pop-head">
+      <span class="share-pop-label">Share</span>
+      <button class="share-pop-close" aria-label="Close">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M11 3L3 11M3 3l8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="share-pop-name">Learning Path</div>
+    <div class="share-pop-rule"></div>
+    <div class="share-url-wrap">
+      <input class="share-url-field" readonly tabindex="-1" value="">
+      <button class="share-copy-btn">Copy link</button>
+    </div>
+    <div class="share-channels">
+      <button class="share-ch-btn"><span class="share-ch-icon" style="background:oklch(0.96 0.01 165)"><svg viewBox="0 0 24 24" fill="none" stroke="#304642" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><polyline points="2,4 12,13 22,4"/></svg></span>Send email</button>
+      <button class="share-ch-btn"><span class="share-ch-icon" style="background:#EEF0FF"><svg viewBox="0 0 24 24" fill="none"><rect x="9" y="2" width="13" height="9" rx="2" fill="#5059C9"/><rect x="3" y="10" width="12" height="10" rx="2" fill="#7B83EB"/><circle cx="15.5" cy="5.5" r="2.5" fill="white"/><circle cx="7" cy="13" r="2" fill="white"/></svg></span>Share in Teams</button>
+    </div>`;
+  document.body.appendChild(el);
+
+  const pop      = el;
+  const popClose = el.querySelector('.share-pop-close');
+  const popName  = el.querySelector('.share-pop-name');
+  const urlField = el.querySelector('.share-url-field');
+  const copyBtn  = el.querySelector('.share-copy-btn');
+  let activeTrigger = null;
+
+  function positionPop(trigger) {
+    const r = trigger.getBoundingClientRect(), pw = 316, gap = 8;
+    let top = r.bottom + gap, left = r.right - pw;
+    if (left < 12) left = 12;
+    if (left + pw > window.innerWidth - 12) left = window.innerWidth - 12 - pw;
+    const ph = pop.offsetHeight || 240;
+    if (top + ph > window.innerHeight - 12) top = r.top - gap - ph;
+    pop.style.top = top + 'px'; pop.style.left = left + 'px';
+  }
+
+  function closePop() {
+    pop.classList.remove('is-open');
+    if (activeTrigger) { activeTrigger.focus(); activeTrigger = null; }
+  }
+
+  window.openSharePop = function(trigger, name, url) {
+    activeTrigger = trigger;
+    popName.textContent = name;
+    urlField.value = url;
+    copyBtn.textContent = 'Copy link';
+    copyBtn.classList.remove('is-copied');
+    pop.classList.add('is-open');
+    positionPop(trigger);
+    requestAnimationFrame(() => popClose.focus());
+  };
+
+  popClose.addEventListener('click', closePop);
+
+  copyBtn.addEventListener('click', () => {
+    copyBtn.textContent = 'Copied!';
+    copyBtn.classList.add('is-copied');
+    setTimeout(() => { copyBtn.textContent = 'Copy link'; copyBtn.classList.remove('is-copied'); }, 1500);
+  });
+
+  document.addEventListener('mousedown', e => {
+    if (!pop.classList.contains('is-open')) return;
+    if (pop.contains(e.target)) return;
+    if (activeTrigger && activeTrigger.contains(e.target)) return;
+    closePop();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && pop.classList.contains('is-open')) { e.preventDefault(); closePop(); }
+  });
+})();
 </script>
 </body>
 </html>
