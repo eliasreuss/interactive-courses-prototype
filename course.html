@@ -153,49 +153,53 @@
     }
 
     .course-share-btn {
-      display: inline-flex; align-items: center; gap: 7px;
-      padding: 7px 14px; border-radius: 500px;
-      border: 1.5px solid rgba(48,70,66,0.16);
-      background: transparent;
-      font-family: var(--font-family); font-size: 13px; font-weight: 500;
-      color: var(--color-ui-dark); cursor: pointer;
-      transition: background 0.15s, transform 0.2s cubic-bezier(0.16,1,0.3,1);
-      flex-shrink: 0;
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 38px; height: 38px; padding: 0; border-radius: 500px;
+      border: 1.5px solid rgba(48,70,66,0.15);
+      background: transparent; color: var(--color-muted);
+      cursor: pointer; flex-shrink: 0;
+      transition: background 0.2s ease, transform 0.25s cubic-bezier(0.16,1,0.3,1), color 0.2s ease;
     }
-    .course-share-btn:hover { background: rgba(48,70,66,0.07); transform: translateY(-1px); }
-    .course-share-btn svg { width: 14px; height: 14px; display: block; transition: transform 0.2s ease; }
-    .course-share-btn:hover svg { transform: rotate(14deg) scale(1.1); }
+    .course-share-btn:hover { background: rgba(48,70,66,0.08); transform: translateY(-2px); color: var(--color-primary); }
+    .course-share-btn:active { transform: scale(0.93) translateY(0) !important; transition-duration: 0.08s !important; }
+    .course-share-btn svg { width: 16px; height: 16px; display: block; transition: transform 0.2s ease; }
+    .course-share-btn:hover svg { transform: rotate(14deg) scale(1.18); }
 
-    /* ── SHARE POPOVER ───────────────────────────── */
-    .share-pop {
-      position: fixed; z-index: 9999; width: 316px;
-      background: #FFFFFF; border-radius: 20px;
-      box-shadow: 0 8px 40px rgba(48,70,66,0.14), 0 2px 10px rgba(48,70,66,0.07);
-      opacity: 0; transform: scale(0.95) translateY(-6px); transform-origin: top right;
-      pointer-events: none;
-      transition: opacity 0.18s cubic-bezier(0.22,1,0.36,1), transform 0.18s cubic-bezier(0.22,1,0.36,1);
-    }
+    /* ── SHARE POPOVER ─ overdrive B ────────────── */
+    .share-pop { position: fixed; z-index: 9999; width: 320px; background: #FDFEFD; border-radius: 22px; box-shadow: 0 0 0 1px rgba(48,70,66,0.07), 0 4px 14px rgba(48,70,66,0.07), 0 20px 56px rgba(48,70,66,0.13); opacity: 0; transform: scale(0.96) translateY(-8px); transform-origin: top right; pointer-events: none; overflow: hidden; transition: opacity 0.2s cubic-bezier(0.22,1,0.36,1), transform 0.2s cubic-bezier(0.22,1,0.36,1); }
     .share-pop.is-open { opacity: 1; transform: scale(1) translateY(0); pointer-events: auto; }
-    .share-pop-head { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px 10px; }
-    .share-pop-label { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #8A9A97; }
-    .share-pop-close { width: 26px; height: 26px; border: none; background: none; cursor: pointer; color: #8A9A97; display: flex; align-items: center; justify-content: center; border-radius: 8px; transition: background 0.15s, color 0.15s; padding: 0; }
-    .share-pop-close:hover { background: rgba(48,70,66,0.07); color: #304642; }
-    .share-pop-name { padding: 2px 18px 14px; font-size: 14px; font-weight: 600; color: #304642; line-height: 1.3; }
-    .share-pop-rule { height: 1px; background: rgba(48,70,66,0.08); }
-    .share-scope-wrap { display: flex; gap: 6px; padding: 14px 18px 0; }
-    .share-scope-btn { flex: 1; padding: 8px 0; border-radius: 10px; font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; border: 1.5px solid rgba(48,70,66,0.15); background: transparent; color: #8A9A97; transition: background 0.15s, color 0.15s, border-color 0.15s; }
-    .share-scope-btn.is-active { background: #304642; color: #FAFAFA; border-color: #304642; }
-    .share-url-wrap { display: flex; align-items: center; gap: 7px; padding: 14px 18px 0; }
-    .share-url-field { flex: 1; min-width: 0; padding: 8px 10px; border-radius: 10px; border: 1.5px solid rgba(48,70,66,0.12); background: oklch(0.975 0.005 165); font-family: 'Poppins', sans-serif; font-size: 11.5px; color: #8A9A97; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; cursor: default; outline: none; }
-    .share-copy-btn { padding: 8px 13px; border-radius: 10px; border: none; background: #FF5A00; color: #FFFFFF; font-family: 'Poppins', sans-serif; font-size: 12.5px; font-weight: 600; cursor: pointer; white-space: nowrap; flex-shrink: 0; transition: background 0.15s, transform 0.1s; }
-    .share-copy-btn:hover { background: #D94E00; }
-    .share-copy-btn:active { transform: scale(0.96); }
-    .share-copy-btn.is-copied { background: #304642; }
-    .share-channels { padding: 10px 18px 18px; display: flex; flex-direction: column; gap: 7px; }
-    .share-ch-btn { display: flex; align-items: center; gap: 11px; padding: 10px 13px; border-radius: 12px; border: 1.5px solid rgba(48,70,66,0.1); background: transparent; font-family: 'Poppins', sans-serif; font-size: 13.5px; font-weight: 500; color: #304642; cursor: pointer; text-align: left; transition: background 0.15s, border-color 0.15s; }
-    .share-ch-btn:hover { background: rgba(48,70,66,0.05); border-color: rgba(48,70,66,0.2); }
-    .share-ch-icon { width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .share-ch-icon svg { width: 17px; height: 17px; }
+    .share-pop.is-open .share-pop-head  { animation: sp-rise 0.3s cubic-bezier(0.22,1,0.36,1) 0.03s both; }
+    .share-pop.is-open .share-pop-name  { animation: sp-left 0.28s cubic-bezier(0.22,1,0.36,1) 0.07s both; }
+    .share-pop.is-open .share-pop-rule  { animation: sp-rule 0.24s ease-out 0.11s both; }
+    .share-pop.is-open .share-scope-wrap { animation: sp-rise 0.26s cubic-bezier(0.22,1,0.36,1) 0.14s both; }
+    .share-pop.is-open .share-actions { animation: sp-rise 0.25s cubic-bezier(0.22,1,0.36,1) 0.18s both; }
+    @keyframes sp-rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes sp-left { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes sp-rule { from { transform: scaleX(0); transform-origin: left center; } to { transform: scaleX(1); transform-origin: left center; } }
+    @media (prefers-reduced-motion: reduce) { .share-pop.is-open .share-pop-head, .share-pop.is-open .share-pop-name, .share-pop.is-open .share-pop-rule, .share-pop.is-open .share-scope-wrap, .share-pop.is-open .share-actions { animation: none; } }
+    .share-pop-head { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px 10px; }
+    .share-pop-label { font-size: 10.5px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #9AADA9; }
+    .share-pop-close { width: 28px; height: 28px; border: none; background: none; cursor: pointer; color: #9AADA9; display: flex; align-items: center; justify-content: center; border-radius: 9px; padding: 0; flex-shrink: 0; transition: background 0.15s, color 0.15s, transform 0.22s cubic-bezier(0.22,1,0.36,1); }
+    .share-pop-close:hover { background: rgba(48,70,66,0.08); color: #304642; transform: rotate(90deg); }
+    .share-pop-name { padding: 0 20px 16px; font-size: 15px; font-weight: 700; color: #1A2E2B; line-height: 1.3; letter-spacing: -0.2px; }
+    .share-pop-rule { height: 1px; background: rgba(48,70,66,0.08); margin: 0 20px; }
+    /* pill toggle */
+    .share-scope-wrap { display: flex; margin: 16px 20px 0; background: oklch(0.94 0.006 165); border-radius: 50px; padding: 3px; gap: 2px; }
+    .share-scope-btn { flex: 1; padding: 8px 0; font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; border: none; background: transparent; color: #8A9A97; border-radius: 50px; transition: color 0.18s, background 0.18s, box-shadow 0.18s; }
+    .share-scope-btn.is-active { background: #FFFFFF; color: #1A2E2B; font-weight: 600; box-shadow: 0 1px 4px rgba(48,70,66,0.15); }
+    /* action buttons */
+    .share-actions { padding: 12px 20px 20px; display: flex; flex-direction: column; gap: 10px; }
+    .share-action-btn { width: 100%; padding: 13px 20px; border-radius: 50px; border: none; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 9px; transition: opacity 0.15s, transform 0.12s cubic-bezier(0.22,1,0.36,1); }
+    .share-action-btn:active { transform: scale(0.97); }
+    .share-action-btn svg { width: 17px; height: 17px; flex-shrink: 0; }
+    .share-action-btn.is-orange { background: #FF5A00; color: #FFFFFF; }
+    .share-action-btn.is-orange:hover { background: #D94E00; }
+    .share-action-btn.is-orange.is-copied { background: #304642; }
+    .share-action-btn.is-dark { background: #304642; color: #FFFFFF; }
+    .share-action-btn.is-dark:hover { background: #243630; }
+    .share-action-btn .sp-check { width: 17px; height: 17px; display: block; flex-shrink: 0; }
+    .share-action-btn .sp-check-line { stroke: white; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; fill: none; stroke-dasharray: 22; stroke-dashoffset: 22; animation: sp-check 0.38s cubic-bezier(0.22,1,0.36,1) forwards; }
+    @keyframes sp-check { to { stroke-dashoffset: 0; } }
 
     /* ========== MAIN CONTENT AREA ========== */
     .main-content {
@@ -1269,7 +1273,9 @@
         <div class="header-divider"></div>
         <button class="course-share-btn" id="course-share-btn" aria-label="Share this course">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          Share
+        </button>
+        <button class="course-share-btn" id="course-fullscreen-btn" aria-label="Toggle fullscreen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
         </button>
       </div>
     </header>
@@ -3548,33 +3554,46 @@
           if (url) window.open(url, '_blank');
         });
       }
+
+      // Fullscreen toggle
+      const fsBtn = document.getElementById('course-fullscreen-btn');
+      if (fsBtn) {
+        fsBtn.addEventListener('click', () => {
+          if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen?.();
+          } else {
+            document.exitFullscreen?.();
+          }
+        });
+        document.addEventListener('fullscreenchange', () => {
+          const isFs = !!document.fullscreenElement;
+          fsBtn.querySelector('svg').innerHTML = isFs
+            ? '<polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="10" y1="14" x2="3" y2="21"/><line x1="21" y1="3" x2="14" y2="10"/>'
+            : '<polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/>';
+        });
+      }
     });
 
     // ── SHARE POPOVER (course page) ────────────────────────────────────
     document.addEventListener('DOMContentLoaded', function() {
     (function() {
-      const pop      = document.getElementById('share-pop');
-      const popClose = document.getElementById('share-pop-close');
-      const popName  = document.getElementById('share-pop-name');
-      const urlField = document.getElementById('share-url-field');
-      const copyBtn  = document.getElementById('share-copy-btn');
-      const scopeBtns = document.querySelectorAll('.share-scope-btn');
+      const pop        = document.getElementById('share-pop');
+      const popClose   = document.getElementById('share-pop-close');
+      const popName    = document.getElementById('share-pop-name');
+      const copyBtn    = document.getElementById('share-copy-btn');
+      const saveImgBtn = document.getElementById('share-save-img-btn');
+      const copyLbl    = document.getElementById('copy-btn-label');
+      const scopeBtns  = document.querySelectorAll('.share-scope-btn');
       const triggerBtn = document.getElementById('course-share-btn');
       if (!pop || !triggerBtn) return;
 
       let activeTrigger = null;
       let currentScope = 'slide';
 
-      function buildUrl(scope) {
-        const base = location.origin + location.pathname;
-        const params = new URLSearchParams(location.search);
-        if (scope === 'slide') {
-          const slideId = typeof activeNodeId !== 'undefined' ? activeNodeId : '1';
-          params.set('slide', slideId);
-        } else {
-          params.delete('slide');
-        }
-        return base + '?' + params.toString();
+      function updateScopeUI() {
+        const isSlide = currentScope === 'slide';
+        if (copyLbl) copyLbl.textContent = isSlide ? 'Copy slide link' : 'Copy course link';
+        if (saveImgBtn) saveImgBtn.style.display = isSlide ? '' : 'none';
       }
 
       function openPop(trigger) {
@@ -3583,8 +3602,12 @@
         scopeBtns.forEach(b => b.classList.toggle('is-active', b.dataset.scope === 'slide'));
         const title = document.getElementById('flow-title')?.textContent?.trim() || 'Course';
         popName.textContent = title;
-        urlField.value = buildUrl('slide');
-        copyBtn.textContent = 'Copy link'; copyBtn.classList.remove('is-copied');
+        // Reset copy button to normal state
+        copyBtn.classList.remove('is-copied');
+        const icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+        copyBtn.innerHTML = icon + '<span id="copy-btn-label">Copy slide link</span>';
+        updateScopeUI();
+        pop.classList.remove('is-open'); void pop.offsetHeight;
         pop.classList.add('is-open');
         positionPop(trigger);
         requestAnimationFrame(() => popClose.focus());
@@ -3596,11 +3619,11 @@
       }
 
       function positionPop(trigger) {
-        const r = trigger.getBoundingClientRect(), pw = 316, gap = 8;
+        const r = trigger.getBoundingClientRect(), pw = 320, gap = 8;
         let top = r.bottom + gap, left = r.right - pw;
         if (left < 12) left = 12;
         if (left + pw > window.innerWidth - 12) left = window.innerWidth - 12 - pw;
-        const ph = pop.offsetHeight || 300;
+        const ph = pop.offsetHeight || 280;
         if (top + ph > window.innerHeight - 12) top = r.top - gap - ph;
         pop.style.top = top + 'px'; pop.style.left = left + 'px';
       }
@@ -3612,14 +3635,23 @@
         btn.addEventListener('click', () => {
           currentScope = btn.dataset.scope;
           scopeBtns.forEach(b => b.classList.toggle('is-active', b === btn));
-          urlField.value = buildUrl(currentScope);
-          copyBtn.textContent = 'Copy link'; copyBtn.classList.remove('is-copied');
+          copyBtn.classList.remove('is-copied');
+          const icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+          const lbl = currentScope === 'slide' ? 'Copy slide link' : 'Copy course link';
+          copyBtn.innerHTML = icon + '<span id="copy-btn-label">' + lbl + '</span>';
+          updateScopeUI();
         });
       });
 
       copyBtn.addEventListener('click', () => {
-        copyBtn.textContent = 'Copied!'; copyBtn.classList.add('is-copied');
-        setTimeout(() => { copyBtn.textContent = 'Copy link'; copyBtn.classList.remove('is-copied'); }, 1500);
+        copyBtn.classList.add('is-copied');
+        copyBtn.innerHTML = '<svg class="sp-check" viewBox="0 0 20 20" fill="none"><polyline class="sp-check-line" points="4,10 8,14 16,6"/></svg> Copied!';
+        const lbl = currentScope === 'slide' ? 'Copy slide link' : 'Copy course link';
+        const icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+        setTimeout(() => {
+          copyBtn.innerHTML = icon + '<span id="copy-btn-label">' + lbl + '</span>';
+          copyBtn.classList.remove('is-copied');
+        }, 1600);
       });
 
       document.addEventListener('mousedown', e => {
@@ -3641,17 +3673,19 @@
   </div>
   <div class="share-pop-name" id="share-pop-name">Course</div>
   <div class="share-pop-rule"></div>
-  <div class="share-scope-wrap">
+  <div class="share-scope-wrap" id="share-scope-wrap">
     <button class="share-scope-btn is-active" data-scope="slide">This slide</button>
     <button class="share-scope-btn" data-scope="course">Full course</button>
   </div>
-  <div class="share-url-wrap">
-    <input class="share-url-field" id="share-url-field" readonly tabindex="-1" value="">
-    <button class="share-copy-btn" id="share-copy-btn">Copy link</button>
-  </div>
-  <div class="share-channels">
-    <button class="share-ch-btn"><span class="share-ch-icon" style="background:oklch(0.96 0.01 165)"><svg viewBox="0 0 24 24" fill="none" stroke="#304642" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><polyline points="2,4 12,13 22,4"/></svg></span>Send email</button>
-    <button class="share-ch-btn"><span class="share-ch-icon" style="background:#EEF0FF"><svg viewBox="0 0 24 24" fill="none"><rect x="9" y="2" width="13" height="9" rx="2" fill="#5059C9"/><rect x="3" y="10" width="12" height="10" rx="2" fill="#7B83EB"/><circle cx="15.5" cy="5.5" r="2.5" fill="white"/><circle cx="7" cy="13" r="2" fill="white"/></svg></span>Share in Teams</button>
+  <div class="share-actions">
+    <button class="share-action-btn is-orange" id="share-copy-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      <span id="copy-btn-label">Copy slide link</span>
+    </button>
+    <button class="share-action-btn is-dark" id="share-save-img-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Save slide as image
+    </button>
   </div>
 </div>
 </body>
