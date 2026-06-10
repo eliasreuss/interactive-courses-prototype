@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>Catalog - Inact Learn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #304642;
+      --color-primary-light: #3d5a54;
+      --color-accent: #FF5A00;
+      --color-bg: #F9F7F5;
+      --color-card-bg: #FFFFFF;
+      --color-muted: #8A9A97;
+      --color-text-secondary: rgba(48, 70, 66, 0.6);
+      --color-tag-bg: #F0F0F0;
+      --color-progress-bg: #EBEBEB;
+      --font-family: 'Poppins', sans-serif;
+      --shadow-card: 0 2px 8px rgba(48, 70, 66, 0.06), 0 8px 24px rgba(48, 70, 66, 0.08);
+      --shadow-card-hover: 0 8px 16px rgba(48, 70, 66, 0.08), 0 24px 48px rgba(48, 70, 66, 0.12);
+      --shadow-header: 0 1px 0 rgba(48, 70, 66, 0.06);
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --radius-sm: 10px;
+      --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+      --page-margin: 32px;
+    }
+    @media (min-width: 1400px) { :root { --page-margin: 48px; } }
+    @media (min-width: 1600px) { :root { --page-margin: 64px; } }
+    @media (min-width: 1920px) { :root { --page-margin: 200px; } }
+    @media (min-width: 2200px) { :root { --page-margin: 300px; } }
+    @media (min-width: 2560px) { :root { --page-margin: 400px; } }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-family);
+      background: var(--color-bg);
+      min-height: 100vh;
+      color: var(--color-primary);
+      background-image: radial-gradient(circle at 1px 1px, rgba(48, 70, 66, 0.03) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+
+    /* ── Header ── */
+    .header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 40px;
+      background: rgba(255,255,255,0.95);
+      box-shadow: var(--shadow-header);
+      border-radius: 0 0 25px 25px;
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(48,70,66,0.08);
+    }
+    .header-left { display: flex; align-items: center; gap: 40px; }
+    .logo { font-size: 22px; font-weight: 700; color: var(--color-primary); letter-spacing: -0.5px; text-decoration: none; }
+    .logo span { color: var(--color-accent); font-weight: 600; }
+    .nav { display: flex; align-items: center; gap: 8px; }
+    .nav a {
+      text-decoration: none; color: var(--color-primary); font-size: 14px; font-weight: 500;
+      padding: 8px 16px; border-radius: 100px; transition: all 0.2s var(--transition-smooth); opacity: 0.65;
+    }
+    .nav a:hover { opacity: 1; background: var(--color-tag-bg); }
+    .nav a.active { opacity: 1; background: rgba(48,70,66,0.08); color: var(--color-primary); font-weight: 600; }
+    .nav a.locked { display: inline-flex; align-items: center; gap: 6px; }
+    .nav a.locked .lock-icon { width: 12px; height: 12px; opacity: 0.5; }
+    .header-right { display: flex; align-items: center; gap: 16px; }
+    .nav-notif-btn {
+      width: 36px; height: 36px; background: var(--color-accent); border-radius: 500px;
+      border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: transform 0.2s, background 0.2s ease;
+    }
+    .nav-notif-btn:hover { transform: scale(1.08); background: #D94E00; }
+    .nav-notif-icon { width: 12px; height: 16px; border-radius: 1px; border: 2px solid white; display: block; }
+    .nav-avatar {
+      width: 35px; height: 35px; background: #D9EBFF; border-radius: 100px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; flex-shrink: 0; text-decoration: none; transition: transform 0.2s;
+    }
+    .nav-avatar:hover { transform: scale(1.08); }
+    .nav-avatar span { color: #1F5591; font-size: 13px; font-weight: 600; line-height: 1; font-family: var(--font-family); }
+
+    /* ── Page layout ── */
+    .catalog-page {
+      padding: 32px var(--page-margin) 80px;
+    }
+    .catalog-layout {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    /* ── Sidebar ── */
+    .catalog-sidebar {
+      width: 280px;
+      flex-shrink: 0;
+      position: sticky;
+      top: calc(72px + 20px);
+      background: #FFFFFF;
+      border: 1px solid oklch(0.91 0.006 165);
+      border-radius: 20px;
+      box-shadow: 0 2px 8px rgba(48,70,66,0.06), 0 8px 24px rgba(48,70,66,0.08);
+      padding: 28px 22px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .catalog-title-block {
+      margin-bottom: 14px;
+    }
+    .catalog-title {
+      font-size: 20px; font-weight: 700; letter-spacing: -0.02em;
+      color: var(--color-primary); line-height: 1.2;
+    }
+    .catalog-meta { display: none; }
+
+    /* ── Search input ── */
+    .catalog-search { position: relative; margin-bottom: 14px; }
+    .catalog-search-icon {
+      position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+      width: 16px; height: 16px; color: var(--color-muted); pointer-events: none;
+      display: flex; align-items: center;
+    }
+    .catalog-search-icon svg { width: 16px; height: 16px; }
+    .catalog-search input {
+      width: 100%; padding: 11px 14px 11px 38px;
+      border: 1.5px solid rgba(48,70,66,0.12); border-radius: 14px;
+      background: white; font-family: var(--font-family); font-size: 14px;
+      color: var(--color-primary); outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .catalog-search input:focus {
+      border-color: rgba(48,70,66,0.28);
+      box-shadow: 0 0 0 3px rgba(48,70,66,0.06);
+    }
+    .catalog-search input::placeholder { color: var(--color-muted); }
+
+    /* ── Sidebar section label ── */
+    .sidebar-section-label {
+      font-size: 10px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase;
+      color: oklch(0.65 0.008 165);
+      padding: 6px 14px 2px;
+    }
+    .sidebar-divider {
+      height: 1px; background: rgba(48,70,66,0.07); margin: 12px 4px;
+    }
+
+    /* ── Filter group with sliding indicator ── */
+    .filter-group {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .filter-pill-indicator {
+      position: absolute;
+      left: 0; right: 0; top: 0;
+      height: 44px;
+      border-radius: 10px;
+      background: oklch(0.96 0.006 165);
+      pointer-events: none;
+      z-index: 0;
+      will-change: transform;
+    }
+
+    /* ── Filter chips (sidebar vertical) ── */
+    .filter-chip {
+      display: flex; align-items: center; gap: 10px;
+      width: 100%; padding: 8px 14px; border-radius: 10px;
+      border: none; background: transparent;
+      color: oklch(0.44 0.025 165);
+      font-family: var(--font-family); font-size: 14px; font-weight: 400;
+      cursor: pointer; text-align: left;
+      transition: color 0.18s ease;
+      outline: none;
+      position: relative;
+      z-index: 1;
+    }
+    .filter-chip:hover { color: oklch(0.28 0.06 165); }
+    .filter-chip:not(.is-active):hover { background: oklch(0.96 0.005 165); }
+    .filter-chip:focus-visible { box-shadow: 0 0 0 2px var(--color-primary); }
+    .filter-chip.is-active {
+      background: transparent;
+      color: var(--chip-color, oklch(0.28 0.06 165));
+      font-weight: 600;
+    }
+    .filter-chip-icon {
+      width: 20px; height: 20px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      color: oklch(0.70 0.012 165);
+      transition: color 0.18s ease;
+    }
+    .filter-chip-icon svg { width: 100%; height: 100%; display: block; }
+    #filter-group-type .filter-chip[data-type="lp"] .filter-chip-icon,
+    #filter-group-type .filter-chip[data-type="course"] .filter-chip-icon { width: 18px; height: 18px; }
+    .filter-chip.is-active .filter-chip-icon { color: var(--chip-color, oklch(0.28 0.06 165)); }
+    .filter-chip-label-wrap { display: flex; flex-direction: column; gap: 2px; }
+    .filter-chip-eyebrow {
+      font-size: 9px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+      color: oklch(0.66 0.008 165); line-height: 1;
+      transition: color 0.18s ease;
+    }
+    .filter-chip.is-active .filter-chip-eyebrow { color: var(--chip-color, oklch(0.28 0.06 165)); opacity: 0.65; }
+    .filter-chip-label { font-size: 14px; line-height: 1.25; }
+
+    /* ── Main content ── */
+    .catalog-content { flex: 1; min-width: 0; }
+
+    /* ── Grid toolbar ── */
+    .catalog-toolbar {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .catalog-count {
+      font-size: 15px; font-weight: 600; color: var(--color-primary);
+      letter-spacing: -0.01em;
+    }
+    .catalog-sort {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .catalog-sort-label {
+      font-size: 13px; font-weight: 500; color: var(--color-muted);
+      white-space: nowrap;
+    }
+    .catalog-sort-wrap {
+      position: relative; display: inline-flex; align-items: center;
+    }
+    .catalog-sort-select {
+      appearance: none; -webkit-appearance: none;
+      font-family: var(--font-family); font-size: 13px; font-weight: 500;
+      color: var(--color-primary);
+      background: #FFFFFF;
+      border: 1.5px solid oklch(0.88 0.008 165);
+      border-radius: 10px;
+      padding: 8px 34px 8px 14px;
+      cursor: pointer; outline: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+    .catalog-sort-select:hover { border-color: oklch(0.72 0.018 165); }
+    .catalog-sort-select:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(48,70,66,0.08); }
+    .catalog-sort-chevron {
+      position: absolute; right: 11px; top: 50%; transform: translateY(-50%);
+      pointer-events: none; color: var(--color-muted);
+      display: flex; align-items: center;
+    }
+    .catalog-sort-chevron svg { width: 13px; height: 13px; }
+
+    /* ── Cards grid ── */
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .catalog-grid .course-card { height: 100%; }
+
+    /* ── Card animation delays ── */
+    .catalog-grid .course-card:nth-child(1)  { animation-delay: 0.02s; }
+    .catalog-grid .course-card:nth-child(2)  { animation-delay: 0.06s; }
+    .catalog-grid .course-card:nth-child(3)  { animation-delay: 0.10s; }
+    .catalog-grid .course-card:nth-child(4)  { animation-delay: 0.14s; }
+    .catalog-grid .course-card:nth-child(5)  { animation-delay: 0.18s; }
+    .catalog-grid .course-card:nth-child(6)  { animation-delay: 0.22s; }
+    .catalog-grid .course-card:nth-child(7)  { animation-delay: 0.26s; }
+    .catalog-grid .course-card:nth-child(8)  { animation-delay: 0.30s; }
+    .catalog-grid .course-card:nth-child(9)  { animation-delay: 0.34s; }
+    .catalog-grid .course-card:nth-child(n+10) { animation-delay: 0.38s; }
+
+    /* ── Empty state ── */
+    .catalog-empty {
+      display: flex; flex-direction: column; align-items: center;
+      padding: 80px 24px; gap: 16px; text-align: center;
+    }
+    .catalog-empty[hidden] { display: none; }
+    .catalog-empty-icon {
+      width: 48px; height: 48px; color: oklch(0.75 0.008 165); margin-bottom: 8px;
+    }
+    .catalog-empty-title { font-size: 17px; font-weight: 600; color: var(--color-primary); }
+    .catalog-empty-sub { font-size: 14px; color: var(--color-muted); margin-top: -4px; }
+    .catalog-empty-btn {
+      margin-top: 8px; padding: 10px 22px; border-radius: 100px;
+      background: rgba(48,70,66,0.08); border: none; cursor: pointer;
+      font-family: var(--font-family); font-size: 14px; font-weight: 500;
+      color: var(--color-primary); transition: background 0.18s ease;
+    }
+    .catalog-empty-btn:hover { background: rgba(48,70,66,0.14); }
+
+    /* ══════════════════════════════════════════════
+       CARD SYSTEM (verbatim from hub.html + index.html)
+    ══════════════════════════════════════════════ */
+
+    @keyframes cardEnter { to { opacity: 1; transform: translateY(0); } }
+
+    .course-card {
+      display: flex; flex-direction: column;
+      border-radius: 17.76px; overflow: hidden; cursor: pointer;
+      position: relative; background: transparent;
+      border: 1px solid var(--card-bdr, transparent);
+      box-shadow: 0 10px 28px rgba(48, 70, 66, 0.14);
+      transition: transform 420ms cubic-bezier(0.22,1,0.36,1), box-shadow 420ms cubic-bezier(0.22,1,0.36,1);
+      opacity: 0; transform: translateY(24px);
+    }
+    .course-card.visible { animation: cardEnter 0.55s cubic-bezier(0.22,1,0.36,1) forwards; }
+    .course-card:hover { transform: translateY(-6px); box-shadow: 0 22px 56px var(--card-glow, rgba(48,70,66,0.22)); }
+    .course-card:hover .course-title { color: var(--color-primary-light); }
+    .course-card:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
+
+    /* next-course accent border */
+    .course-card.next-course {
+      border: 2px solid transparent;
+      background-image: linear-gradient(white,white),
+        linear-gradient(135deg, rgba(255,90,0,0.45) 0%, rgba(255,90,0,0.12) 50%, rgba(255,90,0,0.35) 100%);
+      background-origin: border-box; background-clip: padding-box, border-box;
+      box-shadow: 0 10px 32px rgba(255,90,0,0.12), 0 2px 8px rgba(255,90,0,0.08);
+    }
+    .course-card.next-course:hover { box-shadow: 0 22px 56px rgba(255,90,0,0.18), 0 4px 12px rgba(255,90,0,0.10); }
+    .course-card.next-course .course-cta { color: var(--color-accent); }
+    .course-card.next-course .course-cta-arrow {
+      filter: brightness(0) saturate(100%) invert(44%) sepia(89%) saturate(3000%) hue-rotate(11deg) brightness(101%) contrast(105%);
+    }
+
+    /* Card top */
+    .course-card-top {
+      height: 130px;
+      background: linear-gradient(var(--grad-dir, 135deg), #2e4a44 0%, #3d5e55 100%);
+      position: relative; overflow: hidden; flex-shrink: 0;
+    }
+    .course-card-thumb {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; display: block; z-index: 0;
+      transition: transform 420ms var(--transition-smooth);
+    }
+    .course-card:hover .course-card-thumb { transform: scale(1.04); }
+
+    /* Hub-style LP thumbnail */
+    .course-card-top.is-hub-thumb {
+      background-color: var(--card-bg, #FFFDF9);
+      background-image: radial-gradient(circle, rgba(0,0,0,0.065) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    .course-card-illu {
+      position: absolute; left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      max-height: 82%; max-width: 52%;
+      object-fit: contain; mix-blend-mode: multiply;
+      pointer-events: none;
+      transition: transform 420ms cubic-bezier(0.16,1,0.3,1);
+    }
+    .course-card:hover .course-card-illu { transform: translate(-50%, -53%) scale(1.04); }
+
+    /* Card top bar */
+    .card-top-bar {
+      position: absolute; top: 14px; left: 14px; right: 14px;
+      display: flex; align-items: center; justify-content: space-between;
+      z-index: 4; pointer-events: none;
+    }
+    .card-type-pill {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 10px 14px 10px 12px; border-radius: 100px;
+      background: var(--pill-bg, rgba(238,224,195,0.30));
+      font-size: 13px; font-weight: 600; line-height: 1;
+      color: #304642; white-space: nowrap;
+    }
+    .card-type-icon {
+      display: inline-block; width: 14px; height: 14px; flex-shrink: 0;
+      background-color: #304642;
+      -webkit-mask-image: url('SVGs/Learning-Path.svg'); mask-image: url('SVGs/Learning-Path.svg');
+      -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+      -webkit-mask-size: contain; mask-size: contain;
+      -webkit-mask-position: center; mask-position: center;
+    }
+    .card-type-icon-course {
+      display: inline-block; width: 14px; height: 14px; flex-shrink: 0;
+      background-color: #304642;
+      -webkit-mask-image: url('SVGs/Course-Icon.svg'); mask-image: url('SVGs/Course-Icon.svg');
+      -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+      -webkit-mask-size: contain; mask-size: contain;
+      -webkit-mask-position: center; mask-position: center;
+    }
+    .card-top-right { display: flex; align-items: center; gap: 6px; pointer-events: all; }
+    .course-duration-pill {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 10px 14px; border-radius: 100px;
+      background: var(--pill-bg, rgba(238,224,195,0.30));
+      color: #304642; font-size: 13px; font-weight: 500; line-height: 1; white-space: nowrap;
+    }
+    .card-bm-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 8px 10px; border-radius: 100px;
+      background: var(--pill-bg, rgba(238,224,195,0.30)); border: none; cursor: default; z-index: 4;
+    }
+    .card-bm-btn svg { width: 14px; height: 14px; stroke: #304642; fill: none; }
+
+    /* Progress bar */
+    .card-accent-bar { height: 6px; background: var(--color-primary); flex-shrink: 0; }
+    .card-progress { height: 6px; background: rgba(0,0,0,0.12); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); position: relative; flex-shrink: 0; }
+    .card-progress-fill {
+      height: 100%; width: 0%;
+      background: rgba(48,70,66,1);
+      border-radius: 0 6px 6px 0;
+      transition: width 0.8s cubic-bezier(0.4,0,0.2,1);
+    }
+    .card-progress.completed .card-progress-fill { width: 100%; border-radius: 0; }
+
+    /* Card bottom */
+    .course-card-bottom {
+      padding: 20px; background: white;
+      border-bottom-right-radius: 17.76px; border-bottom-left-radius: 17.76px;
+      display: flex; flex-direction: column; gap: 0; flex: 1;
+    }
+    .course-title {
+      color: var(--color-primary); font-size: 18px; font-weight: 600;
+      line-height: 24px; letter-spacing: -0.3px; margin-bottom: 8px;
+      transition: color 200ms ease;
+    }
+    .course-description {
+      color: rgba(48,70,66,0.55); font-size: 14px; font-weight: 400; line-height: 20px;
+      display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2;
+      -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .course-cta-row {
+      margin-top: auto; padding-top: 14px;
+      display: flex; align-items: center; justify-content: flex-end;
+    }
+    .course-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      color: var(--color-primary); font-size: 15px; font-weight: 500; line-height: 22px;
+      text-decoration: none; transition: gap 250ms var(--transition-smooth);
+    }
+    .course-card:hover .course-cta { gap: 14px; }
+    .course-cta-arrow {
+      width: 15px; height: 15px; display: block; flex-shrink: 0;
+      transition: transform 250ms var(--transition-smooth);
+    }
+    .course-card:hover .course-cta-arrow { transform: translate(5px, -3px) rotate(8deg); }
+
+    /* ── Catalog section headers ── */
+    @keyframes sectionEnter { from { opacity:0; transform:translateX(-6px); } to { opacity:1; transform:translateX(0); } }
+    .catalog-section-header {
+      grid-column: span 2;
+      display: flex; align-items: center; gap: 16px;
+      padding: 44px 0 16px;
+      animation: sectionEnter 0.4s cubic-bezier(0.22,1,0.36,1) both;
+    }
+    .catalog-section-header.is-first { padding-top: 0; }
+    .section-header-icon {
+      width: 38px; height: 38px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--sol-bg, rgba(48,70,66,0.06));
+      border-radius: 50%; color: var(--sol-bar, var(--color-primary));
+      border: 1.5px solid var(--sol-bdr, rgba(48,70,66,0.15));
+    }
+    .section-header-icon svg { width: 18px; height: 18px; }
+    .section-header-text { display: flex; flex-direction: column; gap: 2px; }
+    .section-header-eyebrow {
+      font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--sol-bar, var(--color-primary)); line-height: 1; opacity: 0.75;
+    }
+    .section-header-name {
+      font-size: 22px; font-weight: 700; color: var(--color-primary);
+      letter-spacing: -0.025em; line-height: 1.15;
+    }
+    .section-header-line { flex: 1; height: 1px; background: var(--sol-bar, rgba(48,70,66,0.12)); opacity: 0.18; }
+
+    /* ── LP Banner Card (matches hub.html LP banners, spans full 2-col width) ── */
+    .course-card.is-lp-card {
+      grid-column: span 2;
+      flex-direction: row;
+      min-height: 200px;
+      background-color: var(--card-bg, #FFFDF9);
+      background-image: radial-gradient(circle, rgba(0,0,0,0.065) 1px, transparent 1px);
+      background-size: 20px 20px;
+      box-shadow: 0 2px 12px rgba(48,70,66,0.06), 0 6px 24px rgba(48,70,66,0.06);
+    }
+    .course-card.is-lp-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px var(--card-glow, rgba(48,70,66,0.12)); }
+    /* Standalone course thumb (no photo) */
+    .standalone-thumb {
+      background-color: var(--card-bg, #F5F7F5);
+      background-image: radial-gradient(circle, rgba(0,0,0,0.055) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    .standalone-thumb-icon {
+      position: absolute; left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      width: 48px; height: 48px; opacity: 0.09;
+      color: var(--color-primary);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .standalone-thumb-icon svg { width: 100%; height: 100%; }
+    /* LP banner inner layout */
+    .lp-banner-left {
+      flex: 1; display: flex; flex-direction: column; gap: 16px;
+      padding: 40px 44px; min-width: 0;
+    }
+    .lp-banner-right {
+      width: 34%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      padding: 32px 40px;
+    }
+    .lp-banner-illu {
+      max-height: 188px; max-width: 100%;
+      object-fit: contain; mix-blend-mode: multiply;
+      transition: transform 420ms cubic-bezier(0.16,1,0.3,1);
+    }
+    .course-card.is-lp-card:hover .lp-banner-illu { transform: scale(1.05) translateY(-5px); }
+    /* Eyebrow meta line */
+    .lp-banner-eyebrow {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 500; color: rgba(48,70,66,0.55);
+    }
+    .lp-banner-eyebrow .card-type-icon {
+      background-color: rgba(48,70,66,0.55);
+    }
+    .lp-eyebrow-sep { opacity: 0.5; }
+    /* Title / desc */
+    .lp-banner-title {
+      font-size: 28px; font-weight: 700; letter-spacing: -0.6px;
+      line-height: 1.15; color: var(--color-primary); margin: 0;
+    }
+    .lp-banner-desc {
+      font-size: 15px; font-weight: 400; line-height: 1.6;
+      color: rgba(48,70,66,0.62);
+      display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    /* Progress block (above CTA row) */
+    .lp-banner-progress {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .lp-banner-track {
+      flex: 1; height: 6px; background: rgba(48,70,66,0.12);
+      border-radius: 100px; overflow: hidden;
+    }
+    .lp-banner-fill {
+      height: 100%; background: var(--color-primary);
+      border-radius: 100px;
+      transition: width 0.8s cubic-bezier(0.4,0,0.2,1);
+    }
+    .lp-banner-pct { font-size: 13px; font-weight: 600; color: var(--color-primary); white-space: nowrap; }
+    /* CTA row */
+    .lp-banner-cta-row {
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    }
+    .lp-banner-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 11px 20px; border-radius: 100px;
+      background: var(--sol-btn, #EEE0C3); color: var(--sol-btn-text, #2C2416);
+      font-family: var(--font-family); font-size: 14px; font-weight: 700;
+      text-decoration: none; white-space: nowrap;
+      transition: filter 0.15s ease, transform 0.15s ease;
+    }
+    .lp-banner-btn:hover { filter: brightness(0.92); transform: translateX(2px); }
+    .lp-ghost-btn {
+      display: inline-flex; align-items: center;
+      padding: 10px 20px; border-radius: 100px;
+      background: transparent; border: 1.5px solid rgba(48,70,66,0.18);
+      color: var(--color-primary);
+      font-family: var(--font-family); font-size: 14px; font-weight: 500;
+      text-decoration: none; white-space: nowrap;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .lp-ghost-btn:hover { background: rgba(48,70,66,0.05); border-color: rgba(48,70,66,0.3); }
+    .lp-circle-btn {
+      width: 40px; height: 40px; border-radius: 100px;
+      background: transparent; border: 1.5px solid rgba(48,70,66,0.18);
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .lp-circle-btn:hover { background: rgba(48,70,66,0.05); border-color: rgba(48,70,66,0.3); }
+    .lp-circle-btn svg { width: 14px; height: 14px; stroke: var(--color-primary); fill: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .catalog-grid { grid-template-columns: 1fr; }
+      .catalog-section-header { grid-column: span 1; padding-top: 28px; }
+      .course-card.is-lp-card { grid-column: span 1; flex-direction: column; }
+      .lp-banner-left { padding: 28px 28px; }
+      .lp-banner-right { width: 100%; padding: 0 28px 28px; justify-content: flex-start; }
+      .lp-banner-illu { max-height: 130px; }
+    }
+    @media (max-width: 820px) {
+      .catalog-layout { flex-direction: column; gap: 24px; }
+      .catalog-sidebar { width: 100%; position: static; flex-direction: row; flex-wrap: wrap; gap: 12px; border-radius: 16px; padding: 16px; }
+      .catalog-title-block { width: 100%; margin-bottom: 0; }
+      .catalog-search { width: 100%; }
+      .sidebar-filters { display: flex; flex-direction: row; flex-wrap: wrap; gap: 6px; }
+      .filter-group { flex-direction: row; flex-wrap: wrap; gap: 6px; }
+      .filter-pill-indicator { display: none; }
+      .filter-chip.is-active { background: oklch(0.95 0.008 165); }
+      .sidebar-section-label { display: none; }
+      .sidebar-divider { display: none; }
+      .filter-chip { width: auto; padding: 7px 12px; border-radius: 100px; }
+      .filter-chip-eyebrow { display: none; }
+    }
+    @media (max-width: 640px) {
+      .catalog-page { padding: 20px 16px 60px; }
+      .catalog-sidebar { border-radius: 14px; }
+      .catalog-grid { grid-template-columns: 1fr; }
+      .lp-card-body { padding: 24px; }
+      .header { padding: 14px 20px; }
+      .header-left { gap: 20px; }
+      .nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-left">
+      <a class="logo" href="index.html">Inact <span>learn</span></a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="catalog.html" class="active">Catalog</a>
+        <a href="#" class="locked">Dictionary<svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <button class="nav-notif-btn" aria-label="Notifications"><span class="nav-notif-icon"></span></button>
+      <a href="profile.html" class="nav-avatar" aria-label="User profile"><span>ER</span></a>
+    </div>
+  </header>
+
+  <main class="catalog-page">
+    <div class="catalog-layout">
+
+      <!-- Sidebar -->
+      <aside class="catalog-sidebar">
+        <div class="catalog-title-block">
+          <h1 class="catalog-title">Catalog</h1>
+        </div>
+
+        <div class="catalog-search" role="search">
+          <span class="catalog-search-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+          </span>
+          <input type="search" id="catalog-search" placeholder="Search resources..." aria-label="Search resources" autocomplete="off">
+        </div>
+
+        <div class="sidebar-filters" id="filter-bar" role="group" aria-label="Filter resources"></div>
+      </aside>
+
+      <!-- Main content -->
+      <div class="catalog-content">
+        <div class="catalog-toolbar">
+          <span class="catalog-count" id="catalog-meta">Loading...</span>
+          <div class="catalog-sort">
+            <span class="catalog-sort-label">Sort by</span>
+            <div class="catalog-sort-wrap">
+              <select id="catalog-sort-select" class="catalog-sort-select" aria-label="Sort resources">
+                <option value="relevant">Most relevant</option>
+                <option value="az">A–Z</option>
+                <option value="shortest">Shortest first</option>
+                <option value="longest">Longest first</option>
+              </select>
+              <span class="catalog-sort-chevron" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-grid" id="catalog-grid" aria-live="polite" aria-label="Resources"></div>
+
+        <div class="catalog-empty" id="catalog-empty" hidden>
+          <svg class="catalog-empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            <line x1="8" y1="11" x2="14" y2="11"/>
+          </svg>
+          <p class="catalog-empty-title">No resources found</p>
+          <p class="catalog-empty-sub">Try a different search term or clear your filters.</p>
+          <button class="catalog-empty-btn" onclick="clearFilters()">Clear filters</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    // ── Data ─────────────────────────────────────────────────────────
+
+    const SOLUTIONS = [
+      { key: 'inventory',    name: 'Inventory',  label: 'What to stock?', pathId: 'inventory-management',
+        illu: 'LP-thumbnails/Farvetest/Bløp.png',
+        toggleBg: '#FFF9EC', bg: '#FFFDF9', btn: '#EEE0C3', btnT: '#2C2416', bdr: '#EDE3CC', dot: '#EEE0C3', bar: '#B8964E' },
+      { key: 'suppliers',   name: 'Suppliers',  label: 'How to source?', pathId: 'supplier-management',
+        illu: 'LP-thumbnails/Farvetest/Blip.png',
+        toggleBg: '#F4EEFF', bg: '#FDFCFF', btn: '#E1DBEB', btnT: '#221D2E', bdr: '#D8D0E8', dot: '#E1DBEB', bar: '#7B68AA' },
+      { key: 'functionality', name: 'Software', label: 'Inact Now', pathId: 'now-fundamentals',
+        illu: 'LP-thumbnails/Farvetest/Blæp.png',
+        toggleBg: '#F1F6FF', bg: '#F5F9FF', btn: '#DBE9FF', btnT: '#1A2535', bdr: '#D0DFEF', dot: '#DBE9FF', bar: '#5888D0' },
+    ];
+
+    const PATHS = [
+      {
+        id: 'inventory-management', title: 'Inventory Management', category: 'inventory',
+        desc: 'Learn the core principles and practical tools of effective inventory management with Inact Now, and apply them in your daily operations.',
+        duration: '1 hr 7 min', courseCount: 6, href: 'hub.html', pathParam: 'inventory', hubFile: 'hub.html',
+        courseIds: ['intro','double-abc','stock-policy','safety-stock','reorder-point','reorder-quantity'],
+        gradFrom: '#243a38', gradTo: '#3a5850',
+      },
+      {
+        id: 'supplier-management', title: 'Supplier Management', category: 'suppliers',
+        desc: 'Learn how to manage, negotiate and monitor your suppliers effectively using Inact Now.',
+        duration: '45 min', courseCount: 4, href: 'supplier-hub.html', pathParam: 'supplier', hubFile: 'supplier-hub.html',
+        courseIds: ['suppliers-intro','supplier-performance','spend-analysis','supplier-negotiation'],
+        gradFrom: '#2a3e30', gradTo: '#425e48',
+      },
+      {
+        id: 'now-fundamentals', title: 'Inact Now Fundamentals', category: 'functionality',
+        desc: 'Overview and walkthrough of core Inact Now areas: home, insights, actions, and dashboards.',
+        duration: '32 min', courseCount: 5, href: 'now-hub.html', pathParam: 'now', hubFile: 'now-hub.html',
+        courseIds: ['now-intro','now-home','now-insights','now-actions','now-dashboards'],
+        gradFrom: '#2e4a44', gradTo: '#4a6a60',
+      },
+    ];
+
+    // All courses, each with enough context to build the card and the link
+    const ALL_COURSES = [
+      // Inventory
+      { id: 'intro',           title: 'Introduction',         description: 'The big picture of inventory: what to stock, how much, and why balance matters.',               duration: '8 min',  file: 'Intro.txt',                  thumbnail: 'Course-thumbnails/Inventory/Inventory_Intro.png',     pathId: 'inventory-management', pathParam: 'inventory', hubFile: 'hub.html',          category: 'inventory' },
+      { id: 'double-abc',      title: 'Double ABC Analysis',  description: 'Turn messy inventory into clear priorities with the Double ABC model.',                          duration: '15 min', file: 'Double-ABC-Analysis-4.txt',    thumbnail: 'Course-thumbnails/Inventory/Double_ABC.png',           pathId: 'inventory-management', pathParam: 'inventory', hubFile: 'hub.html',          category: 'inventory' },
+      { id: 'stock-policy',    title: 'Stock Policy',         description: 'Decide what belongs on the shelf vs. buy-to-order and apply it in Inact.',                       duration: '10 min', file: 'Stock-Policy.txt',             thumbnail: 'Course-thumbnails/Inventory/Stock_Policy.png',         pathId: 'inventory-management', pathParam: 'inventory', hubFile: 'hub.html',          category: 'inventory' },
+      { id: 'safety-stock',    title: 'Safety Stock',         description: 'Set the right buffer using variance, lead time, and service level.',                             duration: '12 min', file: 'Safety-Stock.txt',             thumbnail: 'Course-thumbnails/Inventory/Safety_Stock.png',         pathId: 'inventory-management', pathParam: 'inventory', hubFile: 'hub.html',          category: 'inventory' },
+      { id: 'reorder-point',   title: 'Reorder Point',        description: 'Learn the reorder point formula and automate it in Inact Now.',                                  duration: '10 min', file: 'Reorder-Point.txt',            thumbnail: 'Course-thumbnails/Inventory/Reorder_Point.png',        pathId: 'inventory-management', pathParam: 'inventory', hubFile: 'hub.html',          category: 'inventory' },
+      { id: 'reorder-quantity',title: 'Reorder Quantity',     description: 'Find the right order size by balancing price, demand, and turnover.',                            duration: '12 min', file: 'Reorder-Quantity.txt',         thumbnail: 'Course-thumbnails/Inventory/Reorder_Quantity.png',     pathId: 'inventory-management', pathParam: 'inventory', hubFile: 'hub.html',          category: 'inventory' },
+      // Suppliers
+      { id: 'suppliers-intro',      title: 'Introduction',              description: 'The big picture of supplier management and what this learning path covers.',                       duration: '5 min',  file: 'Suppliers-Intro-2.txt',        thumbnail: 'Course-thumbnails/Suppliers/Suppliers_Intro.png',      pathId: 'supplier-management',  pathParam: 'supplier', hubFile: 'supplier-hub.html',  category: 'suppliers' },
+      { id: 'supplier-performance', title: 'Supplier Performance',      description: 'Measure and compare your suppliers using five key performance indicators in Inact Now.',           duration: '12 min', file: 'Supplier-Performance.txt',     thumbnail: 'Course-thumbnails/Suppliers/Supplier_Performance.png', pathId: 'supplier-management',  pathParam: 'supplier', hubFile: 'supplier-hub.html',  category: 'suppliers' },
+      { id: 'spend-analysis',       title: 'Spend Analysis',            description: 'Uncover inefficiencies and reduce costs using spend data in Inact Now.',                           duration: '10 min', file: 'Spend-Analysis.txt',           thumbnail: 'Course-thumbnails/Suppliers/Spend_Analysis.png',       pathId: 'supplier-management',  pathParam: 'supplier', hubFile: 'supplier-hub.html',  category: 'suppliers' },
+      { id: 'supplier-negotiation', title: 'Supplier Negotiation',      description: 'Use supplier and spend insights to set goals and negotiate with leverage in Inact Now.',           duration: '8 min',  file: 'Supplier-Negotiation.txt',     thumbnail: 'Course-thumbnails/Suppliers/Supplier_Negotiation.png', pathId: 'supplier-management',  pathParam: 'supplier', hubFile: 'supplier-hub.html',  category: 'suppliers' },
+      // Software
+      { id: 'now-intro',       title: 'Introduction',          description: 'Get a high-level overview of the Inact Now platform and its four core areas.',                    duration: '3 min',  file: 'Now-Intro.txt',                thumbnail: 'Course-thumbnails/Fundamentals/Intro.png',             pathId: 'now-fundamentals',     pathParam: 'now',      hubFile: 'now-hub.html',       category: 'functionality' },
+      { id: 'now-home',        title: 'Inact Now: Home',       description: 'Learn how your Home screen connects you to Dashboards, Insights, and Actions.',                  duration: '3 min',  file: 'Now-Home.txt',                 thumbnail: 'Course-thumbnails/Fundamentals/Home.png',              pathId: 'now-fundamentals',     pathParam: 'now',      hubFile: 'now-hub.html',       category: 'functionality' },
+      { id: 'now-insights',    title: 'Inact Now: Insights',   description: 'Navigate views, apply filters, and drill down to uncover opportunities in your supply chain.',   duration: '10 min', file: 'Now-Insights.txt',             thumbnail: 'Course-thumbnails/Fundamentals/Insights.png',          pathId: 'now-fundamentals',     pathParam: 'now',      hubFile: 'now-hub.html',       category: 'functionality' },
+      { id: 'now-actions',     title: 'Inact Now: Actions',    description: 'Learn how Actions work and how to navigate, filter, and sort through your lists.',               duration: '8 min',  file: 'Now-Actions.txt',              thumbnail: 'Course-thumbnails/Fundamentals/Actions.png',           pathId: 'now-fundamentals',     pathParam: 'now',      hubFile: 'now-hub.html',       category: 'functionality' },
+      { id: 'now-dashboards',  title: 'Inact Now: Dashboards', description: 'Monitor your key KPIs at a glance using Widgets, Tables, and drill-down Trend Views.',           duration: '5 min',  file: 'Now-Dashboards.txt',           thumbnail: 'Course-thumbnails/Fundamentals/Dashboards.png',        pathId: 'now-fundamentals',     pathParam: 'now',      hubFile: 'now-hub.html',       category: 'functionality' },
+      // Standalone resources — Quick Resources only
+      { id: 'shortcuts',    title: 'Keyboard Shortcuts', description: 'Every keyboard shortcut in Inact Now in one place. Navigate views, filter lists, and bulk-edit faster.',           duration: '3 min', file: null, thumbnail: null, pathId: null, pathParam: null, hubFile: null, category: 'general' },
+      { id: 'kpi-glossary', title: 'KPI Glossary',       description: 'Definitions for all key performance indicators across Inact Now dashboards and reports, with formula references.', duration: '5 min', file: null, thumbnail: null, pathId: null, pathParam: null, hubFile: null, category: 'general' },
+    ];
+
+    // ── Topic icons (same SVG paths as the solution toggle) ───────────
+    const TYPE_ICONS = {
+      all:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>`,
+      lp:     `<svg viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.75 1.86137C0.75 1.24773 1.26167 0.750271 1.89286 0.750271H4.17857C4.80975 0.750271 5.32143 1.24773 5.32143 1.86137V4.08356C5.32143 4.69721 4.80975 5.19466 4.17857 5.19466H1.89286C1.26167 5.19466 0.75 4.69721 0.75 4.08356V1.86137Z" fill="currentColor"/><path d="M12.1786 1.8611C12.1786 1.24746 12.6902 0.75 13.3214 0.75H15.6071C16.2383 0.75 16.75 1.24746 16.75 1.8611V4.08329C16.75 4.69694 16.2383 5.19439 15.6071 5.19439H13.3214C12.6902 5.19439 12.1786 4.69694 12.1786 4.08329V1.8611Z" fill="currentColor"/><path d="M0.75 12.4167C0.75 11.8031 1.26167 11.3056 1.89286 11.3056H4.17857C4.80975 11.3056 5.32143 11.8031 5.32143 12.4167V14.6389C5.32143 15.2525 4.80975 15.75 4.17857 15.75H1.89286C1.26167 15.75 0.75 15.2525 0.75 14.6389V12.4167Z" fill="currentColor"/><path d="M12.1786 12.4167C12.1786 11.8031 12.6902 11.3056 13.3214 11.3056H15.6071C16.2383 11.3056 16.75 11.8031 16.75 12.4167V14.6389C16.75 15.2525 16.2383 15.75 15.6071 15.75H13.3214C12.6902 15.75 12.1786 15.2525 12.1786 14.6389V12.4167Z" fill="currentColor"/><path d="M3.03571 2.41683H14.4643L3.03571 13.5278H14.4643" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+      course: `<svg viewBox="0 0 46 37" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M37.0001 28.2942C37.0001 28.632 36.9215 28.9654 36.7705 29.2677L34.8236 28.2942C36.6379 29.2013 36.7604 29.2644 36.7685 29.2697L36.7641 29.2782C36.7641 29.2782 36.76 29.2866 36.7578 29.291C36.753 29.3001 36.7472 29.3108 36.7409 29.323C36.7278 29.3478 36.7121 29.3796 36.6919 29.4164C36.6514 29.4901 36.5948 29.5866 36.5239 29.7034C36.3822 29.937 36.1769 30.2519 35.9012 30.6195C35.3503 31.3539 34.5128 32.3109 33.3273 33.2591C30.9288 35.1781 27.1905 37.0001 21.7648 37.0001C16.339 37.0001 12.6008 35.1781 10.2023 33.2591C9.01686 32.3109 8.17927 31.3539 7.62836 30.6195C7.35271 30.2519 7.14749 29.937 7.00561 29.7034C6.93472 29.5866 6.87824 29.4901 6.83769 29.4164C6.81743 29.3796 6.80187 29.3478 6.78881 29.323C6.78243 29.3108 6.77649 29.3001 6.77181 29.291C6.76957 29.2866 6.76544 29.2782 6.76544 29.2782L6.76119 29.2718C6.76903 29.2666 6.89176 29.2013 8.70598 28.2942L6.75906 29.2677C6.60797 28.9654 6.52951 28.632 6.52951 28.2942V21.701L19.1228 28.6979C19.1798 28.7297 19.2383 28.7591 19.2971 28.7874L19.55 28.9084C19.6175 28.9406 19.6869 28.9724 19.7561 28.9998C21.2649 29.599 22.9732 29.4941 24.4068 28.6979L37.0001 21.701V28.2942ZM20.9615 0.153127C21.5632 -0.0858933 22.2464 -0.0447803 22.8212 0.274268L42.352 11.1247L44.503 12.2002L44.7666 12.3554C45.3497 12.7578 45.706 13.4258 45.706 14.1471V28.2942H41.353V15.5479L22.8212 25.8435C22.2464 26.1628 21.5632 26.2037 20.9615 25.9647L20.7083 25.8435L1.12022 14.9611C0.429343 14.5772 9.91821e-05 13.8492 9.91821e-05 13.0589C0.00022977 12.2686 0.429364 11.5404 1.12022 11.1566L20.7083 0.274268L20.9615 0.153127Z" fill="currentColor"/></svg>`,
+    };
+
+    const TOPIC_ICONS = {
+      all:          `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>`,
+      inventory:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12V9a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/><path d="M16 20v-3a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3"/><path d="M20 22V2"/><path d="M4 12h16"/><path d="M4 20h16"/><path d="M4 2v20"/><path d="M4 4h16"/></svg>`,
+      suppliers:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-1"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>`,
+      functionality:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>`,
+      general:      `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
+    };
+
+    const GENERAL_SOL = { key: 'general', name: 'Quick Resources', label: 'Standalone', bar: '#8A9A97', toggleBg: 'rgba(138,154,151,0.10)', bdr: 'rgba(138,154,151,0.30)' };
+
+    // ── State ─────────────────────────────────────────────────────────
+    let activeTopic = 'all';
+    let activeType  = 'all';
+    let searchQuery = '';
+    let activeSort  = 'relevant';
+
+    function parseDuration(str) {
+      if (!str) return 0;
+      const hr = str.match(/(\d+)\s*hr/);
+      const mn = str.match(/(\d+)\s*min/);
+      return (hr ? parseInt(hr[1]) * 60 : 0) + (mn ? parseInt(mn[1]) : 0);
+    }
+
+    // ── Progress helpers ──────────────────────────────────────────────
+    function hexToRgba(hex, alpha) {
+      const r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+      return `rgba(${r},${g},${b},${alpha})`;
+    }
+
+    function getLPProgress(path) {
+      if (!path.courseIds || !path.courseIds.length) return { done: 0, total: 0, pct: 0, started: false };
+      const total = path.courseIds.length;
+      let done = 0, totalProgress = 0;
+      for (const cid of path.courseIds) {
+        const raw = localStorage.getItem('course_progress_' + cid);
+        if (raw) {
+          try {
+            const data = JSON.parse(raw);
+            if (data.completed) { done++; totalProgress += 100; }
+            else { totalProgress += (data.progress || 0); }
+          } catch { if (raw === 'completed') { done++; totalProgress += 100; } }
+        }
+      }
+      return { done, total, pct: Math.round(totalProgress / total), started: totalProgress > 0 };
+    }
+
+    function getNextCourseHref(path) {
+      for (const cid of path.courseIds) {
+        const { completed } = getCourseProgress(cid);
+        if (!completed) {
+          const course = ALL_COURSES.find(c => c.id === cid && c.pathId === path.id);
+          if (course) return `course.html?course=${course.file}&path=${course.pathParam}&hub=${course.hubFile}&from=catalog`;
+        }
+      }
+      // All completed — return to first course for review
+      const first = ALL_COURSES.find(c => c.id === path.courseIds[0] && c.pathId === path.id);
+      return first ? `course.html?course=${first.file}&path=${first.pathParam}&hub=${first.hubFile}&from=catalog` : `${path.href}?from=catalog`;
+    }
+
+    function getCourseProgress(courseId) {
+      const key = 'course_progress_' + courseId;
+      const saved = localStorage.getItem(key);
+      try { return saved ? JSON.parse(saved) : { completed: false, progress: 0 }; }
+      catch { return { completed: false, progress: 0 }; }
+    }
+
+    // ── Card renderers ────────────────────────────────────────────────
+    const BM_SVG = '<svg viewBox="0 0 14 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1H2C1.44772 1 1 1.44772 1 2V15.1745C1 15.9644 1.87272 16.4425 2.53837 16.0172L6.28636 13.6228C6.60517 13.4191 7.01163 13.4128 7.33663 13.6065L11.4881 16.0803C12.1547 16.4775 13 15.9972 13 15.2213V2C13 1.44772 12.5523 1 12 1Z"/></svg>';
+    const ARROW_IMG = '<img class="course-cta-arrow" src="SVGs/Up-Arrow.svg" alt="" aria-hidden="true">';
+
+    function renderSectionHeader(sol, isFirst) {
+      const icon = TOPIC_ICONS[sol.key] || TOPIC_ICONS.all;
+      return `<div class="catalog-section-header${isFirst ? ' is-first' : ''}" style="--sol-bar:${sol.bar};--sol-bg:${sol.toggleBg};--sol-bdr:${sol.bdr || 'rgba(48,70,66,0.15)'}">
+        <span class="section-header-icon">${icon}</span>
+        <div class="section-header-text">
+          <span class="section-header-eyebrow">${sol.label}</span>
+          <span class="section-header-name">${sol.name}</span>
+        </div>
+        <div class="section-header-line"></div>
+      </div>`;
+    }
+
+    const SHARE_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>';
+
+    function renderLPCard(path) {
+      const sol = SOLUTIONS.find(s => s.pathId === path.id);
+      const prog = getLPProgress(path);
+      const pct  = prog.pct;
+      const ctaText = pct === 100 ? 'Review' : (prog.started ? 'Continue' : 'Open path');
+      const continueHref = getNextCourseHref(path);
+      const cardBdr  = sol ? sol.bdr  : 'transparent';
+      const cardGlow = sol ? hexToRgba(sol.bar, 0.16) : 'rgba(48,70,66,0.10)';
+      const pillBg   = sol ? hexToRgba(sol.btn, 0.40) : 'rgba(48,70,66,0.07)';
+      const barClass = 'card-progress' + (pct === 100 ? ' completed' : '');
+
+      const cardTopHtml = sol && sol.illu
+        ? `<div class="course-card-top" style="background:${sol.toggleBg};--pill-bg:${pillBg}">
+            <img class="course-card-thumb" src="${sol.illu}" alt="" loading="lazy">
+            <div class="card-top-bar">
+              <div class="card-type-pill" style="background:${pillBg}"><span class="card-type-icon"></span>Learning Path</div>
+              <div class="card-top-right">
+                <div class="course-duration-pill">${path.duration}</div>
+                <button class="card-bm-btn" tabindex="-1" aria-hidden="true">${BM_SVG}</button>
+              </div>
+            </div>
+          </div>`
+        : `<div class="course-card-top standalone-thumb" style="--card-bg:${sol ? sol.bg : '#F5F7F5'};--pill-bg:${pillBg}">
+            <span class="standalone-thumb-icon">${TOPIC_ICONS[path.category] || TOPIC_ICONS.all}</span>
+            <div class="card-top-bar">
+              <div class="card-type-pill" style="background:${pillBg}"><span class="card-type-icon"></span>Learning Path</div>
+              <div class="card-top-right">
+                <div class="course-duration-pill">${path.duration}</div>
+                <button class="card-bm-btn" tabindex="-1" aria-hidden="true">${BM_SVG}</button>
+              </div>
+            </div>
+          </div>`;
+
+      return `<div class="course-card" data-href="${path.href}?from=catalog" tabindex="0" style="--card-bdr:${cardBdr};--card-glow:${cardGlow}">
+        ${cardTopHtml}
+        <div class="${barClass}"><div class="card-progress-fill" style="width:${pct}%"></div></div>
+        <div class="course-card-bottom">
+          <h2 class="course-title">${path.title}</h2>
+          <p class="course-description">${path.desc}</p>
+          <div class="course-cta-row">
+            <a href="${continueHref}" class="course-cta"><span>${ctaText}</span>${ARROW_IMG}</a>
+          </div>
+        </div>
+      </div>`;
+    }
+
+    function renderCourseCard(course) {
+      const { completed, progress } = getCourseProgress(course.id);
+      const isStandalone = !course.pathId;
+      const sol = SOLUTIONS.find(s => s.key === course.category);
+      const cardBdr  = sol ? sol.bdr  : 'transparent';
+      const cardGlow = sol ? hexToRgba(sol.bar, 0.20) : 'rgba(48,70,66,0.22)';
+
+      let href;
+      if (!isStandalone) {
+        href = `course.html?course=${course.file}&path=${course.pathParam}&hub=${course.hubFile}&from=catalog`;
+      } else {
+        const catPath = PATHS.find(p => p.category === course.category);
+        href = catPath ? `${catPath.hubFile}?from=catalog` : '#';
+      }
+      const ctaText = completed ? 'Review' : (progress > 0 ? 'Continue' : 'Start');
+      const pct = completed ? 100 : progress;
+      const barClass = 'card-progress' + (completed ? ' completed' : '');
+
+      const pillBg = sol ? hexToRgba(sol.btn, 0.40) : 'rgba(48,70,66,0.07)';
+      let cardTopHtml;
+      if (course.thumbnail) {
+        cardTopHtml = `<div class="course-card-top" style="--pill-bg:${pillBg}">
+          <img class="course-card-thumb" src="${course.thumbnail}" alt="" loading="lazy">
+          <div class="card-top-bar">
+            <div class="card-type-pill" style="background:${pillBg}"><span class="card-type-icon-course"></span>Course</div>
+            <div class="card-top-right">
+              <div class="course-duration-pill">${course.duration}</div>
+              <button class="card-bm-btn" tabindex="-1" aria-hidden="true">${BM_SVG}</button>
+            </div>
+          </div>
+        </div>`;
+      } else {
+        const thumbBg = sol ? sol.bg : '#F5F7F5';
+        const icon    = TOPIC_ICONS[course.category] || TOPIC_ICONS.general;
+        cardTopHtml = `<div class="course-card-top standalone-thumb" style="--card-bg:${thumbBg};--pill-bg:${pillBg}">
+          <span class="standalone-thumb-icon">${icon}</span>
+          <div class="card-top-bar">
+            <div class="card-type-pill" style="background:${pillBg}"><span class="card-type-icon-course"></span>Course</div>
+            <div class="card-top-right">
+              <div class="course-duration-pill">${course.duration}</div>
+              <button class="card-bm-btn" tabindex="-1" aria-hidden="true">${BM_SVG}</button>
+            </div>
+          </div>
+        </div>`;
+      }
+
+      return `<div class="course-card" data-href="${href}" tabindex="0" style="--card-bdr:${cardBdr};--card-glow:${cardGlow}">
+        ${cardTopHtml}
+        <div class="${barClass}"><div class="card-progress-fill" style="width:${pct}%"></div></div>
+        <div class="course-card-bottom">
+          <h2 class="course-title">${course.title}</h2>
+          <p class="course-description">${course.description}</p>
+          <div class="course-cta-row">
+            <a href="${href}" class="course-cta"><span>${ctaText}</span>${ARROW_IMG}</a>
+          </div>
+        </div>
+      </div>`;
+    }
+
+    // ── Filter + render (flat mixed list, no section grouping) ──
+    function applyFilters() {
+      const q = searchQuery.toLowerCase().trim();
+      const grid  = document.getElementById('catalog-grid');
+      const empty = document.getElementById('catalog-empty');
+      const meta  = document.getElementById('catalog-meta');
+
+      // Collect visible items: { type: 'lp'|'course', data, title, durationMins }
+      const items = [];
+
+      if (activeType !== 'course') {
+        for (const path of PATHS) {
+          const topicMatches = activeTopic === 'all' || path.category === activeTopic;
+          if (!topicMatches) continue;
+          const pathCourses = ALL_COURSES.filter(c => c.pathId === path.id);
+          const lpQueryMatches = !q
+            || path.title.toLowerCase().includes(q)
+            || path.desc.toLowerCase().includes(q)
+            || pathCourses.some(c => c.title.toLowerCase().includes(q) || c.description.toLowerCase().includes(q));
+          if (lpQueryMatches) items.push({ type: 'lp', data: path, title: path.title, durationMins: parseDuration(path.duration) });
+        }
+      }
+
+      if (activeType !== 'lp') {
+        const visibleCourses = ALL_COURSES.filter(c => {
+          if (activeTopic !== 'all' && c.category !== activeTopic) return false;
+          if (q && !c.title.toLowerCase().includes(q) && !c.description.toLowerCase().includes(q)) return false;
+          return true;
+        });
+        for (const course of visibleCourses) items.push({ type: 'course', data: course, title: course.title, durationMins: parseDuration(course.duration) });
+      }
+
+      // Sort
+      if (activeSort === 'az') {
+        items.sort((a, b) => a.title.localeCompare(b.title));
+      } else if (activeSort === 'shortest') {
+        items.sort((a, b) => a.durationMins - b.durationMins);
+      } else if (activeSort === 'longest') {
+        items.sort((a, b) => b.durationMins - a.durationMins);
+      }
+      // 'relevant': default order (LPs first, then courses) — already natural
+
+      const totalCount = items.length;
+
+      if (totalCount === 0) {
+        grid.innerHTML = '';
+        empty.hidden = false;
+        meta.textContent = '0 resources';
+        return;
+      }
+
+      const html = items.map(item => item.type === 'lp' ? renderLPCard(item.data) : renderCourseCard(item.data)).join('');
+
+      empty.hidden = true;
+      grid.innerHTML = html;
+      meta.textContent = totalCount + ' resource' + (totalCount === 1 ? '' : 's');
+
+      // Card click navigation
+      grid.querySelectorAll('.course-card').forEach(card => {
+        const handleOpen = (ev) => {
+          if (ev.target && ev.target.closest && ev.target.closest('a, button')) return;
+          const href = card.dataset.href;
+          if (href) window.location.href = href;
+        };
+        card.addEventListener('click', handleOpen);
+        card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleOpen(e); } });
+      });
+
+      // IntersectionObserver for card entrance
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+      }, { threshold: 0.08 });
+      grid.querySelectorAll('.course-card').forEach(c => obs.observe(c));
+    }
+
+    // ── Render sidebar filters ────────────────────────────────────────
+    let TOPICS_DATA = [];
+    let TYPES_DATA  = [];
+
+    function renderFilterBar() {
+      TOPICS_DATA = [
+        { key: 'all', name: 'All topics', eyebrow: '' },
+        ...SOLUTIONS.map(s => ({ key: s.key, name: s.name, eyebrow: s.label, bar: s.bar, toggleBg: s.toggleBg })),
+      ];
+      TYPES_DATA = [
+        { key: 'all',    name: 'All types' },
+        { key: 'lp',     name: 'Learning Paths' },
+        { key: 'course', name: 'Courses' },
+      ];
+
+      const topicHtml = TOPICS_DATA.map(t => {
+        const active = activeTopic === t.key;
+        const chipCol = active && t.bar ? t.bar : '';
+        const styleAttr = chipCol ? `style="--chip-color:${chipCol}"` : '';
+        const icon = TOPIC_ICONS[t.key] || TOPIC_ICONS.all;
+        const labelHtml = t.eyebrow
+          ? `<span class="filter-chip-label-wrap"><span class="filter-chip-eyebrow">${t.eyebrow}</span><span class="filter-chip-label">${t.name}</span></span>`
+          : `<span class="filter-chip-label">${t.name}</span>`;
+        return `<button class="filter-chip${active ? ' is-active' : ''}" data-topic="${t.key}" ${styleAttr}>
+          <span class="filter-chip-icon">${icon}</span>${labelHtml}
+        </button>`;
+      }).join('');
+
+      const typeHtml = TYPES_DATA.map(t => {
+        const active = activeType === t.key;
+        const icon = TYPE_ICONS[t.key];
+        return `<button class="filter-chip${active ? ' is-active' : ''}" data-type="${t.key}">
+          <span class="filter-chip-icon">${icon}</span>
+          <span class="filter-chip-label">${t.name}</span>
+        </button>`;
+      }).join('');
+
+      document.getElementById('filter-bar').innerHTML =
+        '<div class="sidebar-section-label">Topic</div>'
+        + `<div class="filter-group" id="filter-group-topic"><div class="filter-pill-indicator"></div>${topicHtml}</div>`
+        + '<div class="sidebar-divider"></div>'
+        + '<div class="sidebar-section-label">Type</div>'
+        + `<div class="filter-group" id="filter-group-type"><div class="filter-pill-indicator"></div>${typeHtml}</div>`;
+
+      document.getElementById('filter-group-topic').addEventListener('click', e => {
+        const btn = e.target.closest('[data-topic]');
+        if (btn) setFilter('topic', btn.dataset.topic);
+      });
+      document.getElementById('filter-group-type').addEventListener('click', e => {
+        const btn = e.target.closest('[data-type]');
+        if (btn) setFilter('type', btn.dataset.type);
+      });
+
+      positionIndicators(true);
+    }
+
+    function setFilter(type, key) {
+      if (type === 'topic') activeTopic = key;
+      else activeType = key;
+
+      const groupId = type === 'topic' ? 'filter-group-topic' : 'filter-group-type';
+      const group = document.getElementById(groupId);
+      const dataAttr = type === 'topic' ? 'topic' : 'type';
+      const data = type === 'topic' ? TOPICS_DATA : TYPES_DATA;
+
+      group.querySelectorAll('.filter-chip').forEach(btn => {
+        const isActive = btn.dataset[dataAttr] === key;
+        btn.classList.toggle('is-active', isActive);
+        if (isActive) {
+          const item = data.find(d => d.key === key);
+          if (item?.bar) btn.style.setProperty('--chip-color', item.bar);
+          else btn.style.removeProperty('--chip-color');
+        } else {
+          btn.style.removeProperty('--chip-color');
+        }
+      });
+
+      positionIndicators(false);
+      applyFilters();
+    }
+
+    function positionIndicators(instant) {
+      document.querySelectorAll('.filter-pill-indicator').forEach(indicator => {
+        const group = indicator.parentElement;
+        const activeChip = group.querySelector('.filter-chip.is-active');
+        if (!activeChip) return;
+
+        const newY = activeChip.offsetTop;
+        const newH = activeChip.offsetHeight;
+
+        if (group.id === 'filter-group-topic') {
+          const item = TOPICS_DATA.find(t => t.key === activeTopic);
+          indicator.style.background = item?.toggleBg || 'oklch(0.96 0.006 165)';
+        } else {
+          indicator.style.background = 'oklch(0.96 0.006 165)';
+        }
+
+        if (instant) {
+          indicator.style.transition = 'none';
+          indicator.style.height = newH + 'px';
+          indicator.style.transform = `translateY(${newY}px)`;
+        } else {
+          indicator.style.transition = 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)';
+          indicator.style.height = newH + 'px';
+          indicator.style.transform = `translateY(${newY}px)`;
+        }
+      });
+    }
+
+    // ── Search ────────────────────────────────────────────────────────
+    document.getElementById('catalog-sort-select').addEventListener('change', e => {
+      activeSort = e.target.value;
+      applyFilters();
+    });
+
+    let searchTimer;
+    document.getElementById('catalog-search').addEventListener('input', e => {
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(() => { searchQuery = e.target.value; applyFilters(); }, 120);
+    });
+
+    // ── Clear filters ─────────────────────────────────────────────────
+    function clearFilters() {
+      activeTopic = 'all';
+      activeType  = 'all';
+      searchQuery = '';
+      document.getElementById('catalog-search').value = '';
+      renderFilterBar();
+      applyFilters();
+    }
+
+    // ── Init ──────────────────────────────────────────────────────────
+    renderFilterBar();
+    applyFilters();
+  </script>
+</body>
+</html>

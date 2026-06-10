@@ -1,0 +1,56 @@
+slide_id: 2d02e8cf-d3d1-4b27-96d9-2d313950a358
+index_title: Welcome to the Course
+title: 
+type: hero
+---
+hero_image: learn/images/143/8c68920a0e0f92b693f1f8b67940cde5fa3ce96f1e999385aa3daab540cf4596
+hero_subtitle: Welcome to the course:
+hero_title: Home
+hero_body: The Home screen is your personal command center in Inact Now. It is the first thing you see when you log in, and it serves as the central hub for everything you need to do your job.
+
+In this course, we will explore how to navigate your starting point, and see how Dashboards, Insights, and Actions are all connected.
+
+**Let’s dive in!**
+---
+> [next] Continue -> c4ab39c0-4a89-42a1-9e6d-da16c77be4b8
+
+slide_id: c4ab39c0-4a89-42a1-9e6d-da16c77be4b8
+index_title: What Is on Your Home Screen?
+title: **What Is on Your Home Screen?**
+layout: standard-2-col
+type: main
+---
+When you log in to Inact Now, your Home tab will look something like the example on the right.
+
+This page is built around three distinct sections: **Dashboards, Actions, and Insights.** Because the platform is tailored to your specific role, your view is personalized.
+
+Depending on your specific tasks and what has been shared with you, you might see all three of these sections, just one or two, or none at all.
+![image/size:450px/align:right/frame:none](learn/images/144/47033e7b38df6eb8e8479861725254cede450a75bd4749c43f9af3dd70b04664)
+---
+> [next] Continue -> d461c2b7-29d8-460f-9db4-31bd52d13646
+
+slide_id: d461c2b7-29d8-460f-9db4-31bd52d13646
+index_title: Your Shortcuts to What Matters
+title: **Your Shortcuts to What Matters**
+type: main
+---
+Each of these sections acts as a shortcut to your most important work. One click takes you straight where you need to go. Here are short explanations of each part:
+![image/size:large/align:center/frame:none](learn/images/145/e00fb8008ba4b9e07b526d2f239028f77ba008c32e83de9b04290f8a5ab6973f)
+
+In the following courses, we will take a deep dive into all three.
+---
+> [next] Continue -> 78ac34ff-dd53-4387-8fb0-9074cefc4c22
+
+slide_id: 78ac34ff-dd53-4387-8fb0-9074cefc4c22
+index_title: Congratulations! You’ve Completed the Home Course
+title: **Congratulations! You’ve Completed the Home Course**
+layout: standard-2-col
+type: main
+---
+You have successfully completed the first step in the learning path! You now understand how your Home screen connects you to the most important parts of your platform.  
+
+Next up is the Insights Course. Here, we’ll take a closer look at what these deep-dive templates can do. You’ll learn how to view and filter your data, and explore practical examples you can apply directly to your own inventory.
+
+**Let’s keep going!**
+![image/size:large/align:right/frame:none](learn/images/143/8c68920a0e0f92b693f1f8b67940cde5fa3ce96f1e999385aa3daab540cf4596)
+---

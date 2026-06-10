@@ -1,0 +1,146 @@
+[id:1/topic: Introduction]
+
+slide_id: 355e2c7e-ce70-4796-a267-ffa5783d111d
+index_title: Welcome to the course: Supplier Negotiation
+title: 
+type: hero
+---
+hero_image: learn/images/131/9806ec1c93ed081159696d61456e4f294e6a60360bac29ff14a9392cf5769d12
+hero_subtitle: Welcome to the course:
+hero_title: Supplier Negotiation
+hero_body: This is the final course in your learning path. We now have full transparency on our suppliers, their performance, and our spend. We know who we buy from and how they perform.
+
+In this course, you will learn how to use that transparency in your supplier negotiations.
+
+**Let’s get started.**
+---
+> [next] Continue -> 61f5652f-7690-44fc-b6f4-acb7e53c99fe
+
+[id:2/topic: The Three Steps in Your Negotiation Strategy]
+
+slide_id: 61f5652f-7690-44fc-b6f4-acb7e53c99fe
+index_title: Introducing the Three Steps
+title: **The Three Steps in Your Negotiation Strategy**
+type: main
+---
+Before entering the meeting room, we recommend using this three-step model:
+![image/size:large/align:center/frame:none](learn/images/132/5f13583ae1f05134c407c231521bbb376579cadf036d998e3c8571bedb123ed6)
+
+**Let’s break down step 1: defining the goal.**
+---
+> [next] Continue -> 7b90575b-f30d-428c-89a0-2cc28c942f0f
+
+slide_id: 7b90575b-f30d-428c-89a0-2cc28c942f0f
+index_title: Step 1: Define the Goal
+title: **Step 1: Define the Goal**
+type: main
+---
+Your goal ultimately determines which levers you should pull, and which Double ABC categories you need to focus on.
+
+Therefore, the first thing you need to do is define what you want to achieve. Below are four of the most common goals in procurement:
+![image/size:large/align:center/frame:none](learn/images/128/406bb50c84780bae907f978768d263ae9c25abc87f0bb60b2035581f4b7acab3)
+
+**Once you know your goal, the next question is: which variables can help you achieve it?**
+---
+> [next] Continue -> f470e8f2-8df3-4489-9147-0dc86a694da5
+
+slide_id: f470e8f2-8df3-4489-9147-0dc86a694da5
+index_title: Step 2: Selecting the Variables
+title: **Step 2: Selecting the Variables**
+type: main
+---
+Once you have a clear goal, you need to identify which variables you can use to achieve it. Pulling different levers leads to different results.
+
+For example, you can negotiate:
+![image/size:large/align:center/frame:none](learn/images/130/b8855ece49f44a634f3305a2562e74805312dd7f66d5ec559cda6149d6afd09c)
+
+**But which products should you focus on based on your goal?**
+---
+> [next] Continue -> b7c5b7a3-4453-45e4-8a9d-50c093da22a5
+
+slide_id: b7c5b7a3-4453-45e4-8a9d-50c093da22a5
+index_title: Step 3: The Differentiated Strategy, AA and AB Products
+title: **Step 3: The Differentiated Strategy**
+layout: standard-2-col
+type: main
+---
+This is where it all comes together.
+
+You need to negotiate using different variables across different Double ABC categories—based on your goal.
+![image/size:650px/align:right/frame:none](learn/images/129/d5b787a98d761721451ba41125501af09ada9f68d6b84bc546aa35cc990dd56a)
+---
+> [next] Continue -> 4451b0bc-beb8-4168-b5e3-1ffcf08bc828
+
+[id:3/topic: Negotiating Based on ABC Categories]
+
+slide_id: 4451b0bc-beb8-4168-b5e3-1ffcf08bc828
+index_title: AA and AB Products
+title: **AA and AB Products**
+layout: standard-2-col
+type: main
+---
+For example, if your goal is earnings, you should focus on high-volume, high-value items - **AA and AB products.** Here, your key variables are cost price, volume and reliabiliy.
+
+Because you buy large quantities, you have strong leverage. You can accept a higher MOQ (volume commitment) in exchange for the lowest possible cost price. Since demand is stable, the risk is low, and even a small reduction in cost price can have a significant impact. Having reliable deliveries is essential for customer satisfaction.
+
+![image/size:650px/align:right/frame:none](learn/images/125/677e577f53e10411ea471b30478713e49813769ebd3bb09bc8c135723f5c2636)
+---
+> [next] Continue -> 0b026ec6-7ced-4845-bf7a-2849764dfc6a
+
+slide_id: 0b026ec6-7ced-4845-bf7a-2849764dfc6a
+index_title: CC, BC and AC Products
+title: **CC, BC and AC Products**
+layout: standard-2-col
+type: main
+---
+On the other hand, if your goal is to reduce the amount of money tied up in inventory, you should focus on **BC and CC items.**
+
+These are low-value items purchased infrequently. The goal is to stay flexible and avoid excess stock. Aim for short lead times, low minimum order quantities, or BTO/MTO setups. If a supplier cannot offer this, it is often easy to switch to one who can.
+
+**AC items** are high-value and also purchased infrequently, which means they can tie up a lot of cash if they sit in stock. Focus on longer payment terms so you pay closer to when the item is sold, and try to reduce risk with lower MOQs or shorter lead times.
+![image/size:650px/align:right/frame:none](learn/images/127/7c69958751a37f73a0c5be3cc99d27f3bc0fd7bdf83a7822ff57024a755be6c7)
+---
+> [next] Continue -> 1402d04e-c63d-48b5-bbda-f1eb7be95622
+
+slide_id: 1402d04e-c63d-48b5-bbda-f1eb7be95622
+index_title: CA and CB Products
+title: **CA and CB Products**
+layout: standard-2-col
+type: main
+---
+**CA and CB items** are low-value products with steady demand. The goal is simple: keep them flowing without disruption.
+
+Even though they do not drive large profits, running out can cause real problems, such as unsatisfied customers. Focus on reliability and efficiency to ensure stable supply, and aim for larger, less frequent orders to reduce administrative work.
+![image/size:650px/align:right/frame:none](learn/images/126/46410b89ecfbb9d038a235add92f25344247f2a5613645de1ebbcf74104e7f95)
+---
+> [next] Continue -> 3c0f9de0-2856-44cb-b3c6-757403656c05
+
+[id:4/topic: How Can Inact Now Help?]
+
+slide_id: 3c0f9de0-2856-44cb-b3c6-757403656c05
+index_title: How Can Inact Now Help Me?
+title: **How Can Inact Now Help Me?**
+type: main
+---
+As you can see, different goals call for different variables, which in turn determine which ABC categories to focus on.
+
+So, how do we use Inact Now to identify these opportunities?
+
+In this tutorial, we will walk you through how to use the Supplier Negotiation Insight. If the window appears too small, click the button in the top right corner to expand it.  
+[supademo: Insight Walkthrough: Supplier Negotiation Framework](https://app.supademo.com/embed/cmn61ncu54lf9z3qm2yudyzz5?embed_v=2&utm_source=embed)
+---
+> [next] Continue -> c4700098-6b72-4c84-9d9a-ee6e0a173401
+
+[id:5/topic: Congratulations! You've Completed the Course]
+
+slide_id: c4700098-6b72-4c84-9d9a-ee6e0a173401
+index_title: Congrats!
+title: **Congratulations! You Have Completed the Supplier Negotiation Course**
+layout: standard-2-col
+type: main
+---
+This was the final course in the Supplier Management learning path. You’ve learned how to identify your most important suppliers, evaluate their performance, analyze your spend, and use these insights to negotiate more effectively with your suppliers.
+
+**Now it's time for action!**
+![image/size:large/align:right/frame:none](learn/images/131/9806ec1c93ed081159696d61456e4f294e6a60360bac29ff14a9392cf5769d12)
+---

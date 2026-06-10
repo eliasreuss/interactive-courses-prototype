@@ -435,7 +435,7 @@
     @keyframes sp-rule { from { transform: scaleX(0); transform-origin: left center; } to { transform: scaleX(1); transform-origin: left center; } }
     @media (prefers-reduced-motion: reduce) { .share-pop.is-open .share-pop-head, .share-pop.is-open .share-pop-name, .share-pop.is-open .share-pop-rule, .share-pop.is-open .share-scope-wrap, .share-pop.is-open .share-actions { animation: none; } }
     .share-pop-head { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px 10px; }
-    .share-pop-label { font-size: 10.5px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #9AADA9; }
+    .share-pop-label { font-size: 10.5px; font-weight: 700; letter-spacing: 1.2px; color: #9AADA9; }
     .share-pop-close { width: 28px; height: 28px; border: none; background: none; cursor: pointer; color: #9AADA9; display: flex; align-items: center; justify-content: center; border-radius: 9px; padding: 0; flex-shrink: 0; transition: background 0.15s, color 0.15s, transform 0.22s cubic-bezier(0.22,1,0.36,1); }
     .share-pop-close:hover { background: rgba(48,70,66,0.08); color: #304642; transform: rotate(90deg); }
     .share-pop-name { padding: 0 20px 16px; font-size: 15px; font-weight: 700; color: #1A2E2B; line-height: 1.3; letter-spacing: -0.2px; }
@@ -1018,7 +1018,7 @@
       <nav class="nav">
         <a href="index.html">Home</a>
         <a href="supplier-hub.html" class="active">Learning Paths</a>
-        <a href="#" class="locked">Catalog<svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></a>
+        <a href="catalog.html">Catalog</a>
         <a href="#" class="locked">Dictionary<svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></a>
       </nav>
     </div>
@@ -1096,7 +1096,7 @@
         description: 'The big picture of supplier management and what this learning path covers.',
         duration: '5 min',
         file: 'Suppliers-Intro-2.txt',
-        thumbnail: 'Course-thumbnails/Supplier-Intro.png'
+        thumbnail: 'Course-thumbnails/Suppliers/Suppliers_Intro.png'
       },
       {
         id: 'supplier-performance',
@@ -1104,7 +1104,7 @@
         description: 'Measure and compare your suppliers using five key performance indicators in Inact Now.',
         duration: '12 min',
         file: 'Supplier-Performance.txt',
-        thumbnail: 'Course-thumbnails/Supplier-Performance.png'
+        thumbnail: 'Course-thumbnails/Suppliers/Supplier_Performance.png'
       },
       {
         id: 'spend-analysis',
@@ -1112,7 +1112,7 @@
         description: 'Uncover inefficiencies and reduce costs using spend data in Inact Now.',
         duration: '10 min',
         file: 'Spend-Analysis.txt',
-        thumbnail: 'Course-thumbnails/SpendAnalysis.png'
+        thumbnail: 'Course-thumbnails/Suppliers/Spend_Analysis.png'
       },
       {
         id: 'supplier-negotiation',
@@ -1120,7 +1120,7 @@
         description: 'Use supplier and spend insights to set goals and negotiate with leverage in Inact Now.',
         duration: '8 min',
         file: 'Supplier-Negotiation.txt',
-        thumbnail: 'Course-thumbnails/Supplier-Negotiation.png'
+        thumbnail: 'Course-thumbnails/Suppliers/Supplier_Negotiation.png'
       }
     ];
 
@@ -1194,6 +1194,7 @@
       return `
         <div class="course-card${isNext ? ' next-course' : ''}" data-course-id="${course.id}" data-href="${href}" tabindex="0">
           <div class="course-card-top">
+            ${course.thumbnail ? `<img class="course-card-thumb" src="${course.thumbnail}" alt="" loading="lazy">` : ''}
             <div class="card-top-bar">
               <div class="card-type-pill"><span class="card-type-icon-course"></span>Course</div>
               <div class="card-top-right">
@@ -1371,16 +1372,22 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
+      const fromParam = new URLSearchParams(window.location.search).get('from');
       const origin = sessionStorage.getItem('hub-origin') || 'catalog';
       const backBtn = document.getElementById('back-btn');
       const backLabel = document.getElementById('back-btn-label');
       if (backBtn) {
-        backBtn.href = 'index.html';
-        if (origin === 'home') {
-          if (backLabel) backLabel.textContent = 'Back to home';
+        if (fromParam === 'catalog') {
+          backBtn.href = 'catalog.html';
+          if (backLabel) backLabel.textContent = 'Catalog';
         } else {
-          if (backLabel) backLabel.textContent = 'Back to learning paths';
-          backBtn.addEventListener('click', () => sessionStorage.setItem('return-view', 'catalog'));
+          backBtn.href = 'index.html';
+          if (origin === 'home') {
+            if (backLabel) backLabel.textContent = 'Back to home';
+          } else {
+            if (backLabel) backLabel.textContent = 'Back to learning paths';
+            backBtn.addEventListener('click', () => sessionStorage.setItem('return-view', 'catalog'));
+          }
         }
       }
       checkReturnFromCourse();

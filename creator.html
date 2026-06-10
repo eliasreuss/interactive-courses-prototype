@@ -851,7 +851,17 @@
         }
         
         .field-group.id-field {
-            flex: 0 0 80px;
+            flex: 0 0 280px;
+        }
+
+        .field-group.id-field .field-input[readonly] {
+            font-size: 0.6875rem;
+            font-family: monospace;
+            color: var(--text-muted);
+            opacity: 0.7;
+            cursor: default;
+            background: transparent;
+            letter-spacing: 0;
         }
         
         .field-group.title-field {
@@ -1356,6 +1366,15 @@
             font-size: 1.1rem;
             font-weight: 600;
             color: var(--accent-green);
+        }
+
+        .sq-id-badge {
+            font-size: 0.6875rem;
+            font-family: monospace;
+            font-weight: 500;
+            color: var(--text-muted);
+            opacity: 0.7;
+            margin-left: 8px;
         }
         
         /* Title section */
@@ -2571,6 +2590,7 @@
                 max-height: 82px;
             }
         }
+
     </style>
 </head>
 <body>
@@ -2632,9 +2652,11 @@
 <div class="container">
     
     <!-- Asset folder settings (Option A: images/<course>/...) -->
-    <div class="field-group field-group-full-width" style="margin-bottom: 20px;">
-        <label class="field-label">Assets folder (inside <code>images/</code>)</label>
-        <input id="assets-folder-input" type="text" class="field-input" placeholder="e.g. intro (leave empty to not prefix)">
+    <div style="margin-bottom:20px;">
+        <div class="field-group field-group-full-width" style="margin-bottom:0;">
+            <label class="field-label">Assets folder (inside <code>images/</code>)</label>
+            <input id="assets-folder-input" type="text" class="field-input" placeholder="e.g. intro (leave empty to not prefix)">
+        </div>
     </div>
             
     <div id="nodes-container"></div>
@@ -2692,7 +2714,7 @@
         <div class="node-header">
             <div class="field-group id-field">
                 <label class="field-label">Slide ID</label>
-                <input type="number" class="field-input node-id" required>
+                <input type="text" class="field-input node-id" readonly tabindex="-1">
             </div>
             <div class="field-group title-field">
                 <label class="field-label">Slide Title (shown on slide)</label>
@@ -2849,7 +2871,7 @@
     <div class="sidequest-row">
         <!-- Header with Sidequest number and remove button -->
         <div class="sidequest-card-header">
-            <span class="sidequest-number">Sidequest <span class="sq-number-value">1</span></span>
+            <span class="sidequest-number">Sidequest <span class="sq-number-value">1</span><span class="sq-id-badge"></span></span>
             <button class="btn-remove-small btn-remove">×</button>
             </div>
         
@@ -3315,25 +3337,24 @@ document.addEventListener('DOMContentLoaded', () => {
     function courseDataToMarkdown(courseData) {
         let markdown = '';
         let topicIdCounter = 1;
-        let slideIdCounter = 1;
         let sidequestIdCounter = 1;
         let currentTopicId = null;
         let currentTopicName = null;
         let isFirstSlideInTopic = true;
         const sidequestSlides = [];
         const slideIdMap = new Map();
-        
-        // First pass: assign slide IDs and sidequest IDs
+
+        // First pass: map element index to slide ID and collect sidequest counts
         courseData.forEach((nodeData, index) => {
             // Handle both new format (with type field) and old format (without type)
             const isSectionTitle = nodeData.type === 'section-title' || nodeData.isSectionTitle;
             const isSlide = nodeData.type === 'slide' || (!isSectionTitle && nodeData.id);
-            
+
             if (isSectionTitle) {
                 // Section title - will be handled in second pass
             } else if (isSlide) {
-                slideIdMap.set(index, slideIdCounter++);
-                
+                slideIdMap.set(index, nodeData.id);
+
                 // Count sidequests for this slide
                 if (nodeData.sidequests && nodeData.sidequests.length > 0) {
                     nodeData.sidequests.forEach(() => {
@@ -3816,10 +3837,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Update all node IDs to be sequential based on position
     function updateNodeIds() {
-        const nodeCards = Array.from(nodesContainer.querySelectorAll('.node-card'));
-        nodeCards.forEach((card, index) => {
-            card.querySelector('.node-id').value = index + 1;
-        });
+        // UUIDs are stable — never reassign
     }
     
     function syncIndexTitleButtonState(card) {
@@ -4010,8 +4028,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 sidebarNodes.appendChild(indicator);
             }
         });
+        updateAllSidequestIds();
     }
-    
+
     function clearDropIndicators() {
         document.querySelectorAll('.drop-indicator.active').forEach(el => el.classList.remove('active'));
     }
@@ -4354,9 +4373,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nodesContainer.appendChild(connector);
         }
         
-        // ID will be set by updateNodeIds() after insertion, use temp value for now
-        const nodeCount = nodesContainer.querySelectorAll('.node-card').length;
-        nodeCard.querySelector('.node-id').value = id !== null ? id : nodeCount + 1;
+        nodeCard.querySelector('.node-id').value = id !== null ? id : crypto.randomUUID();
         nodeCard.querySelector('.node-title').value = title;
         
         const titleAlignInput = nodeCard.querySelector('.node-title-align');
@@ -4511,6 +4528,19 @@ document.addEventListener('DOMContentLoaded', () => {
         sidequests.forEach((sq, index) => {
             const numEl = sq.querySelector('.sq-number-value');
             if (numEl) numEl.textContent = index + 1;
+        });
+        updateAllSidequestIds();
+    }
+
+    // Recompute s1, s2, ... globally across all slides and update badges
+    function updateAllSidequestIds() {
+        let counter = 1;
+        nodesContainer.querySelectorAll('.node-card').forEach(card => {
+            card.querySelectorAll('.sidequest-row').forEach(sq => {
+                const badge = sq.querySelector('.sq-id-badge');
+                if (badge) badge.textContent = `· s${counter}`;
+                counter++;
+            });
         });
     }
     
@@ -4721,7 +4751,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (currentBlock) mainNodes.push(currentBlock);
                 const idValue = trimmedLine.split(':').slice(1).join(':').trim();
                 currentBlock = { 
-                    id: parseInt(idValue) || idValue,
+                    id: idValue,
                     connections: {}, 
                     sideQuests: [],
                     content: ''
@@ -4735,7 +4765,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (currentBlock) mainNodes.push(currentBlock);
                 const idValue = trimmedLine.split(':').slice(1).join(':').trim();
                 currentBlock = { 
-                    id: parseInt(idValue) || idValue,
+                    id: idValue,
                     connections: {}, 
                     sideQuests: [],
                     content: ''
@@ -5346,38 +5376,29 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', function(e) {
         // Hero image browse button
         if (e.target.classList.contains('hero-image-browse')) {
-            const imageFile = prompt("Enter the image filename (e.g., intro/hero.png or full URL):");
-            if (!imageFile) return;
-            const imagePath = applyAssetsFolderPrefix(imageFile);
-            const heroImageInput = e.target.closest('.field-group').querySelector('.hero-image');
-            if (heroImageInput) heroImageInput.value = imagePath;
+            const trigger = e.target;
+            const url = prompt("Image path or URL:");
+            if (!url) return;
+            const heroImageInput = trigger.closest('.field-group').querySelector('.hero-image');
+            if (heroImageInput) heroImageInput.value = url.trim();
             return;
         }
-        
+
         if (e.target.classList.contains('add-image-btn')) {
-            const imageFile = prompt("Enter the image filename (e.g., my-image.png):");
-            if (!imageFile) return;
-            const imagePath = applyAssetsFolderPrefix(imageFile);
-
-            const altText = prompt("Enter a short description (alt text):", "image");
-            const size = prompt("Enter image size (e.g., x-small, small, medium, large, third, or a custom height like '150px'):", "large");
-            if (!size) return;
-            const align = prompt("Enter image alignment (left, center, or right):", "center");
-            if (!align) return;
-            const border = prompt("Frame? Type 'none' for no border/shadow, or leave blank:", "");
-
-            let attributes = [];
-            if (size) attributes.push(`size:${size.trim()}`);
-            if (align && ['left', 'center', 'right'].includes(align.trim())) {
-                attributes.push(`align:${align.trim()}`);
-            }
-            if (border && border.trim().length) attributes.push(`frame:${border.trim()}`);
-            
-            const markdown = `![${altText}/${attributes.join('/')}](${imagePath})`;
-            insertTextAtCursor(e.target, markdown);
-            
-            // Close dropdown
+            const trigger = e.target;
             document.querySelectorAll('.media-dropdown.show').forEach(d => d.classList.remove('show'));
+            const url = prompt("Image path or URL:");
+            if (!url) return;
+            const altText = prompt("Short description (alt text):", "image") || "image";
+            const size = prompt("Image size (x-small, small, medium, large, third, or '150px'):", "large");
+            if (!size) return;
+            const align = prompt("Alignment (left, center, right):", "center");
+            if (!align) return;
+            const border = prompt("Frame? Leave blank for default, or type 'none':", "");
+            let attributes = [`size:${size.trim()}`];
+            if (['left','center','right'].includes(align.trim())) attributes.push(`align:${align.trim()}`);
+            if (border && border.trim().length) attributes.push(`frame:${border.trim()}`);
+            insertTextAtCursor(trigger, `![${altText}/${attributes.join('/')}](${url.trim()})`);
         }
 
         if (e.target.classList.contains('add-video-controls-btn')) {
@@ -5427,29 +5448,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         if (e.target.classList.contains('add-image-row-btn')) {
+            const trigger = e.target;
+            document.querySelectorAll('.media-dropdown.show').forEach(d => d.classList.remove('show'));
             const countStr = prompt("How many images in the row? (2-4)", "3");
             if (!countStr) return;
             const count = Math.max(2, Math.min(4, parseInt(countStr, 10) || 3));
             const sizeDefault = count === 4 ? 'fourth' : (count === 3 ? 'third' : (count === 2 ? 'medium' : 'small'));
-            const size = prompt("Enter image size for the row (e.g., fourth, third, small, medium, large or '200px'):", sizeDefault);
+            const size = prompt("Image size for the row (fourth, third, small, medium, large or '200px'):", sizeDefault);
             if (!size) return;
-            const align = prompt("Enter row alignment (left, center, right):", "center");
+            const align = prompt("Row alignment (left, center, right):", "center");
             if (!align) return;
-            const border = prompt("Frame? Type 'none' for no border/shadow, or leave blank for default:", "none");
+            const border = prompt("Frame? 'none' for no border, blank for default:", "none");
+
             const cols = [];
             for (let i = 1; i <= count; i++) {
-                const file = prompt(`Image ${i} filename (e.g., img${i}.png):`);
-                if (!file) return;
-                const filePath = applyAssetsFolderPrefix(file);
+                const url = prompt(`Image ${i} path or URL:`);
+                if (!url) return;
                 const alt = prompt(`Image ${i} alt text:`, `image ${i}`) || `image ${i}`;
                 const attrs = [`size:${size.trim()}`, `align:${align.trim()}`];
                 if (border && border.trim().length) attrs.push(`frame:${border.trim()}`);
-                cols.push(`{column}\n![${alt}/${attrs.join('/')}](${filePath})\n{/column}`);
+                cols.push(`{column}\n![${alt}/${attrs.join('/')}](${url.trim()})\n{/column}`);
             }
-            const row = `{columns}\n${cols.join('\n')}\n{/columns}\n`;
-            insertTextAtCursor(e.target, row);
-            
-            document.querySelectorAll('.media-dropdown.show').forEach(d => d.classList.remove('show'));
+            insertTextAtCursor(trigger, `{columns}\n${cols.join('\n')}\n{/columns}\n`);
         }
 
         if (e.target.classList.contains('add-quote-btn')) {
@@ -5715,17 +5735,15 @@ document.addEventListener('DOMContentLoaded', () => {
             el.classList.contains('section-title-card') || el.classList.contains('node-card')
         );
         
-        let slideIdCounter = 1;
         let topicIdCounter = 1;
-        const slideIdMap = new Map(); // Map element index to slide ID
+        const slideIdMap = new Map(); // Map element index to slide UUID
         const sidequestIdMap = new Map(); // Map sidequest to its ID (s1, s2, etc.)
-        
-        // First pass: assign IDs to all slides (not sections) and collect sidequests
+
+        // First pass: record each slide's UUID and collect sidequests
         allElements.forEach((element, index) => {
             if (element.classList.contains('node-card')) {
-                slideIdMap.set(index, slideIdCounter);
-                slideIdCounter++;
-                
+                slideIdMap.set(index, element.querySelector('.node-id').value);
+
                 // Also collect sidequests and assign IDs
                 element.querySelectorAll('.sidequest-row').forEach((sq, sqIdx) => {
                     const sqKey = `${index}-${sqIdx}`;
