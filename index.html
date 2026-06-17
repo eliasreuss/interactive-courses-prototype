@@ -987,7 +987,7 @@
   /* ── PATH FILTER TABS ── */
   .path-tabs {
     display: inline-flex; align-items: center; gap: 3px;
-    background: oklch(0.995 0.003 165 / 0.95); border-radius: 100px;
+    background: rgba(255,255,255,0.95); border-radius: 100px;
     padding: 8px 10px;
     box-shadow: 0 0 0 1px rgba(48,70,66,0.07), 0 1px 4px rgba(48,70,66,0.04);
     transition: box-shadow 0.4s cubic-bezier(0.16,1,0.3,1);
@@ -1645,15 +1645,17 @@ const PATHS = [
     category: 'products'
   },
   {
-    id: 'advanced-insights',
-    title: 'Becoming a great admin',
-    desc: 'Dive deeper into customer-level analytics to drive commercial decisions.',
-    courseCount: 7, duration: '52 min',
-    thumbnail: null, href: '#',
-    courseIds: [], courseNames: [],
-    comingSoon: true,
+    id: 'admin',
+    title: 'Inact Now For Super Users and Admins',
+    desc: 'Learn how to configure, customize, and manage Inact Now for your organization—from user roles and standard setup to building your own dashboards and actions.',
+    courseCount: 4, duration: '40 min',
+    thumbnail: 'LP-thumbnails/LP-Thumbnail-Inventory-Solution.png',
+    href: 'admin-hub.html', pathParam: 'admin', hubFile: 'admin-hub.html',
+    courseIds: ['admin-intro', 'admin-standard', 'admin-custom', 'admin-manage'],
+    courseNames: ['Introduction: Super Users and Admins', 'Your Standard Solution', 'Customising Your Solution', 'Managing Users'],
+    courseFiles: { 'admin-intro': 'Admin-Intro.txt', 'admin-standard': 'Admin-Standard.txt', 'admin-custom': 'Admin-Custom.txt', 'admin-manage': 'Admin-Manage.txt' },
     gradFrom: '#303030', gradTo: '#505050',
-    category: 'customers'
+    category: 'functionality'
   },
   {
     id: 'end2end',
@@ -2353,6 +2355,34 @@ window.addEventListener('pageshow', e => { if (e.persisted) render(); });
 
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && pop.classList.contains('is-open')) { e.preventDefault(); closePop(); }
+  });
+})();
+</script>
+<script>
+  window.process = { env: { NODE_ENV: 'production' } };
+  window.INACT_CHAT_API_URL = "https://eliasreuss-in-chatbot.hf.space/api/chat"
+</script>
+<script src="https://eliasreuss-in-chatbot.hf.space/widget/inact-widget.js"></script>
+<script>
+(function() {
+  var KEY = 'inact_widget_open';
+  function waitFor(sel, cb) {
+    if (document.querySelector(sel)) { cb(); return; }
+    var obs = new MutationObserver(function() {
+      if (document.querySelector(sel)) { obs.disconnect(); cb(); }
+    });
+    obs.observe(document.body, { childList: true, subtree: true });
+  }
+  waitFor('.cw-anchor', function() {
+    var anchor = document.querySelector('.cw-anchor');
+    if (sessionStorage.getItem(KEY) === '1') {
+      var trigger = anchor.querySelector('.cw-trigger');
+      if (trigger) trigger.click();
+    }
+    var obs = new MutationObserver(function() {
+      sessionStorage.setItem(KEY, anchor.querySelector('.cw-panel') ? '1' : '0');
+    });
+    obs.observe(anchor, { childList: true, subtree: true });
   });
 })();
 </script>

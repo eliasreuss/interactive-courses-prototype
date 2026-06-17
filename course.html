@@ -3343,7 +3343,11 @@
       'Now-Home.txt': 'now-home',
       'Now-Insights.txt': 'now-insights',
       'Now-Actions.txt': 'now-actions',
-      'Now-Dashboards.txt': 'now-dashboards'
+      'Now-Dashboards.txt': 'now-dashboards',
+      'Admin-Intro.txt': 'admin-intro',
+      'Admin-Standard.txt': 'admin-standard',
+      'Admin-Custom.txt': 'admin-custom',
+      'Admin-Manage.txt': 'admin-manage'
     };
 
     // Learning path orders (keyed by coursePath, used for the last-slide CTA)
@@ -3368,6 +3372,12 @@
         'Now-Insights.txt',
         'Now-Actions.txt',
         'Now-Dashboards.txt'
+      ],
+      admin: [
+        'Admin-Intro.txt',
+        'Admin-Standard.txt',
+        'Admin-Custom.txt',
+        'Admin-Manage.txt'
       ]
     };
     
@@ -3417,6 +3427,7 @@
             inventory: 'Inventory Management',
             supplier: 'Supplier Management',
             now: 'Inact Now Fundamentals',
+            admin: 'Inact Now For Super Users and Admins',
           };
           const lpName = LP_NAMES[coursePath] || 'a learning path';
           document.getElementById('lp-nudge-name').textContent = lpName;
@@ -3803,5 +3814,34 @@
     </button>
   </div>
 </div>
+<style>.cw-anchor { right: auto !important; left: 24px; align-items: flex-start; }</style>
+<script>
+  window.process = { env: { NODE_ENV: 'production' } };
+  window.INACT_CHAT_API_URL = "https://eliasreuss-in-chatbot.hf.space/api/chat"
+</script>
+<script src="https://eliasreuss-in-chatbot.hf.space/widget/inact-widget.js"></script>
+<script>
+(function() {
+  var KEY = 'inact_widget_open';
+  function waitFor(sel, cb) {
+    if (document.querySelector(sel)) { cb(); return; }
+    var obs = new MutationObserver(function() {
+      if (document.querySelector(sel)) { obs.disconnect(); cb(); }
+    });
+    obs.observe(document.body, { childList: true, subtree: true });
+  }
+  waitFor('.cw-anchor', function() {
+    var anchor = document.querySelector('.cw-anchor');
+    if (sessionStorage.getItem(KEY) === '1') {
+      var trigger = anchor.querySelector('.cw-trigger');
+      if (trigger) trigger.click();
+    }
+    var obs = new MutationObserver(function() {
+      sessionStorage.setItem(KEY, anchor.querySelector('.cw-panel') ? '1' : '0');
+    });
+    obs.observe(anchor, { childList: true, subtree: true });
+  });
+})();
+</script>
 </body>
 </html>

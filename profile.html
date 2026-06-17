@@ -745,5 +745,33 @@
   const lastHub = localStorage.getItem('lastHub');
   if (lastHub) document.getElementById('nav-paths').href = lastHub;
 </script>
+<script>
+  window.process = { env: { NODE_ENV: 'production' } };
+  window.INACT_CHAT_API_URL = "https://eliasreuss-in-chatbot.hf.space/api/chat"
+</script>
+<script src="https://eliasreuss-in-chatbot.hf.space/widget/inact-widget.js"></script>
+<script>
+(function() {
+  var KEY = 'inact_widget_open';
+  function waitFor(sel, cb) {
+    if (document.querySelector(sel)) { cb(); return; }
+    var obs = new MutationObserver(function() {
+      if (document.querySelector(sel)) { obs.disconnect(); cb(); }
+    });
+    obs.observe(document.body, { childList: true, subtree: true });
+  }
+  waitFor('.cw-anchor', function() {
+    var anchor = document.querySelector('.cw-anchor');
+    if (sessionStorage.getItem(KEY) === '1') {
+      var trigger = anchor.querySelector('.cw-trigger');
+      if (trigger) trigger.click();
+    }
+    var obs = new MutationObserver(function() {
+      sessionStorage.setItem(KEY, anchor.querySelector('.cw-panel') ? '1' : '0');
+    });
+    obs.observe(anchor, { childList: true, subtree: true });
+  });
+})();
+</script>
 </body>
 </html>

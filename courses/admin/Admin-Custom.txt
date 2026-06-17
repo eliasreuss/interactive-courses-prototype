@@ -1,0 +1,154 @@
+[id:1/topic: Welcome to the Course: Customising Your Solution]
+
+slide_id: 5f9e5cf9-5b16-4564-9fa1-5ac2178b2ef0
+index_title: Welcome to the Course: Customising Your Solution
+title: Welcome to the Course: Customising Your Solution
+type: hero
+---
+hero_image: admin-custom/Hero-Illu.png
+hero_subtitle: Welcome to the course:
+hero_title: Customising Your Solution
+hero_body: Your standard setup is a great starting point. In this course you will learn how to create insights, edit them, create actions, and if you are an Admin, build dashboards.
+
+**Let's get started!**
+---
+> [next] Continue -> c0426945-fde9-400c-9968-b69b1bb9e1e0
+
+slide_id: c0426945-fde9-400c-9968-b69b1bb9e1e0
+index_title: Public and Private
+title: Public and Private
+type: main
+layout: standard-2-col
+---
+Anything in Inact Now is either public or private. Public content is visible to everyone in your organization. Private content is only visible to you.
+
+When you create something new, it starts as private. You decide when to make it public.
+
+Editing public content affects everyone who uses it. If you are unsure, work in private first.
+![image/size:500px/align:right/frame:none](admin-custom/Public-Private.png)
+---
+> [next] Continue -> 36a54ee0-b20e-47a6-8942-5b67aa19e1f7
+
+slide_id: 36a54ee0-b20e-47a6-8942-5b67aa19e1f7
+index_title: What You Can Do
+title: What You Can Do
+type: main
+---
+Your role determines what you can create and edit.
+![image/size:large/align:center/frame:none](admin-custom/What-You-Can-Do.png)
+---
+> [next] Continue -> 6a283ef0-8b09-4da8-8f66-1bb6c6b80d45
+
+[id:2/topic: Creating And Editing Insights]
+
+slide_id: 6a283ef0-8b09-4da8-8f66-1bb6c6b80d45
+index_title: Creating an Insight
+title: Creating an Insight
+type: main
+---
+To create a new insight, click the "+ New Insight" button in the Insights tab. This opens a template picker where you can browse existing Insights to use as the foundation of your new Insight.
+
+Select one, give it a name, add slicers and filters, organise it in an Insight Group and then click create. This will add it to your library as a private insight.
+![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Admin/Create-Insight.mp4)
+---
+> [next] Continue -> 3e62aa68-bffb-4c4a-b390-5bd85da43fa7
+
+slide_id: 3e62aa68-bffb-4c4a-b390-5bd85da43fa7
+index_title: Edit Mode
+title: Edit Mode
+type: main
+layout: standard-2-col
+---
+If you want to edit an existing Insight, or the Insight you just created, you can use "Edit Mode". Here you can add or remove columns, change KPIs, and adjust filters. When you save, you choose to keep it private or make it public.
+
+As an Admin you can enter edit mode directly on any public insight. This is powerful, but be careful. Any change you make updates the insight for everyone in your organization immediately.
+
+If you are experimenting, copy the insight first and work on the private copy.
+
+If you want a step-by-step tutorial on how to edit an Insight, click the dark green button below.
+![image/size:550px/align:right/frame:none](admin-custom/Edit-Mode.png)
+---
+> [next] Continue -> faf1e135-aa42-4e1a-a1a0-02d7f53ce0be
+> [sidequest] Show me how to use Edit Mode -> s1
+
+[id:3/topic: Creating Actions]
+
+slide_id: faf1e135-aa42-4e1a-a1a0-02d7f53ce0be
+index_title: Creating Actions
+title: Creating Actions
+type: main
+layout: standard-2-col
+---
+Actions are automated task lists that surface what needs attention. Super Users can create private actions for themselves. Admins can create public actions and distribute them to the whole team.
+
+If you want a step-by-step tutorial on how to create an Action, click the green button below.
+![image/size:400px/align:right/frame:none](admin-custom/Action-Icon.png)
+---
+> [next] Continue -> 783de635-2b3a-4804-b653-ff14f51841dc
+> [sidequest] Show me how to create Actions -> s2
+
+[id:4/topic: Creating Dashboards]
+
+slide_id: 783de635-2b3a-4804-b653-ff14f51841dc
+index_title: Creating Dashboards
+title: Creating Dashboards
+type: main
+layout: standard-2-col
+---
+Creating dashboards is an Admin feature. If you are a Super User, skip to the next slide.
+
+A dashboard is built from your insights. You choose which insights feed into it and how the data is displayed.
+
+If you want a step-by-step tutorial on how to create a dashboard, click the green button below.
+![image/size:400px/align:right/frame:none](admin-custom/Dashboards-Icon.png)
+---
+> [next] Continue -> 9b508bdc-7f67-496c-9471-8e93657d0f09
+> [sidequest] Show me how to create Dashboards -> s3
+
+[id:5/topic: Congratulations! You Have Completed the Custom Course]
+
+slide_id: 9b508bdc-7f67-496c-9471-8e93657d0f09
+index_title: Congratulations! You Have Completed the Custom Course
+title: Congratulations! You Have Completed the Custom Course
+type: main
+layout: standard-2-col
+---
+You now know how to create and customize insights, create actions, and if you are an Admin, build dashboards.
+
+Next up is the Distribution course. You will learn how to use the admin panel to share your content with your team.
+
+Let's keep going!
+![image/size:large/align:right/frame:none](admin-custom/Hero-Illu.png)
+---
+
+[flow-specific-side-quests]
+
+[id:s1/topic: Edit Mode Tutorial Coming Soon...]
+
+slide_id: 1
+title: Edit Mode Tutorial Coming Soon...
+type: sidequest
+backLabel: Return to course
+---
+![image/size:large/align:center/frame:none](admin-custom/Coming-Soon.png)
+---
+
+[id:s2/topic: Creating Actions Tutorial Coming Soon...]
+
+slide_id: 1
+title: Creating Actions Tutorial Coming Soon...
+type: sidequest
+backLabel: Return to course
+---
+![image/size:large/align:center/frame:none](admin-custom/Coming-Soon.png)
+---
+
+[id:s3/topic: Creating Dashboards Tutorial Coming Soon...]
+
+slide_id: 1
+title: Creating Dashboards Tutorial Coming Soon...
+type: sidequest
+backLabel: Return to course
+---
+![image/size:large/align:center/frame:none](admin-custom/Coming-Soon.png)
+---

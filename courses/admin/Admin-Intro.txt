@@ -1,0 +1,63 @@
+slide_id: a4d62933-c4f0-4b6e-b90a-8514ecaf4b8e
+index_title: Welcome to Inact Now for Super Users and Admins
+title: Inact Now for Super Users and Admins
+type: hero
+---
+hero_image: admin-intro/Hero-Illu.png
+hero_subtitle: Welcome to the learning path:
+hero_title: Inact Now for Super Users and Admins
+hero_body: This learning path is for Super Users and Admins in Inact Now. You will learn what your role gives you access to, how to customize you and your users setup, and how to share it with your organization.
+
+**Let's get started!**
+---
+> [next] Continue -> d3549638-b30a-4957-8860-6e7a4d1743f0
+
+slide_id: d3549638-b30a-4957-8860-6e7a4d1743f0
+index_title: One Thing Before You Begin
+title: One Thing Before You Begin
+type: main
+---
+New to Inact Now or need a refresher? Complete Inact Now Fundamentals first. It covers the core features this learning path builds on.
+
+If you already know your way around, you are good to go.
+![image/size:large/align:center/frame:none](admin-intro/Fundamentals-Path.png)
+---
+> [next] Continue -> 8eed0506-4887-4f1f-afe0-fc08f9430606
+> [next:flow] Open Inact Now Fundamentals -> https://inactnow.io/app/#/learn/learning-paths/3
+
+slide_id: 8eed0506-4887-4f1f-afe0-fc08f9430606
+index_title: Not Everyone Has the Same Access
+title: Not Everyone Has the Same Access
+type: main
+---
+In Inact Now, your role determines what you can see and do. There are four user types.
+![image/size:large/align:center/frame:none](admin-intro/User-Types.png)
+---
+> [next] Continue -> 14227170-5eae-4b2e-92d3-045a4aa69ce2
+
+slide_id: 14227170-5eae-4b2e-92d3-045a4aa69ce2
+index_title: What Is Your Role?
+title: What Is Your Role?
+type: main
+layout: standard-2-col
+---
+The quickest way to find out what your role is, is to look at your user color in the top navigation bar in Inact Now. Green means you are a User. Blue means you are a Super User. Purple means you are an Admin.
+
+If you only see a Home tab, you are a Home Only User.
+![image/size:400px/align:right/frame:none](admin-intro/Which-Role.png)
+---
+> [next] Continue -> 1606d73b-0ca2-4025-9f29-e05b7d276113
+
+slide_id: 1606d73b-0ca2-4025-9f29-e05b7d276113
+index_title: Congratulations! You Have Completed the Introduction
+title: Congratulations! You Have Completed the Introduction
+type: main
+layout: standard-2-col
+---
+You know your role and you know where you are headed.
+
+First up is the Standard course. You will get a full overview of what is already built for you and where to find everything in Inact Now.
+
+**Let's go!**
+![image/size:large/align:right/frame:none](admin-intro/Hero-Illu.png)
+---

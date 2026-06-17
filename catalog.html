@@ -689,6 +689,9 @@
       { key: 'functionality', name: 'Software', label: 'Inact Now', pathId: 'now-fundamentals',
         illu: 'LP-thumbnails/Farvetest/Blæp.png',
         toggleBg: '#F1F6FF', bg: '#F5F9FF', btn: '#DBE9FF', btnT: '#1A2535', bdr: '#D0DFEF', dot: '#DBE9FF', bar: '#5888D0' },
+      { key: 'functionality', name: 'Software', label: 'Inact Now', pathId: 'admin',
+        illu: 'LP-thumbnails/Farvetest/admin-illu-thumb.png',
+        toggleBg: '#F1F6FF', bg: '#F5F9FF', btn: '#DBE9FF', btnT: '#1A2535', bdr: '#D0DFEF', dot: '#DBE9FF', bar: '#5888D0' },
     ];
 
     const PATHS = [
@@ -713,6 +716,13 @@
         courseIds: ['now-intro','now-home','now-insights','now-actions','now-dashboards'],
         gradFrom: '#2e4a44', gradTo: '#4a6a60',
       },
+      {
+        id: 'admin', title: 'Inact Now For Super Users and Admins', category: 'functionality',
+        desc: 'Learn how to configure, customize, and manage Inact Now for your organization—from user roles and standard setup to building your own dashboards and actions.',
+        duration: '40 min', courseCount: 4, href: 'admin-hub.html', pathParam: 'admin', hubFile: 'admin-hub.html',
+        courseIds: ['admin-intro','admin-standard','admin-custom','admin-manage'],
+        gradFrom: '#2e4a44', gradTo: '#4a6a60',
+      },
     ];
 
     // All courses, each with enough context to build the card and the link
@@ -735,6 +745,11 @@
       { id: 'now-insights',    title: 'Inact Now: Insights',   description: 'Navigate views, apply filters, and drill down to uncover opportunities in your supply chain.',   duration: '10 min', file: 'Now-Insights.txt',             thumbnail: 'Course-thumbnails/Fundamentals/Insights.png',          pathId: 'now-fundamentals',     pathParam: 'now',      hubFile: 'now-hub.html',       category: 'functionality' },
       { id: 'now-actions',     title: 'Inact Now: Actions',    description: 'Learn how Actions work and how to navigate, filter, and sort through your lists.',               duration: '8 min',  file: 'Now-Actions.txt',              thumbnail: 'Course-thumbnails/Fundamentals/Actions.png',           pathId: 'now-fundamentals',     pathParam: 'now',      hubFile: 'now-hub.html',       category: 'functionality' },
       { id: 'now-dashboards',  title: 'Inact Now: Dashboards', description: 'Monitor your key KPIs at a glance using Widgets, Tables, and drill-down Trend Views.',           duration: '5 min',  file: 'Now-Dashboards.txt',           thumbnail: 'Course-thumbnails/Fundamentals/Dashboards.png',        pathId: 'now-fundamentals',     pathParam: 'now',      hubFile: 'now-hub.html',       category: 'functionality' },
+      // Admin
+      { id: 'admin-intro',    title: 'Introduction: Super Users and Admins', description: 'Learn your role in Inact Now, the difference between user types, and where this learning path takes you.',          duration: '5 min',  file: 'Admin-Intro.txt',    thumbnail: null, pathId: 'admin', pathParam: 'admin', hubFile: 'admin-hub.html', category: 'functionality' },
+      { id: 'admin-standard', title: 'Your Standard Solution',               description: 'Explore the complete standard setup already waiting for you—solutions, tabs, insights, and the data behind it all.',  duration: '10 min', file: 'Admin-Standard.txt', thumbnail: null, pathId: 'admin', pathParam: 'admin', hubFile: 'admin-hub.html', category: 'functionality' },
+      { id: 'admin-custom',   title: 'Customising Your Solution',            description: 'Create insights, edit them, build actions, and as an Admin, create dashboards to share with your team.',             duration: '15 min', file: 'Admin-Custom.txt',   thumbnail: null, pathId: 'admin', pathParam: 'admin', hubFile: 'admin-hub.html', category: 'functionality' },
+      { id: 'admin-manage',   title: 'Managing Users',                       description: 'Manage users, set up their home screens, assign permissions, and configure automated reports.',                      duration: '10 min', file: 'Admin-Manage.txt',   thumbnail: null, pathId: 'admin', pathParam: 'admin', hubFile: 'admin-hub.html', category: 'functionality' },
       // Standalone resources — Quick Resources only
       { id: 'shortcuts',    title: 'Keyboard Shortcuts', description: 'Every keyboard shortcut in Inact Now in one place. Navigate views, filter lists, and bulk-edit faster.',           duration: '3 min', file: null, thumbnail: null, pathId: null, pathParam: null, hubFile: null, category: 'general' },
       { id: 'kpi-glossary', title: 'KPI Glossary',       description: 'Definitions for all key performance indicators across Inact Now dashboards and reports, with formula references.', duration: '5 min', file: null, thumbnail: null, pathId: null, pathParam: null, hubFile: null, category: 'general' },
@@ -1146,5 +1161,33 @@
     renderFilterBar();
     applyFilters();
   </script>
+<script>
+  window.process = { env: { NODE_ENV: 'production' } };
+  window.INACT_CHAT_API_URL = "https://eliasreuss-in-chatbot.hf.space/api/chat"
+</script>
+<script src="https://eliasreuss-in-chatbot.hf.space/widget/inact-widget.js"></script>
+<script>
+(function() {
+  var KEY = 'inact_widget_open';
+  function waitFor(sel, cb) {
+    if (document.querySelector(sel)) { cb(); return; }
+    var obs = new MutationObserver(function() {
+      if (document.querySelector(sel)) { obs.disconnect(); cb(); }
+    });
+    obs.observe(document.body, { childList: true, subtree: true });
+  }
+  waitFor('.cw-anchor', function() {
+    var anchor = document.querySelector('.cw-anchor');
+    if (sessionStorage.getItem(KEY) === '1') {
+      var trigger = anchor.querySelector('.cw-trigger');
+      if (trigger) trigger.click();
+    }
+    var obs = new MutationObserver(function() {
+      sessionStorage.setItem(KEY, anchor.querySelector('.cw-panel') ? '1' : '0');
+    });
+    obs.observe(anchor, { childList: true, subtree: true });
+  });
+})();
+</script>
 </body>
 </html>

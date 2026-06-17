@@ -1,0 +1,125 @@
+[id:1/topic: Welcome to the Course: Managing Users]
+
+slide_id: 41679e05-956e-437e-b5f3-9b6468626c20
+index_title: Welcome to the Course: Managing Users
+title: 
+type: hero
+---
+hero_image: admin-managing-users/Hero-Illu.png
+hero_subtitle: Welcome to the course:
+hero_title: Managing Users
+hero_body: Not everyone has distribution capabilities in Inact Now. But if you do, this course is for you. You will learn how to manage your users and set up automated reports.
+
+**Let's get started!**
+---
+> [next] Continue -> 7943dc39-7a03-45ee-93df-229cc535baeb
+
+slide_id: 7943dc39-7a03-45ee-93df-229cc535baeb
+index_title: Do You Have the Admin Panel?
+title: Do You Have the Admin Panel?
+type: main
+layout: standard-2-col
+---
+The easiest way to find out if you have the admin panel, is to look for the icon in the top right corner of your screen. If it is there, you have access. If not, this course does not apply to you.
+
+Your admin panel was set up by an Inact consultant. You might be a regular user, a super user, or an admin and still have it. It does not depend on your role.
+![image/size:400px/align:right/frame:none](admin-managing-users/Admin-Panel-Tab.png)
+---
+> [next] Continue -> a6950801-6453-4896-8162-ab9671025852
+
+[id:2/topic: Managing Users]
+
+slide_id: a6950801-6453-4896-8162-ab9671025852
+index_title: The Users Tab
+title: The Users Tab
+type: main
+---
+When you click the admin panel icon, you will be taken to the Users tab.
+
+The Users tab shows everyone in your organization. You can see their role, last login, and contact details at a glance.
+![image/size:large/align:center/frame:none](admin-managing-users/Users-Tab.png)
+---
+> [next] Continue -> afc1b8f7-df04-4406-b331-2f452fd30119
+
+slide_id: afc1b8f7-df04-4406-b331-2f452fd30119
+index_title: User Information
+title: User Information
+type: main
+layout: standard-2-col
+---
+When you open a user you will see three tabs: Information, Permissions, and Homepage setup.
+
+Information is where you update their details and send them a welcome email.
+![image/size:600px/align:right/frame:none](admin-managing-users/User-Information.png)
+---
+> [next] Continue -> acbd1288-1ef4-4b0b-b05a-206459bc1674
+
+slide_id: acbd1288-1ef4-4b0b-b05a-206459bc1674
+index_title: Permissions
+title: Permissions
+type: main
+layout: standard-2-col
+---
+The Permissions tab is where you assign a user's role. Choose between User, Super User, Admin, or Subscription Only.
+
+You can also toggle Simple view to limit them to the Home tab only, and check Download Data if they need to export data from the platform.
+![image/size:600px/align:right/frame:none](admin-managing-users/Permissions.png)
+---
+> [next] Continue -> 2b844bad-8158-4f30-89de-f192e1433537
+
+slide_id: 2b844bad-8158-4f30-89de-f192e1433537
+index_title: Homepage Setup
+title: Homepage Setup
+type: main
+layout: standard-2-col
+---
+The Homepage setup tab lets you control exactly what a user sees on their home page.
+
+Add dashboards to their Home screen, set their favourite insights, and assign action lists directly to them. This is how you make sure every user sees what is relevant to their job from day one.
+![image/size:600px/align:right/frame:none](admin-managing-users/Homepage-Setup.png)
+---
+> [next] Continue -> 87aa6350-76ba-48e8-87bb-d8afce8b5344
+
+[id:3/topic: Setting Up Subscriptions]
+
+slide_id: 87aa6350-76ba-48e8-87bb-d8afce8b5344
+index_title: Subscriptions - Mail Bundles
+title: Subscriptions - Mail Bundles
+type: main
+---
+The Subscriptions tab is where you set up automated email reports called mail bundles.
+
+A mail bundle is a scheduled email that delivers a combination of Dashboards, Insights, or specific Insight Views directly to a recipient's inbox. You choose what is in it , when it sends, and who receives it.
+
+Go through the tutorial below to learn how to set up subscriptions
+![image/size:large/align:center/frame:none](admin-managing-users/Coming-Soon.png)
+---
+> [next] Continue -> 4bbc4a91-e619-4c16-b025-357a4e900466
+
+slide_id: 4bbc4a91-e619-4c16-b025-357a4e900466
+index_title: Subscriptions - Action Subscriptions
+title: Subscriptions - Action Subscriptions
+type: main
+---
+You can also set up Action subscriptions to alert users about updates on Action lists. First, select the Action you want to assign. Then choose when recipients should be alerted.
+
+By default, recipients get an alert every time the Action has a new item. Tick "Action Subscription" to control the frequency instead. Tick "Alert Mail" to also send recipients update emails.
+
+Finally, select your recipients and click "Start & Activate."
+![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Admin/Making-Action-Subscription.mp4)
+---
+> [next] Continue -> 9185226b-b2a8-449a-9268-9f975ec2d84a
+
+[id:4/topic: Congratulations! You Have Completed the Managing Users Course.]
+
+slide_id: 9185226b-b2a8-449a-9268-9f975ec2d84a
+index_title: Congratulations! You Have Completed the Managing Users Course.
+title: Congratulations! You Have Completed the Managing Users Course.
+type: main
+layout: standard-2-col
+---
+You now know how to manage your users, set up their home screens, and send automated reports to the right people.
+
+**Well done!**
+![image/size:large/align:right/frame:none](admin-managing-users/Hero-Illu.png)
+---
