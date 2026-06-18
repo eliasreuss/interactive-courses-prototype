@@ -1,0 +1,147 @@
+[id:1/topic: Introduction to Insights]
+
+slide_id: 1
+index_title: Welcome to the Course
+title: 
+type: hero
+---
+hero_image: now-insights/Insights-Hero.png
+hero_subtitle: Welcome to the course:
+hero_title: **Insights**
+hero_body: This course focuses on Insights - the deep-dive analyses that give you complete visibility into your supply chain. You will learn how to navigate different data views, use slicers to isolate what matters, and click deeper to uncover specific, actionable opportunities in your supply chain.
+
+**Let’s get started!**
+---
+> [next] Continue -> 2
+
+slide_id: 2
+index_title: What are Insights?
+title: What are Insights?
+type: main
+layout: standard-2-col
+---
+Insights allow you to deeply analyze specific areas of your supply chain. You can think of them as highly interactive reports.
+
+**You will encounter two main types of Insights in the platform:**
+
+***Best-Practice Templates**
+Inact Now comes with a large library of pre-built templates covering all of our solutions. These are built directly on industry best practices. This allows you to instantly apply proven analytical frameworks to your data without having to build anything from scratch.
+
+***Custom Insights:**
+Alongside our standard templates, you might also use tailored analyses built specifically by your company to match your unique workflows.
+
+Regardless of how the Insight was created, it connects directly to your ERP system and updates automatically every day.
+![image/size:550px/align:right/frame:none](now-insights/Insights-Icon.png)
+---
+> [next] Continue -> 3
+
+slide_id: 3
+index_title: How do I access an Insight?
+title: How do I access an Insight?
+type: main
+---
+Getting to your Insights is incredibly simple.
+
+Because your Home screen acts as your command center, your most important Insights are pinned right there for easy access. To open one, simply click on its name directly from your Home view.
+![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Opening-Insight.mp4)
+---
+> [next] Continue -> 4
+
+[id:2/topic: Views]
+
+slide_id: 4
+index_title: Understanding Views
+title: Understanding Views
+type: main
+---
+Now that your Insight is open, let's look at how to navigate it. The first thing you need to understand is **views**. An Insight allows you to look at the exact same data through several different lenses.
+ 
+Depending on what you want to achieve, you might prefer to see your data as a structured table, a comparative matrix, or a visual trend. Views let you switch between different formats easily.
+
+Click through the tutorial below to get an overview of the different views:
+[supademo: Insight Views](https://app.supademo.com/embed/cmnx95fhd032liq7pyejxpqja?embed_v=2&utm_source=embed)
+---
+> [next] Continue -> 5
+
+[id:3/topic: Slicers and Filters]
+
+slide_id: 5
+index_title: What Are Slicers and Filters?
+title: What Are Slicers and Filters?
+type: main
+layout: standard-2-col
+---
+Now that you know how to change **how** your data is displayed using views, let’s look at how to control **what** data is displayed.
+
+**Slicers and filters** allow you to cut through the noise by segmenting your data based on broader parameters. You can slice and filter on almost any data point, meaning the specific options available will change depending on which insight you are using.
+![image/size:550px/align:right/frame:none](now-insights/Slicers-Filters.png)
+---
+> [next] Continue -> 6
+
+slide_id: 6
+index_title: Using Slicers and Filters
+title: Using Slicers and Filters
+type: main
+---
+Let's take a look at how this works in practice.
+
+In the tutorial below, we will show you how to apply slicers and filters to effectively segment your data. We will also cover how to use the sorting function - a simple but powerful way to instantly bring the most critical data right to the top of your screen.
+[supademo: Insights: Using filters and slicers](https://app.supademo.com/embed/cmo1b6cxk17ppru18p3a0cpjp?embed_v=2&utm_source=embed)
+---
+> [next] Continue -> 7
+
+[id:4/topic: One Click Deeper]
+
+slide_id: 7
+index_title: One Click Deeper
+title: One Click Deeper
+type: main
+---
+Filtering your data is a great start, but true transparency requires going from broad categories down to the atomic level. We call this going one click deeper.
+
+Let's say you are looking at your Double ABC Analysis. You want to see your most critical items, so you click on the AA category. You then sort the items by total cost of goods consumed to find the biggest contributor. From there, you click directly on the top item to dive into its individual performance. This process takes you from a broad category right down to the atomic level.
+![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/One-click-deeper.gif.mp4)
+---
+> [next] Continue -> 8
+
+slide_id: 8
+index_title: Analysing Atoms
+title: Analysing Atoms
+type: main
+---
+When you click all the way down to a specific product, supplier or customer, you will find a wealth of information. Just like the main overview, this detailed level has its own unique views to help you make sense of the data.
+
+Click through the short tutorial below to see this in action. If the tutorial appears too small, click the button in the top right corner to make it full screen.
+[supademo: Analyze Supplier Performance and Financial Data on inactnow](https://app.supademo.com/embed/cmo1egchb1gduru18fps00b3s?embed_v=2&utm_source=embed)
+---
+> [next] Continue -> 9
+
+[id:5/topic: Using Insights: Real World Example]
+
+slide_id: 9
+index_title: Using Insights: Real World Example
+title: Using Insights: Example
+type: main
+---
+We have covered how to navigate views, apply filters, and go one click deeper. Now it is time to put it all together.
+
+In this final tutorial, we will look at a real use case using the **Stock Policy: Non Stock Items** Insight. You will see exactly how to use these tools to identify non stock items that are perfect candidates for a BTO or MTO setup. By finding these items, you can stop tying up vital working capital in unnecessary inventory.  
+
+If the window appears too small, click the full-screen button in the top right corner.
+[supademo: Insight walkthrough - Stock Policy, Non Stock Items](https://app.supademo.com/embed/cmhyo4vfn4q9r17y04epcgbrp?embed_v=2&utm_source=embed)
+---
+> [next] Continue -> 10
+
+[id:6/topic: What's Next?]
+
+slide_id: 10
+index_title: Congratulations! You Have Completed the Insights Course
+title: Congratulations! You Have Completed the Insights Course
+type: main
+layout: standard-2-col
+---
+You now know how to navigate the core analytical engine of the platform. You understand how to change your views, apply slicers and filters, and click deeper.
+
+In the next course, we will explore Actions. You will learn how you can use the platform to receive and execute on clear, tailored, daily tasks.
+![image/size:large/align:right/frame:none](now-insights/Insights-Hero.png)
+---

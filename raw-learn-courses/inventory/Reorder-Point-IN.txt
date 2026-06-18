@@ -1,0 +1,114 @@
+[id:1/topic: Welcome]
+
+slide_id: 1
+index_title: Welcome
+title: 
+type: hero
+---
+hero_image: learn/images/57/72b7b27c55a7f3bd9fd0fad2ec0cb4b2e08ae6d419b22538920b923881526657
+hero_subtitle: Welcome to the course:
+hero_title: Reorder Point
+hero_body: In the previous course, we focused on safety stock. Now, we’ll focus on timing. We’ll cover: 
+
+* What a reorder point is and why it’s important
+* How it is calculated
+* How to track and manage it in Inact Now
+
+**Let’s get started!**
+---
+> [next] Start course -> 2
+
+[id:2/topic: What Is a Reorder Point?]
+
+slide_id: 2
+index_title: What Is a Reorder Point?
+title: **What Is a Reorder Point?**
+type: main
+---
+The reorder point is the inventory level at which you place a new purchase order. It does not determine how much you order - only when you order.
+
+You can think of it like the low-fuel warning in a car. The light turns on before the tank is empty, giving you enough time to find a gas station and refill. The reorder point ensures you have enough stock to meet demand while waiting for the next delivery.
+
+![image/size:large/align:center/frame:none](learn/images/56/e5c0d3d24b959bb53e8e864cbec7fffaf44bfb69f3674695a77ca7a916012989)
+---
+> [next] Continue -> 3
+
+slide_id: 3
+index_title: How It's Calculated
+title: **How Is the Reorder Point Calculated?**
+type: main
+---
+The reorder point is easy to calculate.
+
+If you sell 2 products per day and your supplier takes 50 days to deliver, you will sell 100 products while waiting for your supplier to arrive. That means you should reorder when your inventory reaches 100 products. This is calculated by multiplying average consumption by the lead time.
+
+But this is only an average. Some days you may sell more, or the supplier may deliver late. Without a buffer, this will eventually lead to a stockout. That’s why we add safety stock. The full calculation looks like this:
+
+![image/size:large/align:center/frame:none](learn/images/54/997d999759de35c3078c6bf6a1a0d48f696d9a8b39e9102f5f587c0c53981eb8)
+
+By including safety stock, you reorder early enough to stay in stock - even when demand or delivery times vary.
+---
+> [next] Continue -> 4
+
+[id:3/topic: Using Inact Now]
+
+slide_id: 4
+index_title: Looking at Our Own Data
+title: **Let’s Look at Our Own Data**
+layout: standard-2-col
+type: main
+---
+Calculating a reorder point for one product is simple. Managing it across many products requires automation.
+
+Inact Now tracks sales patterns, lead times, and safety stock to keep reorder points updated - every day. 
+
+Let’s take a look at the Reorder Point Insight in Inact Now. Do you know how to open the Insight?
+
+![image/size:350px/align:right/frame:none](learn/images/55/0018b1d3f9e41a2a9c740236082d9f4ba3d5403637a3cf5de6baa7d0a9ff7dea)
+---
+> [next] Continue -> 5
+> [sidequest] No, show me how -> s1
+
+slide_id: 5
+index_title: Navigating Insight: Reorder Point
+title: **Navigating Insight: Reorder Point**
+type: main
+---
+The interactive tutorial below will teach you how to use the Reorder Point Insight:
+
+[supademo: Navigating Insight: Reorder Point(Copy)](https://app.supademo.com/embed/cml7yn5xj01s02u0iy5dxbmlw?embed_v=2&utm_source=embed)
+---
+> [next] Continue -> 6
+
+[id:4/topic: What's Next?]
+
+slide_id: 6
+index_title: Congrats!
+title: **Congratulations! You’ve Completed the Reorder Point Course**
+layout: standard-2-col
+type: main
+---
+You’ve learned how to calculate the Reorder Point - and how to actively manage it in Inact.
+
+But knowing when to reorder is only part of the process. To keep your inventory running smoothly, you also need to know how much to order each time.
+
+In the next course, **Reorder Quantity**, you’ll learn how to calculate the right amount to restock.
+
+**Let’s keep going!**
+
+![image/size:large/align:right/frame:none](learn/images/57/72b7b27c55a7f3bd9fd0fad2ec0cb4b2e08ae6d419b22538920b923881526657)
+---
+
+[flow-specific-side-quests]
+
+[id:s1/topic: Opening the Insight: Reorder Point]
+
+slide_id: 1
+title: **Opening the Insight: Reorder Point**
+type: sidequest
+backLabel: Return to course
+---
+The interactive tutorial below will teach you how to open the Insight:
+
+[supademo: Opening the insight: Reorder Point](https://app.supademo.com/embed/cmkfl0jw9142yw7p2xd06kzut?embed_v=2&utm_source=embed)
+---

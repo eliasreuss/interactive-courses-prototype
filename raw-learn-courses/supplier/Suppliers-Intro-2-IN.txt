@@ -1,0 +1,48 @@
+slide_id: 1
+index_title: Welcome to Supplier Management with Inact Now
+title: 
+type: hero
+---
+hero_image: learn/images/87/e82b141e4c8650234750ce64beaa3804986203907bc350b67b9319a5d18b8fca
+hero_subtitle: Welcome to the learning path:
+hero_title: Supplier Management with Inact Now
+hero_body: This is the intro to a four-part learning path. By the end, you will understand how to move beyond routine purchasing and adopt a more strategic approach. You will see exactly how to use Inact Now to measure supplier performance, analyze your spending patterns, and use those insights to negotiate better agreements.
+
+**Let’s get started!**
+---
+> [next] Continue -> 2
+
+slide_id: 2
+index_title: From Routine to Strategic Purchasing
+title: **From Routine to Strategic Purchasing**
+layout: standard-2-col
+type: main
+---
+Routine purchasing is reactive. It focuses on placing orders and keeping things running, without looking at the larger picture. When you buy without clear data, you are often missing hidden costs, accepting poor supplier performance, and leaving money on the table.
+
+Strategic purchasing changes this. It uses data to give you full transparency. Instead of just tracking total costs, you can see exactly where your money is going, how your suppliers actually perform, and where you can optimize. This shifts purchasing from a daily administrative task into a key driver of company profitability.
+![image/size:550px/align:right/frame:none](learn/images/89/264b069898d2ecc87372f5de672d66c16ea6872c51711acabbfdf2d555774558)
+---
+> [next] Continue -> 3
+
+slide_id: 3
+index_title: How We Get There
+title: **How We Get There**
+type: main
+---
+To move from reactive to strategic, you need a structured approach. Over the next three courses, we will break this down into actionable steps using Inact Now:
+![image/size:large/align:center/frame:none](learn/images/88/865cc875724e09e70c87337c979e36b8fbbf1937f0a27823ace1a57f96cd5bae)
+---
+> [next] Continue -> 4
+
+slide_id: 4
+index_title: Congratulations, You Have Completed the Introduction
+title: **Congratulations, You Have Completed the Introduction**
+layout: standard-2-col
+type: main
+---
+Now, it is time to take the first step. In the next course, Supplier Performance, you will learn how to identify your most important vendors and track the key performance indicators that impact your bottom line.
+
+**Let’s do it!**
+![image/size:large/align:right/frame:none](learn/images/87/e82b141e4c8650234750ce64beaa3804986203907bc350b67b9319a5d18b8fca)
+---

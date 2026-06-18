@@ -1,0 +1,84 @@
+[id:1/topic: Welcome: Spend Analysis]
+
+slide_id: 3d7a49e8-0172-45c5-8700-1a5adcc981dd
+index_title: Welcome to the course: Spend Analysis
+title: 
+type: hero
+---
+hero_image: learn/images/122/54b0c00e015e1accb1d24f72c12c64befbdcbcbeaa7d4d6682f342aeb19160aa
+hero_subtitle: Welcome to the course:
+hero_title: Spend Analysis
+hero_body: The spend analysis in Inact Now turns raw purchasing data into actionable insights – enabling you to understand spend patterns across categories and suppliers and identify cost-saving opportunities.  
+
+**Let’s get started!**
+---
+> [next] Continue -> 57e2ace1-cc31-4ec0-bdbd-65e64b4036a8
+
+slide_id: 57e2ace1-cc31-4ec0-bdbd-65e64b4036a8
+index_title: The Hidden Potential in Your Supply Chain
+title: **The Hidden Potential in Your Supply Chain**
+layout: standard-2-col
+type: main
+---
+There are two main ways to improve your company’s profit margin: You can either raise prices on your products, or you can lower your costs.
+
+Roughly 80% of a company’s costs usually sit in the supply chain. This means the potential for optimization here is massive.
+
+However, many procurement teams lack transparency. They see the total spend, but miss the underlying trends and behaviors. This "blindness" means you are likely leaving money on the table every single day.
+![image/size:550px/align:right/frame:none](learn/images/120/42939a0689c437d0fa21e0b998eeacba2913dc84bce901283a0627ac90de11f3)
+---
+> [next] Continue -> b7afa6ba-1585-4dcb-887c-138a32ecfabc
+
+slide_id: b7afa6ba-1585-4dcb-887c-138a32ecfabc
+index_title: Asking the Right Questions
+title: **Asking the Right Questions**
+type: main
+---
+To fix this blindness, we need to conduct a structured spend analysis. This starts by establishing an overview to answer three critical questions:
+![image/size:large/align:center/frame:none](learn/images/124/e522c80b7cb25cdbbc60343efbab672fcd64794eb15abc93810551fbf7d6dd76)
+Once you map your data against these questions, inefficiencies that were previously hidden suddenly become obvious.
+---
+> [next] Continue -> f155984c-f5ad-48aa-bebb-ea255e31274c
+
+slide_id: f155984c-f5ad-48aa-bebb-ea255e31274c
+index_title: See the Full Picture
+title: **See the Full Picture**
+layout: standard-2-col
+type: main
+---
+In your spend analysis in Inact Now, you will immediately see your spend broken down by **categories** (what are we buying?) and **suppliers** (who are we buying from?). You can also track your spend development over time to see exactly when and how purchase patterns change.
+
+But most importantly, the platform connects the dots. You can drill down to see exactly **which individual items**, from **which item category** are being purchased from **which specific suppliers**, giving you total visibility.
+![image/size:500px/align:right/frame:none](learn/images/118/14a86b624b62a5de5acebeac1e8f18c6e59a5d91e924aeab97323f9b6084e68b)
+---
+> [next] Continue -> 1138bed0-31c9-44cd-a70f-966810df78dd
+
+[id:2/topic: The Spend Analysis in Inact Now]
+
+slide_id: 1138bed0-31c9-44cd-a70f-966810df78dd
+index_title: How Can We Use Inact Now to Help Us?
+title: **How Can We Use Inact Now to Help Us?**
+type: main
+---
+So, how do we conduct this analysis in practice? Let's take a look at the “Spend Analysis” Insight in Inact Now. In this walkthrough, we will show you how to interpret the data to gain full transparency and identify actionable opportunities.
+
+If the window appears too small, click the button in the top right corner to enter full screen.
+[supademo: Spend Analysis: Insight Walkthrough](https://app.supademo.com/embed/cmmj7ort82jagzdh1isoce83c?embed_v=2&utm_source=embed)
+---
+> [next] Continue -> 2eb6d5ea-8227-410c-9e54-510cfc1c2ae7
+
+[id:3/topic: What's Next?]
+
+slide_id: 2eb6d5ea-8227-410c-9e54-510cfc1c2ae7
+index_title: Congratulations!
+title: **Congratulations! You have completed the Spend Analysis course**
+layout: standard-2-col
+type: main
+---
+You have moved beyond simple cost tracking to true spend transparency. By asking the right questions - Who, What, Where, and How - you can now uncover hidden inefficiencies like the "Long Tail" and turn them into strategic opportunities.
+
+In the final course, Supplier Negotiation, you will learn how to use this stronger position to negotiate better agreements and improve your bottom line.
+
+**Let’s continue.**
+![image/size:large/align:right/frame:none](learn/images/122/54b0c00e015e1accb1d24f72c12c64befbdcbcbeaa7d4d6682f342aeb19160aa)
+---

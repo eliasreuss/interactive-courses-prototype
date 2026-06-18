@@ -1,0 +1,293 @@
+[id:1/topic: Intro]
+
+slide_id: 1
+index_title: Welcome
+title: 
+title-align: center
+type: hero
+---
+hero_image: double-abc-analysis/Double-ABC-Hero.png
+hero_subtitle: Welcome to the course:
+hero_title: Double ABC Analysis
+hero_body: In this course you will explore what the double ABC analysis is , why it matters, how it looks in Inact Now and what the sepcial categories are. 
+
+**Let’s get started!**
+---
+> [next] Let's do it! -> 2
+
+[id:2/topic: The ABC Analysis]
+
+slide_id: 2
+index_title: The Vital Few and the Trivial Many
+title: **ABC Analysis:** The Vital Few and the Trivial Many
+type: main
+layout: standard-2-col
+---
+**To understand double ABC analysis, it helps to first recall the basics of classic ABC analysis.**
+
+ABC analysis is based on the Pareto principle (the 80/20 rule): a small share of items usually accounts for most of the total value.
+
+We see this pattern in everyday life. Most people wear about 20% of their clothes 80% of the time, and we typically call 20% of our contacts most frequently.
+
+In inventory management, the same logic applies. In a warehouse, a small number of products (A items) often generate the majority of sales or inventory value, while a larger number of products (B and C items) contribute significantly less.
+
+![image/size:500px/align:right/frame:none](double-abc-analysis/Single-ABC.png)
+---
+> [next] Continue -> 3
+
+slide_id: 3
+index_title: ABC Analysis
+title: **ABC Analysis**
+type: main
+---
+If we for example look at our products demand, we see that a small share of products accounts for most of the demand, while most products contribute very little.
+
+**We can group them into the three categories:**
+
+* **A products** – the top ~10% of products that make up 80% of total demand
+* **B products** – the next ~20% of products that cover 15% of demand
+* **C products** – the remaining ~70% of products that add up to only 5% of demand
+
+And that’s the idea behind ABC analysis: a few products matter most, while most matter much less.
+
+![image/size:400px/align:right/frame:none](double-abc-analysis/Single-ABC-Vizz.png)
+---
+> [next] Continue -> 4
+
+[id:3/topic: The Double ABC Analysis]
+
+slide_id: 4
+index_title: Introducing the Double ABC Analysis
+title: **Introducing the Double ABC Analysis**
+type: main
+layout: standard-2-col
+---
+Now you know the theory behind an ABC analysis, but there’s more:
+
+**The double ABC analysis looks at two variables at the same time instead of just one.** In the inventory solution in Inact Now, these are:
+
+**1. Cost of inventory** – how much the product cost us over the last 12 months (total cost of goods).
+**2. Demand** – how often the product was sold or used in the last 12 months (consumption lines).
+
+![image/size:400px/align:right/frame:none](double-abc-analysis/Two-Variables.png)
+---
+> [next] Continue -> 5
+
+slide_id: 5
+index_title: Understanding the Double ABC Analysis
+title: **Understanding the Double ABC Analysis**
+type: main
+---
+This is how it works: 
+
+Each product gets **two scores**, A / B / C, for each variable. These two scores are combined into a two-letter category. For example:
+
+* **AA** = high cost of inventory, high demand
+* **CB** = low cost of inventory, medium demand
+
+This helps you quickly see which products are the most important and decide how to manage them.
+
+![image/size:400px/frame:none/align:right](double-abc-analysis/ABC-Analysis.png)
+---
+> [next] Show me an example -> 6
+
+slide_id: 6
+index_title: Example: Double ABC Analysis
+title: **Double ABC Analysis Example**
+type: main
+layout: standard-2-col
+---
+Now that you understand the theory, let’s apply it. To make this easy to visualize, we will use a standard office supply inventory as our example.
+
+Take a look at the matrix on the right. We have cost of inventory on the vertical axis and demand on the horizontal axis.
+
+We are going to walk through four critical categories on this grid to see how your management strategy should change based on where a product sits. Let's start at the top left with our high-performers.
+
+![image/size:400px/align:right/frame:none](double-abc-analysis/ABC-Example-0.png)
+---
+> [next] Continue -> 7
+
+slide_id: 7
+index_title: AA Items
+title: **Double ABC Analysis Example**
+type: main
+---
+**AA items**
+High cost of inventory, high demand
+
+→ Your everyday heroes. Like copy paper in an office. Easy to manage. Low risk.
+
+![image/size:400px/align:right/frame:none](double-abc-analysis/ABC-Example-1.png)
+---
+> [next] Continue -> 8
+
+slide_id: 8
+index_title: AC Items
+title: **Double ABC Analysis Example**
+type: main
+---
+**AC items**
+High cost of inventory, low demand
+
+→ Big-ticket items sold occasionally. Like a copy machine. Valuable but riskier to stock, as they tie up significant capital with little predictability on when — or how many — will sell.
+
+![image/size:400px/align:right/frame:none](double-abc-analysis/ABC-Example-2.png)
+---
+> [next] Continue -> 9
+
+slide_id: 9
+index_title: CA Items
+title: **Double ABC Analysis Example**
+type: main
+---
+**CA items**
+Low cost of inventory, high demand
+
+→ Often overlooked, but critical for customer experience. Like paperclips or screws in production.
+![image/size:400px/align:right/frame:none](double-abc-analysis/ABC-Example-3.png)
+---
+> [next] Continue -> 10
+
+slide_id: 10
+index_title: CC Items
+title: **Double ABC Analysis Example**
+type: main
+---
+**CC items**
+Low cost of inventory, low demand
+
+→ Rarely sells. Like plastic sleeves. Important to manage carefully – or phase out.
+
+![image/size:400px/align:right/frame:none](double-abc-analysis/ABC-Example-4.png)
+---
+> [next] Continue -> 11
+
+slide_id: 11
+index_title: Example: Full Picture
+title: **Double ABC Analysis Example**
+type: main
+layout: standard-2-col
+---
+**And just like that, every product in your inventory will be assigned a double ABC category.**
+
+Where a single ABC analysis may look at demand alone, double ABC adds a second lens: cost of inventory. It shows you both how predictable a products demand is - and how expensive it is to hold. 
+
+**Note:** Cost of inventory and demand are just examples of variables you can use for the analysis. The best choice of variables will always depend on your specific goals.
+
+![image/size:400px/align:right/frame:none](double-abc-analysis/ABC-Example-Final.png)
+---
+> [next] Continue -> 12
+
+slide_id: 12
+index_title: How the Analysis Can Help
+title: **How the Analysis Can Help**
+type: main
+---
+Once everything has a double ABC category, it starts to become genuinely useful. The analysis helps you understand what’s going on in your inventory and where to focus your attention.
+
+Here are a few practical ways it can help:
+
+![image/size:large/align:center/frame:none](double-abc-analysis/Analysis-Help.png)
+---
+> [next] Continue -> 13
+
+[id:4/topic: Your Analysis in Inact Now]
+
+slide_id: 13
+index_title: Let’s Take a Look at Your Own Analysis
+title: **Let’s Take a Look at Your Own Analysis**
+type: main
+---
+So far, we’ve looked at what double ABC can do.
+
+Now let’s apply it to your own inventory - in Inact Now, we’ve already set up a double ABC analysis for you. Let’s take a look at your own stock, and see how your products are distributed across the different categories. 
+
+**Do you know how to open your Double ABC Insight?**
+---
+> [next] Yes, continue -> 14
+> [sidequest] No, show me -> s1
+> [next:flow] Open Inact Now -> https://inactnow.io/app/#/
+
+slide_id: 14
+index_title: Interpreting the Insight
+title: **Great... What Are We Looking At?**
+type: main
+---
+What you’re looking at is called an **insight.** Insights are simple, powerful views that give you a clear understanding of your data.
+
+This brief video walks you through how to navigate and interpret the Double ABC Analysis Insight in Inact Now.
+
+![video/size:large/align:center/controls:true](https://www.youtube.com/watch?v=BU9jqDaHVv0)
+---
+> [next] Continue -> 15
+
+[id:5/topic: Special Categories]
+
+slide_id: 15
+index_title: What Are Special Categories?
+title: **What About Items That Don’t Quite Fit?**
+type: main
+layout: standard-2-col
+---
+When people first see their double ABC analysis, a common question often comes up: **“What about items that don’t quite fit?”**
+
+For example, new products often appear as low-performing (like CC) simply because they haven’t had time to generate sales. That doesn’t mean they lack potential.
+
+That’s why the Inact Now view goes **beyond the standard nine categories.** We’ve added **five extra classifications** to capture special cases—like new, discontinued, or strategic items—so you can act with more nuance.
+
+![video/size:large/align:right/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Scene-1.mp4)
+---
+> [next] Continue -> 16
+
+slide_id: 16
+index_title: Each Special Category Explained
+title: **Here’s a Quick Explanation of Each Special Category:**
+type: main
+---
+![image/size:large/align:center/frame:none](double-abc-analysis/Special-Categories.png)
+---
+> [next] Continue -> 17
+> [sidequest] What if I forget? -> s2
+
+[id:6/topic: What’s Next?]
+
+slide_id: 17
+index_title: What's next?
+title: **Congrats! You’ve Completed the First of Five Courses in the Learning Path**
+type: main
+layout: standard-2-col
+---
+You’ve learned how to use Double ABC Analysis to identify the items that drive value. But this is just the start. Real value comes from answering three key questions: **What to stock? How much to stock? How much to order?** The next courses build on these.
+
+In the Stock Policy course, we will learn how to decide which items to stock, identify what to reduce or phase out, and turn Double ABC insights into action.
+
+**Let’s keep going!**
+
+![image/size:large/align:right/frame:none](double-abc-analysis/Double-ABC-Hero.png)
+---
+
+[flow-specific-side-quests]
+
+[id:s1/topic: No Problem, We'll Go Through How to Open It Step by Step]
+
+slide_id: 1
+title: **No Problem, We'll Go Through How to Open It Step by Step**
+type: sidequest
+backLabel: Return to main path
+---
+Follow the interactive tutorial below to learn how to open the Double ABC Analysis Insight:
+
+[supademo: Analyze Inventory with Double ABC Analysis in inactnow](https://app.supademo.com/embed/cmlkq60730rk45yi3804t4s2v?embed_v=2&utm_source=embed)
+> [next:flow] Open Inact Now -> https://inactnow.io/app/#/
+---
+
+[id:s2/topic: Quick Tip]
+
+slide_id: 1
+title: **Quick Tip**
+type: sidequest
+backLabel: Return to main path
+---
+**Tip: If you're ever unsure what a category means, just click the "i" icon in Inact Now for a quick explanation.**
+![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Clicking-I.mp4)
+---

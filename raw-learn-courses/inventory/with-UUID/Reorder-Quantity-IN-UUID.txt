@@ -1,0 +1,214 @@
+[id:1/topic: Welcome]
+
+slide_id: fac051f3-6875-485f-98fa-21daac359ecd
+index_title: Welcome
+title: 
+type: hero
+---
+hero_image: learn/images/68/00703f08704101a88d75e2f0fb7756e89d250ffe5c73505c0b2d82bd816ff0f5
+hero_subtitle: Welcome to the course:
+hero_title: Reorder Quantity
+hero_body: In this course, we will move from knowing when to place an order to deciding exactly how much to buy.
+
+**Let’s get started!**
+---
+> [next] Let's do it! -> 45004b0c-1cb0-479c-afed-95280e8d9691
+
+[id:2/topic: What Is Reorder Quantity?]
+
+slide_id: 45004b0c-1cb0-479c-afed-95280e8d9691
+index_title: What Is Reorder Quantity?
+title: **What Is Reorder Quantity?**
+type: main
+---
+You already know that a reorder point is the stock level that triggers a new order. The reorder quantity is simply the amount of products you order when that trigger is reached.
+
+In the graphic, the reorder quantity is shown as the sharp vertical rise in stock - the “refill” that brings inventory back up to its maximum, ready for the next period of sales.
+
+![image/size:large/align:center/frame:none](learn/images/61/777cb7a2b9262c35c1774b07af39b6252bd6bcca63591d0d27b65369118e8371)
+---
+> [next] Continue -> b9612717-6268-4879-a214-d1c6ea06f8bf
+
+slide_id: b9612717-6268-4879-a214-d1c6ea06f8bf
+index_title: Three Key Terms
+title: **Three Key Terms**
+type: main
+---
+Before we begin learning how to achieve the most optimal reorder quantity, we first need to establish three common terms you have probably encountered before:
+
+{columns}
+{column}
+![image 1/size:third/align:center/frame:none](learn/images/60/19d64bd79e1684d5130c28592f569b7e26200952aa62673b5ee8348d6b9c2ba2)
+{/column}
+{column}
+![image 2/size:third/align:center/frame:none](learn/images/59/2cc355463ad9055f9072aa0e617bfcb7353a74942339f9e9af50ed850e84c1cc)
+{/column}
+{column}
+![image 3/size:third/align:center/frame:none](learn/images/62/c647ed824282b2387159fc72f38225477812a34e32a7b4fc76377cced317af45)
+{/column}
+{/columns}
+---
+> [next] Continue -> 7ea3d59f-b78f-4f87-9f05-9c90514d7dc2
+
+[id:3/topic: The Trap]
+
+slide_id: 7ea3d59f-b78f-4f87-9f05-9c90514d7dc2
+index_title: The Three Competing Forces
+title: **The Three Competing Forces**
+layout: standard-2-col
+type: main
+---
+With the key terms defined, we can address the common dilemmas buyers face every day.  Effective inventory management means balancing three variables:
+
+**Unit price:** Lower costs per item, often achieved by buying larger quantities
+
+**Demand:** Having enough stock to serve customers
+
+**Inventory turn ratio:** Converting stock into cash quickly
+
+You cannot simply maximize all three at once. If you chase the lowest **unit price**, your **turn ratio** will suffer. If you keep stock too low to improve **turn ratio**, you might risk failing **demand.**
+
+![image/size:450px/align:right/frame:none](learn/images/67/276ad65b4f0ea0a76acc7e0f047f837054033d25f824be052633d626e3dda2e9)
+---
+> [next] Continue -> bb1bfc3b-2e2f-46c4-87d7-fa3771af77fa
+
+slide_id: bb1bfc3b-2e2f-46c4-87d7-fa3771af77fa
+index_title: Tunnel Vision on Unit Price
+title: **The Trap: Tunnel Vision on Unit Price**
+layout: standard-2-col
+type: main
+---
+One of the most common mistakes we see is ignoring this balance and focusing only on getting a “great deal” on unit price.
+
+In an ideal world, the order quantity that offers the lowest unit price would perfectly match your actual Demand.
+
+**But in reality, these numbers rarely align.**
+
+To secure a low unit price, you are often incentivized to order far more stock than you currently need. 
+
+![image/size:600px/align:right/frame:none](learn/images/65/1127ca881a2a4bfeecaf440317d75b71758d1f4bfda53200bb4a0210c614b384)
+---
+> [next] Continue -> 18ad75fe-daf9-4ca4-9efa-e52e6647096f
+
+slide_id: 18ad75fe-daf9-4ca4-9efa-e52e6647096f
+index_title: An Example
+title: **The Trap: An Example**
+layout: standard-2-col
+type: main
+---
+When price becomes the sole focus, the balance breaks. This kind of tunnel vision overlooks actual demand and leads to poor inventory decisions.
+
+Consider this example: you sell just 100 units of a slow-moving C-item per year. Your supplier offers two options: buy 100 units at full price, or 1,000 units with a 20% discount.
+
+At first glance, the larger order looks like a win. But choosing this option comes with a hidden cost.
+
+![image/size:600px/align:right/frame:none](learn/images/66/c577de4058821e50a99f93f6c014198e5c67ff22857e4a29fe96c105ceb7be05)
+---
+> [next] Continue -> a35c1ad7-5634-4bc2-8af9-cd25c8ba4419
+
+slide_id: a35c1ad7-5634-4bc2-8af9-cd25c8ba4419
+index_title: The Consequence
+title: **The Consequence: 10 Years of Stock**
+layout: standard-2-col
+type: main
+---
+Let's play out that decision. You accepted the discount and bought 1,000 units. Since you only sell 100 units a year, **you have effectively bought stock for 10 years.**
+
+You may have saved a small amount on the unit price, but you have destroyed your inventory turnover ratio. You have tied up capital in products that will sit gathering dust for a decade.
+
+**So, how do we avoid this?**
+
+![image/size:350px/align:right/frame:none](learn/images/58/e4d449eaea1d790337fa219022a2b43a1354084abdaad06ed8bf158bff972c83)
+---
+> [next] Continue -> 3e373222-2339-46ae-b9e6-abbe3ec52dcd
+
+[id:4/topic: The Solution]
+
+slide_id: 3e373222-2339-46ae-b9e6-abbe3ec52dcd
+index_title: The Solution
+title: **The Solution**
+type: main
+---
+Instead of focusing only on getting the lowest unit price, we shift our attention to how long we want the product in stock.
+
+Using your Double ABC Analysis to guide this decision helps balance demand, unit price, and inventory turn ratio in a healthy way.
+
+![image/size:large/align:center/frame:none](learn/images/63/f19cb4efd40669a72288a5b8bba3e6d93720cb52848f57c68e6daa516f3bde2e)
+---
+> [next] Continue -> 8f731452-4466-44c8-8ba4-e457f7842fea
+
+slide_id: 8f731452-4466-44c8-8ba4-e457f7842fea
+index_title: The Solution: An Example
+title: **The Solution: An Example**
+type: main
+---
+For CA items - products that are inexpensive and sell in high volumes - it makes sense to buy larger quantities. Think of paper clips. You get a better price, they sell quickly, and excess isn’t very expensive to hold.
+
+For AC items, the situation is very different. Take a copy machine: it is expensive, sells slowly and the demand fluctuates. Buying large quantities ties up capital, lowers inventory turnover, and increases the risk of costly excess stock.
+
+![image/size:large/align:center/frame:none](learn/images/64/e2fd3da8d0ca0cb50ff1cac7674960afd01417dd4461155f88d4559f4048f1d3)
+
+Note: The days-on-hand values shown in the illustration are intended to illustrate the way of thinking. They are not a final recommendation or a one-size-fits-all answer.
+---
+> [next] Continue -> 4a26a944-e0d1-4558-a223-b0c40d9bd264
+
+[id:5/topic: Using Inact Now]
+
+slide_id: 4a26a944-e0d1-4558-a223-b0c40d9bd264
+index_title: How Can Inact Now Help Us?
+title: **How Can Inact Now Help Us?**
+layout: standard-2-col
+type: main
+---
+So, how can we use Inact Now to manage these quantities?
+
+Let’s go through the Insight “Reorder Quantity”.
+
+Do you know how to open the Insight?
+
+![image/size:350px/align:right/frame:none](learn/images/55/0018b1d3f9e41a2a9c740236082d9f4ba3d5403637a3cf5de6baa7d0a9ff7dea)
+---
+> [next] Yes, continue -> c63d38ed-c349-4a43-9732-02aaebe65db1
+> [sidequest] No, show me -> s1
+
+slide_id: c63d38ed-c349-4a43-9732-02aaebe65db1
+index_title: Insight walkthrough: Reorder Quantity
+title: **Insight walkthrough: Reorder Quantity**
+type: main
+---
+The interactive tutorial below will go through how to use the “Reorder Quantity” Insight:
+
+[supademo: Insight walkthrough: Reorder Quantity](https://app.supademo.com/embed/cml818das7ub6zsadsfdu4zbh?embed_v=2&utm_source=embed)
+---
+> [next] Continue -> a20d6518-3d6e-4526-b96b-05c3461a805e
+
+[id:6/topic: Congratulations!]
+
+slide_id: a20d6518-3d6e-4526-b96b-05c3461a805e
+index_title: Congrats!
+title: **Congratulations! You’ve Completed the Reorder Quantity Course**
+layout: standard-2-col
+type: main
+---
+You’ve mastered the balancing act of the Reorder Quantity - learning to resist the "tunnel vision" of unit price discounts to ensure you also prioritize demand and inventory turnover.
+
+You have successfully completed the learning path. You are ready to start optimizing your purchasing decisions in Inact.
+
+**Time to put this into practice!**
+
+![image/size:large/align:right/frame:none](learn/images/68/00703f08704101a88d75e2f0fb7756e89d250ffe5c73505c0b2d82bd816ff0f5)
+---
+
+[flow-specific-side-quests]
+
+[id:s1/topic: Opening the Insight: Reorder Quantity]
+
+slide_id: fac051f3-6875-485f-98fa-21daac359ecd
+title: **Opening the Insight: Reorder Quantity**
+type: sidequest
+backLabel: Return to main path
+---
+The interactive tutorial below will show you how to open the Insight:
+
+[supademo: Opening the insight: Reorder Quantity](https://app.supademo.com/embed/cml7ul5hn7e50zsadxzc7czok?embed_v=2&utm_source=embed)
+---

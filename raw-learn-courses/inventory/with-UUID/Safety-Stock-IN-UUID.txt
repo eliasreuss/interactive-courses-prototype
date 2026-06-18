@@ -1,0 +1,237 @@
+[id:1/topic: Welcome]
+
+slide_id: 4b6be93b-574a-4c93-a303-f3db9fcfc0db
+index_title: Welcome
+title: 
+type: hero
+---
+hero_image: learn/images/50/274f0acc98454711fb560cb6a8a1cf8c26d5b0a18f12ede12f3f65585285b274
+hero_subtitle: Welcome to the course:
+hero_title: Safety Stock
+hero_body: In this course, we’ll build a clear and practical understanding of safety stock - why it exists, when it’s needed, and how to get it right. We’ll walk through how to determine the optimal safety stock level, balancing service levels with inventory costs. 
+
+**Let’s get started!**
+---
+> [next] Let's do it! -> 327f8efd-5c26-4dc9-bded-7fa97e1f2646
+
+slide_id: 327f8efd-5c26-4dc9-bded-7fa97e1f2646
+index_title: What Is Safety Stock?
+title: What Is Safety Stock?
+type: main
+---
+Safety stock is a buffer of extra inventory kept to reduce the risk of stockouts caused by uncertainties in supply and demand.
+
+When stock reaches the **reorder point**, a new purchase order is placed to cover expected demand during the **lead time**. The **safety stock** sits below this level as a reserve and is only used when demand is higher than forecasted or when a delivery is delayed, preventing inventory from running out.
+
+![image/size:large/align:center/frame:none](learn/images/43/0c8187af029bf2b8279cc7b2ce24a87446193007f4a9db41e8fe42b6a0495818)
+
+In many companies, safety stock levels are still set based on intuition or past habits. Our aim is to help you determine these levels using data and well-defined service goals.
+---
+> [next] Continue -> 45383b56-e4ba-423f-9312-24fe99280b7b
+
+[id:2/topic: Establishing Optimal Safety Stock Levels]
+
+slide_id: 45383b56-e4ba-423f-9312-24fe99280b7b
+index_title: The three key variables
+title: How Do We Establish the Optimal Level of Safety Stock?
+type: main
+---
+To determine the right safety stock for each of our products, we look at three key variables:
+
+{columns}
+{column}
+![image 1/size:third/align:center/frame:none](learn/images/49/559e7e47561316b514756ef0d0f5ad61198f10031d4363b811ddd34f5ec10d4a)
+{/column}
+{column}
+![image 2/size:third/align:center/frame:none](learn/images/52/33781ace67c257c0f7f254f309fe5aa20ccc5f27aceba9ce91d388f2bf41e6b9)
+{/column}
+{column}
+![image 3/size:third/align:center/frame:none](learn/images/53/de2638cc20b3e6057dab418e6a30bf7c75b128fe094db812511286f0654358a1)
+{/column}
+{/columns}
+
+We will now go through these variables in more detail, starting with variance.
+---
+> [next] Continue -> f5da80c4-057c-4bd9-adf1-e7d413ed2e9b
+
+[id:3/topic: Variance]
+
+slide_id: f5da80c4-057c-4bd9-adf1-e7d413ed2e9b
+index_title: Variance
+title: Variance
+type: main
+layout: standard-2-col
+---
+In the chart, the A-item is important to the business and has stable, predictable demand. Since these items are critical, maintaining a high service level is essential.
+
+The C-item behaves very differently. Demand is low most of the time, with occasional spikes. If we add safety stock to cover those rare spikes, we often end up holding far too much inventory “just in case,” increasing the risk of excess stock or deadstock.
+
+High-variance items should therefore be handled carefully. Instead of increasing safety stock, it is often better to accept longer lead times or lower service levels on C-items (if we should stock them at all), while keeping strong protection where it truly matters - the stable, high-value A-items.
+
+![image/size:600px/align:right/frame:none](learn/images/40/05af153d7668e2727c071188533b186f3b76ba08f3fdbfa68cfd757694ab2278)
+---
+> [next] Continue -> 31740a8b-34f4-4267-b627-65ec2c5b2be1
+
+[id:4/topic: Lead Time]
+
+slide_id: 31740a8b-34f4-4267-b627-65ec2c5b2be1
+index_title: Lead Time
+title: Lead Time
+type: main
+---
+Another important factor that affects safety stock is lead time. Even if demand is stable and service levels are well-defined, longer lead times mean you need more stock to cover the period until the next delivery arrives.
+
+Here is an example of how lead time can affect safety stock.
+
+When the lead time is reduced from 60 days to 40 days, the required safety stock drops from 289 units to 236 units, an 18% reduction. This shows that even moderate improvements in lead time can have a meaningful impact on inventory levels.
+
+![image/size:large/align:center/frame:none](learn/images/41/8fee447c06ae277b50c752c2684296eb7c32901181878b8f7ab904d407b9e907)
+---
+> [next] Continue -> 3e497b68-98df-4f55-82aa-1959b313ffd8
+
+[id:5/topic: Service Level]
+
+slide_id: 3e497b68-98df-4f55-82aa-1959b313ffd8
+index_title: Service Level
+title: Service Level
+type: main
+layout: standard-2-col
+---
+We have now examined **variance** and **lead time.** While these significantly impact safety stock, they are often external factors - driven by market behavior or supplier logistics - that are difficult to change in the short term.
+
+**So, what can we change?**
+
+We have one final variable remaining, and it is the one where we have the most control: **service level.**
+
+Unlike the other two variables, service level is a strategic decision. It is the target you set to define how much risk of a stockout you are willing to accept for a specific product.
+
+![image/size:500px/align:right/frame:none](learn/images/48/4fc61e4d3e5a6d5f1cb7b871b0feef0afc8393085581b89d3069fcb07dfd9452)
+---
+> [next] Continue -> e2cd8544-1961-4cc1-b5cf-e384365bfa99
+
+slide_id: e2cd8544-1961-4cc1-b5cf-e384365bfa99
+index_title: Why Not Aim for 100%?
+title: Why Not Aim for 100%?
+type: main
+---
+Since we control the target, why can’t we simply keep everything in stock all the time and aim for a 100% service level on all products?
+
+The short answer: **it’s far too expensive.**
+
+The relationship between service and cost of inventory is not linear.
+
+As the graph shows, increasing service from, say, 90% to 95% requires a noticeable jump in inventory. But pushing service from 95% to 99% becomes dramatically more expensive. 
+
+Each additional percentage point of service requires disproportionately more stock - **primarily in the form of safety stock,** which escalates rapidly as service targets rise.
+
+![image/size:large/align:center/frame:none](learn/images/44/116729d5dfa60a96a0497fd8c478cbe6de7ab7cb532a4151634ddf6f6a0b588f)
+---
+> [next] Continue -> 0f337fa5-c65b-4f6c-a466-b1f6c8ca86a7
+
+slide_id: 0f337fa5-c65b-4f6c-a466-b1f6c8ca86a7
+index_title: Service Level: Example
+title: Service Level and Safety Stock: A Practical Example
+type: main
+---
+In this example, the service level is reduced from **98% to 80%** — an **18% drop.**
+
+ However, the required safety stock decreases from **289 units to 119 units,** which is a **58% reduction.**
+
+This shows how even a relatively small change in service level can lead to a much larger reduction in safety stock. Lowering service levels slightly can therefore have a significant impact on inventory costs, while still maintaining acceptable product availability for less critical items.
+
+![image/size:large/align:center/frame:none](learn/images/45/04ad390270af5471328f91ac1c68a73dc69c170c7b340165987fda0c3ced3123)
+---
+> [next] Continue -> 5804c4be-4c18-4b20-a0d4-8bfd7ede04b8
+
+slide_id: 5804c4be-4c18-4b20-a0d4-8bfd7ede04b8
+index_title: Differentiated Service Model
+title: So, What Do We Do?
+type: main
+---
+Most companies use a one-size-fits-all service level for all products. But this often leads to too much stock on low-importance items and too little on critical ones.
+
+**We strongly recommend moving from a single service target to a differentiated service model based on your Double ABC Analysis** - setting higher service levels where it really matters and lower levels where the business impact is small. This ensures better availability while keeping total inventory under control.
+
+Note: the service levels on the illustration is only meant to spark the right way of thinking - it’s not a final proposal or a definitive answer.
+
+![image/size:large/align:center/frame:none](learn/images/46/a836870b996d9125cc2a39d8d4553af2504c81cdeb375d4afa42395d5c7d7f3d)
+---
+> [next] Continue -> 706461a3-3c1b-4197-8879-3dcd27ad6f56
+
+[id:6/topic: Inside Inact Now]
+
+slide_id: 706461a3-3c1b-4197-8879-3dcd27ad6f56
+index_title: How Can Inact Now Help Us?
+title: How Can Inact Now Help Us?
+type: main
+---
+In Inact Now, there are two insights that are especially helpful for establishing and managing safety stock levels per category in your organization. 
+
+The first one allows you to simulate different service levels, to see how it affects how expensive your inventory will be.
+
+Let’s open the Insight “Safety Stock / Simulation” and take a look.
+
+Do you know how to open the insight?
+---
+> [next] Yes, continue -> 03cbcb64-df61-4471-8bb8-7df19c1bf67c
+> [sidequest] No, help me -> s1
+
+slide_id: 03cbcb64-df61-4471-8bb8-7df19c1bf67c
+index_title: Insight: Safety Stock / Simulation
+title: Insight: Safety Stock / Simulation
+type: main
+---
+Go through the interactive tutorial below to see how we can use Inact Now to simulate different service levels:
+
+[supademo: Insight: Safety Stock Simulation](https://app.supademo.com/embed/cmlb0od6v3p73vhwzylb5iood?embed_v=2&utm_source=embed)
+---
+> [next] Continue -> c4766e73-a473-45ae-b2cd-f9f062ef9c8f
+
+slide_id: c4766e73-a473-45ae-b2cd-f9f062ef9c8f
+index_title: Insight: Safety Stock
+title: Insight: Safety Stock
+type: main
+---
+Simulations provide the big picture. Now let’s look closer at a single scenario.
+
+Using the “Safety Stock” Insight, you can drill down to individual products and see exactly how much safety stock is required for each item. If your organization already uses safety stock, you can compare the levels currently set in your ERP system with the levels calculated by Inact Now.
+
+Go through the interactive tutorial below to get a walkthrough of the "Safety Stock" insight in Inact Now:
+
+[supademo: Insight walkthrough: Safety Stock](https://app.supademo.com/embed/cmlf4up2g0ux3zqp09ssw5woa?embed_v=2&utm_source=embed)
+---
+> [next] Continue -> 4e0754e4-a672-4efc-afc8-84322e4cfc0c
+
+[id:7/topic: What's next?]
+
+slide_id: 4e0754e4-a672-4efc-afc8-84322e4cfc0c
+index_title: What's Next?
+title: Congratulations! You’ve Completed the Safety Stock Course.
+title-align: center
+type: main
+layout: standard-2-col
+---
+You’ve learned how to set the right safety stock levels - protecting service levels for critical products without carrying excess inventory.
+
+But safety stock is only part of the equation. The next step is knowing exactly when to reorder so inventory flows smoothly and without disruption.
+
+In the next course, **Reorder Point**, you’ll learn how to do just that.
+
+**Let’s keep going!**
+
+![image/size:large/align:right/frame:none](learn/images/50/274f0acc98454711fb560cb6a8a1cf8c26d5b0a18f12ede12f3f65585285b274)
+---
+
+[flow-specific-side-quests]
+
+[id:s1/topic: Opening the Insight: Safety Stock / Simulation]
+
+slide_id: 1
+title: Opening the Insight: Safety Stock / Simulation
+type: sidequest
+backLabel: Return to main path
+---
+Go through the interactive tutorial below to see how to open the Insight:
+
+[supademo: Opening the Insight: Safety Stock Simulation](https://app.supademo.com/embed/cmlawzyeq3gqyvhwzfnskr50r?embed_v=2&utm_source=embed)
+---

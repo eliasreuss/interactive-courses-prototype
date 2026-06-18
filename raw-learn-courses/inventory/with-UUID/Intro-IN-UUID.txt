@@ -1,0 +1,98 @@
+slide_id: 3a37fbf1-d6cb-46b4-be5c-b5769251b30e
+index_title: Welcome
+title: 
+title-align: center
+type: hero
+---
+hero_image: intro/Intro-Path-Cover-2.png
+hero_subtitle: Welcome to the learning path:
+hero_title: Introduction to Inact for Inventory Management
+hero_body: This is the intro to a five-part learning path. By the end, you’ll understand the fundamentals of inventory management and be ready to use Inact Now confidently in your daily work!
+---
+> [next] Let's do it! -> 17388986-3cce-4084-8a07-847116775dd7
+
+slide_id: 17388986-3cce-4084-8a07-847116775dd7
+index_title: What to Stock? How Much to Stock? How Much to Order?
+title: **The Three Pillars of Inventory Management**
+type: main
+---
+At its core, inventory optimization boils down to answering three questions:
+
+{columns}
+{column}
+![image 1/size:third/align:center/frame:none](intro/What-To-Stock.png)
+{/column}
+{column}
+![image 2/size:third/align:center/frame:none](intro/How-Much-To-Stock.png)
+{/column}
+{column}
+![image 3/size:third/align:center/frame:none](intro/How-Much-To-Order.png)
+{/column}
+{/columns}
+
+These are simple questions, but they don’t have simple answers. While everyone in the organization wants the company to succeed, different departments are often aiming for different targets.
+---
+> [next] Continue -> a231f80b-44dc-49e8-9c64-bc23cf9ad05a
+
+slide_id: a231f80b-44dc-49e8-9c64-bc23cf9ad05a
+index_title: Inventory is Big Politics
+title: **Different Departments, Different Targets**
+type: main
+---
+**You have probably seen this dynamic before:**
+
+![image/size:large/align:center/frame:none](intro/Triangle-Dynamic.png)
+
+This tug of war between priorities makes it essential to find the right balance to keep the business healthy and profitable.
+---
+> [next] Continue -> 29c01ac5-e6f0-4f69-866d-d3a5d83828c5
+
+slide_id: 29c01ac5-e6f0-4f69-866d-d3a5d83828c5
+index_title: Excess Inventory & Obsolescence
+title: **The Cost of Imbalance**
+type: main
+---
+But finding the right balance is hard, and the consequences for failing are costly.
+
+In fact, most companies are sitting on 15-35% excess inventory as a result of their balancing act failing. This silently drains resources in three critical ways: 
+
+{columns}
+{column}
+![image 1/size:third/align:center/frame:none](intro/Rising-Inventory-Capital.png)
+{/column}
+{column}
+![image 2/size:third/align:center/frame:none](intro/Too-Low-Turnover-Rate.png)
+{/column}
+{column}
+![image 3/size:third/align:center/frame:none](intro/Obsolete-Goods-And-Write-Offs.png)
+{/column}
+{/columns}
+
+Throughout this learning path, you’ll explore practical ways to prevent these costs and regain control of your inventory.
+---
+> [next] Continue -> a86d70b0-c716-43d4-a5d3-23b01b48b351
+
+slide_id: a86d70b0-c716-43d4-a5d3-23b01b48b351
+index_title: Getting Inventory Right
+title: **Getting Inventory Right**
+type: main
+---
+This is the goal: Inventory management that keeps the right products in stock - using optimal reorder points and quantities - without binding unnecessary capital. 
+
+![image/size:large/align:center/frame:none](intro/Full-Picture-ROP-ROQ.png)
+
+So, if you’re ready, let’s take a look at what we will go through in the learning path.
+---
+> [next] Continue -> 69b5927a-73d7-43d2-8140-27d91267b12c
+
+slide_id: 69b5927a-73d7-43d2-8140-27d91267b12c
+index_title: 5 Steps to Manage Inventory
+title: **The Learning Path**
+type: main
+---
+Here are the five subjects we’ll cover:
+
+![image/size:large/align:center/frame:none](intro/Learning-Path-Overview.png)
+
+From here, you can continue to the first course, “Double ABC Analysis,” or return to the learning path overview.
+---
