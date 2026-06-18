@@ -31,7 +31,11 @@ title: Not Everyone Has the Same Access
 type: main
 layout: standard-2-col
 ---
-In Inact Now, your role determines what you can see and do. There are four user types.
+In Inact Now, your role determines what you can see and what you can do in the platform.
+
+There are four different user types, each with its own level of access and capabilities. Some roles focus on exploring and using existing content, while others can create, edit, and share across the organization.
+
+Understanding your role will help you know what’s available to you and what to expect as you navigate the platform.
 ![image/size:500px/align:right/frame:none](admin-intro/User-Types.png)
 ---
 > [next] Continue -> 14227170-5eae-4b2e-92d3-045a4aa69ce2
