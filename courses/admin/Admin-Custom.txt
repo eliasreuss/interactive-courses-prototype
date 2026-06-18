@@ -16,15 +16,17 @@ hero_body: Your standard setup is a great starting point. In this course you wil
 
 slide_id: c0426945-fde9-400c-9968-b69b1bb9e1e0
 index_title: Public and Private
-title: Public and Private
+title: Public vs. Private
 type: main
 layout: standard-2-col
 ---
-Anything in Inact Now is either public or private. Public content is visible to everyone in your organization. Private content is only visible to you.
+Before we begin, it’s important to understand the difference between Public and Private Insights, Actions, and Dashboards.
 
-When you create something new, it starts as private. You decide when to make it public.
+Everything in Inact Now is either public or private. Public content is visible to everyone in your organization, while private content is only visible to you.
 
-Editing public content affects everyone who uses it. If you are unsure, work in private first.
+Whenever you create something new, it starts as private. You choose when to share it.
+
+Keep in mind that editing public content affects everyone who uses it. If you’re unsure, it’s always safest to work in private first.
 ![image/size:500px/align:right/frame:none](admin-custom/Public-Private.png)
 ---
 > [next] Continue -> 36a54ee0-b20e-47a6-8942-5b67aa19e1f7
@@ -34,8 +36,12 @@ index_title: What You Can Do
 title: What You Can Do
 type: main
 ---
-Your role determines what you can create and edit.
+Before we move on, it’s also helpful to know your role and what it allows you to do. Your role determines what you can create, edit, and share.
+
+Use this overview as a guide to understand what’s available to you. If something isn’t accessible, it simply means it’s not part of your role.
 ![image/size:large/align:center/frame:none](admin-custom/What-You-Can-Do.png)
+
+Now that you understand the difference between public and private, and what your role allows you to do, you’re ready to start customising.
 ---
 > [next] Continue -> 6a283ef0-8b09-4da8-8f66-1bb6c6b80d45
 
@@ -46,9 +52,11 @@ index_title: Creating an Insight
 title: Creating an Insight
 type: main
 ---
-To create a new insight, click the "+ New Insight" button in the Insights tab. This opens a template picker where you can browse existing Insights to use as the foundation of your new Insight.
+The standard Insights are based on best practices and will cover most needs. But if you want something more tailored, you can create your own.
 
-Select one, give it a name, add slicers and filters, organise it in an Insight Group and then click create. This will add it to your library as a private insight.
+To create a new Insight, navigate to the Insights tab and click the “+ New Insight” button. This opens the template picker, where you can browse existing Insights and use one as the starting point for your own.
+
+Select a template, give your Insight a name, add slicers and filters, and place it in an Insight Group. Then click Create.Your new Insight will be added to your library as a private Insight, ready for you to refine and share when you’re ready.
 ![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Admin/Create-Insight.mp4)
 ---
 > [next] Continue -> 3e62aa68-bffb-4c4a-b390-5bd85da43fa7
@@ -65,7 +73,7 @@ As an Admin you can enter edit mode directly on any public insight. This is powe
 
 If you are experimenting, copy the insight first and work on the private copy.
 
-If you want a step-by-step tutorial on how to edit an Insight, click the dark green button below.
+If you want a step-by-step tutorial on how to use Edit Mode, click the dark green button below.
 ![image/size:550px/align:right/frame:none](admin-custom/Edit-Mode.png)
 ---
 > [next] Continue -> faf1e135-aa42-4e1a-a1a0-02d7f53ce0be
@@ -79,7 +87,11 @@ title: Creating Actions
 type: main
 layout: standard-2-col
 ---
-Actions are automated task lists that surface what needs attention. Super Users can create private actions for themselves. Admins can create public actions and distribute them to the whole team.
+Next, let’s look at **Actions.**
+
+Actions help you stay on top of what needs attention by turning your data into clear, actionable task lists.
+
+Super Users can create private Actions for themselves, while Admins can create and share Actions with the entire team.
 
 If you want a step-by-step tutorial on how to create an Action, click the green button below.
 ![image/size:400px/align:right/frame:none](admin-custom/Action-Icon.png)
@@ -95,7 +107,9 @@ title: Creating Dashboards
 type: main
 layout: standard-2-col
 ---
-Creating dashboards is an Admin feature. If you are a Super User, skip to the next slide.
+Next, let’s look at **Dashboards.**
+
+Creating dashboards is an Admin feature. If you’re a Super User, you can skip this step. 
 
 A dashboard is built from your insights. You choose which insights feed into it and how the data is displayed.
 
@@ -128,7 +142,7 @@ Let's keep going!
 slide_id: 1
 title: Edit Mode Tutorial Coming Soon...
 type: sidequest
-backLabel: Return to course
+backLabel: Return to main path
 ---
 ![image/size:large/align:center/frame:none](admin-custom/Coming-Soon.png)
 ---
@@ -138,7 +152,7 @@ backLabel: Return to course
 slide_id: 1
 title: Creating Actions Tutorial Coming Soon...
 type: sidequest
-backLabel: Return to course
+backLabel: Return to main path
 ---
 ![image/size:large/align:center/frame:none](admin-custom/Coming-Soon.png)
 ---
@@ -148,7 +162,7 @@ backLabel: Return to course
 slide_id: 1
 title: Creating Dashboards Tutorial Coming Soon...
 type: sidequest
-backLabel: Return to course
+backLabel: Return to main path
 ---
 ![image/size:large/align:center/frame:none](admin-custom/Coming-Soon.png)
 ---

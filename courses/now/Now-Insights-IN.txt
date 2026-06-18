@@ -7,8 +7,8 @@ type: hero
 ---
 hero_image: learn/images/146/2fe1920c2153b7d3461113cbe3347f71b299df7893acee369120038b48c287ba
 hero_subtitle: Welcome to the course:
-hero_title: **Insights**
-hero_body: This course focuses on Insights - the deep-dive analyses that give you complete visibility into your supply chain. You will learn how to navigate different data views, use slicers to isolate what matters, and click deeper to uncover specific, actionable opportunities in your supply chain.
+hero_title: Insights
+hero_body: This course focuses on Insights - the deep-dive analyses that give you complete visibility into your supply chain. You will learn how to navigate different data views, use slicers to isolate what matters, and click deeper to uncover specific, actionable opportunities in your supply chain.
 
 **Let’s get started!**
 ---
@@ -24,10 +24,12 @@ Insights allow you to deeply analyze specific areas of your supply chain. You ca
 
 **You will encounter two main types of Insights in the platform:**
 
-***Best-Practice Templates**
+**Best-Practice Templates**
+
 Inact Now comes with a large library of pre-built templates covering all of our solutions. These are built directly on industry best practices. This allows you to instantly apply proven analytical frameworks to your data without having to build anything from scratch.
 
-***Custom Insights:**
+**Custom Insights:**
+
 Alongside our standard templates, you might also use tailored analyses built specifically by your company to match your unique workflows.
 
 Regardless of how the Insight was created, it connects directly to your ERP system and updates automatically every day.

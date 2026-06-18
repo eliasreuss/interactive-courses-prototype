@@ -16,7 +16,7 @@ hero_body: In this course, we’ll build a clear and practical understanding of 
 
 slide_id: 327f8efd-5c26-4dc9-bded-7fa97e1f2646
 index_title: What Is Safety Stock?
-title: **What Is Safety Stock?**
+title: What Is Safety Stock?
 type: main
 ---
 Safety stock is a buffer of extra inventory kept to reduce the risk of stockouts caused by uncertainties in supply and demand.
@@ -33,7 +33,7 @@ In many companies, safety stock levels are still set based on intuition or past 
 
 slide_id: 45383b56-e4ba-423f-9312-24fe99280b7b
 index_title: The three key variables
-title: **How Do We Establish the Optimal Level of Safety Stock?**
+title: How Do We Establish the Optimal Level of Safety Stock?
 type: main
 ---
 To determine the right safety stock for each of our products, we look at three key variables:
@@ -58,9 +58,9 @@ We will now go through these variables in more detail, starting with variance.
 
 slide_id: f5da80c4-057c-4bd9-adf1-e7d413ed2e9b
 index_title: Variance
-title: **Variance**
-layout: standard-2-col
+title: Variance
 type: main
+layout: standard-2-col
 ---
 In the chart, the A-item is important to the business and has stable, predictable demand. Since these items are critical, maintaining a high service level is essential.
 
@@ -76,7 +76,7 @@ High-variance items should therefore be handled carefully. Instead of increasing
 
 slide_id: 31740a8b-34f4-4267-b627-65ec2c5b2be1
 index_title: Lead Time
-title: **Lead Time**
+title: Lead Time
 type: main
 ---
 Another important factor that affects safety stock is lead time. Even if demand is stable and service levels are well-defined, longer lead times mean you need more stock to cover the period until the next delivery arrives.
@@ -93,9 +93,9 @@ When the lead time is reduced from 60 days to 40 days, the required safety stock
 
 slide_id: 3e497b68-98df-4f55-82aa-1959b313ffd8
 index_title: Service Level
-title: **Service Level**
-layout: standard-2-col
+title: Service Level
 type: main
+layout: standard-2-col
 ---
 We have now examined **variance** and **lead time.** While these significantly impact safety stock, they are often external factors - driven by market behavior or supplier logistics - that are difficult to change in the short term.
 
@@ -111,7 +111,7 @@ Unlike the other two variables, service level is a strategic decision. It is the
 
 slide_id: e2cd8544-1961-4cc1-b5cf-e384365bfa99
 index_title: Why Not Aim for 100%?
-title: **Why Not Aim for 100%?**
+title: Why Not Aim for 100%?
 type: main
 ---
 Since we control the target, why can’t we simply keep everything in stock all the time and aim for a 100% service level on all products?
@@ -130,7 +130,7 @@ Each additional percentage point of service requires disproportionately more sto
 
 slide_id: 0f337fa5-c65b-4f6c-a466-b1f6c8ca86a7
 index_title: Service Level: Example
-title: **Service Level and Safety Stock: A Practical Example**
+title: Service Level and Safety Stock: A Practical Example
 type: main
 ---
 In this example, the service level is reduced from **98% to 80%** — an **18% drop.**
@@ -145,7 +145,7 @@ This shows how even a relatively small change in service level can lead to a muc
 
 slide_id: 5804c4be-4c18-4b20-a0d4-8bfd7ede04b8
 index_title: Differentiated Service Model
-title: **So, What Do We Do?**
+title: So, What Do We Do?
 type: main
 ---
 Most companies use a one-size-fits-all service level for all products. But this often leads to too much stock on low-importance items and too little on critical ones.
@@ -162,7 +162,7 @@ Note: the service levels on the illustration is only meant to spark the right wa
 
 slide_id: 706461a3-3c1b-4197-8879-3dcd27ad6f56
 index_title: How Can Inact Now Help Us?
-title: **How Can Inact Now Help Us?**
+title: How Can Inact Now Help Us?
 type: main
 ---
 In Inact Now, there are two insights that are especially helpful for establishing and managing safety stock levels per category in your organization. 
@@ -178,7 +178,7 @@ Do you know how to open the insight?
 
 slide_id: 03cbcb64-df61-4471-8bb8-7df19c1bf67c
 index_title: Insight: Safety Stock / Simulation
-title: **Insight: Safety Stock / Simulation**
+title: Insight: Safety Stock / Simulation
 type: main
 ---
 Go through the interactive tutorial below to see how we can use Inact Now to simulate different service levels:
@@ -189,7 +189,7 @@ Go through the interactive tutorial below to see how we can use Inact Now to sim
 
 slide_id: c4766e73-a473-45ae-b2cd-f9f062ef9c8f
 index_title: Insight: Safety Stock
-title: **Insight: Safety Stock**
+title: Insight: Safety Stock
 type: main
 ---
 Simulations provide the big picture. Now let’s look closer at a single scenario.
@@ -206,10 +206,10 @@ Go through the interactive tutorial below to get a walkthrough of the "Safety St
 
 slide_id: 4e0754e4-a672-4efc-afc8-84322e4cfc0c
 index_title: What's Next?
-title: **Congratulations! You’ve Completed the Safety Stock Course.**
+title: Congratulations! You’ve Completed the Safety Stock Course.
 title-align: center
-layout: standard-2-col
 type: main
+layout: standard-2-col
 ---
 You’ve learned how to set the right safety stock levels - protecting service levels for critical products without carrying excess inventory.
 
@@ -226,14 +226,12 @@ In the next course, **Reorder Point**, you’ll learn how to do just that.
 
 [id:s1/topic: Opening the Insight: Safety Stock / Simulation]
 
-slide_id: 4b6be93b-574a-4c93-a303-f3db9fcfc0db
-title: **Opening the Insight: Safety Stock / Simulation**
+slide_id: 1
+title: Opening the Insight: Safety Stock / Simulation
 type: sidequest
 backLabel: Return to main path
 ---
 Go through the interactive tutorial below to see how to open the Insight:
 
-<div style="position: relative; box-sizing: content-box; max-height: 80vh; max-height: 80svh; width: 100%; aspect-ratio: 1.78; padding: 40px 0 40px 0;">
-  <iframe src="https://app.supademo.com/embed/cmlawzyeq3gqyvhwzfnskr50r?embed_v=2&utm_source=embed" loading="lazy" title="Opening the Insight: Safety Stock Simulation" allow="clipboard-write" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-</div>
+[supademo: Opening the Insight: Safety Stock Simulation](https://app.supademo.com/embed/cmlawzyeq3gqyvhwzfnskr50r?embed_v=2&utm_source=embed)
 ---

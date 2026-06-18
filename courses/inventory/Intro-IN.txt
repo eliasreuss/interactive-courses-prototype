@@ -1,4 +1,4 @@
-slide_id: 1
+slide_id: 15addfbc-3fa1-4170-9193-7e8ba9cd4e58
 index_title: Welcome
 title: 
 title-align: center
@@ -9,9 +9,9 @@ hero_subtitle: Welcome to the learning path:
 hero_title: Introduction to Inact for Inventory Management
 hero_body: This is the intro to a five-part learning path. By the end, you’ll understand the fundamentals of inventory management and be ready to use Inact Now confidently in your daily work!
 ---
-> [next] Let's do it! -> 2
+> [next] Let's do it! -> b9fa5c31-45f2-447c-995d-43ef5b359b10
 
-slide_id: 2
+slide_id: b9fa5c31-45f2-447c-995d-43ef5b359b10
 index_title: What to Stock? How Much to Stock? How Much to Order?
 title: **The Three Pillars of Inventory Management**
 type: main
@@ -32,9 +32,9 @@ At its core, inventory optimization boils down to answering three questions:
 
 These are simple questions, but they don’t have simple answers. While everyone in the organization wants the company to succeed, different departments are often aiming for different targets.
 ---
-> [next] Continue -> 3
+> [next] Continue -> 5ab6b867-5f3f-438f-a5ae-5f62c8fab463
 
-slide_id: 3
+slide_id: 5ab6b867-5f3f-438f-a5ae-5f62c8fab463
 index_title: Inventory is Big Politics
 title: **Different Departments, Different Targets**
 type: main
@@ -45,9 +45,9 @@ type: main
 
 This tug of war between priorities makes it essential to find the right balance to keep the business healthy and profitable.
 ---
-> [next] Continue -> 4
+> [next] Continue -> 64265cf0-e759-4056-9bde-8eb3898155aa
 
-slide_id: 4
+slide_id: 64265cf0-e759-4056-9bde-8eb3898155aa
 index_title: Excess Inventory & Obsolescence
 title: **The Cost of Imbalance**
 type: main
@@ -70,9 +70,9 @@ In fact, most companies are sitting on 15-35% excess inventory as a result of 
 
 Throughout this learning path, you’ll explore practical ways to prevent these costs and regain control of your inventory.
 ---
-> [next] Continue -> 5
+> [next] Continue -> 1ed57bb4-926a-4a78-80a3-69f719c44cbf
 
-slide_id: 5
+slide_id: 1ed57bb4-926a-4a78-80a3-69f719c44cbf
 index_title: Getting Inventory Right
 title: **Getting Inventory Right**
 type: main
@@ -83,9 +83,9 @@ This is the goal: Inventory management that keeps the right products in stock - 
 
 So, if you’re ready, let’s take a look at what we will go through in the learning path.
 ---
-> [next] Continue -> 6
+> [next] Continue -> 8183e4c7-35a7-41f5-89ce-9225203f10d1
 
-slide_id: 6
+slide_id: 8183e4c7-35a7-41f5-89ce-9225203f10d1
 index_title: 5 Steps to Manage Inventory
 title: **The Learning Path**
 type: main

@@ -18,8 +18,8 @@ hero_body: In this course, we move from understanding your data to making decisi
 slide_id: ae483f26-08d0-4a0d-83e9-e960c2619e6b
 index_title: The Ultimate Question
 title: The Ultimate Question
-layout: standard-2-col
 type: main
+layout: standard-2-col
 ---
 The first question an organisation should ask themselves when it comes to inventory management is: 
 
@@ -48,8 +48,8 @@ It is the worst of both worlds: high costs and poor service.
 slide_id: f075cc90-3832-44aa-ad19-d73a01093acb
 index_title: What's the Cure?
 title: The solution
-layout: standard-2-col
 type: main
+layout: standard-2-col
 ---
 The cure for this is to stop treating every item equally. We need to apply different policies based on the ABC categories you learned.
 
@@ -104,8 +104,8 @@ Go through the interactive tutorial below to learn how to use Inact Now to estab
 slide_id: 9a15d9b4-aa1e-4c3e-9f54-282f209b5d4e
 index_title: What's Next?
 title: Congratulations! You’ve Completed the Second of Five Courses in the Learning Path.
-layout: standard-2-col
 type: main
+layout: standard-2-col
 ---
 You’ve learned how to set clear boundaries for your inventory - defining exactly which products earn a spot on the shelf and which should be bought to order or made to order.
 
@@ -126,7 +126,7 @@ In the **Safety Stock** course, you’ll learn how to:
 
 [id:s1/topic: How to Open the Insight]
 
-slide_id: e77af8da-b726-4ec3-b436-770ae8cfa8b2
+slide_id: 1
 title: How to Open the Insight
 type: sidequest
 backLabel: Return to course

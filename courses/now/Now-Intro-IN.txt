@@ -5,7 +5,7 @@ type: hero
 ---
 hero_image: learn/images/136/4f843a5723e01a750e77c9abfc24614b2ebc175b9f19b42608541301bf905d05
 hero_subtitle: Welcome to the learning path:
-hero_title: **Inact Now Fundamentals**
+hero_title: Inact Now Fundamentals
 hero_body: In this learning path, you will get a complete overview of the Inact Now platform. You will learn how to navigate your dashboards, interpret key insights, and turn your data into actionable tasks.
 
 **Let’s get started!**

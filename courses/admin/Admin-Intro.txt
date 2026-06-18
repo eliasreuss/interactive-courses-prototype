@@ -29,9 +29,10 @@ slide_id: 8eed0506-4887-4f1f-afe0-fc08f9430606
 index_title: Not Everyone Has the Same Access
 title: Not Everyone Has the Same Access
 type: main
+layout: standard-2-col
 ---
 In Inact Now, your role determines what you can see and do. There are four user types.
-![image/size:large/align:center/frame:none](admin-intro/User-Types.png)
+![image/size:500px/align:right/frame:none](admin-intro/User-Types.png)
 ---
 > [next] Continue -> 14227170-5eae-4b2e-92d3-045a4aa69ce2
 

@@ -8,7 +8,7 @@ type: hero
 hero_image: admin-standard/Standard-Hero.png
 hero_subtitle: Welcome to the course:
 hero_title: Your Standard Solution
-hero_body: You do not start from zero in Inact Now. A complete standard setup is already waiting for you. This course shows you exactly what is.
+hero_body: You do not start from zero in Inact Now. A complete standard setup is already waiting for you. This course shows you exactly what is included in your solution.
 
 **Let's get started!**
 ---
@@ -33,11 +33,13 @@ index_title: The Insights Tab
 title: The Insights Tab
 type: main
 ---
-Open the Insights tab to browse all Insights included in your solution.
+Let’s start by exploring the four most important tabs available to you, beginning with Insights.
 
-Each insight also shows a Data Source. This tells you where the data comes from. Inventory and Products pull from the Products source. Suppliers pull from Suppliers. Customers from Customers.
+Each solution includes around 30 ready-to-use Insights. Open the tab to see everything included in your solution.
 
-At the bottom of the list you will find Private Insights. These are only visible to you.
+Every Insight also shows its data source, so you can easily understand where the data comes from.
+
+At the bottom of the list, you’ll find Private Insights, which are only visible to you.
 ![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Admin/Admin-Insights-Tab.mp4)
 ---
 > [next] Continue -> 3ea6f12c-8128-40da-97fa-0440e62a8ea5
@@ -47,7 +49,9 @@ index_title: The Actions Tab
 title: The Actions Tab
 type: main
 ---
-If you are an Admin, you also have an Actions tab. Right now it is empty. That is completely normal.
+If you are an Admin, you also have an Actions tab.
+
+Right now, it may be empty, and that’s completely normal.
 
 In the following courses, you will learn how to create and distribute actions to your team.
 ![image/size:large/align:center/frame:none](admin-standard/Actions-Empty.png)
@@ -59,9 +63,11 @@ index_title: The Dashboards Tab
 title: The Dashboards Tab
 type: main
 ---
-Each solution comes with one dashboard. If you have the Inventory solution, you have the Inventory dashboard. Admins typically build and distribute additional dashboards on top of this.
+Next, we have the Dashboards tab.
 
-In the following courses, you will learn how to create and distribute dashboards.
+Each solution includes one pre-built dashboard. For example, if you’re using the Inventory solution, you’ll have the Inventory dashboard ready to go.
+
+Admins typically build and distribute additional dashboards on top of this.In the following courses, you will learn how to create and distribute dashboards.
 ![image/size:large/align:center/frame:none](admin-standard/Dashboards-Tab.png)
 ---
 > [next] Continue -> ccb9c7a4-9956-4886-b138-47f666765627
@@ -71,9 +77,11 @@ index_title: The Data Tab
 title: The Data Tab
 type: main
 ---
-If you are ever unsure what a column means or want to know exactly what data you are working with, open the Data tab.
+If you’re ever unsure what a column means or want to understand exactly what data you’re working with, head to the **Data tab.**
 
-Select a data source and you will see every available column, a description of what it contains, and a real example from your data. It is your reference point whenever something is unclear.
+Here you can see all available columns, along with a description and a real example from your data.
+
+Think of it as your go-to reference whenever something is unclear.
 ![image/size:large/align:center/frame:none](admin-standard/Data-Tab.png)
 ---
 > [next] Continue -> 1e076a03-b8fd-4142-8ce7-a297871a0cb6
