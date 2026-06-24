@@ -1060,6 +1060,122 @@
     *, *::before, *::after { animation: none !important; transition: none !important; }
   }
 
+  /* ── LP DECK (multi-path per topic) — fanned card carousel ── */
+  /* Single-path: a lone in-flow card. Multi-path: a fanned stack. */
+  .lp-deck-stage { position: relative; }
+
+  .lp-deck {
+    position: relative;
+    perspective: 1600px;
+    view-transition-name: learning-card; /* whole deck morphs on TOPIC switch */
+  }
+  .lp-deck .learning-card {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 100%;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    transform-origin: center center;
+    transition: transform 0.55s cubic-bezier(0.16,1,0.3,1),
+                opacity 0.45s cubic-bezier(0.16,1,0.3,1),
+                filter 0.45s ease,
+                translate 0.4s cubic-bezier(0.16,1,0.3,1);
+    will-change: transform, opacity;
+    view-transition-name: none; /* the wrapper carries the name, not each card */
+    backface-visibility: hidden;
+  }
+  .lp-deck .learning-card.is-side { cursor: pointer; }
+  .lp-deck .learning-card.is-side:hover {
+    opacity: 1 !important;
+  }
+  /* nudge left-peeking cards further left, right-peeking cards further right */
+  .lp-deck .learning-card.is-left:hover  { translate: -8px 0; }
+  .lp-deck .learning-card.is-right:hover { translate:  8px 0; }
+  /* hide content on peeking cards — only the card background shows */
+  .lp-deck .learning-card .lc-inner {
+    transition: opacity 0.3s cubic-bezier(0.16,1,0.3,1);
+  }
+  .lp-deck .learning-card.is-side .lc-inner {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Side navigation arrows */
+  .lp-deck-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 50;
+    width: 44px; height: 44px;
+    transform: translateY(-50%);
+    display: flex; align-items: center; justify-content: center;
+    border: none; border-radius: 50%;
+    background: var(--color-primary);
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(48,70,66,0.22);
+    transition: transform 0.28s cubic-bezier(0.16,1,0.3,1),
+                background 0.2s ease, opacity 0.2s ease, box-shadow 0.28s ease;
+  }
+  .lp-deck-arrow svg { width: 18px; height: 18px; }
+  /* arrows straddle the front card's vertical edges */
+  .lp-deck-arrow.is-prev { left: -22px; }
+  .lp-deck-arrow.is-next { right: -22px; }
+  .lp-deck-arrow:hover:not(:disabled) {
+    background: var(--color-primary-light);
+    box-shadow: 0 8px 22px rgba(48,70,66,0.28);
+  }
+  .lp-deck-arrow.is-prev:hover:not(:disabled) { transform: translateY(-50%) translateX(-2px); }
+  .lp-deck-arrow.is-next:hover:not(:disabled) { transform: translateY(-50%) translateX(2px); }
+  .lp-deck-arrow:active:not(:disabled) { transform: translateY(-50%) scale(0.93); }
+  .lp-deck-arrow:disabled { opacity: 0; pointer-events: none; }
+  .lp-deck-arrow:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+
+  /* Caption + dots below the deck */
+  .lp-deck-foot {
+    display: flex; flex-direction: column; align-items: center; gap: 9px;
+    margin-top: 22px;
+  }
+  .lp-deck-caption {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.01em;
+    color: var(--color-muted);
+  }
+  .lp-deck-dots {
+    display: flex; align-items: center; gap: 6px;
+  }
+  .lc-lp-dot {
+    height: 6px; width: 6px; border-radius: 4px;
+    background: rgba(48,70,66,0.16);
+    border: none; padding: 0; cursor: pointer;
+    transition: width 0.28s cubic-bezier(0.16,1,0.3,1), background 0.28s;
+  }
+  .lc-lp-dot:hover { background: rgba(48,70,66,0.3); }
+  .lc-lp-dot.is-active { width: 20px; cursor: default; }
+  .lc-lp-dot:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+
+  /* "Recommended" badge — in flow, left-aligned with the title */
+  .lc-rec-badge {
+    align-self: flex-start;
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-bottom: 14px;
+    padding: 5px 12px 5px 10px; border-radius: 100px;
+    background: rgba(255,90,0,0.10);
+    color: var(--color-primary);
+    font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
+  }
+  .lc-rec-badge svg { width: 13px; height: 13px; color: var(--color-accent); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .lp-deck .learning-card { transition-duration: 0.001s; }
+    .lp-deck-arrow { transition-duration: 0.001s; }
+  }
+
+  @media (max-width: 640px) {
+    /* hide the back-card peek; navigate via arrows + dots only */
+    .lp-deck .learning-card.is-side { opacity: 0 !important; pointer-events: none; }
+    .lp-deck-arrow.is-prev { left: 4px; }
+    .lp-deck-arrow.is-next { right: 4px; }
+  }
+
   /* ══════════════════════════════════════
      HOME v2 — SOLUTION TOGGLE + LEARNING CARD
      ══════════════════════════════════════ */
@@ -1558,7 +1674,7 @@
       <div class="sol-toggle-wrap">
         <div id="sol-toggle" class="sol-toggle"></div>
       </div>
-      <div id="learning-card" class="learning-card"></div>
+      <div id="lp-deck-wrap"></div>
     </main>
   </div>
 
@@ -1600,6 +1716,7 @@ const PATHS = [
     desc: 'Overview and walkthrough of core Inact Now areas: home, insights, actions, and dashboards.',
     courseCount: 5, duration: '32 min',
     thumbnail: 'LP-thumbnails/LP-Thumbnail-Inventory-Solution.png',
+    tabLabel: 'Fundamentals',
     href: 'now-hub.html', pathParam: 'now', hubFile: 'now-hub.html',
     courseIds: ['now-intro','now-home','now-insights','now-actions','now-dashboards'],
     courseNames: ['Introduction','Home','Insights','Actions','Dashboards'],
@@ -1646,13 +1763,15 @@ const PATHS = [
   },
   {
     id: 'admin',
+    tabLabel: 'Super Users & Admins',
+    illu: 'SVGs/LP-Illustrations/Admin-Illustration.png',
     title: 'Inact Now For Super Users and Admins',
     desc: 'Learn how to configure, customize, and manage Inact Now for your organization—from user roles and standard setup to building your own dashboards and actions.',
     courseCount: 4, duration: '40 min',
     thumbnail: 'LP-thumbnails/LP-Thumbnail-Inventory-Solution.png',
     href: 'admin-hub.html', pathParam: 'admin', hubFile: 'admin-hub.html',
     courseIds: ['admin-intro', 'admin-standard', 'admin-custom', 'admin-manage'],
-    courseNames: ['Introduction: Super Users and Admins', 'Your Standard Solution', 'Customising Your Solution', 'Managing Users'],
+    courseNames: ['Intro: Admin Path', 'Your Standard Solution', 'Customising Your Solution', 'Managing Users'],
     courseFiles: { 'admin-intro': 'Admin-Intro.txt', 'admin-standard': 'Admin-Standard.txt', 'admin-custom': 'Admin-Custom.txt', 'admin-manage': 'Admin-Manage.txt' },
     gradFrom: '#303030', gradTo: '#505050',
     category: 'functionality'
@@ -1712,10 +1831,11 @@ const SOLUTIONS = [
   { key: 'suppliers',    name: 'Suppliers',    label: 'How to source?',  pathId: 'supplier-management',  illu: 'SVGs/LP-Illustrations/Suppliers-Illustration.png',      toggleBg: '#F4EEFF', bg: '#FDFCFF', btn: '#E1DBEB', btnT: '#221D2E', bdr: '#D8D0E8', dot: '#E1DBEB', bar: '#7B68AA' },
   { key: 'products',    name: 'Products',     label: 'What to offer?',  pathId: 'spend-analysis',       illu: 'SVGs/LP-Illustrations/Products-Illustration.png',   soon: true, toggleBg: '#F5E8E5', bg: '#F8F0EE', btn: '#E8CECA', btnT: '#3D1F1C', bdr: '#E0C5C1', dot: '#E8CECA', bar: '#A84C44' },
   { key: 'customers',   name: 'Customers',    label: 'Who to serve?',   pathId: 'end2end',              illu: 'SVGs/LP-Illustrations/Customers-Illustration.png',  soon: true, toggleBg: '#F1F4E9', bg: '#F8FAF4', btn: '#E3E8D8', btnT: '#222619', bdr: '#DDE3D0', dot: '#D0D5C5', bar: '#8A9672' },
-  { key: 'functionality', name: 'Software',   label: 'Inact Now',     pathId: 'now-fundamentals',     illu: 'SVGs/LP-Illustrations/Now-Illustration.png',            toggleBg: '#F1F6FF', bg: '#F5F9FF', btn: '#DBE9FF', btnT: '#1A2535', bdr: '#D0DFEF', dot: '#DBE9FF', bar: '#5888D0' },
+  { key: 'functionality', name: 'Software',   label: 'Inact Now',     pathId: 'now-fundamentals', pathIds: ['now-fundamentals', 'admin'],     illu: 'SVGs/LP-Illustrations/Now-Illustration.png',            toggleBg: '#F1F6FF', bg: '#F5F9FF', btn: '#DBE9FF', btnT: '#1A2535', bdr: '#D0DFEF', dot: '#DBE9FF', bar: '#5888D0' },
 ];
 
 let activeSolKey = 'inventory';
+const activeLpIndexes = {}; // tracks which LP is active per solution key
 
 function hexToRgba(hex, alpha) {
   const r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
@@ -1726,10 +1846,17 @@ function getActiveSolKey() {
   let bestKey = 'inventory', bestPct = -1;
   for (const sol of SOLUTIONS) {
     if (sol.soon) continue;
-    const path = PATHS.find(p => p.id === sol.pathId);
-    if (!path) continue;
-    const prog = getProgress(path);
-    if (prog.started && prog.pct > bestPct) { bestKey = sol.key; bestPct = prog.pct; }
+    const pathIds = sol.pathIds || [sol.pathId];
+    for (let lpIdx = 0; lpIdx < pathIds.length; lpIdx++) {
+      const path = PATHS.find(p => p.id === pathIds[lpIdx]);
+      if (!path) continue;
+      const prog = getProgress(path);
+      if (prog.started && prog.pct > bestPct) {
+        bestKey = sol.key;
+        bestPct = prog.pct;
+        activeLpIndexes[sol.key] = lpIdx;
+      }
+    }
   }
   return bestKey;
 }
@@ -1808,17 +1935,20 @@ function initCardParallax(card) {
   };
 }
 
-function renderLearningCard() {
+function renderLearningCard(pathId, opts) {
+  opts = opts || {};
   const sol = SOLUTIONS.find(s => s.key === activeSolKey);
-  const card = document.getElementById('learning-card');
+  const card = opts.card || document.getElementById('learning-card');
   if (!card || !sol) return;
   card.style.backgroundColor = sol.bg;
   card.style.backgroundImage = `radial-gradient(circle, rgba(0,0,0,0.07) 1px, transparent 1px)`;
   card.style.backgroundSize = '20px 20px';
   card.style.borderColor = sol.bdr;
 
+  const activePathId = pathId || sol.pathId;
+
   if (sol.soon) {
-    const path = PATHS.find(p => p.id === sol.pathId);
+    const path = PATHS.find(p => p.id === activePathId);
     card.style.border = `1px solid ${sol.bdr}`;
     card.innerHTML = `<div class="lc-soon-card">
       <div class="lc-soon-left">
@@ -1839,7 +1969,7 @@ function renderLearningCard() {
   }
 
   card.style.border = `1px solid ${sol.bdr}`;
-  const path = PATHS.find(p => p.id === sol.pathId);
+  const path = PATHS.find(p => p.id === activePathId);
   if (!path) return;
   const prog = getProgress(path);
   const ctaLabel = prog.pct === 100 ? 'Review path' : (prog.started ? 'Continue' : 'Start learning');
@@ -1854,6 +1984,11 @@ function renderLearningCard() {
   }
   const ctaHref = prog.pct === 100 ? path.href + '?from=home' : getNextCourseUrl(path);
 
+  // "Recommended" badge — only on the front (recommended) card of a multi-path topic
+  const recBadgeHtml = opts.recommended
+    ? `<div class="lc-rec-badge"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Recommended</div>`
+    : '';
+
   const moduleItems = path.courseIds.slice(0, 6).map((cid, i) => {
     const name = path.courseNames[i] || ('Course ' + (i+1));
     const done = i < prog.done;
@@ -1867,7 +2002,7 @@ function renderLearningCard() {
 
   card.innerHTML = `<div class="lc-inner">
     <div class="lc-left">
-      <div class="lc-title">${path.title}</div>
+      ${recBadgeHtml}<div class="lc-title">${path.title}</div>
       <div class="lc-desc">${path.desc}</div>
       <div class="lc-prog-row">
         <div class="lc-prog-bar"><div class="lc-prog-fill" data-pct="${prog.pct}"></div></div>
@@ -1889,7 +2024,7 @@ function renderLearningCard() {
       </div>
     </div>
     <div class="lc-illu-wrap">
-      ${sol.illu ? `<img class="lc-illu" src="${sol.illu}" alt="" aria-hidden="true">` : ''}
+      ${(path.illu || sol.illu) ? `<img class="lc-illu" src="${path.illu || sol.illu}" alt="" aria-hidden="true">` : ''}
     </div>
   </div>`;
 
@@ -1933,11 +2068,166 @@ function renderLearningCard() {
   });
 }
 
+function renderDeck() {
+  const sol = SOLUTIONS.find(s => s.key === activeSolKey);
+  const wrap = document.getElementById('lp-deck-wrap');
+  if (!wrap || !sol) return;
+
+  const pathIds = sol.pathIds || [sol.pathId];
+  const activeLpIdx = activeLpIndexes[activeSolKey] !== undefined ? activeLpIndexes[activeSolKey] : 0;
+
+  // Single path: a lone in-flow card, no fan controls.
+  if (pathIds.length === 1) {
+    wrap.innerHTML = '<div class="learning-card" id="learning-card"></div>';
+    renderLearningCard(pathIds[0]);
+    return;
+  }
+
+  // Multi-path: fanned deck of full cards + arrows + caption + dots.
+  const cardsHtml = pathIds.map((_, idx) =>
+    `<div class="learning-card" data-lp-idx="${idx}"></div>`
+  ).join('');
+
+  const dotsHtml = pathIds.map((pid, idx) => {
+    const p = PATHS.find(x => x.id === pid);
+    const label = p ? (p.tabLabel || p.title) : ('Path ' + (idx + 1));
+    return `<button class="lc-lp-dot${idx === activeLpIdx ? ' is-active' : ''}" data-lp-idx="${idx}"
+      aria-label="Go to ${label}"${idx === activeLpIdx ? ` style="background:var(--color-primary)"` : ''}></button>`;
+  }).join('');
+
+  wrap.innerHTML = `<div class="lp-deck-stage">
+      <div class="lp-deck" role="group" aria-roledescription="carousel" aria-label="Learning paths in ${sol.name}" tabindex="0">
+        ${cardsHtml}
+      </div>
+      <button class="lp-deck-arrow is-prev" aria-label="Previous learning path">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="lp-deck-arrow is-next" aria-label="Next learning path">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+    <div class="lp-deck-foot">
+      <span class="lp-deck-caption">${pathIds.length} learning paths in ${sol.name}</span>
+      <div class="lp-deck-dots" role="tablist">${dotsHtml}</div>
+    </div>`;
+
+  const deck = wrap.querySelector('.lp-deck');
+
+  // Render each path's full content into its card
+  pathIds.forEach((pid, idx) => {
+    const cardEl = deck.querySelector(`.learning-card[data-lp-idx="${idx}"]`);
+    renderLearningCard(pid, { card: cardEl, recommended: idx === 0 });
+  });
+
+  // Click a non-active (side/back) card to bring it to center; intercept its links.
+  deck.addEventListener('click', e => {
+    const cardEl = e.target.closest('.learning-card');
+    if (!cardEl) return;
+    const idx = parseInt(cardEl.dataset.lpIdx, 10);
+    if (idx === (activeLpIndexes[activeSolKey] || 0)) return; // active card: let links work
+    e.preventDefault();
+    e.stopPropagation();
+    switchLp(idx);
+  });
+
+  // Arrows
+  wrap.querySelector('.lp-deck-arrow.is-prev').addEventListener('click', () => switchLp((activeLpIndexes[activeSolKey] || 0) - 1));
+  wrap.querySelector('.lp-deck-arrow.is-next').addEventListener('click', () => switchLp((activeLpIndexes[activeSolKey] || 0) + 1));
+
+  // Dots
+  wrap.querySelectorAll('.lc-lp-dot').forEach(dot => {
+    dot.addEventListener('click', () => switchLp(parseInt(dot.dataset.lpIdx, 10)));
+  });
+
+  // Keyboard on the deck
+  deck.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); switchLp((activeLpIndexes[activeSolKey] || 0) - 1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); switchLp((activeLpIndexes[activeSolKey] || 0) + 1); }
+  });
+
+  // Defer so cards have painted and have their natural heights.
+  requestAnimationFrame(() => requestAnimationFrame(() => layoutDeck()));
+}
+
+// Position every card in the fanned deck relative to the active index.
+function layoutDeck() {
+  const wrap = document.getElementById('lp-deck-wrap');
+  const deck = wrap && wrap.querySelector('.lp-deck');
+  if (!deck) return;
+  const sol = SOLUTIONS.find(s => s.key === activeSolKey);
+  const cards = Array.from(deck.querySelectorAll('.learning-card'));
+  const total = cards.length;
+  const activeIdx = activeLpIndexes[activeSolKey] || 0;
+
+  // Measure the active card's natural height first — back cards will match it.
+  const activeCard = cards.find(c => parseInt(c.dataset.lpIdx, 10) === activeIdx);
+  if (activeCard) { activeCard.style.height = ''; activeCard.style.overflow = ''; }
+  const activeH = activeCard ? activeCard.offsetHeight : 0;
+
+  cards.forEach(cardEl => {
+    const idx = parseInt(cardEl.dataset.lpIdx, 10);
+    // offset < 0 → peeks left, offset > 0 → peeks right, 0 → front
+    const offset = idx - activeIdx;
+    const abs = Math.abs(offset);
+    let tx, opacity, z, side = false, hidden = false;
+    if (offset === 0) {
+      tx = 0; opacity = 1; z = 30;
+      cardEl.style.height = '';
+      cardEl.style.overflow = '';
+    } else if (abs <= 2) {
+      tx = offset * 3.5;                    // negative = left, positive = right
+      opacity = abs === 1 ? 0.6 : 0.35;
+      z = 30 - abs;
+      side = true;
+      if (activeH) { cardEl.style.height = activeH + 'px'; cardEl.style.overflow = 'hidden'; }
+    } else {
+      tx = 0; opacity = 0; z = 10; hidden = true;
+    }
+    cardEl.style.transform = `translate(calc(-50% + ${tx}%), -50%)`;
+    cardEl.style.opacity = opacity;
+    cardEl.style.filter = 'none';
+    cardEl.style.zIndex = z;
+    cardEl.classList.toggle('is-side', side);
+    cardEl.classList.toggle('is-left',  side && offset < 0);
+    cardEl.classList.toggle('is-right', side && offset > 0);
+    cardEl.style.pointerEvents = hidden ? 'none' : 'auto';
+    cardEl.setAttribute('aria-hidden', hidden ? 'true' : 'false');
+    cardEl.inert = hidden;
+  });
+
+  if (activeH) deck.style.height = activeH + 'px';
+
+  // Refresh dots
+  wrap.querySelectorAll('.lc-lp-dot').forEach(dot => {
+    const i = parseInt(dot.dataset.lpIdx, 10);
+    const on = i === activeIdx;
+    dot.classList.toggle('is-active', on);
+    dot.style.background = on ? 'var(--color-primary)' : '';
+  });
+
+  // Refresh arrow bounds
+  const prev = wrap.querySelector('.lp-deck-arrow.is-prev');
+  const next = wrap.querySelector('.lp-deck-arrow.is-next');
+  if (prev) prev.disabled = activeIdx <= 0;
+  if (next) next.disabled = activeIdx >= total - 1;
+}
+
+function switchLp(lpIdx) {
+  const sol = SOLUTIONS.find(s => s.key === activeSolKey);
+  const pathIds = sol ? (sol.pathIds || [sol.pathId]) : [];
+  if (lpIdx < 0 || lpIdx >= pathIds.length) return;
+  if ((activeLpIndexes[activeSolKey] || 0) === lpIdx) return;
+  activeLpIndexes[activeSolKey] = lpIdx;
+  layoutDeck(); // transform/opacity only — the fanned side-slide animation
+}
+
+window.addEventListener('resize', () => layoutDeck());
+
 function switchSolution(key) {
   if ('startViewTransition' in document) {
-    document.startViewTransition(() => { activeSolKey = key; renderSolToggle(); renderLearningCard(); });
+    document.startViewTransition(() => { activeSolKey = key; activeLpIndexes[key] = 0; renderSolToggle(); renderDeck(); });
   } else {
-    activeSolKey = key; renderSolToggle(); renderLearningCard();
+    activeSolKey = key; activeLpIndexes[key] = 0; renderSolToggle(); renderDeck();
   }
 }
 
@@ -2091,7 +2381,7 @@ function renderPathCard(path, bookmarks, isActive) {
   const ctaText = pct === 100 ? 'Review learning path' : (prog.started ? 'Continue learning path' : 'Open learning path');
 
   // Find matching SOLUTIONS entry for hub-style thumbnail + pill colors
-  const sol = SOLUTIONS.find(s => s.pathId === path.id);
+  const sol = SOLUTIONS.find(s => s.pathId === path.id || (s.pathIds && s.pathIds.includes(path.id)));
   const pillBg  = sol ? hexToRgba(sol.btn, 0.30) : 'rgba(238,224,195,0.30)';
   const pillTxt = '#304642';
 
@@ -2138,7 +2428,7 @@ function render() {
   // Home view
   activeSolKey = getActiveSolKey();
   renderSolToggle();
-  renderLearningCard();
+  renderDeck();
 
   // Catalog view
   renderPathTabs();

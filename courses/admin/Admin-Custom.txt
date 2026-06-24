@@ -8,7 +8,7 @@ type: hero
 hero_image: admin-custom/Hero-Illu.png
 hero_subtitle: Welcome to the course:
 hero_title: Customising Your Solution
-hero_body: Your standard setup is a great starting point. In this course you will learn how to create insights, edit them, create actions, and if you are an Admin, build dashboards.
+hero_body: Your standard setup is a great starting point. In this course you will learn how to create Insights, edit them, create Actions, and if you are an Admin, build Dashboards.
 
 **Let's get started!**
 ---
@@ -20,7 +20,7 @@ title: Public vs. Private
 type: main
 layout: standard-2-col
 ---
-Before we begin, it’s important to understand the difference between Public and Private Insights, Actions, and Dashboards.
+Before we begin, it’s important to understand the difference between public and private Insights, Actions, and Dashboards.
 
 Everything in Inact Now is either public or private. Public content is visible to everyone in your organization, while private content is only visible to you.
 
@@ -56,7 +56,7 @@ The standard Insights are based on best practices and will cover most needs. But
 
 To create a new Insight, navigate to the Insights tab and click the “+ New Insight” button. This opens the template picker, where you can browse existing Insights and use one as the starting point for your own.
 
-Select a template, give your Insight a name, add slicers and filters, and place it in an Insight Group. Then click Create.Your new Insight will be added to your library as a private Insight, ready for you to refine and share when you’re ready.
+Select a template, give your Insight a name, add slicers and filters, and place it in an Insight Group. Then click Create. Your new Insight will be added to your library as a private Insight, ready for you to refine and share when you’re ready.
 ![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Admin/Create-Insight.mp4)
 ---
 > [next] Continue -> 3e62aa68-bffb-4c4a-b390-5bd85da43fa7
