@@ -137,24 +137,26 @@ Let's keep going!
 
 [flow-specific-side-quests]
 
-[id:s1/topic: Edit Mode Tutorial Coming Soon...]
+[id:s1/topic: Edit Mode for Insights Walkthrough]
 
 slide_id: 1
-title: Edit Mode Tutorial Coming Soon...
+title: Edit Mode for Insights Walkthrough
 type: sidequest
-backLabel: Return to main path
+backLabel: Return to course
 ---
-![image/size:large/align:center/frame:none](admin-custom/Coming-Soon.png)
+Go through the tutorial below to learn about Edit Mode for Insights:
+[supademo: Edit Mode Walkthrough](https://app.supademo.com/embed/cmqs4hqzm1hu5qmrj0cycakgk?embed_v=2&utm_source=embed)
 ---
 
-[id:s2/topic: Creating Actions Tutorial Coming Soon...]
+[id:s2/topic: Creating Actions Walkthrough]
 
 slide_id: 1
-title: Creating Actions Tutorial Coming Soon...
+title: Creating Actions Walkthrough
 type: sidequest
-backLabel: Return to main path
+backLabel: Return to course
 ---
-![image/size:large/align:center/frame:none](admin-custom/Coming-Soon.png)
+Go through the tutorial below to learn how to create Actions.
+[supademo: Creating Actions](https://app.supademo.com/embed/cmqs8httz01ubqm08e9crkjo9?embed_v=2&utm_source=embed)
 ---
 
 [id:s3/topic: Creating Dashboards Tutorial Coming Soon...]
@@ -162,7 +164,7 @@ backLabel: Return to main path
 slide_id: 1
 title: Creating Dashboards Tutorial Coming Soon...
 type: sidequest
-backLabel: Return to main path
+backLabel: Return to course
 ---
 ![image/size:large/align:center/frame:none](admin-custom/Coming-Soon.png)
 ---
