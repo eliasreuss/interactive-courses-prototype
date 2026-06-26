@@ -536,7 +536,7 @@
 
     .nav-notif-btn {
       width: 36px; height: 36px;
-      background: var(--color-accent);
+      background: #304642;
       border-radius: 500px;
       border: none;
       cursor: pointer;
@@ -546,7 +546,7 @@
       flex-shrink: 0;
       transition: transform 0.2s, background 0.2s ease;
     }
-    .nav-notif-btn:hover { transform: scale(1.08); background: #D94E00; }
+    .nav-notif-btn:hover { transform: scale(1.08); background: #3d5a54; }
     .nav-notif-icon {
       width: 12px; height: 16px;
       border-radius: 1px;
@@ -1006,18 +1006,19 @@
       outline-offset: 4px;
     }
   /* ── Nav Progress Widget ── */
-  .nav-progress-widget { display: flex; align-items: center; gap: 10px; }
-  .nav-continue-btn { font-family: var(--font-family, 'Poppins', sans-serif); font-size: 13px; font-weight: 500; color: #304642; text-decoration: none; padding: 7px 14px; border-radius: 14px; border: 1px solid rgba(48, 70, 66, 0.3); white-space: nowrap; line-height: 1; transition: background 0.18s ease, border-color 0.18s ease; }
-  .nav-continue-btn:hover { background: rgba(48, 70, 66, 0.06); border-color: rgba(48, 70, 66, 0.5); }
-  .nav-progress-bar-wrap { position: relative; display: flex; align-items: center; gap: 7px; cursor: pointer; text-decoration: none; }
-  .nav-progress-track { width: 96px; height: 5px; background: #EBEBEB; border-radius: 100px; overflow: hidden; flex-shrink: 0; }
-  .nav-progress-fill { height: 100%; background: #304642; border-radius: 100px; width: 0%; transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
-  .nav-progress-pct { font-family: var(--font-family, 'Poppins', sans-serif); font-size: 11px; font-weight: 600; color: rgba(48, 70, 66, 0.5); line-height: 1; }
-  .nav-progress-tooltip { position: absolute; top: calc(100% + 9px); left: 50%; transform: translateX(-50%); background: #304642; color: #fff; font-family: var(--font-family, 'Poppins', sans-serif); font-size: 12px; font-weight: 500; white-space: nowrap; padding: 6px 10px; border-radius: 8px; pointer-events: none; opacity: 0; transition: opacity 0.15s ease; z-index: 200; }
+  .nav-progress-widget { display: flex; align-items: center; gap: 12px; padding: 4px 16px 4px 4px; background: rgba(48, 70, 66, 0.055); border-radius: 100px; }
+  .nav-continue-btn { display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-family, 'Poppins', sans-serif); font-size: 13px; font-weight: 500; color: #fff; text-decoration: none; padding: 9px 17px; border-radius: 100px; background: #FF5A00; box-shadow: 0 2px 8px rgba(255, 90, 0, 0.22); white-space: nowrap; line-height: 1; transition: background 0.2s ease, box-shadow 0.22s ease, transform 0.22s cubic-bezier(0.22,1,0.36,1); }
+  .nav-continue-btn:hover { background: #D94E00; box-shadow: 0 5px 16px rgba(255, 90, 0, 0.34); transform: translateY(-1px); }
+  .nav-continue-btn svg { width: 12px; height: 12px; flex-shrink: 0; color: #fff; transition: transform 0.22s cubic-bezier(0.22,1,0.36,1); }
+  .nav-continue-btn:hover svg { transform: translateX(2px); }
+  .nav-progress-bar-wrap { position: relative; display: flex; align-items: center; gap: 9px; cursor: pointer; text-decoration: none; }
+  .nav-progress-track { width: 124px; height: 6px; background: rgba(48, 70, 66, 0.15); border-radius: 100px; overflow: hidden; flex-shrink: 0; }
+  .nav-progress-fill { height: 100%; background: linear-gradient(90deg, #304642, #3d5a54); border-radius: 100px; width: 0%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
+  .nav-progress-pct { font-family: var(--font-family, 'Poppins', sans-serif); font-size: 12px; font-weight: 600; color: #304642; line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -0.2px; min-width: 30px; }
+  .nav-progress-tooltip { position: absolute; top: calc(100% + 13px); left: 50%; transform: translateX(-50%) translateY(-3px); background: #304642; color: #fff; font-family: var(--font-family, 'Poppins', sans-serif); font-size: 12px; font-weight: 500; white-space: nowrap; padding: 7px 11px; border-radius: 9px; box-shadow: 0 8px 20px rgba(48, 70, 66, 0.22); pointer-events: none; opacity: 0; transition: opacity 0.18s ease, transform 0.18s cubic-bezier(0.22,1,0.36,1); z-index: 200; }
   .nav-progress-tooltip::after { content: ''; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-bottom-color: #304642; }
-  .nav-progress-bar-wrap:hover .nav-progress-tooltip { opacity: 1; }
-  @media (max-width: 680px) { .nav-progress-track { display: none; } .nav-progress-pct { display: none; } .nav-continue-btn { font-size: 12px; padding: 6px 12px; } }
-  @media (max-width: 400px) { .nav-continue-btn { display: none; } }
+  .nav-progress-bar-wrap:hover .nav-progress-tooltip { opacity: 1; transform: translateX(-50%) translateY(0); }
+  @media (max-width: 680px) { .nav-progress-widget { background: transparent; padding: 0; } .nav-progress-bar-wrap { display: none; } .nav-continue-btn { font-size: 12px; padding: 8px 15px; } }
   </style>
 </head>
 <body>
@@ -1035,7 +1036,7 @@
     </div>
     <div class="header-right">
       <div class="nav-progress-widget">
-        <a id="nav-continue-btn" class="nav-continue-btn" href="catalog.html">Start learning</a>
+        <a id="nav-continue-btn" class="nav-continue-btn" href="catalog.html"><span id="nav-continue-label">Start learning</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
         <a class="nav-progress-bar-wrap" href="profile.html" aria-label="View your progress">
           <div class="nav-progress-track"><div id="nav-progress-fill" class="nav-progress-fill"></div></div>
           <span id="nav-progress-pct" class="nav-progress-pct">0%</span>
@@ -1554,7 +1555,8 @@
     var pctEl = document.getElementById('nav-progress-pct');
     if (pctEl) pctEl.textContent = overallPct + '%';
     tip.textContent = completed + ' of ' + PP.length + ' learning paths completed';
-    if (!active) { btn.textContent = 'Start learning'; btn.href = 'catalog.html'; return; }
+    var lbl = document.getElementById('nav-continue-label') || btn;
+    if (!active) { lbl.textContent = 'Start learning'; btn.href = 'catalog.html'; return; }
     var nextId = null;
     for (var j = 0; j < active.courseIds.length; j++) {
       var cid = active.courseIds[j];
@@ -1566,7 +1568,7 @@
     }
     if (!nextId) nextId = active.courseIds[0];
     var idx = active.courseIds.indexOf(nextId);
-    btn.textContent = 'Continue ' + (active.courseNames[idx] || 'course');
+    lbl.textContent = 'Continue ' + (active.courseNames[idx] || 'course');
     btn.href = 'course.html?course=' + active.courseFiles[nextId] + '&path=' + active.pathParam + '&hub=' + active.hubFile + '&from=header';
   }
   if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initNavProgress); }
