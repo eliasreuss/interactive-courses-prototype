@@ -1005,6 +1005,18 @@
       outline: 2px solid var(--color-accent);
       outline-offset: 4px;
     }
+  /* ── Nav Progress Widget ── */
+  .nav-progress-widget { display: flex; align-items: center; gap: 10px; }
+  .nav-continue-btn { font-family: var(--font-family, 'Poppins', sans-serif); font-size: 13px; font-weight: 500; color: #304642; text-decoration: none; padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(48, 70, 66, 0.22); white-space: nowrap; line-height: 1; transition: background 0.18s ease, border-color 0.18s ease; }
+  .nav-continue-btn:hover { background: rgba(48, 70, 66, 0.06); border-color: rgba(48, 70, 66, 0.38); }
+  .nav-progress-bar-wrap { position: relative; display: flex; align-items: center; cursor: pointer; text-decoration: none; }
+  .nav-progress-track { width: 96px; height: 5px; background: #EBEBEB; border-radius: 100px; overflow: hidden; }
+  .nav-progress-fill { height: 100%; background: #304642; border-radius: 100px; width: 0%; transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+  .nav-progress-tooltip { position: absolute; bottom: calc(100% + 9px); left: 50%; transform: translateX(-50%); background: #304642; color: #fff; font-family: var(--font-family, 'Poppins', sans-serif); font-size: 12px; font-weight: 500; white-space: nowrap; padding: 6px 10px; border-radius: 8px; pointer-events: none; opacity: 0; transition: opacity 0.15s ease; z-index: 200; }
+  .nav-progress-tooltip::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-top-color: #304642; }
+  .nav-progress-bar-wrap:hover .nav-progress-tooltip { opacity: 1; }
+  @media (max-width: 680px) { .nav-progress-track { display: none; } .nav-continue-btn { font-size: 12px; padding: 5px 10px; } }
+  @media (max-width: 400px) { .nav-continue-btn { display: none; } }
   </style>
 </head>
 <body>
@@ -1021,6 +1033,13 @@
       </nav>
     </div>
     <div class="header-right">
+      <div class="nav-progress-widget">
+        <a id="nav-continue-btn" class="nav-continue-btn" href="catalog.html">Start learning</a>
+        <a class="nav-progress-bar-wrap" href="profile.html" aria-label="View your progress">
+          <div class="nav-progress-track"><div id="nav-progress-fill" class="nav-progress-fill"></div></div>
+          <span class="nav-progress-tooltip" id="nav-progress-tooltip" aria-hidden="true"></span>
+        </a>
+      </div>
       <button class="nav-notif-btn" aria-label="Notifications"><span class="nav-notif-icon"></span></button>
       <a href="profile.html" class="nav-avatar" aria-label="User profile"><span>ER</span></a>
     </div>
@@ -1494,6 +1513,59 @@
     });
     obs.observe(anchor, { childList: true, subtree: true });
   });
+})();
+</script>
+<script>
+(function() {
+  var PP = [
+    { courseIds: ['intro','double-abc','stock-policy','safety-stock','reorder-point','reorder-quantity'], courseNames: ['Introduction','Double ABC Analysis','Stock Policy','Safety Stock','Reorder Point','Reorder Quantity'], courseFiles: { 'intro': 'Intro.txt', 'double-abc': 'Double-ABC-Analysis-4.txt', 'stock-policy': 'Stock-Policy.txt', 'safety-stock': 'Safety-Stock.txt', 'reorder-point': 'Reorder-Point.txt', 'reorder-quantity': 'Reorder-Quantity.txt' }, pathParam: 'inventory', hubFile: 'hub.html' },
+    { courseIds: ['suppliers-intro','supplier-performance','spend-analysis','supplier-negotiation'], courseNames: ['Intro to Supplier Management','Supplier Performance','Spend Analysis','Supplier Negotiation'], courseFiles: { 'suppliers-intro': 'Suppliers-Intro-2.txt', 'supplier-performance': 'Supplier-Performance.txt', 'spend-analysis': 'Spend-Analysis.txt', 'supplier-negotiation': 'Supplier-Negotiation.txt' }, pathParam: 'supplier', hubFile: 'supplier-hub.html' },
+    { courseIds: ['now-intro','now-home','now-insights','now-actions','now-dashboards'], courseNames: ['Introduction','Home','Insights','Actions','Dashboards'], courseFiles: { 'now-intro': 'Now-Intro.txt', 'now-home': 'Now-Home.txt', 'now-insights': 'Now-Insights.txt', 'now-actions': 'Now-Actions.txt', 'now-dashboards': 'Now-Dashboards.txt' }, pathParam: 'now', hubFile: 'now-hub.html' },
+    { courseIds: ['admin-intro','admin-standard','admin-custom','admin-manage'], courseNames: ['Intro: Super Users & Admins','Your Standard Solution','Customising Your Solution','Managing Users'], courseFiles: { 'admin-intro': 'Admin-Intro.txt', 'admin-standard': 'Admin-Standard.txt', 'admin-custom': 'Admin-Custom.txt', 'admin-manage': 'Admin-Manage.txt' }, pathParam: 'admin', hubFile: 'admin-hub.html' }
+  ];
+  function pProg(p) {
+    var done = 0, sum = 0, n = p.courseIds.length;
+    for (var i = 0; i < n; i++) {
+      var cid = p.courseIds[i];
+      if (localStorage.getItem('course_' + cid + '_completed') === 'true') { done++; sum += 100; continue; }
+      var raw = localStorage.getItem('course_progress_' + cid);
+      if (!raw) continue;
+      try { var d = JSON.parse(raw); if (d.completed) { done++; sum += 100; } else { sum += (d.progress || 0); } }
+      catch(e) { if (raw === 'completed') { done++; sum += 100; } }
+    }
+    return { pct: n ? Math.round(sum / n) : 0, started: sum > 0 };
+  }
+  function initNavProgress() {
+    var btn = document.getElementById('nav-continue-btn');
+    var fill = document.getElementById('nav-progress-fill');
+    var tip = document.getElementById('nav-progress-tooltip');
+    if (!btn || !fill || !tip) return;
+    var completed = 0, sumPct = 0, active = null, bestPct = 0;
+    for (var i = 0; i < PP.length; i++) {
+      var pg = pProg(PP[i]);
+      sumPct += pg.pct;
+      if (pg.pct === 100) completed++;
+      if (pg.started && pg.pct < 100 && pg.pct > bestPct) { active = PP[i]; bestPct = pg.pct; }
+    }
+    fill.style.width = Math.round(sumPct / PP.length) + '%';
+    tip.textContent = completed + ' of ' + PP.length + ' learning paths completed';
+    if (!active) { btn.textContent = 'Start learning'; btn.href = 'catalog.html'; return; }
+    var nextId = null;
+    for (var j = 0; j < active.courseIds.length; j++) {
+      var cid = active.courseIds[j];
+      if (localStorage.getItem('course_' + cid + '_completed') === 'true') continue;
+      var raw = localStorage.getItem('course_progress_' + cid);
+      if (!raw) { nextId = cid; break; }
+      try { var d2 = JSON.parse(raw); if (!d2.completed) { nextId = cid; break; } }
+      catch(e) { if (raw !== 'completed') { nextId = cid; break; } }
+    }
+    if (!nextId) nextId = active.courseIds[0];
+    var idx = active.courseIds.indexOf(nextId);
+    btn.textContent = 'Continue ' + (active.courseNames[idx] || 'course');
+    btn.href = 'course.html?course=' + active.courseFiles[nextId] + '&path=' + active.pathParam + '&hub=' + active.hubFile + '&from=header';
+  }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initNavProgress); }
+  else { initNavProgress(); }
 })();
 </script>
 </body>
