@@ -2736,7 +2736,7 @@ window.addEventListener('pageshow', e => { if (e.persisted) render(); });
     if (pctEl) pctEl.textContent = overallPct + '%';
     tip.textContent = completed + ' of ' + PP.length + ' learning paths completed';
     var lbl = document.getElementById('nav-continue-label') || btn;
-    if (!active) { lbl.textContent = 'Start learning'; btn.href = 'catalog.html'; return; }
+    if (!active) { lbl.textContent = 'Start learning'; var inv = PP[0]; btn.href = 'course.html?course=' + inv.courseFiles[inv.courseIds[0]] + '&path=' + inv.pathParam + '&hub=' + inv.hubFile + '&from=header'; return; }
     var nextId = null;
     for (var j = 0; j < active.courseIds.length; j++) {
       var cid = active.courseIds[j];
