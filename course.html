@@ -2241,7 +2241,7 @@
                     currentSidequestContent = {
                         type: sqContentMatch[1].trim().toLowerCase(),
                         title: sqContentMatch[2].trim(),
-                        backLabel: sqContentMatch[3] ? sqContentMatch[3].trim() : 'Return to main path',
+                        backLabel: sqContentMatch[3] ? sqContentMatch[3].trim() : 'Return to course',
                         content: ''
                     };
                     continue;
@@ -3288,7 +3288,7 @@
         const returnBtn = document.createElement('button');
         returnBtn.className = 'btn btn-primary';
         returnBtn.innerHTML = `
-          <span>${n.backLabel || 'Return to main path'}</span>
+          <span>${n.backLabel || 'Return to course'}</span>
           <svg width="12" height="18" viewBox="0 0 12 18" fill="none">
             <path d="M2 2L9 9L2 16" stroke="white" stroke-width="3" stroke-linecap="round"/>
           </svg>
@@ -3556,7 +3556,7 @@
                 prevId: previousId,
                 nextId: null,
                 nextLabel: nextLabel,
-                backLabel: sqNode.backLabel || 'Return to main path'
+                backLabel: sqNode.backLabel || 'Return to course'
               };
               
               nodeById.set(nodeId, sideQuestNode);

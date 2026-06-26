@@ -2928,7 +2928,7 @@
         <div class="sidequest-buttons-section">
             <div class="sidequest-button-group">
                 <label>Leave sidequest button text</label>
-                <input type="text" class="sidequest-button-input sq-back-label" placeholder="Return to main path">
+                <input type="text" class="sidequest-button-input sq-back-label" placeholder="Return to course">
         </div>
             <div class="sidequest-button-group">
                 <label>Continue to next sidequest node button text</label>
@@ -4491,7 +4491,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="sq-step-buttons-section">
                         <div class="sq-step-button-group">
                             <label>Leave sidequest button text</label>
-                            <input type="text" class="sq-step-button-input sq-step-back-label" placeholder="Return to main path" value="${stepBackLabel}">
+                            <input type="text" class="sq-step-button-input sq-step-back-label" placeholder="Return to course" value="${stepBackLabel}">
                         </div>
                         <div class="sq-step-button-group">
                             <label>Next step button text</label>
@@ -4578,7 +4578,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="sq-step-buttons-section">
                 <div class="sq-step-button-group">
                     <label>Leave sidequest button text</label>
-                    <input type="text" class="sq-step-button-input sq-step-back-label" placeholder="Return to main path" value="${backLabel}">
+                    <input type="text" class="sq-step-button-input sq-step-back-label" placeholder="Return to course" value="${backLabel}">
                 </div>
                 <div class="sq-step-button-group">
                     <label>Next step button text</label>
@@ -5880,7 +5880,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             const mainSlideData = {
                                 title: sqTitle,
                                 content: mainContent,
-                                backLabel: mainBackLabel || 'Return to main path',
+                                backLabel: mainBackLabel || 'Return to course',
                                 nextLabel: mainNextLabel
                             };
                             // Include links from main content if present
@@ -5908,7 +5908,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         const stepData = {
                             title: stepTitle || sqTitle,
                             content: stepContent,
-                            backLabel: stepBackLabel || mainBackLabel || 'Return to main path',
+                            backLabel: stepBackLabel || mainBackLabel || 'Return to course',
                             nextLabel: stepNextLabel
                         };
                         // Include links if present

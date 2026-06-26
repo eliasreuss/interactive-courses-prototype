@@ -142,7 +142,7 @@ Let's keep going!
 slide_id: 1
 title: Edit Mode for Insights Walkthrough
 type: sidequest
-backLabel: Return to main path
+backLabel: Return to course
 ---
 Go through the tutorial below to learn about Edit Mode for Insights:
 [supademo: Edit Mode Walkthrough](https://app.supademo.com/embed/cmqs4hqzm1hu5qmrj0cycakgk?embed_v=2&utm_source=embed)
@@ -153,7 +153,7 @@ Go through the tutorial below to learn about Edit Mode for Insights:
 slide_id: 1
 title: Creating Actions Walkthrough
 type: sidequest
-backLabel: Return to main path
+backLabel: Return to course
 ---
 Go through the tutorial below to learn how to create Actions.
 [supademo: Creating Actions](https://app.supademo.com/embed/cmqs8httz01ubqm08e9crkjo9?embed_v=2&utm_source=embed)
