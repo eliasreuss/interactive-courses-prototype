@@ -142,7 +142,7 @@ Let's keep going!
 slide_id: 1
 title: Edit Mode for Insights Walkthrough
 type: sidequest
-backLabel: Return to course
+backLabel: Return to main path
 ---
 Go through the tutorial below to learn about Edit Mode for Insights:
 [supademo: Edit Mode Walkthrough](https://app.supademo.com/embed/cmqs4hqzm1hu5qmrj0cycakgk?embed_v=2&utm_source=embed)
@@ -153,18 +153,19 @@ Go through the tutorial below to learn about Edit Mode for Insights:
 slide_id: 1
 title: Creating Actions Walkthrough
 type: sidequest
-backLabel: Return to course
+backLabel: Return to main path
 ---
 Go through the tutorial below to learn how to create Actions.
 [supademo: Creating Actions](https://app.supademo.com/embed/cmqs8httz01ubqm08e9crkjo9?embed_v=2&utm_source=embed)
 ---
 
-[id:s3/topic: Creating Dashboards Tutorial Coming Soon...]
+[id:s3/topic: Creating and Editing Dashboards]
 
 slide_id: 1
-title: Creating Dashboards Tutorial Coming Soon...
+title: Creating and Editing Dashboards
 type: sidequest
 backLabel: Return to course
 ---
-![image/size:large/align:center/frame:none](admin-custom/Coming-Soon.png)
+Go through the tutorial below to learn how to create and edit Dashboards.
+[supademo: Creating and Editing Dashboards](https://app.supademo.com/embed/cmqun8gvk0lckqml26apjota1?embed_v=2&utm_source=embed)
 ---
