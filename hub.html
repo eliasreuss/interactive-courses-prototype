@@ -1073,15 +1073,16 @@
     }
   /* ── Nav Progress Widget ── */
   .nav-progress-widget { display: flex; align-items: center; gap: 10px; }
-  .nav-continue-btn { font-family: var(--font-family, 'Poppins', sans-serif); font-size: 13px; font-weight: 500; color: #304642; text-decoration: none; padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(48, 70, 66, 0.22); white-space: nowrap; line-height: 1; transition: background 0.18s ease, border-color 0.18s ease; }
-  .nav-continue-btn:hover { background: rgba(48, 70, 66, 0.06); border-color: rgba(48, 70, 66, 0.38); }
-  .nav-progress-bar-wrap { position: relative; display: flex; align-items: center; cursor: pointer; text-decoration: none; }
-  .nav-progress-track { width: 96px; height: 5px; background: #EBEBEB; border-radius: 100px; overflow: hidden; }
+  .nav-continue-btn { font-family: var(--font-family, 'Poppins', sans-serif); font-size: 13px; font-weight: 500; color: #304642; text-decoration: none; padding: 7px 14px; border-radius: 14px; border: 1px solid rgba(48, 70, 66, 0.3); white-space: nowrap; line-height: 1; transition: background 0.18s ease, border-color 0.18s ease; }
+  .nav-continue-btn:hover { background: rgba(48, 70, 66, 0.06); border-color: rgba(48, 70, 66, 0.5); }
+  .nav-progress-bar-wrap { position: relative; display: flex; align-items: center; gap: 7px; cursor: pointer; text-decoration: none; }
+  .nav-progress-track { width: 96px; height: 5px; background: #EBEBEB; border-radius: 100px; overflow: hidden; flex-shrink: 0; }
   .nav-progress-fill { height: 100%; background: #304642; border-radius: 100px; width: 0%; transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
-  .nav-progress-tooltip { position: absolute; bottom: calc(100% + 9px); left: 50%; transform: translateX(-50%); background: #304642; color: #fff; font-family: var(--font-family, 'Poppins', sans-serif); font-size: 12px; font-weight: 500; white-space: nowrap; padding: 6px 10px; border-radius: 8px; pointer-events: none; opacity: 0; transition: opacity 0.15s ease; z-index: 200; }
-  .nav-progress-tooltip::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-top-color: #304642; }
+  .nav-progress-pct { font-family: var(--font-family, 'Poppins', sans-serif); font-size: 11px; font-weight: 600; color: rgba(48, 70, 66, 0.5); line-height: 1; }
+  .nav-progress-tooltip { position: absolute; top: calc(100% + 9px); left: 50%; transform: translateX(-50%); background: #304642; color: #fff; font-family: var(--font-family, 'Poppins', sans-serif); font-size: 12px; font-weight: 500; white-space: nowrap; padding: 6px 10px; border-radius: 8px; pointer-events: none; opacity: 0; transition: opacity 0.15s ease; z-index: 200; }
+  .nav-progress-tooltip::after { content: ''; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-bottom-color: #304642; }
   .nav-progress-bar-wrap:hover .nav-progress-tooltip { opacity: 1; }
-  @media (max-width: 680px) { .nav-progress-track { display: none; } .nav-continue-btn { font-size: 12px; padding: 5px 10px; } }
+  @media (max-width: 680px) { .nav-progress-track { display: none; } .nav-progress-pct { display: none; } .nav-continue-btn { font-size: 12px; padding: 6px 12px; } }
   @media (max-width: 400px) { .nav-continue-btn { display: none; } }
   </style>
 </head>
@@ -1103,6 +1104,7 @@
         <a id="nav-continue-btn" class="nav-continue-btn" href="catalog.html">Start learning</a>
         <a class="nav-progress-bar-wrap" href="profile.html" aria-label="View your progress">
           <div class="nav-progress-track"><div id="nav-progress-fill" class="nav-progress-fill"></div></div>
+          <span id="nav-progress-pct" class="nav-progress-pct">0%</span>
           <span class="nav-progress-tooltip" id="nav-progress-tooltip" aria-hidden="true"></span>
         </a>
       </div>
@@ -1666,7 +1668,10 @@
       if (pg.pct === 100) completed++;
       if (pg.started && pg.pct < 100 && pg.pct > bestPct) { active = PP[i]; bestPct = pg.pct; }
     }
-    fill.style.width = Math.round(sumPct / PP.length) + '%';
+    var overallPct = Math.round(sumPct / PP.length);
+    fill.style.width = overallPct + '%';
+    var pctEl = document.getElementById('nav-progress-pct');
+    if (pctEl) pctEl.textContent = overallPct + '%';
     tip.textContent = completed + ' of ' + PP.length + ' learning paths completed';
     if (!active) { btn.textContent = 'Start learning'; btn.href = 'catalog.html'; return; }
     var nextId = null;
