@@ -25,13 +25,13 @@
       --radius-md: 14px;
       --radius-sm: 10px;
       --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-      --page-margin: 80px;
+      --page-margin: 48px;
     }
-    @media (min-width: 1400px) { :root { --page-margin: 120px; } }
-    @media (min-width: 1600px) { :root { --page-margin: 160px; } }
-    @media (min-width: 1920px) { :root { --page-margin: 340px; } }
-    @media (min-width: 2200px) { :root { --page-margin: 460px; } }
-    @media (min-width: 2560px) { :root { --page-margin: 560px; } }
+    @media (min-width: 1400px) { :root { --page-margin: 72px; } }
+    @media (min-width: 1600px) { :root { --page-margin: 96px; } }
+    @media (min-width: 1920px) { :root { --page-margin: 200px; } }
+    @media (min-width: 2200px) { :root { --page-margin: 280px; } }
+    @media (min-width: 2560px) { :root { --page-margin: 340px; } }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -1053,9 +1053,11 @@
     let TYPES_DATA  = [];
 
     function renderFilterBar() {
+      const seenTopicKeys = new Set();
+      const uniqueSolutions = SOLUTIONS.filter(s => seenTopicKeys.has(s.key) ? false : seenTopicKeys.add(s.key));
       TOPICS_DATA = [
         { key: 'all', name: 'All topics', eyebrow: '' },
-        ...SOLUTIONS.map(s => ({ key: s.key, name: s.name, eyebrow: s.label, bar: s.bar, toggleBg: s.toggleBg })),
+        ...uniqueSolutions.map(s => ({ key: s.key, name: s.name, eyebrow: s.label, bar: s.bar, toggleBg: s.toggleBg })),
       ];
       TYPES_DATA = [
         { key: 'all',    name: 'All types' },
@@ -1268,5 +1270,6 @@
   else { initNavProgress(); }
 })();
 </script>
+<script src="profile-overlay.js" defer></script>
 </body>
 </html>

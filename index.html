@@ -1135,10 +1135,6 @@
     display: flex; flex-direction: column; align-items: center; gap: 9px;
     margin-top: 22px;
   }
-  .lp-deck-caption {
-    font-size: 11px; font-weight: 500; letter-spacing: 0.01em;
-    color: var(--color-muted);
-  }
   .lp-deck-dots {
     display: flex; align-items: center; gap: 6px;
   }
@@ -2129,7 +2125,6 @@ function renderDeck() {
       </button>
     </div>
     <div class="lp-deck-foot">
-      <span class="lp-deck-caption">${pathIds.length} learning paths in ${sol.name}</span>
       <div class="lp-deck-dots" role="tablist">${dotsHtml}</div>
     </div>`;
 
@@ -2201,7 +2196,9 @@ function layoutDeck() {
       opacity = abs === 1 ? 0.6 : 0.35;
       z = 30 - abs;
       side = true;
-      if (activeH) { cardEl.style.height = activeH + 'px'; cardEl.style.overflow = 'hidden'; }
+      // shrink height by distance from front, so peeking cards step down in size
+      const sideH = activeH * (abs === 1 ? 0.88 : 0.76);
+      if (activeH) { cardEl.style.height = sideH + 'px'; cardEl.style.overflow = 'hidden'; }
     } else {
       tx = 0; opacity = 0; z = 10; hidden = true;
     }
@@ -2755,5 +2752,6 @@ window.addEventListener('pageshow', e => { if (e.persisted) render(); });
   else { initNavProgress(); }
 })();
 </script>
+<script src="profile-overlay.js" defer></script>
 </body>
 </html>
