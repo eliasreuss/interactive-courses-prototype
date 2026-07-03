@@ -52,10 +52,10 @@
   }
 
   var ACHIEVEMENTS = [
-    { name: 'Inventory Management With Inact Now', img: 'Achievements/Inventory-Achievement.svg', earned: true },
-    { name: 'Supplier Management With Inact Now',  img: 'Achievements/Supplier-Achievement.svg',  earned: true },
-    { name: 'Inact Now Fundamentals',              img: 'Achievements/Inact-Now-Fundamentals-Achievement.svg', earned: true },
-    { name: 'Customer Management With Inact Now',  img: 'Achievements/Empty-Achievement.svg',     earned: false }
+    { name: 'Inventory Management', img: 'Achievements/Inventory-Achievement.svg', earned: true },
+    { name: 'Supplier Management',  img: 'Achievements/Supplier-Achievement.svg',  earned: true },
+    { name: 'Inact Now Fundamentals', img: 'Achievements/Inact-Now-Fundamentals-Achievement.svg', earned: true },
+    { name: 'Customer Management',  img: 'Achievements/Empty-Achievement.svg',     earned: false }
   ];
 
   /* ── Styles ── */
