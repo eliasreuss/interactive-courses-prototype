@@ -24,8 +24,6 @@ Before we begin, it’s important to understand the difference between public an
 
 Everything in Inact Now is either public or private. Public content is visible to everyone in your organization, while private content is only visible to you.
 
-Whenever you create something new, it starts as private. You choose when to share it.
-
 Keep in mind that editing public content affects everyone who uses it. If you’re unsure, it’s always safest to work in private first.
 ![image/size:500px/align:right/frame:none](admin-custom/Public-Private.png)
 ---
@@ -156,7 +154,7 @@ type: sidequest
 backLabel: Return to course
 ---
 Go through the tutorial below to learn how to create Actions.
-[supademo: Creating Actions](https://app.supademo.com/embed/cmqs8httz01ubqm08e9crkjo9?embed_v=2&utm_source=embed)
+[supademo: Creating Actions](https://app.supademo.com/embed/cmr3a8siv3jkaqm84nh9mnzov?embed_v=2&utm_source=embed)
 ---
 
 [id:s3/topic: Creating and Editing Dashboards]

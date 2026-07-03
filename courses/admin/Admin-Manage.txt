@@ -94,7 +94,7 @@ type: main
 A mail bundle is a scheduled email that delivers a combination of Dashboards, Insights, or specific Insight Views directly to a recipient's inbox. You choose what is in it , when it sends, and who receives it.
 
 Go through the tutorial below to learn how to set up subscriptions
-![image/size:large/align:center/frame:none](admin-managing-users/Coming-Soon.png)
+[supademo: Create and Schedule Mail Bundles on inactnow.io](https://app.supademo.com/embed/cmr3g8ksg3tx6qm84aampmc2w?embed_v=2&utm_source=embed)
 ---
 > [next] Continue -> 4bbc4a91-e619-4c16-b025-357a4e900466
 

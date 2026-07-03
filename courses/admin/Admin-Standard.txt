@@ -81,6 +81,8 @@ If you’re ever unsure what a column means or want to understand exactly what d
 
 Here you can see all available columns, along with a description and a real example from your data.
 
+The Data tab is also where you can download your data, including historical data.
+
 Think of it as your go-to reference whenever something is unclear.
 ![image/size:large/align:center/frame:none](admin-standard/Data-Tab.png)
 ---
