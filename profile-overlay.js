@@ -63,6 +63,7 @@
 '#inact-profile-overlay { position: fixed; inset: 0; z-index: 3000; display: none; font-family: "Poppins", sans-serif; }',
 '#inact-profile-overlay.is-open { display: block; }',
 ':where(#inact-profile-overlay, #inact-profile-overlay *) { box-sizing: border-box; margin: 0; padding: 0; }',
+'.po-ico { display: inline-block; width: 17px; height: 17px; flex-shrink: 0; background-color: currentColor; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; -webkit-mask-size: contain; mask-size: contain; }',
 '.po-backdrop { position: absolute; inset: 0; background: rgba(23, 34, 32, 0.45); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); opacity: 0; transition: opacity 0.35s ease; }',
 '#inact-profile-overlay.is-visible .po-backdrop { opacity: 1; }',
 
@@ -76,7 +77,7 @@
 '.po-rail-brand { padding: 6px 12px 24px; font-size: 20px; font-weight: 700; color: #fff; letter-spacing: -0.4px; }',
 '.po-rail-label { padding: 2px 12px 8px; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.38); }',
 '.po-rail-item { display: flex; align-items: center; gap: 11px; width: 100%; padding: 11px 12px; border: none; border-radius: 8px; background: transparent; color: rgba(255,255,255,0.72); font-family: inherit; font-size: 13.5px; font-weight: 500; text-align: left; cursor: pointer; transition: background 0.18s ease, color 0.18s ease; }',
-'.po-rail-item svg { width: 17px; height: 17px; flex-shrink: 0; opacity: 0.85; }',
+'.po-rail-item .po-ico { opacity: 0.85; }',
 '.po-rail-item:hover { background: rgba(255,255,255,0.07); color: #fff; }',
 '.po-rail-item.is-active { background: rgba(255,255,255,0.12); color: #fff; font-weight: 600; }',
 '.po-rail-item { position: relative; }',
@@ -88,7 +89,7 @@
 '.po-chip-name { font-size: 12.5px; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }',
 '.po-chip-role { font-size: 10.5px; color: rgba(255,255,255,0.55); }',
 '.po-logout { display: flex; align-items: center; gap: 11px; width: 100%; padding: 11px 12px; border: none; border-radius: 8px; background: transparent; color: rgba(255,255,255,0.60); font-family: inherit; font-size: 13.5px; font-weight: 500; cursor: pointer; transition: background 0.18s, color 0.18s; }',
-'.po-logout svg { width: 17px; height: 17px; }',
+'.po-logout .po-ico { width: 17px; height: 17px; }',
 '.po-logout:hover { background: rgba(255, 106, 61, 0.14); color: #FFB396; }',
 
 /* ── Content pane ── */
@@ -97,7 +98,7 @@
 '.po-view-title { font-size: 21px; font-weight: 700; color: #304642; letter-spacing: -0.5px; }',
 '.po-view-sub { font-size: 12.5px; color: #8A9A97; margin-top: 3px; }',
 '.po-close { width: 36px; height: 36px; border: none; border-radius: 50%; background: rgba(48,70,66,0.07); color: #304642; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.18s, transform 0.18s; flex-shrink: 0; }',
-'.po-close svg { width: 15px; height: 15px; }',
+'.po-close .po-ico { width: 15px; height: 15px; }',
 '.po-close:hover { background: rgba(48,70,66,0.14); transform: rotate(90deg); }',
 '.po-scroll { flex: 1; overflow-y: auto; padding: 22px 32px 32px; }',
 '.po-scroll::-webkit-scrollbar { width: 10px; }',
@@ -193,10 +194,10 @@
 '.po-2fa-verify { margin-top: 16px; display: flex; gap: 10px; align-items: center; }',
 
 /* ── Email prefs ── */
-'.po-radio-card { display: flex; align-items: flex-start; gap: 13px; padding: 15px 17px; border: 1.5px solid rgba(48,70,66,0.11); border-radius: 10px; cursor: pointer; transition: border-color 0.18s, background 0.18s; margin-top: 10px; }',
+'.po-radio-card { display: flex; align-items: center; gap: 13px; padding: 15px 17px; border: 1.5px solid rgba(48,70,66,0.11); border-radius: 10px; cursor: pointer; transition: border-color 0.18s, background 0.18s; margin-top: 10px; }',
 '.po-radio-card:hover { border-color: rgba(48,70,66,0.28); }',
 '.po-radio-card.is-checked { border-color: #304642; background: rgba(48,70,66,0.035); }',
-'.po-radio-dot { width: 18px; height: 18px; border-radius: 50%; border: 2px solid rgba(48,70,66,0.28); flex-shrink: 0; margin-top: 1px; position: relative; transition: border-color 0.18s; }',
+'.po-radio-dot { width: 18px; height: 18px; border-radius: 50%; border: 2px solid rgba(48,70,66,0.28); flex-shrink: 0; position: relative; transition: border-color 0.18s; }',
 '.po-radio-card.is-checked .po-radio-dot { border-color: #FF5A00; }',
 '.po-radio-card.is-checked .po-radio-dot::after { content: ""; position: absolute; inset: 3px; border-radius: 50%; background: #FF5A00; }',
 '.po-radio-meta h4 { font-size: 13px; font-weight: 600; color: #304642; }',
@@ -211,7 +212,7 @@
 '.po-confirm-actions { display: flex; gap: 10px; justify-content: center; margin-top: 20px; }',
 
 '.po-toast { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%) translateY(16px); background: #304642; color: #fff; font-size: 12.5px; font-weight: 500; padding: 11px 22px; border-radius: 100px; box-shadow: 0 10px 30px rgba(20,30,28,0.35); opacity: 0; pointer-events: none; transition: opacity 0.3s, transform 0.3s cubic-bezier(0.22,1,0.36,1); z-index: 20; display: flex; align-items: center; gap: 8px; }',
-'.po-toast svg { width: 14px; height: 14px; color: #6FCF97; }',
+'.po-toast .po-ico { width: 14px; height: 14px; background-color: #6FCF97; }',
 '.po-toast.is-shown { opacity: 1; transform: translateX(-50%); }',
 
 /* ── Responsive ── */
@@ -229,15 +230,22 @@
 '@media (prefers-reduced-motion: reduce) { #inact-profile-overlay * { animation-duration: 0.001s !important; transition-duration: 0.001s !important; } }'
   ].join('\n');
 
-  /* ── Icons ── */
+  /* ── Icons (Tabler Icons — outline set, https://tabler.io/icons, MIT licensed).
+     SVG files live in SVGs/tabler/ and are rendered as CSS masks so they inherit
+     the surrounding text colour (matches the repo's mask-image icon convention). ── */
+  function tablerIcon(name) {
+    var url = "url('SVGs/tabler/" + name + ".svg')";
+    return '<span class="po-ico" style="-webkit-mask-image:' + url + ';mask-image:' + url + '"></span>';
+  }
   var I = {
-    grid:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>',
-    user:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>',
-    shield:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
-    mail:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-10 6L2 7"/></svg>',
-    out:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>',
-    x:     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>',
-    check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',
+    grid:   tablerIcon('layout-grid'),
+    user:   tablerIcon('user'),
+    shield: tablerIcon('shield-lock'),
+    mail:   tablerIcon('mail'),
+    out:    tablerIcon('logout'),
+    x:      tablerIcon('x'),
+    check:  tablerIcon('check'),
+    /* Microsoft Authenticator brand logo — kept inline (not a Tabler icon). */
     msauth:'<svg viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#1F5591"/><path d="M12 5.5 6.5 7.6v4.2c0 3.4 2.3 6 5.5 6.7 3.2-.7 5.5-3.3 5.5-6.7V7.6L12 5.5z" fill="#fff"/><circle cx="12" cy="10.6" r="1.7" fill="#1F5591"/><path d="M9.3 14.6c.3-1.2 1.4-2 2.7-2s2.4.8 2.7 2c-.7.8-1.7 1.3-2.7 1.5-1-.2-2-.7-2.7-1.5z" fill="#1F5591"/></svg>'
   };
 
@@ -361,7 +369,7 @@
       '</section>' +
 
     '</div>' +
-    '<div class="po-toast" id="po-toast">' + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>' + '<span id="po-toast-msg">Saved</span></div>' +
+    '<div class="po-toast" id="po-toast">' + I.check + '<span id="po-toast-msg">Saved</span></div>' +
   '</div>' +
 
   '<div class="po-confirm" id="po-confirm">' +
