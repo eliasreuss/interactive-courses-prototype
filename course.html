@@ -166,7 +166,7 @@
     .course-share-btn:hover svg { transform: rotate(14deg) scale(1.18); }
 
     /* ── SHARE POPOVER ─ overdrive B ────────────── */
-    .share-pop { position: fixed; z-index: 9999; width: 320px; background: #FDFEFD; border-radius: 22px; box-shadow: 0 0 0 1px rgba(48,70,66,0.07), 0 4px 14px rgba(48,70,66,0.07), 0 20px 56px rgba(48,70,66,0.13); opacity: 0; transform: scale(0.96) translateY(-8px); transform-origin: top right; pointer-events: none; overflow: hidden; transition: opacity 0.2s cubic-bezier(0.22,1,0.36,1), transform 0.2s cubic-bezier(0.22,1,0.36,1); }
+    .share-pop { position: fixed; z-index: 9999; width: 320px; background: #FFFFFF; border-radius: 22px; box-shadow: 0 0 0 1px rgba(48,70,66,0.07), 0 4px 14px rgba(48,70,66,0.07), 0 20px 56px rgba(48,70,66,0.13); opacity: 0; transform: scale(0.96) translateY(-8px); transform-origin: top right; pointer-events: none; overflow: hidden; transition: opacity 0.2s cubic-bezier(0.22,1,0.36,1), transform 0.2s cubic-bezier(0.22,1,0.36,1); }
     .share-pop.is-open { opacity: 1; transform: scale(1) translateY(0); pointer-events: auto; }
     .share-pop.is-open .share-pop-head  { animation: sp-rise 0.3s cubic-bezier(0.22,1,0.36,1) 0.03s both; }
     .share-pop.is-open .share-pop-name  { animation: sp-left 0.28s cubic-bezier(0.22,1,0.36,1) 0.07s both; }
@@ -851,6 +851,193 @@
       0%, 100% { transform: translateY(0); }
       50%      { transform: translateY(-8px); }
     }
+
+    /* Course completion slide */
+    .content-card.complete-view .card-footer { display: none; }
+    .content-card.complete-invert { background: var(--color-ui-dark); }
+    .card-scroll-wrapper:has(.complete-mode) {
+      align-items: center;
+      justify-content: center;
+    }
+    .card-text-content.complete-mode {
+      max-width: none;
+      flex: 0 1 auto;
+    }
+    .complete-layout {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: clamp(14px, 2vh, 28px);
+      padding: clamp(24px, 5vh, 56px) 24px;
+    }
+    .complete-heading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(6px, 1vh, 12px);
+    }
+    .complete-check-svg {
+      width: clamp(150px, 20vw, 220px);
+      height: auto;
+      overflow: visible;
+      margin: clamp(4px, 1vh, 12px) 0;
+    }
+    .complete-ring {
+      fill: none;
+      stroke: var(--color-ui-dark);
+      stroke-width: 5;
+      stroke-linecap: round;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+      animation: completeDraw 600ms cubic-bezier(0.22, 1, 0.36, 1) 450ms forwards;
+    }
+    .complete-check {
+      fill: none;
+      stroke: var(--color-ui-dark);
+      stroke-width: 7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: completeDraw 450ms cubic-bezier(0.22, 1, 0.36, 1) 920ms forwards;
+    }
+    .complete-ring-ripple {
+      fill: none;
+      stroke: var(--color-accent);
+      stroke-width: 2;
+      opacity: 0;
+      transform-origin: 50% 50%;
+      animation: completeRipple 900ms cubic-bezier(0.22, 1, 0.36, 1) 1300ms forwards;
+    }
+    .complete-sparks line {
+      stroke: var(--color-accent);
+      stroke-width: 3;
+      stroke-linecap: round;
+      opacity: 0;
+      transform-origin: 50% 50%;
+      animation: completeSpark 650ms cubic-bezier(0.22, 1, 0.36, 1) 1350ms forwards;
+    }
+    .complete-sparks line:nth-child(even) {
+      stroke: var(--color-ui-dark);
+      animation-delay: 1420ms;
+    }
+    @keyframes completeDraw {
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes completeRipple {
+      from { opacity: 0.35; transform: scale(1); }
+      to   { opacity: 0; transform: scale(1.32); }
+    }
+    @keyframes completeSpark {
+      0%   { opacity: 0; transform: scale(0.85); }
+      35%  { opacity: 0.9; }
+      100% { opacity: 0; transform: scale(1.12); }
+    }
+    .complete-eyebrow,
+    .complete-title,
+    .complete-subtitle {
+      margin: 0;
+      opacity: 0;
+      animation: completeTextIn 500ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+    .complete-eyebrow {
+      font-size: var(--font-size-small);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      animation-delay: 120ms;
+    }
+    .complete-title {
+      font-size: clamp(2rem, 1.5rem + 2.6vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      max-width: 18ch;
+      color: var(--color-ui-dark);
+      animation-delay: 240ms;
+    }
+    .complete-subtitle {
+      font-size: clamp(1.05rem, 0.95rem + 0.55vw, 1.6rem);
+      line-height: 1.4;
+      max-width: 42ch;
+      color: var(--color-muted);
+      animation-delay: 360ms;
+    }
+    .complete-subtitle strong {
+      font-weight: 600;
+      color: var(--color-ui-dark);
+    }
+    @keyframes completeTextIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Inline CTAs inside the celebration layout */
+    .complete-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: clamp(4px, 1vh, 12px);
+      opacity: 0;
+      animation: completeTextIn 500ms cubic-bezier(0.2, 0.8, 0.2, 1) 1250ms forwards;
+    }
+    .complete-prev {
+      margin-top: 10px;
+      background: none;
+      border: none;
+      padding: 6px 10px;
+      font-family: inherit;
+      font-size: var(--font-size-small);
+      color: var(--color-muted);
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      opacity: 0;
+      animation: completeTextIn 500ms cubic-bezier(0.2, 0.8, 0.2, 1) 1400ms forwards;
+    }
+    .complete-prev:hover { color: var(--color-primary-text); }
+
+    /* Learning-path achievement variant: inverted panel + badge stamp */
+    .complete-badge-wrap {
+      position: relative;
+      width: clamp(160px, 20vw, 240px);
+      aspect-ratio: 166 / 167;
+      margin: clamp(4px, 1vh, 12px) 0;
+    }
+    .complete-badge {
+      width: 100%;
+      height: 100%;
+      display: block;
+      opacity: 0;
+      filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.28));
+      animation: badgeStamp 650ms cubic-bezier(0.22, 1, 0.36, 1) 350ms forwards;
+    }
+    @keyframes badgeStamp {
+      0%   { opacity: 0; transform: scale(1.5) rotate(-5deg); }
+      55%  { opacity: 1; }
+      100% { opacity: 1; transform: scale(1) rotate(0deg); }
+    }
+    .complete-badge-ripple {
+      position: absolute;
+      inset: -12%;
+      border-radius: 50%;
+      border: 2px solid rgba(249, 247, 245, 0.4);
+      opacity: 0;
+      animation: completeRipple 900ms cubic-bezier(0.22, 1, 0.36, 1) 950ms forwards;
+    }
+    .complete-path .complete-eyebrow  { color: rgba(249, 247, 245, 0.55); animation-delay: 120ms; }
+    .complete-path .complete-title    { color: var(--color-bg); animation-delay: 240ms; }
+    .complete-path .complete-subtitle { color: rgba(249, 247, 245, 0.75); animation-delay: 360ms; }
+    .complete-path .complete-subtitle strong { color: var(--color-bg); }
+    .complete-path .complete-actions  { animation-delay: 1350ms; }
+    .complete-path .complete-prev { color: rgba(249, 247, 245, 0.55); }
+    .complete-path .complete-prev:hover { color: var(--color-bg); }
+
     @media (prefers-reduced-motion: reduce) {
       .content-card.is-animating,
       #card-title.is-animating,
@@ -865,6 +1052,27 @@
       .hero-layout .hero-text-side {
         animation: none !important;
       }
+      .complete-ring,
+      .complete-check {
+        animation: none !important;
+        stroke-dashoffset: 0;
+      }
+      .complete-ring-ripple,
+      .complete-badge-ripple,
+      .complete-sparks line {
+        animation: none !important;
+        opacity: 0;
+      }
+      .complete-eyebrow,
+      .complete-title,
+      .complete-subtitle,
+      .complete-badge,
+      .complete-actions,
+      .complete-prev {
+        animation: none !important;
+        opacity: 1;
+      }
+      .complete-badge { transform: none; }
     }
     
     /* Large screens (>1440px) - use more space, reduce margins */
@@ -1177,7 +1385,20 @@
       box-shadow: 0 4px 12px rgba(48,70,66,0.28);
       transform: translateY(-1px);
     }
-    
+
+    /* Light button for use on dark/inverted surfaces (e.g. the achievement panel) */
+    .btn-invert {
+      background: var(--color-bg);
+      color: var(--color-ui-dark);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    }
+
+    .btn-invert:hover {
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.24);
+      transform: translateY(-1px);
+    }
+
     .btn-outline {
       background: #fff;
       color: #8A8A8A;
@@ -2074,6 +2295,78 @@
         element.innerHTML = html;
     }
 
+    function renderCompleteSlide(element, node) {
+        const title = escapeHtml(node.courseTitle || 'this course');
+        const ach = node.achievement || null;
+
+        const learningPathOrder = learningPathOrders[coursePath] || [];
+        const orderIdx = learningPathOrder.indexOf(currentCourseFile || '');
+        const nextCourseFile = orderIdx >= 0 && orderIdx < learningPathOrder.length - 1 ? learningPathOrder[orderIdx + 1] : null;
+
+        const centerpiece = ach
+          ? `<div class="complete-badge-wrap">
+              <div class="complete-badge-ripple"></div>
+              <img class="complete-badge" src="${ach.img}" alt="${escapeHtml(ach.name)} achievement badge">
+            </div>`
+          : `<svg class="complete-check-svg" viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="complete-ring-ripple" cx="60" cy="60" r="54"/>
+              <g class="complete-sparks">
+                <line x1="126" y1="60" x2="134" y2="60"/>
+                <line x1="93" y1="117.2" x2="97" y2="124.1"/>
+                <line x1="27" y1="117.2" x2="23" y2="124.1"/>
+                <line x1="-6" y1="60" x2="-14" y2="60"/>
+                <line x1="27" y1="2.8" x2="23" y2="-4.1"/>
+                <line x1="93" y1="2.8" x2="97" y2="-4.1"/>
+              </g>
+              <circle class="complete-ring" cx="60" cy="60" r="54" pathLength="1"/>
+              <path class="complete-check" d="M38 62 L54 78 L84 44" pathLength="1"/>
+            </svg>`;
+
+        const eyebrow = ach ? 'Achievement unlocked' : '';
+        const heading = ach ? escapeHtml(ach.name) : 'Congratulations!';
+        const sub = ach
+          ? `<p class="complete-subtitle">You completed every course in this learning path.</p>`
+          : `<p class="complete-subtitle">You finished <strong>${title}</strong>.</p>`;
+        const primaryLabel = ach || !nextCourseFile ? 'Finish learning path' : 'Continue to next course';
+        const chevron = `<svg width="12" height="18" viewBox="0 0 12 18" fill="none"><path d="M2 2L9 9L2 16" stroke="white" stroke-width="3" stroke-linecap="round"/></svg>`;
+
+        element.innerHTML = `
+          <div class="complete-layout${ach ? ' complete-path' : ''}">
+            <div class="complete-heading">
+              ${eyebrow ? `<p class="complete-eyebrow">${eyebrow}</p>` : ''}
+              <h1 class="complete-title">${heading}</h1>
+              ${sub}
+            </div>
+            ${centerpiece}
+            <div class="complete-actions">
+              ${ach
+                ? `<button class="btn btn-invert" data-action="achievements"><span>See my achievements</span></button>`
+                : `<button class="btn btn-secondary" data-action="hub"><span>Return to learning path</span></button>`}
+              <button class="btn btn-primary" data-action="next"><span>${primaryLabel}</span> ${chevron}</button>
+            </div>
+            <button class="complete-prev" data-action="prev">Back to previous slide</button>
+          </div>`;
+
+        const hubBtn = element.querySelector('[data-action="hub"]');
+        if (hubBtn) hubBtn.onclick = () => { window.location.href = hubPage; };
+        const achBtn = element.querySelector('[data-action="achievements"]');
+        if (achBtn) achBtn.onclick = () => { window.location.href = 'profile.html'; };
+        element.querySelector('[data-action="next"]').onclick = () => {
+          if (!ach && nextCourseFile) {
+            window.location.href = `course.html?course=${encodeURIComponent(nextCourseFile)}&path=${encodeURIComponent(coursePath)}&hub=${encodeURIComponent(hubPage)}&from=hub`;
+          } else {
+            window.location.href = hubPage;
+          }
+        };
+        element.querySelector('[data-action="prev"]').onclick = () => {
+          if (mainPathHistory.length > 1) {
+            mainPathHistory.pop();
+            skipHistoryPush = true;
+            updateView(mainPathHistory[mainPathHistory.length - 1]);
+          }
+        };
+    }
+
     function renderFlipCards(element, text) {
         const cardsData = [];
         let introHtml = '';
@@ -2877,10 +3170,12 @@
       const isSidequest = (currentNode && currentNode.type === 'sidequest') ||
                           activeNodeId.includes('-') ||
                           activeNodeId.startsWith('sq-');
+      // Completion slide is synthetic: pin progress to the last real slide.
+      const isComplete = !!(currentNode && currentNode.type === 'complete');
       const effectiveNodeId = isSidequest ? lastMainNodeId : activeNodeId;
-      if (!isSidequest) lastMainNodeId = activeNodeId;
+      if (!isSidequest && !isComplete) lastMainNodeId = activeNodeId;
 
-      let k = slideNodes.findIndex(n => String(n.id) === String(effectiveNodeId));
+      let k = isComplete ? N - 1 : slideNodes.findIndex(n => String(n.id) === String(effectiveNodeId));
       if (k < 0) k = 0;
 
       // Single source of truth: 0 on first slide, 1 on last slide.
@@ -2953,7 +3248,7 @@
       }
 
       // Update history for main nodes
-      if (n.type === 'main' || n.type === 'flip-cards' || n.type === 'hero' || !n.type) {
+      if (n.type === 'main' || n.type === 'flip-cards' || n.type === 'hero' || n.type === 'complete' || !n.type) {
             if (!skipHistoryPush) {
               const last = mainPathHistory[mainPathHistory.length - 1];
               if (last !== n.id) mainPathHistory.push(n.id);
@@ -2963,7 +3258,11 @@
           
       // Scroll content card to top
       const contentCard = document.getElementById('content-card');
-      if (contentCard) contentCard.scrollTop = 0;
+      if (contentCard) {
+        contentCard.scrollTop = 0;
+        contentCard.classList.toggle('complete-view', n.type === 'complete');
+        contentCard.classList.toggle('complete-invert', n.type === 'complete' && !!n.achievement);
+      }
       
       // Trigger subtle "slide enter" animations
       const cardEl = document.getElementById('content-card');
@@ -2983,10 +3282,15 @@
           const cardTitleEl = document.getElementById('card-title');
           const cardTextContent = document.querySelector('.card-text-content');
           
+          cardTextContent.classList.toggle('complete-mode', n.type === 'complete');
           if (n.type === 'hero') {
             // Hero slides: hide title, reduce padding for full-bleed look
             cardTitleEl.style.display = 'none';
             cardTextContent.classList.add('hero-mode');
+          } else if (n.type === 'complete') {
+            // Completion slide: title lives inside the celebration layout
+            cardTitleEl.style.display = 'none';
+            cardTextContent.classList.remove('hero-mode');
           } else {
             cardTextContent.classList.remove('hero-mode');
             if (n['title-align'] && String(n['title-align']).toLowerCase() === 'center') {
@@ -3010,7 +3314,11 @@
 
       // Update content
           const cardContentEl = document.getElementById('card-content');
-          renderContent(cardContentEl, n.content, n.type, n.layout || '');
+          if (n.type === 'complete') {
+            renderCompleteSlide(cardContentEl, n);
+          } else {
+            renderContent(cardContentEl, n.content, n.type, n.layout || '');
+          }
 
       // Fresh Supademo session (step 1) without blanking src (avoids half-loaded player + misaligned overlays)
       requestAnimationFrame(() => {
@@ -3045,6 +3353,8 @@
     function updateFooterButtons(n) {
       const navBtns = document.getElementById('footer-nav-buttons');
       navBtns.innerHTML = '';
+      // Completion slide: CTAs live in the slide body; footer is hidden via CSS
+      if (n.type === 'complete') return;
 
       const cardContentEl = document.getElementById('card-content');
       const resourceUrl = cardContentEl.getAttribute('data-resource-url');
@@ -3193,43 +3503,26 @@
           navBtns.appendChild(prevBtn);
         }
 
-        // If this is the last slide, show hub CTAs (3 buttons total)
+        // If this is the last slide, show a single Finish button leading to the completion slide
         if (isLastSlide) {
-          // Return to learning path (green)
-          const returnHubBtn = document.createElement('button');
-          returnHubBtn.className = 'btn btn-secondary';
-          returnHubBtn.innerHTML = `<span>Return to learning path</span>`;
-          returnHubBtn.onclick = () => {
-            window.location.href = hubPage;
-          };
-          navBtns.appendChild(returnHubBtn);
-
-          // Continue to next course (orange)
-          const nextBtn = document.createElement('button');
-          nextBtn.className = 'btn btn-primary';
-
-          // Determine the next course in the learning path
-          const learningPathOrder = learningPathOrders[coursePath] || [];
-          const idx = learningPathOrder.indexOf(currentCourseFile || '');
-          const nextCourseFile = idx >= 0 && idx < learningPathOrder.length - 1 ? learningPathOrder[idx + 1] : null;
-          const nextLabel = nextCourseFile ? 'Continue to next course' : 'Finish learning path';
-
-          nextBtn.innerHTML = `
-            <span>${nextLabel}</span>
+          const finishBtn = document.createElement('button');
+          finishBtn.className = 'btn btn-primary';
+          finishBtn.innerHTML = `
+            <span>Finish course</span>
             <svg width="12" height="18" viewBox="0 0 12 18" fill="none">
               <path d="M2 2L9 9L2 16" stroke="white" stroke-width="3" stroke-linecap="round"/>
             </svg>
           `;
-          nextBtn.onclick = () => {
-            if (nextCourseFile) {
-              window.location.href = `course.html?course=${encodeURIComponent(nextCourseFile)}&path=${encodeURIComponent(coursePath)}&hub=${encodeURIComponent(hubPage)}&from=hub`;
+          finishBtn.onclick = () => {
+            if (hasSupademoContent(n.content)) {
+              showSupademoModal(() => navigateToNode('__complete__'));
             } else {
-              window.location.href = hubPage;
+              navigateToNode('__complete__');
             }
           };
-          navBtns.appendChild(nextBtn);
+          navBtns.appendChild(finishBtn);
 
-          return; // Ensure exactly 3 buttons total on the last slide (Prev + Return + Continue)
+          return;
         }
 
         // Continue/Next button
@@ -3570,6 +3863,29 @@
           });
         }
         
+        // Synthetic completion slide: lives only in nodeById so it never
+        // affects progress math, TOC, or last-slide detection.
+        const completeHeroNode = courseData.find(n => n && (n.type || 'main') === 'hero' && n.isSection !== true);
+        const completeHeroTitle = completeHeroNode && completeHeroNode.content
+          ? (completeHeroNode.content.match(/hero_title:\s*(.+)/) || [])[1] : '';
+        const courseTitle = completeHeroTitle ? toPlainTitle(completeHeroTitle.trim()) : flowTitle;
+
+        // Last course of a learning path earns its achievement badge on the completion slide
+        const PATH_ACHIEVEMENTS = {
+          inventory: { img: 'Achievements/Inventory-Achievement.svg', name: 'Inventory Management' },
+          supplier:  { img: 'Achievements/Supplier-Achievement.svg', name: 'Supplier Management' },
+          now:       { img: 'Achievements/Inact-Now-Fundamentals-Achievement.svg', name: 'Inact Now Fundamentals' }
+        };
+        const pathOrderForBadge = learningPathOrders[coursePath] || [];
+        const isLastCourseOfPath = pathOrderForBadge.length > 0 &&
+          pathOrderForBadge[pathOrderForBadge.length - 1] === courseFile;
+        const achievement = isLastCourseOfPath ? (PATH_ACHIEVEMENTS[coursePath] || null) : null;
+
+        nodeById.set('__complete__', {
+          id: '__complete__', type: 'complete', title: '', indexTitle: '',
+          content: '', connections: {}, sideQuests: [], courseTitle, achievement
+        });
+
         // Build TOC structure
         buildTOCStructure(courseData);
 

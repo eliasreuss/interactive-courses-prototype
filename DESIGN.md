@@ -5,7 +5,7 @@ colors:
   forest-green: "#304642"
   forest-green-light: "#3d5a54"
   tangerine: "#FF5A00"
-  off-white: "#FAFAFA"
+  off-white: "#F9F7F5"
   card-white: "#FFFFFF"
   muted-sage: "#8A9A97"
   tag-gray: "#F0F0F0"
@@ -107,7 +107,7 @@ One dominant primary, one sharp accent, warm-neutral surfaces. Every color earns
 - **Tangerine Orange** (`#FF5A00`): Primary CTAs, focus rings, progress highlights, the Inact logotype accent. Never decorative. Its rarity is what gives it signal value — if it appears on something the user can't act on, it is misused.
 
 ### Neutral
-- **Off-White Canvas** (`#FAFAFA`): The page background. Never pure white — the slight warmth prevents harshness at scale.
+- **Off-White Canvas** (`#F9F7F5`): The page background. Never pure white — the slight warmth prevents harshness at scale.
 - **Card White** (`#FFFFFF`): Raised card surfaces, sidebar panels. One visible step above the canvas.
 - **Muted Sage** (`#8A9A97`): Secondary text, placeholder labels, supporting UI copy. Has the green undertone of the primary — the neutrals are never mechanical.
 - **Tag Gray** (`#F0F0F0`): Chip and tag backgrounds on light surfaces.

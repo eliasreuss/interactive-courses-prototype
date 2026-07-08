@@ -16,6 +16,7 @@
       --color-muted: #8A9A97;
       --color-text-secondary: rgba(48, 70, 66, 0.6);
       --color-tag-bg: #F0F0F0;
+      --pill-active-bg: #EEF0F0;
       --color-progress-bg: #EBEBEB;
       --font-family: 'Poppins', sans-serif;
       --shadow-card: 0 2px 8px rgba(48, 70, 66, 0.06), 0 8px 24px rgba(48, 70, 66, 0.08);
@@ -64,7 +65,7 @@
       padding: 8px 16px; border-radius: 100px; transition: all 0.2s var(--transition-smooth); opacity: 0.65;
     }
     .nav a:hover { opacity: 1; background: var(--color-tag-bg); }
-    .nav a.active { opacity: 1; background: rgba(48,70,66,0.08); color: var(--color-primary); font-weight: 600; }
+    .nav a.active { opacity: 1; background: var(--pill-active-bg); color: var(--color-primary); font-weight: 600; }
     .nav a.locked { display: inline-flex; align-items: center; gap: 6px; }
     .nav a.locked .lock-icon { width: 12px; height: 12px; opacity: 0.5; }
     .header-right { display: flex; align-items: center; gap: 16px; }
@@ -159,7 +160,7 @@
       left: 0; right: 0; top: 0;
       height: 44px;
       border-radius: 10px;
-      background: oklch(0.96 0.006 165);
+      background: var(--pill-active-bg);
       pointer-events: none;
       z-index: 0;
       will-change: transform;
@@ -183,7 +184,7 @@
     .filter-chip:focus-visible { box-shadow: 0 0 0 2px var(--color-primary); }
     .filter-chip.is-active {
       background: transparent;
-      color: var(--chip-color, oklch(0.28 0.06 165));
+      color: var(--chip-color, var(--color-primary));
       font-weight: 600;
     }
     .filter-chip-icon {
@@ -195,14 +196,14 @@
     .filter-chip-icon svg { width: 100%; height: 100%; display: block; }
     #filter-group-type .filter-chip[data-type="lp"] .filter-chip-icon,
     #filter-group-type .filter-chip[data-type="course"] .filter-chip-icon { width: 18px; height: 18px; }
-    .filter-chip.is-active .filter-chip-icon { color: var(--chip-color, oklch(0.28 0.06 165)); }
+    .filter-chip.is-active .filter-chip-icon { color: var(--chip-color, var(--color-primary)); }
     .filter-chip-label-wrap { display: flex; flex-direction: column; gap: 2px; }
     .filter-chip-eyebrow {
       font-size: 9px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
       color: oklch(0.66 0.008 165); line-height: 1;
       transition: color 0.18s ease;
     }
-    .filter-chip.is-active .filter-chip-eyebrow { color: var(--chip-color, oklch(0.28 0.06 165)); opacity: 0.65; }
+    .filter-chip.is-active .filter-chip-eyebrow { color: var(--chip-color, var(--color-primary)); opacity: 0.65; }
     .filter-chip-label { font-size: 14px; line-height: 1.25; }
 
     /* ── Main content ── */
@@ -586,7 +587,7 @@
       .sidebar-filters { display: flex; flex-direction: row; flex-wrap: wrap; gap: 6px; }
       .filter-group { flex-direction: row; flex-wrap: wrap; gap: 6px; }
       .filter-pill-indicator { display: none; }
-      .filter-chip.is-active { background: oklch(0.95 0.008 165); }
+      .filter-chip.is-active { background: var(--pill-active-bg); }
       .sidebar-section-label { display: none; }
       .sidebar-divider { display: none; }
       .filter-chip { width: auto; padding: 7px 12px; border-radius: 100px; }
@@ -772,16 +773,13 @@
       { id: 'admin-standard', title: 'Your Standard Solution',               description: 'Explore the complete standard setup already waiting for you—solutions, tabs, insights, and the data behind it all.',  duration: '10 min', file: 'Admin-Standard.txt', thumbnail: 'Course-thumbnails/Admin/Admin-Standard.png', pathId: 'admin', pathParam: 'admin', hubFile: 'admin-hub.html', category: 'functionality' },
       { id: 'admin-custom',   title: 'Customising Your Solution',            description: 'Create insights, edit them, build actions, and as an Admin, create dashboards to share with your team.',             duration: '15 min', file: 'Admin-Custom.txt',   thumbnail: 'Course-thumbnails/Admin/Admin-Custom.png', pathId: 'admin', pathParam: 'admin', hubFile: 'admin-hub.html', category: 'functionality' },
       { id: 'admin-manage',   title: 'Managing Users',                       description: 'Manage users, set up their home screens, assign permissions, and configure automated reports.',                      duration: '10 min', file: 'Admin-Manage.txt',   thumbnail: 'Course-thumbnails/Admin/Admin-Manage.png', pathId: 'admin', pathParam: 'admin', hubFile: 'admin-hub.html', category: 'functionality' },
-      // Standalone resources — Quick Resources only
-      { id: 'shortcuts',    title: 'Keyboard Shortcuts', description: 'Every keyboard shortcut in Inact Now in one place. Navigate views, filter lists, and bulk-edit faster.',           duration: '3 min', file: null, thumbnail: null, pathId: null, pathParam: null, hubFile: null, category: 'general' },
-      { id: 'kpi-glossary', title: 'KPI Glossary',       description: 'Definitions for all key performance indicators across Inact Now dashboards and reports, with formula references.', duration: '5 min', file: null, thumbnail: null, pathId: null, pathParam: null, hubFile: null, category: 'general' },
     ];
 
     // ── Topic icons (same SVG paths as the solution toggle) ───────────
     const TYPE_ICONS = {
       all:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>`,
-      lp:     `<svg viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.75 1.86137C0.75 1.24773 1.26167 0.750271 1.89286 0.750271H4.17857C4.80975 0.750271 5.32143 1.24773 5.32143 1.86137V4.08356C5.32143 4.69721 4.80975 5.19466 4.17857 5.19466H1.89286C1.26167 5.19466 0.75 4.69721 0.75 4.08356V1.86137Z" fill="currentColor"/><path d="M12.1786 1.8611C12.1786 1.24746 12.6902 0.75 13.3214 0.75H15.6071C16.2383 0.75 16.75 1.24746 16.75 1.8611V4.08329C16.75 4.69694 16.2383 5.19439 15.6071 5.19439H13.3214C12.6902 5.19439 12.1786 4.69694 12.1786 4.08329V1.8611Z" fill="currentColor"/><path d="M0.75 12.4167C0.75 11.8031 1.26167 11.3056 1.89286 11.3056H4.17857C4.80975 11.3056 5.32143 11.8031 5.32143 12.4167V14.6389C5.32143 15.2525 4.80975 15.75 4.17857 15.75H1.89286C1.26167 15.75 0.75 15.2525 0.75 14.6389V12.4167Z" fill="currentColor"/><path d="M12.1786 12.4167C12.1786 11.8031 12.6902 11.3056 13.3214 11.3056H15.6071C16.2383 11.3056 16.75 11.8031 16.75 12.4167V14.6389C16.75 15.2525 16.2383 15.75 15.6071 15.75H13.3214C12.6902 15.75 12.1786 15.2525 12.1786 14.6389V12.4167Z" fill="currentColor"/><path d="M3.03571 2.41683H14.4643L3.03571 13.5278H14.4643" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-      course: `<svg viewBox="0 0 46 37" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M37.0001 28.2942C37.0001 28.632 36.9215 28.9654 36.7705 29.2677L34.8236 28.2942C36.6379 29.2013 36.7604 29.2644 36.7685 29.2697L36.7641 29.2782C36.7641 29.2782 36.76 29.2866 36.7578 29.291C36.753 29.3001 36.7472 29.3108 36.7409 29.323C36.7278 29.3478 36.7121 29.3796 36.6919 29.4164C36.6514 29.4901 36.5948 29.5866 36.5239 29.7034C36.3822 29.937 36.1769 30.2519 35.9012 30.6195C35.3503 31.3539 34.5128 32.3109 33.3273 33.2591C30.9288 35.1781 27.1905 37.0001 21.7648 37.0001C16.339 37.0001 12.6008 35.1781 10.2023 33.2591C9.01686 32.3109 8.17927 31.3539 7.62836 30.6195C7.35271 30.2519 7.14749 29.937 7.00561 29.7034C6.93472 29.5866 6.87824 29.4901 6.83769 29.4164C6.81743 29.3796 6.80187 29.3478 6.78881 29.323C6.78243 29.3108 6.77649 29.3001 6.77181 29.291C6.76957 29.2866 6.76544 29.2782 6.76544 29.2782L6.76119 29.2718C6.76903 29.2666 6.89176 29.2013 8.70598 28.2942L6.75906 29.2677C6.60797 28.9654 6.52951 28.632 6.52951 28.2942V21.701L19.1228 28.6979C19.1798 28.7297 19.2383 28.7591 19.2971 28.7874L19.55 28.9084C19.6175 28.9406 19.6869 28.9724 19.7561 28.9998C21.2649 29.599 22.9732 29.4941 24.4068 28.6979L37.0001 21.701V28.2942ZM20.9615 0.153127C21.5632 -0.0858933 22.2464 -0.0447803 22.8212 0.274268L42.352 11.1247L44.503 12.2002L44.7666 12.3554C45.3497 12.7578 45.706 13.4258 45.706 14.1471V28.2942H41.353V15.5479L22.8212 25.8435C22.2464 26.1628 21.5632 26.2037 20.9615 25.9647L20.7083 25.8435L1.12022 14.9611C0.429343 14.5772 9.91821e-05 13.8492 9.91821e-05 13.0589C0.00022977 12.2686 0.429364 11.5404 1.12022 11.1566L20.7083 0.274268L20.9615 0.153127Z" fill="currentColor"/></svg>`,
+      lp:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>`,
+      course: `<svg viewBox="1.5 4 21.5 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>`,
     };
 
     const TOPIC_ICONS = {
@@ -851,7 +849,7 @@
     }
 
     // ── Card renderers ────────────────────────────────────────────────
-    const BM_SVG = '<svg viewBox="0 0 14 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1H2C1.44772 1 1 1.44772 1 2V15.1745C1 15.9644 1.87272 16.4425 2.53837 16.0172L6.28636 13.6228C6.60517 13.4191 7.01163 13.4128 7.33663 13.6065L11.4881 16.0803C12.1547 16.4775 13 15.9972 13 15.2213V2C13 1.44772 12.5523 1 12 1Z"/></svg>';
+    const BM_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>';
     const ARROW_IMG = '<img class="course-cta-arrow" src="SVGs/Up-Arrow.svg" alt="" aria-hidden="true">';
 
     function renderSectionHeader(sol, isFirst) {
@@ -1142,9 +1140,9 @@
 
         if (group.id === 'filter-group-topic') {
           const item = TOPICS_DATA.find(t => t.key === activeTopic);
-          indicator.style.background = item?.toggleBg || 'oklch(0.96 0.006 165)';
+          indicator.style.background = item?.toggleBg || 'var(--pill-active-bg)';
         } else {
-          indicator.style.background = 'oklch(0.96 0.006 165)';
+          indicator.style.background = 'var(--pill-active-bg)';
         }
 
         if (instant) {

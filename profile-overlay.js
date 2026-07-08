@@ -71,10 +71,16 @@
 '#inact-profile-overlay.is-visible .po-panel { transform: translate(-50%, -50%); opacity: 1; }',
 
 /* ── Rail ── */
-'.po-rail { width: 248px; flex-shrink: 0; display: flex; flex-direction: column; padding: 26px 16px 18px; background: linear-gradient(168deg, #243a38 0%, #2e4a44 55%, #33524a 100%); position: relative; overflow: hidden; }',
-'.po-rail::after { content: ""; position: absolute; inset: 0; background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0); background-size: 22px 22px; pointer-events: none; }',
+'.po-rail { width: 248px; flex-shrink: 0; display: flex; flex-direction: column; padding: 26px 16px 18px; background: #304642; position: relative; overflow: hidden; }',
+'.po-rail::after { content: ""; position: absolute; inset: 0; background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.09) 1px, transparent 0); background-size: 22px 22px; pointer-events: none; }',
 '.po-rail > * { position: relative; z-index: 1; }',
-'.po-rail-brand { padding: 6px 12px 24px; font-size: 20px; font-weight: 700; color: #fff; letter-spacing: -0.4px; }',
+'.po-rail-id { display: flex; flex-direction: column; padding: 6px 12px 22px; }',
+'.po-rail-id-top { display: flex; align-items: center; gap: 12px; }',
+'.po-rail-id-avatar { width: 46px; height: 46px; border-radius: 50%; background: #D9EBFF; color: #1F5591; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 600; flex-shrink: 0; box-shadow: 0 0 0 4px rgba(255,255,255,0.10); }',
+'.po-rail-id-meta { min-width: 0; }',
+'.po-rail-id-name { font-size: 15.5px; font-weight: 700; color: #fff; letter-spacing: -0.3px; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }',
+'.po-rail-id-mail { font-size: 11px; color: rgba(255,255,255,0.55); margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }',
+'.po-rail-pill { align-self: flex-start; margin-top: 12px; padding: 4px 12px; border-radius: 100px; background: rgba(255,255,255,0.13); font-size: 10.5px; font-weight: 600; letter-spacing: 0.04em; color: rgba(255,255,255,0.92); }',
 '.po-rail-label { padding: 2px 12px 8px; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.38); }',
 '.po-rail-item { display: flex; align-items: center; gap: 11px; width: 100%; padding: 11px 12px; border: none; border-radius: 8px; background: transparent; color: rgba(255,255,255,0.72); font-family: inherit; font-size: 13.5px; font-weight: 500; text-align: left; cursor: pointer; transition: background 0.18s ease, color 0.18s ease; }',
 '.po-rail-item .po-ico { opacity: 0.85; }',
@@ -83,11 +89,6 @@
 '.po-rail-item { position: relative; }',
 '.po-rail-sep { height: 1px; background: rgba(255,255,255,0.10); margin: 14px 12px; }',
 '.po-rail-foot { margin-top: auto; padding-top: 14px; }',
-'.po-rail-userchip { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 10px; background: rgba(0,0,0,0.18); margin-bottom: 8px; }',
-'.po-rail-userchip .po-chip-avatar { width: 32px; height: 32px; border-radius: 50%; background: #D9EBFF; color: #1F5591; display: flex; align-items: center; justify-content: center; font-size: 11.5px; font-weight: 600; flex-shrink: 0; }',
-'.po-chip-meta { min-width: 0; }',
-'.po-chip-name { font-size: 12.5px; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }',
-'.po-chip-role { font-size: 10.5px; color: rgba(255,255,255,0.55); }',
 '.po-logout { display: flex; align-items: center; gap: 11px; width: 100%; padding: 11px 12px; border: none; border-radius: 8px; background: transparent; color: rgba(255,255,255,0.60); font-family: inherit; font-size: 13.5px; font-weight: 500; cursor: pointer; transition: background 0.18s, color 0.18s; }',
 '.po-logout .po-ico { width: 17px; height: 17px; }',
 '.po-logout:hover { background: rgba(255, 106, 61, 0.14); color: #FFB396; }',
@@ -118,11 +119,11 @@
 '.po-card-title { font-size: 14.5px; font-weight: 600; color: #304642; letter-spacing: -0.2px; }',
 '.po-card-sub { font-size: 12px; color: #8A9A97; margin-top: 2px; }',
 
-'.po-btn { display: inline-flex; align-items: center; gap: 7px; padding: 10px 20px; border: none; border-radius: 100px; font-family: inherit; font-size: 13px; font-weight: 500; cursor: pointer; line-height: 1; transition: background 0.2s, box-shadow 0.22s, transform 0.22s cubic-bezier(0.22,1,0.36,1); }',
+'.po-btn { display: inline-flex; align-items: center; gap: 7px; padding: 10px 20px; border: none; border-radius: 6px; font-family: inherit; font-size: 13px; font-weight: 500; cursor: pointer; line-height: 1; transition: background 0.2s, box-shadow 0.22s, transform 0.22s cubic-bezier(0.22,1,0.36,1); }',
 '.po-btn-primary { background: #FF5A00; color: #fff; box-shadow: 0 2px 8px rgba(255,90,0,0.22); }',
 '.po-btn-primary:hover { background: #D94E00; box-shadow: 0 5px 16px rgba(255,90,0,0.34); transform: translateY(-1px); }',
-'.po-btn-dark { background: #304642; color: #fff; }',
-'.po-btn-dark:hover { background: #3d5a54; transform: translateY(-1px); }',
+'.po-btn-dark { background: #569068; color: #fff; }',
+'.po-btn-dark:hover { background: #63a678; transform: translateY(-1px); }',
 '.po-btn-ghost { background: transparent; color: #304642; box-shadow: inset 0 0 0 1.5px rgba(48,70,66,0.22); }',
 '.po-btn-ghost:hover { background: rgba(48,70,66,0.05); }',
 '.po-btn:disabled { opacity: 0.45; cursor: default; transform: none !important; box-shadow: none; }',
@@ -135,21 +136,14 @@
 '.po-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }',
 '.po-form-actions { margin-top: 18px; display: flex; justify-content: flex-end; gap: 10px; }',
 
-/* ── Overview: identity strip ── */
-'.po-hero { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 18px 24px; border-radius: 12px; background: linear-gradient(120deg, #243a38, #3a5850); color: #fff; position: relative; overflow: hidden; }',
-'.po-hero::after { content: ""; position: absolute; right: -60px; top: -80px; width: 260px; height: 260px; border-radius: 50%; background: radial-gradient(circle, rgba(255,90,0,0.22), transparent 65%); pointer-events: none; }',
-'.po-hero-id { display: flex; align-items: center; gap: 16px; position: relative; z-index: 1; }',
-'.po-hero-avatar { width: 52px; height: 52px; border-radius: 50%; background: #D9EBFF; color: #1F5591; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 600; flex-shrink: 0; box-shadow: 0 0 0 4px rgba(255,255,255,0.14); }',
-'.po-hero-name { font-size: 17px; font-weight: 700; letter-spacing: -0.3px; }',
-'.po-hero-mail { font-size: 11.5px; color: rgba(255,255,255,0.62); margin-top: 1px; }',
-'.po-hero-pill { display: inline-flex; align-items: center; gap: 6px; margin-top: 7px; padding: 4px 12px; border-radius: 100px; background: rgba(255,255,255,0.13); font-size: 10.5px; font-weight: 600; letter-spacing: 0.04em; }',
-'.po-hero-pill::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #FF5A00; }',
-'.po-hero-stat { text-align: right; position: relative; z-index: 1; flex-shrink: 0; }',
-'.po-hero-stat-num { font-size: 34px; font-weight: 700; letter-spacing: -1px; line-height: 1; font-variant-numeric: tabular-nums; }',
-'.po-hero-stat-label { font-size: 11px; color: rgba(255,255,255,0.62); margin-top: 4px; }',
+/* ── Overview: learning-paths card header ── */
+'.po-lp-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }',
+'.po-lp-stat { flex-shrink: 0; text-align: right; line-height: 1; }',
+'.po-lp-stat span { display: block; font-size: 30px; font-weight: 700; color: #304642; letter-spacing: -0.8px; font-variant-numeric: tabular-nums; }',
+'.po-lp-stat small { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #8A9A97; }',
 
 /* ── Overview: two-column body ── */
-'.po-overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; margin-top: 14px; }',
+'.po-overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; }',
 '.po-overview-grid > .po-card { margin-top: 0; }',
 
 /* ── Overview: learn progress ── */
@@ -219,13 +213,11 @@
 '@media (max-width: 860px) {',
 '  .po-panel { width: 100vw; height: 100vh; max-height: none; border-radius: 0; flex-direction: column; }',
 '  .po-rail { width: 100%; flex-direction: row; align-items: center; padding: 14px 16px; overflow-x: auto; gap: 4px; }',
-'  .po-rail-brand, .po-rail-label, .po-rail-sep, .po-rail-userchip { display: none; }',
+'  .po-rail-id, .po-rail-label, .po-rail-sep { display: none; }',
 '  .po-rail-item { width: auto; white-space: nowrap; padding: 9px 14px; }',
 '  .po-rail-foot { margin: 0 0 0 auto; padding: 0; }',
 '  .po-form-grid { grid-template-columns: 1fr; }',
 '  .po-overview-grid { grid-template-columns: 1fr; }',
-'  .po-hero { flex-wrap: wrap; }',
-'  .po-hero-stat { text-align: left; }',
 '}',
 '@media (prefers-reduced-motion: reduce) { #inact-profile-overlay * { animation-duration: 0.001s !important; transition-duration: 0.001s !important; } }'
   ].join('\n');
@@ -265,17 +257,22 @@
 '<div class="po-panel" role="dialog" aria-modal="true" aria-label="Your profile">' +
 
   '<aside class="po-rail">' +
-    '<div class="po-rail-brand">Profile</div>' +
+    '<div class="po-rail-id">' +
+      '<div class="po-rail-id-top">' +
+        '<div class="po-rail-id-avatar" data-bind="initials">' + initials(u) + '</div>' +
+        '<div class="po-rail-id-meta">' +
+          '<div class="po-rail-id-name" data-bind="fullname">' + u.first + ' ' + u.last + '</div>' +
+          '<div class="po-rail-id-mail">' + u.email + '</div>' +
+        '</div>' +
+      '</div>' +
+      '<span class="po-rail-pill">' + u.role + '</span>' +
+    '</div>' +
     '<div class="po-rail-label">Your account</div>' +
     '<button class="po-rail-item is-active" data-view="overview">' + I.grid + 'Overview</button>' +
     '<button class="po-rail-item" data-view="account">' + I.user + 'Account settings</button>' +
     '<button class="po-rail-item" data-view="security">' + I.shield + 'Two-factor auth</button>' +
     '<button class="po-rail-item" data-view="email">' + I.mail + 'Email preferences</button>' +
     '<div class="po-rail-foot">' +
-      '<div class="po-rail-userchip">' +
-        '<div class="po-chip-avatar" data-bind="initials">' + initials(u) + '</div>' +
-        '<div class="po-chip-meta"><div class="po-chip-name" data-bind="fullname">' + u.first + ' ' + u.last + '</div><div class="po-chip-role">' + u.role + '</div></div>' +
-      '</div>' +
       '<button class="po-logout" id="po-logout">' + I.out + 'Log out</button>' +
     '</div>' +
   '</aside>' +
@@ -289,18 +286,12 @@
 
       /* ── OVERVIEW ── */
       '<section class="po-view is-active" data-viewpane="overview">' +
-        '<div class="po-hero">' +
-          '<div class="po-hero-id">' +
-            '<div class="po-hero-avatar" data-bind="initials">' + initials(u) + '</div>' +
-            '<div><div class="po-hero-name" data-bind="fullname">' + u.first + ' ' + u.last + '</div>' +
-            '<div class="po-hero-mail">' + u.email + '</div>' +
-            '<span class="po-hero-pill">' + u.role + '</span></div>' +
-          '</div>' +
-          '<div class="po-hero-stat"><div class="po-hero-stat-num" id="po-all-pct">0%</div><div class="po-hero-stat-label">of Learn complete</div></div>' +
-        '</div>' +
         '<div class="po-overview-grid">' +
           '<div class="po-card">' +
-            '<div class="po-card-title">Your learning paths</div><div class="po-card-sub">Progress across every path</div>' +
+            '<div class="po-lp-head">' +
+              '<div><div class="po-card-title">All learning paths</div><div class="po-card-sub">Progress across every path</div></div>' +
+              '<div class="po-lp-stat"><span id="po-all-pct">0%</span><small>complete</small></div>' +
+            '</div>' +
             PP.map(function (p, i) {
               return '<div class="po-learn-row">' +
                 '<div class="po-learn-row-label"><strong data-lp-pct="' + i + '">0%</strong> of ' + p.name.replace(/&/g, '&amp;') + '</div>' +
