@@ -1079,7 +1079,9 @@
     transition: transform 0.55s cubic-bezier(0.16,1,0.3,1),
                 opacity 0.45s cubic-bezier(0.16,1,0.3,1),
                 filter 0.45s ease,
-                translate 0.4s cubic-bezier(0.16,1,0.3,1);
+                translate 0.4s cubic-bezier(0.16,1,0.3,1),
+                scale 0.32s cubic-bezier(0.16,1,0.3,1),
+                box-shadow 0.32s cubic-bezier(0.16,1,0.3,1);
     will-change: transform, opacity;
     view-transition-name: none; /* the wrapper carries the name, not each card */
     backface-visibility: hidden;
@@ -1242,8 +1244,20 @@
   .learning-card {
     border-radius: 22px; border: 1px solid transparent; overflow: hidden;
     transition: background-color 350ms cubic-bezier(0.16,1,0.3,1),
-                border-color 350ms cubic-bezier(0.16,1,0.3,1);
+                border-color 350ms cubic-bezier(0.16,1,0.3,1),
+                translate 320ms cubic-bezier(0.16,1,0.3,1),
+                scale 320ms cubic-bezier(0.16,1,0.3,1),
+                box-shadow 320ms cubic-bezier(0.16,1,0.3,1);
     view-transition-name: learning-card;
+  }
+  /* the front (spotlight) card reads as one big click target */
+  .learning-card:not(.is-side):hover {
+    translate: 0 -3px; scale: 1.005;
+    box-shadow: 0 16px 38px rgba(48,70,66,0.13), 0 3px 10px rgba(48,70,66,0.07);
+  }
+  .learning-card:not(.is-side):active {
+    translate: 0 -1px; scale: 0.997;
+    transition-duration: 110ms;
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -1321,6 +1335,52 @@
   }
   .lc-module.is-current .lc-module-num { background: #FF5A00; color: white; }
   .lc-module-num svg { width: 10px; height: 10px; display: block; }
+
+  /* Clickable TOC rows */
+  .lc-module.is-clickable {
+    cursor: pointer; border-radius: 9px;
+    margin: 0 -8px; padding-left: 8px; padding-right: 8px;
+    transition: background-color 0.18s ease, transform 0.22s cubic-bezier(0.16,1,0.3,1);
+  }
+  .lc-module.is-clickable:hover { background: rgba(48,70,66,0.06); transform: translateX(2px); }
+  .lc-module.is-clickable:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 1px; }
+
+  /* Cursor-following card tooltip */
+  .lc-cursor-tip {
+    position: fixed; top: 0; left: 0; z-index: 9000;
+    display: flex; align-items: center; gap: 7px;
+    padding: 8px 15px 8px 12px; border-radius: 999px;
+    background: #304642; color: #fff;
+    font-family: var(--font-family, 'Poppins', sans-serif);
+    font-size: 12.5px; font-weight: 500; line-height: 1; white-space: nowrap;
+    box-shadow: 0 10px 26px rgba(48,70,66,0.28), 0 2px 6px rgba(48,70,66,0.18);
+    pointer-events: none; opacity: 0;
+    transform: translate3d(0,0,0);
+    transform-origin: center;
+    /* scales up in place — no travel, so it lands where it starts */
+    scale: 0.94;
+    transition: opacity 0.15s ease,
+                scale 0.26s cubic-bezier(0.3,1.25,0.5,1);
+    will-change: transform;
+  }
+  .lc-cursor-tip.is-on {
+    opacity: 1; scale: 1;
+  }
+  /* leaving: fade only — scale resets instantly so it never shrinks away */
+  .lc-cursor-tip:not(.is-on) {
+    transition: opacity 0.12s ease, scale 0s;
+  }
+  .lc-cursor-tip svg { width: 14px; height: 14px; flex-shrink: 0; opacity: 0.85; }
+  .lc-cursor-tip b { font-weight: 650; }
+  @media (prefers-reduced-motion: reduce) {
+    .lc-cursor-tip { transition: opacity 0.001s; scale: 1; }
+    .lc-module.is-clickable:hover { transform: none; }
+    .learning-card:not(.is-side):hover,
+    .learning-card:not(.is-side):active { translate: 0 0; scale: 1; }
+  }
+  @media (hover: none), (max-width: 860px) {
+    .lc-cursor-tip { display: none; }
+  }
 
   .lc-actions {
     display: flex; align-items: center; gap: 8px;
@@ -1953,6 +2013,128 @@ function initCardParallax(card) {
   };
 }
 
+// ── Card cursor tooltip + clickable TOC ──────────────────────
+function escAttr(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// URL for one course inside a path (null when the path has no course files).
+function courseUrl(path, cid) {
+  const file = path.courseFiles && path.courseFiles[cid];
+  if (!file) return null;
+  return `course.html?course=${file}&path=${path.pathParam}&hub=${path.hubFile}&from=hub`;
+}
+
+// "Start" / "Continue" / "Review" for a single course, from its stored progress.
+function courseVerb(cid) {
+  const raw = localStorage.getItem('course_progress_' + cid);
+  if (localStorage.getItem('course_' + cid + '_completed') === 'true') return 'Review';
+  if (!raw) return 'Start';
+  try {
+    const data = JSON.parse(raw);
+    if (data.completed) return 'Review';
+    return (data.progress || 0) > 0 ? 'Continue' : 'Start';
+  } catch { return raw === 'completed' ? 'Review' : 'Continue'; }
+}
+
+const LC_TIP_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2.5 9 2.5 12 0v-5"/></svg>`;
+
+function getCursorTip() {
+  let tip = document.getElementById('lc-cursor-tip');
+  if (!tip) {
+    tip = document.createElement('div');
+    tip.id = 'lc-cursor-tip';
+    tip.className = 'lc-cursor-tip';
+    tip.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(tip);
+  }
+  return tip;
+}
+
+function hideCursorTip() {
+  const tip = document.getElementById('lc-cursor-tip');
+  if (tip) tip.classList.remove('is-on');
+}
+
+// Follows the pointer while over the active learning card. Label swaps to the
+// hovered TOC row; clicking the card resumes wherever the learner left off.
+function initCardCursorTip(card, cfg) {
+  if (card._tipCleanup) card._tipCleanup();
+  if (window.matchMedia('(hover: none)').matches) return;
+
+  const tip = getCursorTip();
+  let raf = 0, x = 0, y = 0, lastHtml = '';
+
+  const isSide = () => card.classList.contains('is-side') || card.getAttribute('aria-hidden') === 'true';
+
+  // Resolve what the pointer is over: a TOC row, a real control, or the card.
+  const resolve = (target) => {
+    const mod = target.closest('.lc-module.is-clickable');
+    if (mod) return { verb: mod.dataset.tipVerb, name: mod.dataset.tipName };
+    if (target.closest('a, button, .lc-lp-dot, .lp-deck-arrow')) return null;
+    return cfg.defaultTip;
+  };
+
+  const place = () => {
+    raf = 0;
+    const w = tip.offsetWidth, h = tip.offsetHeight;
+    let tx = x + 18, ty = y + 20;
+    if (tx + w > window.innerWidth - 8)  tx = x - w - 12;
+    if (ty + h > window.innerHeight - 8) ty = y - h - 12;
+    tip.style.transform = `translate3d(${Math.round(tx)}px, ${Math.round(ty)}px, 0)`;
+  };
+
+  const onMove = (e) => {
+    if (isSide()) { hideCursorTip(); return; }
+    const info = resolve(e.target);
+    if (!info) { tip.classList.remove('is-on'); return; }
+    const html = `${LC_TIP_ICON}<span>${info.verb} <b>${escAttr(info.name)}</b></span>`;
+    if (html !== lastHtml) { tip.innerHTML = html; lastHtml = html; }
+    x = e.clientX; y = e.clientY;
+    if (!raf) raf = requestAnimationFrame(place);
+    else place();
+    tip.classList.add('is-on');
+  };
+
+  const onLeave = () => { hideCursorTip(); lastHtml = ''; };
+
+  // Card-wide click → resume; TOC row click → that course.
+  const onClick = (e) => {
+    if (isSide()) return;                                  // deck handles bring-to-front
+    if (e.target.closest('a, button')) return;             // real controls win
+    const mod = e.target.closest('.lc-module.is-clickable');
+    const href = mod ? mod.dataset.href : cfg.ctaHref;
+    if (!href) return;
+    sessionStorage.setItem('hub-origin', 'home');
+    hideCursorTip();
+    location.href = href;
+  };
+
+  const onKey = (e) => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    const mod = e.target.closest && e.target.closest('.lc-module.is-clickable');
+    if (!mod) return;
+    e.preventDefault();
+    sessionStorage.setItem('hub-origin', 'home');
+    location.href = mod.dataset.href;
+  };
+
+  card.addEventListener('mousemove', onMove);
+  card.addEventListener('mouseleave', onLeave);
+  card.addEventListener('click', onClick);
+  card.addEventListener('keydown', onKey);
+  window.addEventListener('scroll', hideCursorTip, { passive: true });
+
+  card._tipCleanup = () => {
+    card.removeEventListener('mousemove', onMove);
+    card.removeEventListener('mouseleave', onLeave);
+    card.removeEventListener('click', onClick);
+    card.removeEventListener('keydown', onKey);
+    window.removeEventListener('scroll', hideCursorTip);
+    hideCursorTip();
+  };
+}
+
 function renderLearningCard(pathId, opts) {
   opts = opts || {};
   const sol = SOLUTIONS.find(s => s.key === activeSolKey);
@@ -1983,6 +2165,7 @@ function renderLearningCard(pathId, opts) {
       </div>
       ${sol.illu ? `<div class="lc-soon-right"><img class="lc-illu" src="${sol.illu}" alt="" aria-hidden="true"></div>` : ''}
     </div>`;
+    if (card._tipCleanup) card._tipCleanup();
     return;
   }
 
@@ -2002,6 +2185,13 @@ function renderLearningCard(pathId, opts) {
   }
   const ctaHref = prog.pct === 100 ? path.href + '?from=home' : getNextCourseUrl(path);
 
+  // Label shown in the cursor tooltip when hovering the card body (not a TOC row)
+  const nextId = path.courseIds && (path.courseIds.find(cid => localStorage.getItem('course_progress_' + cid) === null && localStorage.getItem('course_' + cid + '_completed') !== 'true') || path.courseIds[0]);
+  const nextName = nextId ? (path.courseNames[path.courseIds.indexOf(nextId)] || path.title) : path.title;
+  const defaultTip = prog.pct === 100
+    ? { verb: 'Review', name: path.title }
+    : { verb: nextId ? courseVerb(nextId) : 'Start', name: nextName };
+
   // "Recommended" badge — only on the front (recommended) card of a multi-path topic
   const recBadgeHtml = opts.recommended
     ? `<div class="lc-rec-badge"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Recommended</div>`
@@ -2015,7 +2205,12 @@ function renderLearningCard(pathId, opts) {
     const numContent = done
       ? `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`
       : (i + 1);
-    return `<div class="lc-module ${cls}"><div class="lc-module-num">${numContent}</div><span>${name}</span></div>`;
+    const href = courseUrl(path, cid);
+    const linkCls = href ? ' is-clickable' : '';
+    const linkAttrs = href
+      ? ` role="link" tabindex="0" data-href="${href}" data-tip-verb="${courseVerb(cid)}" data-tip-name="${escAttr(name)}"`
+      : '';
+    return `<div class="lc-module ${cls}${linkCls}"${linkAttrs}><div class="lc-module-num">${numContent}</div><span>${name}</span></div>`;
   }).join('');
 
   card.innerHTML = `<div class="lc-inner">
@@ -2052,6 +2247,9 @@ function renderLearningCard(pathId, opts) {
 
   // Parallax
   initCardParallax(card);
+
+  // Cursor tooltip + card/TOC click-to-resume
+  initCardCursorTip(card, { ctaHref, defaultTip });
 
   // Bloom on CTA button
   initBloomBtn(card.querySelector('.lc-btn-cta'));
@@ -2236,6 +2434,7 @@ function switchLp(lpIdx) {
   const pathIds = sol ? (sol.pathIds || [sol.pathId]) : [];
   if (lpIdx < 0 || lpIdx >= pathIds.length) return;
   if ((activeLpIndexes[activeSolKey] || 0) === lpIdx) return;
+  hideCursorTip();
   activeLpIndexes[activeSolKey] = lpIdx;
   layoutDeck(); // transform/opacity only — the fanned side-slide animation
 }

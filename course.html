@@ -3872,9 +3872,10 @@
 
         // Last course of a learning path earns its achievement badge on the completion slide
         const PATH_ACHIEVEMENTS = {
-          inventory: { img: 'Achievements/Inventory-Achievement.svg', name: 'Inventory Management' },
-          supplier:  { img: 'Achievements/Supplier-Achievement.svg', name: 'Supplier Management' },
-          now:       { img: 'Achievements/Inact-Now-Fundamentals-Achievement.svg', name: 'Inact Now Fundamentals' }
+          inventory: { img: 'Achievements/Inventory-Badge.svg', name: 'Inventory Management' },
+          supplier:  { img: 'Achievements/Suppliers-Badge.svg', name: 'Supplier Management' },
+          now:       { img: 'Achievements/Fundamentals-Badge.svg', name: 'Inact Now Fundamentals' },
+          admin:     { img: 'Achievements/Admins-Badge.svg', name: 'Super Users & Admins' }
         };
         const pathOrderForBadge = learningPathOrders[coursePath] || [];
         const isLastCourseOfPath = pathOrderForBadge.length > 0 &&
