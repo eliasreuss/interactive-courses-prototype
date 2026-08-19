@@ -1474,18 +1474,6 @@
     #embed-open-external { background: var(--color-accent); color: #fff; border: none; border-radius: 8px; padding: 6px 10px; cursor: pointer; font-weight: 600; }
     #embed-iframe { flex: 1 1 auto; width: 100%; border: 0; }
     
-    /* Supademo modal */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-    }
-
     /* Supademo embeds: full width, prominent size */
     .supademo-wrapper {
       width: 100%;
@@ -1517,15 +1505,6 @@
       }
     }
     
-    .modal-content {
-      background: #fff;
-      padding: 32px;
-      border-radius: 16px;
-      max-width: 400px;
-      width: 90%;
-      text-align: center;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.2);
-    }
     
     @media (max-width: 900px) {
       .sidebar { width: 280px; }
@@ -1624,18 +1603,6 @@
     </div>
   </div>
   
-  <!-- Supademo Modal -->
-  <div id="supademo-modal" class="modal-overlay">
-    <div class="modal-content">
-      <h3 style="margin: 0 0 12px 0; font-size: 20px; color: var(--color-primary-text);">Finished the demo?</h3>
-      <p style="margin: 0 0 24px 0; font-size: 15px; color: var(--color-muted); line-height: 1.5;">Have you completed the interactive guide?</p>
-      <div style="display: flex; gap: 12px; justify-content: center;">
-        <button id="supademo-cancel" class="btn btn-outline">No, stay</button>
-        <button id="supademo-confirm" class="btn btn-secondary">Yes, continue</button>
-      </div>
-    </div>
-  </div>
-  
   <script src="https://unpkg.com/lottie-web@5.12.2/build/player/lottie.min.js"></script>
   <script>
     // ========== GLOBAL STATE ==========
@@ -1646,21 +1613,9 @@
     let skipHistoryPush = false;
     let nodeById = new Map();
     let parentSections = []; // For TOC - parent nodes with their children
-    let pendingSupademoNavigation = null;
     // Per-sidequest return pointer (targetId -> main slide id)
     let sidequestReturnByTargetId = new Map();
-    
-    // ========== SUPADEMO HELPERS ==========
-    function hasSupademoContent(text) {
-      return text && /\[supademo:/i.test(text);
-    }
-    
-    function showSupademoModal(navigationCallback) {
-      pendingSupademoNavigation = navigationCallback;
-      const modal = document.getElementById('supademo-modal');
-      if (modal) modal.style.display = 'flex';
-    }
-    
+
     // ========== CONTENT RENDERING ==========
     function renderContent(element, text, nodeType = 'main', layout = '') {
         if (nodeType === 'flip-cards') {
@@ -3513,13 +3468,7 @@
               <path d="M2 2L9 9L2 16" stroke="white" stroke-width="3" stroke-linecap="round"/>
             </svg>
           `;
-          finishBtn.onclick = () => {
-            if (hasSupademoContent(n.content)) {
-              showSupademoModal(() => navigateToNode('__complete__'));
-            } else {
-              navigateToNode('__complete__');
-            }
-          };
+          finishBtn.onclick = () => navigateToNode('__complete__');
           navBtns.appendChild(finishBtn);
 
           return;
@@ -3535,13 +3484,7 @@
               <path d="M2 2L9 9L2 16" stroke="white" stroke-width="3" stroke-linecap="round"/>
             </svg>
           `;
-          btn.onclick = () => {
-            if (hasSupademoContent(n.content)) {
-              showSupademoModal(() => navigateToNode(targetId));
-                      } else {
-              navigateToNode(targetId);
-            }
-          };
+          btn.onclick = () => navigateToNode(targetId);
           navBtns.appendChild(btn);
               }
           } else if (n.type === 'sidequest') {
@@ -3568,13 +3511,7 @@
               <path d="M2 2L9 9L2 16" stroke="white" stroke-width="3" stroke-linecap="round"/>
             </svg>
           `;
-          nextBtn.onclick = () => {
-            if (hasSupademoContent(n.content)) {
-              showSupademoModal(() => navigateToNode(n.nextId));
-            } else {
-              navigateToNode(n.nextId);
-            }
-          };
+          nextBtn.onclick = () => navigateToNode(n.nextId);
           navBtns.appendChild(nextBtn);
         }
         
@@ -3619,24 +3556,35 @@
     let hubPage = 'hub.html';
     let coursePath = 'inventory';
     
+    // Course files live in courses/<path>/with-UUID/<Name>-IN-UUID.txt — this
+    // strips the folder and the -IN-UUID suffix back down to "Name".
+    function courseSlug(file) {
+      return String(file).split('/').pop().replace(/-IN-UUID\.txt$/i, '').replace(/\.txt$/i, '');
+    }
+
     // Map course filenames to IDs for hub integration
     const courseFileToId = {
-      'Intro.txt': 'intro',
-      'Double-ABC-Analysis-4.txt': 'double-abc',
-      'Stock-Policy.txt': 'stock-policy',
-      'Safety-Stock.txt': 'safety-stock',
-      'Reorder-Point.txt': 'reorder-point',
-      'Reorder-Quantity.txt': 'reorder-quantity',
-      'Suppliers-Intro.txt': 'suppliers-intro',
-      'Suppliers-Intro-2.txt': 'suppliers-intro',
-      'Supplier-Performance.txt': 'supplier-performance',
-      'Spend-Analysis.txt': 'spend-analysis',
-      'Supplier-Negotiation.txt': 'supplier-negotiation',
-      'Now-Intro.txt': 'now-intro',
-      'Now-Home.txt': 'now-home',
-      'Now-Insights.txt': 'now-insights',
-      'Now-Actions.txt': 'now-actions',
-      'Now-Dashboards.txt': 'now-dashboards',
+      'with-UUID/Intro-IN-UUID.txt': 'intro',
+      'with-UUID/Double-ABC-Analysis-4-IN-UUID.txt': 'double-abc',
+      'with-UUID/Stock-Policy-IN-UUID.txt': 'stock-policy',
+      'with-UUID/Safety-Stock-IN-UUID.txt': 'safety-stock',
+      'with-UUID/Reorder-Point-IN-UUID.txt': 'reorder-point',
+      'with-UUID/Reorder-Quantity-IN-UUID.txt': 'reorder-quantity',
+      'with-UUID/Suppliers-Intro-IN-UUID.txt': 'suppliers-intro',
+      'with-UUID/Suppliers-Intro-2-IN-UUID.txt': 'suppliers-intro',
+      'with-UUID/Supplier-Performance-IN-UUID.txt': 'supplier-performance',
+      'with-UUID/Spend-Analysis-IN-UUID.txt': 'spend-analysis',
+      'with-UUID/Supplier-Negotiation-IN-UUID.txt': 'supplier-negotiation',
+      'with-UUID/Products-Intro-IN-UUID.txt': 'products-intro',
+      'with-UUID/Category-Management-IN-UUID.txt': 'category-management',
+      'with-UUID/Cost-to-Serve-IN-UUID.txt': 'cost-to-serve',
+      'with-UUID/New-Product-Introduction-IN-UUID.txt': 'new-product-introduction',
+      'with-UUID/Phase-Out-IN-UUID.txt': 'phase-out',
+      'with-UUID/Now-Intro-IN-UUID.txt': 'now-intro',
+      'with-UUID/Now-Home-IN-UUID.txt': 'now-home',
+      'with-UUID/Now-Insights-IN-UUID.txt': 'now-insights',
+      'with-UUID/Now-Actions-IN-UUID.txt': 'now-actions',
+      'with-UUID/Now-Dashboards-IN-UUID.txt': 'now-dashboards',
       'Admin-Intro.txt': 'admin-intro',
       'Admin-Standard.txt': 'admin-standard',
       'Admin-Custom.txt': 'admin-custom',
@@ -3646,25 +3594,32 @@
     // Learning path orders (keyed by coursePath, used for the last-slide CTA)
     const learningPathOrders = {
       inventory: [
-        'Intro.txt',
-        'Double-ABC-Analysis-4.txt',
-        'Stock-Policy.txt',
-        'Safety-Stock.txt',
-        'Reorder-Point.txt',
-        'Reorder-Quantity.txt'
+        'with-UUID/Intro-IN-UUID.txt',
+        'with-UUID/Double-ABC-Analysis-4-IN-UUID.txt',
+        'with-UUID/Stock-Policy-IN-UUID.txt',
+        'with-UUID/Safety-Stock-IN-UUID.txt',
+        'with-UUID/Reorder-Point-IN-UUID.txt',
+        'with-UUID/Reorder-Quantity-IN-UUID.txt'
       ],
       supplier: [
-        'Suppliers-Intro-2.txt',
-        'Supplier-Performance.txt',
-        'Spend-Analysis.txt',
-        'Supplier-Negotiation.txt'
+        'with-UUID/Suppliers-Intro-2-IN-UUID.txt',
+        'with-UUID/Supplier-Performance-IN-UUID.txt',
+        'with-UUID/Spend-Analysis-IN-UUID.txt',
+        'with-UUID/Supplier-Negotiation-IN-UUID.txt'
+      ],
+      products: [
+        'with-UUID/Products-Intro-IN-UUID.txt',
+        'with-UUID/Category-Management-IN-UUID.txt',
+        'with-UUID/Cost-to-Serve-IN-UUID.txt',
+        'with-UUID/New-Product-Introduction-IN-UUID.txt',
+        'with-UUID/Phase-Out-IN-UUID.txt'
       ],
       now: [
-        'Now-Intro.txt',
-        'Now-Home.txt',
-        'Now-Insights.txt',
-        'Now-Actions.txt',
-        'Now-Dashboards.txt'
+        'with-UUID/Now-Intro-IN-UUID.txt',
+        'with-UUID/Now-Home-IN-UUID.txt',
+        'with-UUID/Now-Insights-IN-UUID.txt',
+        'with-UUID/Now-Actions-IN-UUID.txt',
+        'with-UUID/Now-Dashboards-IN-UUID.txt'
       ],
       admin: [
         'Admin-Intro.txt',
@@ -3707,10 +3662,10 @@
     (async function() {
       try {
         const urlParams = new URLSearchParams(window.location.search);
-        const courseFile = urlParams.get('course') || 'Intro.txt';
+        const courseFile = urlParams.get('course') || 'with-UUID/Intro-IN-UUID.txt';
         currentCourseFile = courseFile;
         cameFromHub = urlParams.get('from') === 'hub';
-        currentCourseId = courseFileToId[courseFile] || courseFile.replace('.txt', '').toLowerCase();
+        currentCourseId = courseFileToId[courseFile] || courseSlug(courseFile).toLowerCase();
         hubPage = urlParams.get('hub') || 'hub.html';
         coursePath = urlParams.get('path') || 'inventory';
 
@@ -3719,6 +3674,7 @@
           const LP_NAMES = {
             inventory: 'Inventory Management',
             supplier: 'Supplier Management',
+            products: 'Product Management',
             now: 'Inact Now Fundamentals',
             admin: 'Inact Now For Super Users and Admins',
           };
@@ -3768,7 +3724,7 @@
         if (!courseData || courseData.length === 0) { const e = new Error("Parsing resulted in no valid course data."); e.isEmpty = true; throw e; }
         
         // Set flow title
-        const flowTitle = courseFile.replace('.txt', '').replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+        const flowTitle = courseSlug(courseFile).replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
         document.getElementById('flow-title').textContent = flowTitle;
         
         // Build node map
@@ -3874,6 +3830,7 @@
         const PATH_ACHIEVEMENTS = {
           inventory: { img: 'Achievements/Inventory-Badge.svg', name: 'Inventory Management' },
           supplier:  { img: 'Achievements/Suppliers-Badge.svg', name: 'Supplier Management' },
+          products:  { img: 'Achievements/Products-Badge.svg', name: 'Product Management' },
           now:       { img: 'Achievements/Fundamentals-Badge.svg', name: 'Inact Now Fundamentals' },
           admin:     { img: 'Achievements/Admins-Badge.svg', name: 'Super Users & Admins' }
         };
@@ -3946,37 +3903,6 @@
 
     // ========== EVENT LISTENERS ==========
     document.addEventListener('DOMContentLoaded', () => {
-      // Supademo modal
-      const modal = document.getElementById('supademo-modal');
-      const confirmBtn = document.getElementById('supademo-confirm');
-      const cancelBtn = document.getElementById('supademo-cancel');
-      
-      if (confirmBtn) {
-        confirmBtn.addEventListener('click', () => {
-          if (modal) modal.style.display = 'none';
-          if (pendingSupademoNavigation) {
-            pendingSupademoNavigation();
-            pendingSupademoNavigation = null;
-          }
-        });
-      }
-      
-      if (cancelBtn) {
-        cancelBtn.addEventListener('click', () => {
-          if (modal) modal.style.display = 'none';
-          pendingSupademoNavigation = null;
-        });
-      }
-      
-      if (modal) {
-        modal.addEventListener('click', (e) => {
-          if (e.target === modal) {
-            modal.style.display = 'none';
-            pendingSupademoNavigation = null;
-          }
-        });
-      }
-      
       // Embed panel
       const closeBtn = document.getElementById('embed-close');
       const openExternalBtn = document.getElementById('embed-open-external');

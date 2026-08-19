@@ -1,0 +1,29 @@
+[id:1/topic: Welcome to the Course: Cost to Serve]
+
+slide_id: 1
+index_title: Welcome to the Course: Cost to Serve
+title: 
+type: hero
+---
+hero_image: placeholder-images/Illustration.png
+hero_subtitle: Welcome to the course:
+hero_title: Cost to Serve
+hero_body: ....
+---
+> [next] Let's do it! -> 2
+
+[id:2/topic: Course Outline]
+
+slide_id: 2
+index_title: Intro Flow
+title: 
+type: main
+---
+Dette kursus bliver lavet når profit and loss statement er oppe at køre.
+Det jeg i hvert fald tænker der skal være med er:
+
+* det koster ofte mere for dig at sælge produkter end du tror.
+* Hvad er direkte vs. indirekte spend. (PDF grafik)
+* DB1 DB2. vis det I Now (ikke click-through). (Skal det sættes op?)
+* Profit & Loss Insight walkthrough
+---

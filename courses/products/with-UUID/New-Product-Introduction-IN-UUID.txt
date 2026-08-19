@@ -1,0 +1,153 @@
+[id:1/topic: Welcome to New Product Introduction]
+
+slide_id: ab2a0ac3-8a52-4970-ad6c-144992f6ab98
+index_title: Welcome to New Product Introduction
+title: 
+type: hero
+---
+hero_image: placeholder-images/Illustration.png
+hero_subtitle: Welcome to the course:
+hero_title: New Product Introduction
+hero_body: Introducing new products is an important part of growing the business. But not every new product becomes a success.
+
+In this course, we will look at the question: How are our new products performing?
+
+**Let’s get started!**
+---
+> [next] Let's do it! -> afa45375-b581-4a72-8d5a-d0fd8bb73b75
+
+[id:2/topic: Are We Introducing the Right Products?]
+
+slide_id: afa45375-b581-4a72-8d5a-d0fd8bb73b75
+index_title: Are We Introducing the Right Products?
+title: Are We Introducing the Right Products?
+type: main
+layout: standard-2-col
+---
+New products are not always introduced based on data.
+
+A customer asks for something. A supplier presents a new product. Or a new variant simply looks like a good opportunity, even though we may already have several similar products.
+
+The result can be more products on the shelf without enough demand behind them. This is adding unhealthy complexity.
+
+If we do not follow up on new products, today’s new introductions can become tomorrow’s dead stock.
+![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
+---
+> [next] Continue -> cc3f441d-88ae-4bbd-bb63-bee6684ba2c5
+
+[id:3/topic: Find Out What Happens After Launch]
+
+slide_id: cc3f441d-88ae-4bbd-bb63-bee6684ba2c5
+index_title: Follow the Product From the Start
+title: Follow the Product From the Start
+type: main
+---
+So how do we prevent this? Once a product has been introduced, we need to follow its development. Is it gaining traction? Is it moving towards becoming a strong product? Or has it been in the portfolio for months without enough sales?
+
+The **New Product Introduction Framework** helps us follow products introduced during the last 12 months and see how they are developing.
+
+**Let’s take a look at our own products.**
+
+[New Product Introduction Framework Insight walkthrough]
+![image/size:large/align:center/frame:none](placeholder-images/Click-through.png)
+---
+> [next] Continue -> c0257761-a6c8-497a-9be5-f4035abca749
+
+[id:4/topic: Kill It or Bill It]
+
+slide_id: c0257761-a6c8-497a-9be5-f4035abca749
+index_title: Kill It or Bill It
+title: Kill It or Bill It
+type: main
+layout: standard-2-col
+---
+The framework shows you which new products are performing and which are not. But it does not make the decision for you. At some point, someone needs to decide: **kill it or bill it.**
+
+That requires clear rules and clear ownership.
+
+* Who decides which products are introduced?
+* Who is responsible for following them after launch?
+* And who decides when it is time to keep pushing or stop?
+
+Once this is clear, the framework can support three types of decisions:
+
+![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
+---
+> [next] Continue -> a23e92b7-6dca-4ba7-b6f3-a1dd270d9d7e
+
+slide_id: a23e92b7-6dca-4ba7-b6f3-a1dd270d9d7e
+index_title: What Do We Do With Products Already Introduced?
+title: What Do We Do With Products Already Introduced?
+type: main
+layout: standard-2-col
+---
+The framework becomes useful when we decide what good performance should look like.
+
+For example, we could set a target that 80% of new products should develop towards the healthy side of the portfolio.
+
+If a product falls behind, we can act while there is still time.
+
+* Can we adjust the price?
+* Should we contact the customer?
+* Does the product need more commercial attention?
+
+**The goal is to deal with weak introductions early, instead of discovering them as dead stock two years later.**
+![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
+---
+> [next] Continue -> a83c8717-9bdb-4242-a2e8-9fcb360af692
+
+[id:5/topic: Make the Next Introduction Better]
+
+slide_id: a83c8717-9bdb-4242-a2e8-9fcb360af692
+index_title: Which Products Should We Introduce in the Future?
+title: Which Products Should We Introduce in the Future?
+type: main
+layout: standard-2-col
+---
+Following new products also changes how we make future decisions.
+
+If you know a new product will be reviewed after a few months, it becomes natural to ask harder questions before introducing it:
+
+* Do we already have a similar product?
+* Is there a real customer behind the request?
+* Have we spoken to the customer first?
+
+Sometimes the best decision is not to introduce the product at all.
+![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
+---
+> [next] Continue -> f4bf6658-ba7f-4065-9f7a-ee64daaebec7
+
+slide_id: f4bf6658-ba7f-4065-9f7a-ee64daaebec7
+index_title: What Should We Discuss With Our Suppliers?
+title: What Should We Discuss With Our Suppliers?
+type: main
+layout: standard-2-col
+---
+Poor performance does not always mean the product itself is bad.
+
+A supplier may tell you that the same product is performing well with other customers or in other markets.
+
+If that is the case, the question changes:
+
+***Why is it not working for us?** Is it the price? The positioning? The customer base? Or the way we introduced it?
+
+The data gives you a better starting point for that conversation.
+![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
+---
+> [next] Continue -> cf8e1490-02a3-4cb8-a2fa-2b764be733cc
+
+[id:6/topic: What’s Next?]
+
+slide_id: cf8e1490-02a3-4cb8-a2fa-2b764be733cc
+index_title: Congratulations
+title: Congratulations! You’ve Completed the New Product Introduction Course
+type: main
+layout: standard-2-col
+---
+You’ve learned how to follow new products after they enter the portfolio, identify products that are not gaining traction, and take action before they become a larger problem.
+
+But even with a better introduction process, every portfolio will contain products that have reached the end of their lifecycle. In the next course, Phase Out, we will look at how to identify which products should leave the portfolio.
+
+**Let’s keep going!**
+![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
+---

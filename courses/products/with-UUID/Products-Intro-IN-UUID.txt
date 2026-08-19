@@ -1,0 +1,23 @@
+[id:1/topic: Welcome to the Course: Intro to Product Management]
+
+slide_id: a2104816-aa89-466a-88d6-630acc59733c
+index_title: Welcome to the Course: Intro to Product Management
+title: 
+type: hero
+---
+hero_image: placeholder-images/Illustration.png
+hero_subtitle: Welcome to the course:
+hero_title: Intro to Product Management
+hero_body: ....
+---
+> [next] Let's do it! -> b0d1e64b-1092-44b2-8367-3ec8a88f0bf4
+
+[id:2/topic: Course Outline]
+
+slide_id: b0d1e64b-1092-44b2-8367-3ec8a88f0bf4
+index_title: Intro Flow
+title: 
+type: main
+---
+Dette kursus bliver lavet til sidst
+---

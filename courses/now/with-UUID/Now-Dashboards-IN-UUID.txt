@@ -1,6 +1,6 @@
 [id:1/topic: Welcome to the Course: Dashboards]
 
-slide_id: 1977f0cc-1d86-47a6-8751-dd7a06496238
+slide_id: 1
 index_title: Welcome to the Course: Dashboards
 title: 
 type: hero
@@ -14,74 +14,71 @@ This final course focuses on dashboards. You will learn how to use these visual 
 
 **Let’s get started!**
 ---
-> [next] Continue -> eb8e8d6a-8123-47ce-a0da-1adcdf8578aa
+> [next] Continue -> 2
 
-slide_id: eb8e8d6a-8123-47ce-a0da-1adcdf8578aa
+slide_id: 2
 index_title: What Are Dashboards?
 title: What Are Dashboards?
 type: main
+layout: standard-2-col
 ---
-Dashboards are more than just generic overviews. Every Dashboard is built with a specific purpose in mind. They are based directly on your Insights and are designed to highlight your most important KPI’s and trends in one place. 
+Dashboards are more than just generic overviews. Every Dashboard is built with a specific purpose in mind. 
 
-A Dashboard is built using two main components: Widgets and Tables. Both of these parts are highly interactive.
-![image/size:large/align:center/frame:none](learn/images/155/e5cd411eabbe121df61669cab2747c3849e5e19bf8f2e4dc100341c27a41c544)
+They are based directly on your Insights and are designed to highlight your most important KPI’s and trends in one place. 
+![image/size:550px/align:right/frame:none](learn/images/185/e4ed8d752d828625ad34ec8410304b1871f02724adf830ae47c8a265661371ff)
 ---
-> [next] Continue -> fca36ea9-6881-4b77-93eb-498404e87e6d
+> [next] Continue -> 87863b16-1530-44cf-895f-b19222eae219
 
-slide_id: fca36ea9-6881-4b77-93eb-498404e87e6d
-index_title: A Quick Tip Before We Continue
-title: A Quick Tip Before We Continue
+slide_id: 87863b16-1530-44cf-895f-b19222eae219
+index_title: How Do They Look?
+title: How Do They Look?
 type: main
 ---
-Before we dive deeper into the elements of a Dashboard, here is a helpful tip.
+A Dashboard is built using two main components: Widgets and Tables. Both of these parts are highly interactive.
 
-Dashboards can be customized to show many different overviews. To make sure you know exactly what you are looking at, simply click the "i" button. This reveals the specific Insights and data buckets that feed information directly into your Dashboard.
-![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Now-Dashboards/ClickingIDashboards.mp4)
+Below is an example of how a Dashboard might look:
+![image/size:large/align:center/frame:none](learn/images/186/2ee45617aaf97b6ef40a3452257354569dc3c5108ac6589c4702583e3219b3fb)
 ---
-> [next] Continue -> b422d33e-da77-4d73-96e9-32fd5e609b81
+> [next] Continue -> 4
 
 [id:2/topic: Widgets]
 
-slide_id: b422d33e-da77-4d73-96e9-32fd5e609b81
+slide_id: 4
 index_title: Understanding Widgets
 title: Understanding Widgets
 type: main
 layout: standard-2-col
 ---
-Let's explore the individual parts of Dashboards. We will start with Widgets.
+Now that you know what Dashboards are, let's explore the individual parts. We will start with Widgets.
 
-Widgets are designed to give you instant answers. On the top left, you will see the KPI. On the top right, you will see your target and whether you are hitting it. If you want month-per-month numbers, simply hover over the trend line.
-![video/size:large/align:right/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Now-Dashboards/KPI.mp4)
+Widgets are designed to give you instant answers. 
+
+-**Actual.** Tells you what the actual number (KPI) is. 
+-**Target.** The dotted line in the trend and your KPI target. 
+-**Latest Development.** How much the KPI moved versus last month, three months ago, or last year.
+-**Trend.** Where the KPI landed at the end of each of the last 12 months.
+
+![video/size:550px/align:right/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Now-Dashboards/KPI_2.mp4)
 ---
-> [next] Continue -> 032dc1da-85ae-4324-aa69-70c6a4bab3d1
+> [next] Continue -> 5
 
 [id:3/topic: Tables]
 
-slide_id: 032dc1da-85ae-4324-aa69-70c6a4bab3d1
+slide_id: 5
 index_title: Understanding Tables
 title: Understanding Tables
 type: main
 ---
-Right below the Widgets, you will find Tables. These display your KPIs based on different categorizations. Your data might be grouped by ABC categories or by the responsible buyer. Tables can also show individual products, like a list of your top ten best-selling items.
-![image/size:large/align:center/frame:none](learn/images/154/39daef84716763d6973fc53bbc94ae1772f7bd68420e93faae6e112e4c356dd4)
----
-> [next] Continue -> 5e25ff5f-2663-4972-baf3-79f89244be6c
+Right below the widgets you will find tables. A table splits your KPIs by category, for example by Product Group, Company, or Supplier. It can also show a separate list of products, customers, or suppliers.
+![image/size:large/align:center/frame:none](learn/images/187/971b4ec51fd5130a2fca7752c86c204bab9bfbbdee7b63c9a9b81b7eaab0a08e)
 
-slide_id: 5e25ff5f-2663-4972-baf3-79f89244be6c
-index_title: Filtering on Categories
-title: Filtering on Categories
-type: main
+If you don’t see a table, it may be because your Dashboard only contains widgets, or because you haven’t clicked the small drop-down arrow button.
 ---
-If you click on any category in a table, it filters the entire Dashboard to show only that specific group. You will know a filter is active because the color of the Widgets change. 
-
-In the graphic, the data is currently filtered to show only A items.
-![image/size:large/align:center/frame:none](learn/images/153/73e16ccd7479bed29f7fba743146c9d7f558a6e2ba984338ec20f2351ce72b84)
----
-> [next] Continue -> b67fd7e7-44b6-48cf-a198-8b03ee3b7b72
+> [next] Continue -> 7
 
 [id:4/topic: Slicers And Filters]
 
-slide_id: b67fd7e7-44b6-48cf-a198-8b03ee3b7b72
+slide_id: 7
 index_title: Using Slicers and Filters
 title: Using Slicers and Filters
 type: main
@@ -89,11 +86,11 @@ type: main
 Dashboards work just like Insights when it comes to segmenting your data. You can always use the fixed Slicers at the top of the screen or add any custom Filter to get the exact view you need.
 ![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Now-Dashboards/Dashboard-Filter.mp4)
 ---
-> [next] Continue -> fc41d8ae-4c5b-4df3-80f1-771670a68f68
+> [next] Continue -> 8
 
 [id:5/topic: Going One Click Deeper]
 
-slide_id: fc41d8ae-4c5b-4df3-80f1-771670a68f68
+slide_id: 8
 index_title: Going One Click Deeper
 title: Going One Click Deeper
 type: main
@@ -101,19 +98,17 @@ type: main
 The One Click Deeper concept also applies to Dashboards. If you click directly on a Widget or click the button next to a category or product in a Table, you will open a detailed Trend View for that specific data.
 ![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Now-Dashboards/Dashboards-Trend.mp4)
 ---
-> [next] Continue -> 509d4e23-0ee7-4da7-8b98-e0f94bede486
+> [next] Continue -> 9
 
 [id:6/topic: Congrats!]
 
-slide_id: 509d4e23-0ee7-4da7-8b98-e0f94bede486
+slide_id: 9
 index_title: Congratulations! You Have Completed the Dashboards Course
 title: Congratulations! You Have Completed the Dashboards Course
 type: main
 layout: standard-2-col
 ---
-You now know how to navigate your Dashboards to monitor your most important KPIs and track your overall performance. You understand how to read Widgets to check your targets and navigate Tables. 
-
-You also know how to apply Slicers and Filters to isolate specific areas, and how to drill down into the exact details behind any metric.
+You now know how to navigate your Dashboards to monitor your KPI’s. You understand how to read Widgets and Tables, apply Slicers and Filters, and drill down into the details.
 
 ![image/size:large/align:right/frame:none](learn/images/152/f4197d1566f8f32f2f9ba83b2e0a25a568df9be5df970dd18df1b453c6e29b87)
 ---

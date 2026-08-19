@@ -1011,11 +1011,13 @@
     width: 26px; height: 26px; flex-shrink: 0;
     display: flex; align-items: center; justify-content: center;
     color: oklch(0.70 0.012 165);
-    transition: color 0.2s cubic-bezier(0.22,1,0.36,1);
+    transition: color 0.2s cubic-bezier(0.22,1,0.36,1),
+                rotate 0.28s cubic-bezier(0.22,1,0.36,1);
   }
   .path-tab .sol-btn-icon svg { width: 100%; height: 100%; display: block; }
   .path-tab.is-active .sol-btn-icon { color: var(--sol-color); }
   .path-tab:hover:not(.is-active) .sol-btn-icon { color: oklch(0.48 0.02 165); }
+  .path-tab:hover:not(.is-active) .sol-btn-icon { rotate: -15deg; }
 
   .path-tab .sol-btn-name {
     font-size: 9.5px; font-weight: 400; letter-spacing: 0.07em;
@@ -1150,18 +1152,6 @@
   .lc-lp-dot.is-active { width: 20px; cursor: default; }
   .lc-lp-dot:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
 
-  /* "Recommended" badge — in flow, left-aligned with the title */
-  .lc-rec-badge {
-    align-self: flex-start;
-    display: inline-flex; align-items: center; gap: 6px;
-    margin-bottom: 14px;
-    padding: 5px 12px 5px 10px; border-radius: 100px;
-    background: rgba(255,90,0,0.10);
-    color: var(--color-primary);
-    font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
-  }
-  .lc-rec-badge svg { width: 13px; height: 13px; color: var(--color-accent); }
-
   @media (prefers-reduced-motion: reduce) {
     .lp-deck .learning-card { transition-duration: 0.001s; }
     .lp-deck-arrow { transition-duration: 0.001s; }
@@ -1217,11 +1207,13 @@
     width: 26px; height: 26px; flex-shrink: 0;
     display: flex; align-items: center; justify-content: center;
     color: oklch(0.70 0.012 165);
-    transition: color 0.2s cubic-bezier(0.22,1,0.36,1);
+    transition: color 0.2s cubic-bezier(0.22,1,0.36,1),
+                rotate 0.28s cubic-bezier(0.22,1,0.36,1);
   }
   .sol-btn-icon svg { width: 100%; height: 100%; display: block; }
   .sol-btn.is-active .sol-btn-icon { color: var(--sol-color); }
   .sol-btn:hover:not(.is-active) .sol-btn-icon { color: oklch(0.48 0.02 165); }
+  .sol-btn:hover:not(.is-active) .sol-btn-icon { rotate: -15deg; }
 
   /* Text block */
   .sol-btn-text { display: flex; flex-direction: column; gap: 2px; text-align: left; }
@@ -1250,14 +1242,14 @@
                 box-shadow 320ms cubic-bezier(0.16,1,0.3,1);
     view-transition-name: learning-card;
   }
-  /* the front (spotlight) card reads as one big click target */
-  .learning-card:not(.is-side):hover {
-    translate: 0 -3px; scale: 1.005;
-    box-shadow: 0 16px 38px rgba(48,70,66,0.13), 0 3px 10px rgba(48,70,66,0.07);
+  /* Cursor parallax: the card drifts a little, its contents drift more.
+     The card's translate is eased, so it trails the contents. */
+  .lc-left, .lc-illu-wrap {
+    will-change: transform;
   }
-  .learning-card:not(.is-side):active {
-    translate: 0 -1px; scale: 0.997;
-    transition-duration: 110ms;
+  /* barely-there shadow so the front card lifts off the page on hover */
+  .learning-card:not(.is-side):hover {
+    box-shadow: 0 10px 28px rgba(48,70,66,0.06), 0 2px 6px rgba(48,70,66,0.035);
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -1356,7 +1348,7 @@
     box-shadow: 0 10px 26px rgba(48,70,66,0.28), 0 2px 6px rgba(48,70,66,0.18);
     pointer-events: none; opacity: 0;
     transform: translate3d(0,0,0);
-    transform-origin: center;
+    transform-origin: left center;
     /* scales up in place — no travel, so it lands where it starts */
     scale: 0.94;
     transition: opacity 0.15s ease,
@@ -1366,17 +1358,15 @@
   .lc-cursor-tip.is-on {
     opacity: 1; scale: 1;
   }
-  /* leaving: fade only — scale resets instantly so it never shrinks away */
+  /* leaving: gone at once, no fade, no shrink */
   .lc-cursor-tip:not(.is-on) {
-    transition: opacity 0.12s ease, scale 0s;
+    transition: none;
   }
   .lc-cursor-tip svg { width: 14px; height: 14px; flex-shrink: 0; opacity: 0.85; }
   .lc-cursor-tip b { font-weight: 650; }
   @media (prefers-reduced-motion: reduce) {
     .lc-cursor-tip { transition: opacity 0.001s; scale: 1; }
     .lc-module.is-clickable:hover { transform: none; }
-    .learning-card:not(.is-side):hover,
-    .learning-card:not(.is-side):active { translate: 0 0; scale: 1; }
   }
   @media (hover: none), (max-width: 860px) {
     .lc-cursor-tip { display: none; }
@@ -1798,7 +1788,7 @@ const PATHS = [
     href: 'now-hub.html', pathParam: 'now', hubFile: 'now-hub.html',
     courseIds: ['now-intro','now-home','now-insights','now-actions','now-dashboards'],
     courseNames: ['Introduction','Home','Insights','Actions','Dashboards'],
-    courseFiles: { 'now-intro': 'Now-Intro.txt', 'now-home': 'Now-Home.txt', 'now-insights': 'Now-Insights.txt', 'now-actions': 'Now-Actions.txt', 'now-dashboards': 'Now-Dashboards.txt' },
+    courseFiles: { 'now-intro': 'with-UUID/Now-Intro-IN-UUID.txt', 'now-home': 'with-UUID/Now-Home-IN-UUID.txt', 'now-insights': 'with-UUID/Now-Insights-IN-UUID.txt', 'now-actions': 'with-UUID/Now-Actions-IN-UUID.txt', 'now-dashboards': 'with-UUID/Now-Dashboards-IN-UUID.txt' },
     gradFrom: '#2e4a44', gradTo: '#4a6a60',
     category: 'functionality'
   },
@@ -1811,7 +1801,7 @@ const PATHS = [
     href: 'hub.html', pathParam: 'inventory', hubFile: 'hub.html',
     courseIds: ['intro','double-abc','stock-policy','safety-stock','reorder-point','reorder-quantity'],
     courseNames: ['Introduction','Double ABC Analysis','Stock Policy','Safety Stock','Reorder Point','Reorder Quantity'],
-    courseFiles: { 'intro': 'Intro.txt', 'double-abc': 'Double-ABC-Analysis-4.txt', 'stock-policy': 'Stock-Policy.txt', 'safety-stock': 'Safety-Stock.txt', 'reorder-point': 'Reorder-Point.txt', 'reorder-quantity': 'Reorder-Quantity.txt' },
+    courseFiles: { 'intro': 'with-UUID/Intro-IN-UUID.txt', 'double-abc': 'with-UUID/Double-ABC-Analysis-4-IN-UUID.txt', 'stock-policy': 'with-UUID/Stock-Policy-IN-UUID.txt', 'safety-stock': 'with-UUID/Safety-Stock-IN-UUID.txt', 'reorder-point': 'with-UUID/Reorder-Point-IN-UUID.txt', 'reorder-quantity': 'with-UUID/Reorder-Quantity-IN-UUID.txt' },
     gradFrom: '#243a38', gradTo: '#3a5850',
     category: 'inventory'
   },
@@ -1824,18 +1814,20 @@ const PATHS = [
     href: 'supplier-hub.html', pathParam: 'supplier', hubFile: 'supplier-hub.html',
     courseIds: ['suppliers-intro','supplier-performance','spend-analysis','supplier-negotiation'],
     courseNames: ['Intro to Supplier Management','Supplier Performance','Spend Analysis','Supplier Negotiation'],
-    courseFiles: { 'suppliers-intro': 'Suppliers-Intro-2.txt', 'supplier-performance': 'Supplier-Performance.txt', 'spend-analysis': 'Spend-Analysis.txt', 'supplier-negotiation': 'Supplier-Negotiation.txt' },
+    courseFiles: { 'suppliers-intro': 'with-UUID/Suppliers-Intro-2-IN-UUID.txt', 'supplier-performance': 'with-UUID/Supplier-Performance-IN-UUID.txt', 'spend-analysis': 'with-UUID/Spend-Analysis-IN-UUID.txt', 'supplier-negotiation': 'with-UUID/Supplier-Negotiation-IN-UUID.txt' },
     gradFrom: '#2a3e30', gradTo: '#425e48',
     category: 'suppliers'
   },
   {
-    id: 'spend-analysis',
+    id: 'product-management',
     title: 'Product Management',
     desc: 'Monitor the product lifecycle and manage your products from cradle to grave with Inact Now.',
-    courseCount: 4, duration: '28 min',
-    thumbnail: null, href: '#',
-    courseIds: [], courseNames: [],
-    comingSoon: true,
+    courseCount: 5, duration: '38 min',
+    thumbnail: 'LP-thumbnails/LP-Thumbnail-Inventory-Solution.png',
+    href: 'products-hub.html', pathParam: 'products', hubFile: 'products-hub.html',
+    courseIds: ['products-intro','category-management','cost-to-serve','new-product-introduction','phase-out'],
+    courseNames: ['Intro to Product Management','Category Management','Cost to Serve','New Product Introduction','Phase Out'],
+    courseFiles: { 'products-intro': 'with-UUID/Products-Intro-IN-UUID.txt', 'category-management': 'with-UUID/Category-Management-IN-UUID.txt', 'cost-to-serve': 'with-UUID/Cost-to-Serve-IN-UUID.txt', 'new-product-introduction': 'with-UUID/New-Product-Introduction-IN-UUID.txt', 'phase-out': 'with-UUID/Phase-Out-IN-UUID.txt' },
     gradFrom: '#2e3048', gradTo: '#4a4c68',
     category: 'products'
   },
@@ -1907,7 +1899,7 @@ function getActivePath() {
 const SOLUTIONS = [
   { key: 'inventory',    name: 'Inventory',    label: 'What to stock?',  pathId: 'inventory-management', illu: 'SVGs/LP-Illustrations/Inventory-Illustration.png',      toggleBg: '#FFF9EC', bg: '#FFFDF9', btn: '#EEE0C3', btnT: '#2C2416', bdr: '#EDE3CC', dot: '#EEE0C3', bar: '#B8964E' },
   { key: 'suppliers',    name: 'Suppliers',    label: 'How to source?',  pathId: 'supplier-management',  illu: 'SVGs/LP-Illustrations/Suppliers-Illustration.png',      toggleBg: '#F4EEFF', bg: '#FDFCFF', btn: '#E1DBEB', btnT: '#221D2E', bdr: '#D8D0E8', dot: '#E1DBEB', bar: '#7B68AA' },
-  { key: 'products',    name: 'Products',     label: 'What to offer?',  pathId: 'spend-analysis',       illu: 'SVGs/LP-Illustrations/Products-Illustration.png',   soon: true, toggleBg: '#FAF3D4', bg: '#FDFAEE', btn: '#EDE0A6', btnT: '#33290F', bdr: '#E6DAAC', dot: '#EDE0A6', bar: '#B49B33' },
+  { key: 'products',    name: 'Products',     label: 'What to offer?',  pathId: 'product-management',   illu: 'SVGs/LP-Illustrations/Products-Illustration.png',   toggleBg: '#FAF3D4', bg: '#FDFAEE', btn: '#EDE0A6', btnT: '#33290F', bdr: '#E6DAAC', dot: '#EDE0A6', bar: '#B49B33' },
   { key: 'customers',   name: 'Customers',    label: 'Who to serve?',   pathId: 'end2end',              illu: 'SVGs/LP-Illustrations/Customers-Illustration.png',  soon: true, toggleBg: '#F1F4E9', bg: '#F8FAF4', btn: '#E3E8D8', btnT: '#222619', bdr: '#DDE3D0', dot: '#D0D5C5', bar: '#8A9672' },
   { key: 'functionality', name: 'Software',   label: 'Inact Now',     pathId: 'now-fundamentals', pathIds: ['now-fundamentals', 'admin'],     illu: 'SVGs/LP-Illustrations/Now-Illustration.png',            toggleBg: '#F1F6FF', bg: '#F5F9FF', btn: '#DBE9FF', btnT: '#1A2535', bdr: '#D0DFEF', dot: '#DBE9FF', bar: '#5888D0' },
 ];
@@ -1950,6 +1942,23 @@ const SOL_ICONS = {
 function renderSolToggle() {
   const wrap = document.getElementById('sol-toggle');
   if (!wrap) return;
+
+  // Already built: flip the active flag in place so the hovered icon can
+  // un-tilt smoothly instead of being replaced mid-transition.
+  const existing = wrap.querySelectorAll('.sol-btn');
+  if (existing.length === SOLUTIONS.length) {
+    existing.forEach(btn => {
+      const active = btn.dataset.sol === activeSolKey;
+      btn.classList.remove('is-active');
+      if (active) {
+        void btn.offsetWidth;            // restart the pop animation
+        btn.classList.add('is-active');
+      }
+      btn.setAttribute('aria-pressed', active);
+    });
+    return;
+  }
+
   wrap.innerHTML = SOLUTIONS.map(sol => {
     const active = sol.key === activeSolKey;
     return `<button class="sol-btn${active ? ' is-active' : ''}" data-sol="${sol.key}" aria-pressed="${active}"
@@ -1998,18 +2007,30 @@ function initCardParallax(card) {
   if (card._parallaxCleanup) card._parallaxCleanup();
   const illuWrap = card.querySelector('.lc-illu-wrap');
   if (!illuWrap) return;
+  const left = card.querySelector('.lc-left');
+  // Contents track the cursor 1:1; the card follows at a third of that and,
+  // because its `translate` is eased in CSS, trails behind — hence the depth.
   const onMove = (e) => {
+    if (card.classList.contains('is-side')) return;
     const r = card.getBoundingClientRect();
     const x = (e.clientX - r.left) / r.width  - 0.5;
     const y = (e.clientY - r.top)  / r.height - 0.5;
-    illuWrap.style.transform = `translate(${x * 14}px, ${y * 9}px)`;
+    const inner = `translate(${(x * 7).toFixed(2)}px, ${(y * 4.5).toFixed(2)}px)`;
+    illuWrap.style.transform = inner;
+    if (left) left.style.transform = inner;
+    card.style.translate = `${(x * 2.5).toFixed(2)}px ${(y * 1.6).toFixed(2)}px`;
   };
-  const onLeave = () => { illuWrap.style.transform = ''; };
+  const onLeave = () => {
+    illuWrap.style.transform = '';
+    if (left) left.style.transform = '';
+    card.style.translate = '';
+  };
   card.addEventListener('mousemove', onMove);
   card.addEventListener('mouseleave', onLeave);
   card._parallaxCleanup = () => {
     card.removeEventListener('mousemove', onMove);
     card.removeEventListener('mouseleave', onLeave);
+    onLeave();
   };
 }
 
@@ -2078,9 +2099,10 @@ function initCardCursorTip(card, cfg) {
   const place = () => {
     raf = 0;
     const w = tip.offsetWidth, h = tip.offsetHeight;
-    let tx = x + 18, ty = y + 20;
-    if (tx + w > window.innerWidth - 8)  tx = x - w - 12;
-    if (ty + h > window.innerHeight - 8) ty = y - h - 12;
+    // sits just right of the cursor, nudged a little below its centre
+    let tx = x + 20, ty = y - h / 2 + 9;
+    if (tx + w > window.innerWidth - 8)  tx = x - w - 14;   // flip left near the edge
+    ty = Math.max(8, Math.min(ty, window.innerHeight - h - 8));
     tip.style.transform = `translate3d(${Math.round(tx)}px, ${Math.round(ty)}px, 0)`;
   };
 
@@ -2192,11 +2214,6 @@ function renderLearningCard(pathId, opts) {
     ? { verb: 'Review', name: path.title }
     : { verb: nextId ? courseVerb(nextId) : 'Start', name: nextName };
 
-  // "Recommended" badge — only on the front (recommended) card of a multi-path topic
-  const recBadgeHtml = opts.recommended
-    ? `<div class="lc-rec-badge"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Recommended</div>`
-    : '';
-
   const moduleItems = path.courseIds.slice(0, 6).map((cid, i) => {
     const name = path.courseNames[i] || ('Course ' + (i+1));
     const done = i < prog.done;
@@ -2215,7 +2232,7 @@ function renderLearningCard(pathId, opts) {
 
   card.innerHTML = `<div class="lc-inner">
     <div class="lc-left">
-      ${recBadgeHtml}<div class="lc-title">${path.title}</div>
+      <div class="lc-title">${path.title}</div>
       <div class="lc-desc">${path.desc}</div>
       <div class="lc-prog-row">
         <div class="lc-prog-bar"><div class="lc-prog-fill" data-pct="${prog.pct}"></div></div>
@@ -2331,7 +2348,7 @@ function renderDeck() {
   // Render each path's full content into its card
   pathIds.forEach((pid, idx) => {
     const cardEl = deck.querySelector(`.learning-card[data-lp-idx="${idx}"]`);
-    renderLearningCard(pid, { card: cardEl, recommended: idx === 0 });
+    renderLearningCard(pid, { card: cardEl });
   });
 
   // Click a non-active (side/back) card to bring it to center; intercept its links.
@@ -2401,6 +2418,7 @@ function layoutDeck() {
       tx = 0; opacity = 0; z = 10; hidden = true;
     }
     cardEl.style.transform = `translate(calc(-50% + ${tx}%), -50%)`;
+    if (side || hidden) cardEl.style.translate = '';   // drop leftover cursor parallax
     cardEl.style.opacity = opacity;
     cardEl.style.filter = 'none';
     cardEl.style.zIndex = z;
@@ -2897,9 +2915,10 @@ window.addEventListener('pageshow', e => { if (e.persisted) render(); });
 <script>
 (function() {
   var PP = [
-    { courseIds: ['intro','double-abc','stock-policy','safety-stock','reorder-point','reorder-quantity'], courseNames: ['Introduction','Double ABC Analysis','Stock Policy','Safety Stock','Reorder Point','Reorder Quantity'], courseFiles: { 'intro': 'Intro.txt', 'double-abc': 'Double-ABC-Analysis-4.txt', 'stock-policy': 'Stock-Policy.txt', 'safety-stock': 'Safety-Stock.txt', 'reorder-point': 'Reorder-Point.txt', 'reorder-quantity': 'Reorder-Quantity.txt' }, pathParam: 'inventory', hubFile: 'hub.html' },
-    { courseIds: ['suppliers-intro','supplier-performance','spend-analysis','supplier-negotiation'], courseNames: ['Intro to Supplier Management','Supplier Performance','Spend Analysis','Supplier Negotiation'], courseFiles: { 'suppliers-intro': 'Suppliers-Intro-2.txt', 'supplier-performance': 'Supplier-Performance.txt', 'spend-analysis': 'Spend-Analysis.txt', 'supplier-negotiation': 'Supplier-Negotiation.txt' }, pathParam: 'supplier', hubFile: 'supplier-hub.html' },
-    { courseIds: ['now-intro','now-home','now-insights','now-actions','now-dashboards'], courseNames: ['Introduction','Home','Insights','Actions','Dashboards'], courseFiles: { 'now-intro': 'Now-Intro.txt', 'now-home': 'Now-Home.txt', 'now-insights': 'Now-Insights.txt', 'now-actions': 'Now-Actions.txt', 'now-dashboards': 'Now-Dashboards.txt' }, pathParam: 'now', hubFile: 'now-hub.html' },
+    { courseIds: ['intro','double-abc','stock-policy','safety-stock','reorder-point','reorder-quantity'], courseNames: ['Introduction','Double ABC Analysis','Stock Policy','Safety Stock','Reorder Point','Reorder Quantity'], courseFiles: { 'intro': 'with-UUID/Intro-IN-UUID.txt', 'double-abc': 'with-UUID/Double-ABC-Analysis-4-IN-UUID.txt', 'stock-policy': 'with-UUID/Stock-Policy-IN-UUID.txt', 'safety-stock': 'with-UUID/Safety-Stock-IN-UUID.txt', 'reorder-point': 'with-UUID/Reorder-Point-IN-UUID.txt', 'reorder-quantity': 'with-UUID/Reorder-Quantity-IN-UUID.txt' }, pathParam: 'inventory', hubFile: 'hub.html' },
+    { courseIds: ['suppliers-intro','supplier-performance','spend-analysis','supplier-negotiation'], courseNames: ['Intro to Supplier Management','Supplier Performance','Spend Analysis','Supplier Negotiation'], courseFiles: { 'suppliers-intro': 'with-UUID/Suppliers-Intro-2-IN-UUID.txt', 'supplier-performance': 'with-UUID/Supplier-Performance-IN-UUID.txt', 'spend-analysis': 'with-UUID/Spend-Analysis-IN-UUID.txt', 'supplier-negotiation': 'with-UUID/Supplier-Negotiation-IN-UUID.txt' }, pathParam: 'supplier', hubFile: 'supplier-hub.html' },
+    { courseIds: ['products-intro','category-management','cost-to-serve','new-product-introduction','phase-out'], courseNames: ['Intro to Product Management','Category Management','Cost to Serve','New Product Introduction','Phase Out'], courseFiles: { 'products-intro': 'with-UUID/Products-Intro-IN-UUID.txt', 'category-management': 'with-UUID/Category-Management-IN-UUID.txt', 'cost-to-serve': 'with-UUID/Cost-to-Serve-IN-UUID.txt', 'new-product-introduction': 'with-UUID/New-Product-Introduction-IN-UUID.txt', 'phase-out': 'with-UUID/Phase-Out-IN-UUID.txt' }, pathParam: 'products', hubFile: 'products-hub.html' },
+    { courseIds: ['now-intro','now-home','now-insights','now-actions','now-dashboards'], courseNames: ['Introduction','Home','Insights','Actions','Dashboards'], courseFiles: { 'now-intro': 'with-UUID/Now-Intro-IN-UUID.txt', 'now-home': 'with-UUID/Now-Home-IN-UUID.txt', 'now-insights': 'with-UUID/Now-Insights-IN-UUID.txt', 'now-actions': 'with-UUID/Now-Actions-IN-UUID.txt', 'now-dashboards': 'with-UUID/Now-Dashboards-IN-UUID.txt' }, pathParam: 'now', hubFile: 'now-hub.html' },
     { courseIds: ['admin-intro','admin-standard','admin-custom','admin-manage'], courseNames: ['Intro: Super Users & Admins','Your Standard Solution','Customising Your Solution','Managing Users'], courseFiles: { 'admin-intro': 'Admin-Intro.txt', 'admin-standard': 'Admin-Standard.txt', 'admin-custom': 'Admin-Custom.txt', 'admin-manage': 'Admin-Manage.txt' }, pathParam: 'admin', hubFile: 'admin-hub.html' }
   ];
   function pProg(p) {

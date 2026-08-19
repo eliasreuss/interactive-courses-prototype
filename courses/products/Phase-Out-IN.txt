@@ -1,0 +1,95 @@
+[id:1/topic: When Is It Time to Let Go?]
+
+slide_id: 1
+index_title: Welcome to Phase Out
+title: 
+type: hero
+---
+hero_image: placeholder-images/Illustration.png
+hero_subtitle: Welcome to the course:
+hero_title: Phase Out
+hero_body: Every product has a lifecycle. At some point, some products stop earning their place in the portfolio.
+
+In this course, we will answer the question: Which products should we phase out?
+
+**Let’s get started!**
+---
+> [next] Let's do it! -> 2
+
+slide_id: 2
+index_title: The Long Tail
+title: The Long Tail
+type: main
+---
+Over time, most portfolios build up a long tail of slow-moving and dead products.
+
+These products take up space, tie up capital and create work across the business, even when they generate little or no sales.
+
+And phase out is not only a purchasing responsibility. Someone made the decision to bring the product into the portfolio, so product and category owners also need to take responsibility for when it should leave.
+![image/size:large/align:center/frame:none](placeholder-images/Long-tail.png)
+---
+> [next] Continue -> 3
+
+[id:2/topic: Start With What Is Already Dead]
+
+slide_id: 3
+index_title: What Is Already Dead?
+title: What Is Already Dead?
+type: main
+---
+The easiest place to start is with products that have already stopped selling. The **Dead Items Insight** gives you an overview of products with no sales during the last 12 months and shows how much inventory is still tied up in them.
+![image/size:large/align:center/frame:none](placeholder-images/Click-through.png)
+---
+> [next] Continue -> 4
+
+[id:3/topic: Catch the Problem Earlier]
+
+slide_id: 4
+index_title: From Reactive to Proactive
+title: From Reactive to Proactive
+type: main
+layout: standard-2-col
+---
+Dead Items helps us clean up after the problem has already happened. But ideally, we should act earlier.
+
+A product can be a poor performer long before sales reach zero. If we can identify these products earlier, we can decide what to do before they become dead stock.
+
+But potential phase-out candidates are harder to judge than dead items. A product may have low revenue and poor margins, but somebody is still buying it. If that customer is important to the business, removing the product could have bad consequences.
+![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
+---
+> [next] Continue -> 5
+
+[id:4/topic: Find the Right Products to Phase Out]
+
+slide_id: 5
+index_title: Potential Phase Outs Insight Walkthrough
+title: Potential Phase Outs Insight Walkthrough
+type: main
+---
+Therefore, before we phase out our bad products, we need to ask: **Who’s buying it?**
+
+A Turnaround product that is not purchased by any important customers is very different from a Turnaround product that an important customer depends on.
+
+The **Potential Phase Outs Insight** helps us find the bad performing products that no important customers are buying. Go through the tutorial below to learn how to use it effectively:
+![image/size:large/align:center/frame:none](placeholder-images/Click-through.png)
+---
+> [next] Continue -> 6
+
+[id:5/topic: What’s Next?]
+
+slide_id: 6
+index_title: Congratulations
+title: Congratulations! You’ve Completed the Product Management Learning Path
+type: main
+layout: standard-2-col
+---
+You can now use Inact Now to answer the four questions we started with:
+
+* Which products and categories are performing at the top and bottom?
+* Where should we work to improve supplier agreements?
+* How are our new products performing?
+* Which products should we phase out?
+
+You have followed the portfolio from category performance and new product introductions all the way to the end of the product lifecycle.
+![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
+---

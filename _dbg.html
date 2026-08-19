@@ -1,0 +1,35 @@
+<!doctype html><meta charset="utf-8">
+<style>html,body{margin:0}iframe{border:0;width:100vw;height:100vh;display:block}#out{position:fixed;z-index:9;background:#fff;font:12px monospace;white-space:pre}</style>
+<body><pre id="out">…</pre><iframe id="f"></iframe><script>
+var q=new URLSearchParams(location.search), n=+(q.get('n')||0), f=document.getElementById('f');
+f.src='course.html?course='+q.get('file')+'&path=products&hub=products-hub.html&from=hub';
+f.onload=function(){
+  var i=0;
+  (function step(){
+    if(i>=n) return void setTimeout(report,900);
+    var d=f.contentDocument, b=d.querySelectorAll('.btn.btn-primary'), t=b[b.length-1];
+    if(t){t.click();i++;setTimeout(step,500);} else setTimeout(step,300);
+  })();
+};
+function desc(e){ if(!e) return 'null';
+  return e.tagName.toLowerCase()+(e.id?'#'+e.id:'')+(e.className&&e.className.baseVal===undefined?'.'+String(e.className).trim().split(/\s+/).join('.'):''); }
+function report(){
+  var d=f.contentDocument, w=f.contentWindow;
+  var btns=[].slice.call(d.querySelectorAll('.card-footer .btn'));
+  var lines=['title: '+(d.getElementById('card-title')||{}).textContent];
+  btns.forEach(function(b){
+    var r=b.getBoundingClientRect(), cx=r.left+r.width/2, cy=r.top+r.height/2;
+    var hit=d.elementFromPoint(cx,cy);
+    var chain=[]; for(var e=hit;e && e!==d.documentElement;e=e.parentElement) chain.push(desc(e));
+    lines.push('BTN "'+b.textContent.trim()+'" rect='+JSON.stringify({t:Math.round(r.top),l:Math.round(r.left),w:Math.round(r.width),h:Math.round(r.height)}));
+    lines.push('   hit='+desc(hit)+'  isInsideBtn='+(b.contains(hit)));
+    lines.push('   chain='+chain.slice(0,5).join(' < '));
+  });
+  var img=d.querySelector('#card-content .img-container');
+  if(img){var ir=img.getBoundingClientRect();lines.push('IMG rect='+JSON.stringify({t:Math.round(ir.top),b:Math.round(ir.bottom),l:Math.round(ir.left),r:Math.round(ir.right)}));}
+  var sw=d.querySelector('.card-scroll-wrapper');
+  if(sw){var sr=sw.getBoundingClientRect();lines.push('SCROLLWRAP rect='+JSON.stringify({t:Math.round(sr.top),b:Math.round(sr.bottom)})+' scrollH='+sw.scrollHeight+' clientH='+sw.clientHeight);}
+  lines.push('viewport='+w.innerWidth+'x'+w.innerHeight);
+  document.getElementById('out').textContent=lines.join('\n');
+}
+</script></body>

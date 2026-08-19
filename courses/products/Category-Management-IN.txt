@@ -1,0 +1,111 @@
+[id:1/topic: Where Are We Making Money?]
+
+slide_id: 1
+index_title: Welcome to Category Management
+title: 
+type: hero
+---
+hero_image: placeholder-images/Illustration.png
+hero_subtitle: Welcome to the course:
+hero_title: Category Management
+hero_body: In this course, you will learn how to identify which products and categories perform well, which ones need attention, and where the biggest opportunities are.
+
+**Let’s get started!**
+---
+> [next] Let's do it! -> 2
+
+slide_id: 2
+index_title: Where Are We Making Money, and Where Are We Not?
+title: Where Are We Making Money, and Where Are We Not?
+type: main
+layout: standard-2-col
+---
+A product portfolio can contain thousands of items across many different categories.
+Some products sell in high volumes and generate healthy margins. Others sell well but contribute very little profit. Some have attractive margins but never gain enough volume, and some do neither.
+
+The challenge is getting a clear view of where the business is healthy and where it needs attention.
+![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
+---
+> [next] Continue -> 3
+
+[id:2/topic: Find the Strong and Weak Spots]
+
+slide_id: 3
+index_title: Start With the Big Picture
+title: Start With the Big Picture
+type: main
+---
+Before deciding what to improve, we first need to understand how our categories and products are performing today. The KPI Benchmark Insight gives you this overview. It allows you to compare performance across categories and drill down to individual products.
+
+Click through the tutorial below to learn how to effectively get an overview with the KPI Benchmark Insight.
+![image/size:large/align:center/frame:none](placeholder-images/Click-through.png)
+---
+> [next] Continue -> 4
+
+[id:3/topic: Four Categories, Four Different Jobs]
+
+slide_id: 4
+index_title: From Performance to Strategy
+title: From Performance to Strategy
+type: main
+---
+The KPI Benchmark gives us a detailed view of performance. But with thousands of products, we still need a simple way to decide where to focus.
+
+This is where categorization helps. We look at every product through two commercial lenses: **Revenue** and **Margin**.
+![image/size:large/align:center/frame:none](placeholder-images/Axes-empty.png)
+---
+> [next] Continue -> 5
+
+slide_id: 5
+index_title: The Four Categories
+title: The Four Categories
+type: main
+---
+Using these two dimensions, we can divide the portfolio into four categories. The point is not to manage every product the same way, because they do not play the same role in the business.
+![image/size:large/align:center/frame:none](placeholder-images/Axes-filled-out.png)
+---
+> [next] Continue -> 6
+
+slide_id: 6
+index_title: Different Categories, Different Questions
+title: Different Categories, Different Questions
+type: main
+---
+Once products are categorized, the next questions become clearer.
+![image/size:large/align:center/frame:none](placeholder-images/Four-groups.png)
+---
+> [next] Continue -> 7
+
+[id:4/topic: See It in Your Own Portfolio]
+
+slide_id: 7
+index_title: Category Management Insight Walkthrough
+title: Category Management Insight Walkthrough
+type: main
+---
+Now that you know the four categories, let’s apply them to your own portfolio.
+
+The **Category Management Insight** shows how your products are split across Protect, Develop, Grow and Turnaround.
+
+[Category Management Insight walkthrough]
+![image/size:large/align:center/frame:none](placeholder-images/Click-through.png)
+---
+> [next] Continue -> 8
+
+[id:5/topic: What’s Next?]
+
+slide_id: 8
+index_title: Congratulations
+title: Congratulations! You’ve Completed the Category Management Course
+type: main
+layout: standard-2-col
+---
+You’ve learned how to compare product and category performance.
+
+This gives you a clear starting point for deciding where to protect performance, improve margins, grow sales or take a closer look at weak products.
+
+In the next course, **Total Cost of Ownership,** we will go one step further and look at what your products actually earn once the cost of serving them is included.
+
+**Let’s keep going!**
+![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
+---
