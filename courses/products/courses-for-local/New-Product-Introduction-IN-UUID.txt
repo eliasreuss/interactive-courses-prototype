@@ -61,7 +61,7 @@ title: Who Owns the Decision?
 type: main
 layout: standard-2-col
 ---
-The framework shows you which new products are performing and which are not. But it does not make the decision for you. At some point, someone needs to decide: **kill it or bill it.**
+The framework shows you which new products are performing and which are not. But it does not make the decisions for you.
 
 That requires clear rules and clear ownership.
 

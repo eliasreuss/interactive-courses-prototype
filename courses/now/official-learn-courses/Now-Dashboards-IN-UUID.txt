@@ -53,10 +53,10 @@ Now that you know what Dashboards are, let's explore the individual parts. We wi
 
 Widgets are designed to give you instant answers. 
 
--**Actual.** Tells you what the actual number (KPI) is. 
--**Target.** The dotted line in the trend and your KPI target. 
--**Latest Development.** How much the KPI moved versus last month, three months ago, or last year.
--**Trend.** Where the KPI landed at the end of each of the last 12 months.
+***Actual.** Tells you what the actual number (KPI) is. 
+***Target.** The dotted line in the trend and your KPI target. 
+***Latest Development.** How much the KPI moved versus last month, three months ago, or last year.
+***Trend.** Where the KPI landed at the end of each of the last 12 months.
 
 ![video/size:550px/align:right/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Now-Dashboards/KPI_2.mp4)
 ---

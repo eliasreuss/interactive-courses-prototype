@@ -217,7 +217,7 @@ slide_id: a3b53fe6-6ac1-4863-bf8a-dd9ab2b3e0f3
 index_title: Interpreting the Insight
 title: Great... What Are We Looking At?
 type: main
----rse
+---
 What you’re looking at is called an **insight.** Insights are simple, powerful views that give you a clear understanding of your data.
 
 This brief video walks you through how to navigate and interpret the Double ABC Analysis Insight in Inact Now.

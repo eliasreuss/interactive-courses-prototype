@@ -23,7 +23,7 @@ Safety stock is a buffer of extra inventory kept to reduce the risk of stockouts
 
 When stock reaches the **reorder point**, a new purchase order is placed to cover expected demand during the **lead time**. The **safety stock** sits below this level as a reserve and is only used when demand is higher than forecasted or when a delivery is delayed, preventing inventory from running out.
 
-![image/size:large/align:center/frame:none](safety-stock/Safety-Stock-Graphic.png)
+![image/size:large/align:center/frame:none](reorder-point/Reorder-Point-Graph.png)
 
 In many companies, safety stock levels are still set based on intuition or past habits. Our aim is to help you determine these levels using data and well-defined service goals.
 ---
