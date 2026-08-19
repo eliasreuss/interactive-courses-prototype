@@ -85,13 +85,10 @@ title: Congratulations! You’ve Completed the Product Management Learning Path
 type: main
 layout: standard-2-col
 ---
-You can now use Inact Now to answer the four questions we started with:
+You can now answer the questions we started with. Which products and categories are performing. What it really costs to sell them. How your new products are doing. And which products should leave the portfolio.
 
-* Which products and categories are performing at the top and bottom?
-* Where should we work to improve supplier agreements?
-* How are our new products performing?
-* Which products should we phase out?
+One question is still open. Before you phase a product out, you need to know who buys it.
 
-You have followed the portfolio from category performance and new product introductions all the way to the end of the product lifecycle.
+That is where the Customer Management path begins.
 ![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
 ---

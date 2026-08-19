@@ -53,11 +53,11 @@ The **New Product Introduction Framework** helps us follow products introduced d
 ---
 > [next] Continue -> c0257761-a6c8-497a-9be5-f4035abca749
 
-[id:4/topic: Kill It or Bill It]
+[id:4/topic: Who Owns the Decision?]
 
 slide_id: c0257761-a6c8-497a-9be5-f4035abca749
-index_title: Kill It or Bill It
-title: Kill It or Bill It
+index_title: Who Owns the Decision?
+title: Who Owns the Decision?
 type: main
 layout: standard-2-col
 ---
