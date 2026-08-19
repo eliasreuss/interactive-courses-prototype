@@ -42,11 +42,9 @@ index_title: Follow the Product From the Start
 title: Follow the Product From the Start
 type: main
 ---
-So how do we prevent this? Once a product has been introduced, we need to follow its development.
+So how do we prevent this? Once a product has been introduced, we need to follow its development. Is it gaining traction? Is it moving towards becoming a strong product? Or has it been in the portfolio for months without enough sales?
 
-Is it gaining traction? Is it moving towards becoming a strong product? Or has it been in the portfolio for months without enough sales?
-
-The New Product Introduction Framework helps us follow products introduced during the last 12 months and see how they are developing.
+The **New Product Introduction Framework** helps us follow products introduced during the last 12 months and see how they are developing.
 
 **Let’s take a look at our own products.**
 
@@ -73,9 +71,6 @@ That requires clear rules and clear ownership.
 
 Once this is clear, the framework can support three types of decisions:
 
-* What should we do with products already introduced?
-* Which products should we introduce in the future?
-* What should we discuss with our suppliers?
 ![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
 ---
 > [next] Continue -> 5
