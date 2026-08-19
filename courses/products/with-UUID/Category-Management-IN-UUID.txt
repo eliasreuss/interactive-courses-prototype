@@ -1,4 +1,4 @@
-[id:1/topic: Where Are We Making Money?]
+[id:1/topic: Welcome to Category Management]
 
 slide_id: ee17c5e5-e853-480b-a2a6-04e5992c2924
 index_title: Welcome to Category Management
@@ -14,6 +14,8 @@ hero_body: In this course, you will learn how to identify which products and cat
 ---
 > [next] Let's do it! -> eb2a3812-a562-46ff-bef3-223d74117d10
 
+[id:2/topic: Where Are We Making Money?]
+
 slide_id: eb2a3812-a562-46ff-bef3-223d74117d10
 index_title: Where Are We Making Money, and Where Are We Not?
 title: Where Are We Making Money, and Where Are We Not?
@@ -28,7 +30,7 @@ The challenge is getting a clear view of where the business is healthy and where
 ---
 > [next] Continue -> df020b81-2d0d-4e07-a8d4-7a3e17563d80
 
-[id:2/topic: Find the Strong and Weak Spots]
+[id:3/topic: Find the Strong and Weak Spots]
 
 slide_id: df020b81-2d0d-4e07-a8d4-7a3e17563d80
 index_title: Start With the Big Picture
@@ -42,7 +44,7 @@ Click through the tutorial below to learn how to effectively get an overview wit
 ---
 > [next] Continue -> eb51be1b-3796-4c0d-a6e7-93c41cd475f6
 
-[id:3/topic: Four Categories, Four Different Jobs]
+[id:4/topic: Four Categories, Four Different Jobs]
 
 slide_id: eb51be1b-3796-4c0d-a6e7-93c41cd475f6
 index_title: From Performance to Strategy
@@ -76,7 +78,7 @@ Once products are categorized, the next questions become clearer.
 ---
 > [next] Continue -> c8b8f670-3203-40a2-9ff5-2e03ea86ec3b
 
-[id:4/topic: See It in Your Own Portfolio]
+[id:5/topic: See It in Your Own Portfolio]
 
 slide_id: c8b8f670-3203-40a2-9ff5-2e03ea86ec3b
 index_title: Category Management Insight Walkthrough
@@ -92,7 +94,7 @@ The **Category Management Insight** shows how your products are split across Pro
 ---
 > [next] Continue -> fa52b4fe-fc76-4dde-bf54-d756fe5fbe78
 
-[id:5/topic: What’s Next?]
+[id:6/topic: What’s Next?]
 
 slide_id: fa52b4fe-fc76-4dde-bf54-d756fe5fbe78
 index_title: Congratulations
