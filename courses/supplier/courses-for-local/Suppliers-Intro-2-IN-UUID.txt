@@ -1,4 +1,4 @@
-slide_id: 03c29196-f568-4603-bd36-575056e50893
+slide_id: ecf98171-5fd9-437e-8e23-2121758d7569
 index_title: Welcome to Supplier Management with Inact Now
 title: 
 type: hero
@@ -10,9 +10,9 @@ hero_body: This is the intro to a four-part learning path. By the end, you will 
 
 **Let’s get started!**
 ---
-> [next] Continue -> 143bc3f6-46e9-46a4-960c-68e855f49255
+> [next] Continue -> ed6534da-59ba-4c51-a71d-d31b3de9cba4
 
-slide_id: 143bc3f6-46e9-46a4-960c-68e855f49255
+slide_id: ed6534da-59ba-4c51-a71d-d31b3de9cba4
 index_title: From Routine to Strategic Purchasing
 title: **From Routine to Strategic Purchasing**
 layout: standard-2-col
@@ -23,9 +23,9 @@ Routine purchasing is reactive. It focuses on placing orders and keeping things 
 Strategic purchasing changes this. It uses data to give you full transparency. Instead of just tracking total costs, you can see exactly where your money is going, how your suppliers actually perform, and where you can optimize. This shifts purchasing from a daily administrative task into a key driver of company profitability.
 ![image/size:550px/align:right/frame:none](suppliers-intro-2/Supply-Chain.png)
 ---
-> [next] Continue -> 69863731-34e8-4bee-8620-d73ff07869a0
+> [next] Continue -> d1b017ed-6360-4435-af3c-c6f1bfa11136
 
-slide_id: 69863731-34e8-4bee-8620-d73ff07869a0
+slide_id: d1b017ed-6360-4435-af3c-c6f1bfa11136
 index_title: How We Get There
 title: **How We Get There**
 type: main

@@ -22,10 +22,10 @@ New to Inact Now or need a refresher? Complete Inact Now Fundamentals first. It 
 If you already know your way around, you are good to go.
 ![image/size:large/align:center/frame:none](admin-intro/Fundamentals-Path.png)
 ---
-> [next] Continue -> 8eed0506-4887-4f1f-afe0-fc08f9430606
+> [next] Continue -> fef23b66-f42a-420e-b1c6-599d06c7476a
 > [next:flow] Open Inact Now Fundamentals -> https://inactnow.io/app/#/learn/learning-paths/3
 
-slide_id: 8eed0506-4887-4f1f-afe0-fc08f9430606
+slide_id: fef23b66-f42a-420e-b1c6-599d06c7476a
 index_title: Not Everyone Has the Same Access
 title: Not Everyone Has the Same Access
 type: main
@@ -37,9 +37,9 @@ There are four different user types, each with its own level of access and capab
 Understanding your role will help you know what’s available to you and what to expect as you navigate the platform.
 ![image/size:large/align:center/frame:none](admin-intro/User-Types.png)
 ---
-> [next] Continue -> 14227170-5eae-4b2e-92d3-045a4aa69ce2
+> [next] Continue -> d7b65798-411f-4d84-a3f0-8d304ddb4a64
 
-slide_id: 14227170-5eae-4b2e-92d3-045a4aa69ce2
+slide_id: d7b65798-411f-4d84-a3f0-8d304ddb4a64
 index_title: What Is Your Role?
 title: What Is Your Role?
 type: main
@@ -50,9 +50,9 @@ The quickest way to find out what your role is, is to look at your user color in
 If you only see a Home tab, you are a Home Only User.
 ![image/size:400px/align:right/frame:none](admin-intro/Which-Role.png)
 ---
-> [next] Continue -> 1606d73b-0ca2-4025-9f29-e05b7d276113
+> [next] Continue -> bfd58fa4-f1b6-40d5-8c2c-c98107062006
 
-slide_id: 1606d73b-0ca2-4025-9f29-e05b7d276113
+slide_id: bfd58fa4-f1b6-40d5-8c2c-c98107062006
 index_title: Congratulations! You Have Completed the Introduction
 title: Congratulations! You Have Completed the Introduction
 type: main

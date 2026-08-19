@@ -1,6 +1,6 @@
 [id:1/topic: Welcome]
 
-slide_id: 4b6be93b-574a-4c93-a303-f3db9fcfc0db
+slide_id: e914dcab-ec83-4d21-940b-e97b84f7c59d
 index_title: Welcome
 title: 
 type: hero
@@ -12,9 +12,9 @@ hero_body: In this course, we’ll build a clear and practical understanding of 
 
 **Let’s get started!**
 ---
-> [next] Let's do it! -> 327f8efd-5c26-4dc9-bded-7fa97e1f2646
+> [next] Let's do it! -> bf56df50-cd33-4287-808e-052baabe905f
 
-slide_id: 327f8efd-5c26-4dc9-bded-7fa97e1f2646
+slide_id: bf56df50-cd33-4287-808e-052baabe905f
 index_title: What Is Safety Stock?
 title: What Is Safety Stock?
 type: main
@@ -27,11 +27,11 @@ When stock reaches the **reorder point**, a new purchase order is placed to cove
 
 In many companies, safety stock levels are still set based on intuition or past habits. Our aim is to help you determine these levels using data and well-defined service goals.
 ---
-> [next] Continue -> 45383b56-e4ba-423f-9312-24fe99280b7b
+> [next] Continue -> ef617c2c-313d-4b5f-8ab3-716cf58cc7d6
 
 [id:2/topic: Establishing Optimal Safety Stock Levels]
 
-slide_id: 45383b56-e4ba-423f-9312-24fe99280b7b
+slide_id: ef617c2c-313d-4b5f-8ab3-716cf58cc7d6
 index_title: The three key variables
 title: How Do We Establish the Optimal Level of Safety Stock?
 type: main
@@ -70,11 +70,11 @@ High-variance items should therefore be handled carefully. Instead of increasing
 
 ![image/size:600px/align:right/frame:none](safety-stock/A-C-Items.png)
 ---
-> [next] Continue -> 31740a8b-34f4-4267-b627-65ec2c5b2be1
+> [next] Continue -> b0bdbc40-8f00-4855-8a63-601c84f7aea2
 
 [id:4/topic: Lead Time]
 
-slide_id: 31740a8b-34f4-4267-b627-65ec2c5b2be1
+slide_id: b0bdbc40-8f00-4855-8a63-601c84f7aea2
 index_title: Lead Time
 title: Lead Time
 type: main
@@ -87,11 +87,11 @@ When the lead time is reduced from 60 days to 40 days, the required safety stock
 
 ![image/size:large/align:center/frame:none](safety-stock/Lead-Time-Example.png)
 ---
-> [next] Continue -> 3e497b68-98df-4f55-82aa-1959b313ffd8
+> [next] Continue -> fde52247-33a8-44cf-9c74-1b079906e02a
 
 [id:5/topic: Service Level]
 
-slide_id: 3e497b68-98df-4f55-82aa-1959b313ffd8
+slide_id: fde52247-33a8-44cf-9c74-1b079906e02a
 index_title: Service Level
 title: Service Level
 type: main
@@ -126,9 +126,9 @@ Each additional percentage point of service requires disproportionately more sto
 
 ![image/size:large/align:center/frame:none](safety-stock/Service-Cost-Graph.png)
 ---
-> [next] Continue -> 0f337fa5-c65b-4f6c-a466-b1f6c8ca86a7
+> [next] Continue -> b61aab54-936c-46eb-b9b2-9ed1c9d22e55
 
-slide_id: 0f337fa5-c65b-4f6c-a466-b1f6c8ca86a7
+slide_id: b61aab54-936c-46eb-b9b2-9ed1c9d22e55
 index_title: Service Level: Example
 title: Service Level and Safety Stock: A Practical Example
 type: main
@@ -141,9 +141,9 @@ This shows how even a relatively small change in service level can lead to a muc
 
 ![image/size:large/align:center/frame:none](safety-stock/Service-Level-Example.png)
 ---
-> [next] Continue -> 5804c4be-4c18-4b20-a0d4-8bfd7ede04b8
+> [next] Continue -> a665b326-6d8e-4bc8-8362-af32d11297fc
 
-slide_id: 5804c4be-4c18-4b20-a0d4-8bfd7ede04b8
+slide_id: a665b326-6d8e-4bc8-8362-af32d11297fc
 index_title: Differentiated Service Model
 title: So, What Do We Do?
 type: main
@@ -156,11 +156,11 @@ Note: the service levels on the illustration is only meant to spark the right wa
 
 ![image/size:large/align:center/frame:none](safety-stock/Service-Model.png)
 ---
-> [next] Continue -> 706461a3-3c1b-4197-8879-3dcd27ad6f56
+> [next] Continue -> bc88b554-e6c9-45bd-9ac8-128832d4348e
 
 [id:6/topic: Inside Inact Now]
 
-slide_id: 706461a3-3c1b-4197-8879-3dcd27ad6f56
+slide_id: bc88b554-e6c9-45bd-9ac8-128832d4348e
 index_title: How Can Inact Now Help Us?
 title: How Can Inact Now Help Us?
 type: main
@@ -173,10 +173,10 @@ Let’s open the Insight “Safety Stock / Simulation” and take a look.
 
 Do you know how to open the insight?
 ---
-> [next] Yes, continue -> 03cbcb64-df61-4471-8bb8-7df19c1bf67c
+> [next] Yes, continue -> f020104b-8f0d-4537-9f9b-666cd36fb303
 > [sidequest] No, help me -> s1
 
-slide_id: 03cbcb64-df61-4471-8bb8-7df19c1bf67c
+slide_id: f020104b-8f0d-4537-9f9b-666cd36fb303
 index_title: Insight: Safety Stock / Simulation
 title: Insight: Safety Stock / Simulation
 type: main
@@ -200,11 +200,11 @@ Go through the interactive tutorial below to get a walkthrough of the "Safety St
 
 [supademo: Insight walkthrough: Safety Stock](https://app.supademo.com/embed/cmlf4up2g0ux3zqp09ssw5woa?embed_v=2&utm_source=embed)
 ---
-> [next] Continue -> 4e0754e4-a672-4efc-afc8-84322e4cfc0c
+> [next] Continue -> a1985242-504b-4957-bc22-904087dddde9
 
 [id:7/topic: What's next?]
 
-slide_id: 4e0754e4-a672-4efc-afc8-84322e4cfc0c
+slide_id: a1985242-504b-4957-bc22-904087dddde9
 index_title: What's Next?
 title: Congratulations! You’ve Completed the Safety Stock Course.
 title-align: center

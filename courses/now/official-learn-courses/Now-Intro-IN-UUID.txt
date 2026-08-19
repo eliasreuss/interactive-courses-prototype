@@ -1,4 +1,4 @@
-slide_id: 1
+slide_id: c45278b3-f3e3-4c29-afcd-c27943bf9069
 index_title: Welcome to the Learning Path
 title: 
 type: hero
@@ -10,9 +10,9 @@ hero_body: In this learning path, you will get a complete overview of the Inact 
 
 **Let’s get started!**
 ---
-> [next] Continue -> 42215b90-e8ad-446c-838b-2e4a6fe03670
+> [next] Continue -> cc94d615-cb1e-4a8e-8330-5310770ebdc6
 
-slide_id: 42215b90-e8ad-446c-838b-2e4a6fe03670
+slide_id: cc94d615-cb1e-4a8e-8330-5310770ebdc6
 index_title: The three pillars of the platform
 title: The three pillars of the platform
 type: main
@@ -25,9 +25,9 @@ While the platform offers much more, these are the essential building blocks you
 But before we explore them, let’s start with the foundation, the data behind everything you see.
 ![image/size:550px/align:right/frame:none](learn/images/177/9b3ae11f5a5cb916d6358cffe7c52ffd531c5320cad16074245f86e7232eba43)
 ---
-> [next] Continue -> 4
+> [next] Continue -> c8fa81a0-20e9-455e-8f96-0229ab6154e5
 
-slide_id: 4
+slide_id: c8fa81a0-20e9-455e-8f96-0229ab6154e5
 index_title: Where Does The Data Come From?
 title: Where Does The Data Come From?
 type: main
@@ -38,9 +38,9 @@ Inact Now works with any ERP system and transforms complex, scattered data into 
 
 ![image/size:large/align:center/frame:none](learn/images/178/4b2069fddcfef4bb62aee8e40b8e576785b354947f840dedb0d64d43003c047e)
 ---
-> [next] Continue -> 11e01834-72b7-4425-81f1-17ba4b5e8dda
+> [next] Continue -> b47b8674-74fa-4d01-b613-3a743f6b32d9
 
-slide_id: 11e01834-72b7-4425-81f1-17ba4b5e8dda
+slide_id: b47b8674-74fa-4d01-b613-3a743f6b32d9
 index_title: When is the Data Updated?
 title: When is the Data Updated?
 type: main
@@ -49,9 +49,9 @@ Inact Now automatically receives data from your ERP system every night, so you a
 
 ![image/size:large/align:center/frame:none](learn/images/179/e65031ace0084935c4d60b18d6f9a54f4181fa968e4aca759c4d786f2442e7c7)
 ---
-> [next] Continue -> 37673ec1-b5d8-4d6a-9581-ef4c322517e2
+> [next] Continue -> a90fc543-9e61-40ef-8fef-38ec1f03c058
 
-slide_id: 37673ec1-b5d8-4d6a-9581-ef4c322517e2
+slide_id: a90fc543-9e61-40ef-8fef-38ec1f03c058
 index_title: Standard Solutions
 title: Standard Solutions
 type: main
@@ -75,9 +75,9 @@ You can also extend the standard solution in Inact Now by adding custom data fro
 This allows you to tailor the solution to better reflect your specific business needs. 
 ![image/size:550px/align:right/frame:none](learn/images/180/b633699b25ca2a30fbe97590cef905425d46b2206d31ca633954a1cd973475af)
 ---
-> [next] Continue -> 5
+> [next] Continue -> f465a8f5-7524-41b3-92e8-161c301943de
 
-slide_id: 5
+slide_id: f465a8f5-7524-41b3-92e8-161c301943de
 index_title: Alleviating Confusion
 title: Alleviating Confusion
 type: main
@@ -85,9 +85,9 @@ type: main
 If you know your company's ERP data well, you might notice that some columns have different names in Inact Now. Hovering over the "i" icon on any column will tell you exactly where that data comes from and anything else you need to know about it.
 ![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Hover-I-Intro.mp4)
 ---
-> [next] Continue -> 803244d0-d449-47b5-a82d-ec80ca83a42c
+> [next] Continue -> af65b8a3-348c-4081-ba20-dcaacfac4b96
 
-slide_id: 803244d0-d449-47b5-a82d-ec80ca83a42c
+slide_id: af65b8a3-348c-4081-ba20-dcaacfac4b96
 index_title: Getting an Overview
 title: Getting an Overview
 type: main
@@ -96,9 +96,9 @@ If you need an overview of all the data in your solution, go to the Data tab. He
 
 ![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Now-Intro/data_tab.mp4)
 ---
-> [next] Continue -> 45ab3b16-60d8-4845-92ac-64c15b2ae019
+> [next] Continue -> d915b3b9-95d3-4c65-926b-fbe4e97b9471
 
-slide_id: 45ab3b16-60d8-4845-92ac-64c15b2ae019
+slide_id: d915b3b9-95d3-4c65-926b-fbe4e97b9471
 index_title: You’re Ready to Get Started
 title: You’re Ready to Get Started
 type: main

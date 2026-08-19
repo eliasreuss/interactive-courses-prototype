@@ -1,6 +1,6 @@
 [id:1/topic: Welcome to the Course: Actions]
 
-slide_id: 1
+slide_id: ef77fc87-e3fe-4c08-86ea-05d3f47d944a
 index_title: Welcome to the Course: Actions
 title: 
 type: hero
@@ -13,9 +13,9 @@ They detect deviations in your business and notify you directly in Inact Now or 
 
 **Let’s get started**
 ---
-> [next] Continue -> 2
+> [next] Continue -> c110b16c-4c17-4bef-9c64-1b6836e637ce
 
-slide_id: 2
+slide_id: c110b16c-4c17-4bef-9c64-1b6836e637ce
 index_title: What Are Actions?
 title: What Are Actions?
 type: main
@@ -26,9 +26,9 @@ An Action list is an “alarm” that is triggered when items, customers, or sup
 Instead of digging through your data to find problems, the problems come to you. Each morning your list shows exactly what needs attention.
 ![image/size:550px/align:right/frame:none](learn/images/183/340e3cb8cba0b3965b6a7e2bb4b4113ac0e2b9e62e2e35bcfe266e6bffa0a795)
 ---
-> [next] Continue -> 3
+> [next] Continue -> a5d7413b-9e68-4e92-af26-69c37b89d115
 
-slide_id: 3
+slide_id: a5d7413b-9e68-4e92-af26-69c37b89d115
 index_title: Where Do Actions Come From?
 title: How Does an Action Work?
 type: main
@@ -40,9 +40,9 @@ Any item that meets the criteria below lands on the list. Nothing here is fixed.
 
 Every day, this list surfaces the ten dead stock items costing you the most.
 ---
-> [next] Continue -> 4
+> [next] Continue -> fbe8fa25-f68c-4b17-adcd-24b4a4c86685
 
-slide_id: 4
+slide_id: fbe8fa25-f68c-4b17-adcd-24b4a4c86685
 index_title: How Do I Access an Action?
 title: How Do I Access an Action?
 type: main
@@ -52,11 +52,11 @@ Getting to your Actions is incredibly simple.
 Just like your Insights, your most important Actions are pinned in your Home screen for easy access. To open one, simply click on its name directly from your Home view.
 ![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/opening_action.mp4)
 ---
-> [next] Continue -> 5
+> [next] Continue -> fc9b0f5c-b42b-4c74-870c-95f379afd1e1
 
 [id:2/topic: Navigating Actions]
 
-slide_id: 5
+slide_id: fc9b0f5c-b42b-4c74-870c-95f379afd1e1
 index_title: Navigating Actions
 title: Navigating Actions
 type: main
@@ -64,11 +64,11 @@ type: main
 Go through the tutorial below to get an overview of how to navigate Actions effectively:
 [supademo: Navigating Actions.](https://app.supademo.com/embed/cmsmyqc0t1l4wqmijssv5ryyx?embed_v=2&utm_source=embed)
 ---
-> [next] Continue -> 6
+> [next] Continue -> e8d05a9c-0051-41d6-a896-adcf244dbade
 
 [id:3/topic: What's Next?]
 
-slide_id: 6
+slide_id: e8d05a9c-0051-41d6-a896-adcf244dbade
 index_title: Congratulations! You Have Completed the Actions Course
 title: Congratulations! You Have Completed the Actions Course
 type: main

@@ -1,6 +1,6 @@
 [id:1/topic: Welcome]
 
-slide_id: 61bc2a16-ed78-4309-8013-1ef80d70b5a4
+slide_id: ac3bc31f-abdc-47bb-8ec9-70e98b4214d5
 index_title: Welcome
 title: 
 type: hero
@@ -31,9 +31,9 @@ You can think of it like the low-fuel warning in a car. The light turns on befor
 
 ![image/size:large/align:center/frame:none](reorder-point/Reorder-Point-Graph.png)
 ---
-> [next] Continue -> 49b84fcd-d6d4-4d40-878a-74f516320cc3
+> [next] Continue -> b10476d0-6a2d-4957-b232-640fa527ecde
 
-slide_id: 49b84fcd-d6d4-4d40-878a-74f516320cc3
+slide_id: b10476d0-6a2d-4957-b232-640fa527ecde
 index_title: How It's Calculated
 title: **How Is the Reorder Point Calculated?**
 type: main
@@ -48,11 +48,11 @@ But this is only an average. Some days you may sell more, or the supplier may de
 
 By including safety stock, you reorder early enough to stay in stock - even when demand or delivery times vary.
 ---
-> [next] Continue -> 60188a26-681e-4d04-9b1e-d36f2725409b
+> [next] Continue -> f3b951d1-d55a-4196-8de0-ccdd0a33aab9
 
 [id:3/topic: Using Inact Now]
 
-slide_id: 60188a26-681e-4d04-9b1e-d36f2725409b
+slide_id: f3b951d1-d55a-4196-8de0-ccdd0a33aab9
 index_title: Looking at Our Own Data
 title: **Let’s Look at Our Own Data**
 layout: standard-2-col
@@ -66,10 +66,10 @@ Let’s take a look at the Reorder Point Insight in Inact Now. Do you know how t
 
 ![image/size:350px/align:right/frame:none](reorder-point/Desktop.png)
 ---
-> [next] Continue -> 5c251634-457f-4d3a-ac27-43125002d970
+> [next] Continue -> cea80a4a-b1d9-43ad-ac46-1f4d98f35a2b
 > [sidequest] No, show me how -> s1
 
-slide_id: 5c251634-457f-4d3a-ac27-43125002d970
+slide_id: cea80a4a-b1d9-43ad-ac46-1f4d98f35a2b
 index_title: Navigating Insight: Reorder Point
 title: **Navigating Insight: Reorder Point**
 type: main

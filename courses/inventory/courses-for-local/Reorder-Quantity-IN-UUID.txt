@@ -12,11 +12,11 @@ hero_body: In this course, we will move from knowing when to place an order to
 
 **Let’s get started!**
 ---
-> [next] Let's do it! -> 45004b0c-1cb0-479c-afed-95280e8d9691
+> [next] Let's do it! -> e81bb190-3a1d-4e7e-b1db-22bd509187e9
 
 [id:2/topic: What Is Reorder Quantity?]
 
-slide_id: 45004b0c-1cb0-479c-afed-95280e8d9691
+slide_id: e81bb190-3a1d-4e7e-b1db-22bd509187e9
 index_title: What Is Reorder Quantity?
 title: **What Is Reorder Quantity?**
 type: main
@@ -48,11 +48,11 @@ Before we begin learning how to achieve the most optimal reorder quantity, we fi
 {/column}
 {/columns}
 ---
-> [next] Continue -> 7ea3d59f-b78f-4f87-9f05-9c90514d7dc2
+> [next] Continue -> de98877c-0c87-4505-aefb-6c9564864578
 
 [id:3/topic: The Trap]
 
-slide_id: 7ea3d59f-b78f-4f87-9f05-9c90514d7dc2
+slide_id: de98877c-0c87-4505-aefb-6c9564864578
 index_title: The Three Competing Forces
 title: **The Three Competing Forces**
 layout: standard-2-col
@@ -88,9 +88,9 @@ To secure a low unit price, you are often incentivized to order far more stock t
 
 ![image/size:600px/align:right/frame:none](reorder-quantity/Trap-1.png)
 ---
-> [next] Continue -> 18ad75fe-daf9-4ca4-9efa-e52e6647096f
+> [next] Continue -> b1fcc226-81c4-404e-ac03-5dbd1b8a3ece
 
-slide_id: 18ad75fe-daf9-4ca4-9efa-e52e6647096f
+slide_id: b1fcc226-81c4-404e-ac03-5dbd1b8a3ece
 index_title: An Example
 title: **The Trap: An Example**
 layout: standard-2-col
@@ -120,11 +120,11 @@ You may have saved a small amount on the unit price, but you have destroyed your
 
 ![image/size:350px/align:right/frame:none](reorder-quantity/Deadstock.png)
 ---
-> [next] Continue -> 3e373222-2339-46ae-b9e6-abbe3ec52dcd
+> [next] Continue -> d81df0da-ea13-4555-8d9c-886dab2de87e
 
 [id:4/topic: The Solution]
 
-slide_id: 3e373222-2339-46ae-b9e6-abbe3ec52dcd
+slide_id: d81df0da-ea13-4555-8d9c-886dab2de87e
 index_title: The Solution
 title: **The Solution**
 type: main
@@ -135,9 +135,9 @@ Using your Double ABC Analysis to guide this decision helps balance demand, unit
 
 ![image/size:large/align:center/frame:none](reorder-quantity/Solution-1.png)
 ---
-> [next] Continue -> 8f731452-4466-44c8-8ba4-e457f7842fea
+> [next] Continue -> c64637c0-869c-4b6f-94a5-1c413d54f8b8
 
-slide_id: 8f731452-4466-44c8-8ba4-e457f7842fea
+slide_id: c64637c0-869c-4b6f-94a5-1c413d54f8b8
 index_title: The Solution: An Example
 title: **The Solution: An Example**
 type: main
@@ -150,11 +150,11 @@ For AC items, the situation is very different. Take a copy machine: it is expens
 
 Note: The days-on-hand values shown in the illustration are intended to illustrate the way of thinking. They are not a final recommendation or a one-size-fits-all answer.
 ---
-> [next] Continue -> 4a26a944-e0d1-4558-a223-b0c40d9bd264
+> [next] Continue -> aa961249-54c1-41ca-85e3-5b4b7a64587d
 
 [id:5/topic: Using Inact Now]
 
-slide_id: 4a26a944-e0d1-4558-a223-b0c40d9bd264
+slide_id: aa961249-54c1-41ca-85e3-5b4b7a64587d
 index_title: How Can Inact Now Help Us?
 title: **How Can Inact Now Help Us?**
 layout: standard-2-col

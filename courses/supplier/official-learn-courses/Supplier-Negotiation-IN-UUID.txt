@@ -1,6 +1,6 @@
 [id:1/topic: Introduction]
 
-slide_id: 355e2c7e-ce70-4796-a267-ffa5783d111d
+slide_id: b9288a99-813b-4917-a665-69c3811b67eb
 index_title: Welcome to the course: Supplier Negotiation
 title: 
 type: hero
@@ -14,11 +14,11 @@ In this course, you will learn how to use that transparency in your supplier neg
 
 **Let’s get started.**
 ---
-> [next] Continue -> 61f5652f-7690-44fc-b6f4-acb7e53c99fe
+> [next] Continue -> b14a7668-b254-4bce-b787-c56e36d5e9bf
 
 [id:2/topic: The Three Steps in Your Negotiation Strategy]
 
-slide_id: 61f5652f-7690-44fc-b6f4-acb7e53c99fe
+slide_id: b14a7668-b254-4bce-b787-c56e36d5e9bf
 index_title: Introducing the Three Steps
 title: **The Three Steps in Your Negotiation Strategy**
 type: main
@@ -28,9 +28,9 @@ Before entering the meeting room, we recommend using this three-step model:
 
 **Let’s break down step 1: defining the goal.**
 ---
-> [next] Continue -> 7b90575b-f30d-428c-89a0-2cc28c942f0f
+> [next] Continue -> f0ac1a8a-9fac-4adb-bf23-3aa60b97a813
 
-slide_id: 7b90575b-f30d-428c-89a0-2cc28c942f0f
+slide_id: f0ac1a8a-9fac-4adb-bf23-3aa60b97a813
 index_title: Step 1: Define the Goal
 title: **Step 1: Define the Goal**
 type: main
@@ -69,11 +69,11 @@ This is where it all comes together.
 You need to negotiate using different variables across different Double ABC categories—based on your goal.
 ![image/size:650px/align:right/frame:none](learn/images/129/d5b787a98d761721451ba41125501af09ada9f68d6b84bc546aa35cc990dd56a)
 ---
-> [next] Continue -> 4451b0bc-beb8-4168-b5e3-1ffcf08bc828
+> [next] Continue -> c7659178-70d1-40cb-b148-02466906740a
 
 [id:3/topic: Negotiating Based on ABC Categories]
 
-slide_id: 4451b0bc-beb8-4168-b5e3-1ffcf08bc828
+slide_id: c7659178-70d1-40cb-b148-02466906740a
 index_title: AA and AB Products
 title: **AA and AB Products**
 layout: standard-2-col
@@ -85,9 +85,9 @@ Because you buy large quantities, you have strong leverage. You can accept a hig
 
 ![image/size:650px/align:right/frame:none](learn/images/125/677e577f53e10411ea471b30478713e49813769ebd3bb09bc8c135723f5c2636)
 ---
-> [next] Continue -> 0b026ec6-7ced-4845-bf7a-2849764dfc6a
+> [next] Continue -> d551d3d1-de8f-4824-b4bd-61c80fbb2e1d
 
-slide_id: 0b026ec6-7ced-4845-bf7a-2849764dfc6a
+slide_id: d551d3d1-de8f-4824-b4bd-61c80fbb2e1d
 index_title: CC, BC and AC Products
 title: **CC, BC and AC Products**
 layout: standard-2-col
@@ -100,9 +100,9 @@ These are low-value items purchased infrequently. The goal is to stay flexible a
 **AC items** are high-value and also purchased infrequently, which means they can tie up a lot of cash if they sit in stock. Focus on longer payment terms so you pay closer to when the item is sold, and try to reduce risk with lower MOQs or shorter lead times.
 ![image/size:650px/align:right/frame:none](learn/images/127/7c69958751a37f73a0c5be3cc99d27f3bc0fd7bdf83a7822ff57024a755be6c7)
 ---
-> [next] Continue -> 1402d04e-c63d-48b5-bbda-f1eb7be95622
+> [next] Continue -> dfed3f9c-0f82-4f24-803a-68b07a83a69c
 
-slide_id: 1402d04e-c63d-48b5-bbda-f1eb7be95622
+slide_id: dfed3f9c-0f82-4f24-803a-68b07a83a69c
 index_title: CA and CB Products
 title: **CA and CB Products**
 layout: standard-2-col
@@ -113,11 +113,11 @@ type: main
 Even though they do not drive large profits, running out can cause real problems, such as unsatisfied customers. Focus on reliability and efficiency to ensure stable supply, and aim for larger, less frequent orders to reduce administrative work.
 ![image/size:650px/align:right/frame:none](learn/images/126/46410b89ecfbb9d038a235add92f25344247f2a5613645de1ebbcf74104e7f95)
 ---
-> [next] Continue -> 3c0f9de0-2856-44cb-b3c6-757403656c05
+> [next] Continue -> e31f41a9-ad70-405a-adaa-775f8fe8b749
 
 [id:4/topic: How Can Inact Now Help?]
 
-slide_id: 3c0f9de0-2856-44cb-b3c6-757403656c05
+slide_id: e31f41a9-ad70-405a-adaa-775f8fe8b749
 index_title: How Can Inact Now Help Me?
 title: **How Can Inact Now Help Me?**
 type: main

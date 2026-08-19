@@ -1,6 +1,6 @@
 [id:1/topic: Welcome to the Course: Your Standard Solution]
 
-slide_id: 002407c6-23bc-4081-9100-f19db3dc1286
+slide_id: ddba1bfc-49ba-44d4-9a2f-955495612301
 index_title: Welcome to the Course: Your Standard Solution
 title: Welcome to the Course: Your Standard Solution
 type: hero
@@ -12,9 +12,9 @@ hero_body: You do not start from zero in Inact Now. A complete standard setup is
 
 **Let's get started!**
 ---
-> [next] Continue -> 29672fb9-8a3b-4f44-b726-1166a13f3dff
+> [next] Continue -> a2c43bd4-bd14-4668-92ae-7e0d1c6481fd
 
-slide_id: 29672fb9-8a3b-4f44-b726-1166a13f3dff
+slide_id: a2c43bd4-bd14-4668-92ae-7e0d1c6481fd
 index_title: Your Solutions
 title: Your Solutions
 type: main
@@ -24,11 +24,11 @@ Your content in Inact Now is organized by solutions. A solution is a set of insi
 You might have one solution or several.
 ![image/size:large/align:center/frame:none](admin-standard/Your-Solutions.png)
 ---
-> [next] Continue -> 9ba9d651-8039-4737-b035-010dc54b1144
+> [next] Continue -> b3a8399e-6853-4be2-83bd-70dcd979a3a1
 
 [id:2/topic: The Four Important Tabs]
 
-slide_id: 9ba9d651-8039-4737-b035-010dc54b1144
+slide_id: b3a8399e-6853-4be2-83bd-70dcd979a3a1
 index_title: The Insights Tab
 title: The Insights Tab
 type: main
@@ -42,9 +42,9 @@ Every Insight also shows its data source, so you can easily understand where the
 At the bottom of the list, you’ll find Private Insights, which are only visible to you.
 ![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Admin/Admin-Insights-Tab.mp4)
 ---
-> [next] Continue -> 3ea6f12c-8128-40da-97fa-0440e62a8ea5
+> [next] Continue -> dc77b097-511e-4e89-bb25-5a6250ea87b5
 
-slide_id: 3ea6f12c-8128-40da-97fa-0440e62a8ea5
+slide_id: dc77b097-511e-4e89-bb25-5a6250ea87b5
 index_title: The Actions Tab
 title: The Actions Tab
 type: main
@@ -56,9 +56,9 @@ Right now, it may be empty, and that’s completely normal.
 In the following courses, you will learn how to create and distribute actions to your team.
 ![image/size:large/align:center/frame:none](admin-standard/Actions-Empty.png)
 ---
-> [next] Continue -> 59e9504f-7a68-488b-b1bc-0003ef071e76
+> [next] Continue -> cea1a09d-bb89-4031-a0f9-1c6fac4a4527
 
-slide_id: 59e9504f-7a68-488b-b1bc-0003ef071e76
+slide_id: cea1a09d-bb89-4031-a0f9-1c6fac4a4527
 index_title: The Dashboards Tab
 title: The Dashboards Tab
 type: main
@@ -86,11 +86,11 @@ The Data tab is also where you can download your data, including historical data
 Think of it as your go-to reference whenever something is unclear.
 ![image/size:large/align:center/frame:none](admin-standard/Data-Tab.png)
 ---
-> [next] Continue -> 1e076a03-b8fd-4142-8ce7-a297871a0cb6
+> [next] Continue -> a466afe9-dc45-4760-8948-83492d97de8f
 
 [id:3/topic: Congratulations! You Have Completed the Standard Course]
 
-slide_id: 1e076a03-b8fd-4142-8ce7-a297871a0cb6
+slide_id: a466afe9-dc45-4760-8948-83492d97de8f
 index_title: Congratulations! You Have Completed the Standard Course
 title: Congratulations! You Have Completed the Standard Course
 type: main

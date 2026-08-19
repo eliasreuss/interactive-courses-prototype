@@ -1,6 +1,6 @@
 [id:1/topic: Introduction to Insights]
 
-slide_id: 1
+slide_id: eb141b89-9de9-4320-a8b0-f407b5af2785
 index_title: Welcome to the Course
 title: 
 type: hero
@@ -12,9 +12,9 @@ hero_body: This course focuses on Insights - Insights are the backbone of Inact 
 
 **Let’s get started**
 ---
-> [next] Continue -> 8d02d6d5-ec14-4fca-82de-82753b02894a
+> [next] Continue -> db29e6f5-984d-443d-89a1-82c4dad82c5a
 
-slide_id: 8d02d6d5-ec14-4fca-82de-82753b02894a
+slide_id: db29e6f5-984d-443d-89a1-82c4dad82c5a
 index_title: Best Practice or Custom?
 title: Best Practice or Custom?
 type: main
@@ -27,9 +27,9 @@ You can also tailor existing Insights to your company’s needs and/or build new
 Regardless of how the Insight was created, it connects directly to your ERP system and updates automatically every day.
 ![image/size:550px/align:right/frame:none](now-insights/Circle-Insights.png)
 ---
-> [next] Continue -> 3
+> [next] Continue -> f8bd6224-f193-41cb-9dfb-3df9eb0a1164
 
-slide_id: 3
+slide_id: f8bd6224-f193-41cb-9dfb-3df9eb0a1164
 index_title: How do I access an Insight?
 title: How do I access an Insight?
 type: main
@@ -39,11 +39,11 @@ Getting to your Insights is incredibly simple.
 Because your Home screen acts as your command center, your most important Insights are pinned right there for easy access. To open one, simply click on its name directly from your Home view.
 ![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Opening-Insight.mp4)
 ---
-> [next] Continue -> 4
+> [next] Continue -> d96e9716-11e9-4c8e-aed0-e885553f1866
 
 [id:2/topic: Views]
 
-slide_id: 4
+slide_id: d96e9716-11e9-4c8e-aed0-e885553f1866
 index_title: Understanding Views
 title: Understanding Views
 type: main
@@ -55,11 +55,11 @@ Depending on what you want to achieve, you might prefer to see your data as a st
 Click through the tutorial below to get an overview of the different views:
 [supademo: Insight Views](https://app.supademo.com/embed/cmnx95fhd032liq7pyejxpqja?embed_v=2&utm_source=embed)
 ---
-> [next] Continue -> 6
+> [next] Continue -> a505b399-db88-476c-a87c-bf4dcc8f9c8c
 
 [id:3/topic: Slicers and Filters]
 
-slide_id: 6
+slide_id: a505b399-db88-476c-a87c-bf4dcc8f9c8c
 index_title: Using Slicers and Filters
 title: Using Slicers and Filters
 type: main
@@ -69,11 +69,11 @@ Now that you know how to change how your data is displayed using views, let’s 
 Let's take a look at how this works in practice. In the interactive tutorial below, we will show you how to apply slicers and filters to effectively segment your data:
 [supademo: Insights: Using filters and slicers](https://app.supademo.com/embed/cmo1b6cxk17ppru18p3a0cpjp?embed_v=2&utm_source=embed)
 ---
-> [next] Continue -> 7
+> [next] Continue -> a26ed1cd-2824-455d-ba87-d42cf4838629
 
 [id:4/topic: One Click Deeper]
 
-slide_id: 7
+slide_id: a26ed1cd-2824-455d-ba87-d42cf4838629
 index_title: One Click Deeper
 title: One Click Deeper
 type: main
@@ -83,9 +83,9 @@ Filtering your data is a great start, but true transparency requires going from 
 Let's say you are looking at your Double ABC Analysis. You want to see your most critical items, so you click on the AA category. You then sort the items by total cost of goods consumed to find the biggest contributor. From there, you click directly on the top item to dive into its individual performance. This process takes you from a broad category right down to the atomic level.
 ![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/One-click-deeper.gif.mp4)
 ---
-> [next] Continue -> 8
+> [next] Continue -> c88a8c45-4b21-42bc-a310-3778f0b07598
 
-slide_id: 8
+slide_id: c88a8c45-4b21-42bc-a310-3778f0b07598
 index_title: Analysing Atoms
 title: Analysing Atoms
 type: main
@@ -95,11 +95,11 @@ When you click all the way down to a specific product, supplier or customer, you
 Click through the short tutorial below to see this in action. If the tutorial appears too small, click the button in the top right corner to make it full screen.
 [supademo: Analyze Supplier Performance and Financial Data on inactnow](https://app.supademo.com/embed/cmo1egchb1gduru18fps00b3s?embed_v=2&utm_source=embed)
 ---
-> [next] Continue -> 9
+> [next] Continue -> f94a1b6f-0e34-438d-8d9b-c8acebc5f2f9
 
 [id:5/topic: Using Insights: Real World Example]
 
-slide_id: 9
+slide_id: f94a1b6f-0e34-438d-8d9b-c8acebc5f2f9
 index_title: Using Insights: Real World Example
 title: Using Insights: Example
 type: main
@@ -111,11 +111,11 @@ In this final tutorial, we will look at a real use case using the **Stock Policy
 If the window appears too small, click the full-screen button in the top right corner.
 [supademo: Insight walkthrough - Stock Policy, Non Stock Items](https://app.supademo.com/embed/cmhyo4vfn4q9r17y04epcgbrp?embed_v=2&utm_source=embed)
 ---
-> [next] Continue -> 10
+> [next] Continue -> a88f737a-ce41-4851-8fb1-a15f93c4f4f1
 
 [id:6/topic: What's Next?]
 
-slide_id: 10
+slide_id: a88f737a-ce41-4851-8fb1-a15f93c4f4f1
 index_title: Congratulations! You Have Completed the Insights Course
 title: Congratulations! You Have Completed the Insights Course
 type: main

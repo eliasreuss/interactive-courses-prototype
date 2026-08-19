@@ -33,9 +33,9 @@ In inventory management, the same logic applies. In a warehouse, a small number 
 
 ![image/size:500px/align:right/frame:none](learn/images/26/5cd248fcaf79ef7027a40c1579d64625ffa2fa13d4452a7b4f3e4d3f9d918b61)
 ---
-> [next] Continue -> 8e92a5a5-96f8-441f-a100-632982d67fbe
+> [next] Continue -> e4a8d424-53dd-41bb-ba0b-8da53bba54d6
 
-slide_id: 8e92a5a5-96f8-441f-a100-632982d67fbe
+slide_id: e4a8d424-53dd-41bb-ba0b-8da53bba54d6
 index_title: ABC Analysis
 title: ABC Analysis
 type: main
@@ -72,9 +72,9 @@ Now you know the theory behind an ABC analysis, but there’s more:
 
 ![image/size:500px/align:right/frame:none](learn/images/28/8aa6d8fa6bccecb9796f7cef2a3ae8077df0d28f6bf110c3822c3988fba066e6)
 ---
-> [next] Continue -> 24b27fec-bf4f-426e-a988-e9090e6a3023
+> [next] Continue -> c255e996-8847-489c-beb3-6dda8c2824aa
 
-slide_id: 24b27fec-bf4f-426e-a988-e9090e6a3023
+slide_id: c255e996-8847-489c-beb3-6dda8c2824aa
 index_title: Understanding the Double ABC Analysis
 title: Understanding the Double ABC Analysis
 type: main
@@ -91,9 +91,9 @@ This helps you quickly see which products are the most important and decide how 
 
 ![image/size:500px/frame:none/align:right](learn/images/16/eed5f4b5f8c3b8dd51502fc1202767aae8223a363bafd7453952dfe49b26fd3a)
 ---
-> [next] Show me an example -> 34318abd-ccfc-4179-aa39-67dc046f0330
+> [next] Show me an example -> f07108dc-b9e0-4f48-af1e-8339ae75d3e7
 
-slide_id: 34318abd-ccfc-4179-aa39-67dc046f0330
+slide_id: f07108dc-b9e0-4f48-af1e-8339ae75d3e7
 index_title: Example: Double ABC Analysis
 title: Double ABC Analysis Example
 type: main
@@ -107,9 +107,9 @@ We are going to walk through four critical categories on this grid to see how yo
 
 ![image/size:500px/align:right/frame:none](learn/images/18/ff5270545fb78e0df8ab900512ff3f2b61064b4f4a85f9f838513b93fe1e5ed8)
 ---
-> [next] Continue -> 95ef57db-f5c3-4704-ae63-8c696b558408
+> [next] Continue -> a620af05-1862-4acd-9b9e-21936f58baee
 
-slide_id: 95ef57db-f5c3-4704-ae63-8c696b558408
+slide_id: a620af05-1862-4acd-9b9e-21936f58baee
 index_title: AA Items
 title: Double ABC Analysis Example
 type: main
@@ -137,9 +137,9 @@ High cost of inventory, low demand
 
 ![image/size:500px/align:right/frame:none](learn/images/20/b2bf5940352c97b9c57e976074b47a7fba8381e8f9f63a14d5a797f234ddb4d7)
 ---
-> [next] Continue -> 4a9ed3ba-604a-43fb-9743-21b67af8c067
+> [next] Continue -> b88c901d-e096-41a1-bdbf-c86d6764912e
 
-slide_id: 4a9ed3ba-604a-43fb-9743-21b67af8c067
+slide_id: b88c901d-e096-41a1-bdbf-c86d6764912e
 index_title: CA Items
 title: Double ABC Analysis Example
 type: main
@@ -166,9 +166,9 @@ Low cost of inventory, low demand
 
 ![image/size:500px/align:right/frame:none](learn/images/22/c147965b15854c65d2156ecd3ca8cbf196b06d0f1a227be23d1ec7da66e4113a)
 ---
-> [next] Continue -> 348b8913-7863-4db8-baf9-0d225b6a58b3
+> [next] Continue -> a7c94aa6-9381-4e22-97cd-140a281a3785
 
-slide_id: 348b8913-7863-4db8-baf9-0d225b6a58b3
+slide_id: a7c94aa6-9381-4e22-97cd-140a281a3785
 index_title: Example: Full Picture
 title: Double ABC Analysis Example
 type: main
@@ -182,9 +182,9 @@ Where a single ABC analysis may look at demand alone, double ABC adds a second l
 
 ![image/size:500px/align:right/frame:none](learn/images/23/801ff09319ef32198fffbd62d23e4a9b37ab99db69be84bf5bd6b027ebeceb87)
 ---
-> [next] Continue -> 97d1ce73-d136-44e7-a635-95b707a3be79
+> [next] Continue -> c035de27-7ee3-4642-9721-910badd08141
 
-slide_id: 97d1ce73-d136-44e7-a635-95b707a3be79
+slide_id: c035de27-7ee3-4642-9721-910badd08141
 index_title: How the Analysis Can Help
 title: How the Analysis Can Help
 type: main
@@ -210,10 +210,10 @@ Now let’s apply it to your own inventory - in Inact Now, we’ve already set u
 
 **Do you know how to open your Double ABC Insight?**
 ---
-> [next] Yes, continue -> 11a1da0b-65d9-4eef-8ae7-0a08426ec01f
+> [next] Yes, continue -> a3b53fe6-6ac1-4863-bf8a-dd9ab2b3e0f3
 > [sidequest] No, show me -> s1
 
-slide_id: 11a1da0b-65d9-4eef-8ae7-0a08426ec01f
+slide_id: a3b53fe6-6ac1-4863-bf8a-dd9ab2b3e0f3
 index_title: Interpreting the Insight
 title: Great... What Are We Looking At?
 type: main
@@ -224,11 +224,11 @@ This brief video walks you through how to navigate and interpret the Double ABC 
 
 ![video/size:large/align:center/controls:true](https://www.youtube.com/watch?v=BU9jqDaHVv0)
 ---
-> [next] Continue -> 7353f3a6-6861-48b6-b453-9fde8581322e
+> [next] Continue -> a4b12f26-16c0-48c6-b02a-530819b14b62
 
 [id:5/topic: Special Categories]
 
-slide_id: 7353f3a6-6861-48b6-b453-9fde8581322e
+slide_id: a4b12f26-16c0-48c6-b02a-530819b14b62
 index_title: What Are Special Categories?
 title: What About Items That Don’t Quite Fit?
 type: main
@@ -242,21 +242,21 @@ That’s why the Inact Now view goes **beyond the standard nine categories.** We
 
 ![video/size:large/align:right/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Scene-1.mp4)
 ---
-> [next] Continue -> 13096017-5698-4953-8e96-7a1a4e9468e6
+> [next] Continue -> c7f8797f-1083-4425-8524-8bac8cc0fbe2
 
-slide_id: 13096017-5698-4953-8e96-7a1a4e9468e6
+slide_id: c7f8797f-1083-4425-8524-8bac8cc0fbe2
 index_title: Each Special Category Explained
 title: Here’s a Quick Explanation of Each Special Category:
 type: main
 ---
 ![image/size:large/align:center/frame:none](learn/images/27/2549fbcc4789ef8d0109cefc93976339f826364f81b10157a486c45d7af61e24)
 ---
-> [next] Continue -> 38fd6cca-90d9-4b84-9457-e842c48de473
+> [next] Continue -> a2175b00-f096-46f0-b7a0-856129924ba6
 > [sidequest] What if I forget? -> s2
 
 [id:6/topic: What’s Next?]
 
-slide_id: 38fd6cca-90d9-4b84-9457-e842c48de473
+slide_id: a2175b00-f096-46f0-b7a0-856129924ba6
 index_title: What's next?
 title: Congrats! You’ve Completed the Double ABC Analysis Course
 type: main

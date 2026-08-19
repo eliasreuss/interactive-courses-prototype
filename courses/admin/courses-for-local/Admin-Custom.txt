@@ -1,6 +1,6 @@
 [id:1/topic: Welcome to the Course: Customising Your Solution]
 
-slide_id: 5f9e5cf9-5b16-4564-9fa1-5ac2178b2ef0
+slide_id: be1ba055-4bfe-492c-8dbd-1498dd5eddaf
 index_title: Welcome to the Course: Customising Your Solution
 title: Welcome to the Course: Customising Your Solution
 type: hero
@@ -27,9 +27,9 @@ Everything in Inact Now is either public or private. Public content is visible t
 Keep in mind that editing public content affects everyone who uses it. If you’re unsure, it’s always safest to work in private first.
 ![image/size:500px/align:right/frame:none](admin-custom/Public-Private.png)
 ---
-> [next] Continue -> 36a54ee0-b20e-47a6-8942-5b67aa19e1f7
+> [next] Continue -> b8385955-e290-4e62-a5f4-906390d2bf7d
 
-slide_id: 36a54ee0-b20e-47a6-8942-5b67aa19e1f7
+slide_id: b8385955-e290-4e62-a5f4-906390d2bf7d
 index_title: What You Can Do
 title: What You Can Do
 type: main
@@ -41,11 +41,11 @@ Use this overview as a guide to understand what’s available to you. If somethi
 
 Now that you understand the difference between public and private, and what your role allows you to do, you’re ready to start customising.
 ---
-> [next] Continue -> 6a283ef0-8b09-4da8-8f66-1bb6c6b80d45
+> [next] Continue -> dfea64e9-eeb5-47dd-a087-17d2d69e7166
 
 [id:2/topic: Creating And Editing Insights]
 
-slide_id: 6a283ef0-8b09-4da8-8f66-1bb6c6b80d45
+slide_id: dfea64e9-eeb5-47dd-a087-17d2d69e7166
 index_title: Creating an Insight
 title: Creating an Insight
 type: main
@@ -57,9 +57,9 @@ To create a new Insight, navigate to the Insights tab and click the “+ New Ins
 Select a template, give your Insight a name, add slicers and filters, and place it in an Insight Group. Then click Create. Your new Insight will be added to your library as a private Insight, ready for you to refine and share when you’re ready.
 ![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Admin/Create-Insight.mp4)
 ---
-> [next] Continue -> 3e62aa68-bffb-4c4a-b390-5bd85da43fa7
+> [next] Continue -> cc727e4c-9b46-4e76-ad23-1f3f494babd7
 
-slide_id: 3e62aa68-bffb-4c4a-b390-5bd85da43fa7
+slide_id: cc727e4c-9b46-4e76-ad23-1f3f494babd7
 index_title: Edit Mode
 title: Edit Mode
 type: main
@@ -94,12 +94,12 @@ Super Users can create private Actions for themselves, while Admins can create a
 If you want a step-by-step tutorial on how to create an Action, click the green button below.
 ![image/size:400px/align:right/frame:none](admin-custom/Action-Icon.png)
 ---
-> [next] Continue -> 783de635-2b3a-4804-b653-ff14f51841dc
+> [next] Continue -> af29f31d-b251-47bc-9fe3-69de1a65c82d
 > [sidequest] Show me how to create Actions -> s2
 
 [id:4/topic: Creating Dashboards]
 
-slide_id: 783de635-2b3a-4804-b653-ff14f51841dc
+slide_id: af29f31d-b251-47bc-9fe3-69de1a65c82d
 index_title: Creating Dashboards
 title: Creating Dashboards
 type: main
@@ -114,12 +114,12 @@ A dashboard is built from your insights. You choose which insights feed into it 
 If you want a step-by-step tutorial on how to create a dashboard, click the green button below.
 ![image/size:400px/align:right/frame:none](admin-custom/Dashboards-Icon.png)
 ---
-> [next] Continue -> 9b508bdc-7f67-496c-9471-8e93657d0f09
+> [next] Continue -> b3d534a6-8dd4-4efc-9c3e-aaa81ee46ee0
 > [sidequest] Show me how to create Dashboards -> s3
 
 [id:5/topic: Congratulations! You Have Completed the Custom Course]
 
-slide_id: 9b508bdc-7f67-496c-9471-8e93657d0f09
+slide_id: b3d534a6-8dd4-4efc-9c3e-aaa81ee46ee0
 index_title: Congratulations! You Have Completed the Custom Course
 title: Congratulations! You Have Completed the Custom Course
 type: main

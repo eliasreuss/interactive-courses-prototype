@@ -1,4 +1,4 @@
-slide_id: 3a37fbf1-d6cb-46b4-be5c-b5769251b30e
+slide_id: d8bcdb5b-e0f1-4a78-98ea-d27cddbd7da5
 index_title: Welcome
 title: 
 title-align: center
@@ -9,9 +9,9 @@ hero_subtitle: Welcome to the learning path:
 hero_title: Introduction to Inact for Inventory Management
 hero_body: This is the intro to a five-part learning path. By the end, you’ll understand the fundamentals of inventory management and be ready to use Inact Now confidently in your daily work!
 ---
-> [next] Let's do it! -> 17388986-3cce-4084-8a07-847116775dd7
+> [next] Let's do it! -> c3f35e81-af77-49e8-b3aa-2db1d42796b9
 
-slide_id: 17388986-3cce-4084-8a07-847116775dd7
+slide_id: c3f35e81-af77-49e8-b3aa-2db1d42796b9
 index_title: What to Stock? How Much to Stock? How Much to Order?
 title: **The Three Pillars of Inventory Management**
 type: main
@@ -45,9 +45,9 @@ type: main
 
 This tug of war between priorities makes it essential to find the right balance to keep the business healthy and profitable.
 ---
-> [next] Continue -> 29c01ac5-e6f0-4f69-866d-d3a5d83828c5
+> [next] Continue -> efa74f23-ecf1-407d-99b7-ade411b4fade
 
-slide_id: 29c01ac5-e6f0-4f69-866d-d3a5d83828c5
+slide_id: efa74f23-ecf1-407d-99b7-ade411b4fade
 index_title: Excess Inventory & Obsolescence
 title: **The Cost of Imbalance**
 type: main
@@ -83,9 +83,9 @@ This is the goal: Inventory management that keeps the right products in stock - 
 
 So, if you’re ready, let’s take a look at what we will go through in the learning path.
 ---
-> [next] Continue -> 69b5927a-73d7-43d2-8140-27d91267b12c
+> [next] Continue -> f8acd22d-bf28-4032-8151-eae08d431f04
 
-slide_id: 69b5927a-73d7-43d2-8140-27d91267b12c
+slide_id: f8acd22d-bf28-4032-8151-eae08d431f04
 index_title: 5 Steps to Manage Inventory
 title: **The Learning Path**
 type: main

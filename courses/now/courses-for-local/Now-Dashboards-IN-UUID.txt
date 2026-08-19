@@ -1,6 +1,6 @@
 [id:1/topic: Welcome to the Course: Dashboards]
 
-slide_id: 1
+slide_id: ebd30fa5-7fde-4c68-9593-ab5f00042abf
 index_title: Welcome to the Course: Dashboards
 title: 
 type: hero
@@ -14,9 +14,9 @@ This final course focuses on dashboards. You will learn how to use these visual 
 
 **Let’s get started!**
 ---
-> [next] Continue -> 2
+> [next] Continue -> b2d7c884-4c0d-4eb8-a822-dacfcbac7c59
 
-slide_id: 2
+slide_id: b2d7c884-4c0d-4eb8-a822-dacfcbac7c59
 index_title: What Are Dashboards?
 title: What Are Dashboards?
 type: main
@@ -27,9 +27,9 @@ Dashboards are more than just generic overviews. Every Dashboard is built with a
 They are based directly on your Insights and are designed to highlight your most important KPI’s and trends in one place. 
 ![image/size:550px/align:right/frame:none](now-dashboards/Widgets-Tables.png)
 ---
-> [next] Continue -> 87863b16-1530-44cf-895f-b19222eae219
+> [next] Continue -> ac2b43e7-2c21-4a62-82eb-f412c4c5867a
 
-slide_id: 87863b16-1530-44cf-895f-b19222eae219
+slide_id: ac2b43e7-2c21-4a62-82eb-f412c4c5867a
 index_title: How Do They Look?
 title: How Do They Look?
 type: main
@@ -39,11 +39,11 @@ A Dashboard is built using two main components: Widgets and Tables. Both of thes
 Below is an example of how a Dashboard might look:
 ![image/size:large/align:center/frame:none](now-dashboards/Dashboard-Example.png)
 ---
-> [next] Continue -> 4
+> [next] Continue -> e279603e-53d8-420e-8ae5-2dec7a012b20
 
 [id:2/topic: Widgets]
 
-slide_id: 4
+slide_id: e279603e-53d8-420e-8ae5-2dec7a012b20
 index_title: Understanding Widgets
 title: Understanding Widgets
 type: main
@@ -60,11 +60,11 @@ Widgets are designed to give you instant answers.
 
 ![video/size:550px/align:right/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Now-Dashboards/KPI_2.mp4)
 ---
-> [next] Continue -> 5
+> [next] Continue -> ca4fcd54-50c5-4a46-ae96-7564a8d58f33
 
 [id:3/topic: Tables]
 
-slide_id: 5
+slide_id: ca4fcd54-50c5-4a46-ae96-7564a8d58f33
 index_title: Understanding Tables
 title: Understanding Tables
 type: main
@@ -74,11 +74,11 @@ Right below the widgets you will find tables. A table splits your KPIs by catego
 
 If you don’t see a table, it may be because your Dashboard only contains widgets, or because you haven’t clicked the small drop-down arrow button.
 ---
-> [next] Continue -> 7
+> [next] Continue -> a4cffaef-f21e-4dbe-8742-a998a72bd469
 
 [id:4/topic: Slicers And Filters]
 
-slide_id: 7
+slide_id: a4cffaef-f21e-4dbe-8742-a998a72bd469
 index_title: Using Slicers and Filters
 title: Using Slicers and Filters
 type: main
@@ -86,11 +86,11 @@ type: main
 Dashboards work just like Insights when it comes to segmenting your data. You can always use the fixed Slicers at the top of the screen or add any custom Filter to get the exact view you need.
 ![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Now-Dashboards/Dashboard-Filter.mp4)
 ---
-> [next] Continue -> 8
+> [next] Continue -> d340a580-eaf5-4267-8637-db2004e7d855
 
 [id:5/topic: Going One Click Deeper]
 
-slide_id: 8
+slide_id: d340a580-eaf5-4267-8637-db2004e7d855
 index_title: Going One Click Deeper
 title: Going One Click Deeper
 type: main
@@ -98,11 +98,11 @@ type: main
 The One Click Deeper concept also applies to Dashboards. If you click directly on a Widget or click the button next to a category or product in a Table, you will open a detailed Trend View for that specific data.
 ![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Now-Dashboards/Dashboards-Trend.mp4)
 ---
-> [next] Continue -> 9
+> [next] Continue -> dae79762-cd12-46c2-8f19-98f149d64d16
 
 [id:6/topic: Congrats!]
 
-slide_id: 9
+slide_id: dae79762-cd12-46c2-8f19-98f149d64d16
 index_title: Congratulations! You Have Completed the Dashboards Course
 title: Congratulations! You Have Completed the Dashboards Course
 type: main

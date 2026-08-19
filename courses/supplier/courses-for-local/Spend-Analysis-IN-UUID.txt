@@ -1,6 +1,6 @@
 [id:1/topic: Welcome: Spend Analysis]
 
-slide_id: 3d7a49e8-0172-45c5-8700-1a5adcc981dd
+slide_id: d4098e4b-6e0a-4bae-a443-0c7f0d543b70
 index_title: Welcome to the course: Spend Analysis
 title: 
 type: hero
@@ -12,9 +12,9 @@ hero_body: The spend analysis in Inact Now turns raw purchasing data into action
 
 **Let’s get started!**
 ---
-> [next] Continue -> 57e2ace1-cc31-4ec0-bdbd-65e64b4036a8
+> [next] Continue -> e0964d53-b618-4ded-bdfc-675d92136578
 
-slide_id: 57e2ace1-cc31-4ec0-bdbd-65e64b4036a8
+slide_id: e0964d53-b618-4ded-bdfc-675d92136578
 index_title: The Hidden Potential in Your Supply Chain
 title: **The Hidden Potential in Your Supply Chain**
 layout: standard-2-col
@@ -51,11 +51,11 @@ In your spend analysis in Inact Now, you will immediately see your spend broken 
 But most importantly, the platform connects the dots. You can drill down to see exactly **which individual items**, from **which item category** are being purchased from **which specific suppliers**, giving you total visibility.
 ![image/size:500px/align:right/frame:none](spend-analysis/Drilldown.png)
 ---
-> [next] Continue -> 1138bed0-31c9-44cd-a70f-966810df78dd
+> [next] Continue -> da897a7f-b82c-4192-93f6-cb5ff18f94f6
 
 [id:2/topic: The Spend Analysis in Inact Now]
 
-slide_id: 1138bed0-31c9-44cd-a70f-966810df78dd
+slide_id: da897a7f-b82c-4192-93f6-cb5ff18f94f6
 index_title: How Can We Use Inact Now to Help Us?
 title: **How Can We Use Inact Now to Help Us?**
 type: main
@@ -65,11 +65,11 @@ So, how do we conduct this analysis in practice? Let's take a look at the “Spe
 If the window appears too small, click the button in the top right corner to enter full screen.
 [supademo: Spend Analysis: Insight Walkthrough](https://app.supademo.com/embed/cmmj7ort82jagzdh1isoce83c?embed_v=2&utm_source=embed)
 ---
-> [next] Continue -> 2eb6d5ea-8227-410c-9e54-510cfc1c2ae7
+> [next] Continue -> c5658455-7f3c-46af-b5f7-1b21ad60ad81
 
 [id:3/topic: What's Next?]
 
-slide_id: 2eb6d5ea-8227-410c-9e54-510cfc1c2ae7
+slide_id: c5658455-7f3c-46af-b5f7-1b21ad60ad81
 index_title: Congratulations!
 title: **Congratulations! You have completed the Spend Analysis course**
 layout: standard-2-col

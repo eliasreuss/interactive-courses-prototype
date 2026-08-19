@@ -12,9 +12,9 @@ hero_body: In this course, you will learn about supplier categorization, perform
 
 **Let’s get started!**
 ---
-> [next] Let's do it! -> 4d7b63d9-6d8b-4b13-a571-7cf01317c115
+> [next] Let's do it! -> cba231f2-604c-4400-ad22-2a5b88198796
 
-slide_id: 4d7b63d9-6d8b-4b13-a571-7cf01317c115
+slide_id: cba231f2-604c-4400-ad22-2a5b88198796
 index_title: Why Supplier Performance Matters
 title: Why Supplier Performance Matters
 layout: standard-2-col
@@ -41,9 +41,9 @@ Specifically, you will learn how to:
 
 **Let's do it!**
 ---
-> [next] Continue -> 335ada0c-ced2-41a8-a1fa-d94734393ca1
+> [next] Continue -> e2cd3872-3219-491d-b1b2-d485f0cda627
 
-slide_id: 335ada0c-ced2-41a8-a1fa-d94734393ca1
+slide_id: e2cd3872-3219-491d-b1b2-d485f0cda627
 index_title: What Do We Measure?
 title: What Do We Measure?
 type: main
@@ -51,11 +51,11 @@ type: main
 To execute those previous four steps effectively, we need a consistent way to measure success. To get a complete picture, we track five core key performance indicators (KPIs) for every supplier. Let's walk through them one by one.
 ![image/size:large/align:center/frame:none](supplier-performance/Five-Metrics-Complete.png)
 ---
-> [next] Continue -> 3e137a23-80f0-424b-ac03-11e9f0b44b3a
+> [next] Continue -> d7309ea7-b96d-44de-912a-cd448db86a6f
 
 [id:2/topic: Key Performance Indicators]
 
-slide_id: 3e137a23-80f0-424b-ac03-11e9f0b44b3a
+slide_id: d7309ea7-b96d-44de-912a-cd448db86a6f
 index_title: On-Time Delivery Performance (OTD)
 title: On-Time Delivery Performance (OTD)
 type: main
@@ -70,9 +70,9 @@ With On-Time Delivery Performance in Inact Now you create a transparent and stru
 
 ![image 2/size:large/align:center/frame:none](supplier-performance/OTD-Metric.png)
 ---
-> [next] Continue -> 383d3234-32f4-456d-9a90-daa56137025f
+> [next] Continue -> b2f6923f-bd7d-4478-9304-c6c862bf3fef
 
-slide_id: 383d3234-32f4-456d-9a90-daa56137025f
+slide_id: b2f6923f-bd7d-4478-9304-c6c862bf3fef
 index_title: Procurement Spend
 title: Procurement Spend
 type: main
@@ -94,9 +94,9 @@ The inventory holding cost is a reflection of your supplier portfolio and perfor
 With Inact Now you gain the full overview of your inventory holding cost on supplier level and enable a structured approach to lowering your working capital.
 ![image/size:large/align:center/frame:none](supplier-performance/IV-Metric.png)
 ---
-> [next] Continue -> 5dedf8d6-5da2-402f-b8f6-5f6ebce276ac
+> [next] Continue -> f41d2a03-7127-4b92-8ceb-bebf73b373ca
 
-slide_id: 5dedf8d6-5da2-402f-b8f6-5f6ebce276ac
+slide_id: f41d2a03-7127-4b92-8ceb-bebf73b373ca
 index_title: Inventory Turnover Ratio
 title: Inventory Turnover Ratio
 type: main
@@ -140,9 +140,9 @@ You need to focus your energy where it creates the biggest impact.
 **Just as we categorize items, we must categorize our suppliers to find the ones that matter most.**
 ![image/size:450px/align:right/frame:none](supplier-performance/ABC-Suppliers.png)
 ---
-> [next] Continue -> 431f5ce2-4259-46a4-8907-80253455f4b6
+> [next] Continue -> a494115e-711d-42c7-b3d6-abb145b35c28
 
-slide_id: 431f5ce2-4259-46a4-8907-80253455f4b6
+slide_id: a494115e-711d-42c7-b3d6-abb145b35c28
 index_title: Supplier Categorisation
 title: Supplier Categorisation
 layout: standard-2-col
@@ -163,11 +163,11 @@ type: main
 The interactive tutorial below will guide you through how to use the "Supplier Categorisation" Insight to identify your most important suppliers. If the window appears too small, click the full-screen button in the top right corner.
 [supademo: Insight walkthrough: Supplier Categorization](https://app.supademo.com/embed/cmlzb3cv927rb1435rm7m2309?embed_v=2&utm_source=embed)
 ---
-> [next] Continue -> 3e7e3e5a-a413-42bf-87d1-da62fb64ddf8
+> [next] Continue -> f91414ac-4d67-4169-8faa-be53644964ed
 
 [id:4/topic: Supplier Benchmark & Root Cause Analysis]
 
-slide_id: 3e7e3e5a-a413-42bf-87d1-da62fb64ddf8
+slide_id: f91414ac-4d67-4169-8faa-be53644964ed
 index_title: Benchmarking and Root Cause Analysis
 title: Benchmarking and Root Cause Analysis
 layout: standard-2-col
@@ -180,9 +180,9 @@ By analyzing the key performance indicators, you can uncover the underlying driv
 This helps identify potential root causes behind issues like slow-moving stock, excess inventory, or service challenges, and provides a clear starting point for targeted improvement.
 ![image/size:450px/align:right/frame:none](supplier-performance/Metrics-Zoom.png)
 ---
-> [next] Continue -> 6ec01f54-7b85-4888-b237-35fc0ce2fab8
+> [next] Continue -> a595c148-2147-4ab0-8dc5-39721bb5da37
 
-slide_id: 6ec01f54-7b85-4888-b237-35fc0ce2fab8
+slide_id: a595c148-2147-4ab0-8dc5-39721bb5da37
 index_title: Insight walkthrough - Supplier Performance Benchmark: Products
 title: Insight walkthrough - Supplier Performance Benchmark: Products
 type: main
@@ -190,11 +190,11 @@ type: main
 Let’s see it action, and take a look at the insight: Supplier Performance Benchmark - Products. If the window appears too small, click the full-screen button in the top right corner.
 [supademo: Supplier Performance Benchmark: Products - Insight Walkthrough](https://app.supademo.com/embed/cmmtbxsjv0jl7f3u9rujr0a4g?embed_v=2&utm_source=embed)
 ---
-> [next] Continue -> 06922359-d5ba-4913-88c1-1f526ceef282
+> [next] Continue -> efd02e5a-77e3-473d-a833-42cfb84abdff
 
 [id:5/topic: What's Next?]
 
-slide_id: 06922359-d5ba-4913-88c1-1f526ceef282
+slide_id: efd02e5a-77e3-473d-a833-42cfb84abdff
 index_title: Congratulations! You've Completed the Course
 title: Congratulations! You have completed the Supplier Performance course.
 layout: standard-2-col

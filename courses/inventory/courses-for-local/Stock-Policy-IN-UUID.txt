@@ -28,9 +28,9 @@ The first question an organisation should ask themselves when it comes to invent
 It sounds simple, but without a clear, data-driven answer to this question, you are essentially guessing. And when an organization guesses, they risk filling their inventory with products that add no value, while possibly standing in the way of those that do.
 ![image/size:400px/align:right/frame:none](stock-policy/What-To-Stock.png)
 ---
-> [next] Continue -> 362bc9d3-3278-4881-8b0b-0fd7b9c27610
+> [next] Continue -> c7a786a6-5de9-4d53-ab93-661e59d0d457
 
-slide_id: 362bc9d3-3278-4881-8b0b-0fd7b9c27610
+slide_id: c7a786a6-5de9-4d53-ab93-661e59d0d457
 index_title: The Pain
 title: What Happens If We Don’t Operate with a Clear Stock Policy?
 type: main
@@ -59,9 +59,9 @@ The cure for this is to stop treating every item equally. We need to apply diffe
 
 ![image/size:625px/align:right/frame:none](stock-policy/A-C-Items-2.png)
 ---
-> [next] Continue -> 343f74f9-6869-4aa1-86cd-5c349207eb79
+> [next] Continue -> c31f8f6a-0370-4029-9ce5-e77d1d0007a8
 
-slide_id: 343f74f9-6869-4aa1-86cd-5c349207eb79
+slide_id: c31f8f6a-0370-4029-9ce5-e77d1d0007a8
 index_title: The Value of a Good Stock Policy
 title: The Strategic Value of a Good Stock Policy
 type: main
@@ -70,11 +70,11 @@ By applying those specific rules - stocking the winners and ordering or making t
 
 ![image/size:large/align:center/frame:none](stock-policy/Four-Purposes.png)
 ---
-> [next] Continue -> 2df1b4f8-29a9-4fc8-b9d7-14a5756aef41
+> [next] Continue -> c206dfa6-7ad5-4770-b048-3532a302fec8
 
 [id:3/topic: How Can Inact Now Help Us?]
 
-slide_id: 2df1b4f8-29a9-4fc8-b9d7-14a5756aef41
+slide_id: c206dfa6-7ad5-4770-b048-3532a302fec8
 index_title: Opening the Insight: “Stock Policy | Non Stock Items”
 title: How can Inact Now help us?
 type: main
@@ -97,11 +97,11 @@ Go through the interactive tutorial below to learn how to use Inact Now to estab
 
 [supademo: Insight walkthrough - Stock Policy, Non Stock Items](https://app.supademo.com/embed/cmhyo4vfn4q9r17y04epcgbrp?embed_v=2&utm_source=embed)
 ---
-> [next] I've completed the tutorial, continue! -> 9a15d9b4-aa1e-4c3e-9f54-282f209b5d4e
+> [next] I've completed the tutorial, continue! -> be91faca-185f-4ba7-a96b-7ad24f782f38
 
 [id:4/topic: Outro]
 
-slide_id: 9a15d9b4-aa1e-4c3e-9f54-282f209b5d4e
+slide_id: be91faca-185f-4ba7-a96b-7ad24f782f38
 index_title: What's Next?
 title: Congratulations! You’ve Completed the Second of Five Courses in the Learning Path.
 type: main
