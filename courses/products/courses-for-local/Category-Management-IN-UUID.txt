@@ -23,6 +23,7 @@ type: main
 layout: standard-2-col
 ---
 A product portfolio can contain thousands of items across many different categories.
+
 Some products sell in high volumes and generate healthy margins. Others sell well but contribute very little profit. Some have attractive margins but never gain enough volume, and some do neither.
 
 The challenge is getting a clear view of where the business is healthy and where it needs attention.

@@ -1,4 +1,4 @@
-[id:1/topic: When Is It Time to Let Go?]
+[id:1/topic: Welcome to Phase Out]
 
 slide_id: d263abc4-062d-47fa-87cf-46245e95e34d
 index_title: Welcome to Phase Out
@@ -16,6 +16,8 @@ In this course, we will answer the question: Which products should we phase out?
 ---
 > [next] Let's do it! -> ad20abb6-c1f0-4017-a554-c81fdbfe702e
 
+[id:2/topic: When Is It Time to Let Go?]
+
 slide_id: ad20abb6-c1f0-4017-a554-c81fdbfe702e
 index_title: The Long Tail
 title: The Long Tail
@@ -30,7 +32,7 @@ And phase out is not only a purchasing responsibility. Someone made the decision
 ---
 > [next] Continue -> ec717ec8-4cbc-4037-9c51-6e93d0d6e5ca
 
-[id:2/topic: Start With What Is Already Dead]
+[id:3/topic: Start With What Is Already Dead]
 
 slide_id: ec717ec8-4cbc-4037-9c51-6e93d0d6e5ca
 index_title: What Is Already Dead?
@@ -42,7 +44,7 @@ The easiest place to start is with products that have already stopped selling. T
 ---
 > [next] Continue -> f1479a3f-bf8d-4f68-bd26-bb736df0affa
 
-[id:3/topic: Catch the Problem Earlier]
+[id:4/topic: Catch the Problem Earlier]
 
 slide_id: f1479a3f-bf8d-4f68-bd26-bb736df0affa
 index_title: From Reactive to Proactive
@@ -59,7 +61,7 @@ But potential phase-out candidates are harder to judge than dead items. A produc
 ---
 > [next] Continue -> c09bb7e2-a2f1-471a-923b-997b558862b0
 
-[id:4/topic: Find the Right Products to Phase Out]
+[id:5/topic: Find the Right Products to Phase Out]
 
 slide_id: c09bb7e2-a2f1-471a-923b-997b558862b0
 index_title: Potential Phase Outs Insight Walkthrough
@@ -75,7 +77,7 @@ The **Potential Phase Outs Insight** helps us find the bad performing products t
 ---
 > [next] Continue -> eceb22bd-ec93-4648-a01f-6825c31b6c4a
 
-[id:5/topic: What’s Next?]
+[id:6/topic: What’s Next?]
 
 slide_id: eceb22bd-ec93-4648-a01f-6825c31b6c4a
 index_title: Congratulations
