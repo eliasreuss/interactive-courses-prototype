@@ -3556,7 +3556,7 @@
     let hubPage = 'hub.html';
     let coursePath = 'inventory';
     
-    // Course files live in courses/<path>/with-UUID/<Name>-IN-UUID.txt — this
+    // Course files live in courses/<path>/<folder>/<Name>-IN-UUID.txt — this
     // strips the folder and the -IN-UUID suffix back down to "Name".
     function courseSlug(file) {
       return String(file).split('/').pop().replace(/-IN-UUID\.txt$/i, '').replace(/\.txt$/i, '');
@@ -3716,18 +3716,21 @@
         }
         console.log('Loading course:', courseFile, 'from URL params:', urlParams.get('course'));
         const cacheParam = Date.now();
-        // Courses live in two flavours. The canonical files keep the CMS asset
-        // refs (learn/images/...) the real Inact Now app serves; courses-for-local
-        // mirrors them with local images/ files so this prototype also renders
-        // its images on localhost and GitHub Pages. Prefer the local flavour
-        // where it exists, fall back to the canonical file where it doesn't.
-        const localFile = courseFile.replace(/^with-UUID\//, 'courses-for-local/');
-        const localUrl = `courses/${coursePath}/${localFile}?v=${cacheParam}`;
-        const requestUrl = `courses/${coursePath}/${courseFile}?v=${cacheParam}`;
+        // Each learning path keeps its courses in three folders:
+        //   official-learn-courses/ - what is live in Inact Learn, CMS asset refs
+        //   courses-for-local/      - the same courses with local images/ refs,
+        //                            so this prototype renders on localhost and
+        //                            GitHub Pages where /learn/... does not exist
+        //   archive/                - superseded versions, sources, experiments
+        // The `course` param carries a legacy with-UUID/ prefix, so match on the
+        // basename and prefer the local flavour.
+        const courseBase = courseFile.split('/').pop();
+        const localUrl = `courses/${coursePath}/courses-for-local/${courseBase}?v=${cacheParam}`;
+        const requestUrl = `courses/${coursePath}/official-learn-courses/${courseBase}?v=${cacheParam}`;
         let response = await fetch(localUrl);
         if (!response.ok) {
           response = await fetch(requestUrl);
-          if (!response.ok) throw new Error(`Failed to fetch ${requestUrl} (status ${response.status})`);
+          if (!response.ok) throw new Error(`Failed to fetch ${localUrl} (status ${response.status})`);
         }
         const text = await response.text();
         courseData = parseFlowScript(text);
