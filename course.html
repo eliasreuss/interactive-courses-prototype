@@ -824,6 +824,13 @@
       margin: 8px 0 0 0;
     }
 
+    ul.hero-body {
+      list-style: disc outside;
+      padding-left: 1.25em;
+      margin: 10px 0 0 0;
+    }
+    ul.hero-body li { padding-left: 0.35em; margin-bottom: 0.4em; }
+
     /* Subtle hero animations */
     .hero-layout .hero-image-side img {
       animation: heroImageIn 720ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
@@ -2236,12 +2243,19 @@
             html += `<h1 class="hero-title">${escapeHtml(displayTitle)}</h1>`;
         }
         if (body) {
-            // Process bold markers and line breaks in body
-            const processedBody = body
-                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                .replace(/\n\n/g, '</p><p class="hero-body">')
-                .replace(/\n/g, '<br>');
-            html += `<p class="hero-body">${processedBody}</p>`;
+            // Blank lines separate blocks; a block whose lines start with * is a
+            // bullet list, matching how main slides treat asterisks. Without this
+            // a hero_body list renders as literal "* item" text.
+            const bold = (str) => str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            html += body.split(/\n\s*\n/).map(block => {
+                const lines = block.split('\n').map(l => l.trim()).filter(Boolean);
+                if (!lines.length) return '';
+                const items = lines.map(parseAsteriskListBody);
+                if (items.every(i => i !== null)) {
+                    return `<ul class="hero-body">${items.map(i => `<li>${bold(i)}</li>`).join('')}</ul>`;
+                }
+                return `<p class="hero-body">${bold(lines.join('<br>'))}</p>`;
+            }).join('');
         }
         html += '</div>';
         
