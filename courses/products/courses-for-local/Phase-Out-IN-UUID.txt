@@ -28,7 +28,7 @@ Over time, most portfolios build up a long tail of slow-moving and dead products
 These products take up space, tie up capital and create work across the business, even when they generate little or no sales.
 
 And phase out is not only a purchasing responsibility. Someone made the decision to bring the product into the portfolio, so product and category owners also need to take responsibility for when it should leave.
-![image/size:large/align:center/frame:none](placeholder-images/Long-tail.png)
+![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Products/Long-Tail-Animation.mp4)
 ---
 > [next] Continue -> ec717ec8-4cbc-4037-9c51-6e93d0d6e5ca
 
