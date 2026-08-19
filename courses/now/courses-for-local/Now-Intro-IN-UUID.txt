@@ -1,0 +1,113 @@
+slide_id: 1
+index_title: Welcome to the Learning Path
+title: 
+type: hero
+---
+hero_image: now-intro/Now-Intro-Hero.png
+hero_subtitle: Welcome to the learning path:
+hero_title: Inact Now Fundamentals
+hero_body: In this learning path, you will get a complete overview of the Inact Now platform. You will learn how to navigate your dashboards, interpret key insights about your business, and turn data into action.
+
+**Let’s get started!**
+---
+> [next] Continue -> 42215b90-e8ad-446c-838b-2e4a6fe03670
+
+slide_id: 42215b90-e8ad-446c-838b-2e4a6fe03670
+index_title: The three pillars of the platform
+title: The three pillars of the platform
+type: main
+layout: standard-2-col
+---
+To get the most out of Inact Now, this course will guide you through three core areas: Insights, Actions, and Dashboards.
+
+While the platform offers much more, these are the essential building blocks you need to get started.
+
+But before we explore them, let’s start with the foundation, the data behind everything you see.
+![image/size:550px/align:right/frame:none](now-intro/Circle.png)
+---
+> [next] Continue -> 4
+
+slide_id: 4
+index_title: Where Does The Data Come From?
+title: Where Does The Data Come From?
+type: main
+---
+All the data you see in Inact Now comes from your company’s ERP system.
+
+Inact Now works with any ERP system and transforms complex, scattered data into simple, intuitive insights you can act on.
+
+![image/size:large/align:center/frame:none](now-intro/data-1.png)
+---
+> [next] Continue -> 11e01834-72b7-4425-81f1-17ba4b5e8dda
+
+slide_id: 11e01834-72b7-4425-81f1-17ba4b5e8dda
+index_title: When is the Data Updated?
+title: When is the Data Updated?
+type: main
+---
+Inact Now automatically receives data from your ERP system every night, so you always work with fresh data.
+
+![image/size:large/align:center/frame:none](now-intro/data-2.png)
+---
+> [next] Continue -> 37673ec1-b5d8-4d6a-9581-ef4c322517e2
+
+slide_id: 37673ec1-b5d8-4d6a-9581-ef4c322517e2
+index_title: Standard Solutions
+title: Standard Solutions
+type: main
+---
+Inact Now helps you get started quickly with predefined solutions and data templates.
+
+These are designed around key areas of your business, so you can begin working with your data right away and focus on what matters most.
+
+![image/size:large/align:center/frame:none](now-intro/Standard_Solutions.png)
+---
+> [next] Continue -> cea7b6c4-cd52-4565-9f8a-e1a12e9c5a35
+
+slide_id: cea7b6c4-cd52-4565-9f8a-e1a12e9c5a35
+index_title: Customising Your Solution
+title: Customising Your Solution
+type: main
+layout: standard-2-col
+---
+You can also extend the standard solution in Inact Now by adding custom data from your ERP system or other relevant data sources.
+
+This allows you to tailor the solution to better reflect your specific business needs. 
+![image/size:550px/align:right/frame:none](now-intro/Custom.png)
+---
+> [next] Continue -> 5
+
+slide_id: 5
+index_title: Alleviating Confusion
+title: Alleviating Confusion
+type: main
+---
+If you know your company's ERP data well, you might notice that some columns have different names in Inact Now. Hovering over the "i" icon on any column will tell you exactly where that data comes from and anything else you need to know about it.
+![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Hover-I-Intro.mp4)
+---
+> [next] Continue -> 803244d0-d449-47b5-a82d-ec80ca83a42c
+
+slide_id: 803244d0-d449-47b5-a82d-ec80ca83a42c
+index_title: Getting an Overview
+title: Getting an Overview
+type: main
+---
+If you need an overview of all the data in your solution, go to the Data tab. Here, you can see all available columns, examples of their data, and descriptions of what they represent. You can also see whether a column comes directly from your ERP system or is created by Inact Now.
+
+![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Now-Intro/data_tab.mp4)
+---
+> [next] Continue -> 45ab3b16-60d8-4845-92ac-64c15b2ae019
+
+slide_id: 45ab3b16-60d8-4845-92ac-64c15b2ae019
+index_title: You’re Ready to Get Started
+title: You’re Ready to Get Started
+type: main
+layout: standard-2-col
+---
+You now understand where your data comes from and how the platform is structured.
+
+Next, you’ll move on to **Home**, your personal command center. This is where you access and organize your work, and navigate between your Dashboards, Insights, and Actions.
+
+Click “Continue” to get started.
+![image/size:large/align:right/frame:none](now-intro/Now-Intro-Hero.png)
+---

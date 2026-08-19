@@ -3716,9 +3716,19 @@
         }
         console.log('Loading course:', courseFile, 'from URL params:', urlParams.get('course'));
         const cacheParam = Date.now();
+        // Courses live in two flavours. The canonical files keep the CMS asset
+        // refs (learn/images/...) the real Inact Now app serves; courses-for-local
+        // mirrors them with local images/ files so this prototype also renders
+        // its images on localhost and GitHub Pages. Prefer the local flavour
+        // where it exists, fall back to the canonical file where it doesn't.
+        const localFile = courseFile.replace(/^with-UUID\//, 'courses-for-local/');
+        const localUrl = `courses/${coursePath}/${localFile}?v=${cacheParam}`;
         const requestUrl = `courses/${coursePath}/${courseFile}?v=${cacheParam}`;
-        const response = await fetch(requestUrl);
-        if (!response.ok) throw new Error(`Failed to fetch ${requestUrl} (status ${response.status})`);
+        let response = await fetch(localUrl);
+        if (!response.ok) {
+          response = await fetch(requestUrl);
+          if (!response.ok) throw new Error(`Failed to fetch ${requestUrl} (status ${response.status})`);
+        }
         const text = await response.text();
         courseData = parseFlowScript(text);
         if (!courseData || courseData.length === 0) { const e = new Error("Parsing resulted in no valid course data."); e.isEmpty = true; throw e; }

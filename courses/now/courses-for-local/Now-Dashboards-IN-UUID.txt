@@ -1,0 +1,114 @@
+[id:1/topic: Welcome to the Course: Dashboards]
+
+slide_id: 1
+index_title: Welcome to the Course: Dashboards
+title: 
+type: hero
+---
+hero_image: now-dashboards/Dashboards-Hero.png
+hero_subtitle: Welcome to the course:
+hero_title: Dashboards
+hero_body: It’s time to look at the big picture.
+
+This final course focuses on dashboards. You will learn how to use these visual overviews to monitor your high-level metrics and track your overall performance at a glance.
+
+**Let’s get started!**
+---
+> [next] Continue -> 2
+
+slide_id: 2
+index_title: What Are Dashboards?
+title: What Are Dashboards?
+type: main
+layout: standard-2-col
+---
+Dashboards are more than just generic overviews. Every Dashboard is built with a specific purpose in mind. 
+
+They are based directly on your Insights and are designed to highlight your most important KPI’s and trends in one place. 
+![image/size:550px/align:right/frame:none](now-dashboards/Widgets-Tables.png)
+---
+> [next] Continue -> 87863b16-1530-44cf-895f-b19222eae219
+
+slide_id: 87863b16-1530-44cf-895f-b19222eae219
+index_title: How Do They Look?
+title: How Do They Look?
+type: main
+---
+A Dashboard is built using two main components: Widgets and Tables. Both of these parts are highly interactive.
+
+Below is an example of how a Dashboard might look:
+![image/size:large/align:center/frame:none](now-dashboards/Dashboard-Example.png)
+---
+> [next] Continue -> 4
+
+[id:2/topic: Widgets]
+
+slide_id: 4
+index_title: Understanding Widgets
+title: Understanding Widgets
+type: main
+layout: standard-2-col
+---
+Now that you know what Dashboards are, let's explore the individual parts. We will start with Widgets.
+
+Widgets are designed to give you instant answers. 
+
+-**Actual.** Tells you what the actual number (KPI) is. 
+-**Target.** The dotted line in the trend and your KPI target. 
+-**Latest Development.** How much the KPI moved versus last month, three months ago, or last year.
+-**Trend.** Where the KPI landed at the end of each of the last 12 months.
+
+![video/size:550px/align:right/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Now-Dashboards/KPI_2.mp4)
+---
+> [next] Continue -> 5
+
+[id:3/topic: Tables]
+
+slide_id: 5
+index_title: Understanding Tables
+title: Understanding Tables
+type: main
+---
+Right below the widgets you will find tables. A table splits your KPIs by category, for example by Product Group, Company, or Supplier. It can also show a separate list of products, customers, or suppliers.
+![image/size:large/align:center/frame:none](now-dashboards/Table.png)
+
+If you don’t see a table, it may be because your Dashboard only contains widgets, or because you haven’t clicked the small drop-down arrow button.
+---
+> [next] Continue -> 7
+
+[id:4/topic: Slicers And Filters]
+
+slide_id: 7
+index_title: Using Slicers and Filters
+title: Using Slicers and Filters
+type: main
+---
+Dashboards work just like Insights when it comes to segmenting your data. You can always use the fixed Slicers at the top of the screen or add any custom Filter to get the exact view you need.
+![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Now-Dashboards/Dashboard-Filter.mp4)
+---
+> [next] Continue -> 8
+
+[id:5/topic: Going One Click Deeper]
+
+slide_id: 8
+index_title: Going One Click Deeper
+title: Going One Click Deeper
+type: main
+---
+The One Click Deeper concept also applies to Dashboards. If you click directly on a Widget or click the button next to a category or product in a Table, you will open a detailed Trend View for that specific data.
+![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Now-Dashboards/Dashboards-Trend.mp4)
+---
+> [next] Continue -> 9
+
+[id:6/topic: Congrats!]
+
+slide_id: 9
+index_title: Congratulations! You Have Completed the Dashboards Course
+title: Congratulations! You Have Completed the Dashboards Course
+type: main
+layout: standard-2-col
+---
+You now know how to navigate your Dashboards to monitor your KPI’s. You understand how to read Widgets and Tables, apply Slicers and Filters, and drill down into the details.
+
+![image/size:large/align:right/frame:none](now-dashboards/Dashboards-Hero.png)
+---
