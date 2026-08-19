@@ -2058,6 +2058,21 @@ function courseVerb(cid) {
   } catch { return raw === 'completed' ? 'Review' : 'Continue'; }
 }
 
+function courseCompleted(cid) {
+  if (localStorage.getItem('course_' + cid + '_completed') === 'true') return true;
+  const raw = localStorage.getItem('course_progress_' + cid);
+  if (!raw) return false;
+  try { return !!JSON.parse(raw).completed; } catch { return raw === 'completed'; }
+}
+
+// First course in the path that is not finished. A started-but-unfinished course
+// counts, so this cannot be "has no progress record" — that skips every course
+// once one has been opened, and the caller's fallback then lands on course 1.
+function nextIncompleteId(path) {
+  if (!path.courseIds || !path.courseIds.length) return null;
+  return path.courseIds.find(cid => !courseCompleted(cid)) || path.courseIds[0];
+}
+
 const LC_TIP_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2.5 9 2.5 12 0v-5"/></svg>`;
 
 function getCursorTip() {
@@ -2200,7 +2215,7 @@ function renderLearningCard(pathId, opts) {
   // Resolve CTA href: for Start/Continue, link to the next incomplete course; for Review, link to hub
   function getNextCourseUrl(p) {
     if (!p.courseFiles) return p.href;
-    const nextId = p.courseIds.find(cid => localStorage.getItem('course_progress_' + cid) === null && localStorage.getItem('course_' + cid + '_completed') !== 'true') || p.courseIds[0];
+    const nextId = nextIncompleteId(p);
     const file = p.courseFiles[nextId];
     if (!file) return p.href;
     return `course.html?course=${file}&path=${p.pathParam}&hub=${p.hubFile}&from=hub`;
@@ -2208,7 +2223,7 @@ function renderLearningCard(pathId, opts) {
   const ctaHref = prog.pct === 100 ? path.href + '?from=home' : getNextCourseUrl(path);
 
   // Label shown in the cursor tooltip when hovering the card body (not a TOC row)
-  const nextId = path.courseIds && (path.courseIds.find(cid => localStorage.getItem('course_progress_' + cid) === null && localStorage.getItem('course_' + cid + '_completed') !== 'true') || path.courseIds[0]);
+  const nextId = nextIncompleteId(path);
   const nextName = nextId ? (path.courseNames[path.courseIds.indexOf(nextId)] || path.title) : path.title;
   const defaultTip = prog.pct === 100
     ? { verb: 'Review', name: path.title }
