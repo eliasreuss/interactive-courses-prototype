@@ -1,0 +1,26 @@
+[id:1/topic: Welcome to Customer Management]
+
+slide_id: daf4051c-c535-4fc6-aaf3-0689da3209f8
+index_title: Welcome to Customer Management
+title: 
+type: hero
+---
+hero_image: placeholder-images/Illustration.png
+hero_subtitle: Welcome to the course:
+hero_title: Intro to Customer Management
+hero_body: ....
+---
+> [next] Let's do it! -> a01efe42-fae9-438a-842c-bd96149614bc
+
+[id:2/topic: Course Outline]
+
+slide_id: a01efe42-fae9-438a-842c-bd96149614bc
+index_title: Five Steps
+title: 
+type: main
+---
+Dette kursus bliver lavet til sidst
+
+We will follow five steps:
+![image/size:large/align:center/frame:none](customers-intro/Five-Steps.png)
+---

@@ -1,0 +1,72 @@
+[id:1/topic: Welcome to Customer Segmentation]
+
+slide_id: a8069238-1e7e-4fe9-9573-d65474566376
+index_title: Welcome to Customer Segmentation
+title: 
+type: hero
+---
+hero_image: placeholder-images/Illustration.png
+hero_subtitle: Welcome to the course:
+hero_title: Customer Segmentation
+hero_body: In this course, you will learn how to segment your customer portfolio, identify which customers matter most, and understand where your attention should go.
+
+**Let’s get started.**
+---
+> [next] Let's do it! -> c1c0529a-658b-4a29-b01d-3470b043213a
+
+[id:2/topic: Understanding Our Customers]
+
+slide_id: c1c0529a-658b-4a29-b01d-3470b043213a
+index_title: Understanding Our Customers
+title: Understanding Our Customers
+type: main
+---
+Before we can understand the relationships across our value chain, we first need to understand our customers.
+
+Later, we will connect customers to the products they buy and the suppliers behind those products. But first, we need a clear view of the customer portfolio itself.
+![image/size:large/align:center/frame:none](customers-customer-segmentation/roadmap-1.png)
+---
+> [next] Continue -> a0279dde-de09-488e-b076-749576886aa7
+
+[id:3/topic: The Four Customer Categories]
+
+slide_id: a0279dde-de09-488e-b076-749576886aa7
+index_title: The Four Customer Categories
+title: The Four Customer Categories
+type: main
+---
+Just as we did with Products, we divide our customers into four categories:
+![image/size:large/align:center/frame:none](customers-customer-segmentation/The-Four-Categories.png)
+
+Just like different products, different customers require different levels of attention and prioritisation.
+---
+> [next] Continue -> aac71e54-7954-4c0c-a50c-fe65718b0f13
+
+slide_id: aac71e54-7954-4c0c-a50c-fe65718b0f13
+index_title: Customer Categorization Insight Walkthrough
+title: Customer Categorization Insight Walkthrough
+type: main
+---
+With the Customer Categorization Insight in Inact Now we can analyze our own customer portfolio, and see how our customers are distributed in the categories.
+
+![image/size:large/align:center/frame:none](customers-customer-segmentation/Customer-Categorization-Walkthrough.png)
+---
+> [next] Continue -> ff603b2d-457b-477a-8e30-bdd5dc3081d8
+
+[id:4/topic: What’s Next?]
+
+slide_id: ff603b2d-457b-477a-8e30-bdd5dc3081d8
+index_title: Congratulations
+title: Congratulations! You’ve Completed Customer Segmentation
+type: main
+layout: standard-2-col
+---
+Segmentation already gives us a strong overview of where revenue and profit are concentrated across the customer portfolio.
+
+**But we can go even deeper.**
+
+In the next course Customer Profitability, we will answer:
+
+**What do we actually earn on our customers?**
+![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
+---

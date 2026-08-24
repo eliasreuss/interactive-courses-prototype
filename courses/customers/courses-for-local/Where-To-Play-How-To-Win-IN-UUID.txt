@@ -1,0 +1,137 @@
+[id:1/topic: Welcome to Where to Play, How to Win]
+
+slide_id: b4bf4f51-1dc2-48aa-b832-ef23b7f72dd0
+index_title: Welcome to Where to Play, How to Win
+title: 
+type: hero
+---
+hero_image: placeholder-images/Illustration.png
+hero_subtitle: Welcome to the course:
+hero_title: Where to Play, How to Win
+hero_body: In the previous courses, you identified which customers matter most, looked at what you earn on them, and connected them to the products they buy and the suppliers behind those products.
+
+Now we will use that understanding to make clearer decisions about which customers to serve and which products to offer.
+
+**Let’s get started.**
+---
+> [next] Let's do it! -> a41c68bc-e627-4926-8964-235ba925c13e
+
+[id:2/topic: From Analysis to Decisions]
+
+slide_id: a41c68bc-e627-4926-8964-235ba925c13e
+index_title: From Analysis to Decisions
+title: From Analysis to Decisions
+type: main
+---
+We have built the picture step by step. We know which customers matter most and where we make money. With Linked Revenue, we can also see which products and suppliers sit behind those customers, and which complexity supports the business.
+
+Now we need to decide what to do with that information. This is where we move from analysis to policies.
+![image/size:large/align:center/frame:none](customers-where-to-play-how-to-win/roadmap-4.png)
+---
+> [next] Continue -> b1b2c27e-0888-40e6-bcd9-7044d99fcf47
+
+[id:3/topic: Setting Clear Policies]
+
+slide_id: b1b2c27e-0888-40e6-bcd9-7044d99fcf47
+index_title: Setting Clear Policies
+title: Setting Clear Policies
+type: main
+---
+The purpose of the policies is to create a change in the behavior of your employees that leads your company in a new direction and focuses it on a sharper course toward growth and earnings. Basically, together with your other C level colleagues, you need to answer the fundamental question “Where to play and how to win?”
+
+Here, this expression can be translated into two fundamental questions:
+![image/size:large/align:center/frame:none](customers-where-to-play-how-to-win/Clear-Policies.png)
+---
+> [next] Continue -> b218a124-23df-4e0b-849b-2203afbfcedb
+
+slide_id: b218a124-23df-4e0b-849b-2203afbfcedb
+index_title: Kill It or Bill It
+title: Kill It or Bill It
+type: main
+layout: standard-2-col
+---
+Let’s make this more concrete.
+
+In the previous course, we found that some C products are bought by important customers. Those products may look weak on their own, but the customer relationship makes them important. We can therefore choose to treat them as strategic.
+
+Once those relationships are protected, we can look at the remaining C products. One possible policy is **Kill it or Bill it.**
+
+Price the product so it earns the profit you require. If customers will not buy it at that price, phase it out.
+The goal is not to remove every C product. It is to make a deliberate decision about what stays, what goes and why.
+![image/size:550px/align:right/frame:none](customers-where-to-play-how-to-win/Kill-Or-Bill.png)
+---
+> [next] Continue -> c4c2b3cd-4975-4843-be9a-7c031e52af8a
+
+[id:4/topic: Visualize Where to Act]
+
+slide_id: c4c2b3cd-4975-4843-be9a-7c031e52af8a
+index_title: One Final Step
+title: One Final Step
+type: main
+---
+We now have a clearer way to decide how customers and products should be treated. But even with good policies, we still need to know where to focus our attention. That brings us to the final step.
+
+**Visualize where to act.**
+
+Visualization can help us spot areas where similar customers behave differently, or where performance deserves a closer look.
+![image/size:large/align:center/frame:none](customers-where-to-play-how-to-win/Roadmap-5.png)
+---
+> [next] Continue -> ed6217a3-5d10-44c9-9b40-c85ff46b38cc
+
+slide_id: ed6217a3-5d10-44c9-9b40-c85ff46b38cc
+index_title: Using a Heatmap to Find Where to Act
+title: Using a Heatmap to Find Where to Act
+type: main
+---
+A heat map gives you a visual overview of your company’s profit structure. By placing customers and products in a structured view, you can see where profit comes from and how it is distributed across the business.
+
+This makes it easier to understand which customer and product combinations create value, and which areas deserve a closer look.
+![image/size:large/align:center/frame:none](customers-where-to-play-how-to-win/Heatmap.png)
+---
+> [next] Continue -> ebd9e7ae-f777-4ee1-906c-8799b6069ad8
+
+slide_id: ebd9e7ae-f777-4ee1-906c-8799b6069ad8
+index_title: Heatmap Walkthrough
+title: Heatmap Walkthrough
+type: main
+---
+Once you can see how profit is distributed, you can use the heat map to support strategic decisions. It can help you identify customer segments with potential for growth, as well as products that could generate more profit with greater commercial focus.
+
+It also helps with resource allocation. You can see which customers and products contribute most to profit, and where investing more time and resources may create the greatest value.
+
+Go through the tutorial below to learn how to use the heatmap in Inact Now.
+![image/size:large/align:center/frame:none](customers-where-to-play-how-to-win/Heatmap-Walkthrough.png)
+---
+> [next] Continue -> e823a076-90ba-43b2-88d4-7b73a587b342
+
+[id:5/topic: Bringing It All Together]
+
+slide_id: e823a076-90ba-43b2-88d4-7b73a587b342
+index_title: Bringing It All Together
+title: Bringing It All Together
+type: main
+---
+Throughout these courses, we have built the customer perspective step by step. First, **we segmented our customers** to understand who matters most. Then we **looked at profitability** to understand what we actually earn on them.
+
+**Linked Revenue** connected those customers to the products they buy and the suppliers behind them. From there, we could separate healthy complexity from unhealthy complexity and **make clearer choices about where to focus.**
+![image/size:large/align:center/frame:none](customers-where-to-play-how-to-win/Bringing-It-Together.png)
+
+The goal is to create clear priorities that shape behavior and, ultimately, improve results.
+---
+> [next] Continue -> b8a81aba-1819-4aa0-93ab-d41c44dc9e84
+
+[id:6/topic: Congratulations!]
+
+slide_id: b8a81aba-1819-4aa0-93ab-d41c44dc9e84
+index_title: Congratulations
+title: Congratulations! You’ve Completed the Customer Management Learning Path
+type: main
+layout: standard-2-col
+---
+Customers were the final missing dimension in our view of the value chain.
+
+You can now see customers, products and suppliers as one connected picture. You can identify which relationships create healthy complexity, which create unhealthy complexity, and use that understanding to make better decisions.
+
+You now have the foundation to decide who to serve, what to offer, where to play and how to win.
+![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
+---

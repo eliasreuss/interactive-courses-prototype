@@ -1832,6 +1832,19 @@ const PATHS = [
     category: 'products'
   },
   {
+    id: 'end2end',
+    title: 'End to End',
+    desc: 'Segment your customers, see what they really earn you, and align the whole value chain to decide where to play and how to win with Inact Now.',
+    courseCount: 5, duration: '48 min',
+    thumbnail: 'LP-thumbnails/LP-Thumbnail-Inventory-Solution.png',
+    href: 'customers-hub.html', pathParam: 'customers', hubFile: 'customers-hub.html',
+    courseIds: ['customers-intro','customer-segmentation','customer-profitability','linked-revenue','where-to-play-how-to-win'],
+    courseNames: ['Intro to Customer Management','Customer Segmentation','Customer Profitability','Linked Revenue','Where to Play, How to Win'],
+    courseFiles: { 'customers-intro': 'Customers-Intro-IN-UUID.txt', 'customer-segmentation': 'Customer-Segmentation-IN-UUID.txt', 'customer-profitability': 'Customer-Profitability-IN-UUID.txt', 'linked-revenue': 'Linked-Revenue-IN-UUID.txt', 'where-to-play-how-to-win': 'Where-To-Play-How-To-Win-IN-UUID.txt' },
+    gradFrom: '#2f3a2a', gradTo: '#4a5a42',
+    category: 'customers'
+  },
+  {
     id: 'admin',
     tabLabel: 'Super Users & Admins',
     illu: 'SVGs/LP-Illustrations/Admin-Illustration.png',
@@ -1845,17 +1858,6 @@ const PATHS = [
     courseFiles: { 'admin-intro': 'Admin-Intro.txt', 'admin-standard': 'Admin-Standard.txt', 'admin-custom': 'Admin-Custom.txt', 'admin-manage': 'Admin-Manage.txt' },
     gradFrom: '#303030', gradTo: '#505050',
     category: 'functionality'
-  },
-  {
-    id: 'end2end',
-    title: 'End to End',
-    desc: 'Map the interdependencies between your products, customers and suppliers - and align the entire value chain with Inact Now.',
-    courseCount: 4, duration: '35 min',
-    thumbnail: null, href: '#',
-    courseIds: [], courseNames: [],
-    comingSoon: true,
-    gradFrom: '#303030', gradTo: '#505050',
-    category: 'inventory'
   },
 ];
 
@@ -1900,7 +1902,7 @@ const SOLUTIONS = [
   { key: 'inventory',    name: 'Inventory',    label: 'What to stock?',  pathId: 'inventory-management', illu: 'SVGs/LP-Illustrations/Inventory-Illustration.png',      toggleBg: '#FFF9EC', bg: '#FFFDF9', btn: '#EEE0C3', btnT: '#2C2416', bdr: '#EDE3CC', dot: '#EEE0C3', bar: '#B8964E' },
   { key: 'suppliers',    name: 'Suppliers',    label: 'How to source?',  pathId: 'supplier-management',  illu: 'SVGs/LP-Illustrations/Suppliers-Illustration.png',      toggleBg: '#F4EEFF', bg: '#FDFCFF', btn: '#E1DBEB', btnT: '#221D2E', bdr: '#D8D0E8', dot: '#E1DBEB', bar: '#7B68AA' },
   { key: 'products',    name: 'Products',     label: 'What to offer?',  pathId: 'product-management',   illu: 'SVGs/LP-Illustrations/Products-Illustration.png',   toggleBg: '#FAF3D4', bg: '#FDFAEE', btn: '#EDE0A6', btnT: '#33290F', bdr: '#E6DAAC', dot: '#EDE0A6', bar: '#B49B33' },
-  { key: 'customers',   name: 'Customers',    label: 'Who to serve?',   pathId: 'end2end',              illu: 'SVGs/LP-Illustrations/Customers-Illustration.png',  soon: true, toggleBg: '#F1F4E9', bg: '#F8FAF4', btn: '#E3E8D8', btnT: '#222619', bdr: '#DDE3D0', dot: '#D0D5C5', bar: '#8A9672' },
+  { key: 'customers',   name: 'Customers',    label: 'Who to serve?',   pathId: 'end2end',             illu: 'SVGs/LP-Illustrations/Customers-Illustration.png',  toggleBg: '#F1F4E9', bg: '#F8FAF4', btn: '#E3E8D8', btnT: '#222619', bdr: '#DDE3D0', dot: '#D0D5C5', bar: '#8A9672' },
   { key: 'functionality', name: 'Software',   label: 'Inact Now',     pathId: 'now-fundamentals', pathIds: ['now-fundamentals', 'admin'],     illu: 'SVGs/LP-Illustrations/Now-Illustration.png',            toggleBg: '#F1F6FF', bg: '#F5F9FF', btn: '#DBE9FF', btnT: '#1A2535', bdr: '#D0DFEF', dot: '#DBE9FF', bar: '#5888D0' },
 ];
 
@@ -2933,6 +2935,7 @@ window.addEventListener('pageshow', e => { if (e.persisted) render(); });
     { courseIds: ['intro','double-abc','stock-policy','safety-stock','reorder-point','reorder-quantity'], courseNames: ['Introduction','Double ABC Analysis','Stock Policy','Safety Stock','Reorder Point','Reorder Quantity'], courseFiles: { 'intro': 'with-UUID/Intro-IN-UUID.txt', 'double-abc': 'with-UUID/Double-ABC-Analysis-4-IN-UUID.txt', 'stock-policy': 'with-UUID/Stock-Policy-IN-UUID.txt', 'safety-stock': 'with-UUID/Safety-Stock-IN-UUID.txt', 'reorder-point': 'with-UUID/Reorder-Point-IN-UUID.txt', 'reorder-quantity': 'with-UUID/Reorder-Quantity-IN-UUID.txt' }, pathParam: 'inventory', hubFile: 'hub.html' },
     { courseIds: ['suppliers-intro','supplier-performance','spend-analysis','supplier-negotiation'], courseNames: ['Intro to Supplier Management','Supplier Performance','Spend Analysis','Supplier Negotiation'], courseFiles: { 'suppliers-intro': 'with-UUID/Suppliers-Intro-2-IN-UUID.txt', 'supplier-performance': 'with-UUID/Supplier-Performance-IN-UUID.txt', 'spend-analysis': 'with-UUID/Spend-Analysis-IN-UUID.txt', 'supplier-negotiation': 'with-UUID/Supplier-Negotiation-IN-UUID.txt' }, pathParam: 'supplier', hubFile: 'supplier-hub.html' },
     { courseIds: ['products-intro','category-management','cost-to-serve','new-product-introduction','phase-out'], courseNames: ['Intro to Product Management','Category Management','Cost to Serve','New Product Introduction','Phase Out'], courseFiles: { 'products-intro': 'with-UUID/Products-Intro-IN-UUID.txt', 'category-management': 'with-UUID/Category-Management-IN-UUID.txt', 'cost-to-serve': 'with-UUID/Cost-to-Serve-IN-UUID.txt', 'new-product-introduction': 'with-UUID/New-Product-Introduction-IN-UUID.txt', 'phase-out': 'with-UUID/Phase-Out-IN-UUID.txt' }, pathParam: 'products', hubFile: 'products-hub.html' },
+    { courseIds: ['customers-intro','customer-segmentation','customer-profitability','linked-revenue','where-to-play-how-to-win'], courseNames: ['Intro to Customer Management','Customer Segmentation','Customer Profitability','Linked Revenue','Where to Play, How to Win'], courseFiles: { 'customers-intro': 'Customers-Intro-IN-UUID.txt', 'customer-segmentation': 'Customer-Segmentation-IN-UUID.txt', 'customer-profitability': 'Customer-Profitability-IN-UUID.txt', 'linked-revenue': 'Linked-Revenue-IN-UUID.txt', 'where-to-play-how-to-win': 'Where-To-Play-How-To-Win-IN-UUID.txt' }, pathParam: 'customers', hubFile: 'customers-hub.html' },
     { courseIds: ['now-intro','now-home','now-insights','now-actions','now-dashboards'], courseNames: ['Introduction','Home','Insights','Actions','Dashboards'], courseFiles: { 'now-intro': 'with-UUID/Now-Intro-IN-UUID.txt', 'now-home': 'with-UUID/Now-Home-IN-UUID.txt', 'now-insights': 'with-UUID/Now-Insights-IN-UUID.txt', 'now-actions': 'with-UUID/Now-Actions-IN-UUID.txt', 'now-dashboards': 'with-UUID/Now-Dashboards-IN-UUID.txt' }, pathParam: 'now', hubFile: 'now-hub.html' },
     { courseIds: ['admin-intro','admin-standard','admin-custom','admin-manage'], courseNames: ['Intro: Super Users & Admins','Your Standard Solution','Customising Your Solution','Managing Users'], courseFiles: { 'admin-intro': 'Admin-Intro.txt', 'admin-standard': 'Admin-Standard.txt', 'admin-custom': 'Admin-Custom.txt', 'admin-manage': 'Admin-Manage.txt' }, pathParam: 'admin', hubFile: 'admin-hub.html' }
   ];

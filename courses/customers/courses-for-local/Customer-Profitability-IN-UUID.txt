@@ -1,0 +1,76 @@
+[id:1/topic: Welcome to Customer Profitability]
+
+slide_id: b920502a-0a81-494e-a982-ea2cfe398c4f
+index_title: Welcome to Customer Profitability
+title: 
+type: hero
+---
+hero_image: placeholder-images/Illustration.png
+hero_subtitle: Welcome to the course:
+hero_title: Customer Profitability
+hero_body: In the previous course, you segmented your customer portfolio to understand which customers matter most.
+
+Now, we will go one level deeper and look at what we actually earn on the individual customer relationships.
+
+**Let’s get started.**
+---
+> [next] Let's do it! -> d3b9d969-9ba8-4213-9c52-35db1b2a4457
+
+[id:2/topic: Find Out Where It Hurts]
+
+slide_id: d3b9d969-9ba8-4213-9c52-35db1b2a4457
+index_title: Find Out Where It Hurts
+title: Find Out Where It Hurts
+type: main
+---
+Customer Segmentation gave us an overview of where revenue and profit are concentrated across the customer portfolio. But categories only give us the big picture.
+
+To understand where the business is performing well, and where there may be problems, we need to look closer at the individual customer relationships.
+![image/size:large/align:center/frame:none](customers-customer-profitability/roadmap-2.png)
+---
+> [next] Continue -> d85aed83-6ccc-4e09-a618-f99a71810110
+
+slide_id: d85aed83-6ccc-4e09-a618-f99a71810110
+index_title: Profit & Loss Statement Insight Walkthrough
+title: Profit & Loss Statement Insight Walkthrough
+type: main
+---
+To do this, we can use the Profit & Loss Statement Insight in Inact Now. Go through the tutorial below to take a closer look at customer profitability in your portfolio.
+![image/size:large/align:center/frame:none](customers-customer-profitability/Profit-Loss-Walkthrough.png)
+---
+> [next] Continue -> def8a787-4753-4b9a-9756-0c3d72e0cd2b
+
+[id:3/topic: Profitability Is Only Part of the Picture]
+
+slide_id: def8a787-4753-4b9a-9756-0c3d72e0cd2b
+index_title: Profitability Is Only Part of the Picture
+title: Profitability Is Only Part of the Picture
+type: main
+layout: standard-2-col
+---
+Knowing whether a customer is profitable is important.
+
+But profitability alone does not tell us what it takes to serve that customer.
+
+A customer may depend on a wide range of products, inventory and suppliers. Some of those relationships may be critical to the business, while others may create unnecessary complexity.
+
+To understand the full picture, we need to connect the customer to the rest of the value chain. This is exactly what we will explore in the next courses
+![image/size:large/align:right/frame:none](customers-customer-profitability/Customers-Products-Suppliers-Mess.png)
+---
+> [next] Continue -> ba573730-fb71-4d59-aa4e-a9f0902693d4
+
+[id:4/topic: What’s Next?]
+
+slide_id: ba573730-fb71-4d59-aa4e-a9f0902693d4
+index_title: Congratulations
+title: Congratulations! You’ve Completed Customer Profitability
+type: main
+layout: standard-2-col
+---
+You have completed Customer Profitability.
+
+Next, we move beyond the customer in isolation and look at the relationships between customers, products and suppliers.
+
+**Which relationships create value, and which create complexity?**
+![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
+---

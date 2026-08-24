@@ -1,0 +1,108 @@
+[id:1/topic: Welcome to Linked Revenue]
+
+slide_id: b7238acd-565d-40e9-a22f-6d17856ec055
+index_title: Welcome to Linked Revenue
+title: 
+type: hero
+---
+hero_image: placeholder-images/Illustration.png
+hero_subtitle: Welcome to the course:
+hero_title: Linked Revenue
+hero_body: In the previous courses, you segmented your customer portfolio and looked at the profitability of individual customer relationships.
+
+Now we will connect customers to the products they buy and the suppliers behind those products.
+
+**Let’s get started.**
+---
+> [next] Let's do it! -> d33db1e1-e53d-4cd9-a1d3-709f9839bbea
+
+[id:2/topic: Customers Do Not Exist in Isolation]
+
+slide_id: d33db1e1-e53d-4cd9-a1d3-709f9839bbea
+index_title: Customers Do Not Exist in Isolation
+title: Customers Do Not Exist in Isolation
+type: main
+---
+So far, we have looked at customers on their own. Before that, we looked at products and suppliers on their own.
+
+But these parts of the business are connected. Customers buy products, and those products depend on suppliers. Now we bring those relationships together.
+![image/size:large/align:center/frame:none](customers-linked-revenue/roadmap-3.png)
+---
+> [next] Continue -> b8c94b44-70d6-43f9-aebc-5dcd3c56ca9a
+
+[id:3/topic: Introducing Linked Revenue]
+
+slide_id: b8c94b44-70d6-43f9-aebc-5dcd3c56ca9a
+index_title: Introducing Linked Revenue
+title: Introducing Linked Revenue
+type: main
+layout: standard-2-col
+---
+Linked Revenue connects customers with the products they buy.
+
+This helps us understand which product relationships support the customers that matter to the business, and which relationships may need to be challenged.
+
+We can then follow those products back to the suppliers behind them and see the wider value chain.
+![video/size:large/align:right/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Customers/ABC-Linkage-Animation.mp4)
+---
+> [next] Continue -> a19d7b68-8f6f-4d74-9816-07d6c203d5b1
+
+[id:4/topic: Healthy and Unhealthy Complexity]
+
+slide_id: a19d7b68-8f6f-4d74-9816-07d6c203d5b1
+index_title: C Items Sold to Protect Customers Insight Walkthrough
+title: C Items Sold to Protect Customers Insight Walkthrough
+type: main
+---
+In the Inventory and Products courses, many C items looked like obvious candidates to reduce or remove. But we were looking at the product on its own. Before making that decision, we need to know who buys it.
+
+The **C Items Sold to Protect Customers** Insight helps us find C items that important customers still depend on. Go through the tutorial below.
+![image/size:large/align:center/frame:none](customers-linked-revenue/C-Items-Sold-Walkthrough.png)
+---
+> [next] Continue -> cb35f5ee-e4ed-4611-99e1-e0e342411c4e
+
+slide_id: cb35f5ee-e4ed-4611-99e1-e0e342411c4e
+index_title: Healthy Complexity - End to End Walkthrough
+title: Healthy Complexity - End to End Walkthrough
+type: main
+---
+We have now found C items that important customers buy. That changes the decision.
+
+Looking at the product alone, we may want to remove it. Looking at the customer relationship, we may decide that keeping it is necessary. This is **healthy complexity**. Complexity that exists because it supports customers that matter to the business.
+
+Now we can take the next step and see these relationships in End2End. Here, we can connect the customers to the products they buy and then follow those products back to the suppliers behind them.
+![image/size:large/align:center/frame:none](customers-linked-revenue/Healthy-Complexity-Walkthrough.png)
+---
+> [next] Continue -> d6423881-a584-4764-a391-92376146d3a9
+
+slide_id: d6423881-a584-4764-a391-92376146d3a9
+index_title: Unhealthy Complexity - End to End Walkthrough
+title: Unhealthy Complexity - End to End Walkthrough
+type: main
+---
+Now we can turn the analysis around.
+
+Some products may only exist because a small group of weak customers buy them.
+If nobody else buys those products, the relationship creates a very different type of complexity.
+This is where we need to question whether the products, inventory and customer relationship still make sense.
+
+Go through the tutorial below.
+![image/size:large/align:center/frame:none](customers-linked-revenue/Unhealthy-Complexity-Walkthrough.png)
+---
+> [next] Continue -> e8dffb25-9900-4860-a61b-345b25ae94ae
+
+[id:5/topic: What’s Next?]
+
+slide_id: e8dffb25-9900-4860-a61b-345b25ae94ae
+index_title: Congratulations
+title: Congratulations! You’ve Completed Linked Revenue
+type: main
+layout: standard-2-col
+---
+You can now connect customers to the products they buy and the suppliers behind them.
+
+This helps you distinguish between complexity that supports important customers and complexity that may need to be challenged.
+
+Next, we will use these relationships to see where the business should focus its commercial efforts.
+![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
+---

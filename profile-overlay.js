@@ -23,6 +23,7 @@
     { name: 'Inventory Management', courseIds: ['intro','double-abc','stock-policy','safety-stock','reorder-point','reorder-quantity'] },
     { name: 'Supplier Management',  courseIds: ['suppliers-intro','supplier-performance','spend-analysis','supplier-negotiation'] },
     { name: 'Product Management',  courseIds: ['products-intro','category-management','cost-to-serve','new-product-introduction','phase-out'] },
+    { name: 'End to End', courseIds: ['customers-intro','customer-segmentation','customer-profitability','linked-revenue','where-to-play-how-to-win'] },
     { name: 'Inact Now Fundamentals', courseIds: ['now-intro','now-home','now-insights','now-actions','now-dashboards'] },
     { name: 'Super Users & Admins', courseIds: ['admin-intro','admin-standard','admin-custom','admin-manage'] }
   ];
@@ -57,7 +58,7 @@
     { name: 'Supplier Management',    img: 'Achievements/Suppliers-Badge.svg',    earned: true },
     { name: 'Inact Now Fundamentals', img: 'Achievements/Fundamentals-Badge.svg', earned: true },
     { name: 'Super Users & Admins',   img: 'Achievements/Admins-Badge.svg',       earned: true },
-    { name: 'Customer Management',    img: 'Achievements/Empty-Achievement.svg',  earned: false },
+    { name: 'End to End',             img: 'Achievements/Empty-Achievement.svg',  earned: false },
     { name: 'Product Management',     img: 'Achievements/Empty-Achievement.svg',  earned: false }
   ];
 
