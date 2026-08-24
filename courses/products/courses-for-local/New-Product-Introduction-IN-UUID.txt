@@ -31,7 +31,7 @@ A customer asks for something. A supplier presents a new product. Or a new varia
 The result can be more products on the shelf without enough demand behind them. This is adding unhealthy complexity.
 
 If we do not follow up on new products, today’s new introductions can become tomorrow’s dead stock.
-![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
+![video/size:large/align:right/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Products/Overfilled-Shelf.mp4)
 ---
 > [next] Continue -> cc3f441d-88ae-4bbd-bb63-bee6684ba2c5
 
@@ -49,7 +49,7 @@ The **New Product Introduction Framework** helps us follow products introduced d
 **Let’s take a look at our own products.**
 
 [New Product Introduction Framework Insight walkthrough]
-![image/size:large/align:center/frame:none](placeholder-images/Click-through.png)
+![image/size:large/align:center/frame:none](products-new-product-introduction/New-P-Intro-Framework-Walkthrough.png)
 ---
 > [next] Continue -> c0257761-a6c8-497a-9be5-f4035abca749
 
@@ -59,21 +59,18 @@ slide_id: c0257761-a6c8-497a-9be5-f4035abca749
 index_title: Who Owns the Decision?
 title: Who Owns the Decision?
 type: main
-layout: standard-2-col
 ---
 The framework shows you which new products are performing and which are not. But it does not make the decisions for you.
 
 That requires clear rules and clear ownership.
 
-* Who decides which products are introduced?
-* Who is responsible for following them after launch?
-* And who decides when it is time to keep pushing or stop?
+![image/size:large/align:center/frame:none](products-new-product-introduction/Who-Owns-The-Decision.png)
 
 Once this is clear, the framework can support three types of decisions:
-
-![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
 ---
 > [next] Continue -> a23e92b7-6dca-4ba7-b6f3-a1dd270d9d7e
+
+[id:5/topic: Three Types of Decision the Framework Supports]
 
 slide_id: a23e92b7-6dca-4ba7-b6f3-a1dd270d9d7e
 index_title: What Do We Do With Products Already Introduced?
@@ -92,11 +89,9 @@ If a product falls behind, we can act while there is still time.
 * Does the product need more commercial attention?
 
 **The goal is to deal with weak introductions early, instead of discovering them as dead stock two years later.**
-![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
+![image/size:large/align:right/frame:none](products-new-product-introduction/Already-Introduced.png)
 ---
 > [next] Continue -> a83c8717-9bdb-4242-a2e8-9fcb360af692
-
-[id:5/topic: Make the Next Introduction Better]
 
 slide_id: a83c8717-9bdb-4242-a2e8-9fcb360af692
 index_title: Which Products Should We Introduce in the Future?
@@ -113,7 +108,7 @@ If you know a new product will be reviewed after a few months, it becomes natura
 * Have we spoken to the customer first?
 
 Sometimes the best decision is not to introduce the product at all.
-![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
+![image/size:large/align:right/frame:none](products-new-product-introduction/Introduce-In-Future.png)
 ---
 > [next] Continue -> f4bf6658-ba7f-4065-9f7a-ee64daaebec7
 
@@ -132,7 +127,7 @@ If that is the case, the question changes:
 ***Why is it not working for us?** Is it the price? The positioning? The customer base? Or the way we introduced it?
 
 The data gives you a better starting point for that conversation.
-![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
+![image/size:550px/align:right/frame:none](products-new-product-introduction/Discuss-With-Suppliers.png)
 ---
 > [next] Continue -> cf8e1490-02a3-4cb8-a2fa-2b764be733cc
 
