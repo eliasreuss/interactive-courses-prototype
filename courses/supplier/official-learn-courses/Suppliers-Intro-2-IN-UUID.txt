@@ -1,11 +1,11 @@
 slide_id: ecf98171-5fd9-437e-8e23-2121758d7569
-index_title: Welcome to Supplier Management with Inact Now
+index_title: Welcome to Supplier Management
 title: 
 type: hero
 ---
 hero_image: learn/images/87/e82b141e4c8650234750ce64beaa3804986203907bc350b67b9319a5d18b8fca
 hero_subtitle: Welcome to the learning path:
-hero_title: Supplier Management with Inact Now
+hero_title: Supplier Management
 hero_body: This is the intro to a four-part learning path. By the end, you will understand how to move beyond routine purchasing and adopt a more strategic approach. You will see exactly how to use Inact Now to measure supplier performance, analyze your spending patterns, and use those insights to negotiate better agreements.
 
 **Let’s get started!**

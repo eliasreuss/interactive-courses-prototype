@@ -79,7 +79,7 @@ type: main
 ---
 For most companies, 50–80% of total costs are related to the procurement spend. Spend analysis is the process of collecting, classifying, and analyzing a company’s purchasing data to understand how much money is spent, with which suppliers, and on what types of goods or services. 
 
-With Inact Now you gain the insights to work strategically with your supplier portfolio, identify cost-saving opportunities and improve supplier negotiations. 
+You gain the insights to work strategically with your supplier portfolio, identify cost-saving opportunities and improve supplier negotiations. 
 ![image/size:large/align:center/frame:none](learn/images/105/417e0d26920688579046fde5f66d3537d9b1b77df387ee327d5b63456e22b89c)
 ---
 > [next] Continue -> a8cf137b-ceaf-4300-8c68-6ca286b050bd
@@ -91,7 +91,7 @@ type: main
 ---
 The inventory holding cost is a reflection of your supplier portfolio and performance. Working strategically with your suppliers can lower working capital, reduce obsolescence and improve profit margins.        
 
-With Inact Now you gain the full overview of your inventory holding cost on supplier level and enable a structured approach to lowering your working capital.
+You gain the full overview of your inventory holding cost on supplier level and enable a structured approach to lowering your working capital.
 ![image/size:large/align:center/frame:none](learn/images/97/fc75889a20e0ced830b9745be5291aef8230b89c19ef3ab23cc4bb49f79bcee9)
 ---
 > [next] Continue -> f41d2a03-7127-4b92-8ceb-bebf73b373ca
@@ -103,7 +103,7 @@ type: main
 ---
 The inventory turnover ratio is a reflection of your stocking policies, lead times and volume. Working strategically with your supplier portfolio can improve your inventory turnover ratio without compromising service towards customers. 
 
-With Inact Now you gain the full overview of your inventory and the root-cause analysis that allows you to improve supplier performance. 
+You gain the full overview of your inventory and the root-cause analysis that allows you to improve supplier performance. 
 
 **Here is the calculation:**
 

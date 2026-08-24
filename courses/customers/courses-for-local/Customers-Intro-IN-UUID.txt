@@ -1,13 +1,13 @@
-[id:1/topic: Welcome to Customer Management]
+[id:1/topic: Welcome to End to End]
 
 slide_id: daf4051c-c535-4fc6-aaf3-0689da3209f8
-index_title: Welcome to Customer Management
+index_title: Welcome to End to End
 title: 
 type: hero
 ---
 hero_image: placeholder-images/Illustration.png
 hero_subtitle: Welcome to the course:
-hero_title: Intro to Customer Management
+hero_title: Intro to End to End
 hero_body: ....
 ---
 > [next] Let's do it! -> a01efe42-fae9-438a-842c-bd96149614bc
