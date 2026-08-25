@@ -14,8 +14,6 @@ hero_body: In this course, you will learn how to segment your customer portfolio
 ---
 > [next] Let's do it! -> c1c0529a-658b-4a29-b01d-3470b043213a
 
-[id:2/topic: Understanding Our Customers]
-
 slide_id: c1c0529a-658b-4a29-b01d-3470b043213a
 index_title: Understanding Our Customers
 title: Understanding Our Customers
@@ -28,17 +26,18 @@ Later, we will connect customers to the products they buy and the suppliers behi
 ---
 > [next] Continue -> a0279dde-de09-488e-b076-749576886aa7
 
-[id:3/topic: The Four Customer Categories]
+[id:2/topic: The Four Customer Categories]
 
 slide_id: a0279dde-de09-488e-b076-749576886aa7
 index_title: The Four Customer Categories
 title: The Four Customer Categories
 type: main
 ---
-Just as we did with Products, we divide our customers into four categories:
-![image/size:large/align:center/frame:none](customers-customer-segmentation/The-Four-Categories.png)
+So, how do we do this? 
 
-Just like different products, different customers require different levels of attention and prioritisation.
+Exactly as we did with Products, we divide our customers into the four categories we already know. Just like different products, different customers need different policies for how we serve and manage them.
+
+![image/size:large/align:center/frame:none](customers-customer-segmentation/The-Four-Categories.png)
 ---
 > [next] Continue -> aac71e54-7954-4c0c-a50c-fe65718b0f13
 
@@ -53,7 +52,7 @@ With the Customer Categorization Insight in Inact Now we can analyze our own cus
 ---
 > [next] Continue -> ff603b2d-457b-477a-8e30-bdd5dc3081d8
 
-[id:4/topic: What’s Next?]
+[id:3/topic: What’s Next?]
 
 slide_id: ff603b2d-457b-477a-8e30-bdd5dc3081d8
 index_title: Congratulations

@@ -62,7 +62,7 @@ index_title: The Four Categories
 title: The Four Categories
 type: main
 ---
-Using these two dimensions, we can divide the portfolio into four categories. The point is not to manage every product the same way, because they do not play the same role in the business.
+Using these two dimensions, we can divide the portfolio into four categories. Similar to the Double ABC Analysis, each product is assessed by its revenue and margin, and its performance on these two measures determines which category it belongs to.
 ![image/size:large/align:center/frame:none](products-category-management/Axes-And-Categories.png)
 ---
 > [next] Continue -> d831a1d7-b41d-4753-8aeb-3da0bc1282c4
@@ -101,11 +101,11 @@ title: Congratulations! You’ve Completed the Category Management Course
 type: main
 layout: standard-2-col
 ---
-You’ve learned how to compare product and category performance.
+You’ve learned what the four product categories mean and how they help you see where to focus.
 
 This gives you a clear starting point for deciding where to protect performance, improve margins, grow sales or take a closer look at weak products.
 
-In the next course, **Cost to Serve,** we will go one step further and look at what your products actually earn once the cost of serving them is included.
+In the next course, **Total Cost of Ownership,** we will go one step further and look at what your products actually earn once the cost of serving them is included.
 
 **Let’s keep going!**
 ![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)

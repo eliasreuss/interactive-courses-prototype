@@ -16,8 +16,6 @@ Now we will use that understanding to make clearer decisions about which custome
 ---
 > [next] Let's do it! -> a41c68bc-e627-4926-8964-235ba925c13e
 
-[id:2/topic: From Analysis to Decisions]
-
 slide_id: a41c68bc-e627-4926-8964-235ba925c13e
 index_title: From Analysis to Decisions
 title: From Analysis to Decisions
@@ -30,7 +28,7 @@ Now we need to decide what to do with that information. This is where we move fr
 ---
 > [next] Continue -> b1b2c27e-0888-40e6-bcd9-7044d99fcf47
 
-[id:3/topic: Setting Clear Policies]
+[id:2/topic: Setting Clear Policies]
 
 slide_id: b1b2c27e-0888-40e6-bcd9-7044d99fcf47
 index_title: Setting Clear Policies
@@ -56,13 +54,12 @@ In the previous course, we found that some C products are bought by important cu
 
 Once those relationships are protected, we can look at the remaining C products. One possible policy is **Kill it or Bill it.**
 
-Price the product so it earns the profit you require. If customers will not buy it at that price, phase it out.
-The goal is not to remove every C product. It is to make a deliberate decision about what stays, what goes and why.
+Price the product so it earns the profit you require. If customers will not buy it at that price, phase it out. The goal is not to remove every C product. It is to make a deliberate decision about what stays, what goes and why.
 ![image/size:550px/align:right/frame:none](customers-where-to-play-how-to-win/Kill-Or-Bill.png)
 ---
 > [next] Continue -> c4c2b3cd-4975-4843-be9a-7c031e52af8a
 
-[id:4/topic: Visualize Where to Act]
+[id:3/topic: Visualizing Where to Act]
 
 slide_id: c4c2b3cd-4975-4843-be9a-7c031e52af8a
 index_title: One Final Step
@@ -104,7 +101,7 @@ Go through the tutorial below to learn how to use the heatmap in Inact Now.
 ---
 > [next] Continue -> e823a076-90ba-43b2-88d4-7b73a587b342
 
-[id:5/topic: Bringing It All Together]
+[id:4/topic: Bringing It All Together]
 
 slide_id: e823a076-90ba-43b2-88d4-7b73a587b342
 index_title: Bringing It All Together
@@ -120,11 +117,11 @@ The goal is to create clear priorities that shape behavior and, ultimately, impr
 ---
 > [next] Continue -> b8a81aba-1819-4aa0-93ab-d41c44dc9e84
 
-[id:6/topic: Congratulations!]
+[id:5/topic: Congratulations!]
 
 slide_id: b8a81aba-1819-4aa0-93ab-d41c44dc9e84
 index_title: Congratulations
-title: Congratulations! You’ve Completed the Customer Management Learning Path
+title: Congratulations! You’ve Completed the End to End Learning Path
 type: main
 layout: standard-2-col
 ---

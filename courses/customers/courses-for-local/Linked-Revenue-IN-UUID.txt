@@ -16,8 +16,6 @@ Now we will connect customers to the products they buy and the suppliers behind 
 ---
 > [next] Let's do it! -> d33db1e1-e53d-4cd9-a1d3-709f9839bbea
 
-[id:2/topic: Customers Do Not Exist in Isolation]
-
 slide_id: d33db1e1-e53d-4cd9-a1d3-709f9839bbea
 index_title: Customers Do Not Exist in Isolation
 title: Customers Do Not Exist in Isolation
@@ -30,7 +28,7 @@ But these parts of the business are connected. Customers buy products, and those
 ---
 > [next] Continue -> b8c94b44-70d6-43f9-aebc-5dcd3c56ca9a
 
-[id:3/topic: Introducing Linked Revenue]
+[id:2/topic: Introducing Linked Revenue]
 
 slide_id: b8c94b44-70d6-43f9-aebc-5dcd3c56ca9a
 index_title: Introducing Linked Revenue
@@ -47,7 +45,7 @@ We can then follow those products back to the suppliers behind them and see the 
 ---
 > [next] Continue -> a19d7b68-8f6f-4d74-9816-07d6c203d5b1
 
-[id:4/topic: Healthy and Unhealthy Complexity]
+[id:3/topic: Healthy and Unhealthy Complexity]
 
 slide_id: a19d7b68-8f6f-4d74-9816-07d6c203d5b1
 index_title: C Items Sold to Protect Customers Insight Walkthrough
@@ -91,7 +89,7 @@ Go through the tutorial below.
 ---
 > [next] Continue -> e8dffb25-9900-4860-a61b-345b25ae94ae
 
-[id:5/topic: What’s Next?]
+[id:4/topic: What’s Next?]
 
 slide_id: e8dffb25-9900-4860-a61b-345b25ae94ae
 index_title: Congratulations
