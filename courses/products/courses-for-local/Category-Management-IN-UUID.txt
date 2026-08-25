@@ -5,7 +5,7 @@ index_title: Welcome to Category Management
 title: 
 type: hero
 ---
-hero_image: placeholder-images/Illustration.png
+hero_image: products-category-management/Hero.png
 hero_subtitle: Welcome to the course:
 hero_title: Category Management
 hero_body: In this course, you will learn how to identify which products and categories perform well, which ones need attention, and where the biggest opportunities are.
@@ -108,5 +108,5 @@ This gives you a clear starting point for deciding where to protect performance,
 In the next course, **Total Cost of Ownership,** we will go one step further and look at what your products actually earn once the cost of serving them is included.
 
 **Let’s keep going!**
-![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
+![image/size:large/align:right/frame:none](products-category-management/Hero.png)
 ---

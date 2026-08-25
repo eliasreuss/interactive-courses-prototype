@@ -5,7 +5,7 @@ index_title: Welcome to New Product Introduction
 title: 
 type: hero
 ---
-hero_image: placeholder-images/Illustration.png
+hero_image: products-new-product-introduction/Hero.png
 hero_subtitle: Welcome to the course:
 hero_title: New Product Introduction
 hero_body: Introducing new products is an important part of growing the business. But not every new product becomes a success.
@@ -144,5 +144,5 @@ You’ve learned how to follow new products after they enter the portfolio, iden
 But even with a better introduction process, every portfolio will contain products that have reached the end of their lifecycle. In the next course, Phase Out, we will look at how to identify which products should leave the portfolio.
 
 **Let’s keep going!**
-![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
+![image/size:large/align:right/frame:none](products-new-product-introduction/Hero.png)
 ---

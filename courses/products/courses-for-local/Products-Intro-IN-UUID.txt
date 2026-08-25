@@ -5,7 +5,7 @@ index_title: Welcome to the Course: Intro to Product Management
 title: 
 type: hero
 ---
-hero_image: placeholder-images/Illustration.png
+hero_image: products-intro/Hero.png
 hero_subtitle: Welcome to the course:
 hero_title: Intro to Product Management
 hero_body: ....
