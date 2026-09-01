@@ -14,9 +14,19 @@ In this course, we will look at the question: How are our new products performin
 
 **Let’s get started!**
 ---
-> [next] Let's do it! -> afa45375-b581-4a72-8d5a-d0fd8bb73b75
+> [next] Let's do it! -> b3e262a3-ddd3-4d18-bc2a-c9af9ffd69bc
 
-[id:2/topic: Are We Introducing the Right Products?]
+slide_id: b3e262a3-ddd3-4d18-bc2a-c9af9ffd69bc
+index_title: The First Stage of the Product Lifecycle
+title: The First Stage of the Product Lifecycle
+type: main
+---
+You already know the product lifecycle. In this course, we focus on the very beginning. The goal is to make sure new products get the right start and that we quickly see whether they are developing as expected.
+
+The key question is simple: **Are we introducing the right products?**
+![image/size:large/align:center/frame:none](products-new-product-introduction/Lifecycle-Introduction.png)
+---
+> [next] Continue -> afa45375-b581-4a72-8d5a-d0fd8bb73b75
 
 slide_id: afa45375-b581-4a72-8d5a-d0fd8bb73b75
 index_title: Are We Introducing the Right Products?
@@ -29,31 +39,54 @@ New products are not always introduced based on data.
 A customer asks for something. A supplier presents a new product. Or a new variant simply looks like a good opportunity, even though we may already have several similar products.
 
 The result can be more products on the shelf without enough demand behind them. This is adding unhealthy complexity.
-
-If we do not follow up on new products, today’s new introductions can become tomorrow’s dead stock.
 ![video/size:large/align:right/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Products/Overfilled-Shelf.mp4)
+---
+> [next] Continue -> 5c2aead5-f16b-48ce-8d1e-1439354cbadf
+
+slide_id: 5c2aead5-f16b-48ce-8d1e-1439354cbadf
+index_title: What Happens After Launch?
+title: What Happens After Launch?
+type: main
+layout: standard-2-col
+---
+The problem is not just that new products add complexity. Many of them never develop into strong products.
+
+Exact failure rates vary by industry and by how failure is measured, but estimates often place new product failure at around **30 to 50 percent,** with some industries reporting even higher rates.
+
+That makes early follow up critical. The sooner we see that a new product is falling behind, the sooner we can decide what to do about it.
+
+**If we do not follow up on new products, today’s new introductions can become tomorrow’s dead stock.**
+![video/size:large/align:right/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Products/Failing-Products.mp4)
 ---
 > [next] Continue -> cc3f441d-88ae-4bbd-bb63-bee6684ba2c5
 
-[id:3/topic: Find Out What Happens After Launch]
+[id:2/topic: NPI Framework]
 
 slide_id: cc3f441d-88ae-4bbd-bb63-bee6684ba2c5
-index_title: Follow the Product From the Start
-title: Follow the Product From the Start
+index_title: The NPI Framework
+title: The NPI Framework
 type: main
 ---
-So how do we prevent this? Once a product has been introduced, we need to follow its development. Is it gaining traction? Is it moving towards becoming a strong product? Or has it been in the portfolio for months without enough sales?
+So how do we prevent this? 
 
-The **New Product Introduction Framework** helps us follow products introduced during the last 12 months and see how they are developing.
+Once a product is introduced, we need to follow how it develops. The NPI Framework tracks new products during their first 12 months and shows whether they are gaining traction or falling behind.
 
-**Let’s take a look at our own products.**
+In each period, products are assessed on revenue and net margin. Your organisation sets the exact thresholds. **The example below shows what the framework can look like:**
+![image/size:large/align:center/frame:none](products-new-product-introduction/NPI-Framework-Graphic.png)
+---
+> [next] Continue -> 8f4b0d55-4f3a-4b16-9a3e-1f7e6c2d0a91
 
-[New Product Introduction Framework Insight walkthrough]
+slide_id: 8f4b0d55-4f3a-4b16-9a3e-1f7e6c2d0a91
+index_title: New Product Introduction Framework - Insight Walkthrough
+title: New Product Introduction Framework - Insight Walkthrough
+type: main
+---
+Let’s take a look at our own products. Go through the tutorial below to learn how to use the NPI Framework Insight.
 ![image/size:large/align:center/frame:none](products-new-product-introduction/New-P-Intro-Framework-Walkthrough.png)
 ---
 > [next] Continue -> c0257761-a6c8-497a-9be5-f4035abca749
 
-[id:4/topic: Who Owns the Decision?]
+[id:3/topic: Governance]
 
 slide_id: c0257761-a6c8-497a-9be5-f4035abca749
 index_title: Who Owns the Decision?
@@ -69,8 +102,6 @@ That requires clear rules and clear ownership.
 Once this is clear, the framework can support three types of decisions:
 ---
 > [next] Continue -> a23e92b7-6dca-4ba7-b6f3-a1dd270d9d7e
-
-[id:5/topic: Three Types of Decision the Framework Supports]
 
 slide_id: a23e92b7-6dca-4ba7-b6f3-a1dd270d9d7e
 index_title: What Do We Do With Products Already Introduced?
@@ -124,14 +155,14 @@ A supplier may tell you that the same product is performing well with other cust
 
 If that is the case, the question changes:
 
-***Why is it not working for us?** Is it the price? The positioning? The customer base? Or the way we introduced it?
+* **Why is it not working for us?** Is it the price? The positioning? The customer base? Or the way we introduced it?
 
 The data gives you a better starting point for that conversation.
 ![image/size:550px/align:right/frame:none](products-new-product-introduction/Discuss-With-Suppliers.png)
 ---
 > [next] Continue -> cf8e1490-02a3-4cb8-a2fa-2b764be733cc
 
-[id:6/topic: What’s Next?]
+[id:4/topic: What’s Next?]
 
 slide_id: cf8e1490-02a3-4cb8-a2fa-2b764be733cc
 index_title: Congratulations

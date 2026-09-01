@@ -14,8 +14,6 @@ hero_body: In this course, you will learn how to identify which products and cat
 ---
 > [next] Let's do it! -> eb2a3812-a562-46ff-bef3-223d74117d10
 
-[id:2/topic: Where Are We Making Money?]
-
 slide_id: eb2a3812-a562-46ff-bef3-223d74117d10
 index_title: Where Are We Making Money, and Where Are We Not?
 title: Where Are We Making Money, and Where Are We Not?
@@ -26,10 +24,12 @@ A product portfolio can contain thousands of items across many different categor
 
 Some products sell in high volumes and generate healthy margins. Others sell well but contribute very little profit. Some have attractive margins but never gain enough volume, and some do neither.
 
-The challenge is getting a clear view of where the business is healthy and where it needs attention.
-![image/size:large/align:right/frame:none](products-category-management/Tools-On-Shelf.png)
+Looking at the right KPIs helps us get a clear view of where the business is healthy and where it needs attention.
+![image/size:550px/align:right/frame:none](products-category-management/Three-KPIs.png)
 ---
 > [next] Continue -> df020b81-2d0d-4e07-a8d4-7a3e17563d80
+
+[id:2/topic: KPI Performance]
 
 slide_id: df020b81-2d0d-4e07-a8d4-7a3e17563d80
 index_title: Start With the Big Picture
@@ -49,21 +49,14 @@ slide_id: eb51be1b-3796-4c0d-a6e7-93c41cd475f6
 index_title: From Performance to Strategy
 title: From Performance to Strategy
 type: main
+layout: standard-2-col
 ---
-The KPI Benchmark gives us a detailed view of performance. But with thousands of products, we still need a simple way to decide where to focus.
+Now that you know what to measure, where do we start? With thousands of products, we can’t tackle them all at once.
 
-This is where categorization helps. We look at every product through two commercial lenses: **Revenue** and **Margin**.
-![image/size:large/align:center/frame:none](products-category-management/Axes-Empty.png)
----
-> [next] Continue -> af1bc7c1-3e78-4d27-ab25-492ff5472915
+We need to focus our energy where it creates the biggest impact.
 
-slide_id: af1bc7c1-3e78-4d27-ab25-492ff5472915
-index_title: The Four Categories
-title: The Four Categories
-type: main
----
-Using these two dimensions, we can divide the portfolio into four categories. Similar to the Double ABC Analysis, each product is assessed by its revenue and margin, and its performance on these two measures determines which category it belongs to.
-![image/size:large/align:center/frame:none](products-category-management/Axes-And-Categories.png)
+**Therefore, we categorize our products to find the ones that matter most.**
+![image/size:large/align:right/frame:none](products-category-management/Four-Categories-Only-Icons-And-Titles.png)
 ---
 > [next] Continue -> d831a1d7-b41d-4753-8aeb-3da0bc1282c4
 
@@ -73,11 +66,24 @@ title: Different Categories, Different Questions
 type: main
 ---
 Once products are categorized, the next questions become clearer.
-![image/size:large/align:center/frame:none](products-category-management/Categories-Only.png)
+![image/size:large/align:center/frame:none](products-category-management/Four-Categories-Icons-Titles-Questions.png)
+---
+> [next] Continue -> af1bc7c1-3e78-4d27-ab25-492ff5472915
+
+slide_id: af1bc7c1-3e78-4d27-ab25-492ff5472915
+index_title: The Four Categories
+title: The Four Categories
+type: main
+---
+So, what are the categories based on?
+
+We look at each product through two commercial lenses: **Revenue and Margin.**
+
+Similar to the Double ABC Analysis, each product is assessed on both measures. Its combination of revenue and margin determines which category it belongs to.
+
+![image/size:large/align:center/frame:none](products-category-management/Axes-And-Categroies-With-Icons.png)
 ---
 > [next] Continue -> c8b8f670-3203-40a2-9ff5-2e03ea86ec3b
-
-[id:4/topic: See It in Your Own Portfolio]
 
 slide_id: c8b8f670-3203-40a2-9ff5-2e03ea86ec3b
 index_title: Category Management Insight Walkthrough
@@ -88,10 +94,26 @@ Now that you know the four categories, let’s apply them to your own portfolio.
 
 The **Category Management Insight** shows how your products are split across Protect, Develop, Grow and Turnaround.
 
-[Category Management Insight walkthrough]
 ![image/size:large/align:center/frame:none](products-category-management/Category-Management-Walkthrough.png)
 ---
-> [next] Continue -> fa52b4fe-fc76-4dde-bf54-d756fe5fbe78
+> [next] Continue -> ecf6e08b-f56a-4d70-acf1-55d846d14f92
+
+[id:4/topic: Profit & Loss]
+
+slide_id: ecf6e08b-f56a-4d70-acf1-55d846d14f92
+index_title: Profit & Loss
+title: 
+type: main
+---
+Denne del bliver lavet når profit and loss statement er oppe at køre.
+Det jeg i hvert fald tænker der skal være med er:
+
+* det koster ofte mere for dig at sælge produkter end du tror.
+* Hvad er direkte vs. indirekte spend. (PDF grafik)
+* DB1 DB2. vis det i Now (ikke click-through). (Skal det sættes op?)
+* Profit & Loss Insight walkthrough
+---
+> [next] Let's do it! -> fa52b4fe-fc76-4dde-bf54-d756fe5fbe78
 
 [id:5/topic: What’s Next?]
 
@@ -105,7 +127,7 @@ You’ve learned what the four product categories mean and how they help you see
 
 This gives you a clear starting point for deciding where to protect performance, improve margins, grow sales or take a closer look at weak products.
 
-In the next course, **Total Cost of Ownership,** we will go one step further and look at what your products actually earn once the cost of serving them is included.
+In the next course, **New Product Introduction,** we will look at how to follow new products after launch and decide early whether to keep pushing or stop.
 
 **Let’s keep going!**
 ![image/size:large/align:right/frame:none](products-category-management/Hero.png)
