@@ -64,7 +64,7 @@ type: main
 The easiest place to start is with products that have already stopped selling. The **Dead Items Insight** gives you an overview of products with no sales during the last 12 months and shows how much inventory is still tied up in them.
 
 **Go through the tutorial below to find the dead products in your own portfolio.**
-![image/size:large/align:center/frame:none](products-phase-out/Dead-Items-Walkthrough.png)
+[supademo: Dead Items - Insight Walkthrough](https://app.supademo.com/embed/cmtsnfr5v4f5iqm302acsrnly?embed_v=2&utm_source=embed)
 ---
 > [next] Continue -> f1479a3f-bf8d-4f68-bd26-bb736df0affa
 

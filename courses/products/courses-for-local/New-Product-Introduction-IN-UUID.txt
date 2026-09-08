@@ -82,7 +82,7 @@ title: New Product Introduction Framework - Insight Walkthrough
 type: main
 ---
 Let’s take a look at our own products. Go through the tutorial below to learn how to use the NPI Framework Insight.
-![image/size:large/align:center/frame:none](products-new-product-introduction/New-P-Intro-Framework-Walkthrough.png)
+[supademo: New Product Introduction Framework - Insight Walkthrough](https://app.supademo.com/embed/cmtsfgd6v3twpqm30q0g5k86b?embed_v=2&utm_source=embed)
 ---
 > [next] Continue -> c0257761-a6c8-497a-9be5-f4035abca749
 
