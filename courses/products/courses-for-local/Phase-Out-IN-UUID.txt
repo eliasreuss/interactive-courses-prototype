@@ -95,7 +95,7 @@ Therefore, before we phase out our bad products, we need to ask: **Who’s buyin
 A Turnaround product that is not purchased by any important customers is very different from a Turnaround product that an important customer depends on.
 
 The **Potential Phase Outs Insight** helps us find the bad performing products that no important customers are buying. Go through the tutorial below to learn how to use it effectively:
-![image/size:large/align:center/frame:none](products-phase-out/Potential-Phase-Outs-Walkthrough.png)
+[supademo: Potential Phase Outs - Insight Walkthrough](https://app.supademo.com/embed/cmu0ymor01wzxqme9fs6pmk21?embed_v=2&utm_source=embed)
 ---
 > [next] Continue -> eceb22bd-ec93-4648-a01f-6825c31b6c4a
 
