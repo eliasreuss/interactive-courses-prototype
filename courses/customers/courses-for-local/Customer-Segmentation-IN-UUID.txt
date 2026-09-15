@@ -48,7 +48,7 @@ type: main
 ---
 With the Customer Categorization Insight in Inact Now we can analyze our own customer portfolio, and see how our customers are distributed in the categories.
 
-![image/size:large/align:center/frame:none](customers-customer-segmentation/Customer-Categorization-Walkthrough.png)
+[supademo: Customer Categorization - Insight Walkthrough](https://app.supademo.com/embed/cmu2ple3s02liqm12bksjyon0?embed_v=2&utm_source=embed)
 ---
 > [next] Continue -> ff603b2d-457b-477a-8e30-bdd5dc3081d8
 
