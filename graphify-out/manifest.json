@@ -1,0 +1,3302 @@
+{
+  ".agents/skills/impeccable/scripts/cleanup-deprecated.mjs": {
+    "mtime": 1777971831.458717,
+    "ast_hash": "95307241a1c8d204b9d7ad3b0772f9dd",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/scripts/command-metadata.json": {
+    "mtime": 1777971831.4587135,
+    "ast_hash": "be041003b8f0a0bee2d188622433f3ad",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/scripts/design-parser.mjs": {
+    "mtime": 1777971831.4591067,
+    "ast_hash": "7a7bf9ea0250f5cb3ddb972e3f909cfd",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/scripts/detect-csp.mjs": {
+    "mtime": 1777971831.4589682,
+    "ast_hash": "02c5a9a8ad69f87d23af72bf580fd3f4",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/scripts/impeccable-paths.mjs": {
+    "mtime": 1777971831.4590905,
+    "ast_hash": "4cd8661375662ac57b339dd57a896aab",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/scripts/is-generated.mjs": {
+    "mtime": 1777971831.459096,
+    "ast_hash": "edd718b1a4737edbf9631ff7f6f512ef",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/scripts/live-accept.mjs": {
+    "mtime": 1777971831.4592469,
+    "ast_hash": "5b6cf671bb292c4052cc320d7c53090d",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/scripts/live-browser-session.js": {
+    "mtime": 1777971831.4597478,
+    "ast_hash": "5dec3dae6158050d69762fb79facaf48",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/scripts/live-browser.js": {
+    "mtime": 1777971831.4595585,
+    "ast_hash": "e4c109452e660506a421058f4527593f",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/scripts/live-complete.mjs": {
+    "mtime": 1777971831.4592888,
+    "ast_hash": "ac0ba59701ad5fa70d0dea5b05dc1ac7",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/scripts/live-completion.mjs": {
+    "mtime": 1777971831.4594865,
+    "ast_hash": "10ef700bb4d62ae8548f4940aaa4ddd3",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/scripts/live-inject.mjs": {
+    "mtime": 1777971831.459552,
+    "ast_hash": "7c921f7706aacc52aee069d5f8ccd94c",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/scripts/live-poll.mjs": {
+    "mtime": 1777971831.4600017,
+    "ast_hash": "be4a28a1fceaa4d58613a871a569299c",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/scripts/live-resume.mjs": {
+    "mtime": 1777971831.459633,
+    "ast_hash": "0c2be72d8326ab714baeee6f61deaf2c",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/scripts/live-server.mjs": {
+    "mtime": 1777971831.4597316,
+    "ast_hash": "1ed1b3b52b366a32c0b83fb3af733113",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/scripts/live-session-store.mjs": {
+    "mtime": 1777971831.459746,
+    "ast_hash": "320fc0e3b9ef3435bb087edb2d0ee9ac",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/scripts/live-status.mjs": {
+    "mtime": 1777971831.460008,
+    "ast_hash": "88bba34d5e6a399b76be7cbfa6b8f003",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/scripts/live-wrap.mjs": {
+    "mtime": 1777971831.4604053,
+    "ast_hash": "7b9232a1c4ae561ba9ae7460b133cc13",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/scripts/live.mjs": {
+    "mtime": 1777971831.4600077,
+    "ast_hash": "831c1fb0e6d3799ed99d3abdd075192d",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/scripts/load-context.mjs": {
+    "mtime": 1777971831.460268,
+    "ast_hash": "f6a444442298b457279893432648016d",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/scripts/modern-screenshot.umd.js": {
+    "mtime": 1777971831.4604077,
+    "ast_hash": "4fe5f9e490ab4f107afc707d7eafc819",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/scripts/pin.mjs": {
+    "mtime": 1777971831.4603977,
+    "ast_hash": "1b1389e2c3af604305e18377204eaad8",
+    "semantic_hash": ""
+  },
+  ".claude/settings.json": {
+    "mtime": 1783500713.9411383,
+    "ast_hash": "71449acc7b7e14e09ce51dacc7694e1c",
+    "semantic_hash": ""
+  },
+  ".impeccable/design.json": {
+    "mtime": 1783502148.8216958,
+    "ast_hash": "12a182db636efc81b814d04983ced84b",
+    "semantic_hash": ""
+  },
+  "Achievements/Inventory-Achievement-Click-Animation.json": {
+    "mtime": 1778077579.3649457,
+    "ast_hash": "5d2dae115532049da7d930fb1408dd6a",
+    "semantic_hash": ""
+  },
+  "generate_uuid_files.py": {
+    "mtime": 1781014267.8708313,
+    "ast_hash": "564c9aa2e5b4849c4416aaf88b1bd1c5",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/ANIFRAME.json": {
+    "mtime": 1770975743.0680203,
+    "ast_hash": "67f2edc6ff2ba996aa6a026939488957",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/ANIFRAMEold.json": {
+    "mtime": 1767805334.9715347,
+    "ast_hash": "500bea47b7b9f81e0d5e7a18ecbcdf4e",
+    "semantic_hash": ""
+  },
+  "profile-overlay.js": {
+    "mtime": 1788266981.2950869,
+    "ast_hash": "1df710deccffaacd4bdaeb3e906a6708",
+    "semantic_hash": ""
+  },
+  "react-handoff/components/CourseCard/CourseCard.jsx": {
+    "mtime": 1771405982.762269,
+    "ast_hash": "29d766277f8b762d068fecf2680c7afd",
+    "semantic_hash": ""
+  },
+  "react-handoff/components/CourseGrid/CourseGrid.jsx": {
+    "mtime": 1770906753.021997,
+    "ast_hash": "35d19667a94fba11bc04f5620b43e182",
+    "semantic_hash": ""
+  },
+  "react-handoff/components/HeroHeader/HeroHeader.jsx": {
+    "mtime": 1770973675.0979238,
+    "ast_hash": "f11456a329b470e7b222f731f0dcdfaa",
+    "semantic_hash": ""
+  },
+  "react-handoff/components/HubPage/HubPage.jsx": {
+    "mtime": 1770906753.022899,
+    "ast_hash": "53483b0e9403cd75583a7496e6e0b83d",
+    "semantic_hash": ""
+  },
+  "react-handoff/components/TopNav/TopNav.jsx": {
+    "mtime": 1770906753.0231323,
+    "ast_hash": "1b77666f21c311ef8767717550d2969a",
+    "semantic_hash": ""
+  },
+  "react-handoff/data/courses.js": {
+    "mtime": 1770978991.1520019,
+    "ast_hash": "86b9a325526bc9cd928ade670d8df997",
+    "semantic_hash": ""
+  },
+  "skills-lock.json": {
+    "mtime": 1778051516.4147985,
+    "ast_hash": "cacfa32de127180ef2dde993b43f36aa",
+    "semantic_hash": ""
+  },
+  ".agents/skills/extract-design/SKILL.md": {
+    "mtime": 1778051516.4117568,
+    "ast_hash": "417e20f9b7064a4913f6ba61c7951e31",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/SKILL.md": {
+    "mtime": 1777971831.453805,
+    "ast_hash": "cbd0006c9d82552cb6b75ef0c2030eb2",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/adapt.md": {
+    "mtime": 1777971831.454738,
+    "ast_hash": "e0ede4493698e28a2fe582bd5366a7f5",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/animate.md": {
+    "mtime": 1777971831.4548712,
+    "ast_hash": "88cab546cd013d84339c02b92bba58e5",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/audit.md": {
+    "mtime": 1777971831.4549963,
+    "ast_hash": "6f958ff90c4e67d6877a607e02f16553",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/bolder.md": {
+    "mtime": 1777971831.4558032,
+    "ast_hash": "7033c256497ceb25be2387e3fc27dc80",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/brand.md": {
+    "mtime": 1777971831.4555304,
+    "ast_hash": "803c0318f2b0253f8dfd41a5cc1562d5",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/clarify.md": {
+    "mtime": 1777971831.4551244,
+    "ast_hash": "66dad8f334e530bd9fb07f3b59ef6180",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/cognitive-load.md": {
+    "mtime": 1777971831.4552553,
+    "ast_hash": "45ea35a19d49049cdda7ef9a8f9441a0",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/color-and-contrast.md": {
+    "mtime": 1777971831.455806,
+    "ast_hash": "c4bd07b970b5a51fbdd160122be9c2d5",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/colorize.md": {
+    "mtime": 1777971831.4558046,
+    "ast_hash": "044a3eb7ef18c681ad0143f2c983e08d",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/craft.md": {
+    "mtime": 1777971831.4561214,
+    "ast_hash": "9054a868026f70b1b664972b27ed2218",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/critique.md": {
+    "mtime": 1777971831.4559345,
+    "ast_hash": "97729d9a67f8dc496211ba0dc22c7a2f",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/delight.md": {
+    "mtime": 1777971831.4561198,
+    "ast_hash": "a7667abc05a7e67bd0eca341dd2f8661",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/distill.md": {
+    "mtime": 1777971831.4561102,
+    "ast_hash": "d73355d80b876f0421361159e96df478",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/document.md": {
+    "mtime": 1777971831.4562817,
+    "ast_hash": "a6fb0b8d06bd182a3a037559c0b057c9",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/extract.md": {
+    "mtime": 1777971831.45625,
+    "ast_hash": "88b616c2be9a4a91553237dcf5cc79c8",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/harden.md": {
+    "mtime": 1777971831.4565175,
+    "ast_hash": "244327cb684a938c497bd40593d1b9c0",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/heuristics-scoring.md": {
+    "mtime": 1777971831.4567754,
+    "ast_hash": "8620ea69160ca53e97bccfffde2b902d",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/interaction-design.md": {
+    "mtime": 1777971831.4565194,
+    "ast_hash": "af8ee67d75be74424f33acb14b12fc53",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/layout.md": {
+    "mtime": 1777971831.456671,
+    "ast_hash": "9e96dfecdad66058c0bcad91797a1da0",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/live.md": {
+    "mtime": 1777971831.45794,
+    "ast_hash": "6cb26cf50c92edfbbff103601c4beca6",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/motion-design.md": {
+    "mtime": 1777971831.4569185,
+    "ast_hash": "5e8464e05b80b9f754021f6775673e1a",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/onboard.md": {
+    "mtime": 1777971831.4572988,
+    "ast_hash": "9a359c12f2d6785fe586d313e0be5eaa",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/optimize.md": {
+    "mtime": 1777971831.4571652,
+    "ast_hash": "6ec8469d7a74266115b59747a9772374",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/overdrive.md": {
+    "mtime": 1777971831.4572973,
+    "ast_hash": "fcd853d2fabd1f04b2d2562e992ec266",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/personas.md": {
+    "mtime": 1777971831.45755,
+    "ast_hash": "2fb1a7e3461ea4ed976c1f52f59db505",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/polish.md": {
+    "mtime": 1777971831.4575493,
+    "ast_hash": "68acd2c5879309056f322ef5fcc42f9a",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/product.md": {
+    "mtime": 1777971831.4576814,
+    "ast_hash": "41692c6cfb61d391d221be49981308a6",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/quieter.md": {
+    "mtime": 1777971831.4578128,
+    "ast_hash": "6a6bfd68d147a6ebf46981df655b6801",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/responsive-design.md": {
+    "mtime": 1777971831.4579356,
+    "ast_hash": "63aba44e803e67013f01721584f3c1d8",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/shape.md": {
+    "mtime": 1777971831.4580796,
+    "ast_hash": "716cc7bd0b4c9220c3e62c40b452363f",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/spatial-design.md": {
+    "mtime": 1777971831.457943,
+    "ast_hash": "9af5ed3dfb4a5560ffbcfc1610e926fb",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/teach.md": {
+    "mtime": 1777971831.4582036,
+    "ast_hash": "a1b59bc35d39a4ef3e23b632bd6e5426",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/typeset.md": {
+    "mtime": 1777971831.4583356,
+    "ast_hash": "d78c649fb34c4310163887e6714173ce",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/typography.md": {
+    "mtime": 1777971831.4587119,
+    "ast_hash": "7845ab35446e5d4df790096ab3582f4e",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/ux-writing.md": {
+    "mtime": 1777971831.4584663,
+    "ast_hash": "4372081cccf2d3cae2dda4365286c27d",
+    "semantic_hash": ""
+  },
+  ".claude/skills/clean-code/SKILL.md": {
+    "mtime": 1777971256.2612605,
+    "ast_hash": "c1b8621e6f076899c967b8be1eb740f3",
+    "semantic_hash": ""
+  },
+  ".claude/skills/design-critique/SKILL.md": {
+    "mtime": 1777971192.1414776,
+    "ast_hash": "1416042a2bfb6f8680aba2defc4734c5",
+    "semantic_hash": ""
+  },
+  ".claude/skills/security-guard/SKILL.md": {
+    "mtime": 1777971234.3145273,
+    "ast_hash": "336720e51c37580bea8755ce16f1b6eb",
+    "semantic_hash": ""
+  },
+  ".claude/skills/seo-audit/SKILL.md": {
+    "mtime": 1777971211.4234118,
+    "ast_hash": "7e902c31ba6e00d43daa13046a7f402c",
+    "semantic_hash": ""
+  },
+  ".claude/skills/token-saver/SKILL.md": {
+    "mtime": 1777971180.5493867,
+    "ast_hash": "64b0a9f96b1e86cc4a901855963c8a6e",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1783500713.9406095,
+    "ast_hash": "82efb97a359f5c7290bf2513d14686be",
+    "semantic_hash": ""
+  },
+  "DESIGN.md": {
+    "mtime": 1783502161.9207904,
+    "ast_hash": "452aaa9a2e287f92aabb4252ad457152",
+    "semantic_hash": ""
+  },
+  "DEVELOPER_PROGRESS_GUIDE.md": {
+    "mtime": 1773133632.2938614,
+    "ast_hash": "58c9ee084f6f48ca3462f08d441ddc2f",
+    "semantic_hash": ""
+  },
+  "DEVELOPER_SPECIFICATION.md": {
+    "mtime": 1783686144.2554452,
+    "ast_hash": "5db883924205cf806f17f832686c40d2",
+    "semantic_hash": ""
+  },
+  "PRODUCT.md": {
+    "mtime": 1783585229.2897983,
+    "ast_hash": "19ebac8ab422b0c55639f0f13f17f0d4",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1776255357.5720623,
+    "ast_hash": "a55f9642d2e474f7953a2bb6528a6957",
+    "semantic_hash": ""
+  },
+  "SUPADEMO_WALKTHROUGHS.md": {
+    "mtime": 1788870009.1489503,
+    "ast_hash": "e5ca43ab9fe8320fec10a149c5815369",
+    "semantic_hash": ""
+  },
+  "_dbg.html": {
+    "mtime": 1787068243.8854573,
+    "ast_hash": "92fd9f2646f2d58a2300b3cf03e1583b",
+    "semantic_hash": ""
+  },
+  "admin-hub.html": {
+    "mtime": 1788266981.2943792,
+    "ast_hash": "5105a168a5364a413c52c826d80f6909",
+    "semantic_hash": ""
+  },
+  "animation-playground.html": {
+    "mtime": 1776863959.563874,
+    "ast_hash": "f2af5243fca38ef8ab5fb5068c628f52",
+    "semantic_hash": ""
+  },
+  "catalog.html": {
+    "mtime": 1788266991.6612678,
+    "ast_hash": "d898c4e336c15248aa2529a2a2753674",
+    "semantic_hash": ""
+  },
+  "course.html": {
+    "mtime": 1788266991.6632984,
+    "ast_hash": "d0829d198587baf824b3a70020de8136",
+    "semantic_hash": ""
+  },
+  "courses/admin/courses-for-local/Admin-Custom.txt": {
+    "mtime": 1787129460.442403,
+    "ast_hash": "5921473e5bbad68b01efd07a5466f135",
+    "semantic_hash": ""
+  },
+  "courses/admin/courses-for-local/Admin-Intro.txt": {
+    "mtime": 1787129460.4437635,
+    "ast_hash": "7a4e50cb599d85ca115363a149d92680",
+    "semantic_hash": ""
+  },
+  "courses/admin/courses-for-local/Admin-Manage.txt": {
+    "mtime": 1787129460.4448376,
+    "ast_hash": "c8659d33b0d51ff78658bbee85a9debc",
+    "semantic_hash": ""
+  },
+  "courses/admin/courses-for-local/Admin-Standard.txt": {
+    "mtime": 1787129460.4463475,
+    "ast_hash": "bc7d7cf37117b368eb3e65a59fde8a45",
+    "semantic_hash": ""
+  },
+  "courses/customers/courses-for-local/Customer-Profitability-IN-UUID.txt": {
+    "mtime": 1787582203.852515,
+    "ast_hash": "ca3cb01d330d3043d4b8db4f41177a96",
+    "semantic_hash": ""
+  },
+  "courses/customers/courses-for-local/Customer-Segmentation-IN-UUID.txt": {
+    "mtime": 1787649125.1915593,
+    "ast_hash": "0fd9c3eb4f53a440795558e3e5c1bc57",
+    "semantic_hash": ""
+  },
+  "courses/customers/courses-for-local/Customers-Intro-IN-UUID.txt": {
+    "mtime": 1787585260.9874797,
+    "ast_hash": "118f39e29e3c5a6221918a7dc9ce3e4b",
+    "semantic_hash": ""
+  },
+  "courses/customers/courses-for-local/Linked-Revenue-IN-UUID.txt": {
+    "mtime": 1787649125.1973255,
+    "ast_hash": "996a94d3df68ce79f14b185beed7b5c7",
+    "semantic_hash": ""
+  },
+  "courses/customers/courses-for-local/Where-To-Play-How-To-Win-IN-UUID.txt": {
+    "mtime": 1787649125.202229,
+    "ast_hash": "2e7bfc4e3b275c425f0ecd302d38cc4b",
+    "semantic_hash": ""
+  },
+  "courses/inventory/archive/Double-ABC-Analysis-4-IN-TEST.txt": {
+    "mtime": 1781792410.6821725,
+    "ast_hash": "12f919ec665fc21d8e9ca0a2141c3ce6",
+    "semantic_hash": ""
+  },
+  "courses/inventory/archive/Double-ABC-Analysis-4-IN.txt": {
+    "mtime": 1783686144.2553875,
+    "ast_hash": "cd037f016f8d9e9143ad6770b6b75068",
+    "semantic_hash": ""
+  },
+  "courses/inventory/archive/Double-ABC-Analysis-4.txt": {
+    "mtime": 1783686144.2553782,
+    "ast_hash": "92b43827e2a821bc9889547043f1d41d",
+    "semantic_hash": ""
+  },
+  "courses/inventory/archive/Double-ABC-Analysis-IN-UUID.txt": {
+    "mtime": 1781014283.284874,
+    "ast_hash": "7929f2e23f9b6ef3fe167599d8285d99",
+    "semantic_hash": ""
+  },
+  "courses/inventory/archive/Double-ABC-Analysis-IN.txt": {
+    "mtime": 1781010412.8741302,
+    "ast_hash": "4034e50a29ecd701c8650d51bad40388",
+    "semantic_hash": ""
+  },
+  "courses/inventory/archive/Intro-IN-UUID-lp-root.txt": {
+    "mtime": 1781013448.0263424,
+    "ast_hash": "1d183e78f9182d7ac93bedb905776d28",
+    "semantic_hash": ""
+  },
+  "courses/inventory/archive/Intro-IN.txt": {
+    "mtime": 1781010412.8761916,
+    "ast_hash": "fe535de4db887892a88fd1378e9349c7",
+    "semantic_hash": ""
+  },
+  "courses/inventory/archive/Intro.txt": {
+    "mtime": 1776858034.3799686,
+    "ast_hash": "b64c9312c1be230d84b1181512c6063c",
+    "semantic_hash": ""
+  },
+  "courses/inventory/archive/Reorder-Point-IN.txt": {
+    "mtime": 1781012665.684829,
+    "ast_hash": "04dfc8877075c89d704039c601103e6c",
+    "semantic_hash": ""
+  },
+  "courses/inventory/archive/Reorder-Point.txt": {
+    "mtime": 1776849035.462916,
+    "ast_hash": "8e77fc59b3a3fee4d49dd7a829ef9fe2",
+    "semantic_hash": ""
+  },
+  "courses/inventory/archive/Reorder-Quantity-IN.txt": {
+    "mtime": 1781012687.953234,
+    "ast_hash": "5adc794d84e4b49b4376db4d2e877eb5",
+    "semantic_hash": ""
+  },
+  "courses/inventory/archive/Reorder-Quantity.txt": {
+    "mtime": 1776849062.557547,
+    "ast_hash": "ae2ab3550ccf11c2cd713fdd0df35f7f",
+    "semantic_hash": ""
+  },
+  "courses/inventory/archive/Safety-Stock-IN.txt": {
+    "mtime": 1781012654.1349788,
+    "ast_hash": "336471a894209f3d8c972d745c2db86f",
+    "semantic_hash": ""
+  },
+  "courses/inventory/archive/Safety-Stock.txt": {
+    "mtime": 1776848974.55519,
+    "ast_hash": "ea24b7216131f1740844c330aa085737",
+    "semantic_hash": ""
+  },
+  "courses/inventory/archive/Stock-Policy-IN.txt": {
+    "mtime": 1781012622.229206,
+    "ast_hash": "1a65d8e73eb79b77e453f9497101d341",
+    "semantic_hash": ""
+  },
+  "courses/inventory/archive/Stock-Policy.txt": {
+    "mtime": 1776934167.1682057,
+    "ast_hash": "1b2fd4c205ffd4aa5378e88f225a2fab",
+    "semantic_hash": ""
+  },
+  "courses/inventory/courses-for-local/Double-ABC-Analysis-4-IN-UUID.txt": {
+    "mtime": 1787149381.6019342,
+    "ast_hash": "0cebf4d2a6d1050052d682d480761290",
+    "semantic_hash": ""
+  },
+  "courses/inventory/courses-for-local/Intro-IN-UUID.txt": {
+    "mtime": 1787129460.4505305,
+    "ast_hash": "ef8533fb47bf041d75864fbf764f508f",
+    "semantic_hash": ""
+  },
+  "courses/inventory/courses-for-local/Reorder-Point-IN-UUID.txt": {
+    "mtime": 1787129460.4521847,
+    "ast_hash": "8187ea7a3e9dcce913e9c9a5fdd87167",
+    "semantic_hash": ""
+  },
+  "courses/inventory/courses-for-local/Reorder-Quantity-IN-UUID.txt": {
+    "mtime": 1787129460.4534059,
+    "ast_hash": "cc4e0d0d36294100c1f1213a5cb16596",
+    "semantic_hash": ""
+  },
+  "courses/inventory/courses-for-local/Safety-Stock-IN-UUID.txt": {
+    "mtime": 1787150387.107677,
+    "ast_hash": "6e69ccf7b5548e7735755d6cf903237e",
+    "semantic_hash": ""
+  },
+  "courses/inventory/courses-for-local/Stock-Policy-IN-UUID.txt": {
+    "mtime": 1787129460.4566274,
+    "ast_hash": "48b4dd8bc0a1251fd82383c34c1c14ef",
+    "semantic_hash": ""
+  },
+  "courses/inventory/official-learn-courses/Double-ABC-Analysis-4-IN-UUID.txt": {
+    "mtime": 1787150811.5440521,
+    "ast_hash": "9c93eb572c7975bc27b7c9f5a8f1f7af",
+    "semantic_hash": ""
+  },
+  "courses/inventory/official-learn-courses/Intro-IN-UUID.txt": {
+    "mtime": 1787129460.4502437,
+    "ast_hash": "ef8533fb47bf041d75864fbf764f508f",
+    "semantic_hash": ""
+  },
+  "courses/inventory/official-learn-courses/Reorder-Point-IN-UUID.txt": {
+    "mtime": 1787129460.4515684,
+    "ast_hash": "ab7a5fcab5506b554ec6de57c360b5a9",
+    "semantic_hash": ""
+  },
+  "courses/inventory/official-learn-courses/Reorder-Quantity-IN-UUID.txt": {
+    "mtime": 1787129460.4530063,
+    "ast_hash": "a03d80ad6858a9b5969a2ac9638eda2d",
+    "semantic_hash": ""
+  },
+  "courses/inventory/official-learn-courses/Safety-Stock-IN-UUID.txt": {
+    "mtime": 1787129460.454775,
+    "ast_hash": "3d244cd725093a2f9add39e2ebe82fe9",
+    "semantic_hash": ""
+  },
+  "courses/inventory/official-learn-courses/Stock-Policy-IN-UUID.txt": {
+    "mtime": 1787129460.4562724,
+    "ast_hash": "a99cd83879d269d3ab28b4ac6d61645b",
+    "semantic_hash": ""
+  },
+  "courses/legacy_courses/Double-ABC-Analysis-2-IN.txt": {
+    "mtime": 1776943076.6642153,
+    "ast_hash": "8ce9535c2faaffbe9d0860188cdb9192",
+    "semantic_hash": ""
+  },
+  "courses/legacy_courses/Double-ABC-Analysis-2.txt": {
+    "mtime": 1783686144.255368,
+    "ast_hash": "5951dabf09f829c0b1e5ee62338a5292",
+    "semantic_hash": ""
+  },
+  "courses/legacy_courses/Double-ABC-Analysis-3-IN.txt": {
+    "mtime": 1781010414.3826745,
+    "ast_hash": "49039f00ffdd59301a7418c3f370a0aa",
+    "semantic_hash": ""
+  },
+  "courses/legacy_courses/Double-ABC-Analysis-3.txt": {
+    "mtime": 1783686144.2553496,
+    "ast_hash": "b728468af3e684d7ed3d78571e24945f",
+    "semantic_hash": ""
+  },
+  "courses/legacy_courses/Intro-3-IN.txt": {
+    "mtime": 1776943076.6658669,
+    "ast_hash": "482f8ec7eb0796346d152b34a1cd14c1",
+    "semantic_hash": ""
+  },
+  "courses/legacy_courses/Intro-3.txt": {
+    "mtime": 1776932710.9032633,
+    "ast_hash": "22be09e5b5c42a9a494f545331d35c6e",
+    "semantic_hash": ""
+  },
+  "courses/legacy_courses/intro-test-IN.txt": {
+    "mtime": 1776943076.6664531,
+    "ast_hash": "8f2e6541d00964c0258ab898bac05d1d",
+    "semantic_hash": ""
+  },
+  "courses/legacy_courses/intro-test.txt": {
+    "mtime": 1776932710.9084368,
+    "ast_hash": "b7e900f769a8f60604b3b976f73c7533",
+    "semantic_hash": ""
+  },
+  "courses/legacy_courses/new-format-test-IN.txt": {
+    "mtime": 1781010414.3864295,
+    "ast_hash": "75e99c2a8374ba5d36b39482d85f7b03",
+    "semantic_hash": ""
+  },
+  "courses/legacy_courses/new-format-test.txt": {
+    "mtime": 1776932710.9261286,
+    "ast_hash": "3b476e21e30241e92a6e69b0729c189d",
+    "semantic_hash": ""
+  },
+  "courses/now/archive/Now-Actions-IN.txt": {
+    "mtime": 1781012829.7432442,
+    "ast_hash": "f38a153b75eedc2eec3eb6254d7d3a1e",
+    "semantic_hash": ""
+  },
+  "courses/now/archive/Now-Actions.txt": {
+    "mtime": 1778833740.2178323,
+    "ast_hash": "e4c28c1da64683e682feae97be0da113",
+    "semantic_hash": ""
+  },
+  "courses/now/archive/Now-Dashboards-IN.txt": {
+    "mtime": 1781012854.612373,
+    "ast_hash": "c0c52c26aed85ba8ba67393634cc50dd",
+    "semantic_hash": ""
+  },
+  "courses/now/archive/Now-Dashboards.txt": {
+    "mtime": 1777983512.5042675,
+    "ast_hash": "2244f3ea23d51770d521d1dbcf3d66d6",
+    "semantic_hash": ""
+  },
+  "courses/now/archive/Now-Home-IN.txt": {
+    "mtime": 1781012796.8901916,
+    "ast_hash": "827fc726556e47d58ab51c13cfec71f6",
+    "semantic_hash": ""
+  },
+  "courses/now/archive/Now-Home.txt": {
+    "mtime": 1776849093.8310096,
+    "ast_hash": "6a2097023d5394ac48d2e7b39380da71",
+    "semantic_hash": ""
+  },
+  "courses/now/archive/Now-Insights-IN.txt": {
+    "mtime": 1781012815.4251223,
+    "ast_hash": "da0def22f9acd22744dadd675f314dbc",
+    "semantic_hash": ""
+  },
+  "courses/now/archive/Now-Insights.txt": {
+    "mtime": 1778488493.0315957,
+    "ast_hash": "2ea35e25d4a30bec8ddb6943eb982f85",
+    "semantic_hash": ""
+  },
+  "courses/now/archive/Now-Intro-IN.txt": {
+    "mtime": 1781012772.2271812,
+    "ast_hash": "ad8c68317a0f9d1b993535eb0e6f289f",
+    "semantic_hash": ""
+  },
+  "courses/now/archive/Now-Intro.txt": {
+    "mtime": 1778244582.9647472,
+    "ast_hash": "01f67ff37a727405c9dbe9ec40f71cfb",
+    "semantic_hash": ""
+  },
+  "courses/now/courses-for-local/Now-Actions-IN-UUID.txt": {
+    "mtime": 1787150656.7004287,
+    "ast_hash": "245b7d09c792760f2a2bd7466a2bc814",
+    "semantic_hash": ""
+  },
+  "courses/now/courses-for-local/Now-Dashboards-IN-UUID.txt": {
+    "mtime": 1787150500.1512957,
+    "ast_hash": "356887818e09e9f92d1292856df510b8",
+    "semantic_hash": ""
+  },
+  "courses/now/courses-for-local/Now-Home-IN-UUID.txt": {
+    "mtime": 1787129460.4610903,
+    "ast_hash": "e12fcdf20a06510f16a3913c31edf0cd",
+    "semantic_hash": ""
+  },
+  "courses/now/courses-for-local/Now-Insights-IN-UUID.txt": {
+    "mtime": 1787129460.4625394,
+    "ast_hash": "3124e8fb3760b2615170f1aeb365368e",
+    "semantic_hash": ""
+  },
+  "courses/now/courses-for-local/Now-Intro-IN-UUID.txt": {
+    "mtime": 1787129460.4637792,
+    "ast_hash": "ccc17795e05d14696d1945c3dd9f5005",
+    "semantic_hash": ""
+  },
+  "courses/now/official-learn-courses/Now-Actions-IN-UUID.txt": {
+    "mtime": 1787150656.7014723,
+    "ast_hash": "93afd97dffb95aa048da9bbce1228996",
+    "semantic_hash": ""
+  },
+  "courses/now/official-learn-courses/Now-Dashboards-IN-UUID.txt": {
+    "mtime": 1787150270.3203044,
+    "ast_hash": "7092c38d3d4dc8dd0783660a72e1a2c0",
+    "semantic_hash": ""
+  },
+  "courses/now/official-learn-courses/Now-Home-IN-UUID.txt": {
+    "mtime": 1787129460.4607623,
+    "ast_hash": "33db0cf58b36ba099396773a3be2d449",
+    "semantic_hash": ""
+  },
+  "courses/now/official-learn-courses/Now-Insights-IN-UUID.txt": {
+    "mtime": 1787129460.4622116,
+    "ast_hash": "0c2f876542c154688d33ed653c6e5b1c",
+    "semantic_hash": ""
+  },
+  "courses/now/official-learn-courses/Now-Intro-IN-UUID.txt": {
+    "mtime": 1787129460.4633827,
+    "ast_hash": "999c7fd9f10cf3f7b5b656e9b883885e",
+    "semantic_hash": ""
+  },
+  "courses/products/archive/Category-Management-IN.txt": {
+    "mtime": 1787125414.3734038,
+    "ast_hash": "ae25d6f5d7a4659158f7304885d97126",
+    "semantic_hash": ""
+  },
+  "courses/products/archive/Cost-to-Serve-IN.txt": {
+    "mtime": 1787125178.32657,
+    "ast_hash": "d889960914a3d44e69998e7cf31da1cb",
+    "semantic_hash": ""
+  },
+  "courses/products/archive/New-Product-Introduction-IN.txt": {
+    "mtime": 1787125178.3284395,
+    "ast_hash": "88d6860c20e11d5e76aad35e42d5a12a",
+    "semantic_hash": ""
+  },
+  "courses/products/archive/Phase-Out-IN.txt": {
+    "mtime": 1787125178.3296397,
+    "ast_hash": "86cb442173c38e0cda23b48d34fee64f",
+    "semantic_hash": ""
+  },
+  "courses/products/archive/Products-Intro-IN.txt": {
+    "mtime": 1787125178.3302398,
+    "ast_hash": "59b223d9f94b5046b6ed7528ca9ef384",
+    "semantic_hash": ""
+  },
+  "courses/products/courses-for-local/Category-Management-IN-UUID.txt": {
+    "mtime": 1789468826.7997673,
+    "ast_hash": "d5adf9b6f12413971734e5ef1db140ac",
+    "semantic_hash": ""
+  },
+  "courses/products/courses-for-local/New-Product-Introduction-IN-UUID.txt": {
+    "mtime": 1788872530.8743784,
+    "ast_hash": "70e286922ffc91390ff6e9fc102ca558",
+    "semantic_hash": ""
+  },
+  "courses/products/courses-for-local/Phase-Out-IN-UUID.txt": {
+    "mtime": 1789382001.668782,
+    "ast_hash": "9edf80223cc1199b27a1fd0c685edba8",
+    "semantic_hash": ""
+  },
+  "courses/products/courses-for-local/Products-Intro-IN-UUID.txt": {
+    "mtime": 1787656844.0654461,
+    "ast_hash": "bc786c8be47af683ed3db8a1aedae879",
+    "semantic_hash": ""
+  },
+  "courses/supplier/archive/Spend-Analysis-IN.txt": {
+    "mtime": 1781012743.234904,
+    "ast_hash": "9326780253bb93a0235a8561f158fa07",
+    "semantic_hash": ""
+  },
+  "courses/supplier/archive/Spend-Analysis.txt": {
+    "mtime": 1776849175.2164629,
+    "ast_hash": "4a6dc1741ae56a291680bc554bdf9c64",
+    "semantic_hash": ""
+  },
+  "courses/supplier/archive/Supplier-Negotiation-IN.txt": {
+    "mtime": 1781012757.6829283,
+    "ast_hash": "0cb48888158442daf647cd43a1485139",
+    "semantic_hash": ""
+  },
+  "courses/supplier/archive/Supplier-Negotiation.txt": {
+    "mtime": 1776849197.9298882,
+    "ast_hash": "e112fd513c1e17880b4d20107911276a",
+    "semantic_hash": ""
+  },
+  "courses/supplier/archive/Supplier-Performance-IN.txt": {
+    "mtime": 1781012731.6246426,
+    "ast_hash": "20918bb8d29d37d5bb728f0f93702d15",
+    "semantic_hash": ""
+  },
+  "courses/supplier/archive/Supplier-Performance.txt": {
+    "mtime": 1777719458.1190906,
+    "ast_hash": "e10ba596964f5cb1eafa50f84ccfaa30",
+    "semantic_hash": ""
+  },
+  "courses/supplier/archive/Suppliers-Intro-2-IN.txt": {
+    "mtime": 1781012710.3249185,
+    "ast_hash": "bc35a0dc3ffb2f8f9de635509528d7b7",
+    "semantic_hash": ""
+  },
+  "courses/supplier/archive/Suppliers-Intro-2.txt": {
+    "mtime": 1776849141.0641646,
+    "ast_hash": "93ea77f359849cdaf616837d35da6f97",
+    "semantic_hash": ""
+  },
+  "courses/supplier/archive/Suppliers-Intro-IN-UUID.txt": {
+    "mtime": 1781014283.4661794,
+    "ast_hash": "d727f9bff42474617f8ffbe09a48c17c",
+    "semantic_hash": ""
+  },
+  "courses/supplier/archive/Suppliers-Intro-IN.txt": {
+    "mtime": 1783686144.4380012,
+    "ast_hash": "7ffc18d5a9986f61d40db9ecc9da630e",
+    "semantic_hash": ""
+  },
+  "courses/supplier/archive/Suppliers-Intro.txt": {
+    "mtime": 1776849135.285404,
+    "ast_hash": "027391047f67be6194f956be86136eb6",
+    "semantic_hash": ""
+  },
+  "courses/supplier/courses-for-local/Spend-Analysis-IN-UUID.txt": {
+    "mtime": 1787129460.465745,
+    "ast_hash": "251ccf7952d44c2d4cbf0115c7c866c5",
+    "semantic_hash": ""
+  },
+  "courses/supplier/courses-for-local/Supplier-Negotiation-IN-UUID.txt": {
+    "mtime": 1787129460.4664762,
+    "ast_hash": "643517ec4b3ca84198cf3dea752a423e",
+    "semantic_hash": ""
+  },
+  "courses/supplier/courses-for-local/Supplier-Performance-IN-UUID.txt": {
+    "mtime": 1787584956.3347306,
+    "ast_hash": "1da7f31ce4d3096dd0621484c097b86f",
+    "semantic_hash": ""
+  },
+  "courses/supplier/courses-for-local/Suppliers-Intro-2-IN-UUID.txt": {
+    "mtime": 1787584956.3352695,
+    "ast_hash": "9c577e4c62f0c46d673f29dd01a09cae",
+    "semantic_hash": ""
+  },
+  "courses/supplier/official-learn-courses/Spend-Analysis-IN-UUID.txt": {
+    "mtime": 1787129460.465431,
+    "ast_hash": "9cb3bb07e70f7392140b90071715ec93",
+    "semantic_hash": ""
+  },
+  "courses/supplier/official-learn-courses/Supplier-Negotiation-IN-UUID.txt": {
+    "mtime": 1787129460.4661758,
+    "ast_hash": "76c7c20d70ef98c95c469e275bd10798",
+    "semantic_hash": ""
+  },
+  "courses/supplier/official-learn-courses/Supplier-Performance-IN-UUID.txt": {
+    "mtime": 1787584956.3266687,
+    "ast_hash": "1e22bf0865ff6a8ea28ec2adae5f1f38",
+    "semantic_hash": ""
+  },
+  "courses/supplier/official-learn-courses/Suppliers-Intro-2-IN-UUID.txt": {
+    "mtime": 1787584956.3278298,
+    "ast_hash": "c59098564404b19ab10f0414fce15d71",
+    "semantic_hash": ""
+  },
+  "creator.html": {
+    "mtime": 1782480258.4986484,
+    "ast_hash": "ff8c32f33f3cde74332ef10afb92a126",
+    "semantic_hash": ""
+  },
+  "customers-hub.html": {
+    "mtime": 1788266981.2929091,
+    "ast_hash": "8eb0735a476606edba7c6c9a0c4966dd",
+    "semantic_hash": ""
+  },
+  "hub.html": {
+    "mtime": 1788266981.2902849,
+    "ast_hash": "99e88e0e73bdc24563d0fa5bbeed3778",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1788266991.6618721,
+    "ast_hash": "f08d97a0158fda6bd3450224771140e1",
+    "semantic_hash": ""
+  },
+  "now-hub.html": {
+    "mtime": 1788266981.2940001,
+    "ast_hash": "60e56ef22219b2cf6e7e533dbc8f5c70",
+    "semantic_hash": ""
+  },
+  "products-hub.html": {
+    "mtime": 1788266991.6604502,
+    "ast_hash": "ca5354b70dff9d5151b570c077382fa8",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/inventory/Double-ABC-Analysis-4-IN-TEST.txt": {
+    "mtime": 1780674242.693042,
+    "ast_hash": "12f919ec665fc21d8e9ca0a2141c3ce6",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/inventory/Double-ABC-Analysis-4-IN.txt": {
+    "mtime": 1781012505.2504027,
+    "ast_hash": "cd037f016f8d9e9143ad6770b6b75068",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/inventory/Double-ABC-Analysis-4.txt": {
+    "mtime": 1780673841.11249,
+    "ast_hash": "92b43827e2a821bc9889547043f1d41d",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/inventory/Double-ABC-Analysis-IN.txt": {
+    "mtime": 1781010412.8741302,
+    "ast_hash": "4034e50a29ecd701c8650d51bad40388",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/inventory/Intro-IN-UUID.txt": {
+    "mtime": 1781013448.0263424,
+    "ast_hash": "1d183e78f9182d7ac93bedb905776d28",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/inventory/Intro-IN.txt": {
+    "mtime": 1781010412.8761916,
+    "ast_hash": "fe535de4db887892a88fd1378e9349c7",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/inventory/Intro.txt": {
+    "mtime": 1776858034.3799686,
+    "ast_hash": "b64c9312c1be230d84b1181512c6063c",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/inventory/Reorder-Point-IN.txt": {
+    "mtime": 1781012665.6848288,
+    "ast_hash": "04dfc8877075c89d704039c601103e6c",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/inventory/Reorder-Point.txt": {
+    "mtime": 1776849035.462916,
+    "ast_hash": "8e77fc59b3a3fee4d49dd7a829ef9fe2",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/inventory/Reorder-Quantity-IN.txt": {
+    "mtime": 1781012687.953234,
+    "ast_hash": "5adc794d84e4b49b4376db4d2e877eb5",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/inventory/Reorder-Quantity.txt": {
+    "mtime": 1776849062.5575469,
+    "ast_hash": "ae2ab3550ccf11c2cd713fdd0df35f7f",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/inventory/Safety-Stock-IN.txt": {
+    "mtime": 1781012654.1349788,
+    "ast_hash": "336471a894209f3d8c972d745c2db86f",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/inventory/Safety-Stock.txt": {
+    "mtime": 1776848974.5551903,
+    "ast_hash": "ea24b7216131f1740844c330aa085737",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/inventory/Stock-Policy-IN.txt": {
+    "mtime": 1781012622.229206,
+    "ast_hash": "1a65d8e73eb79b77e453f9497101d341",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/inventory/Stock-Policy.txt": {
+    "mtime": 1776934167.1682057,
+    "ast_hash": "1b2fd4c205ffd4aa5378e88f225a2fab",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/inventory/with-UUID/Double-ABC-Analysis-4-IN-UUID.txt": {
+    "mtime": 1781014274.473079,
+    "ast_hash": "0d53546f3c28b22e3d3440c37cd2b49e",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/inventory/with-UUID/Double-ABC-Analysis-IN-UUID.txt": {
+    "mtime": 1781014283.2848737,
+    "ast_hash": "7929f2e23f9b6ef3fe167599d8285d99",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/inventory/with-UUID/Intro-IN-UUID.txt": {
+    "mtime": 1781014283.2952363,
+    "ast_hash": "1947c42309670dca8ad01adc22ae8e3f",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/inventory/with-UUID/Reorder-Point-IN-UUID.txt": {
+    "mtime": 1781014283.296303,
+    "ast_hash": "8455e4b70ec3a8d1fdd91edbfd14fae9",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/inventory/with-UUID/Reorder-Quantity-IN-UUID.txt": {
+    "mtime": 1781014283.2991,
+    "ast_hash": "80de5b2c6a4328c22175cb0ff4103d4d",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/inventory/with-UUID/Safety-Stock-IN-UUID.txt": {
+    "mtime": 1781264396.6688602,
+    "ast_hash": "b04982dcb9c7377232a7c5d4bde4bd65",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/inventory/with-UUID/Stock-Policy-IN-UUID.txt": {
+    "mtime": 1781262640.582979,
+    "ast_hash": "b9a273d14ebc975b2213229cc06a5e02",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/legacy_courses/Double-ABC-Analysis-2-IN.txt": {
+    "mtime": 1776943076.6642153,
+    "ast_hash": "8ce9535c2faaffbe9d0860188cdb9192",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/legacy_courses/Double-ABC-Analysis-2.txt": {
+    "mtime": 1780673841.112505,
+    "ast_hash": "5951dabf09f829c0b1e5ee62338a5292",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/legacy_courses/Double-ABC-Analysis-3-IN.txt": {
+    "mtime": 1781010414.3826747,
+    "ast_hash": "49039f00ffdd59301a7418c3f370a0aa",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/legacy_courses/Double-ABC-Analysis-3.txt": {
+    "mtime": 1780673841.1124797,
+    "ast_hash": "b728468af3e684d7ed3d78571e24945f",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/legacy_courses/Intro-3-IN.txt": {
+    "mtime": 1776943076.6658669,
+    "ast_hash": "482f8ec7eb0796346d152b34a1cd14c1",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/legacy_courses/Intro-3.txt": {
+    "mtime": 1776932710.9032636,
+    "ast_hash": "22be09e5b5c42a9a494f545331d35c6e",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/legacy_courses/intro-test-IN.txt": {
+    "mtime": 1776943076.6664531,
+    "ast_hash": "8f2e6541d00964c0258ab898bac05d1d",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/legacy_courses/intro-test.txt": {
+    "mtime": 1776932710.9084368,
+    "ast_hash": "b7e900f769a8f60604b3b976f73c7533",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/legacy_courses/new-format-test-IN.txt": {
+    "mtime": 1781010414.3864293,
+    "ast_hash": "75e99c2a8374ba5d36b39482d85f7b03",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/legacy_courses/new-format-test.txt": {
+    "mtime": 1776932710.9261286,
+    "ast_hash": "3b476e21e30241e92a6e69b0729c189d",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/now/Now-Actions-IN.txt": {
+    "mtime": 1781012829.7432442,
+    "ast_hash": "f38a153b75eedc2eec3eb6254d7d3a1e",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/now/Now-Actions.txt": {
+    "mtime": 1778833740.2178323,
+    "ast_hash": "e4c28c1da64683e682feae97be0da113",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/now/Now-Dashboards-IN.txt": {
+    "mtime": 1781012854.612373,
+    "ast_hash": "c0c52c26aed85ba8ba67393634cc50dd",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/now/Now-Dashboards.txt": {
+    "mtime": 1777983512.5042675,
+    "ast_hash": "2244f3ea23d51770d521d1dbcf3d66d6",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/now/Now-Home-IN.txt": {
+    "mtime": 1781012796.8901916,
+    "ast_hash": "827fc726556e47d58ab51c13cfec71f6",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/now/Now-Home.txt": {
+    "mtime": 1776849093.8310096,
+    "ast_hash": "6a2097023d5394ac48d2e7b39380da71",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/now/Now-Insights-IN.txt": {
+    "mtime": 1781012815.4251223,
+    "ast_hash": "da0def22f9acd22744dadd675f314dbc",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/now/Now-Insights.txt": {
+    "mtime": 1778488493.0315957,
+    "ast_hash": "2ea35e25d4a30bec8ddb6943eb982f85",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/now/Now-Intro-IN.txt": {
+    "mtime": 1781012772.2271812,
+    "ast_hash": "ad8c68317a0f9d1b993535eb0e6f289f",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/now/Now-Intro.txt": {
+    "mtime": 1778244582.964747,
+    "ast_hash": "01f67ff37a727405c9dbe9ec40f71cfb",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/now/with-UUID/Now-Actions-IN-UUID.txt": {
+    "mtime": 1781014283.3078475,
+    "ast_hash": "a7c0fa551503a7bd1d126fed3dc6e4f5",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/now/with-UUID/Now-Dashboards-IN-UUID.txt": {
+    "mtime": 1781014283.3094847,
+    "ast_hash": "f36021d07556a468c8da13463525a061",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/now/with-UUID/Now-Home-IN-UUID.txt": {
+    "mtime": 1781014283.3103602,
+    "ast_hash": "1b01c942fa36ae2669f572ea0cf02c2e",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/now/with-UUID/Now-Insights-IN-UUID.txt": {
+    "mtime": 1781014283.3118103,
+    "ast_hash": "d97b2e830c0de054fc914d48cc94a8a4",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/now/with-UUID/Now-Intro-IN-UUID.txt": {
+    "mtime": 1781014283.3127773,
+    "ast_hash": "d2bccbd444410cd891f487b15f050d6e",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/supplier/Spend-Analysis-IN.txt": {
+    "mtime": 1781012743.234904,
+    "ast_hash": "9326780253bb93a0235a8561f158fa07",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/supplier/Spend-Analysis.txt": {
+    "mtime": 1776849175.2164629,
+    "ast_hash": "4a6dc1741ae56a291680bc554bdf9c64",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/supplier/Supplier-Negotiation-IN.txt": {
+    "mtime": 1781012757.6829283,
+    "ast_hash": "0cb48888158442daf647cd43a1485139",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/supplier/Supplier-Negotiation.txt": {
+    "mtime": 1776849197.9298882,
+    "ast_hash": "e112fd513c1e17880b4d20107911276a",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/supplier/Supplier-Performance-IN.txt": {
+    "mtime": 1781012731.6246426,
+    "ast_hash": "20918bb8d29d37d5bb728f0f93702d15",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/supplier/Supplier-Performance.txt": {
+    "mtime": 1777719458.1190906,
+    "ast_hash": "e10ba596964f5cb1eafa50f84ccfaa30",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/supplier/Suppliers-Intro-2-IN.txt": {
+    "mtime": 1781012710.3249185,
+    "ast_hash": "bc35a0dc3ffb2f8f9de635509528d7b7",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/supplier/Suppliers-Intro-2.txt": {
+    "mtime": 1776849141.0641644,
+    "ast_hash": "93ea77f359849cdaf616837d35da6f97",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/supplier/Suppliers-Intro-IN.txt": {
+    "mtime": 1781010414.8736598,
+    "ast_hash": "7ffc18d5a9986f61d40db9ecc9da630e",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/supplier/Suppliers-Intro.txt": {
+    "mtime": 1776849135.285404,
+    "ast_hash": "027391047f67be6194f956be86136eb6",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/supplier/with-UUID/Spend-Analysis-IN-UUID.txt": {
+    "mtime": 1781014283.3144407,
+    "ast_hash": "d61b50211147979f54a9154cc0714aae",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/supplier/with-UUID/Supplier-Negotiation-IN-UUID.txt": {
+    "mtime": 1781014283.315928,
+    "ast_hash": "a2889d3119f8925996749f68b1970762",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/supplier/with-UUID/Supplier-Performance-IN-UUID.txt": {
+    "mtime": 1781014283.3180904,
+    "ast_hash": "0d4df84de43470759ffe941d3d881961",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/supplier/with-UUID/Suppliers-Intro-2-IN-UUID.txt": {
+    "mtime": 1781014283.318633,
+    "ast_hash": "b898a581f0b26db0de1e486e2e86abd0",
+    "semantic_hash": ""
+  },
+  "raw-learn-courses/supplier/with-UUID/Suppliers-Intro-IN-UUID.txt": {
+    "mtime": 1781014283.4661794,
+    "ast_hash": "d727f9bff42474617f8ffbe09a48c17c",
+    "semantic_hash": ""
+  },
+  "react-handoff/README.md": {
+    "mtime": 1771405982.76223,
+    "ast_hash": "dccf719de73cec1bdef9652610b485f5",
+    "semantic_hash": ""
+  },
+  "supplier-hub.html": {
+    "mtime": 1788266981.2925198,
+    "ast_hash": "eff289bd11ecdfc35143c173c8618def",
+    "semantic_hash": ""
+  },
+  "Achievements/Admins-Badge.svg": {
+    "mtime": 1786112441.068734,
+    "ast_hash": "3497a59207254c288d0f56c0284ff3c1",
+    "semantic_hash": ""
+  },
+  "Achievements/Customers-Badge.svg": {
+    "mtime": 1786112441.0695584,
+    "ast_hash": "a64e014d32c03d635142685420541591",
+    "semantic_hash": ""
+  },
+  "Achievements/Empty-Achievement.svg": {
+    "mtime": 1778068174.2521853,
+    "ast_hash": "bce506b08f103ee7dfe9b51d0a49cfeb",
+    "semantic_hash": ""
+  },
+  "Achievements/Fundamentals-Badge.svg": {
+    "mtime": 1786112441.0689354,
+    "ast_hash": "023fe84bb39a9e2a6d88b9afbac159d1",
+    "semantic_hash": ""
+  },
+  "Achievements/Inventory-Badge.svg": {
+    "mtime": 1786112441.0692677,
+    "ast_hash": "b72de983954982f803bf8b95d371b267",
+    "semantic_hash": ""
+  },
+  "Achievements/Products-Badge.svg": {
+    "mtime": 1786112441.0705032,
+    "ast_hash": "17a9a75e680d7666d50a5044d2e7a5e0",
+    "semantic_hash": ""
+  },
+  "Achievements/Suppliers-Badge.svg": {
+    "mtime": 1786112441.0694861,
+    "ast_hash": "69aafa116e0452fc980d6f3ca7ba26b9",
+    "semantic_hash": ""
+  },
+  "Article-thumbnails/Article.png": {
+    "mtime": 1771418350.4547436,
+    "ast_hash": "ef87d8a53db01fabd7d2289443db033b",
+    "semantic_hash": ""
+  },
+  "Article-thumbnails/SP.png": {
+    "mtime": 1771416698.085404,
+    "ast_hash": "efb2ce053d8db3422ca90121f6f2bcb4",
+    "semantic_hash": ""
+  },
+  "Article-thumbnails/TEst.png": {
+    "mtime": 1771413668.9307756,
+    "ast_hash": "74c104ec6a1a47caa98faacd99b192e3",
+    "semantic_hash": ""
+  },
+  "Article-thumbnails/Video.png": {
+    "mtime": 1773152522.0182674,
+    "ast_hash": "75fffebb1a97fc51edddef0274ccec51",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Admin/Admin-Custom.png": {
+    "mtime": 1782482947.613805,
+    "ast_hash": "93c7a2ba94555d44607a3ccc66129456",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Admin/Admin-Intro.png": {
+    "mtime": 1782482947.6131532,
+    "ast_hash": "abf643d42277dd0cad0fd74764bf0e1e",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Admin/Admin-Manage.png": {
+    "mtime": 1782482947.6139376,
+    "ast_hash": "291482f86cdefde105b8055debf7353b",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Admin/Admin-Standard.png": {
+    "mtime": 1782482947.6136477,
+    "ast_hash": "43d20bd6b07032a17ebb1f187c2e96c6",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Customers/Customers-Dots.png": {
+    "mtime": 1787580515.1292152,
+    "ast_hash": "2e2288abc794e83732fb888438d4638e",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/DABC.png": {
+    "mtime": 1770906753.0082438,
+    "ast_hash": "88b987da51d385011472d978a6437818",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Fundamentals/Actions.png": {
+    "mtime": 1780497933.1497455,
+    "ast_hash": "8e06052a8f784ff21c9cbfc7a691ce1d",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Fundamentals/Dashboards.png": {
+    "mtime": 1780497933.1523628,
+    "ast_hash": "1088f50468d09af24b67520548f79d06",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Fundamentals/Fundamentals_Intro.png": {
+    "mtime": 1780497933.1471927,
+    "ast_hash": "c76fe850d611c0464a3a1f0d49ef27f5",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Fundamentals/Home.png": {
+    "mtime": 1780497933.148985,
+    "ast_hash": "d4e30375f367e82c531e3304c4f07dfc",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Fundamentals/Insights.png": {
+    "mtime": 1780497933.1506648,
+    "ast_hash": "d396093e7df08aafff01b0b6ae285a26",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Fundamentals/Intro.png": {
+    "mtime": 1780490566.9050217,
+    "ast_hash": "c76fe850d611c0464a3a1f0d49ef27f5",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/IIntro.png": {
+    "mtime": 1776868770.0708015,
+    "ast_hash": "c0a120607ed105444bd6bac7ad96bdbc",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/IIntroTest.png": {
+    "mtime": 1779793620.0526464,
+    "ast_hash": "41260efd7ad3873fcb56359fc67db80a",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Inventory/Double_ABC.png": {
+    "mtime": 1780498930.4474335,
+    "ast_hash": "f86072f92111da51ee8a58e3b89a3928",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Inventory/Inventory_Intro.png": {
+    "mtime": 1780498962.3756893,
+    "ast_hash": "0a072db4cb3a9fd2d4c1ad56add8d160",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Inventory/Reorder_Point.png": {
+    "mtime": 1780498836.508594,
+    "ast_hash": "db0d14859a8ad20dbe2aecf326160b53",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Inventory/Reorder_Quantity.png": {
+    "mtime": 1780498836.5067286,
+    "ast_hash": "6f6a8b1e6a88500f04949d9d59bc7356",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Inventory/Safety_Stock.png": {
+    "mtime": 1780498836.5083005,
+    "ast_hash": "85d3a37efc98e9ecb0eee33dd740b681",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Inventory/Stock_Policy.png": {
+    "mtime": 1780498836.507933,
+    "ast_hash": "a74e378e0768364b027daa67b7d23d43",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/LockedResourcesThumbnails/Customers.png": {
+    "mtime": 1780649356.213562,
+    "ast_hash": "e61eb57b5f6df94dc8fda2772c6b1388",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/LockedResourcesThumbnails/Fundamentals.png": {
+    "mtime": 1780649356.2134604,
+    "ast_hash": "10da66ecf5878e62f0dc1ab1521dd186",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/LockedResourcesThumbnails/Inventory.png": {
+    "mtime": 1780649356.2131028,
+    "ast_hash": "14ba2d98309d5f2b9d1fc9cd5c0fe259",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/LockedResourcesThumbnails/Products.png": {
+    "mtime": 1780649356.2136571,
+    "ast_hash": "d399de174abdc23064aa0ecba0e5a60d",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/LockedResourcesThumbnails/Suppliers.png": {
+    "mtime": 1780649356.2133482,
+    "ast_hash": "14e55354b0cf0cd6309539b3ecc4f9c0",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Now-Actions.png": {
+    "mtime": 1776342706.1227255,
+    "ast_hash": "502d78d49a37c1178c9f4dc0c2bc77d5",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Now-Dashboards.png": {
+    "mtime": 1776342706.1238644,
+    "ast_hash": "b43bfcb0ad78d80739f586cfb66b3b8a",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Now-Home.png": {
+    "mtime": 1776342834.8909802,
+    "ast_hash": "a69e4a8c27abf13d8495cd90a2b85b94",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Now-Insights.png": {
+    "mtime": 1776342706.1205971,
+    "ast_hash": "689b5436c50d03587f026b644a963b38",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Now-Intro.png": {
+    "mtime": 1776342903.7094011,
+    "ast_hash": "48eebf99668b3fedbc67139a27af3921",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Products/Products-Dots.png": {
+    "mtime": 1787066572.809082,
+    "ast_hash": "be2cf24171afa8b9f0525f84cf5a7b1d",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/RP.png": {
+    "mtime": 1770906753.0086265,
+    "ast_hash": "b46c24ada3577e8f21678d7de8cd6a13",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/RQ-1.png": {
+    "mtime": 1770906753.0111299,
+    "ast_hash": "72243a75269993d6c95a242a6e1cc013",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/RQ.png": {
+    "mtime": 1770906753.0115001,
+    "ast_hash": "683254f263c16ea7c57a13edc97684f5",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/SP.png": {
+    "mtime": 1770906753.011956,
+    "ast_hash": "817c280a211a65e36127a972f4b7911e",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/SS.png": {
+    "mtime": 1770906753.012165,
+    "ast_hash": "f8eb89eeb5ec1b35d65515dac9dc7e16",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/SpendAnalysis.png": {
+    "mtime": 1771602346.9519596,
+    "ast_hash": "a39ed78b1a2dbeaa12dc491887067de0",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Supplier-Intro.png": {
+    "mtime": 1773751463.9135752,
+    "ast_hash": "7fcbe3849f8641c6b50d8b6f75907618",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Supplier-Negotiation.png": {
+    "mtime": 1774008105.1286056,
+    "ast_hash": "1de833c41fdda26ed0f47dd98311bc5d",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Supplier-Performance.png": {
+    "mtime": 1771602176.36719,
+    "ast_hash": "80542218de6bbed2ed868d872f660d12",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Suppliers/Spend_Analysis.png": {
+    "mtime": 1780497924.942876,
+    "ast_hash": "f3a821a47f40b6236d47c8c5e783c429",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Suppliers/Supplier_Negotiation.png": {
+    "mtime": 1780497924.9432151,
+    "ast_hash": "1da30e6db5e964c832977a14384d6067",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Suppliers/Supplier_Performance.png": {
+    "mtime": 1780497924.9412951,
+    "ast_hash": "dbe6f0149a7180f3cc6d355be601b6ae",
+    "semantic_hash": ""
+  },
+  "Course-thumbnails/Suppliers/Suppliers_Intro.png": {
+    "mtime": 1780497924.9402978,
+    "ast_hash": "38763d1efb4814362ea45d2cc522671b",
+    "semantic_hash": ""
+  },
+  "LP-thumbnails/Farvetest/Admin_LP.png": {
+    "mtime": 1783496617.9532955,
+    "ast_hash": "35508024d0cc8794e62190372367d442",
+    "semantic_hash": ""
+  },
+  "LP-thumbnails/Farvetest/Dots.png": {
+    "mtime": 1779455583.2649393,
+    "ast_hash": "a41394688bc3735e6803dc40511338dc",
+    "semantic_hash": ""
+  },
+  "LP-thumbnails/Farvetest/End2End_LP.png": {
+    "mtime": 1787653143.3213289,
+    "ast_hash": "394e405fa11eeec39d9ca3a41bc87680",
+    "semantic_hash": ""
+  },
+  "LP-thumbnails/Farvetest/Fundamentals_LP.png": {
+    "mtime": 1783496617.9555333,
+    "ast_hash": "5f87205228dbaa091d72e411d3a43e46",
+    "semantic_hash": ""
+  },
+  "LP-thumbnails/Farvetest/Inv.png": {
+    "mtime": 1779438954.735673,
+    "ast_hash": "ed5c1055ccd38687a55720fc631bbe67",
+    "semantic_hash": ""
+  },
+  "LP-thumbnails/Farvetest/Inventory_LP.png": {
+    "mtime": 1783496617.9572294,
+    "ast_hash": "8bd8c340a8797e7a3af90af7267186e2",
+    "semantic_hash": ""
+  },
+  "LP-thumbnails/Farvetest/Products_LP.png": {
+    "mtime": 1787125862.17462,
+    "ast_hash": "d4b7606f840efd2cd8567dbc29401ad8",
+    "semantic_hash": ""
+  },
+  "LP-thumbnails/Farvetest/Schefeowf.png": {
+    "mtime": 1779807506.3235316,
+    "ast_hash": "93288f562bf8acf7aaaf3b3c7681b79f",
+    "semantic_hash": ""
+  },
+  "LP-thumbnails/Farvetest/Suppliers_LP.png": {
+    "mtime": 1783496617.9587018,
+    "ast_hash": "3f3a621f61c45c604bcb8ffe85ae7e46",
+    "semantic_hash": ""
+  },
+  "LP-thumbnails/Farvetest/admin-illu-thumb.png": {
+    "mtime": 1781701661.101791,
+    "ast_hash": "96fb266da1cad13f9651b0f790f50749",
+    "semantic_hash": ""
+  },
+  "LP-thumbnails/Farvetest/dotgridlilla.png": {
+    "mtime": 1779451185.8895037,
+    "ast_hash": "63c86ad9e4957f7f231b2c44465ed462",
+    "semantic_hash": ""
+  },
+  "LP-thumbnails/Farvetest/dotgrif.png": {
+    "mtime": 1779450657.9232972,
+    "ast_hash": "1b3e872bea0527c2bd7a0cfbda96e6ef",
+    "semantic_hash": ""
+  },
+  "SVGs/Bookmark.svg": {
+    "mtime": 1770906752.9772263,
+    "ast_hash": "808361a6fe77784d1443db4ade13ca40",
+    "semantic_hash": ""
+  },
+  "SVGs/ButtonArrow.svg": {
+    "mtime": 1770318072.8359525,
+    "ast_hash": "8910ddffbd3f2d3e60215dabe020a356",
+    "semantic_hash": ""
+  },
+  "SVGs/CheckMark.svg": {
+    "mtime": 1767805334.8895187,
+    "ast_hash": "e761f8fdbae36cb58f3d50221736a20e",
+    "semantic_hash": ""
+  },
+  "SVGs/Course-Icon.svg": {
+    "mtime": 1783498071.053549,
+    "ast_hash": "08acdb029f05aba6fd32438e14e401b9",
+    "semantic_hash": ""
+  },
+  "SVGs/Flow-Icon.svg": {
+    "mtime": 1770318072.8361838,
+    "ast_hash": "0e06a2cf1192dae009fa79dc647664f9",
+    "semantic_hash": ""
+  },
+  "SVGs/IN-logo.svg": {
+    "mtime": 1767805334.8898213,
+    "ast_hash": "b0e13e5f397b6c6b652ed41d2cab4d49",
+    "semantic_hash": ""
+  },
+  "SVGs/LP-Illustrations/Admin-Illustration.png": {
+    "mtime": 1781701108.8180916,
+    "ast_hash": "d1ed289345e1d73eb7d1c410eb8e385d",
+    "semantic_hash": ""
+  },
+  "SVGs/LP-Illustrations/ComingSoonIlluCustomers.png": {
+    "mtime": 1779463305.4783819,
+    "ast_hash": "ac892118ca26ab3ec055a8e6cdae107a",
+    "semantic_hash": ""
+  },
+  "SVGs/LP-Illustrations/ComingSoonIlluProducts.png": {
+    "mtime": 1779463325.2322996,
+    "ast_hash": "53160c09e526c1b4564c64aa11cf74bc",
+    "semantic_hash": ""
+  },
+  "SVGs/LP-Illustrations/Customers-Illustration.png": {
+    "mtime": 1780053891.8366842,
+    "ast_hash": "970a6c826d946ad3e1b50b24592496be",
+    "semantic_hash": ""
+  },
+  "SVGs/LP-Illustrations/Inventory-Illustration.png": {
+    "mtime": 1779463255.6588063,
+    "ast_hash": "1706568aaab2c058dfa22cb5305ec7d1",
+    "semantic_hash": ""
+  },
+  "SVGs/LP-Illustrations/Now-Illustration.png": {
+    "mtime": 1779463279.0584912,
+    "ast_hash": "4b5f6e5c5ef167eded3f5ecb2af10f37",
+    "semantic_hash": ""
+  },
+  "SVGs/LP-Illustrations/Products-Illustration.png": {
+    "mtime": 1783585214.2671323,
+    "ast_hash": "ce74511c5686d7f93bd1f2db47b77a1a",
+    "semantic_hash": ""
+  },
+  "SVGs/LP-Illustrations/Suppliers-Illustration.png": {
+    "mtime": 1779463267.7866678,
+    "ast_hash": "9a3eb0eb2e31ab42da792e37c467627d",
+    "semantic_hash": ""
+  },
+  "SVGs/Learning-Path.svg": {
+    "mtime": 1783497938.8887396,
+    "ast_hash": "552f98c6198beb6601491a2c52e54c53",
+    "semantic_hash": ""
+  },
+  "SVGs/LittleDude.svg": {
+    "mtime": 1776253089.6393576,
+    "ast_hash": "3b44514b528e1cb7177b24f5e848ccea",
+    "semantic_hash": ""
+  },
+  "SVGs/ProfileViewKPIIcons/Certificates.svg": {
+    "mtime": 1778155625.6793242,
+    "ast_hash": "57f029e4b66c0485c8afc189ae391e7d",
+    "semantic_hash": ""
+  },
+  "SVGs/ProfileViewKPIIcons/Courses.svg": {
+    "mtime": 1778155493.6881924,
+    "ast_hash": "624ce0672cec8c805ed0ef7dd42e240b",
+    "semantic_hash": ""
+  },
+  "SVGs/ProfileViewKPIIcons/LearningPaths.svg": {
+    "mtime": 1778155503.182068,
+    "ast_hash": "099f57e1bf0f06e597d6fc69cd3c0db3",
+    "semantic_hash": ""
+  },
+  "SVGs/ProfileViewKPIIcons/Tutorials.svg": {
+    "mtime": 1778155520.3298836,
+    "ast_hash": "52759971c82f39ff4a846ac86da085ec",
+    "semantic_hash": ""
+  },
+  "SVGs/ProfileViewKPIIcons/Videos.svg": {
+    "mtime": 1778155481.4258213,
+    "ast_hash": "efac2027571c4b20d7c53f979237d7aa",
+    "semantic_hash": ""
+  },
+  "SVGs/Progress-Pin.svg": {
+    "mtime": 1770906752.9774575,
+    "ast_hash": "8e0884b0f123be31d2e93d1a4feab62b",
+    "semantic_hash": ""
+  },
+  "SVGs/Share.svg": {
+    "mtime": 1770906752.9775698,
+    "ast_hash": "61827cf3d3ee727f8b571756daf62167",
+    "semantic_hash": ""
+  },
+  "SVGs/Toggle-Icons/Customers-Toggle-Icon.svg": {
+    "mtime": 1780578668.357104,
+    "ast_hash": "0b72a29fa412c13ed2a896573f72e702",
+    "semantic_hash": ""
+  },
+  "SVGs/Toggle-Icons/Inventory-Toggle-Icon.svg": {
+    "mtime": 1780578608.0055969,
+    "ast_hash": "2720e961967f236f1557224dfd533cf3",
+    "semantic_hash": ""
+  },
+  "SVGs/Toggle-Icons/Products-Toggle-Icon.svg": {
+    "mtime": 1780578646.2332997,
+    "ast_hash": "1b6b8d37d6ddacd4b990d73b7b2ba6e9",
+    "semantic_hash": ""
+  },
+  "SVGs/Toggle-Icons/Software-Toggle-Icon.svg": {
+    "mtime": 1780578708.1479912,
+    "ast_hash": "55b4b107d434d11ad16e0bcaa327cde4",
+    "semantic_hash": ""
+  },
+  "SVGs/Toggle-Icons/Suppliers-Toggle-Icon.svg": {
+    "mtime": 1780578628.1730556,
+    "ast_hash": "dc2425316000b7aa38c380bc23ce444b",
+    "semantic_hash": ""
+  },
+  "SVGs/Up-Arrow.svg": {
+    "mtime": 1770906752.9776766,
+    "ast_hash": "33ce82708a3b39a1d7c064ea2072df7d",
+    "semantic_hash": ""
+  },
+  "SVGs/learn-bookmark-icon.svg": {
+    "mtime": 1778494173.4932132,
+    "ast_hash": "9b76af750fb9514aa9a7163e3b726d5e",
+    "semantic_hash": ""
+  },
+  "SVGs/tabler/check.svg": {
+    "mtime": 1783496617.9590776,
+    "ast_hash": "a50bc9e07615590f7152531ffa79776c",
+    "semantic_hash": ""
+  },
+  "SVGs/tabler/layout-grid.svg": {
+    "mtime": 1783496617.9593089,
+    "ast_hash": "55eb13e2132c2fe736cf07776fa538b0",
+    "semantic_hash": ""
+  },
+  "SVGs/tabler/logout.svg": {
+    "mtime": 1783496617.9595544,
+    "ast_hash": "f93a7aa469d0c5fdf52073a5206ba820",
+    "semantic_hash": ""
+  },
+  "SVGs/tabler/mail.svg": {
+    "mtime": 1783496617.9597957,
+    "ast_hash": "9781c809a0816d08d9d16d061b11f659",
+    "semantic_hash": ""
+  },
+  "SVGs/tabler/shield-lock.svg": {
+    "mtime": 1783496617.9600463,
+    "ast_hash": "baef283c400b717e061a58d146f63b83",
+    "semantic_hash": ""
+  },
+  "SVGs/tabler/user.svg": {
+    "mtime": 1783496617.960283,
+    "ast_hash": "df3b0ede95dece77523077515a74a574",
+    "semantic_hash": ""
+  },
+  "SVGs/tabler/x.svg": {
+    "mtime": 1783496617.9606037,
+    "ast_hash": "f93c722491bea7500f7208a42faa423e",
+    "semantic_hash": ""
+  },
+  "Supademo-thumbnails/Supademo.png": {
+    "mtime": 1771415588.5091298,
+    "ast_hash": "8cb5a9b0cdba29ae4c9d2a401b890803",
+    "semantic_hash": ""
+  },
+  "Supademo-thumbnails/SupademoHeader.png": {
+    "mtime": 1771418479.170186,
+    "ast_hash": "d00048f2a335f817f154551f9b43f713",
+    "semantic_hash": ""
+  },
+  "Video-thumbnails/DABC.png": {
+    "mtime": 1771407554.384699,
+    "ast_hash": "3cd905e1753b3c1c372499537c8dd786",
+    "semantic_hash": ""
+  },
+  "header-icons/Profile-Header-SVG.svg": {
+    "mtime": 1778138524.7901454,
+    "ast_hash": "fc580378c48b80d224c98c6633fffb13",
+    "semantic_hash": ""
+  },
+  "images/1.png": {
+    "mtime": 1770906752.9843237,
+    "ast_hash": "f629689425b46e83ae02524d1abe6dab",
+    "semantic_hash": ""
+  },
+  "images/2.png": {
+    "mtime": 1770906752.9960835,
+    "ast_hash": "d85f2e6dc6d6d56743a8f35f4a759037",
+    "semantic_hash": ""
+  },
+  "images/3.png": {
+    "mtime": 1770906753.0028675,
+    "ast_hash": "1164d85cb0c2bfd54f2d008e07d50d5e",
+    "semantic_hash": ""
+  },
+  "images/BottomRightGraphs.png": {
+    "mtime": 1770906753.0077922,
+    "ast_hash": "483a249849666703e1e9da8b6bcc90cb",
+    "semantic_hash": ""
+  },
+  "images/SuppliersHeaderGraphic.png": {
+    "mtime": 1772196848.7230048,
+    "ast_hash": "a7c842acf935ff6a30e709f1e2ba0da1",
+    "semantic_hash": ""
+  },
+  "images/admin-custom/Action-Icon.png": {
+    "mtime": 1781702477.8723586,
+    "ast_hash": "8599e75decf87a736cf8521836bdeeb1",
+    "semantic_hash": ""
+  },
+  "images/admin-custom/Coming-Soon.png": {
+    "mtime": 1781702381.0260766,
+    "ast_hash": "e6489dda1e1c3ccd3553938c8f04000e",
+    "semantic_hash": ""
+  },
+  "images/admin-custom/Dashboards-Icon.png": {
+    "mtime": 1781702730.7503076,
+    "ast_hash": "11d755a8176fff8acf46427bb9f2a544",
+    "semantic_hash": ""
+  },
+  "images/admin-custom/Edit-Mode.png": {
+    "mtime": 1781702331.381145,
+    "ast_hash": "9de9aef103b85d6a0ca8b95b66bbed30",
+    "semantic_hash": ""
+  },
+  "images/admin-custom/Hero-Illu.png": {
+    "mtime": 1781791154.020323,
+    "ast_hash": "b05e924871e116de3c7d06ab2cb87306",
+    "semantic_hash": ""
+  },
+  "images/admin-custom/Public-Private.png": {
+    "mtime": 1781702139.6169128,
+    "ast_hash": "e5bee45c90c605d8d457c93e0dc886fe",
+    "semantic_hash": ""
+  },
+  "images/admin-custom/What-You-Can-Do.png": {
+    "mtime": 1781702213.6345217,
+    "ast_hash": "c46c37d7b80db131fa74674b7b8dea3a",
+    "semantic_hash": ""
+  },
+  "images/admin-intro/Fundamentals-Path.png": {
+    "mtime": 1781694802.888751,
+    "ast_hash": "0a199af0c216b0941dad3265583e5664",
+    "semantic_hash": ""
+  },
+  "images/admin-intro/Hero-Illu.png": {
+    "mtime": 1781780209.6680484,
+    "ast_hash": "c3e6761fb4338d4e266aeb4088946fad",
+    "semantic_hash": ""
+  },
+  "images/admin-intro/User-Types.png": {
+    "mtime": 1782911547.4481757,
+    "ast_hash": "e3814d38bab6b73f336be5ea388a4ffa",
+    "semantic_hash": ""
+  },
+  "images/admin-intro/Which-Role.png": {
+    "mtime": 1781694971.825182,
+    "ast_hash": "ba90467c242f79e595a82cc209d30225",
+    "semantic_hash": ""
+  },
+  "images/admin-managing-users/Admin-Panel-Tab.png": {
+    "mtime": 1781704380.3107526,
+    "ast_hash": "319d78df00c3027b4c056c6968f0bf0c",
+    "semantic_hash": ""
+  },
+  "images/admin-managing-users/Coming-Soon.png": {
+    "mtime": 1781704790.4564176,
+    "ast_hash": "c8b24823170ba32d081983969ba3433e",
+    "semantic_hash": ""
+  },
+  "images/admin-managing-users/Hero-Illu.png": {
+    "mtime": 1781792181.2489567,
+    "ast_hash": "2eeaf0a9b0bed9e52cddf7d5f0bd8a11",
+    "semantic_hash": ""
+  },
+  "images/admin-managing-users/Homepage-Setup.png": {
+    "mtime": 1781704590.783075,
+    "ast_hash": "345c124b338c07111a21f7dc4bc6d951",
+    "semantic_hash": ""
+  },
+  "images/admin-managing-users/Permissions.png": {
+    "mtime": 1781704535.5870073,
+    "ast_hash": "8da98f40a0dc2bbdf6bda72e925aee6e",
+    "semantic_hash": ""
+  },
+  "images/admin-managing-users/User-Information.png": {
+    "mtime": 1781704487.6657295,
+    "ast_hash": "27cb4af36ec2ed188afca49cacdb3283",
+    "semantic_hash": ""
+  },
+  "images/admin-managing-users/Users-Tab.png": {
+    "mtime": 1781704442.9477563,
+    "ast_hash": "ba8509c393b85eaf9350c2044546a9fc",
+    "semantic_hash": ""
+  },
+  "images/admin-standard/Actions-Empty.png": {
+    "mtime": 1781698667.031463,
+    "ast_hash": "1b60b0ebd364ffd00abbdc6c93aa4b8e",
+    "semantic_hash": ""
+  },
+  "images/admin-standard/Dashboards-Tab.png": {
+    "mtime": 1781698714.0209458,
+    "ast_hash": "d77e2604845a8ac4a05b7ada99708b2c",
+    "semantic_hash": ""
+  },
+  "images/admin-standard/Data-Tab.png": {
+    "mtime": 1781698756.2267818,
+    "ast_hash": "07e0846c77afbf905375ca92efacc5fa",
+    "semantic_hash": ""
+  },
+  "images/admin-standard/Standard-Hero.png": {
+    "mtime": 1781791138.0479593,
+    "ast_hash": "8676e1bf403e06f40ca7ee7eb6eb3f7d",
+    "semantic_hash": ""
+  },
+  "images/admin-standard/Your-Solutions.png": {
+    "mtime": 1781698580.921176,
+    "ast_hash": "c4db8f85804164fd3e44c29af278e619",
+    "semantic_hash": ""
+  },
+  "images/customers-customer-profitability/Customers-Products-Suppliers-Mess.png": {
+    "mtime": 1787582326.0859787,
+    "ast_hash": "3d7eb582f8fcf1cec161b0feb75d7914",
+    "semantic_hash": ""
+  },
+  "images/customers-customer-profitability/Profit-Loss-Walkthrough.png": {
+    "mtime": 1787580850.2562597,
+    "ast_hash": "caee56b3cb1800348eac5db705d5eafd",
+    "semantic_hash": ""
+  },
+  "images/customers-customer-profitability/roadmap-2.png": {
+    "mtime": 1787580826.0788558,
+    "ast_hash": "91c1485693d30fdd24a71d076a3f4a67",
+    "semantic_hash": ""
+  },
+  "images/customers-customer-segmentation/Customer-Categorization-Walkthrough.png": {
+    "mtime": 1787580778.3224943,
+    "ast_hash": "d0a75c2458876a7ee08a056d4a14e360",
+    "semantic_hash": ""
+  },
+  "images/customers-customer-segmentation/The-Four-Categories.png": {
+    "mtime": 1787580758.623948,
+    "ast_hash": "4ecdc1d143b9f83bc4de32ae368a0733",
+    "semantic_hash": ""
+  },
+  "images/customers-customer-segmentation/roadmap-1.png": {
+    "mtime": 1787580737.6996422,
+    "ast_hash": "79cf28ad946098797f9238b9a99dddb7",
+    "semantic_hash": ""
+  },
+  "images/customers-intro/Five-Steps.png": {
+    "mtime": 1787581510.0620706,
+    "ast_hash": "6de1a8737eddd0acafb461973c949349",
+    "semantic_hash": ""
+  },
+  "images/customers-intro/roadmap-all.png": {
+    "mtime": 1787580691.252015,
+    "ast_hash": "c50b2b8331ea9848b3ef60f348543a65",
+    "semantic_hash": ""
+  },
+  "images/customers-linked-revenue/ABC-Linked-Revenue.png": {
+    "mtime": 1787581040.7897701,
+    "ast_hash": "b2ac02e29594c73451f213278cb561d8",
+    "semantic_hash": ""
+  },
+  "images/customers-linked-revenue/C-Items-Sold-Walkthrough.png": {
+    "mtime": 1787581065.3211734,
+    "ast_hash": "ff854e03e4058bbac68ee4bfae87a5be",
+    "semantic_hash": ""
+  },
+  "images/customers-linked-revenue/Healthy-Complexity-Walkthrough.png": {
+    "mtime": 1787581087.9037788,
+    "ast_hash": "d8c79e6dc903b6a06d15aae0dde82097",
+    "semantic_hash": ""
+  },
+  "images/customers-linked-revenue/Unhealthy-Complexity-Walkthrough.png": {
+    "mtime": 1787581105.5233166,
+    "ast_hash": "0c5f21460ba9f79dc50a6a85aa44e003",
+    "semantic_hash": ""
+  },
+  "images/customers-linked-revenue/roadmap-3.png": {
+    "mtime": 1787581021.2918699,
+    "ast_hash": "54b5ca448ef3025247d41584e5b444cd",
+    "semantic_hash": ""
+  },
+  "images/customers-where-to-play-how-to-win/Bringing-It-Together.png": {
+    "mtime": 1787581298.709897,
+    "ast_hash": "8c8143ae483f2f33b1ed209d6daf2bf0",
+    "semantic_hash": ""
+  },
+  "images/customers-where-to-play-how-to-win/Clear-Policies.png": {
+    "mtime": 1787581214.6735654,
+    "ast_hash": "6589c11fa5b35409d019b46cc21a8fb6",
+    "semantic_hash": ""
+  },
+  "images/customers-where-to-play-how-to-win/Heatmap-Walkthrough.png": {
+    "mtime": 1787584213.7402012,
+    "ast_hash": "32aa86aef5dea413b2ea95214ba1b32a",
+    "semantic_hash": ""
+  },
+  "images/customers-where-to-play-how-to-win/Heatmap.png": {
+    "mtime": 1787581259.988401,
+    "ast_hash": "08eca4c2088c954362c6761429d21d0f",
+    "semantic_hash": ""
+  },
+  "images/customers-where-to-play-how-to-win/Kill-Or-Bill.png": {
+    "mtime": 1787581228.2112913,
+    "ast_hash": "5178bed4efb218a4b586585e07ca821b",
+    "semantic_hash": ""
+  },
+  "images/customers-where-to-play-how-to-win/Roadmap-5.png": {
+    "mtime": 1787581243.308769,
+    "ast_hash": "5260fcbe6f99fe99c6a47431a63063e2",
+    "semantic_hash": ""
+  },
+  "images/customers-where-to-play-how-to-win/roadmap-4.png": {
+    "mtime": 1787581200.070341,
+    "ast_hash": "b86b3d6b16c1561ce28ca3e9ae53f309",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/ABC-Analysis.png": {
+    "mtime": 1776855076.5691583,
+    "ast_hash": "b5f5334cbd70b6d288d3c16c77952431",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/ABC-Example-0.png": {
+    "mtime": 1776854935.6192322,
+    "ast_hash": "5ec87f2aa424d47a56d89bf65fde4d0c",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/ABC-Example-1.png": {
+    "mtime": 1776854777.7521455,
+    "ast_hash": "b2a51eccdff549944047d17394cc6cd1",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/ABC-Example-2.png": {
+    "mtime": 1776854794.755215,
+    "ast_hash": "65234b66749a68092778039ce59d55fe",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/ABC-Example-3.png": {
+    "mtime": 1776854805.7981055,
+    "ast_hash": "5796932c5faec8657ec7b86e556ff871",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/ABC-Example-4.png": {
+    "mtime": 1776854816.7713113,
+    "ast_hash": "d743af1ded317aa69f7935d7583427fd",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/ABC-Example-Final.png": {
+    "mtime": 1776854828.2038388,
+    "ast_hash": "8bb30e9059d294f5fe48f4cd982615be",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/ABC-Fiskere.png": {
+    "mtime": 1767805334.9546618,
+    "ast_hash": "134ac980bce42c08bb4458bd4d52cd10",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/ABC-Plan-1.png": {
+    "mtime": 1767805334.9594479,
+    "ast_hash": "0f8cc1bdb5ca0c50a8da3d04985fad6a",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/ABC-Plan-2.png": {
+    "mtime": 1767805334.9608915,
+    "ast_hash": "63f0c2562b2c0b35fa52ead18f932908",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/ABC-Plan-3.png": {
+    "mtime": 1767805334.9625175,
+    "ast_hash": "9e6ac508d90c0228d234a90b46707717",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/ABC-Plan-4.png": {
+    "mtime": 1767805334.9636817,
+    "ast_hash": "5a05dbd9459e3a5f676fca2a9e1b54bf",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/ABC-cover-illu.png": {
+    "mtime": 1767888648.0154614,
+    "ast_hash": "53b05964b35a48995c5eafc8882ae7b2",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/Analysis-Help.png": {
+    "mtime": 1767883702.1018214,
+    "ast_hash": "a4cc23423b1edadafa240bdc53e5479d",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/Congrats-ABC.png": {
+    "mtime": 1767882586.8773406,
+    "ast_hash": "2096b577708db5d8bc9e624289a97e50",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/Double-ABC-Hero.png": {
+    "mtime": 1767888822.588026,
+    "ast_hash": "424ccdc3026cfaace8fec66603e8597f",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/Micro-Matic-Case.png": {
+    "mtime": 1767805335.1042488,
+    "ast_hash": "9da52ecb6f07789f58c2332d3be03f59",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/Nav-Bar-Insights.png": {
+    "mtime": 1767805335.1044893,
+    "ast_hash": "48230bfe96efba0700ffebdaa86ed3f5",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/Single-ABC-Vizz.png": {
+    "mtime": 1767884692.6614606,
+    "ast_hash": "19be1d1fd85ae74d52d9ed09e3d5376e",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/Single-ABC.png": {
+    "mtime": 1767881092.326739,
+    "ast_hash": "c1e4939a77c59a3f0ade543faa556609",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/SmallTip.png": {
+    "mtime": 1767805335.1176689,
+    "ast_hash": "734f530bf30c43db2d5f0123563b5f69",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/Special-Categories.png": {
+    "mtime": 1776855995.1622,
+    "ast_hash": "c38429ec6b51ba009fd236b43ac42c9f",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/Two-Variables.png": {
+    "mtime": 1767884698.31401,
+    "ast_hash": "dd3ca4d630d6bc12c11c1c9de5b3bfb6",
+    "semantic_hash": ""
+  },
+  "images/intro/BottomRightGraphs.png": {
+    "mtime": 1776867860.2825027,
+    "ast_hash": "4c346d0e3d52393695a3644ccb96f004",
+    "semantic_hash": ""
+  },
+  "images/intro/BottomRightGraphs2.png": {
+    "mtime": 1776867909.5677254,
+    "ast_hash": "fd52a3ad17958e2096c9ae5d41c1cf4b",
+    "semantic_hash": ""
+  },
+  "images/intro/Full-Picture-ROP-ROQ.png": {
+    "mtime": 1767805334.8944867,
+    "ast_hash": "1aa8799f55fc3e7678e5b1539b1030f1",
+    "semantic_hash": ""
+  },
+  "images/intro/How-Much-To-Order.png": {
+    "mtime": 1767805334.8955932,
+    "ast_hash": "6949591d059428f54ed7b9755c10ca68",
+    "semantic_hash": ""
+  },
+  "images/intro/How-Much-To-Stock.png": {
+    "mtime": 1767805334.8966749,
+    "ast_hash": "0f6b81d20301396d410d7523fa4ab956",
+    "semantic_hash": ""
+  },
+  "images/intro/Intro-Intro.png": {
+    "mtime": 1767805334.8985116,
+    "ast_hash": "52394b3003373f95d835eb8853bb2099",
+    "semantic_hash": ""
+  },
+  "images/intro/Intro-Path-Cover-2.png": {
+    "mtime": 1776867336.8978457,
+    "ast_hash": "db1a6bd9515596d6dc068f85d8b56d5e",
+    "semantic_hash": ""
+  },
+  "images/intro/Intro-Path-Cover.png": {
+    "mtime": 1767805334.9185498,
+    "ast_hash": "3b8be7798bbfb4d7cc0389f12b197a98",
+    "semantic_hash": ""
+  },
+  "images/intro/Learning-Path-Overview.png": {
+    "mtime": 1776929577.0571759,
+    "ast_hash": "211bae8ae14b9840b92c92be33fca17d",
+    "semantic_hash": ""
+  },
+  "images/intro/Obsolete-Goods-And-Write-Offs.png": {
+    "mtime": 1767805334.9204044,
+    "ast_hash": "2669401894322e1f16221c600adc0901",
+    "semantic_hash": ""
+  },
+  "images/intro/Rising-Inventory-Capital.png": {
+    "mtime": 1767805334.9222379,
+    "ast_hash": "ea3cf1380b751a531eb28457ab7fc5b2",
+    "semantic_hash": ""
+  },
+  "images/intro/Too-Low-Turnover-Rate.png": {
+    "mtime": 1767805334.923411,
+    "ast_hash": "f5374bda1f185230e65795fc509326c4",
+    "semantic_hash": ""
+  },
+  "images/intro/Triangle-Dynamic.png": {
+    "mtime": 1767805334.9240897,
+    "ast_hash": "c8ba811da1acca4071e6712350310a9b",
+    "semantic_hash": ""
+  },
+  "images/intro/What-To-Stock.png": {
+    "mtime": 1767805334.9250622,
+    "ast_hash": "349dd32d3a698b12ac5c2f8dd6d28ce6",
+    "semantic_hash": ""
+  },
+  "images/legacy/ABC-Help-1.png": {
+    "mtime": 1767805334.9558458,
+    "ast_hash": "e40e143193000164bc08331c2706850f",
+    "semantic_hash": ""
+  },
+  "images/legacy/ABC-Help-2.png": {
+    "mtime": 1767805334.9568732,
+    "ast_hash": "16f8dff3c2da32f8c765f68c6c54e15d",
+    "semantic_hash": ""
+  },
+  "images/legacy/ABC-Help-3.png": {
+    "mtime": 1767805334.9577422,
+    "ast_hash": "d9573736ad9be50afd9a44c3aedbc002",
+    "semantic_hash": ""
+  },
+  "images/legacy/ABC-Help-4.png": {
+    "mtime": 1767805334.9583504,
+    "ast_hash": "666a735d7650ad779f9693fdf91510c4",
+    "semantic_hash": ""
+  },
+  "images/legacy/ABCplan.png": {
+    "mtime": 1767805334.9669874,
+    "ast_hash": "b4e4256a3a2577208f12874df9062997",
+    "semantic_hash": ""
+  },
+  "images/legacy/BalanceOne.png": {
+    "mtime": 1767805334.9735212,
+    "ast_hash": "3059f92f2b19de5c7da9d8be3bdf83b0",
+    "semantic_hash": ""
+  },
+  "images/legacy/BalanceTwo.png": {
+    "mtime": 1767805334.9736633,
+    "ast_hash": "a033b0181ece598859a16c745cc0301b",
+    "semantic_hash": ""
+  },
+  "images/legacy/Closet.png": {
+    "mtime": 1767805334.974472,
+    "ast_hash": "89aa13a5194dd93e155953caf7c8c00a",
+    "semantic_hash": ""
+  },
+  "images/legacy/Congrats-illustration.png": {
+    "mtime": 1767805334.9749627,
+    "ast_hash": "55b9401763be8a9bad6b73d8d7912d62",
+    "semantic_hash": ""
+  },
+  "images/legacy/Dont-Fit.png": {
+    "mtime": 1767805334.9786022,
+    "ast_hash": "e6ea0784079ee882462f7f006fc5fca2",
+    "semantic_hash": ""
+  },
+  "images/legacy/DoubleABC2.0.png": {
+    "mtime": 1767805335.0916116,
+    "ast_hash": "c6fd8897ca6afe07a61ac5c41bae6579",
+    "semantic_hash": ""
+  },
+  "images/legacy/Excess-1.png": {
+    "mtime": 1767805335.0927203,
+    "ast_hash": "dea9978accb1c71dc19ed37606761658",
+    "semantic_hash": ""
+  },
+  "images/legacy/Excess-2.png": {
+    "mtime": 1767805335.0950983,
+    "ast_hash": "f2de3bebcf7399aab9cdbf4f0ffe18f4",
+    "semantic_hash": ""
+  },
+  "images/legacy/Excess-3.png": {
+    "mtime": 1767805335.0962992,
+    "ast_hash": "7ab0c1ff42c93419f42113ff556e61b9",
+    "semantic_hash": ""
+  },
+  "images/legacy/Flows-overview.png": {
+    "mtime": 1767805335.0968912,
+    "ast_hash": "5b61d4c5b774aa84bc583c01ca90318f",
+    "semantic_hash": ""
+  },
+  "images/legacy/GoodNews-1.png": {
+    "mtime": 1767805335.0982335,
+    "ast_hash": "e4ee01637f5d0341bf033d48f994f5c2",
+    "semantic_hash": ""
+  },
+  "images/legacy/GoodNews-2.png": {
+    "mtime": 1767805335.100052,
+    "ast_hash": "2d2116924187be84d4775232fb164aca",
+    "semantic_hash": ""
+  },
+  "images/legacy/GoodNews-3.png": {
+    "mtime": 1767805335.1011202,
+    "ast_hash": "4cf75f61897a0eb198f94f919f41b05f",
+    "semantic_hash": ""
+  },
+  "images/legacy/Intro-illustration-1.png": {
+    "mtime": 1767805335.1015399,
+    "ast_hash": "3fab1e632044ca0694f1c357b1c1cbfa",
+    "semantic_hash": ""
+  },
+  "images/legacy/OpenNow.png": {
+    "mtime": 1767805335.1076055,
+    "ast_hash": "ea578865b8c14ecb729062915c4af606",
+    "semantic_hash": ""
+  },
+  "images/legacy/Paper-Example.png": {
+    "mtime": 1767805335.1089237,
+    "ast_hash": "b7cfe78660ab316e5a338603392090a6",
+    "semantic_hash": ""
+  },
+  "images/legacy/Sailor.png": {
+    "mtime": 1767805335.1115139,
+    "ast_hash": "d527b3eaeabb48619fbd4a43a8d8d294",
+    "semantic_hash": ""
+  },
+  "images/legacy/Scope.png": {
+    "mtime": 1767805335.1127264,
+    "ast_hash": "b2bf14778d08786de6f32acf15eb6793",
+    "semantic_hash": ""
+  },
+  "images/legacy/Tradeoff.png": {
+    "mtime": 1767805335.1297295,
+    "ast_hash": "793281e8fb9d250ad97b0a426cf94f72",
+    "semantic_hash": ""
+  },
+  "images/legacy/Variationer.png": {
+    "mtime": 1767805335.1301146,
+    "ast_hash": "04137c5c992f9ba311555c7004f56415",
+    "semantic_hash": ""
+  },
+  "images/legacy/You-are-here.png": {
+    "mtime": 1767805335.1307158,
+    "ast_hash": "fb1ee32e404153a685c18d0da37ff849",
+    "semantic_hash": ""
+  },
+  "images/now-actions/Action-Table.png": {
+    "mtime": 1777537372.7721,
+    "ast_hash": "5f1be88d8fae010199e9a0311f73915e",
+    "semantic_hash": ""
+  },
+  "images/now-actions/Actions-Hero.png": {
+    "mtime": 1777537248.5443535,
+    "ast_hash": "782b4796339d05816c8897fbb9573704",
+    "semantic_hash": ""
+  },
+  "images/now-actions/Circle-Actions.png": {
+    "mtime": 1786358289.237051,
+    "ast_hash": "9922f55180428d6df5f4e0d2c7939299",
+    "semantic_hash": ""
+  },
+  "images/now-actions/Create-Action.png": {
+    "mtime": 1777537451.770279,
+    "ast_hash": "a803839965b217fb65bebed70ca8bac2",
+    "semantic_hash": ""
+  },
+  "images/now-actions/Criteria.png": {
+    "mtime": 1786358389.826781,
+    "ast_hash": "9e3998c88fbfc710c18bdce0d5d3a41c",
+    "semantic_hash": ""
+  },
+  "images/now-dashboards/Circle-Dashboards.png": {
+    "mtime": 1786358601.0450513,
+    "ast_hash": "d0f6e89e756dbba03a305930c6b43b3d",
+    "semantic_hash": ""
+  },
+  "images/now-dashboards/Dashboard-Example.png": {
+    "mtime": 1786358839.7163815,
+    "ast_hash": "bf91566ac31e855a7d8a77ebe4cc3974",
+    "semantic_hash": ""
+  },
+  "images/now-dashboards/Dashboards-Hero.png": {
+    "mtime": 1777977211.1008759,
+    "ast_hash": "96319c7e7d1bf7a2c8e26aa449479621",
+    "semantic_hash": ""
+  },
+  "images/now-dashboards/Table-Example.png": {
+    "mtime": 1786358996.9662983,
+    "ast_hash": "23028bed63d3955a3cf0fc1dad37fe20",
+    "semantic_hash": ""
+  },
+  "images/now-dashboards/Table-Filter.png": {
+    "mtime": 1777977671.9615505,
+    "ast_hash": "ed49fac7ba8c426a22997ebec76ca3cd",
+    "semantic_hash": ""
+  },
+  "images/now-dashboards/Table.png": {
+    "mtime": 1777977589.2308736,
+    "ast_hash": "ff81f59c82a184eff7cf4f024a408a60",
+    "semantic_hash": ""
+  },
+  "images/now-dashboards/Widgets-Tables.png": {
+    "mtime": 1777977331.5650656,
+    "ast_hash": "502da18dc8014356d8d263fa2f535e9b",
+    "semantic_hash": ""
+  },
+  "images/now-home/Home-Hero.png": {
+    "mtime": 1776253089.6525068,
+    "ast_hash": "f15347b5f7c2d47a3b88f71b5329ca1f",
+    "semantic_hash": ""
+  },
+  "images/now-home/Home-Overview.png": {
+    "mtime": 1777535586.5374851,
+    "ast_hash": "36be869883e36f244c2d3f841cf04f69",
+    "semantic_hash": ""
+  },
+  "images/now-home/Roadmap.png": {
+    "mtime": 1776345798.4539855,
+    "ast_hash": "6800bc07ff339615962df263189058b4",
+    "semantic_hash": ""
+  },
+  "images/now-insights/Circle-Insights.png": {
+    "mtime": 1786357861.7738338,
+    "ast_hash": "febcee78e75667e1ce09a2c3f14f0d78",
+    "semantic_hash": ""
+  },
+  "images/now-insights/Insights-Hero.png": {
+    "mtime": 1776253089.6596272,
+    "ast_hash": "c86e875c795bb72cb570057746e20781",
+    "semantic_hash": ""
+  },
+  "images/now-insights/Insights-Icon.png": {
+    "mtime": 1776253089.662187,
+    "ast_hash": "a8ce636c71f3664638e413deaf06d8a4",
+    "semantic_hash": ""
+  },
+  "images/now-insights/Slicers-Filters.png": {
+    "mtime": 1778157070.157415,
+    "ast_hash": "4c1b161dc4c3a3855f96d95f40615ee6",
+    "semantic_hash": ""
+  },
+  "images/now-intro/Circle.png": {
+    "mtime": 1786356632.3496792,
+    "ast_hash": "99f22536ae8c59e6e7c88cb64f2bb770",
+    "semantic_hash": ""
+  },
+  "images/now-intro/Complex-Supplychain.png": {
+    "mtime": 1777556820.7386806,
+    "ast_hash": "8db8b52ca1a1b0a504cfff33c377355b",
+    "semantic_hash": ""
+  },
+  "images/now-intro/Custom.png": {
+    "mtime": 1786357074.4707725,
+    "ast_hash": "6c9a71b20bc9f6490c695392a2689963",
+    "semantic_hash": ""
+  },
+  "images/now-intro/ERP.png": {
+    "mtime": 1778244256.2874956,
+    "ast_hash": "1cec3d707877cf4622612b73a679b465",
+    "semantic_hash": ""
+  },
+  "images/now-intro/Four-Pillars.png": {
+    "mtime": 1776253089.6885798,
+    "ast_hash": "8100878a4f74b44cfac951f21e06bf88",
+    "semantic_hash": ""
+  },
+  "images/now-intro/Now-Intro-Hero.png": {
+    "mtime": 1777544142.144303,
+    "ast_hash": "02901201bb2e2d7f4cff97e26205a628",
+    "semantic_hash": ""
+  },
+  "images/now-intro/Standard_Solutions.png": {
+    "mtime": 1786357051.3982446,
+    "ast_hash": "665065d10941c0360171b6c1db0e7151",
+    "semantic_hash": ""
+  },
+  "images/now-intro/Two-Ways.png": {
+    "mtime": 1776253089.6911995,
+    "ast_hash": "bfb4c14f2635615ffe63e3018c3c01b1",
+    "semantic_hash": ""
+  },
+  "images/now-intro/data-1.png": {
+    "mtime": 1786356790.6053047,
+    "ast_hash": "fd175263aa3df456723fafd7e297da57",
+    "semantic_hash": ""
+  },
+  "images/now-intro/data-2.png": {
+    "mtime": 1786356798.9292943,
+    "ast_hash": "ac46e7e6b98deebd1b9ea4c5a43faa93",
+    "semantic_hash": ""
+  },
+  "images/placeholder-images/Axes-empty.png": {
+    "mtime": 1787064662.479414,
+    "ast_hash": "a38c23a89e7d23015cd8d065ea46849f",
+    "semantic_hash": ""
+  },
+  "images/placeholder-images/Axes-filled-out.png": {
+    "mtime": 1787064682.9790483,
+    "ast_hash": "552d7c9ed0d9ffcf39974d24f33a68e0",
+    "semantic_hash": ""
+  },
+  "images/placeholder-images/Click-through.png": {
+    "mtime": 1787064637.010416,
+    "ast_hash": "0ee85a15d4e0eaaacde43dbaa2a124c2",
+    "semantic_hash": ""
+  },
+  "images/placeholder-images/Four-groups.png": {
+    "mtime": 1787064736.7382863,
+    "ast_hash": "f67397cef1bef4a15955b05e247bf0d7",
+    "semantic_hash": ""
+  },
+  "images/placeholder-images/Illustration.png": {
+    "mtime": 1787064619.6692047,
+    "ast_hash": "206beeb8f1c3f03cc0a286a2517e3de3",
+    "semantic_hash": ""
+  },
+  "images/placeholder-images/Long-tail.png": {
+    "mtime": 1787064767.8712163,
+    "ast_hash": "f49d09eef87b2279a172b9a0f1315e05",
+    "semantic_hash": ""
+  },
+  "images/products-category-management/Axes-And-Categories.png": {
+    "mtime": 1787578548.5507343,
+    "ast_hash": "07c9fe874ca5aff5a6d35d9c5ef55174",
+    "semantic_hash": ""
+  },
+  "images/products-category-management/Axes-And-Categroies-With-Icons.png": {
+    "mtime": 1788264800.9667318,
+    "ast_hash": "eb93a067b8fa1d5eda07229966d0b2fa",
+    "semantic_hash": ""
+  },
+  "images/products-category-management/Axes-Empty.png": {
+    "mtime": 1787578527.5025535,
+    "ast_hash": "7d9408558991ac2b09146510c026bf6c",
+    "semantic_hash": ""
+  },
+  "images/products-category-management/Categories-Only.png": {
+    "mtime": 1787578579.3345726,
+    "ast_hash": "3b759a51ea26ce16942b160e7edf88bf",
+    "semantic_hash": ""
+  },
+  "images/products-category-management/Category-Management-Walkthrough.png": {
+    "mtime": 1787578601.2348964,
+    "ast_hash": "7b3d23b472d2531960f64c1d73a21ddb",
+    "semantic_hash": ""
+  },
+  "images/products-category-management/Direct-Costs.png": {
+    "mtime": 1789468494.9911036,
+    "ast_hash": "324e2b9a222efa86120843a394dc1346",
+    "semantic_hash": ""
+  },
+  "images/products-category-management/Four-Categories-Icons-Titles-Questions.png": {
+    "mtime": 1788264588.3442626,
+    "ast_hash": "f34857a4831b0d887f7cc73cd149347b",
+    "semantic_hash": ""
+  },
+  "images/products-category-management/Four-Categories-Only-Icons-And-Titles.png": {
+    "mtime": 1788264494.7900646,
+    "ast_hash": "824f27805f1c3b91ea86d3362f1c555a",
+    "semantic_hash": ""
+  },
+  "images/products-category-management/Hero.png": {
+    "mtime": 1787654948.3025868,
+    "ast_hash": "64a628db0a64b6f1fa5cc53bdaccf7cc",
+    "semantic_hash": ""
+  },
+  "images/products-category-management/Indirect-Costs.png": {
+    "mtime": 1789468525.9852197,
+    "ast_hash": "3ac75493f8420daff1c662d94e9c2ac8",
+    "semantic_hash": ""
+  },
+  "images/products-category-management/KPI-Benchmark-Walkthrough.png": {
+    "mtime": 1787578496.4020805,
+    "ast_hash": "123b7614b286622c046b900ec26be646",
+    "semantic_hash": ""
+  },
+  "images/products-category-management/Three-KPIs.png": {
+    "mtime": 1788264456.9504316,
+    "ast_hash": "bc5b750b0aeffc9e5acf07605eb42d78",
+    "semantic_hash": ""
+  },
+  "images/products-category-management/Tools-On-Shelf.png": {
+    "mtime": 1787578430.8580709,
+    "ast_hash": "5e16323986ea1a1a676ebeedc87b0e86",
+    "semantic_hash": ""
+  },
+  "images/products-intro/Hero.png": {
+    "mtime": 1787653388.8782136,
+    "ast_hash": "df879b0f0a4eac4dfa4a819e803f82fc",
+    "semantic_hash": ""
+  },
+  "images/products-new-product-introduction/Already-Introduced.png": {
+    "mtime": 1787578934.7288356,
+    "ast_hash": "5f39f16975cb36ab7e67baa60c59e406",
+    "semantic_hash": ""
+  },
+  "images/products-new-product-introduction/Discuss-With-Suppliers.png": {
+    "mtime": 1787579328.7630436,
+    "ast_hash": "2e0e7cca1a66aabcc0254eb91ffc98f4",
+    "semantic_hash": ""
+  },
+  "images/products-new-product-introduction/Hero.png": {
+    "mtime": 1787829547.4228506,
+    "ast_hash": "c824f83ae6836e7cab89ac62fa7ac596",
+    "semantic_hash": ""
+  },
+  "images/products-new-product-introduction/Introduce-In-Future.png": {
+    "mtime": 1787578967.7097735,
+    "ast_hash": "55a9950f2dc7c8e3308548e6b929e179",
+    "semantic_hash": ""
+  },
+  "images/products-new-product-introduction/Lifecycle-Introduction.png": {
+    "mtime": 1788267109.4437306,
+    "ast_hash": "e616eb7bfab4ef5057b6503a1479fb62",
+    "semantic_hash": ""
+  },
+  "images/products-new-product-introduction/NPI-Framework-Graphic.png": {
+    "mtime": 1788268178.9038885,
+    "ast_hash": "89c0352117ba6ad1e52fea7a6beec67a",
+    "semantic_hash": ""
+  },
+  "images/products-new-product-introduction/New-P-Intro-Framework-Walkthrough.png": {
+    "mtime": 1787578868.4211469,
+    "ast_hash": "5298c1ec1f3e9b5774c07541a6f6d9db",
+    "semantic_hash": ""
+  },
+  "images/products-new-product-introduction/Who-Owns-The-Decision.png": {
+    "mtime": 1787578908.8203678,
+    "ast_hash": "c97955d9e19dc82eeb91989d92070f66",
+    "semantic_hash": ""
+  },
+  "images/products-phase-out/Dead-Items-Walkthrough.png": {
+    "mtime": 1787579449.7361991,
+    "ast_hash": "2597b030fda69408e60b604eed5ce2c4",
+    "semantic_hash": ""
+  },
+  "images/products-phase-out/Hero.png": {
+    "mtime": 1787656763.6440265,
+    "ast_hash": "b01054951fb285b17debc7618157226d",
+    "semantic_hash": ""
+  },
+  "images/products-phase-out/Lifecycle-Phase-Out.png": {
+    "mtime": 1788268242.1024191,
+    "ast_hash": "4016fcc9f1663544c92a7ad2a568b827",
+    "semantic_hash": ""
+  },
+  "images/products-phase-out/Potential-Phase-Outs-Walkthrough.png": {
+    "mtime": 1787579493.2488923,
+    "ast_hash": "6f10dd8de470e57d381e68578e1c372f",
+    "semantic_hash": ""
+  },
+  "images/products-phase-out/Taking-Away-Product.png": {
+    "mtime": 1787579471.1340106,
+    "ast_hash": "f768d19642e91639ac495f576db3811f",
+    "semantic_hash": ""
+  },
+  "images/products-phase-out/Turnaround-Highlighted.png": {
+    "mtime": 1788268252.842364,
+    "ast_hash": "67c8e20767ac70edd0284017f9444a43",
+    "semantic_hash": ""
+  },
+  "images/reorder-point/Calculation.png": {
+    "mtime": 1770199938.9690602,
+    "ast_hash": "8fa9b3a796d0e0089c8f47c4679ec974",
+    "semantic_hash": ""
+  },
+  "images/reorder-point/Desktop.png": {
+    "mtime": 1770200023.45601,
+    "ast_hash": "c27a9503d477f5e8145fd3c9a77dbe2d",
+    "semantic_hash": ""
+  },
+  "images/reorder-point/Reorder-Point-Graph.png": {
+    "mtime": 1770199828.793508,
+    "ast_hash": "72fe29c9e8178c53c0e3e6e5560bb981",
+    "semantic_hash": ""
+  },
+  "images/reorder-point/Reorder-Point-Hero.png": {
+    "mtime": 1776943340.7934868,
+    "ast_hash": "fd41cfd5b59e95b1a8a8ac34ff1de1a2",
+    "semantic_hash": ""
+  },
+  "images/reorder-quantity/Deadstock.png": {
+    "mtime": 1770218688.71839,
+    "ast_hash": "8b8dabda06ad301b30f2533708b52926",
+    "semantic_hash": ""
+  },
+  "images/reorder-quantity/Desktop.png": {
+    "mtime": 1770220101.1462011,
+    "ast_hash": "c27a9503d477f5e8145fd3c9a77dbe2d",
+    "semantic_hash": ""
+  },
+  "images/reorder-quantity/EOQ.png": {
+    "mtime": 1770218270.4801948,
+    "ast_hash": "c8857f9c096e888ac57f3975c1998be6",
+    "semantic_hash": ""
+  },
+  "images/reorder-quantity/MOQ.png": {
+    "mtime": 1770218263.3073986,
+    "ast_hash": "ba39c4a828464e012fd96066209a77ca",
+    "semantic_hash": ""
+  },
+  "images/reorder-quantity/RQ.png": {
+    "mtime": 1770218275.7296007,
+    "ast_hash": "b7a6325d8d1c8d454b7d39af862d0c83",
+    "semantic_hash": ""
+  },
+  "images/reorder-quantity/Reorder-Quantity-Graph.png": {
+    "mtime": 1770218192.7944624,
+    "ast_hash": "2c2c7b67d7ca9bc67115bcadd0c4e028",
+    "semantic_hash": ""
+  },
+  "images/reorder-quantity/Reorder-Quantity-Hero.png": {
+    "mtime": 1776944051.8823206,
+    "ast_hash": "47a978af9537995664f3c69a6b5d2fff",
+    "semantic_hash": ""
+  },
+  "images/reorder-quantity/Solution-1.png": {
+    "mtime": 1770218768.5844197,
+    "ast_hash": "70e44daa0d2f24a56a94b10adeab7445",
+    "semantic_hash": ""
+  },
+  "images/reorder-quantity/Solution-2.png": {
+    "mtime": 1770218833.1250436,
+    "ast_hash": "769370e0f95618f5f7964418823c7894",
+    "semantic_hash": ""
+  },
+  "images/reorder-quantity/Trap-1.png": {
+    "mtime": 1776943966.6770244,
+    "ast_hash": "75d9304f0c25e3fd1c41cb6d97f83000",
+    "semantic_hash": ""
+  },
+  "images/reorder-quantity/Trap-2.png": {
+    "mtime": 1776943977.6811256,
+    "ast_hash": "630e6fbcce7903a670d2b2aef8f3f248",
+    "semantic_hash": ""
+  },
+  "images/reorder-quantity/Triangle.png": {
+    "mtime": 1770218405.082947,
+    "ast_hash": "1e180e9aa9b3697b4078ab3ee5a564f2",
+    "semantic_hash": ""
+  },
+  "images/safety-stock/A-C-Items.png": {
+    "mtime": 1769180391.4885998,
+    "ast_hash": "14fbd384df56af12d6efc3c8191ee4aa",
+    "semantic_hash": ""
+  },
+  "images/safety-stock/Lead-Time-Example.png": {
+    "mtime": 1776857223.5775416,
+    "ast_hash": "aadd2fe43c8388683fdc38aef4f412d5",
+    "semantic_hash": ""
+  },
+  "images/safety-stock/Lead-Time.png": {
+    "mtime": 1776941697.2999842,
+    "ast_hash": "0add99eb7ed9916ede363d23ceba079f",
+    "semantic_hash": ""
+  },
+  "images/safety-stock/Safety-Stock-Graphic.png": {
+    "mtime": 1776939734.164976,
+    "ast_hash": "acad376178941fcc30eabe6471e0d182",
+    "semantic_hash": ""
+  },
+  "images/safety-stock/Safety-Stock-Hero.png": {
+    "mtime": 1769177707.8814888,
+    "ast_hash": "b5cc805162699c721e83b1c09daf342b",
+    "semantic_hash": ""
+  },
+  "images/safety-stock/Service-Cost-Graph.png": {
+    "mtime": 1769180853.2245927,
+    "ast_hash": "b0954d6148bdf2ef9b88932031a3de8e",
+    "semantic_hash": ""
+  },
+  "images/safety-stock/Service-Level-Example.png": {
+    "mtime": 1776857237.5602517,
+    "ast_hash": "ddcfc7310575aa85f4ba2a4533c754d0",
+    "semantic_hash": ""
+  },
+  "images/safety-stock/Service-Model.png": {
+    "mtime": 1769181115.0476675,
+    "ast_hash": "0b1adfe5ca4d24931ea5db79ccb092d3",
+    "semantic_hash": ""
+  },
+  "images/safety-stock/Service.png": {
+    "mtime": 1776941718.4663556,
+    "ast_hash": "fe8ba5ab6e0d89dd0571404c738b79ad",
+    "semantic_hash": ""
+  },
+  "images/safety-stock/Truck.png": {
+    "mtime": 1776939745.3349414,
+    "ast_hash": "612d799e05b59ad07dbf395de5ee36f3",
+    "semantic_hash": ""
+  },
+  "images/safety-stock/Variance.png": {
+    "mtime": 1776939252.292348,
+    "ast_hash": "78414a3ff5916bf96c0dd6da448e1b36",
+    "semantic_hash": ""
+  },
+  "images/safety-stock/Waiter.png": {
+    "mtime": 1776939227.0090811,
+    "ast_hash": "067d758c508ed1c313002001cecbf3f5",
+    "semantic_hash": ""
+  },
+  "images/spend-analysis/Administrative-Burden.png": {
+    "mtime": 1773751463.9200916,
+    "ast_hash": "89162987a07bfdc9ebe15827c9668206",
+    "semantic_hash": ""
+  },
+  "images/spend-analysis/Drilldown.png": {
+    "mtime": 1773751463.9235628,
+    "ast_hash": "65d322fc35377f325054e3de5a192aa1",
+    "semantic_hash": ""
+  },
+  "images/spend-analysis/Hidden-Cost.png": {
+    "mtime": 1773751463.9268022,
+    "ast_hash": "942d4bc7ae97314fd333a7ca07005462",
+    "semantic_hash": ""
+  },
+  "images/spend-analysis/Hidden-Potential.png": {
+    "mtime": 1773751463.9308293,
+    "ast_hash": "70d52df8a812938f635f02f2f1fbf3ce",
+    "semantic_hash": ""
+  },
+  "images/spend-analysis/Long-Tail.png": {
+    "mtime": 1773751463.9313922,
+    "ast_hash": "b87af77c1768bce0fc1e64dec4c42a5b",
+    "semantic_hash": ""
+  },
+  "images/spend-analysis/Spend-Analysis-Hero.png": {
+    "mtime": 1776253089.7027388,
+    "ast_hash": "f40a9aece06d272670a3bf1b2c66c54d",
+    "semantic_hash": ""
+  },
+  "images/spend-analysis/WWWW.png": {
+    "mtime": 1776253089.7073238,
+    "ast_hash": "e9f3552107fe083043e38bf8d6baeedc",
+    "semantic_hash": ""
+  },
+  "images/spend-analysis/Weakened-Negotiating-Power.png": {
+    "mtime": 1773751463.9429288,
+    "ast_hash": "f90690efde52545d1704a2e80b664fa5",
+    "semantic_hash": ""
+  },
+  "images/stock-policy/A-C-Items-2.png": {
+    "mtime": 1768223658.4558206,
+    "ast_hash": "0cbb84d07f85fd0a4b395ea909496888",
+    "semantic_hash": ""
+  },
+  "images/stock-policy/A-C-Items.png": {
+    "mtime": 1768221750.188174,
+    "ast_hash": "db2d0f9853f1fce8a84412eba8cc8e8f",
+    "semantic_hash": ""
+  },
+  "images/stock-policy/Four-Purposes.png": {
+    "mtime": 1768223872.0391428,
+    "ast_hash": "476f06ef063ff15ad3ddea684235f7bf",
+    "semantic_hash": ""
+  },
+  "images/stock-policy/Pain.png": {
+    "mtime": 1768221577.2420738,
+    "ast_hash": "6ce6a5b8c1843a7099bf514e71893f40",
+    "semantic_hash": ""
+  },
+  "images/stock-policy/Stock-Policy-Hero.png": {
+    "mtime": 1776934140.7242384,
+    "ast_hash": "51226f5f3a4a67ceb9f618a17e7a62ec",
+    "semantic_hash": ""
+  },
+  "images/stock-policy/What-To-Stock.png": {
+    "mtime": 1768221462.546241,
+    "ast_hash": "88bdc208e15b87ee669dae92298283b9",
+    "semantic_hash": ""
+  },
+  "images/supplier-negotiation/AA-AB.png": {
+    "mtime": 1776416296.0601475,
+    "ast_hash": "61deed263b100a5f20b3461d26670174",
+    "semantic_hash": ""
+  },
+  "images/supplier-negotiation/CA-CB.png": {
+    "mtime": 1776416329.6099231,
+    "ast_hash": "a7a34f281ebe2213229fb6ecdeed075f",
+    "semantic_hash": ""
+  },
+  "images/supplier-negotiation/CC-BC-AC.png": {
+    "mtime": 1776416314.4398642,
+    "ast_hash": "f88332096c8c1bee54b409a23f84cfad",
+    "semantic_hash": ""
+  },
+  "images/supplier-negotiation/Define-The-Goal.png": {
+    "mtime": 1774005615.2520766,
+    "ast_hash": "173d78a0162d05f8613e0d077a03529d",
+    "semantic_hash": ""
+  },
+  "images/supplier-negotiation/Differentiated-Strategy.png": {
+    "mtime": 1776416283.434862,
+    "ast_hash": "d1a78eda684efd891cd257e4f42e3166",
+    "semantic_hash": ""
+  },
+  "images/supplier-negotiation/Selecting-The-Variables.png": {
+    "mtime": 1774005687.8551884,
+    "ast_hash": "73a9c06752c0a50f3cab1e0a68f97189",
+    "semantic_hash": ""
+  },
+  "images/supplier-negotiation/Supplier-Negotiation-Hero.png": {
+    "mtime": 1776253089.7178555,
+    "ast_hash": "3052256ab09adccb1377f14a93b7bca2",
+    "semantic_hash": ""
+  },
+  "images/supplier-negotiation/Three-Steps.png": {
+    "mtime": 1774005480.4230688,
+    "ast_hash": "769558a4b7ca14e50b78e9da25a80cbb",
+    "semantic_hash": ""
+  },
+  "images/supplier-performance/ABC-Suppliers.png": {
+    "mtime": 1772455003.9394186,
+    "ast_hash": "2a3bc961ab7f35de45cd2d8cc52d31e7",
+    "semantic_hash": ""
+  },
+  "images/supplier-performance/Better-Decision-Making.png": {
+    "mtime": 1772454826.0663085,
+    "ast_hash": "45f5ec9c10cf4fa28df66a7ccc5cb0a7",
+    "semantic_hash": ""
+  },
+  "images/supplier-performance/Five-Metrics-Complete.png": {
+    "mtime": 1773681023.512565,
+    "ast_hash": "966d3a4d18279e0125a6c56fe12bd59d",
+    "semantic_hash": ""
+  },
+  "images/supplier-performance/Five-Metrics.png": {
+    "mtime": 1772455336.7426584,
+    "ast_hash": "5d34bfeb2d4646185b75663a9295a156",
+    "semantic_hash": ""
+  },
+  "images/supplier-performance/ITR-Calc.png": {
+    "mtime": 1773055505.7576406,
+    "ast_hash": "2d02fbc13069e9a76a29a9b78a07fd77",
+    "semantic_hash": ""
+  },
+  "images/supplier-performance/ITR-Metric.png": {
+    "mtime": 1773681276.3779535,
+    "ast_hash": "9537cb62cd4e84d5a70cf7b1a89d85d8",
+    "semantic_hash": ""
+  },
+  "images/supplier-performance/IV-Metric.png": {
+    "mtime": 1773681204.0627012,
+    "ast_hash": "2656f6c32e9d01c1fcf03c8673ece99d",
+    "semantic_hash": ""
+  },
+  "images/supplier-performance/Improved-Communication.png": {
+    "mtime": 1772454842.2857153,
+    "ast_hash": "986181b16e0cdb0059d4601215d2c723",
+    "semantic_hash": ""
+  },
+  "images/supplier-performance/Metric-ABC.png": {
+    "mtime": 1773681314.4503639,
+    "ast_hash": "b697a85d5304ed36390d649a5ff57121",
+    "semantic_hash": ""
+  },
+  "images/supplier-performance/Metrics-Zoom.png": {
+    "mtime": 1773056001.7224188,
+    "ast_hash": "10186919b4275669a8d8854fe66fe1d7",
+    "semantic_hash": ""
+  },
+  "images/supplier-performance/OTD-Calc.png": {
+    "mtime": 1773681078.9585457,
+    "ast_hash": "6c064872d29108c8047397e5add22cc8",
+    "semantic_hash": ""
+  },
+  "images/supplier-performance/OTD-Metric.png": {
+    "mtime": 1773681092.5192318,
+    "ast_hash": "56a54294deb803c9021bf99f2de80419",
+    "semantic_hash": ""
+  },
+  "images/supplier-performance/PC.png": {
+    "mtime": 1772455161.5591702,
+    "ast_hash": "36b0521234712a24c257193105698303",
+    "semantic_hash": ""
+  },
+  "images/supplier-performance/Roadmap.png": {
+    "mtime": 1773680943.3472724,
+    "ast_hash": "612b8b1c30b6843d003811388217de24",
+    "semantic_hash": ""
+  },
+  "images/supplier-performance/SP-Hero.png": {
+    "mtime": 1776951916.9229312,
+    "ast_hash": "184e122d94591e1c5792b7346ccd1863",
+    "semantic_hash": ""
+  },
+  "images/supplier-performance/Spend-IV-Metric.png": {
+    "mtime": 1773681158.325996,
+    "ast_hash": "2f4dad6c8e41a1566c0437933b866385",
+    "semantic_hash": ""
+  },
+  "images/supplier-performance/Struggle.png": {
+    "mtime": 1772454729.8774319,
+    "ast_hash": "44cbcc9e788caf9e40828fe425f73a97",
+    "semantic_hash": ""
+  },
+  "images/supplier-performance/Supplier-Motivation.png": {
+    "mtime": 1772454857.988185,
+    "ast_hash": "73aa6fde5ad20f180e47e15cb9a21843",
+    "semantic_hash": ""
+  },
+  "images/supplier-performance/Suppliers-Simple.png": {
+    "mtime": 1773680621.9507637,
+    "ast_hash": "12ff0850aa60f83ae79818e5e74fe552",
+    "semantic_hash": ""
+  },
+  "images/supplier-performance/Trap.png": {
+    "mtime": 1772454675.2535725,
+    "ast_hash": "25744c5ed298f542cfbc5aff8e6a8b2e",
+    "semantic_hash": ""
+  },
+  "images/suppliers-intro-2/Hero.png": {
+    "mtime": 1776950798.4316237,
+    "ast_hash": "1a9015cbd8b07ca20813346ec6940a6d",
+    "semantic_hash": ""
+  },
+  "images/suppliers-intro-2/Roadmap.png": {
+    "mtime": 1776253089.7297263,
+    "ast_hash": "e3360d421f69fca244f747a67e008220",
+    "semantic_hash": ""
+  },
+  "images/suppliers-intro-2/Supply-Chain.png": {
+    "mtime": 1776253089.7328432,
+    "ast_hash": "7daf71007f87cef93b9eff5f740816e7",
+    "semantic_hash": ""
+  },
+  "images/suppliers-intro/DuPont.png": {
+    "mtime": 1772453350.1881423,
+    "ast_hash": "abfdcdac65df033fe332ac51eb5cd573",
+    "semantic_hash": ""
+  },
+  "images/suppliers-intro/Five-Objectives.png": {
+    "mtime": 1772453406.154099,
+    "ast_hash": "ae86f5a460f5d40130a7ff232311e442",
+    "semantic_hash": ""
+  },
+  "images/suppliers-intro/Hamster-Wheel.png": {
+    "mtime": 1772452859.9076867,
+    "ast_hash": "af52a958f0f6935161cc7f040ecf6377",
+    "semantic_hash": ""
+  },
+  "images/suppliers-intro/Inflated-Costs.png": {
+    "mtime": 1772452928.0017614,
+    "ast_hash": "4e2b0db8ed43838a4777cb08311ea458",
+    "semantic_hash": ""
+  },
+  "images/suppliers-intro/Intro-Hero-Placeholder.png": {
+    "mtime": 1776253089.739066,
+    "ast_hash": "e5543106b58e89ce623076f89d66b9a2",
+    "semantic_hash": ""
+  },
+  "images/suppliers-intro/Roadmap.png": {
+    "mtime": 1772453115.9467034,
+    "ast_hash": "46698ca00c28e8174d73f8eafc0ac5bc",
+    "semantic_hash": ""
+  },
+  "images/suppliers-intro/Spend-Analysis.png": {
+    "mtime": 1772453492.0430114,
+    "ast_hash": "f9488714836a1d1eca703a4d0cd659a6",
+    "semantic_hash": ""
+  },
+  "images/suppliers-intro/Supplier-Negotiation.png": {
+    "mtime": 1772453508.8874764,
+    "ast_hash": "b73f039cf3a777ac373d31353be81db3",
+    "semantic_hash": ""
+  },
+  "images/suppliers-intro/Supplier-Performance.png": {
+    "mtime": 1772453479.5195389,
+    "ast_hash": "17ede6c776bf340f4d55d6fe623f2dd7",
+    "semantic_hash": ""
+  },
+  "images/suppliers-intro/Supply-Disruptions.png": {
+    "mtime": 1772452943.9622438,
+    "ast_hash": "b68e453841ea188b6dbc3f6d79575e5a",
+    "semantic_hash": ""
+  },
+  "images/suppliers-intro/Triangle.png": {
+    "mtime": 1772453177.8713534,
+    "ast_hash": "e0374cc8fb821f239eb1a5d7327590e5",
+    "semantic_hash": ""
+  },
+  "images/suppliers-intro/Wasted-Time.png": {
+    "mtime": 1772452954.8422787,
+    "ast_hash": "0ba1282d44630e1be89422baf340679e",
+    "semantic_hash": ""
+  },
+  "react-handoff/assets/images/BottomRightGraphs.png": {
+    "mtime": 1770906753.018021,
+    "ast_hash": "483a249849666703e1e9da8b6bcc90cb",
+    "semantic_hash": ""
+  },
+  "react-handoff/assets/images/Course-thumbnails/DABC.png": {
+    "mtime": 1770906753.0183477,
+    "ast_hash": "88b987da51d385011472d978a6437818",
+    "semantic_hash": ""
+  },
+  "react-handoff/assets/images/Course-thumbnails/IIntro.png": {
+    "mtime": 1770906753.0184927,
+    "ast_hash": "9933d6a6dfac9ca49acf512e151ff97d",
+    "semantic_hash": ""
+  },
+  "react-handoff/assets/images/Course-thumbnails/RP.png": {
+    "mtime": 1770906753.0186868,
+    "ast_hash": "b46c24ada3577e8f21678d7de8cd6a13",
+    "semantic_hash": ""
+  },
+  "react-handoff/assets/images/Course-thumbnails/RQ.png": {
+    "mtime": 1770906753.01896,
+    "ast_hash": "683254f263c16ea7c57a13edc97684f5",
+    "semantic_hash": ""
+  },
+  "react-handoff/assets/images/Course-thumbnails/SP.png": {
+    "mtime": 1770906753.0191824,
+    "ast_hash": "817c280a211a65e36127a972f4b7911e",
+    "semantic_hash": ""
+  },
+  "react-handoff/assets/images/Course-thumbnails/SS.png": {
+    "mtime": 1770906753.0193903,
+    "ast_hash": "f8eb89eeb5ec1b35d65515dac9dc7e16",
+    "semantic_hash": ""
+  },
+  "react-handoff/assets/svgs/Bookmark.svg": {
+    "mtime": 1770906753.0200374,
+    "ast_hash": "808361a6fe77784d1443db4ade13ca40",
+    "semantic_hash": ""
+  },
+  "react-handoff/assets/svgs/ButtonArrow.svg": {
+    "mtime": 1770906753.0201578,
+    "ast_hash": "8910ddffbd3f2d3e60215dabe020a356",
+    "semantic_hash": ""
+  },
+  "react-handoff/assets/svgs/Course-Icon.svg": {
+    "mtime": 1770906753.0205052,
+    "ast_hash": "7976ade153689a11afef0e258e5038cc",
+    "semantic_hash": ""
+  },
+  "react-handoff/assets/svgs/Learning-Path.svg": {
+    "mtime": 1770906753.0206141,
+    "ast_hash": "5dca31dc1416d8a6cf67f09cf50900a7",
+    "semantic_hash": ""
+  },
+  "react-handoff/assets/svgs/Share.svg": {
+    "mtime": 1770906753.020824,
+    "ast_hash": "61827cf3d3ee727f8b571756daf62167",
+    "semantic_hash": ""
+  },
+  "react-handoff/assets/svgs/Up-Arrow.svg": {
+    "mtime": 1770906753.0209641,
+    "ast_hash": "33ce82708a3b39a1d7c064ea2072df7d",
+    "semantic_hash": ""
+  },
+  "images/admin-custom/Create-Insight.mp4": {
+    "mtime": 1781525993.9055448,
+    "ast_hash": "2167537567333a120aa2fd77dcf10187",
+    "semantic_hash": ""
+  },
+  "images/admin-managing-users/Making-Action-Subscription.mp4": {
+    "mtime": 1781611974.9352028,
+    "ast_hash": "1f6c09aa10de29e152800d28a67e2d65",
+    "semantic_hash": ""
+  },
+  "images/admin-standard/Admin-Insights-Tab.mp4": {
+    "mtime": 1781520763.441995,
+    "ast_hash": "0e29aa47101fe34b146ed6977f8f28c0",
+    "semantic_hash": ""
+  },
+  "images/customers-linked-revenue/ABC-Linkage-Animation.mp4": {
+    "mtime": 1787583085.077978,
+    "ast_hash": "953aef874bee3a46ea479bdbc7c35d69",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/Clicking-I.mp4": {
+    "mtime": 1776855454.897329,
+    "ast_hash": "f3328cff8303ffe2219bcda67511757d",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/CreateABCInsight.mp4": {
+    "mtime": 1767805334.9778028,
+    "ast_hash": "4249cca72d3225c45178aceaf6294a1d",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/Double-ABC-Explainer-2.1.mp4": {
+    "mtime": 1767805335.0907981,
+    "ast_hash": "8f793d3fbe7bb453abf83a175aad2a2f",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/SearchABCInsight.mp4": {
+    "mtime": 1767805335.115392,
+    "ast_hash": "c11c5f4b153249dbc66a2d35af60b742",
+    "semantic_hash": ""
+  },
+  "images/double-abc-analysis/special-categories-animation.mp4": {
+    "mtime": 1776253089.6476755,
+    "ast_hash": "8080933427b07f0e42ceb049260eb67a",
+    "semantic_hash": ""
+  },
+  "images/legacy/ABc-animation.mp4": {
+    "mtime": 1767805334.9697247,
+    "ast_hash": "e364d04bfcfd8e2a920839901f07efb1",
+    "semantic_hash": ""
+  },
+  "images/legacy/BalanceAnimation.mp4": {
+    "mtime": 1767805334.973379,
+    "ast_hash": "ea4376a631624351c52968faf9daf7dd",
+    "semantic_hash": ""
+  },
+  "images/now-actions/export-1776713402944.mp4": {
+    "mtime": 1776713449.8040094,
+    "ast_hash": "5fd44162602157510ffdcb75c48c824f",
+    "semantic_hash": ""
+  },
+  "images/now-actions/opening_action.mp4": {
+    "mtime": 1786107836.6969888,
+    "ast_hash": "d6c3360db0e6fe6028778916a19cc80f",
+    "semantic_hash": ""
+  },
+  "images/now-dashboards/AtomicView.mp4": {
+    "mtime": 1777898586.7195253,
+    "ast_hash": "f583547d0bb5de53a92fa74d1d7b2429",
+    "semantic_hash": ""
+  },
+  "images/now-dashboards/ClickingIDashboards.mp4": {
+    "mtime": 1777902445.0842233,
+    "ast_hash": "f50edb660555fcfc22c585860b07571d",
+    "semantic_hash": ""
+  },
+  "images/now-dashboards/Dashboard-Filter.mp4": {
+    "mtime": 1777896685.8901048,
+    "ast_hash": "e576c11b733ba863ed97daed4c6a7c4f",
+    "semantic_hash": ""
+  },
+  "images/now-dashboards/Dashboards-Trend.mp4": {
+    "mtime": 1777977977.6801026,
+    "ast_hash": "136593cb67614a40490ad0143c07a4c7",
+    "semantic_hash": ""
+  },
+  "images/now-dashboards/KPI.mp4": {
+    "mtime": 1777894648.3609664,
+    "ast_hash": "3a47c8bb47bcb0e55e548273ab9ea6a4",
+    "semantic_hash": ""
+  },
+  "images/now-dashboards/KPI_2.mp4": {
+    "mtime": 1786098732.15174,
+    "ast_hash": "2ce32c289ce962220cadb2bf43ecbf46",
+    "semantic_hash": ""
+  },
+  "images/now-intro/Hover-I-Intro.mp4": {
+    "mtime": 1778244188.8289905,
+    "ast_hash": "de24c2881f94907302b57c608ba5fadb",
+    "semantic_hash": ""
+  },
+  "images/now-intro/data_tab.mp4": {
+    "mtime": 1785932683.5007129,
+    "ast_hash": "ecdd97dad245fad1dd6f760ea8c9a73f",
+    "semantic_hash": ""
+  },
+  "images/products-category-management/Profit-Margin-Breakdown.mp4": {
+    "mtime": 1789468188.6648302,
+    "ast_hash": "cc2d1112aaa17af4a2369a46e79a7b6e",
+    "semantic_hash": ""
+  },
+  "images/products-new-product-introduction/Failing-Products.mp4": {
+    "mtime": 1788248690.700807,
+    "ast_hash": "c134bb191c3b8b634040929cd8472539",
+    "semantic_hash": ""
+  },
+  "images/products-new-product-introduction/Overfilled-Shelf.mp4": {
+    "mtime": 1787318182.0719545,
+    "ast_hash": "28dbff1175f4f27c317c030737f93a2b",
+    "semantic_hash": ""
+  },
+  "images/products-phase-out/Long-Tail-Animation.mp4": {
+    "mtime": 1787148793.0407362,
+    "ast_hash": "f3c30a5e9c0b79688ac8af25abce039c",
+    "semantic_hash": ""
+  }
+}

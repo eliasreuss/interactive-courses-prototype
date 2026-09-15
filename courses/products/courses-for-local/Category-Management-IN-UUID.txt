@@ -111,7 +111,7 @@ It often costs more to sell a product than you think.
 Say you buy a product for 100 and sell it for 150, so you made 50. But the freight in takes 10, receiving it and putting it on the shelf takes another 5, the salesperson gets a bonus of 10, and sending it out to the customer takes 5 more.
 
 **You thought you made 50, but you actually made 20.**
-![video/size:large/align:right/frame:none](products-category-management/Profit-Margin-Breakdown.mp4)
+![video/size:large/align:right/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Products/Profit-Margin-Breakdown.mp4)
 ---
 > [next] Let's do it! -> 92f71642-d2a3-42a5-b052-d40f8137af3c
 
