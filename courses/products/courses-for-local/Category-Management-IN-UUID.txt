@@ -96,24 +96,50 @@ The **Category Management Insight** shows how your products are split across Pro
 
 [supademo: Category Management - Insight Walkthrough](https://app.supademo.com/embed/cmtr8ks032f1bqm300zf70nv1?embed_v=2&utm_source=embed)
 ---
-> [next] Continue -> ecf6e08b-f56a-4d70-acf1-55d846d14f92
+> [next] Continue -> ea3704b0-0f8a-40c3-a1e3-b2c5f29e019d
 
 [id:4/topic: Profit & Loss]
 
-slide_id: ecf6e08b-f56a-4d70-acf1-55d846d14f92
-index_title: Profit & Loss
-title: 
+slide_id: ea3704b0-0f8a-40c3-a1e3-b2c5f29e019d
+index_title: Cost to Serve
+title: Cost to Serve
 type: main
+layout: standard-2-col
 ---
-Denne del bliver lavet når profit and loss statement er oppe at køre.
-Det jeg i hvert fald tænker der skal være med er:
+It often costs more to sell a product than you think.
 
-* det koster ofte mere for dig at sælge produkter end du tror.
-* Hvad er direkte vs. indirekte spend. (PDF grafik)
-* DB1 DB2. vis det i Now (ikke click-through). (Skal det sættes op?)
-* Profit & Loss Insight walkthrough
+Say you buy a product for 100 and sell it for 150, so you made 50. But the freight in takes 10, receiving it and putting it on the shelf takes another 5, the salesperson gets a bonus of 10, and sending it out to the customer takes 5 more.
+
+**You thought you made 50, but you actually made 20.**
+![video/size:large/align:right/frame:none](products-category-management/Profit-Margin-Breakdown.mp4)
 ---
-> [next] Let's do it! -> fa52b4fe-fc76-4dde-bf54-d756fe5fbe78
+> [next] Let's do it! -> 92f71642-d2a3-42a5-b052-d40f8137af3c
+
+slide_id: 92f71642-d2a3-42a5-b052-d40f8137af3c
+index_title: Direct Costs
+title: Direct Costs
+type: main
+layout: standard-2-col
+---
+You can set up a full account for a product or a product group to see where the money actually goes.
+
+The direct costs are the ones already sitting in your data, like cost of goods, freight and discounts.
+![image/size:large/align:right/frame:none](products-category-management/Direct-Costs.png)
+---
+> [next] Continue -> b96e8b69-4c83-4229-821c-eb956a42ff0c
+
+slide_id: b96e8b69-4c83-4229-821c-eb956a42ff0c
+index_title: Indirect Costs
+title: Indirect Costs
+type: main
+layout: standard-2-col
+---
+The indirect costs are harder to get hold of, because nobody has put a number on what customer service, order handling and logistics really cost, and that is why most reporting stops before them.
+
+In this example, a product that looked like it earned 78.000 actually earned 38.500.
+![image/size:large/align:right/frame:none](products-category-management/Indirect-Costs.png)
+---
+> [next] Continue -> fa52b4fe-fc76-4dde-bf54-d756fe5fbe78
 
 [id:5/topic: What’s Next?]
 
