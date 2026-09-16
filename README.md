@@ -9,10 +9,15 @@ Static HTML prototype for **Inact** learning paths: hubs with course cards, a sl
 From the repository root:
 
 ```bash
-python3 -m http.server 8765
+python3 tools/dev-server.py 8765
 ```
 
 Then open [http://localhost:8765/index.html](http://localhost:8765/index.html) for the landing page, or any hub URL below.
+
+`tools/dev-server.py` serves the repo like `python3 -m http.server`, and adds the
+asset API the creator uses to browse and upload images. Plain `python3 -m
+http.server 8765` still works for everything except uploading — the creator falls
+back to reading the directory listing, and says so when you try to upload.
 
 ---
 
@@ -46,6 +51,24 @@ Empty course files show a **“Coming soon”** state in the viewer instead of a
 ## Video and media
 
 The viewer distinguishes **YouTube** URLs (embedded iframe with controls) from **direct video URLs** such as Cloudflare R2 `.mp4` links (native `<video>`, muted autoplay loop). Syntax and edge cases are documented in **`DEVELOPER_SPECIFICATION.md`**.
+
+### Adding images in the creator
+
+Set **Assets folder** on the course first — it decides which folder under `images/`
+new files land in and which folder the browser opens on.
+
+- **Drag a file from Finder onto a content field.** It uploads into the assets
+  folder and inserts the markdown where the cursor is. Works on the hero image
+  field too, and multiple files at once.
+- **Paste a screenshot** into a content field to upload it as `pasted-<timestamp>.png`.
+- **Media ▸ Image** opens a thumbnail browser of the folder, with size, alignment
+  and frame as controls rather than a chain of prompts. Double-click a thumbnail
+  to insert it straight away. **Image row** works the same way — select 2 to 4 and
+  the column width follows the count.
+
+Uploads never overwrite: a name that already exists gets `-1`, `-2` appended.
+Videos already in `images/` show up in the browser; YouTube and R2 links are still
+pasted as URLs.
 
 ---
 

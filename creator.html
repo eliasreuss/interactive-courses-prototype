@@ -2352,6 +2352,281 @@
         }
         
         /* Save Modal */
+        /* ===== Media picker ===== */
+        .picker-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 2100;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .picker-overlay.active { display: flex; }
+
+        /* The rows below set display, so hidden needs to win over them. */
+        .picker [hidden] { display: none !important; }
+
+        .picker {
+            background: #fff;
+            border-radius: var(--radius);
+            width: 100%;
+            max-width: 880px;
+            max-height: min(760px, 92vh);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .picker-head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 24px 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .picker-head h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0;
+            color: var(--text-dark);
+            flex: 1;
+        }
+
+        .picker-close {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: none;
+            background: var(--input-fill);
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        .picker-close:hover { background: var(--input-fill-hover); color: var(--text-dark); }
+
+        .picker-toolbar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 24px;
+            flex-wrap: wrap;
+        }
+
+        .picker-toolbar label {
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .picker-select,
+        .picker-search {
+            min-height: 38px;
+            padding: 8px 12px;
+            font-family: inherit;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            background: var(--input-fill);
+            border: 1px solid var(--input-border);
+            border-radius: var(--radius-input);
+        }
+
+        .picker-search { flex: 1; min-width: 160px; }
+        .picker-search::placeholder { color: var(--placeholder-color); }
+
+        .picker-select:focus,
+        .picker-search:focus {
+            outline: none;
+            background: #fff;
+            border-color: rgba(48, 70, 66, 0.35);
+            box-shadow: 0 0 0 4px var(--input-focus-ring);
+        }
+
+        .picker-upload-btn {
+            min-height: 38px;
+            padding: 8px 16px;
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--accent-green);
+            background: transparent;
+            border: 1px solid var(--accent-green);
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .picker-upload-btn:hover { background: var(--accent-olive); }
+
+        .picker-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 4px 24px 20px;
+            position: relative;
+        }
+
+        .picker-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 14px;
+        }
+
+        .picker-tile {
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            cursor: pointer;
+            background: #fff;
+            text-align: left;
+            padding: 0;
+            font-family: inherit;
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .picker-tile:hover { border-color: rgba(48, 70, 66, 0.4); }
+
+        .picker-tile.selected {
+            border-color: var(--accent-green);
+            box-shadow: 0 0 0 3px var(--input-focus-ring);
+        }
+
+        .picker-thumb {
+            height: 104px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--canvas-bg);
+            overflow: hidden;
+        }
+
+        .picker-thumb img,
+        .picker-thumb video {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .picker-thumb .picker-thumb-fallback {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .picker-tile-name {
+            display: block;
+            padding: 8px 10px 10px;
+            font-size: 0.72rem;
+            line-height: 1.35;
+            color: var(--text-dark);
+            word-break: break-word;
+        }
+
+        .picker-tile-name span {
+            display: block;
+            color: var(--text-muted);
+            font-size: 0.66rem;
+            margin-top: 2px;
+        }
+
+        .picker-empty {
+            padding: 48px 16px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .picker-options {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 24px;
+            border-top: 1px solid var(--border-color);
+            flex-wrap: wrap;
+        }
+
+        .picker-options .picker-field {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .picker-check {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .picker-foot {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 24px 20px;
+        }
+
+        .picker-status {
+            flex: 1;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            min-height: 1.2em;
+        }
+
+        .picker-status.error { color: #b3261e; }
+
+        .picker.dragover {
+            outline: 3px dashed var(--accent-green);
+            outline-offset: -8px;
+        }
+
+        .picker-droplayer {
+            display: none;
+            position: absolute;
+            inset: 0;
+            background: rgba(236, 239, 232, 0.92);
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--accent-green);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .picker.dragover .picker-droplayer { display: flex; }
+
+        /* Dropping straight onto an editor field */
+        textarea.media-dragover,
+        input.media-dragover {
+            outline: 2px dashed var(--accent-green);
+            outline-offset: -2px;
+            background: var(--accent-olive) !important;
+        }
+
+        .upload-toast {
+            position: fixed;
+            left: 50%;
+            bottom: 28px;
+            transform: translateX(-50%);
+            background: var(--accent-green);
+            color: #fff;
+            padding: 12px 22px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.22);
+            z-index: 2200;
+        }
+
+        .upload-toast.error { background: #b3261e; }
+
         .modal-overlay {
             display: none;
             position: fixed;
@@ -2612,6 +2887,60 @@
         <button class="header-btn save" id="save-btn" type="button"><span class="header-btn-text">Save</span></button>
     </div>
 </header>
+
+<!-- ========== MEDIA PICKER ========== -->
+<div class="picker-overlay" id="media-picker">
+    <div class="picker" id="media-picker-panel">
+        <div class="picker-head">
+            <h3 id="picker-title">Insert image</h3>
+            <button type="button" class="picker-close" id="picker-close" aria-label="Close">&times;</button>
+        </div>
+        <div class="picker-toolbar">
+            <label for="picker-folder">Folder</label>
+            <select class="picker-select" id="picker-folder"></select>
+            <input type="search" class="picker-search" id="picker-search" placeholder="Search files...">
+            <button type="button" class="picker-upload-btn" id="picker-upload">Upload files</button>
+            <input type="file" id="picker-file-input" multiple accept="image/*,video/*" hidden>
+        </div>
+        <div class="picker-body" id="picker-body">
+            <div class="picker-droplayer">Drop to upload into this folder</div>
+            <div class="picker-grid" id="picker-grid"></div>
+            <div class="picker-empty" id="picker-empty" hidden></div>
+        </div>
+        <div class="picker-options" id="picker-options">
+            <div class="picker-field">
+                <label for="picker-size">Size</label>
+                <select class="picker-select" id="picker-size">
+                    <option value="x-small">x-small</option>
+                    <option value="small">small</option>
+                    <option value="medium">medium</option>
+                    <option value="large" selected>large</option>
+                    <option value="third">third</option>
+                    <option value="fourth">fourth</option>
+                    <option value="550px">550px</option>
+                    <option value="__custom">custom...</option>
+                </select>
+                <input type="text" class="picker-search" id="picker-size-custom" placeholder="e.g. 420px" style="max-width:110px" hidden>
+            </div>
+            <div class="picker-field">
+                <label for="picker-align">Align</label>
+                <select class="picker-select" id="picker-align">
+                    <option value="left">left</option>
+                    <option value="center" selected>center</option>
+                    <option value="right">right</option>
+                </select>
+            </div>
+            <label class="picker-check">
+                <input type="checkbox" id="picker-frame"> Frame (border &amp; shadow)
+            </label>
+        </div>
+        <div class="picker-foot">
+            <div class="picker-status" id="picker-status"></div>
+            <button class="modal-btn cancel" id="picker-cancel">Cancel</button>
+            <button class="modal-btn confirm" id="picker-insert">Insert</button>
+        </div>
+    </div>
+</div>
 
 <!-- ========== SAVE MODAL ========== -->
 <div class="modal-overlay" id="save-modal">
@@ -3130,6 +3459,513 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
+    /* ============================================================
+       Asset library — browse images/, upload by drag & drop, and
+       build the media markdown without asking six questions in a row.
+       ============================================================ */
+
+    const MEDIA_EXT = /\.(png|jpe?g|gif|webp|svg|avif|mp4|webm|mov)$/i;
+    const VIDEO_EXT = /\.(mp4|webm|mov)$/i;
+
+    function assetKind(name) {
+        return VIDEO_EXT.test(name) ? 'video' : 'image';
+    }
+
+    const AssetLibrary = (() => {
+        let apiAvailable = null; // null = not probed yet
+
+        async function probe() {
+            if (apiAvailable !== null) return apiAvailable;
+            try {
+                const res = await fetch('/__assets/folders', { cache: 'no-store' });
+                apiAvailable = res.ok;
+            } catch (err) {
+                apiAvailable = false;
+            }
+            return apiAvailable;
+        }
+
+        function trimFolder(folder) {
+            return String(folder || '').replace(/^\/+|\/+$/g, '');
+        }
+
+        async function folders() {
+            if (await probe()) {
+                try {
+                    const res = await fetch('/__assets/folders', { cache: 'no-store' });
+                    const data = await res.json();
+                    return data.folders || [];
+                } catch (err) { /* fall through */ }
+            }
+            // Plain http.server still renders a directory index we can read.
+            return scrapeIndex('/images/', true);
+        }
+
+        async function list(folder) {
+            const clean = trimFolder(folder);
+            if (await probe()) {
+                const res = await fetch(`/__assets/list?folder=${encodeURIComponent(clean)}`, { cache: 'no-store' });
+                if (!res.ok) throw new Error('Could not read that folder');
+                const data = await res.json();
+                return data.files || [];
+            }
+            const names = await scrapeIndex(`/images/${clean ? clean + '/' : ''}`, false);
+            return names.filter(n => MEDIA_EXT.test(n)).map(name => ({
+                name,
+                ref: clean ? `${clean}/${name}` : name,
+                url: `/images/${clean ? clean + '/' : ''}${name}`,
+                kind: assetKind(name),
+            }));
+        }
+
+        async function scrapeIndex(path, wantDirs) {
+            try {
+                const res = await fetch(path, { cache: 'no-store' });
+                if (!res.ok) return [];
+                const html = await res.text();
+                const doc = new DOMParser().parseFromString(html, 'text/html');
+                const out = [];
+                doc.querySelectorAll('a[href]').forEach(a => {
+                    const href = decodeURIComponent(a.getAttribute('href') || '');
+                    if (href.startsWith('/') || href.startsWith('.')) return;
+                    const isDir = href.endsWith('/');
+                    if (wantDirs && isDir) out.push(href.replace(/\/$/, ''));
+                    if (!wantDirs && !isDir) out.push(href);
+                });
+                return out.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+            } catch (err) {
+                return [];
+            }
+        }
+
+        async function upload(file, folder) {
+            if (!(await probe())) {
+                throw new Error('Uploading needs the dev server: python3 tools/dev-server.py 8000');
+            }
+            const res = await fetch(`/__assets/upload?folder=${encodeURIComponent(trimFolder(folder))}`, {
+                method: 'POST',
+                headers: {
+                    'X-Filename': file.name,
+                    'Content-Type': file.type || 'application/octet-stream',
+                },
+                body: file,
+            });
+            const data = await res.json().catch(() => ({}));
+            if (!res.ok) throw new Error(data.error || 'Upload failed');
+            return data;
+        }
+
+        return { probe, folders, list, upload, canUpload: () => apiAvailable === true };
+    })();
+
+    function showToast(message, isError = false) {
+        document.querySelectorAll('.upload-toast').forEach(t => t.remove());
+        const toast = document.createElement('div');
+        toast.className = 'upload-toast' + (isError ? ' error' : '');
+        toast.textContent = message;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), isError ? 6000 : 2800);
+    }
+
+    /** Build the media markdown the viewer understands. */
+    function buildMediaMarkdown(asset, opts) {
+        const attributes = [`size:${opts.size}`];
+        if (['left', 'center', 'right'].includes(opts.align)) attributes.push(`align:${opts.align}`);
+        if (!opts.frame) attributes.push('frame:none');
+        const label = asset.kind === 'video' ? 'video' : (opts.alt || 'image');
+        return `![${label}/${attributes.join('/')}](${asset.ref})`;
+    }
+
+    /** A row of 2-4 images sits in {columns} blocks; the size follows the count. */
+    function rowSizeForCount(count) {
+        if (count >= 4) return 'fourth';
+        if (count === 3) return 'third';
+        return 'medium';
+    }
+
+    function buildImageRowMarkdown(assets, opts) {
+        const picked = assets.slice(0, 4);
+        const columns = picked.map(asset => {
+            const attrs = [`size:${opts.size}`, `align:${opts.align}`];
+            if (!opts.frame) attrs.push('frame:none');
+            return `{column}\n![${asset.name.replace(/\.[^.]+$/, '')}/${attrs.join('/')}](${asset.ref})\n{/column}`;
+        });
+        return `{columns}\n${columns.join('\n')}\n{/columns}\n`;
+    }
+
+    /* ---------- The picker dialog ---------- */
+
+    const MediaPicker = (() => {
+        const overlay = document.getElementById('media-picker');
+        const panel = document.getElementById('media-picker-panel');
+        const titleEl = document.getElementById('picker-title');
+        const folderSelect = document.getElementById('picker-folder');
+        const searchInput = document.getElementById('picker-search');
+        const grid = document.getElementById('picker-grid');
+        const emptyEl = document.getElementById('picker-empty');
+        const statusEl = document.getElementById('picker-status');
+        const optionsRow = document.getElementById('picker-options');
+        const sizeSelect = document.getElementById('picker-size');
+        const sizeCustom = document.getElementById('picker-size-custom');
+        const alignSelect = document.getElementById('picker-align');
+        const frameCheck = document.getElementById('picker-frame');
+        const fileInput = document.getElementById('picker-file-input');
+        const insertBtn = document.getElementById('picker-insert');
+
+        if (!overlay) return { open: () => {} };
+
+        const DEFAULTS_KEY = 'creatorMediaDefaults';
+        let assets = [];
+        let selected = [];
+        let config = {};
+        let dragDepth = 0;
+
+        function loadDefaults() {
+            try {
+                const saved = JSON.parse(localStorage.getItem(DEFAULTS_KEY) || '{}');
+                if (saved.size) {
+                    if ([...sizeSelect.options].some(o => o.value === saved.size)) {
+                        sizeSelect.value = saved.size;
+                    } else {
+                        sizeSelect.value = '__custom';
+                        sizeCustom.value = saved.size;
+                    }
+                }
+                if (saved.align) alignSelect.value = saved.align;
+                frameCheck.checked = !!saved.frame;
+            } catch (err) { /* defaults are a convenience, not a requirement */ }
+            syncCustomSize();
+        }
+
+        function saveDefaults() {
+            try {
+                localStorage.setItem(DEFAULTS_KEY, JSON.stringify(currentOptions()));
+            } catch (err) { /* ignore */ }
+        }
+
+        function syncCustomSize() {
+            sizeCustom.hidden = sizeSelect.value !== '__custom';
+        }
+
+        function currentOptions() {
+            const size = sizeSelect.value === '__custom'
+                ? (sizeCustom.value.trim() || 'large')
+                : sizeSelect.value;
+            return { size, align: alignSelect.value, frame: frameCheck.checked };
+        }
+
+        function setStatus(message, isError = false) {
+            statusEl.textContent = message || '';
+            statusEl.classList.toggle('error', !!isError);
+        }
+
+        function currentFolder() {
+            return folderSelect.value || '';
+        }
+
+        async function fillFolders() {
+            const preferred = String(getAssetsFolder() || '').replace(/\/$/, '');
+            const names = await AssetLibrary.folders();
+            if (preferred && !names.includes(preferred)) names.unshift(preferred);
+            folderSelect.innerHTML = names
+                .map(n => `<option value="${escapeHtml(n)}">${escapeHtml(n)}</option>`)
+                .join('') || '<option value="">images/</option>';
+            folderSelect.value = preferred && names.includes(preferred) ? preferred : (names[0] || '');
+        }
+
+        async function refresh() {
+            grid.innerHTML = '';
+            emptyEl.hidden = true;
+            setStatus('Loading...');
+            try {
+                assets = await AssetLibrary.list(currentFolder());
+                if (config.kind) assets = assets.filter(a => a.kind === config.kind);
+                selected = [];
+                render();
+                setStatus('');
+            } catch (err) {
+                setStatus(err.message, true);
+            }
+        }
+
+        function render() {
+            const needle = searchInput.value.trim().toLowerCase();
+            const visible = needle
+                ? assets.filter(a => a.name.toLowerCase().includes(needle))
+                : assets;
+
+            grid.innerHTML = visible.map(asset => {
+                const isSelected = selected.some(s => s.ref === asset.ref);
+                const thumb = asset.kind === 'video'
+                    ? `<video src="${escapeHtml(asset.url)}" muted playsinline preload="metadata"></video>`
+                    : `<img src="${escapeHtml(asset.url)}" alt="" loading="lazy">`;
+                const badge = asset.kind === 'video' ? '<span>video</span>' : '';
+                return `<button type="button" class="picker-tile${isSelected ? ' selected' : ''}" data-ref="${escapeHtml(asset.ref)}">
+                    <span class="picker-thumb">${thumb}</span>
+                    <span class="picker-tile-name">${escapeHtml(asset.name)}${badge}</span>
+                </button>`;
+            }).join('');
+
+            const hasAny = visible.length > 0;
+            emptyEl.hidden = hasAny;
+            paintSelection();
+            if (!hasAny) {
+                emptyEl.innerHTML = needle
+                    ? 'Nothing matches that search.'
+                    : (AssetLibrary.canUpload()
+                        ? 'This folder is empty.<br>Drop files here to upload them.'
+                        : 'This folder is empty, or the dev server is not running.<br>Start it with <code>python3 tools/dev-server.py 8000</code> to upload files.');
+            }
+            updateInsertState();
+        }
+
+        /* Selection only re-paints classes. Rebuilding the grid here would
+           destroy the tile mid-gesture and swallow the double-click. */
+        function paintSelection() {
+            grid.querySelectorAll('.picker-tile').forEach(tile => {
+                tile.classList.toggle('selected', selected.some(s => s.ref === tile.dataset.ref));
+            });
+            updateInsertState();
+        }
+
+        function updateInsertState() {
+            insertBtn.disabled = selected.length === 0;
+            insertBtn.style.opacity = selected.length === 0 ? '0.5' : '1';
+            insertBtn.textContent = selected.length > 1 ? `Insert ${selected.length}` : 'Insert';
+            // In row mode the column width follows how many images are selected.
+            if (config.multiple && selected.length >= 2) {
+                sizeSelect.value = rowSizeForCount(selected.length);
+                syncCustomSize();
+            }
+        }
+
+        function toggleSelection(ref) {
+            const asset = assets.find(a => a.ref === ref);
+            if (!asset) return;
+            const at = selected.findIndex(s => s.ref === ref);
+            if (config.multiple) {
+                if (at >= 0) selected.splice(at, 1);
+                else selected.push(asset);
+            } else {
+                selected = at >= 0 ? [] : [asset];
+            }
+            paintSelection();
+        }
+
+        async function uploadFiles(fileList) {
+            const files = Array.from(fileList || []).filter(f => MEDIA_EXT.test(f.name));
+            if (!files.length) {
+                setStatus('Those files are not images or videos.', true);
+                return;
+            }
+            setStatus(`Uploading ${files.length} file${files.length > 1 ? 's' : ''}...`);
+            const added = [];
+            for (const file of files) {
+                try {
+                    added.push(await AssetLibrary.upload(file, currentFolder()));
+                } catch (err) {
+                    setStatus(err.message, true);
+                    return;
+                }
+            }
+            await refresh();
+            selected = config.multiple ? added.slice() : added.slice(-1);
+            render();
+            const renamed = added.filter(a => a.renamed).map(a => a.name);
+            setStatus(renamed.length
+                ? `Uploaded. Renamed to avoid overwriting: ${renamed.join(', ')}`
+                : `Uploaded ${added.length} file${added.length > 1 ? 's' : ''}.`);
+        }
+
+        function close() {
+            overlay.classList.remove('active');
+            panel.classList.remove('dragover');
+            dragDepth = 0;
+            config = {};
+        }
+
+        function confirmSelection() {
+            if (!selected.length) return;
+            saveDefaults();
+            const opts = currentOptions();
+            const chosen = selected.slice();
+            const done = config.onChoose;
+            close();
+            if (done) done(chosen, opts);
+        }
+
+        // --- wiring ---
+        grid.addEventListener('click', e => {
+            const tile = e.target.closest('.picker-tile');
+            if (tile) toggleSelection(tile.dataset.ref);
+        });
+        grid.addEventListener('dblclick', e => {
+            const tile = e.target.closest('.picker-tile');
+            if (!tile) return;
+            // The two clicks have already toggled this tile; make sure it ends up chosen.
+            const asset = assets.find(a => a.ref === tile.dataset.ref);
+            if (!asset) return;
+            if (!selected.some(s => s.ref === asset.ref)) selected.push(asset);
+            confirmSelection();
+        });
+        searchInput.addEventListener('input', render);
+        folderSelect.addEventListener('change', refresh);
+        sizeSelect.addEventListener('change', syncCustomSize);
+        document.getElementById('picker-upload').addEventListener('click', () => fileInput.click());
+        fileInput.addEventListener('change', () => { uploadFiles(fileInput.files); fileInput.value = ''; });
+        document.getElementById('picker-close').addEventListener('click', close);
+        document.getElementById('picker-cancel').addEventListener('click', close);
+        insertBtn.addEventListener('click', confirmSelection);
+        overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && overlay.classList.contains('active')) close();
+        });
+
+        ['dragenter', 'dragover'].forEach(evt => panel.addEventListener(evt, e => {
+            if (!e.dataTransfer || !Array.from(e.dataTransfer.types || []).includes('Files')) return;
+            e.preventDefault();
+            if (evt === 'dragenter') dragDepth++;
+            panel.classList.add('dragover');
+        }));
+        panel.addEventListener('dragleave', () => {
+            dragDepth = Math.max(0, dragDepth - 1);
+            if (!dragDepth) panel.classList.remove('dragover');
+        });
+        panel.addEventListener('drop', e => {
+            if (!e.dataTransfer || !e.dataTransfer.files.length) return;
+            e.preventDefault();
+            dragDepth = 0;
+            panel.classList.remove('dragover');
+            uploadFiles(e.dataTransfer.files);
+        });
+
+        loadDefaults();
+
+        async function open(options) {
+            config = options || {};
+            titleEl.textContent = config.title || 'Insert image';
+            optionsRow.hidden = config.showOptions === false;
+            searchInput.value = '';
+            selected = [];
+            assets = [];
+            grid.innerHTML = '';
+            setStatus('');
+            overlay.classList.add('active');
+            await AssetLibrary.probe();
+            await fillFolders();
+            await refresh();
+            searchInput.focus();
+        }
+
+        return { open };
+    })();
+
+    /** Insert text into a specific textarea at the caret. */
+    function insertIntoTextarea(textarea, textToInsert) {
+        if (!textarea) return;
+        const start = textarea.selectionStart ?? textarea.value.length;
+        const end = textarea.selectionEnd ?? textarea.value.length;
+        const text = textarea.value || '';
+        textarea.value = text.substring(0, start) + textToInsert + text.substring(end);
+        textarea.focus();
+        textarea.selectionStart = textarea.selectionEnd = start + textToInsert.length;
+        textarea.dispatchEvent(new Event('input', { bubbles: true }));
+    }
+
+    /* ---------- Drag files straight onto an editor field ---------- */
+
+    function isMediaDrag(e) {
+        return !!e.dataTransfer && Array.from(e.dataTransfer.types || []).includes('Files');
+    }
+
+    function mediaDropTarget(e) {
+        const el = e.target;
+        if (!el || !el.closest) return null;
+        if (el.matches('textarea')) return el;
+        if (el.matches('input.hero-image')) return el;
+        return null;
+    }
+
+    document.addEventListener('dragover', e => {
+        const target = mediaDropTarget(e);
+        if (!target || !isMediaDrag(e)) return;
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'copy';
+        target.classList.add('media-dragover');
+    });
+
+    document.addEventListener('dragleave', e => {
+        const target = mediaDropTarget(e);
+        if (target) target.classList.remove('media-dragover');
+    });
+
+    document.addEventListener('drop', async e => {
+        const target = mediaDropTarget(e);
+        if (!target || !isMediaDrag(e)) return;
+        e.preventDefault();
+        target.classList.remove('media-dragover');
+
+        const files = Array.from(e.dataTransfer.files).filter(f => MEDIA_EXT.test(f.name));
+        if (!files.length) {
+            showToast('Only images and videos can be dropped here.', true);
+            return;
+        }
+
+        const folder = String(getAssetsFolder() || '').replace(/\/$/, '');
+        showToast(`Uploading ${files.length} file${files.length > 1 ? 's' : ''}...`);
+
+        const uploaded = [];
+        for (const file of files) {
+            try {
+                uploaded.push(await AssetLibrary.upload(file, folder));
+            } catch (err) {
+                showToast(err.message, true);
+                return;
+            }
+        }
+
+        let defaults = { size: 'large', align: 'center', frame: false };
+        try {
+            defaults = Object.assign(defaults, JSON.parse(localStorage.getItem('creatorMediaDefaults') || '{}'));
+        } catch (err) { /* ignore */ }
+
+        if (target.matches('input.hero-image')) {
+            target.value = uploaded[0].ref;
+            target.dispatchEvent(new Event('input', { bubbles: true }));
+        } else {
+            const markdown = uploaded.map(a => buildMediaMarkdown(a, defaults)).join('\n');
+            insertIntoTextarea(target, markdown);
+        }
+
+        const note = uploaded.some(a => a.renamed) ? ' (renamed to avoid overwriting)' : '';
+        showToast(`Added ${uploaded.map(a => a.name).join(', ')}${note}`);
+    });
+
+    // Pasting a screenshot straight into a content field uploads it too.
+    document.addEventListener('paste', async e => {
+        const target = document.activeElement;
+        if (!target || target.tagName !== 'TEXTAREA') return;
+        const files = Array.from((e.clipboardData && e.clipboardData.files) || [])
+            .filter(f => f.type.startsWith('image/'));
+        if (!files.length) return;
+        e.preventDefault();
+
+        const folder = String(getAssetsFolder() || '').replace(/\/$/, '');
+        const stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+        try {
+            const named = new File([files[0]], `pasted-${stamp}.png`, { type: files[0].type });
+            const asset = await AssetLibrary.upload(named, folder);
+            let defaults = { size: 'large', align: 'center', frame: false };
+            try {
+                defaults = Object.assign(defaults, JSON.parse(localStorage.getItem('creatorMediaDefaults') || '{}'));
+            } catch (err) { /* ignore */ }
+            insertIntoTextarea(target, buildMediaMarkdown(asset, defaults));
+            showToast(`Pasted image saved as ${asset.name}`);
+        } catch (err) {
+            showToast(err.message, true);
+        }
+    });
+
     // Tab switching
     headerTabs.forEach(tab => {
         tab.addEventListener('click', () => {
@@ -4219,47 +5055,21 @@ document.addEventListener('DOMContentLoaded', () => {
         let textToInsert = '';
         
         if (type === 'image') {
-            const imageFile = prompt("Enter the image filename (e.g., my-image.png):");
-            if (!imageFile) return;
-            const imagePath = applyAssetsFolderPrefix(imageFile);
-            
-            const altText = prompt("Enter a short description (alt text):", "image");
-            const size = prompt("Enter image size (e.g., x-small, small, medium, large, third, or a custom height like '150px'):", "large");
-            if (!size) return;
-            const align = prompt("Enter image alignment (left, center, or right):", "center");
-            if (!align) return;
-            const border = prompt("Frame? Type 'none' for no border/shadow, or leave blank:", "");
-            
-            let attributes = [];
-            if (size) attributes.push(`size:${size.trim()}`);
-            if (align && ['left', 'center', 'right'].includes(align.trim())) {
-                attributes.push(`align:${align.trim()}`);
-            }
-            if (border && border.trim().length) attributes.push(`frame:${border.trim()}`);
-            
-            textToInsert = `![${altText}/${attributes.join('/')}](${imagePath})`;
+            MediaPicker.open({
+                title: 'Insert image',
+                kind: 'image',
+                onChoose: (assets, opts) => insertIntoTextarea(textarea, buildMediaMarkdown(assets[0], opts)),
+            });
+            return;
         }
         else if (type === 'image-row') {
-            const countStr = prompt("How many images in the row? (2-4)", "3");
-            if (!countStr) return;
-            const count = Math.max(2, Math.min(4, parseInt(countStr, 10) || 3));
-            const sizeDefault = count === 4 ? 'fourth' : (count === 3 ? 'third' : (count === 2 ? 'medium' : 'small'));
-            const size = prompt("Enter image size for the row (e.g., fourth, third, small, medium, large or '200px'):", sizeDefault);
-            if (!size) return;
-            const align = prompt("Enter row alignment (left, center, right):", "center");
-            if (!align) return;
-            const border = prompt("Frame? Type 'none' for no border/shadow, or leave blank for default:", "none");
-            const cols = [];
-            for (let i = 1; i <= count; i++) {
-                const file = prompt(`Image ${i} filename (e.g., img${i}.png):`);
-                if (!file) return;
-                const filePath = applyAssetsFolderPrefix(file);
-                const alt = prompt(`Image ${i} alt text:`, `image ${i}`) || `image ${i}`;
-                const attrs = [`size:${size.trim()}`, `align:${align.trim()}`];
-                if (border && border.trim().length) attrs.push(`frame:${border.trim()}`);
-                cols.push(`{column}\n![${alt}/${attrs.join('/')}](${filePath})\n{/column}`);
-            }
-            textToInsert = `{columns}\n${cols.join('\n')}\n{/columns}\n`;
+            MediaPicker.open({
+                title: 'Insert image row — pick 2 to 4 images',
+                kind: 'image',
+                multiple: true,
+                onChoose: (assets, opts) => insertIntoTextarea(textarea, buildImageRowMarkdown(assets, opts)),
+            });
+            return;
         }
         else if (type === 'video-controls') {
             const ytUrl = prompt("Paste the YouTube link (video will have a play button and controls):");
@@ -5376,29 +6186,30 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', function(e) {
         // Hero image browse button
         if (e.target.classList.contains('hero-image-browse')) {
-            const trigger = e.target;
-            const url = prompt("Image path or URL:");
-            if (!url) return;
-            const heroImageInput = trigger.closest('.field-group').querySelector('.hero-image');
-            if (heroImageInput) heroImageInput.value = url.trim();
+            const heroImageInput = e.target.closest('.field-group').querySelector('.hero-image');
+            if (!heroImageInput) return;
+            MediaPicker.open({
+                title: 'Choose hero image',
+                kind: 'image',
+                showOptions: false,
+                onChoose: (assets) => {
+                    heroImageInput.value = assets[0].ref;
+                    heroImageInput.dispatchEvent(new Event('input', { bubbles: true }));
+                },
+            });
             return;
         }
 
         if (e.target.classList.contains('add-image-btn')) {
             const trigger = e.target;
             document.querySelectorAll('.media-dropdown.show').forEach(d => d.classList.remove('show'));
-            const url = prompt("Image path or URL:");
-            if (!url) return;
-            const altText = prompt("Short description (alt text):", "image") || "image";
-            const size = prompt("Image size (x-small, small, medium, large, third, or '150px'):", "large");
-            if (!size) return;
-            const align = prompt("Alignment (left, center, right):", "center");
-            if (!align) return;
-            const border = prompt("Frame? Leave blank for default, or type 'none':", "");
-            let attributes = [`size:${size.trim()}`];
-            if (['left','center','right'].includes(align.trim())) attributes.push(`align:${align.trim()}`);
-            if (border && border.trim().length) attributes.push(`frame:${border.trim()}`);
-            insertTextAtCursor(trigger, `![${altText}/${attributes.join('/')}](${url.trim()})`);
+            MediaPicker.open({
+                title: 'Insert image',
+                kind: 'image',
+                onChoose: (assets, opts) => {
+                    insertTextAtCursor(trigger, buildMediaMarkdown(assets[0], opts));
+                },
+            });
         }
 
         if (e.target.classList.contains('add-video-controls-btn')) {
@@ -5450,26 +6261,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target.classList.contains('add-image-row-btn')) {
             const trigger = e.target;
             document.querySelectorAll('.media-dropdown.show').forEach(d => d.classList.remove('show'));
-            const countStr = prompt("How many images in the row? (2-4)", "3");
-            if (!countStr) return;
-            const count = Math.max(2, Math.min(4, parseInt(countStr, 10) || 3));
-            const sizeDefault = count === 4 ? 'fourth' : (count === 3 ? 'third' : (count === 2 ? 'medium' : 'small'));
-            const size = prompt("Image size for the row (fourth, third, small, medium, large or '200px'):", sizeDefault);
-            if (!size) return;
-            const align = prompt("Row alignment (left, center, right):", "center");
-            if (!align) return;
-            const border = prompt("Frame? 'none' for no border, blank for default:", "none");
-
-            const cols = [];
-            for (let i = 1; i <= count; i++) {
-                const url = prompt(`Image ${i} path or URL:`);
-                if (!url) return;
-                const alt = prompt(`Image ${i} alt text:`, `image ${i}`) || `image ${i}`;
-                const attrs = [`size:${size.trim()}`, `align:${align.trim()}`];
-                if (border && border.trim().length) attrs.push(`frame:${border.trim()}`);
-                cols.push(`{column}\n![${alt}/${attrs.join('/')}](${url.trim()})\n{/column}`);
-            }
-            insertTextAtCursor(trigger, `{columns}\n${cols.join('\n')}\n{/columns}\n`);
+            MediaPicker.open({
+                title: 'Insert image row — pick 2 to 4 images',
+                kind: 'image',
+                multiple: true,
+                onChoose: (assets, opts) => {
+                    insertTextAtCursor(trigger, buildImageRowMarkdown(assets, opts));
+                },
+            });
         }
 
         if (e.target.classList.contains('add-quote-btn')) {

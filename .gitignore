@@ -4,3 +4,4 @@ __pycache__/
 .claude/worktrees/
 graphify-out/
 images/animations/
+tools/__pycache__/
