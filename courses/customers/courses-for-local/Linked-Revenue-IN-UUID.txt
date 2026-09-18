@@ -48,14 +48,16 @@ We can then follow those products back to the suppliers behind them and see the 
 [id:3/topic: Healthy and Unhealthy Complexity]
 
 slide_id: a19d7b68-8f6f-4d74-9816-07d6c203d5b1
-index_title: C Items Sold to Protect Customers Insight Walkthrough
-title: C Items Sold to Protect Customers Insight Walkthrough
+index_title: C Items Sold to Protect Customers
+title: C Items Sold to Protect Customers
 type: main
 ---
 In the Inventory and Products courses, many C items looked like obvious candidates to reduce or remove. But we were looking at the product on its own. Before making that decision, we need to know who buys it.
 
-The **C Items Sold to Protect Customers** Insight helps us find C items that important customers still depend on. Go through the tutorial below.
-![image/size:large/align:center/frame:none](customers-linked-revenue/C-Items-Sold-Walkthrough.png)
+The **C Items Sold to Protect Customers** Insight shows you C items that one or more of your most important customers buys.
+
+Low revenue, few order lines, but a customer you do not want to lose.
+![image/size:large/align:center/frame:none](customers-linked-revenue/C-To-Protect-Screenshot.png)
 ---
 > [next] Continue -> cb35f5ee-e4ed-4611-99e1-e0e342411c4e
 
