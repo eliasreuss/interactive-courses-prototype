@@ -2296,7 +2296,10 @@
         const sub = ach
           ? `<p class="complete-subtitle">You completed every course in this learning path.</p>`
           : `<p class="complete-subtitle">You finished <strong>${title}</strong>.</p>`;
-        const primaryLabel = ach || !nextCourseFile ? 'Finish learning path' : 'Continue to next course';
+        const isCustom = coursePath === 'custom';
+        const primaryLabel = ach || !nextCourseFile
+          ? (isCustom ? 'Back to My Courses' : 'Finish learning path')
+          : 'Continue to next course';
         const chevron = `<svg width="12" height="18" viewBox="0 0 12 18" fill="none"><path d="M2 2L9 9L2 16" stroke="white" stroke-width="3" stroke-linecap="round"/></svg>`;
 
         element.innerHTML = `
@@ -2310,7 +2313,7 @@
             <div class="complete-actions">
               ${ach
                 ? `<button class="btn btn-invert" data-action="achievements"><span>See my achievements</span></button>`
-                : `<button class="btn btn-secondary" data-action="hub"><span>Return to learning path</span></button>`}
+                : `<button class="btn btn-secondary" data-action="hub"><span>${isCustom ? 'Back to My Courses' : 'Return to learning path'}</span></button>`}
               <button class="btn btn-primary" data-action="next"><span>${primaryLabel}</span> ${chevron}</button>
             </div>
             <button class="complete-prev" data-action="prev">Back to previous slide</button>
@@ -3735,7 +3738,7 @@
             backBtnText.textContent = 'Catalog';
             backBtn.onclick = () => { window.location.href = 'catalog.html'; };
           } else {
-            backBtnText.textContent = 'Learning Path';
+            backBtnText.textContent = coursePath === 'custom' ? 'My Courses' : 'Learning Path';
             backBtn.onclick = () => { window.location.href = hubPage; };
           }
         }
@@ -3762,7 +3765,10 @@
         if (!courseData || courseData.length === 0) { const e = new Error("Parsing resulted in no valid course data."); e.isEmpty = true; throw e; }
         
         // Set flow title
-        const flowTitle = courseSlug(courseFile).replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+        // The gen- prefix keeps generated filenames from colliding with the
+        // authored ones; it is an implementation detail, not part of the title.
+        const flowTitle = courseSlug(courseFile).replace(/^gen-/i, '')
+          .replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
         document.getElementById('flow-title').textContent = flowTitle;
         
         // Build node map
@@ -3892,7 +3898,7 @@
         const navEntry = performance.getEntriesByType('navigation')[0];
         const isReload = navEntry ? navEntry.type === 'reload'
                                    : performance.navigation && performance.navigation.type === 1;
-        if (isReload && currentCourseId) {
+        if (isReload && currentCourseId && coursePath !== 'custom') {
           localStorage.removeItem(`course_position_${currentCourseId}`);
           localStorage.removeItem(`course_progress_${currentCourseId}`);
           console.log('Reload detected: cleared saved progress for', currentCourseId);

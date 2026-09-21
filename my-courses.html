@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>My Courses - Inact Learn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ══════════════════════════════════════════════
+       TOKENS + HEADER + CARD SYSTEM (verbatim from catalog.html)
+    ══════════════════════════════════════════════ */
+    :root {
+      --color-primary: #304642;
+      --color-primary-light: #3d5a54;
+      --color-accent: #FF5A00;
+      --color-bg: #F9F7F5;
+      --color-card-bg: #FFFFFF;
+      --color-muted: #8A9A97;
+      --color-text-secondary: rgba(48, 70, 66, 0.6);
+      --color-tag-bg: #F0F0F0;
+      --pill-active-bg: #EEF0F0;
+      --color-progress-bg: #EBEBEB;
+      --font-family: 'Poppins', sans-serif;
+      --shadow-card: 0 2px 8px rgba(48, 70, 66, 0.06), 0 8px 24px rgba(48, 70, 66, 0.08);
+      --shadow-card-hover: 0 8px 16px rgba(48, 70, 66, 0.08), 0 24px 48px rgba(48, 70, 66, 0.12);
+      --shadow-header: 0 1px 0 rgba(48, 70, 66, 0.06);
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --radius-sm: 10px;
+      --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+      --page-margin: 48px;
+    }
+    @media (min-width: 1400px) { :root { --page-margin: 72px; } }
+    @media (min-width: 1600px) { :root { --page-margin: 96px; } }
+    @media (min-width: 1920px) { :root { --page-margin: 200px; } }
+    @media (min-width: 2200px) { :root { --page-margin: 280px; } }
+    @media (min-width: 2560px) { :root { --page-margin: 340px; } }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-family);
+      background: var(--color-bg);
+      min-height: 100vh;
+      color: var(--color-primary);
+      background-image: radial-gradient(circle at 1px 1px, rgba(48, 70, 66, 0.03) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+
+    .header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 40px;
+      background: rgba(255,255,255,0.95);
+      box-shadow: var(--shadow-header);
+      border-radius: 0 0 25px 25px;
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(48,70,66,0.08);
+    }
+    .header-left { display: flex; align-items: center; gap: 40px; }
+    .logo { font-size: 22px; font-weight: 700; color: var(--color-primary); letter-spacing: -0.5px; text-decoration: none; }
+    .logo span { color: var(--color-accent); font-weight: 600; }
+    .nav { display: flex; align-items: center; gap: 8px; }
+    .nav a {
+      text-decoration: none; color: var(--color-primary); font-size: 14px; font-weight: 500;
+      padding: 8px 16px; border-radius: 100px; transition: all 0.2s var(--transition-smooth); opacity: 0.65;
+    }
+    .nav a:hover { opacity: 1; background: var(--color-tag-bg); }
+    .nav a.active { opacity: 1; background: var(--pill-active-bg); color: var(--color-primary); font-weight: 600; }
+    .nav a.locked { display: inline-flex; align-items: center; gap: 6px; }
+    .nav a.locked .lock-icon { width: 12px; height: 12px; opacity: 0.5; }
+    .header-right { display: flex; align-items: center; gap: 16px; }
+    .nav-notif-btn {
+      width: 36px; height: 36px; background: #304642; border-radius: 500px;
+      border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: transform 0.2s, background 0.2s ease;
+    }
+    .nav-notif-btn:hover { transform: scale(1.08); background: #3d5a54; }
+    .nav-notif-icon { width: 12px; height: 16px; border-radius: 1px; border: 2px solid white; display: block; }
+    .nav-avatar {
+      width: 35px; height: 35px; background: #D9EBFF; border-radius: 100px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; flex-shrink: 0; text-decoration: none; transition: transform 0.2s;
+    }
+    .nav-avatar:hover { transform: scale(1.08); }
+    .nav-avatar span { color: #1F5591; font-size: 13px; font-weight: 600; line-height: 1; font-family: var(--font-family); }
+
+    .nav-progress-widget { display: flex; align-items: center; gap: 20px; padding: 0 0 0 16px; background: rgba(48, 70, 66, 0.055); border-radius: 100px; }
+    .nav-continue-btn { display: inline-flex; align-items: center; justify-content: center; gap: 7px; font-family: var(--font-family); font-size: 13px; font-weight: 500; color: #fff; text-decoration: none; height: 36px; padding: 0 17px; border-radius: 100px; background: #FF5A00; box-shadow: 0 2px 8px rgba(255, 90, 0, 0.22); white-space: nowrap; line-height: 1; transition: background 0.2s ease, box-shadow 0.22s ease, transform 0.22s cubic-bezier(0.22,1,0.36,1); }
+    .nav-continue-btn:hover { background: #D94E00; box-shadow: 0 5px 16px rgba(255, 90, 0, 0.34); transform: translateY(-1px); }
+    .nav-continue-btn svg { width: 12px; height: 12px; flex-shrink: 0; color: #fff; transition: transform 0.22s cubic-bezier(0.22,1,0.36,1); }
+    .nav-continue-btn:hover svg { transform: translateX(2px); }
+    .nav-progress-bar-wrap { position: relative; display: flex; align-items: center; gap: 6px; cursor: pointer; text-decoration: none; }
+    .nav-progress-track { width: 96px; height: 6px; background: rgba(48, 70, 66, 0.15); border-radius: 100px; overflow: hidden; flex-shrink: 0; }
+    .nav-progress-fill { height: 100%; background: linear-gradient(90deg, #304642, #3d5a54); border-radius: 100px; width: 0%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
+    .nav-progress-pct { font-family: var(--font-family); font-size: 12px; font-weight: 600; color: #304642; line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -0.2px; min-width: 30px; }
+    .nav-progress-tooltip { position: absolute; top: calc(100% + 13px); left: 50%; transform: translateX(-50%) translateY(-3px); background: #304642; color: #fff; font-family: var(--font-family); font-size: 12px; font-weight: 500; white-space: nowrap; padding: 7px 11px; border-radius: 9px; box-shadow: 0 8px 20px rgba(48, 70, 66, 0.22); pointer-events: none; opacity: 0; transition: opacity 0.18s ease, transform 0.18s cubic-bezier(0.22,1,0.36,1); z-index: 200; }
+    .nav-progress-tooltip::after { content: ''; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-bottom-color: #304642; }
+    .nav-progress-bar-wrap:hover .nav-progress-tooltip { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* Cards — verbatim from catalog.html */
+    @keyframes cardEnter { to { opacity: 1; transform: translateY(0); } }
+    .course-card {
+      display: flex; flex-direction: column;
+      border-radius: 17.76px; overflow: hidden; cursor: pointer;
+      position: relative; background: transparent;
+      border: 1px solid var(--card-bdr, transparent);
+      box-shadow: 0 10px 28px rgba(48, 70, 66, 0.14);
+      transition: transform 420ms cubic-bezier(0.22,1,0.36,1), box-shadow 420ms cubic-bezier(0.22,1,0.36,1);
+      opacity: 0; transform: translateY(24px);
+    }
+    .course-card.visible { animation: cardEnter 0.55s cubic-bezier(0.22,1,0.36,1) forwards; }
+    .course-card:hover { transform: translateY(-6px); box-shadow: 0 22px 56px var(--card-glow, rgba(48,70,66,0.22)); }
+    .course-card:hover .course-title { color: var(--color-primary-light); }
+    .course-card:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
+    .course-card.next-course {
+      border: 2px solid transparent;
+      background-image: linear-gradient(white,white),
+        linear-gradient(135deg, rgba(255,90,0,0.45) 0%, rgba(255,90,0,0.12) 50%, rgba(255,90,0,0.35) 100%);
+      background-origin: border-box; background-clip: padding-box, border-box;
+      box-shadow: 0 10px 32px rgba(255,90,0,0.12), 0 2px 8px rgba(255,90,0,0.08);
+    }
+    .course-card.next-course:hover { box-shadow: 0 22px 56px rgba(255,90,0,0.18), 0 4px 12px rgba(255,90,0,0.10); }
+    .course-card.next-course .course-cta { color: var(--color-accent); }
+    .course-card-top { height: 130px; position: relative; overflow: hidden; flex-shrink: 0; }
+    .card-top-bar {
+      position: absolute; top: 14px; left: 14px; right: 14px;
+      display: flex; align-items: center; justify-content: space-between;
+      z-index: 4; pointer-events: none;
+    }
+    .card-type-pill {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 10px 14px 10px 12px; border-radius: 100px;
+      background: var(--pill-bg, rgba(238,224,195,0.30));
+      font-size: 13px; font-weight: 600; line-height: 1;
+      color: #304642; white-space: nowrap;
+    }
+    .card-type-icon-course {
+      display: inline-block; width: 14px; height: 14px; flex-shrink: 0;
+      background-color: #304642;
+      -webkit-mask-image: url('SVGs/Course-Icon.svg'); mask-image: url('SVGs/Course-Icon.svg');
+      -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+      -webkit-mask-size: contain; mask-size: contain;
+      -webkit-mask-position: center; mask-position: center;
+    }
+    .card-top-right { display: flex; align-items: center; gap: 6px; pointer-events: all; }
+    .course-duration-pill {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 10px 14px; border-radius: 100px;
+      background: var(--pill-bg, rgba(238,224,195,0.30));
+      color: #304642; font-size: 13px; font-weight: 500; line-height: 1; white-space: nowrap;
+    }
+    .card-progress { height: 6px; background: rgba(0,0,0,0.12); position: relative; flex-shrink: 0; }
+    .card-progress-fill {
+      height: 100%; width: 0%; background: rgba(48,70,66,1);
+      border-radius: 0 6px 6px 0; transition: width 0.8s cubic-bezier(0.4,0,0.2,1);
+    }
+    .card-progress.completed .card-progress-fill { width: 100%; border-radius: 0; }
+    .course-card-bottom {
+      padding: 20px; background: white;
+      border-bottom-right-radius: 17.76px; border-bottom-left-radius: 17.76px;
+      display: flex; flex-direction: column; gap: 0; flex: 1;
+    }
+    .course-title {
+      color: var(--color-primary); font-size: 18px; font-weight: 600;
+      line-height: 24px; letter-spacing: -0.3px; margin-bottom: 8px;
+      transition: color 200ms ease;
+    }
+    .course-description {
+      color: rgba(48,70,66,0.55); font-size: 14px; font-weight: 400; line-height: 20px;
+      display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2;
+      -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .course-cta-row { margin-top: auto; padding-top: 14px; display: flex; align-items: center; justify-content: flex-end; }
+    .course-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      color: var(--color-primary); font-size: 15px; font-weight: 500; line-height: 22px;
+      text-decoration: none; transition: gap 250ms var(--transition-smooth);
+    }
+    .course-card:hover .course-cta { gap: 14px; }
+    .course-cta-arrow { width: 15px; height: 15px; display: block; flex-shrink: 0; transition: transform 250ms var(--transition-smooth); }
+    .course-card:hover .course-cta-arrow { transform: translate(5px, -3px) rotate(8deg); }
+    .standalone-thumb {
+      background-color: var(--card-bg, #F5F7F5);
+      background-image: radial-gradient(circle, rgba(0,0,0,0.055) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    .standalone-thumb-icon {
+      position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+      width: 48px; height: 48px; opacity: 0.09; color: var(--color-primary);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .standalone-thumb-icon svg { width: 100%; height: 100%; }
+
+    .catalog-toolbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+    .catalog-count { font-size: 15px; font-weight: 600; color: var(--color-primary); letter-spacing: -0.01em; }
+    .catalog-sort { display: flex; align-items: center; gap: 10px; }
+    .catalog-sort-label { font-size: 13px; font-weight: 500; color: var(--color-muted); white-space: nowrap; }
+    .catalog-sort-wrap { position: relative; display: inline-flex; align-items: center; }
+    .catalog-sort-select {
+      appearance: none; -webkit-appearance: none;
+      font-family: var(--font-family); font-size: 13px; font-weight: 500;
+      color: var(--color-primary); background: #FFFFFF;
+      border: 1.5px solid oklch(0.88 0.008 165); border-radius: 10px;
+      padding: 8px 34px 8px 14px; cursor: pointer; outline: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+    .catalog-sort-select:hover { border-color: oklch(0.72 0.018 165); }
+    .catalog-sort-select:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(48,70,66,0.08); }
+    .catalog-sort-chevron { position: absolute; right: 11px; top: 50%; transform: translateY(-50%); pointer-events: none; color: var(--color-muted); display: flex; align-items: center; }
+    .catalog-sort-chevron svg { width: 13px; height: 13px; }
+    .catalog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .catalog-grid .course-card { height: 100%; }
+    .catalog-grid .course-card:nth-child(1) { animation-delay: 0.02s; }
+    .catalog-grid .course-card:nth-child(2) { animation-delay: 0.06s; }
+    .catalog-grid .course-card:nth-child(3) { animation-delay: 0.10s; }
+    .catalog-grid .course-card:nth-child(4) { animation-delay: 0.14s; }
+    .catalog-grid .course-card:nth-child(5) { animation-delay: 0.18s; }
+    .catalog-grid .course-card:nth-child(n+6) { animation-delay: 0.22s; }
+    .catalog-empty { display: flex; flex-direction: column; align-items: center; padding: 72px 24px; gap: 14px; text-align: center; }
+    .catalog-empty[hidden] { display: none; }
+    .catalog-empty-icon { width: 44px; height: 44px; color: oklch(0.75 0.008 165); margin-bottom: 4px; }
+    .catalog-empty-title { font-size: 17px; font-weight: 600; color: var(--color-primary); }
+    .catalog-empty-sub { font-size: 14px; color: var(--color-muted); margin-top: -4px; max-width: 420px; line-height: 20px; }
+
+    /* ══════════════════════════════════════════════
+       MY COURSES — new
+    ══════════════════════════════════════════════ */
+    .mc-page { padding: 40px var(--page-margin) 80px; }
+
+    .mc-hero { max-width: 760px; margin: 0 auto 56px; text-align: center; }
+    .mc-eyebrow {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.11em; text-transform: uppercase;
+      color: var(--color-accent); margin-bottom: 12px;
+    }
+    .mc-hero h1 {
+      font-size: clamp(30px, 3.4vw, 42px); font-weight: 700; letter-spacing: -0.03em;
+      line-height: 1.1; color: var(--color-primary); margin-bottom: 12px;
+    }
+    .mc-hero-sub { font-size: 16px; line-height: 24px; color: var(--color-text-secondary); margin-bottom: 28px; }
+
+    .mc-composer {
+      background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-card);
+      border: 1px solid rgba(48,70,66,0.07);
+      text-align: left; overflow: hidden;
+      transition: box-shadow 0.25s var(--transition-smooth), opacity 0.25s ease;
+    }
+    .mc-composer:focus-within { box-shadow: var(--shadow-card-hover); }
+    .mc-composer textarea {
+      width: 100%; border: none; outline: none; resize: none;
+      font-family: var(--font-family); font-size: 16px; line-height: 25px;
+      color: var(--color-primary); background: transparent;
+      padding: 22px 24px 14px; min-height: 96px;
+    }
+    .mc-composer textarea::placeholder { color: rgba(48,70,66,0.34); }
+    .mc-composer-foot {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 12px 16px 16px 24px; border-top: 1px solid rgba(48,70,66,0.07);
+    }
+    .mc-hint { font-size: 12.5px; color: var(--color-muted); line-height: 17px; }
+    .mc-hint kbd {
+      font-family: var(--font-family); font-size: 11px; font-weight: 600;
+      background: rgba(48,70,66,0.07); border-radius: 5px; padding: 2px 6px; color: var(--color-primary);
+    }
+    .mc-generate {
+      display: inline-flex; align-items: center; gap: 9px; flex-shrink: 0;
+      font-family: var(--font-family); font-size: 14px; font-weight: 500; color: #fff;
+      height: 42px; padding: 0 22px; border: none; border-radius: 100px; cursor: pointer;
+      background: var(--color-accent); box-shadow: 0 2px 10px rgba(255,90,0,0.24);
+      transition: background 0.2s ease, box-shadow 0.22s ease, transform 0.22s cubic-bezier(0.22,1,0.36,1);
+    }
+    .mc-generate:hover:not(:disabled) { background: #D94E00; box-shadow: 0 6px 18px rgba(255,90,0,0.34); transform: translateY(-1px); }
+    .mc-generate:disabled { background: rgba(48,70,66,0.16); color: rgba(48,70,66,0.45); box-shadow: none; cursor: not-allowed; }
+    .mc-generate svg { width: 13px; height: 13px; }
+
+    .mc-starters { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 18px; }
+    .mc-starter {
+      font-family: var(--font-family); font-size: 13px; font-weight: 450; line-height: 18px;
+      color: var(--color-primary); background: rgba(48,70,66,0.055);
+      border: 1px solid rgba(48,70,66,0.07); border-radius: 100px;
+      padding: 8px 15px; cursor: pointer; text-align: left;
+      transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+    }
+    .mc-starter:hover { background: rgba(48,70,66,0.10); border-color: rgba(48,70,66,0.14); transform: translateY(-1px); }
+
+    /* Locked composer — reuses the nav's .locked vocabulary */
+    .mc-locked {
+      display: flex; align-items: flex-start; gap: 13px;
+      padding: 20px 24px; background: #fff; border-radius: var(--radius-lg);
+      border: 1px solid rgba(48,70,66,0.09); box-shadow: var(--shadow-card); text-align: left;
+    }
+    .mc-locked svg { width: 17px; height: 17px; flex-shrink: 0; margin-top: 2px; color: var(--color-muted); }
+    .mc-locked-text { font-size: 14px; line-height: 21px; color: var(--color-text-secondary); }
+    .mc-locked-text strong { color: var(--color-primary); font-weight: 600; display: block; margin-bottom: 3px; }
+    .mc-locked code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px;
+      background: rgba(48,70,66,0.07); border-radius: 5px; padding: 2px 6px; color: var(--color-primary);
+    }
+
+    /* Generating state — replaces the composer in place */
+    .mc-gen {
+      background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-card);
+      border: 1px solid rgba(48,70,66,0.07); padding: 26px 28px; text-align: left;
+    }
+    .mc-gen-prompt {
+      font-size: 14px; line-height: 21px; color: var(--color-text-secondary);
+      display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical;
+      overflow: hidden; margin-bottom: 18px;
+    }
+    .mc-gen-barrow { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+    .mc-gen-track { flex: 1; height: 6px; background: rgba(48,70,66,0.12); border-radius: 100px; overflow: hidden; }
+    .mc-gen-fill {
+      height: 100%; width: 0%; border-radius: 100px;
+      background: linear-gradient(90deg, #304642, #3d5a54);
+      transition: width 0.7s cubic-bezier(0.22,1,0.36,1);
+    }
+    .mc-gen-clock { font-size: 13px; font-weight: 600; color: var(--color-primary); font-variant-numeric: tabular-nums; min-width: 40px; text-align: right; }
+    .mc-stages { display: flex; flex-direction: column; gap: 11px; margin-bottom: 20px; }
+    .mc-stage { display: flex; align-items: center; gap: 11px; font-size: 14px; color: var(--color-muted); transition: color 0.3s ease; }
+    .mc-stage.is-done { color: var(--color-text-secondary); }
+    .mc-stage.is-active { color: var(--color-primary); font-weight: 500; }
+    .mc-stage-mark {
+      width: 18px; height: 18px; flex-shrink: 0; border-radius: 50%;
+      border: 1.5px solid rgba(48,70,66,0.22);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .mc-stage.is-done .mc-stage-mark { background: var(--color-primary); border-color: var(--color-primary); }
+    .mc-stage.is-done .mc-stage-mark::after {
+      content: ''; width: 5px; height: 8px; margin-top: -2px;
+      border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg);
+    }
+    .mc-stage.is-active .mc-stage-mark { border-color: var(--color-primary); border-top-color: transparent; animation: mcSpin 0.9s linear infinite; }
+    @keyframes mcSpin { to { transform: rotate(360deg); } }
+    .mc-gen-foot { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .mc-gen-note { font-size: 13px; color: var(--color-muted); line-height: 19px; }
+    .mc-ghost {
+      font-family: var(--font-family); font-size: 13.5px; font-weight: 500; color: var(--color-primary);
+      background: rgba(48,70,66,0.07); border: none; border-radius: 100px;
+      padding: 9px 18px; cursor: pointer; transition: background 0.18s ease; white-space: nowrap;
+    }
+    .mc-ghost:hover { background: rgba(48,70,66,0.13); }
+    .mc-gen-actions { display: flex; gap: 8px; }
+
+    /* Card overflow menu */
+    .card-menu-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 8px 10px; border-radius: 100px; border: none; cursor: pointer;
+      background: var(--pill-bg, rgba(238,224,195,0.30)); z-index: 5;
+      transition: background 0.18s ease;
+    }
+    .card-menu-btn:hover { background: rgba(255,255,255,0.75); }
+    .card-menu-btn svg { width: 14px; height: 14px; stroke: #304642; fill: none; display: block; }
+    .mc-menu {
+      position: fixed; z-index: 400; min-width: 172px;
+      background: #fff; border-radius: 13px; padding: 6px;
+      box-shadow: 0 10px 34px rgba(48,70,66,0.18), 0 2px 8px rgba(48,70,66,0.10);
+      border: 1px solid rgba(48,70,66,0.08);
+    }
+    .mc-menu[hidden] { display: none; }
+    .mc-menu button {
+      display: block; width: 100%; text-align: left;
+      font-family: var(--font-family); font-size: 13.5px; font-weight: 450; color: var(--color-primary);
+      background: none; border: none; border-radius: 8px; padding: 9px 12px; cursor: pointer;
+      transition: background 0.14s ease;
+    }
+    .mc-menu button:hover { background: rgba(48,70,66,0.07); }
+    .mc-menu-sep { height: 1px; background: rgba(48,70,66,0.08); margin: 5px 8px; }
+
+    /* Inline delete confirm, in place of the card body */
+    .mc-confirm { padding: 20px; background: #fff; flex: 1; display: flex; flex-direction: column; gap: 6px;
+                  border-bottom-right-radius: 17.76px; border-bottom-left-radius: 17.76px; }
+    .mc-confirm-title { font-size: 15px; font-weight: 600; color: var(--color-primary); }
+    .mc-confirm-sub { font-size: 13.5px; color: var(--color-muted); line-height: 19px; }
+    .mc-confirm-row { margin-top: auto; padding-top: 14px; display: flex; gap: 8px; justify-content: flex-end; }
+    .mc-confirm-row button { font-family: var(--font-family); font-size: 13px; font-weight: 500; border: none;
+                             border-radius: 100px; padding: 8px 16px; cursor: pointer; }
+    .mc-confirm-cancel { background: rgba(48,70,66,0.07); color: var(--color-primary); }
+    .mc-confirm-go { background: var(--color-primary); color: #fff; }
+
+    .mc-error {
+      font-size: 13.5px; line-height: 20px; color: var(--color-primary);
+      background: rgba(48,70,66,0.05); border-radius: 12px; padding: 14px 16px; margin-bottom: 18px;
+    }
+    .mc-error code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px;
+                     background: rgba(48,70,66,0.08); border-radius: 5px; padding: 2px 6px; }
+
+    .mc-title-input {
+      font-family: var(--font-family); font-size: 18px; font-weight: 600; line-height: 24px;
+      letter-spacing: -0.3px; color: var(--color-primary); width: 100%;
+      border: none; border-bottom: 1.5px solid var(--color-accent); outline: none;
+      background: transparent; padding: 0 0 2px; margin-bottom: 8px;
+    }
+
+    @media (max-width: 1100px) { .catalog-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 760px) {
+      .catalog-grid { grid-template-columns: 1fr; }
+      .mc-page { padding: 28px 20px 60px; }
+      .header { padding: 14px 20px; }
+      .header-left { gap: 20px; }
+      .nav { display: none; }
+      .mc-composer-foot { flex-direction: column; align-items: stretch; gap: 12px; }
+      .mc-generate { width: 100%; justify-content: center; }
+      .nav-progress-widget { background: transparent; padding: 0; }
+      .nav-progress-bar-wrap { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-left">
+      <a class="logo" href="index.html">Inact <span>learn</span></a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="my-courses.html" class="active">My Courses</a>
+        <a href="#" class="locked">Dictionary<svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <div class="nav-progress-widget">
+        <a class="nav-progress-bar-wrap" href="profile.html" aria-label="View your progress">
+          <span id="nav-progress-pct" class="nav-progress-pct">0%</span>
+          <div class="nav-progress-track"><div id="nav-progress-fill" class="nav-progress-fill"></div></div>
+          <span class="nav-progress-tooltip" id="nav-progress-tooltip" aria-hidden="true"></span>
+        </a>
+        <a id="nav-continue-btn" class="nav-continue-btn" href="catalog.html"><span id="nav-continue-label">Start learning</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <button class="nav-notif-btn" aria-label="Notifications"><span class="nav-notif-icon"></span></button>
+      <a href="profile.html" class="nav-avatar" aria-label="User profile"><span>ER</span></a>
+    </div>
+  </header>
+
+  <main class="mc-page">
+
+    <section class="mc-hero">
+      <p class="mc-eyebrow">My Courses</p>
+      <h1>What do you want to learn?</h1>
+      <p class="mc-hero-sub">Describe a topic and Inact Learn writes a course for it, drawing on Inact's supply chain material.</p>
+
+      <div id="mc-composer" class="mc-composer">
+        <label for="mc-prompt" class="sr-only" hidden>What do you want to learn?</label>
+        <textarea id="mc-prompt" rows="3" maxlength="2000"
+          placeholder="e.g. How to decide which spare parts are worth keeping in stock and which are dead capital"></textarea>
+        <div class="mc-composer-foot">
+          <p class="mc-hint">Takes one to three minutes. <kbd>⌘</kbd> <kbd>Enter</kbd> to start.</p>
+          <button id="mc-generate" class="mc-generate" disabled>
+            <span>Generate course</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="mc-locked" class="mc-locked" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <p class="mc-locked-text"><strong id="mc-locked-title">Course generation runs on the local dev server</strong><span id="mc-locked-body">Start it with <code>python3 tools/dev-server.py 8765</code>, then reload this page. Courses you have already generated still open below.</span></p>
+      </div>
+
+      <div id="mc-gen" class="mc-gen" hidden>
+        <p id="mc-gen-prompt" class="mc-gen-prompt"></p>
+        <div id="mc-gen-error" class="mc-error" hidden></div>
+        <div class="mc-gen-barrow">
+          <div class="mc-gen-track"><div id="mc-gen-fill" class="mc-gen-fill"></div></div>
+          <span id="mc-gen-clock" class="mc-gen-clock">0:00</span>
+        </div>
+        <div id="mc-stages" class="mc-stages"></div>
+        <div class="mc-gen-foot">
+          <p id="mc-gen-note" class="mc-gen-note">You can leave this tab open.</p>
+          <div id="mc-gen-actions" class="mc-gen-actions">
+            <button id="mc-cancel" class="mc-ghost">Cancel</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="mc-starters" class="mc-starters"></div>
+    </section>
+
+    <section class="mc-library">
+      <div class="catalog-toolbar">
+        <p id="mc-count" class="catalog-count">No courses yet</p>
+        <div class="catalog-sort">
+          <label class="catalog-sort-label" for="mc-sort">Sort</label>
+          <span class="catalog-sort-wrap">
+            <select id="mc-sort" class="catalog-sort-select">
+              <option value="new">Newest</option>
+              <option value="opened">Recently opened</option>
+              <option value="az">A–Z</option>
+            </select>
+            <span class="catalog-sort-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </span>
+        </div>
+      </div>
+      <div id="mc-grid" class="catalog-grid"></div>
+      <div id="mc-empty" class="catalog-empty" hidden>
+        <svg class="catalog-empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <p class="catalog-empty-title">No courses yet</p>
+        <p class="catalog-empty-sub">Describe something you want to learn above and it will appear here, ready to work through like any other course.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="mc-menu" class="mc-menu" hidden></div>
+
+  <script src="profile-overlay.js"></script>
+  <script>
+  (function () {
+    'use strict';
+
+    const MANIFEST_URL = 'courses/custom/manifest.json';
+    const OVERRIDES_KEY = 'mycourses_overrides';
+    const MIRROR_KEY = 'mycourses_progress';
+    const INFLIGHT_KEY = 'mycourses_inflight';
+    const POLL_MS = 1000;
+    const WATCHDOG_MS = 300000;
+
+    const STAGES = [
+      { key: 'retrieving',  label: 'Understanding your topic' },
+      { key: 'outlining',   label: 'Outlining the course' },
+      { key: 'writing',     label: 'Writing the slides' },
+      { key: 'validating',  label: 'Checking the course' },
+      { key: 'assembling',  label: 'Assembling the course file' },
+    ];
+
+    const STARTERS = [
+      'How to decide which spare parts are worth stocking',
+      'Using Double ABC to prioritise a messy assortment',
+      'What service level actually costs us',
+      'Reading a heatmap in Inact Now',
+    ];
+
+    // Card tile colours, taken from SOLUTIONS[].bg in catalog.html so a
+    // generated course tile sits in the same palette as the rest of the app.
+    const TOPIC_BG = {
+      inventory: '#FFFDF9', suppliers: '#FDFCFF', products: '#FDFAEE',
+      customers: '#F8FAF4', functionality: '#F5F9FF', admin: '#F5F9FF',
+      general: '#F5F7F5',
+    };
+
+    const TOPIC_ICONS = {
+      inventory:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12V9a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/><path d="M16 20v-3a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3"/><path d="M20 22V2"/><path d="M4 12h16"/><path d="M4 20h16"/><path d="M4 2v20"/><path d="M4 4h16"/></svg>`,
+      suppliers:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-1"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>`,
+      products:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 9.4 7.55 4.24"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96 12 12.01l8.73-5.05"/><path d="M12 22.08V12"/></svg>`,
+      customers:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+      functionality:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>`,
+      general:      `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
+    };
+    TOPIC_ICONS.admin = TOPIC_ICONS.functionality;
+
+    const $ = (id) => document.getElementById(id);
+    const esc = (s) => String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+
+    // ── State ───────────────────────────────────────────────────────────
+    let manifest = { courses: [] };
+    let overrides = readJSON(OVERRIDES_KEY, {});
+    let canGenerate = false;
+    let poll = null, ticker = null, activeJob = null, startedAt = 0, justCreated = null;
+
+    function readJSON(key, fallback) {
+      try { return JSON.parse(localStorage.getItem(key)) || fallback; }
+      catch { return fallback; }
+    }
+    function writeJSON(key, value) {
+      try { localStorage.setItem(key, JSON.stringify(value)); } catch { /* private mode */ }
+    }
+
+    // Mirrors courseSlug() in course.html:3576 — the only logic that has to
+    // stay in sync with the viewer. If that changes, change this too.
+    function progressIdFor(file) {
+      return String(file).split('/').pop()
+        .replace(/-IN-UUID\.txt$/i, '').replace(/\.txt$/i, '').toLowerCase();
+    }
+
+    function getCourseProgress(courseId) {
+      const raw = localStorage.getItem('course_progress_' + courseId);
+      if (!raw) return { completed: false, progress: 0 };
+      try {
+        const data = JSON.parse(raw);
+        return { completed: !!data.completed, progress: data.progress || 0 };
+      } catch { return { completed: raw === 'completed', progress: raw === 'completed' ? 100 : 0 }; }
+    }
+
+    // index.html and course.html both wipe every course_* key on a browser
+    // reload, as a deliberate reset for the authored demo content. Generated
+    // courses are collateral, so keep a copy under our own prefix and restore
+    // from it. Entirely local to this page.
+    function syncProgressMirror() {
+      const mirror = readJSON(MIRROR_KEY, {});
+      let changed = false;
+      for (const entry of manifest.courses) {
+        const key = 'course_progress_' + progressIdFor(entry.file);
+        const live = localStorage.getItem(key);
+        if (live) {
+          mirror[entry.file] = live;
+          changed = true;
+        } else if (mirror[entry.file]) {
+          try { localStorage.setItem(key, mirror[entry.file]); } catch { /* ignore */ }
+        }
+      }
+      if (changed) writeJSON(MIRROR_KEY, mirror);
+    }
+
+    // ── Data ────────────────────────────────────────────────────────────
+    async function loadManifest() {
+      try {
+        const res = await fetch(MANIFEST_URL + '?v=' + Date.now(), { cache: 'no-store' });
+        if (res.ok) {
+          const data = await res.json();
+          if (data && Array.isArray(data.courses)) manifest = data;
+        }
+      } catch { /* missing manifest is an empty library, not an error */ }
+      syncProgressMirror();
+    }
+
+    function visibleCourses() {
+      const merged = manifest.courses
+        .map((c) => Object.assign({}, c, overrides[c.file] || {}))
+        .filter((c) => !c.deletedAt);
+      const mode = $('mc-sort').value;
+      if (mode === 'az') merged.sort((a, b) => a.title.localeCompare(b.title));
+      else if (mode === 'opened') merged.sort((a, b) => (b.lastOpenedAt || '').localeCompare(a.lastOpenedAt || ''));
+      else merged.sort((a, b) => (b.createdAt || '').localeCompare(a.createdAt || ''));
+      return merged;
+    }
+
+    function openUrl(entry) {
+      return 'course.html?course=' + encodeURIComponent(entry.file) +
+             '&path=custom&hub=my-courses.html&from=hub';
+    }
+
+    // ── Rendering ───────────────────────────────────────────────────────
+    function cardHtml(entry) {
+      const progress = getCourseProgress(progressIdFor(entry.file));
+      const topic = TOPIC_BG[entry.topic] ? entry.topic : 'general';
+      const isNew = justCreated === entry.file;
+      return `
+        <article class="course-card${isNew ? ' next-course' : ''}" tabindex="0" role="button"
+                 data-file="${esc(entry.file)}" aria-label="Open ${esc(entry.title)}"
+                 style="--card-bg:${TOPIC_BG[topic]}">
+          <div class="course-card-top standalone-thumb" style="--card-bg:${TOPIC_BG[topic]}">
+            <div class="standalone-thumb-icon">${TOPIC_ICONS[topic] || TOPIC_ICONS.general}</div>
+            <div class="card-top-bar">
+              <span class="card-type-pill"><span class="card-type-icon-course"></span>Generated</span>
+              <span class="card-top-right">
+                <span class="course-duration-pill">${esc(entry.duration || '')}</span>
+                <button class="card-menu-btn" data-menu="${esc(entry.file)}" aria-label="Course options">
+                  <svg viewBox="0 0 24 24" stroke-width="2.5" stroke-linecap="round"><circle cx="5" cy="12" r="0.6"/><circle cx="12" cy="12" r="0.6"/><circle cx="19" cy="12" r="0.6"/></svg>
+                </button>
+              </span>
+            </div>
+          </div>
+          <div class="card-progress${progress.completed ? ' completed' : ''}">
+            <div class="card-progress-fill" style="width:${progress.completed ? 100 : progress.progress}%"></div>
+          </div>
+          <div class="course-card-bottom">
+            <h3 class="course-title">${esc(entry.title)}</h3>
+            <p class="course-description">${esc(entry.description)}</p>
+            <div class="course-cta-row">
+              <span class="course-cta">${progress.progress > 0 && !progress.completed ? 'Continue' : (progress.completed ? 'Review' : 'Start')}
+                <img class="course-cta-arrow" src="SVGs/Up-Arrow.svg" alt="" aria-hidden="true">
+              </span>
+            </div>
+          </div>
+        </article>`;
+    }
+
+    function render() {
+      const courses = visibleCourses();
+      const grid = $('mc-grid');
+      grid.innerHTML = courses.map(cardHtml).join('');
+      $('mc-empty').hidden = courses.length > 0;
+
+      const done = courses.filter((c) => getCourseProgress(progressIdFor(c.file)).completed).length;
+      $('mc-count').textContent = courses.length === 0
+        ? 'No courses yet'
+        : `${courses.length} generated course${courses.length === 1 ? '' : 's'}` +
+          (done ? ` · ${done} completed` : '');
+
+      requestAnimationFrame(() => {
+        grid.querySelectorAll('.course-card').forEach((card) => card.classList.add('visible'));
+      });
+    }
+
+    // ── Generation ──────────────────────────────────────────────────────
+    function renderStages(activeIndex, labelOverride) {
+      $('mc-stages').innerHTML = STAGES.map((stage, i) => {
+        const state = i < activeIndex ? 'is-done' : (i === activeIndex ? 'is-active' : '');
+        const label = (i === activeIndex && labelOverride) ? labelOverride : stage.label;
+        return `<div class="mc-stage ${state}"><span class="mc-stage-mark"></span><span>${esc(label)}</span></div>`;
+      }).join('');
+    }
+
+    function showComposer() {
+      $('mc-gen').hidden = true;
+      $('mc-composer').hidden = !canGenerate;
+      $('mc-locked').hidden = canGenerate;
+      $('mc-starters').hidden = false;
+    }
+
+    function showGenerating(prompt) {
+      $('mc-composer').hidden = true;
+      $('mc-locked').hidden = true;
+      $('mc-starters').hidden = true;
+      $('mc-gen').hidden = false;
+      $('mc-gen-error').hidden = true;
+      $('mc-gen-prompt').textContent = '“' + prompt + '”';
+      $('mc-gen-note').textContent = 'Usually takes one to three minutes. You can leave this tab open.';
+      $('mc-gen-actions').innerHTML = '<button id="mc-cancel" class="mc-ghost">Cancel</button>';
+      $('mc-cancel').addEventListener('click', cancelJob);
+      renderStages(0);
+      $('mc-gen-fill').style.width = '4%';
+    }
+
+    function showFailure(message, hint) {
+      stopPolling();
+      $('mc-gen').hidden = false;
+      $('mc-gen-error').hidden = false;
+      $('mc-gen-error').innerHTML = esc(message) + (hint ? ' ' + hint : '');
+      $('mc-gen-note').textContent = '';
+      $('mc-gen-actions').innerHTML =
+        '<button class="mc-ghost" data-act="retry">Try again</button>' +
+        '<button class="mc-ghost" data-act="edit">Edit prompt</button>';
+      $('mc-gen-actions').querySelector('[data-act="retry"]').addEventListener('click', () => startGeneration($('mc-prompt').value.trim()));
+      $('mc-gen-actions').querySelector('[data-act="edit"]').addEventListener('click', showComposer);
+    }
+
+    function startClock() {
+      clearInterval(ticker);
+      ticker = setInterval(() => {
+        const secs = Math.floor((Date.now() - startedAt) / 1000);
+        $('mc-gen-clock').textContent = `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, '0')}`;
+        if (Date.now() - startedAt > WATCHDOG_MS && activeJob) {
+          showFailure('This is taking longer than expected. The server may still be working — reload to check.');
+        }
+      }, 1000);
+    }
+
+    function stopPolling() {
+      clearInterval(poll); clearInterval(ticker);
+      poll = ticker = null; activeJob = null;
+      try { localStorage.removeItem(INFLIGHT_KEY); } catch { /* ignore */ }
+    }
+
+    async function startGeneration(prompt) {
+      if (!prompt || prompt.length < 12) return;
+      startedAt = Date.now();
+      showGenerating(prompt);
+      startClock();
+      writeJSON(INFLIGHT_KEY, { prompt, startedAt });
+
+      let res, data;
+      try {
+        res = await fetch('/__ai/generate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'X-Flowgen': '1' },
+          body: JSON.stringify({ prompt }),
+        });
+        data = await res.json();
+      } catch {
+        return showFailure('Could not reach the local dev server.',
+          'Start it with <code>python3 tools/dev-server.py 8765</code> and try again.');
+      }
+      if (!res.ok) {
+        if (res.status === 409 && data.job_id) { activeJob = data.job_id; return startPolling(); }
+        return showFailure(data.error || 'Generation could not start.',
+          data.hint ? '<code>' + esc(data.hint) + '</code>' : '');
+      }
+      activeJob = data.job_id;
+      startPolling();
+    }
+
+    function startPolling() {
+      clearInterval(poll);
+      poll = setInterval(checkStatus, POLL_MS);
+      checkStatus();
+    }
+
+    async function checkStatus() {
+      if (!activeJob) return;
+      let snapshot;
+      try {
+        const res = await fetch('/__ai/status?job=' + encodeURIComponent(activeJob), {
+          headers: { 'X-Flowgen': '1' }, cache: 'no-store',
+        });
+        if (!res.ok) throw new Error('status');
+        snapshot = await res.json();
+      } catch {
+        return; // a dropped poll is not a failure; the next one will land
+      }
+
+      const index = Math.max(0, STAGES.findIndex((s) => s.key === snapshot.status));
+      renderStages(index === -1 ? 0 : index, snapshot.phase_label);
+      $('mc-gen-fill').style.width = Math.round((snapshot.progress || 0.04) * 100) + '%';
+
+      if (snapshot.status === 'done' && snapshot.result) {
+        stopPolling();
+        justCreated = snapshot.result.entry.file;
+        $('mc-prompt').value = '';
+        syncGenerateButton();
+        await loadManifest();
+        render();
+        showComposer();
+        const card = document.querySelector(`[data-file="${CSS.escape(justCreated)}"]`);
+        if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else if (snapshot.status === 'error') {
+        const message = (snapshot.error && snapshot.error.message) || 'Generation did not finish.';
+        showFailure(message);
+      } else if (snapshot.status === 'cancelled') {
+        stopPolling();
+        showComposer();
+      }
+    }
+
+    async function cancelJob() {
+      if (!activeJob) return showComposer();
+      const id = activeJob;
+      stopPolling();
+      showComposer();
+      try {
+        await fetch('/__ai/cancel?job=' + encodeURIComponent(id),
+          { method: 'POST', headers: { 'X-Flowgen': '1' } });
+      } catch { /* the job may finish anyway; it will appear in the library */ }
+    }
+
+    // ── Card actions ────────────────────────────────────────────────────
+    function closeMenu() { $('mc-menu').hidden = true; }
+
+    function openMenu(button, file) {
+      const menu = $('mc-menu');
+      menu.innerHTML =
+        '<button data-act="open">Open</button>' +
+        '<button data-act="rename">Rename</button>' +
+        '<button data-act="regenerate">Generate again</button>' +
+        '<div class="mc-menu-sep"></div>' +
+        '<button data-act="delete">Delete</button>';
+      menu.hidden = false;
+      const rect = button.getBoundingClientRect();
+      const width = menu.offsetWidth;
+      menu.style.top = (rect.bottom + 8) + 'px';
+      menu.style.left = Math.max(12, Math.min(rect.right - width, window.innerWidth - width - 12)) + 'px';
+      menu.querySelectorAll('button').forEach((item) => {
+        item.addEventListener('click', (event) => {
+          event.stopPropagation();
+          closeMenu();
+          cardAction(item.dataset.act, file);
+        });
+      });
+    }
+
+    function cardAction(action, file) {
+      const entry = visibleCourses().find((c) => c.file === file);
+      if (!entry) return;
+      if (action === 'open') return openCourse(entry);
+      if (action === 'rename') return startRename(file);
+      if (action === 'regenerate') {
+        $('mc-prompt').value = entry.prompt || '';
+        syncGenerateButton();
+        if (canGenerate) startGeneration(entry.prompt || '');
+        return;
+      }
+      if (action === 'delete') return confirmDelete(entry);
+    }
+
+    function openCourse(entry) {
+      overrides[entry.file] = Object.assign({}, overrides[entry.file],
+        { lastOpenedAt: new Date().toISOString() });
+      writeJSON(OVERRIDES_KEY, overrides);
+      window.location.href = openUrl(entry);
+    }
+
+    function startRename(file) {
+      const card = document.querySelector(`[data-file="${CSS.escape(file)}"]`);
+      if (!card) return;
+      const title = card.querySelector('.course-title');
+      const input = document.createElement('input');
+      input.className = 'mc-title-input';
+      input.value = title.textContent;
+      title.replaceWith(input);
+      input.focus();
+      input.select();
+      const commit = (save) => {
+        const value = input.value.trim();
+        if (save && value) {
+          overrides[file] = Object.assign({}, overrides[file], { title: value });
+          writeJSON(OVERRIDES_KEY, overrides);
+        }
+        render();
+      };
+      input.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') { event.preventDefault(); commit(true); }
+        if (event.key === 'Escape') { event.preventDefault(); commit(false); }
+      });
+      input.addEventListener('blur', () => commit(true));
+    }
+
+    function confirmDelete(entry) {
+      const card = document.querySelector(`[data-file="${CSS.escape(entry.file)}"]`);
+      if (!card) return;
+      const body = card.querySelector('.course-card-bottom');
+      body.className = 'mc-confirm';
+      body.innerHTML =
+        '<p class="mc-confirm-title">Delete this course?</p>' +
+        '<p class="mc-confirm-sub">' + esc(entry.title) + ' and your progress on it will be removed.</p>' +
+        '<div class="mc-confirm-row">' +
+          '<button class="mc-confirm-cancel">Cancel</button>' +
+          '<button class="mc-confirm-go">Delete</button>' +
+        '</div>';
+      body.querySelector('.mc-confirm-cancel').addEventListener('click', (e) => { e.stopPropagation(); render(); });
+      body.querySelector('.mc-confirm-go').addEventListener('click', async (e) => {
+        e.stopPropagation();
+        try {
+          await fetch('/__ai/delete?file=' + encodeURIComponent(entry.file),
+            { method: 'POST', headers: { 'X-Flowgen': '1' } });
+        } catch { /* fall through to the local tombstone */ }
+        overrides[entry.file] = Object.assign({}, overrides[entry.file],
+          { deletedAt: new Date().toISOString() });
+        writeJSON(OVERRIDES_KEY, overrides);
+        try {
+          localStorage.removeItem('course_progress_' + progressIdFor(entry.file));
+          localStorage.removeItem('course_position_' + progressIdFor(entry.file));
+        } catch { /* ignore */ }
+        await loadManifest();
+        render();
+      });
+    }
+
+    // ── Wiring ──────────────────────────────────────────────────────────
+    function syncGenerateButton() {
+      const value = $('mc-prompt').value.trim();
+      $('mc-generate').disabled = value.length < 12;
+    }
+
+    function autoGrow() {
+      const box = $('mc-prompt');
+      box.style.height = 'auto';
+      box.style.height = Math.min(box.scrollHeight, 260) + 'px';
+    }
+
+    async function probeServer() {
+      try {
+        const res = await fetch('/__ai/health', { headers: { 'X-Flowgen': '1' }, cache: 'no-store' });
+        if (!res.ok) return false;
+        const health = await res.json();
+        if (!health.key_present) {
+          $('mc-locked-title').textContent = 'Course generation needs an API key';
+          $('mc-locked-body').innerHTML =
+            'Set <code>ANTHROPIC_API_KEY</code> in your environment or a <code>.env</code> file at the repo root, then restart the dev server.';
+          return false;
+        }
+        if (!health.sdk_installed) {
+          $('mc-locked-title').textContent = 'Course generation needs the Anthropic SDK';
+          $('mc-locked-body').innerHTML = 'Install it with <code>pip install anthropic</code>, then restart the dev server.';
+          return false;
+        }
+        return true;
+      } catch { return false; }
+    }
+
+    document.addEventListener('click', (event) => {
+      const menuBtn = event.target.closest('.card-menu-btn');
+      if (menuBtn) {
+        event.stopPropagation();
+        const isOpen = !$('mc-menu').hidden;
+        closeMenu();
+        if (!isOpen) openMenu(menuBtn, menuBtn.dataset.menu);
+        return;
+      }
+      if (!event.target.closest('#mc-menu')) closeMenu();
+
+      const card = event.target.closest('.course-card');
+      if (card && !event.target.closest('.mc-confirm') && !event.target.closest('.mc-title-input')) {
+        const entry = visibleCourses().find((c) => c.file === card.dataset.file);
+        if (entry) openCourse(entry);
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenu();
+      const card = event.target.closest && event.target.closest('.course-card');
+      if (card && (event.key === 'Enter' || event.key === ' ')) {
+        event.preventDefault();
+        const entry = visibleCourses().find((c) => c.file === card.dataset.file);
+        if (entry) openCourse(entry);
+      }
+    });
+
+    window.addEventListener('scroll', closeMenu, { passive: true });
+    window.addEventListener('resize', closeMenu);
+    window.addEventListener('beforeunload', (event) => {
+      if (activeJob) { event.preventDefault(); event.returnValue = ''; }
+    });
+
+    $('mc-prompt').addEventListener('input', () => { syncGenerateButton(); autoGrow(); });
+    $('mc-prompt').addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) {
+        event.preventDefault();
+        startGeneration($('mc-prompt').value.trim());
+      }
+    });
+    $('mc-generate').addEventListener('click', () => startGeneration($('mc-prompt').value.trim()));
+    $('mc-sort').addEventListener('change', render);
+
+    $('mc-starters').innerHTML = STARTERS
+      .map((s) => `<button class="mc-starter">${esc(s)}</button>`).join('');
+    $('mc-starters').addEventListener('click', (event) => {
+      const chip = event.target.closest('.mc-starter');
+      if (!chip) return;
+      $('mc-prompt').value = chip.textContent;
+      syncGenerateButton();
+      autoGrow();
+      $('mc-prompt').focus();
+    });
+
+    (async function init() {
+      canGenerate = await probeServer();
+      await loadManifest();
+      render();
+      showComposer();
+
+      // A generation that was running when the page was closed: the server
+      // may well have finished it, so offer to look rather than assume.
+      const inflight = readJSON(INFLIGHT_KEY, null);
+      if (inflight && Date.now() - inflight.startedAt < 600000) {
+        startedAt = inflight.startedAt;
+        $('mc-composer').hidden = true;
+        $('mc-starters').hidden = true;
+        $('mc-gen').hidden = false;
+        $('mc-gen-prompt').textContent = '“' + inflight.prompt + '”';
+        $('mc-gen-note').textContent = 'A course was generating when you left this page.';
+        renderStages(2);
+        $('mc-gen-fill').style.width = '60%';
+        $('mc-gen-actions').innerHTML =
+          '<button class="mc-ghost" data-act="check">Check again</button>' +
+          '<button class="mc-ghost" data-act="dismiss">Dismiss</button>';
+        $('mc-gen-actions').querySelector('[data-act="check"]').addEventListener('click', async () => {
+          await loadManifest(); render(); stopPolling(); showComposer();
+        });
+        $('mc-gen-actions').querySelector('[data-act="dismiss"]').addEventListener('click', () => {
+          stopPolling(); showComposer();
+        });
+      }
+    })();
+  })();
+  </script>
+</body>
+</html>
