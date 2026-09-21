@@ -7,12 +7,12 @@ type: hero
 ---
 hero_image: placeholder-images/Illustration.png
 hero_subtitle: Welcome to the course:
-hero_title: Linked Revenue
+hero_title: Linked revenue
 hero_body: In the previous courses, you segmented your customer portfolio and looked at the profitability of individual customer relationships.
 
-Now we will connect customers to the products they buy and the suppliers behind those products.
+Now we will connect customers to the products they buy and see why those relationships can change the decisions we make.
 
-**Let’s get started.**
+**Let’s get started!**
 ---
 > [next] Let's do it! -> d33db1e1-e53d-4cd9-a1d3-709f9839bbea
 
@@ -23,7 +23,7 @@ type: main
 ---
 So far, we have looked at customers on their own. Before that, we looked at products and suppliers on their own.
 
-But these parts of the business are connected. Customers buy products, and those products depend on suppliers. Now we bring those relationships together.
+But these parts of the business are connected. Customers buy products, and those products depend on suppliers. **Now we bring those relationships together.**
 ![image/size:large/align:center/frame:none](customers-linked-revenue/roadmap-3.png)
 ---
 > [next] Continue -> b8c94b44-70d6-43f9-aebc-5dcd3c56ca9a
@@ -38,56 +38,72 @@ layout: standard-2-col
 ---
 Linked Revenue connects customers with the products they buy.
 
-This helps us understand which product relationships support the customers that matter to the business, and which relationships may need to be challenged.
+Instead of asking whether a customer or product is good on its own, we look at the relationship between them.
 
-We can then follow those products back to the suppliers behind them and see the wider value chain.
+This helps us understand which relationships support the business and which ones create unnecessary complexity.
 ![video/size:large/align:right/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Customers/ABC-Linkage-Animation.mp4)
+---
+> [next] Continue -> 947edff7-c474-4e26-8cb5-39ae200a8868
+
+slide_id: 947edff7-c474-4e26-8cb5-39ae200a8868
+index_title: One Product Can Tell Two Different Stories
+title: One Product Can Tell Two Different Stories
+type: main
+layout: standard-2-col
+---
+Looking at a product alone can lead us to the wrong conclusion.
+
+A C item may have low revenue and few order lines. On its own, it can look like an obvious candidate for removal. But what if one of your most important customers depends on it?
+
+Now the relationship changes the decision.
+![image/size:large/align:right/frame:none](customers-linked-revenue/Important-Relationship.png)
 ---
 > [next] Continue -> a19d7b68-8f6f-4d74-9816-07d6c203d5b1
 
 [id:3/topic: Healthy and Unhealthy Complexity]
 
 slide_id: a19d7b68-8f6f-4d74-9816-07d6c203d5b1
-index_title: C Items Sold to Protect Customers
-title: C Items Sold to Protect Customers
+index_title: Healthy Complexity
+title: Healthy Complexity
 type: main
+layout: standard-2-col
 ---
-In the Inventory and Products courses, many C items looked like obvious candidates to reduce or remove. But we were looking at the product on its own. Before making that decision, we need to know who buys it.
+Some complexity is worth keeping.
 
-The **C Items Sold to Protect Customers** Insight shows you C items that one or more of your most important customers buys.
+An important customer may buy a mix of strong products and products that look weak on their own. Those weaker products still support an important customer relationship.
 
-Low revenue, few order lines, but a customer you do not want to lose.
-![image/size:large/align:center/frame:none](customers-linked-revenue/C-To-Protect-Screenshot.png)
----
-> [next] Continue -> cb35f5ee-e4ed-4611-99e1-e0e342411c4e
+That makes them part of healthy complexity.
 
-slide_id: cb35f5ee-e4ed-4611-99e1-e0e342411c4e
-index_title: Healthy Complexity - End to End Walkthrough
-title: Healthy Complexity - End to End Walkthrough
-type: main
----
-We have now found C items that important customers buy. That changes the decision.
-
-Looking at the product alone, we may want to remove it. Looking at the customer relationship, we may decide that keeping it is necessary. This is **healthy complexity**. Complexity that exists because it supports customers that matter to the business.
-
-Now we can take the next step and see these relationships in End2End. Here, we can connect the customers to the products they buy and then follow those products back to the suppliers behind them.
-![image/size:large/align:center/frame:none](customers-linked-revenue/Healthy-Complexity-Walkthrough.png)
+The **C Items Sold to Protect Customers Insight** in Inact Now shows you C items that one or more of your most important customers buys.
+![image/size:large/align:right/frame:none](customers-linked-revenue/Healthy-Complexity.png)
 ---
 > [next] Continue -> d6423881-a584-4764-a391-92376146d3a9
 
 slide_id: d6423881-a584-4764-a391-92376146d3a9
-index_title: Unhealthy Complexity - End to End Walkthrough
-title: Unhealthy Complexity - End to End Walkthrough
+index_title: Unhealthy Complexity
+title: Unhealthy Complexity
 type: main
+layout: standard-2-col
 ---
-Now we can turn the analysis around.
+Other relationships create complexity without enough value behind them. A weak customer may depend on products that few or no other customers buy.
 
-Some products may only exist because a small group of weak customers buy them.
-If nobody else buys those products, the relationship creates a very different type of complexity.
-This is where we need to question whether the products, inventory and customer relationship still make sense.
+Those relationships can add products, inventory and work without contributing enough to the business.
+![image/size:large/align:right/frame:none](customers-linked-revenue/Unhealthy-Complexity.png)
+---
+> [next] Continue -> cb35f5ee-e4ed-4611-99e1-e0e342411c4e
 
-Go through the tutorial below.
-![image/size:large/align:center/frame:none](customers-linked-revenue/Unhealthy-Complexity-Walkthrough.png)
+slide_id: cb35f5ee-e4ed-4611-99e1-e0e342411c4e
+index_title: The Full Value Chain
+title: The Full Value Chain
+type: main
+layout: standard-2-col
+---
+Once we understand which products support important customers, we can follow those products further through the value chain.
+
+Products connect customers to the suppliers behind them.
+
+This gives us a more complete picture of what actually supports the relationships that matter.
+![image/size:large/align:right/frame:none](customers-linked-revenue/Full-Chain.png)
 ---
 > [next] Continue -> e8dffb25-9900-4860-a61b-345b25ae94ae
 
