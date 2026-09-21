@@ -5,3 +5,8 @@ __pycache__/
 graphify-out/
 images/animations/
 tools/__pycache__/
+
+# AI course generation
+.env
+courses/custom/
+tools/flowgen/.cache/
