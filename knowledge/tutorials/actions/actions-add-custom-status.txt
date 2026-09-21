@@ -1,0 +1,16 @@
+---
+topic: How to add a custom status to an Action list in Inact Now
+source_type: tutorial
+language: english
+keywords: add status, custom status, category, TO DO, DONE, status button, colour
+product_area: Actions
+question_type: how-to
+---
+
+Action lists come with TO DO and DONE statuses by default. You can add extra status categories to represent intermediate steps in your workflow.
+
+Open the Action list. In the status bar at the top, click the + button to the right of the existing status buttons. A new entry appears with a colour swatch and a text field that says Category name.
+
+Click the colour swatch to pick a colour for the new status. Then click the Category name field and type the name you want — for example, "In Review" or "Escalated". Click the green checkmark to confirm, or the red X to cancel.
+
+The new status button will appear in the status bar and items can be moved into it the same way as TO DO or DONE.

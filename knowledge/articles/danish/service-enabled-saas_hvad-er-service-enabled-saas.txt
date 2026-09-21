@@ -1,0 +1,9 @@
+---
+topic: Hvad er Service-enabled SaaS?
+source_type: article
+language: danish
+article_source: Service-enabled SaaS
+keywords: Service-enabled SaaS, forretningsmodel, ekspertrådgivning, abonnement, kundeoplevelse
+---
+
+Service-enabled SaaS er vores forretningsmodel, hvor vi udover en software-as-a-service-løsning (SaaS) også tilbyder adgang til eksperter som en del af servicen. Vi inkluderer løbende ekspertrådgivning i vores abonnement for at hjælpe kunder med at opnå konkrete forretningsmæssige resultater og skabe et tættere partnerskab for at øge kundetilfredsheden.

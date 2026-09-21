@@ -1,0 +1,19 @@
+---
+topic: Understanding Actions in Inact Now
+source: Now Actions
+source_type: course
+language: english
+product_area: platform
+question_type: what
+keywords:
+- Actions
+- automated to-do lists
+- monitoring
+- alerts
+- task management
+- focus
+- supply chain
+- automation
+---
+
+Actions in Inact Now are automated to-do lists that continuously monitor your supply chain data in the background. When a situation arises that requires your attention, such as an exception or a task, it is automatically added to your list of actions. This system ensures that you are always aware of the most important issues or tasks to address, helping you maintain focus and respond promptly to changing conditions.

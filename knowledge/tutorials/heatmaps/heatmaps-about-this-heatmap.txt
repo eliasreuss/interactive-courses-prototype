@@ -1,0 +1,17 @@
+---
+topic: How to see what a Heatmap is showing in Inact Now
+source_type: tutorial
+language: english
+keywords: about this heatmap, info icon, what does this show, data sources, colour scale, slicers, filters
+product_area: Heatmaps
+question_type: how-to
+---
+
+Click the info icon next to the heatmap name to open the About this Heatmap window. It documents the whole configuration in one place:
+
+This Heatmap shows — the measure and its aggregation, for example "Cost Amount (sum)".
+Data sources — which column forms the rows and which forms the columns, and which data source each comes from.
+Colour scale — the legend itself, plus chips showing the current Scope and Type and a sentence explaining what that combination does.
+Slicers and Filters — what is currently narrowing the data, or "None".
+
+This is the fastest way to understand a heatmap a colleague built, and the first thing to check when the numbers look wrong — an unnoticed filter or an unexpected colour scope explains most surprises. Click Close to dismiss it.

@@ -1,0 +1,69 @@
+---
+topic: Purchase-to-order (PTO)
+source_type: glossary
+language: english
+keywords: Purchase-to-order (PTO), Indkøb til ordre (purchase to order), purchase-to-order, inventory, customer, capital, order, products, supplier, tied-up
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Indkøb til ordre (purchase to order)
+term_en: Purchase-to-order (PTO)
+url: https://inact.io/en/glossary/purchase-to-order/
+---
+
+Purchase-to-order (PTO) — Danish: Indkøb til ordre
+Purchase-to-order is a procurement strategy where goods are only purchased from the supplier once a customer order has been received. The purpose of this strategy is to minimize tied-up capital and reduce the risk of excess inventory by only acquiring goods that are already sold.
+What is purchase-to-order?
+Purchase-to-order (PTO) means that the procurement process is triggered directly by a customer order. In this model, goods are not held as finished inventory in the company’s warehouse; instead, they are purchased specifically for each individual order or customer.
+This strategy is particularly common in companies that deal with:
+Customized products: Items configured specifically for each customer.
+Low-volume products: Items that are sold infrequently and are therefore expensive to stock.
+High assortment complexity:
+Where it is physically or economically impractical to hold all variants in inventory.
+When is purchase-to-order used?
+The choice of a purchase-to-order strategy depends on product characteristics and customer expectations. It is typically relevant when:
+Demand is unpredictable:
+When accurate forecasting is difficult, PTO protects against over-purchasing.
+Products have high value:
+For expensive items, the cost of tied-up capital in inventory is significant.
+High risk of obsolescence:
+For products with short lifecycles or rapidly changing trends (e.g. high-end electronics or fashion).
+Project-based sales:
+Where procurement is tied to a specific project or contract.
+What are the advantages of purchase-to-order?
+The main advantage of purchase-to-order is low tied-up capital. Since the company does not own the product until it is sold, there is no need to build inventory, freeing up liquidity for other purposes.
+Other key advantages include:
+No risk of excess inventory:
+You only buy what is needed, eliminating the need for write-downs.
+Broader assortment:
+The company can offer a wide range of products without increasing inventory costs.
+High flexibility:
+Easier to adapt to customer-specific needs and changes in the market.
+What should you be aware of with purchase-to-order?
+While PTO eliminates inventory risk, it shifts the pressure to supply chain speed and reliability.
+Companies should pay particular attention to:
+Longer lead times:
+Customers must accept waiting for both supplier lead time and transportation.
+Supplier dependency:
+Delivery performance is fully dependent on supplier reliability and accuracy.
+Administrative costs:
+Each order requires individual handling and follow-up, increasing administrative effort per unit.
+Coordination requirements:
+Close collaboration between sales, procurement, and logistics is needed to ensure timely delivery.
+What is the difference between purchase-to-order and purchase-to-stock?
+Purchase-to-order is based on actual customer orders, while purchase-to-stock is based on forecasts and inventory buildup.
+The choice between the two is about finding the right balance between lead time, flexibility, and tied-up capital in the supply chain.
+Purchase-to-order
+Purchase-to-stock
+Trigger
+Actual customer order
+Demand and forecasts
+Tied-up capital
+Minimal to none
+High
+Lead time
+Longer (depends on supplier)
+Very short (from stock)
+Focus
+Flexibility and liquidity
+Service level and fast delivery

@@ -1,0 +1,18 @@
+---
+topic: How to filter the Home page by Customer Group, Supplier Group, or Country in Inact Now
+source_type: tutorial
+language: english
+keywords: filter, home page, customer group, supplier group, country, slicer, personal filter
+product_area: Home
+question_type: how-to
+---
+
+The filter bar runs across the top of the Home page, just below the menu. It contains dropdown filters — by default, Customer Group, Supplier Group, and Country.
+
+To filter the KPI data shown on the page, click any of these dropdowns and select a value. The KPI cards will update instantly to show only data that matches your selection.
+
+To remove a filter, click the same dropdown again and select the blank option at the top of the list.
+
+You can also add a temporary personal filter by clicking the green + button on the left side of the filter bar. This opens a searchable list of available metrics and dimensions — click one to add it as a filter for your current session. These temporary filters are not saved and won't affect what other users see.
+
+Filters only affect what you see while you're on the page. They don't change the underlying data or anyone else's view.

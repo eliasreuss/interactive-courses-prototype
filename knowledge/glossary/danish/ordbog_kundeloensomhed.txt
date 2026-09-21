@@ -1,0 +1,37 @@
+---
+topic: Kundelønsomhed
+source_type: glossary
+language: danish
+keywords: Kundelønsomhed, Customer profitability, kunder, kunde, servicere, cost-to-serve, forbundet, omkostninger, profitable
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Kundelønsomhed
+term_en: Customer profitability
+url: https://inact.io/ordbog/kundeloensomhed/
+---
+
+Kundelønsomhed — English: Customer profitability
+Kundelønsomhed er et centralt forretningsbegreb, der definerer den faktiske profit en kunde bidrager med til en virksomhed over en given periode, efter at alle omkostninger forbundet med at servicere den pågældende kunde er fratrukket.
+Hvad er kundelønsomhed?
+Helt simpelt handler kundelønsomhed om forholdet mellem omsætning og de samlede omkostninger forbundet med at servicere en kunde.
+Det handler om at forstå, hvilke kunder der skaber størst værdi for virksomheden, og hvilke der potentielt koster mere at servicere, end de indbringer.
+Så i modsætning til blot at se på omsætningen forbundet med en kunde, dykker man ned i de underliggende omkostninger forbundet med at tiltrække, sælge til og servicere den enkelte kunde.
+Hvorfor er det relevant at kigge på dine kunders lønsomhed?
+At kende lønsomheden for den enkelte kunde er nødvendig for strategisk beslutningstagning og en forudsætning for at optimere virksomhedens samlede rentabilitet.
+En klar forståelse af kundelønsomhed muliggør:
+Effektiv ressourceallokering: Virksomheder kan målrette salgs- og marketingindsatsen mod de mest profitable kundesegmenter, hvilket sikrer et højere afkast af investeringen.
+Forbedret kundeservice og loyalitet: Ved at differentiere serviceniveauet baseret på kundens rentabilitet kan virksomheder sikre, at værdifulde kunder modtager den opmærksomhed og service, der er nødvendig, uden at overservicere mindre profitable kunder. Dette kan styrke kundeloyaliteten blandt de vigtigste kunder.
+Optimering af prissætning og rabatter: Indsigt i kundelønsomhed giver et solidt grundlag for at justere priser og rabatstrukturer, så de afspejler den sande værdi af kundeforholdet og maksimerer profitmarginerne.
+Målrettet produkt- og serviceudvikling: Virksomheder kan udvikle og tilpasse produkter og services specifikt til de mest profitable kundesegmenter, hvilket øger markedspenetrering og kundetilfredshed.
+Proaktiv risikostyring: Identificering af kunder, der dræner ressourcer eller udgør en finansiel risiko, gør det muligt at implementere strategier for at forbedre deres lønsomhed eller, om nødvendigt, afvikle ulønsomme relationer.
+Hvad er sammenhængen mellem kundelønsomhed og cost-to-serve?
+Cost-to-Serve (CTS) er en central del af beregningen af kundelønsomhed.
+Mens kundelønsomhed giver det samlede billede af en kundes økonomiske værdi, er Cost-to-Serve den detaljerede opgørelse over de specifikke omkostninger, der er forbundet med at levere produkter og services til den pågældende kunde.
+En høj Cost-to-Serve kan dramatisk reducere en kundes rentabilitet, selvom kunden genererer en betydelig omsætning. Forståelsen af CTS er derfor afgørende for at kunne optimere kundelønsomheden.
+Flere faktorer påvirker Cost-to-Serve og har dermed en direkte indvirke på kundelønsomheden, som for eksempel:
+Ordrestørrelse og frekvens: Kunder, der afgiver mange små, hyppige ordrer, er ofte dyrere at servicere per enhed end kunder med færre, men større ordrer.
+Leveringskrav og kompleksitet: Specifikke leveringsvinduer, behov for hasteordrer, levering til fjerntliggende lokationer eller særlige emballagekrav kan alle øge logistikomkostningerne betydeligt.
+Produktsammensætning: Kunder, der bestiller et bredt udvalg af SKU'er (Stock Keeping Units) eller specialvarer, kan medføre højere lager- og plukkeomkostninger.
+Returprocent og reklamationer: En høj returprocent eller et stort antal reklamationer øger omkostningerne til returlogistik, administration og kundeservice.
+Behov for kundesupport: Kunder, der kræver hyppig eller omfattende support, teknisk assistance eller har mange henvendelser, vil naturligvis være dyrere at servicere.

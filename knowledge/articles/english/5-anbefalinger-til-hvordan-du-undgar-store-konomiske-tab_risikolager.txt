@@ -1,0 +1,9 @@
+---
+topic: Risikolager
+source_type: article
+language: english
+article_source: 5 anbefalinger til hvordan du undgår store økonomiske tab
+keywords: risikolager, likviditet, indtjening, ABC-analyse, trimme lageret
+---
+
+1. Analyze where capital is tied up in low-demand items. 2. Focus on optimizing inventory and building reserves during downturns. 3. Use ABC analysis to identify inventory investment areas.

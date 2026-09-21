@@ -1,0 +1,19 @@
+---
+topic: AC-varer i dobbelt ABC-analyse
+source: Double Abc Analysis 4
+source_type: course
+language: danish
+product_area: inventory
+question_type: what
+keywords:
+- dobbelt ABC-analyse
+- AC-varer
+- lageromkostning
+- lav efterspørgsel
+- kapitalbinding
+- lager risiko
+- højværdiprodukter
+- kopimaskine
+---
+
+AC-varer i en dobbelt ABC-analyse er produkter, der har en høj lageromkostning, men lav efterspørgsel. Det er typisk højværdiprodukter, såsom kopimaskiner, som er værdifulde, men kun sælges lejlighedsvis. At have AC-varer på lager er mere risikabelt, fordi de kræver en betydelig kapitalbinding, samtidig med at det er svært at forudsige, hvornår eller hvor mange der bliver solgt. Effektiv håndtering af disse varer er vigtig for at undgå at binde ressourcer i et lager, der måske ikke bliver omsat hurtigt.

@@ -1,0 +1,30 @@
+---
+topic: QR Code
+source_type: glossary
+language: english
+keywords: QR Code, QR-kode, codes, chain, information, inventory, supply, product, systems, tracking
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: QR-kode
+term_en: QR Code
+url: https://inact.io/en/glossary/qr-code/
+---
+
+QR Code — Danish: QR-kode
+A QR code (Quick Response code) is a two-dimensional barcode that can be quickly read with a scanner or smartphone. In the supply chain, QR codes are used to track products, inventory, and deliveries, which creates better control and visibility throughout the entire chain.
+What is a QR Code?
+QR codes contain digital information, which can include product data, serial number, batch number, or links to systems. They make it possible to quickly retrieve information without manual entry and are increasingly used for automation and documentation in logistics and inventory management.
+What are QR Codes used for?
+QR codes are used to digitize operational processes such as:
+Identifying and tracking products in inventory and during transport
+Simplifying the scanning and registration of goods
+Integrating product data with IT systems for better decision-making basis
+When are QR Codes used in the supply chain?
+In the supply chain, QR codes are typically used for:
+Inventory management and stock counting
+Transport and delivery, where scanning ensures correct receipt
+Production processes, where tracking of components or batches is critical
+Customer communication, for example, for returns or product information
+How is a QR Code created?
+QR codes can be generated via software, where you enter the information you want to be contained in the code. It can then be printed on labels, packaging, or documents. In the supply chain, the codes can be linked to ERP or WMS systems for automated tracking.

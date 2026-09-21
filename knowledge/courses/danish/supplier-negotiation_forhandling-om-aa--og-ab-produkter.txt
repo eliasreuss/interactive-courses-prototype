@@ -1,0 +1,20 @@
+---
+topic: Forhandling om AA- og AB-produkter
+source: Supplier Negotiation
+source_type: course
+language: danish
+product_area: supplier
+question_type: how
+keywords:
+- AA-produkter
+- AB-produkter
+- kostpris
+- volumen
+- MOQ
+- leverandørforhandling
+- pålidelighed
+- indtjening
+- kundetilfredshed
+---
+
+Når du forhandler med leverandører om AA- og AB-produkter, som er varer med højt volumen og høj værdi, bør du fokusere på at opnå den lavest mulige kostpris og sikre pålidelige leverancer. Da du køber disse varer i store mængder, har du en stærk forhandlingsposition og kan acceptere et højere minimumsordreantal (MOQ) til gengæld for bedre priser. Eftersom efterspørgslen på disse produkter er stabil, er risikoen ved at have lager lav, og selv små reduktioner i kostprisen kan have stor positiv effekt på indtjeningen. Pålidelig levering er afgørende for at opretholde kundetilfredshed.

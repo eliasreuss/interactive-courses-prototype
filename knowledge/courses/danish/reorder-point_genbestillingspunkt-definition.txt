@@ -1,0 +1,18 @@
+---
+topic: Genbestillingspunkt Definition
+source: Reorder Point
+source_type: course
+language: danish
+product_area: inventory
+question_type: what
+keywords:
+- genbestillingspunkt
+- lagerbeholdning
+- indkøbsordre
+- lager
+- efterspørgsel
+- levering
+- lagerstyring
+---
+
+Et genbestillingspunkt er det specifikke lagerbeholdningsniveau, hvor der skal afgives en ny indkøbsordre for at genopfylde lageret. Det angiver, hvornår der skal bestilles, men ikke hvor meget der skal bestilles. Genbestillingspunktet fungerer som en tidlig advarsel og sikrer, at der er tilstrækkeligt lager til at dække kundernes efterspørgsel i den periode, det tager at få nye varer leveret efter bestilling. Dette hjælper med at undgå lagerudtømning og holder driften kørende uden afbrydelser.

@@ -1,0 +1,18 @@
+---
+topic: How to work through items in an Action list in Inact Now
+source_type: tutorial
+language: english
+keywords: action item, TO DO, DONE, change status, mark done, work through items, status button, checkbox
+product_area: Actions
+question_type: how-to
+---
+
+Open an Action list by clicking its name in the Actions library. Inside, items are grouped by their current status — you will see sections like TO DO and DONE, each with a count badge.
+
+Click the arrow next to a status section header to expand it and see the items inside. Each row shows the item along with data columns relevant to that list.
+
+To change an item's status, click the checkbox next to it to select it. Once selected, the toolbar at the top updates to show available actions — you can delete the selected item or use the status buttons at the top of the page (TO DO, DONE, or any custom statuses) to move it.
+
+You can also click directly on a row to open the item detail panel, where you can review the item's data and then use the status buttons to move it.
+
+To select all items at once, tick the checkbox in the column header row.

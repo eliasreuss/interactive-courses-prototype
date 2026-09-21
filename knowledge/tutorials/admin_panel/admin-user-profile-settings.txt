@@ -1,0 +1,14 @@
+---
+topic: User profile settings — name, password, and email preferences
+source_type: tutorial
+language: english
+keywords: user profile, my profile, password, email preferences, notifications, settings
+product_area: Admin
+question_type: how-to
+---
+
+Each user can edit their own settings via their profile page (accessible from the account menu in the top navigation). The page has three sections:
+
+Edit — Change your First name and Last name, then click Save.
+Password — Enter your Old password, a New password, and Confirm new password, then click Confirm password to update.
+Email preferences — Three radio button options: Receive no emails, Receive email notifications (with an info tooltip), or Receive a daily digest of unread notifications. Click Save preferences to apply.

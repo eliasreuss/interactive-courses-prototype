@@ -1,0 +1,19 @@
+---
+topic: What the summary cards at the top of an Insight show in Inact Now
+source_type: tutorial
+language: english
+keywords: summary cards, totals, KPI summary, count, sum, insight header, aggregation
+product_area: Insights
+question_type: concept
+---
+
+Just below the filter bar in many Insights, you'll see a row of summary cards — large tiles showing totals across the entire filtered dataset. These update automatically whenever you apply or change a filter.
+
+Each card shows:
+- The metric name (e.g., Revenue 12 mos., Inventory Value, Item ID).
+- The aggregate value — usually a sum (total across all visible rows) or a count (number of items).
+- The aggregation type below the value: "sum", "count", or "calculated".
+
+For example, a card showing "Item ID / 5,491 / count" tells you there are 5,491 items currently visible with the active filters. A card showing "Revenue 12 mos. / 407,775,072 / sum" tells you the total revenue across all visible items.
+
+These cards are read-only — they're there to give you context at a glance before you dig into the individual rows.

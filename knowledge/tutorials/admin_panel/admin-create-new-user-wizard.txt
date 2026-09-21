@@ -1,0 +1,19 @@
+---
+topic: Creating a new user — the wizard steps
+source_type: tutorial
+language: english
+keywords: create user, new user, wizard, onboarding, user setup, email, role, access
+product_area: Admin
+question_type: how-to
+---
+
+Click + New User to open the four-step "Create new user" wizard. The steps are:
+
+Step 1 — Basic info: Email (required), Firstname (required), Lastname (required), Phone number, Language — English or Danish (required), Job Title (required), Department (required), Location (optional).
+Step 2 — Permissions: Choose a role (User, Super User, Admin, Subscription Only) and optionally toggle Simple view or Download Data.
+Step 3 — Access control: Assign which datasources the user can see. At least one must be selected or a warning appears: "User will not have access to anything."
+Step 4 — Homepage dashboards: Optionally add dashboards to the user's home page.
+
+On the final step, you can either click Save (creates the account silently) or Save & Send mail (creates the account and emails the user a welcome invitation).
+
+Validation runs when you click Next — required fields must be filled before you can advance.

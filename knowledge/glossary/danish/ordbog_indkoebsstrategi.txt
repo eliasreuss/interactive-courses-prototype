@@ -1,0 +1,38 @@
+---
+topic: Indkøbsstrategi
+source_type: glossary
+language: danish
+keywords: Indkøbsstrategi, Purchasing Strategy, leverandører, omkostninger, optimere, overordnede, sikre, varer, virksomhedens
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Indkøbsstrategi
+term_en: Purchasing Strategy
+url: https://inact.io/ordbog/indkoebsstrategi/
+---
+
+Indkøbsstrategi — English: Purchasing Strategy
+En indkøbsstrategi er virksomhedens overordnede plan for, hvordan man anskaffer varer og tjenester på den mest effektive og værdiskabende måde. Strategien omfatter valg af leverandører, indkøbsmængder, timing, kontraktstyring og risikohåndtering med det formål at optimere omkostninger, kvalitet, leveringsevne og kapitalbinding.
+Hvad er en indkøbsstrategi?
+En indkøbsstrategi er en systematisk tilgang til at styre virksomhedens indkøb. Den omsætter overordnede forretningsmål (for eksempel vækst) til konkrete handlinger og beslutninger i indkøbsafdelingen.
+En indkøbsstrategi indeholder typisk:
+Leverandørvalg og -styring: Fastlægge kriterier for udvælgelse, evaluering og samarbejde med leverandører.
+Indkøbsmetoder: F.eks. spot-køb, kontraktindkøb eller rammeaftaler.
+Pris- og betalingsstrategier: Fastsætte mål for omkostninger, rabatter, betalingsbetingelser og total cost of ownership.
+Risikostyring: Identificere og håndtere leverandørrisici, kapacitetsflaskehalse og prisudsving.
+Volumen- og timingstyring: Bestemme, hvornår og hvor meget der skal købes for at optimere lager og likviditet.
+Hvad bruger man en indkøbsstrategi til?
+En indkøbsstrategi hjælper med at skabe struktur, overblik og målrettet handling i indkøbsarbejdet:
+Optimere omkostninger: Reducere udgifter gennem bedre kontrakter, volumenudnyttelse og total cost of ownership.
+Sikre leveringssikkerhed: Sikre, at kritiske varer altid er tilgængelige, uden overflødigt lager.
+Forbedre samarbejde med leverandører: Opbygge relationer, der skaber kvalitet, fleksibilitet og innovation.
+Reducerer risiko: Håndtere udsving i priser, forsyning og kapacitet på en struktureret måde.
+Understøtte strategiske mål: Tilpasse indkøb til virksomhedens overordnede mål for vækst, margin og servicegrad.
+Hvordan udarbejder man en indkøbsstrategi?
+Udarbejdelse af en effektiv indkøbsstrategi kræver både dataindsigt og strategisk overblik:
+Analyse af spend og leverandører: Identificere, hvor pengene bruges (spend analyse), hvilke leverandører der er kritiske, og hvor der er muligheder for forbedring.
+Segmentering af varer: For eksempel med brug af en
+ABC-analyse for at prioritere ressourcer og fokus.
+Strategisk målsætning: Fastlægge ønsket servicegrad, omkostningsmål og risikoprofil.
+Metodevalg: Vurdere kontraktformer, indkøbsmetoder og leverandørsamarbejde.
+Implementering og overvågning: Indføre strategien i systemer og følge KPI’er for at sikre, at den skaber den ønskede effekt.

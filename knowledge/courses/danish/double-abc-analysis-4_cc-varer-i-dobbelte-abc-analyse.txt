@@ -1,0 +1,20 @@
+---
+topic: CC-varer i Dobbelte ABC-analyse
+source: Double Abc Analysis 4
+source_type: course
+language: danish
+product_area: inventory
+question_type: what
+keywords:
+- Dobbelte ABC-analyse
+- CC-varer
+- lagerstyring
+- lav efterspørgsel
+- lav pris
+- udfasning
+- lagerkontrol
+- plastlommer
+- Inact Now
+---
+
+CC-varer i Dobbelte ABC-analyse er lagervarer, der kendetegnes ved både lav pris og lav efterspørgsel. Disse produkter, såsom plastlommer, sælges sjældent og binder ikke meget kapital, men de kan ophobe sig og optage værdifuld lagerplads. Det er vigtigt at håndtere CC-varer omhyggeligt for at undgå unødvendig lageropbygning. I mange tilfælde kan virksomheder overveje at udfase disse varer for at optimere lageret og reducere lageromkostningerne.

@@ -1,0 +1,16 @@
+---
+topic: How to add a filter to an End2End view in Inact Now
+source_type: tutorial
+language: english
+keywords: add filter, edit filter setup, filter before linking, reduce data, suppliers products customers filter
+product_area: End2End
+question_type: how-to
+---
+
+In the settings panel, click the Add Filter link above any of the three columns. This opens the Edit Filter setup window, which handles the filters for all three data sources in one place regardless of which Add Filter link you clicked.
+
+The window explains that filters apply before linking data sources, and then shows three areas side by side — Suppliers, Products and Customers — each with a green + button and a field reading "No filters".
+
+Click the + button (or the field) under the data source you want to filter to open a column picker. Search for the column, click it, and the Data slicer dialog opens where you set the condition and pick the values. Save the condition and it is added as a filter on that data source.
+
+Click Close when you are done. Because filters change which relations are built, the relation counts and all three columns recalculate. Remember to click Save in the settings panel to store the filters with the view.

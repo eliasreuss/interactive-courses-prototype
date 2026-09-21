@@ -1,0 +1,19 @@
+---
+topic: Forståelse af Insights i Inact Now
+source: Double Abc Analysis 4
+source_type: course
+language: danish
+product_area: inventory
+question_type: what
+keywords:
+- Insights
+- Dobbelt ABC-analyse
+- datavisninger
+- fortolkning
+- Inact Now
+- analyse
+- navigation
+- lagerstyring
+---
+
+Et insight i Inact Now er en fokuseret, letforståelig visning, der præsenterer nøgleinformationer fra dine data. Insights er designet til at hjælpe brugere med hurtigt at få overblik over vigtige mønstre, tendenser eller problemstillinger uden selv at skulle analysere rådata. I forbindelse med Dobbelt ABC-analyse giver insightet en opsummeret visualisering af lagerets performance, så brugeren kan identificere, hvilke varer der er mest betydningsfulde baseret på kriterier som værdi og omsætningshastighed. Dette muliggør mere informerede beslutninger og en mere effektiv lagerstyring.

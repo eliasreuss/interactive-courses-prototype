@@ -1,0 +1,20 @@
+---
+topic: The layout of an open End2End view in Inact Now
+source_type: tutorial
+language: english
+keywords: end2end layout, columns, summary card, buckets, link area, anatomy, what am I looking at
+product_area: End2End
+question_type: concept
+---
+
+An open End2End view is laid out left to right along the value chain:
+
+Suppliers column — the supplier data source, split into its categorisation buckets (typically A, B, C and Inactive).
+First link area — the relation count between suppliers and products, a Heatmap button and a Policy button.
+Products column — the product data source, split into the Double ABC matrix (AA, AB, AC, BA, BB, BC, CA, CB, CC) plus lifecycle buckets such as New, Discontinued, Dead, Strategic and BTO/MTO.
+Second link area — the relation count between products and customers, plus its own Heatmap and Policy buttons.
+Customers column — the customer data source, split into Protect, Develop, Grow and Turnaround.
+
+At the top of each column sits a summary card showing the aggregated measure for that whole data source — for example "25,99 avg Performance Score". Where the data source has an identifier column configured, a second card shows a count in the form "5.488 of 5.488", meaning the number of records currently included out of the total available. As you narrow the view, the first number drops while the second stays as the reference total.
+
+Above the columns is a chevron button that expands the settings panel, where you choose measures, aggregations, filters and slicers. At the very top of the page you have the view name with a pencil icon for renaming and an info icon that explains what the view shows.

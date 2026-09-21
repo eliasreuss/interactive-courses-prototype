@@ -1,0 +1,78 @@
+---
+topic: Make-to-stock (MTS)
+source_type: glossary
+language: english
+keywords: Make-to-stock (MTS), Produktion til lager (make-to-stock), production, inventory, customer, make-to-stock, products, demand, strategy, costs
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Produktion til lager (make-to-stock)
+term_en: Make-to-stock (MTS)
+url: https://inact.io/en/glossary/make-to-stock/
+---
+
+Make-to-stock (MTS) — Danish: Produktion til lager
+Make-to-stock (MTS) is a production strategy that focuses on producing goods based on expected demand before an actual customer order is received. This approach ensures that products are readily available, enabling fast delivery and a high level of customer service.
+What is make-to-stock (MTS)?
+Make-to-stock (MTS) is a production strategy where goods are produced and stored before specific customer orders are received.
+This strategy is based on demand forecasts and aims to ensure that products are immediately available to customers, allowing for fast delivery. Companies using MTS build up finished goods inventory that can be used to fulfill incoming orders.
+The goal is to minimize lead time and maximize customer service by having the right products in stock at the right time.
+When do you use a make-to-stock strategy?
+Choosing a make-to-stock strategy is a strategic decision that fits certain types of products and market conditions. It typically makes sense when:
+Demand is stable and predictable:
+Products with consistent and predictable demand, where forecasts can be made with high accuracy, are ideal for MTS.
+Products are standardized:
+Items that do not require extensive customization and are identical for all customers are well suited for mass production and inventory stocking.
+Customers expect fast delivery:
+In industries where speed is a key competitive factor (e.g. retail, FMCG), MTS is often necessary to meet customer expectations.
+Production benefits from economies of scale:
+If production can be scaled efficiently and unit costs decrease significantly with larger production runs, MTS can be economically advantageous.
+Inventory costs are manageable:
+Although tied-up capital inventory is a downside, it can be offset by the benefits if inventory costs are relatively low compared to sales volume and margins.
+What are the advantages and disadvantages of a make-to-stock strategy?
+Like any production strategy, make-to-stock has both clear advantages and potential disadvantages that companies must consider:
+Advantages:
+Short lead times:
+Customers can receive products almost immediately, as they are already produced and in stock.
+High customer service: The ability to deliver quickly improves customer satisfaction and can strengthen customer loyalty.
+Economies of scale in production:
+Enables large production runs, which often reduce unit costs and improve production planning.
+Stable production flow:
+Less variation in production schedules, leading to more efficient use of capacity and labor.
+Disadvantages:
+High tied-up capita l:
+Requires significant capital tied up in raw materials, work-in-progress (WIP), and finished goods, which can impact cash flow.
+Risk of obsolescence:
+If demand declines or products become outdated, the company may be left with large volumes of unsellable inventory.
+Dependence on accurate forecasts:
+Strong reliance on demand forecasts; inaccuracies can lead to either excess inventory or stockouts.
+Inventory costs: Costs related to storage, insurance, depreciation, and inventory administration can be significant.
+What is the difference between make-to-stock and make-to-order?
+Make-to-stock (MTS) and make-to-order (MTO) represent two different approaches to production and fulfillment. The key difference lies in the timing of production relative to the customer order and the resulting trade-offs between lead time, tied-up capital, and customization.
+Make-to-stock (MTS)
+Make-to-order (MTO)
+Production timing
+Before customer order (based on forecast)
+After customer order
+Finished goods inventory
+Yes, significant
+Minimal or none
+Lead time
+Short (from inventory)
+Long (production time + delivery time)
+Mass customization
+Low (standard products)
+High (customized products)
+Demand
+Stable and predictable
+Variable and often unpredictable
+Risk of obsolete inventory
+High
+Low
+Tied-up capital
+High (in inventory)
+Low (in inventory)
+Examples
+FMCG, standard electronics, clothing
+Specialized machinery, custom apparel, construction projects
+Back to glossary

@@ -1,0 +1,14 @@
+---
+topic: How to find and open an End2End view in Inact Now
+source_type: tutorial
+language: english
+keywords: find end2end, open view, search, showing of, library, locate
+product_area: End2End
+question_type: how-to
+---
+
+Click End2End in the top navigation to open the library, then click the name of a view in the End2End views column to open it.
+
+If you have many views, use the Search box at the top right of the library. Type part of the name and the lists filter as you type; the "Showing N of N" counter next to the box tells you how many items match out of the total. The search covers both End2End views and Heatmaps, so a match may appear in either column.
+
+If you cannot see the view you expect, check whether its group is collapsed — click the arrow next to the group name to expand it. Also remember that you only see views for the data sources you have access to, so a colleague may see views that you do not.

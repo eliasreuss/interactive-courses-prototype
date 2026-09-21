@@ -1,0 +1,20 @@
+---
+topic: How to find and open an Insight in Inact Now
+source_type: tutorial
+language: english
+keywords: find insight, open insight, insights library, search, groups, subgroups, recently opened
+product_area: Insights
+question_type: how-to
+---
+
+Click Insights in the top menu bar to open the Insights library.
+
+Insights are organised into groups (like Inventory, Suppliers, Products, Customers) and subgroups within each (like Stock Policy, ERP Planning Parameters). Each group shows a number indicating how many Insights are inside it.
+
+To see the Insights inside a subgroup, click the ‹ arrow on the right side of the subgroup row. The list expands to show each Insight with its name, owner, and data source.
+
+To open an Insight, just click its name.
+
+If you're looking for something specific, use the Search box near the top-right of the library to filter by name as you type. You can also use the Owner, Data source, and Group dropdowns to narrow the list further.
+
+Once you're inside an Insight, you can jump quickly between your recently opened Insights by hovering over Insights in the top menu — they appear in a small dropdown.

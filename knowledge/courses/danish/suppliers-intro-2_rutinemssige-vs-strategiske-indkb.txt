@@ -1,0 +1,19 @@
+---
+topic: Rutinemæssige vs Strategiske Indkøb
+source: Suppliers Intro 2
+source_type: course
+language: danish
+product_area: supplier
+question_type: what
+keywords:
+- rutinemæssige indkøb
+- strategiske indkøb
+- leverandørpræstation
+- datagennemsigtighed
+- omkostningsoptimering
+- rentabilitet
+- skjulte omkostninger
+- indkøbsproces
+---
+
+Rutinemæssige indkøb er en reaktiv tilgang, der fokuserer på at placere ordrer og opretholde driften uden at tage højde for bredere forretningsmæssige konsekvenser. Denne metode mangler ofte datadrevne indsigter, hvilket fører til oversete skjulte omkostninger, accept af dårlig leverandørpræstation og forpassede besparelsesmuligheder. Omvendt udnytter strategiske indkøb data til at skabe gennemsigtighed i forbruget og leverandørernes effektivitet. Ved at analysere detaljerede omkostningsopdelinger og leverandørmålinger kan organisationer identificere områder med forbedrings- og optimeringspotentiale. Dette forvandler indkøb fra en simpel administrativ funktion til en strategisk aktivitet, der direkte bidrager til virksomhedens rentabilitet.

@@ -1,0 +1,18 @@
+---
+topic: How to show or hide the Relations, Heatmap and Policy elements in an End2End view in Inact Now
+source_type: tutorial
+language: english
+keywords: relations checkbox, heatmap button, policy button, link area, show hide elements
+product_area: End2End
+question_type: how-to
+---
+
+In the settings panel, the area above each link between two columns has three checkboxes:
+
+Relations — shows or hides the grey circle with the relation count between the two data sources.
+Heatmap button — shows or hides the Heatmap button in that link area.
+Policy button — shows or hides the Policy button in that link area.
+
+All three are ticked by default. Unticking one removes that element from the canvas immediately, which is a simple way to reduce clutter if your account does not use policies, or if the relation counts are not relevant to the audience of the view.
+
+There is one set of checkboxes per link, so you can, for example, keep the relation count between Products and Customers while hiding it between Suppliers and Products. Click Save to store the change.

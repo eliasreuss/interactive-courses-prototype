@@ -1,0 +1,19 @@
+---
+topic: Oversigt over lageromsætningshastighed
+source: Supplier Performance
+source_type: course
+language: danish
+product_area: supplier
+question_type: what
+keywords:
+- lageromsætningshastighed
+- lagerpolitikker
+- leveringstider
+- leverandørperformance
+- Inact Now
+- årsagsanalyse
+- lageroverblik
+- kundeservice
+---
+
+Lageromsætningshastigheden måler, hvor ofte lageret bliver solgt og genopfyldt i en given periode. Den afspejler effektiviteten af lagerpolitikker, leveringstider og ordremængder. En højere omsætningshastighed indikerer effektiv lagerstyring, mens en lavere hastighed kan tyde på overlager eller langsomt omsættende varer. Ved strategisk styring af din leverandørportefølje og brug af værktøjer som Inact Now til at opnå fuldt lageroverblik og årsagsanalyse, kan du forbedre din lageromsætningshastighed uden at gå på kompromis med kundeservicen.

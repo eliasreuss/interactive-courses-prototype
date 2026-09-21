@@ -1,0 +1,11 @@
+---
+topic: Heat map i strategisk planlægning
+source_type: article
+language: danish
+article_source: Direktørens bedste ven og værste fjende (1)
+keywords: heat map, strategi, indtjening, ressourceallokering
+---
+
+1. Brug et heat map til at visualisere virksomhedens indtjeningsstruktur. 
+2. Identificer vækstpotentiale i kundesegmenter og produkter. 
+3. Beslut ressourceallokering baseret på indtjeningsbidrag fra kunder og produkter.

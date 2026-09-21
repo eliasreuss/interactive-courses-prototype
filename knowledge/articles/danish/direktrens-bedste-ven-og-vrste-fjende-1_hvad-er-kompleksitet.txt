@@ -1,0 +1,9 @@
+---
+topic: Hvad er kompleksitet?
+source_type: article
+language: danish
+article_source: Direktørens bedste ven og værste fjende (1)
+keywords: kompleksitet, vækst, differentiering, værdikæde, konkurrencefordel
+---
+
+Kompleksitet er en realitet i virksomheder og kan være sund eller usund. Sund kompleksitet bidrager til differentiering og konkurrencefordel, mens usund kompleksitet er skadelig og unødvendig. Eksempler inkluderer IT-kompleksitet, projektforstoppelse og for mange KPI'er.

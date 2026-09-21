@@ -1,0 +1,54 @@
+---
+topic: Reservedelslager
+source_type: glossary
+language: danish
+keywords: Reservedelslager, Spare Parts Inventory, reservedele, bliver, virksomheden, lageret, nogle, service, virksomheder
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Reservedelslager
+term_en: Spare Parts Inventory
+url: https://inact.io/ordbog/reservedelslager/
+---
+
+Reservedelslager — English: Spare Parts Inventory
+Et reservedelslager er et lager med reservedele, som skal sikre, at maskiner, produkter eller udstyr kan repareres og holdes i drift. I modsætning til et almindeligt varelager er efterspørgslen på mange reservedele ofte uforudsigelig, og nogle varer bevæger sig sjældent.
+Et reservedelslager handler derfor ikke kun om høj omsætning. Det handler om at balancere tilgængelighed, leveringstid og omkostninger. Reservedelslagre findes typisk i virksomheder med service, produktion, eftermarked eller teknisk udstyr, hvor nedetid kan være dyrere end selve reservedelen.
+Hvad er et reservedelslager?
+Et reservedelslager kan have forskellige funktioner afhængigt af virksomheden. I en produktionsvirksomhed kan lageret indeholde reservedele til virksomhedens egne maskiner og produktionsudstyr. Her er formålet at kunne udføre vedligeholdelse og reparationer hurtigt og begrænse risikoen for produktionsstop.
+I virksomheder med service og eftermarked består reservedelslageret typisk af dele til produkter, der allerede er solgt til kunder. Her skal lageret understøtte serviceaftaler, reparationer og kundernes forventninger til oppetid – ofte mange år efter det oprindelige produkt er solgt.
+I begge tilfælde kan en reservedel med meget lav omsætning være vigtig at have på lager. Værdien af reservedelen afhænger ikke kun af, hvor ofte den bliver brugt eller solgt, men også af konsekvensen, hvis den mangler.
+Hvordan balancerer et reservedelslager service og kapitalbinding?
+Inden for supply chain-optimering i eftermarked bliver reservedelslageret ofte et sted, hvor balancen mellem service og kapitalbinding bliver meget tydelig.
+Hvis lagerbeholdningen er for lav, risikerer virksomheden, at kunder må vente på kritiske reservedele. Hvis lagerbeholdningen er for høj, binder virksomheden kapital i varer, som måske kun bliver solgt få gange om året.
+Styringen af reservedelslageret kræver derfor en vurdering af, hvilke dele der er kritiske for kundens eller virksomhedens drift, hvilke der kan skaffes hurtigt, og hvilke der primært skaber lagerbinding uden tilsvarende serviceværdi.
+Hvad adskiller et reservedelslager fra et almindeligt varelager?
+I et almindeligt varelager hænger lagerstyringen ofte tæt sammen med forventet salg eller forbrug, omsætningshastighed og genbestilling.
+Et reservedelslager fungerer anderledes. I eftermarkedet kan en reservedel ligge stille i flere måneder – og stadig være kritisk for kunden, hvis en maskine pludselig bryder ned.
+Lageret bliver ikke kun vurderet på, hvor hurtigt varerne omsættes, men også på hvor vigtig reservedelen er for drift, service og oppetid. Virksomheder kan acceptere højere lagerbinding på udvalgte reservedele, hvis konsekvensen ved ikke at have delen på lager er langt dyrere end omkostningen ved at lagerføre den.
+Hvorfor er et reservedelslager vigtigt?
+Et reservedelslager påvirker både kundetilfredshed, drift og økonomi. Hvis en kritisk reservedel mangler, kan konsekvensen være produktionsstop, forsinkede servicebesøg eller utilfredse kunder. I nogle brancher kan få timers nedetid koste mere end selve reservedelens værdi.
+Det får ofte virksomheder til at købe flere reservedele hjem "for en sikkerheds skyld". Problemet er, at det hurtigt øger kapitalbindingen. Mange reservedele har lav omsætningshastighed, og nogle bliver aldrig brugt.
+Her opstår den klassiske konflikt i et reservedelslager: Høj service kræver tilgængelighed. Lav kapitalbinding kræver, at virksomheden ikke lagerfører mere end nødvendigt. Balancen er svær, fordi efterspørgslen på reservedele ofte er ujævn, og historisk salg ikke nødvendigvis fortæller, hvornår den næste del bliver nødvendig.
+Samtidig vokser kompleksiteten ofte over tid. Flere produkter betyder flere versioner og længere serviceforpligtelser, hvilket skaber flere varenumre og mere usikkerhed. Reservedelslageret hænger derfor tæt sammen med lageroptimering og supply chain-optimering.
+Hvordan kan et reservedelslager se ud?
+En virksomhed sælger industrielle pumper til produktionsvirksomheder i hele Norden. Selve pumperne bliver måske udskiftet hvert tiende år. Til gengæld forventer kunderne hurtig adgang til reservedele, hvis noget går i stykker.
+Virksomheden har et stort reservedelslager med pakninger, motorer, filtre, ventiler og specialkomponenter. Nogle dele bliver solgt hver uge. Andre har ikke bevæget sig i to år.
+En dag stopper en kundes produktion, fordi en bestemt ventil er defekt. Kunden forventer levering samme dag. Problemet er, at ventilen ikke længere ligger på lager, fordi den havde lav omsætning. Indkøb kan først skaffe delen hjem om tre uger.
+I regnearket lignede det en fornuftig beslutning at reducere lageret. I praksis blev besparelsen lille sammenlignet med konsekvensen for kunden og serviceorganisationen.
+Efterfølgende begynder virksomheden at kategorisere reservedelene efter kritikalitet frem for kun omsætning. De analyserer også leveringstid, konsekvensen ved nedetid og reservedelens betydning for kundens drift.
+Det ændrer måden, lageret bliver prioriteret på.
+Hvad er typiske fejl ved styring af et reservedelslager?
+En typisk fejl er at styre reservedelslageret på samme måde som et almindeligt salgslager. Det skaber problemer, fordi reservedele ofte har ujævn efterspørgsel og samtidig kan have stor betydning for driften. En reservedel med få salg kan stadig være vigtigere end en vare med høj omsætning.
+En anden fejl er at fokusere ensidigt på lagerværdi. Hvis virksomheden kun måler succes på lagerreduktion, risikerer den at fjerne dele, som er afgørende for service og oppetid. Det kan skabe flere hasteforsendelser, højere ekspresomkostninger og dårligere kundeoplevelser.
+Nogle virksomheder undervurderer også kompleksiteten i gamle produkter. Når produkter bliver udfaset, forsvinder behovet for reservedele sjældent med det samme. Kunder forventer ofte service i mange år efter sidste salg.
+Hvis virksomheden ikke har styr på udfasning, serviceforpligtelser og produkternes levetid, kan lageret gradvist vokse med langsomt omsættelige varer og en stigende risiko for døde varer.
+Hvordan kan virksomheder optimere deres reservedelslager?
+Start med at skelne mellem kritiske og ikke-kritiske reservedele. Det kræver mere end at kigge på historisk salg. I bør også analysere: leveringstid fra leverandøren konsekvensen ved nedetid mulighed for alternative dele serviceaftaler med kunder risiko for udfasning forventet levetid på produkterne
+Mange virksomheder får først reelt overblik, når de samler data på tværs af værdikæden. Ellers ligger vigtig information spredt mellem ERP, serviceafdeling, indkøb og lager.
+Det er også vigtigt at arbejde aktivt med produkt management. Ikke alle reservedele bør behandles ens.
+Nogle kritiske dele bør være faste lagervarer, selv om efterspørgslen er lav. Andre kan være skaffevarer. Og nogle dele bør udfases helt, hvis behovet er væk.
+Her spiller leverandørperformance ofte en stor rolle. Hvis leverandører leverer stabilt og hurtigt, kan virksomheden i nogle tilfælde reducere lageret uden at sænke serviceniveauet.
+Det hjælper også at arbejde med løbende segmentering frem for faste regler. En reservedel kan ændre betydning over tid. Når produkter bliver ældre, bør lagerstrategien løbende revurderes ud fra efterspørgsel, serviceforpligtelser, kritikalitet og mulighederne for at skaffe delen.
+Hvis de samme lagerpolitikker gælder for alle reservedele, vokser kompleksiteten hurtigere end kontrollen.
+Et reservedelslager fungerer bedst, når virksomheden accepterer én vigtig ting: Målet er ikke at have færrest mulige varer på lager. Målet er at placere lageret dér, hvor det beskytter kunder, drift og forretning bedst.

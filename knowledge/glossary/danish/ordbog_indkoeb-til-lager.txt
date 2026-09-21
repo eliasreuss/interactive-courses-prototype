@@ -1,0 +1,53 @@
+---
+topic: Indkøb til lager (purchase-to-stock)
+source_type: glossary
+language: danish
+keywords: Indkøb til lager (purchase-to-stock), Purchase-to-stock (PTS), lager, indkøb, purchase-to-stock, lageret, leveringstid, varer, levering, risiko
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Indkøb til lager (purchase-to-stock)
+term_en: Purchase-to-stock (PTS)
+url: https://inact.io/ordbog/indkoeb-til-lager/
+---
+
+Indkøb til lager (purchase-to-stock) — English: Purchase-to-stock
+Indkøb til lager er en indkøbsstrategi, hvor varer købes hjem og opbevares på lager baseret på forventet efterspørgsel. Formålet med strategien er at sikre høj leveringsevne og minimere leveringstiden over for kunden ved at have varerne klar til afsendelse, så snart der bliver lagt en ordre.
+Hvad er indkøb til lager?
+Indkøb til lager, også kaldet purchase-to-stock, betyder, at en virksomhed indkøber varer uden at have en konkret kundeordre i bogen. Beslutninger om indkøb baseres på en kombination af historiske salgsdata, efterspørgselsprognoser og fastlagte planlægningsparametre som bestillingspunkt og sikkerhedslager.
+Varerne er altså tilgængelige på lageret, når kunden afgiver sin ordre, hvilket gør det muligt at levere hurtigt og stabilt.
+Hvornår giver indkøb til lager mening?
+Strategien er ikke optimal for alle typer af varer, men indkøb til lager er særligt relevant, når:
+Stabil efterspørgsel: Når salget er forudsigeligt, er risikoen ved at købe til lager minimal.
+Konkurrence på leveringstid:
+Hvis kunderne forventer dag-til-dag levering, er PTS ofte den eneste mulighed.
+Lang holdbarhed: Produkter med lav risiko for forældelse eller ukurans er velegnede til lagerføring.
+Logistiske fordele:
+Når transportomkostninger eller mængderabatter gør det økonomisk fordelagtigt at købe større partier ad gangen.
+Hvad er fordelene ved indkøb til lager?
+Den primære fordel ved purchase-to-stock er en høj servicegrad. Ved at eliminere produktionstiden eller leverandørens leveringstid fra kundens ventetid, reducerer virksomheden risikoen for tabt salg.
+Derudover giver det bedre rammer for:
+Stordriftsfordele: Lavere indkøbspriser ved større volumener.
+Operationel planlægning: Mere stabil udnyttelse af lagerkapacitet og bemanding.
+Fragtoptimering: Mulighed for at fylde containere eller lastbiler op, hvilket sænker CO2-aftrykket og fragtomkostningerne per enhed.
+Hvad skal man være opmærksom på ved purchase-to-stock?
+Selvom strategien sikrer hurtig levering, medfører den også en øget kapitalbinding og en risiko for ukurans. Hvis efterspørgslen pludselig ændrer sig, risikerer virksomheden at brænde inde med varer, der ikke kan sælges.
+Derfor kræver PTS løbende overvågning af:
+Omsætningshastighed: Hvor hurtigt varerne forlader lageret.
+Lagerpolitikker: Justering af sikkerhedslagre og bestillingspunkter.
+Likviditet: Sikring af, at lageret ikke vokser hurtigere end omsætningen.
+Hvad er forskellen på purchase-to-stock og purchase-to-order?
+Purchase-to-stock (PTS)
+Purchase-to-order (PTO)
+Trigger
+Prognose / planlægning
+Konkret kundeordre
+Leveringstid
+Meget kort (fra lager)
+Længere (indkøb/produktion + levering)
+Kapital bundet i lageret
+Høj
+Lav
+Risiko
+Ukurans og overskudslager
+Tabt salg pga. leveringstid

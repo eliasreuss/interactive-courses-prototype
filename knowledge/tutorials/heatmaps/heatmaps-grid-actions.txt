@@ -1,0 +1,16 @@
+---
+topic: What you can do from a Heatmap grid in Inact Now
+source_type: tutorial
+language: english
+keywords: back to heatmap, show in end2end, create action list, grid buttons, act on findings
+product_area: Heatmaps
+question_type: how-to
+---
+
+The grid opened from a heatmap has three navigation and action controls of its own:
+
+Back to Heatmap — at the top left, returns you to the heatmap you came from with its state intact.
+Show in End2End (N) — opens the End2End view with these records applied as the selection, so you can see the rest of the value chain around them. The number in the button tells you how many records are carried across.
+Create Action list — the green button at the top right, which turns the current list of records into a new Action list so the work can be assigned, given a deadline and followed up in the Actions module.
+
+The combination is what makes a heatmap actionable: find the problem cell, drill into it, open the grid, and hand the resulting list to whoever should act on it.

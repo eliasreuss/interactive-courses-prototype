@@ -1,0 +1,19 @@
+---
+topic: Strategic Purposes of Stock Policy
+source: Stock Policy
+source_type: course
+language: english
+product_area: inventory
+question_type: why
+keywords:
+- stock policy
+- service level
+- capital
+- inventory management
+- stocking rules
+- on-demand ordering
+- strategic value
+- supply chain
+---
+
+A well-defined stock policy is essential for balancing the trade-offs between service levels and capital investment in inventory management. By establishing clear rules—such as keeping high-demand items in stock and ordering or producing less frequent items only when needed—organizations can optimize their inventory. This approach ensures that customer needs are met efficiently while minimizing excess inventory and associated costs. The strategic value of a good stock policy lies in its ability to support business objectives by improving service, reducing capital tied up in stock, and enabling more responsive and cost-effective supply chain operations.

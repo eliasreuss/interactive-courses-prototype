@@ -1,0 +1,20 @@
+---
+topic: Omfattende synlighed af forbrug
+source: Spend Analysis
+source_type: course
+language: danish
+product_area: supplier
+question_type: what
+keywords:
+- forbrugsanalyse
+- kategorier
+- leverandører
+- forbrugsudvikling
+- indkøbsmønstre
+- dybdegående analyse
+- varekategori
+- Inact Now
+- synlighed
+---
+
+Forbrugsanalyse i Inact Now giver et omfattende overblik over organisationens udgifter ved at opdele forbruget efter kategorier og leverandører. Brugerne kan følge, hvordan forbruget udvikler sig over tid og identificere ændringer i indkøbsmønstre. Platformen muliggør detaljeret udforskning, hvor brugerne kan dykke ned til specifikke varer inden for kategorier og se, hvilke leverandører der leverer dem. Dette detaljeringsniveau sikrer fuld synlighed i forhold til, hvad der købes, fra hvem og hvornår, hvilket understøtter velinformerede beslutninger og effektiv forbrugsstyring.

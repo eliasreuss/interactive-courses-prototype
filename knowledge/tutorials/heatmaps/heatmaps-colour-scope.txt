@@ -1,0 +1,18 @@
+---
+topic: What the colour Scope setting does on a Heatmap in Inact Now
+source_type: tutorial
+language: english
+keywords: scope, global, row, column, colour comparison, compare within row
+product_area: Heatmaps
+question_type: concept
+---
+
+The Scope setting in a heatmap's Color settings decides what each cell's colour is compared against.
+
+Global — every cell is compared with every other cell in the matrix. Colours are comparable anywhere in the heatmap, which is what you want when the question is "where in the whole picture are the extremes?".
+
+Row — each row is coloured on its own scale. Every row then contains its full range of colours, and a colour only means something relative to the other cells in the same row. Use this to compare within a supplier category: which product groups are best and worst for A-suppliers specifically.
+
+Column — the same idea, applied down each column. Use this when you want to compare within a product group across all supplier categories.
+
+The chosen scope is stated in plain language under the dropdowns, and shown as a chip in the About this Heatmap window. Getting it wrong is a common source of misreading: with Row scope, a bright red cell is only the worst in its row, not the worst in the heatmap.

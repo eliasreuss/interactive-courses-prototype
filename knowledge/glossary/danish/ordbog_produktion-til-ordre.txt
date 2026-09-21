@@ -1,0 +1,67 @@
+---
+topic: Produktion til ordre (make-to-order)
+source_type: glossary
+language: danish
+keywords: Produktion til ordre (make-to-order), Make-to-order (MTO), make-to-order, produkter, produktion, varer, kundetilpasning, make-to-stock, ordre, efterspørgsel
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Produktion til ordre (make-to-order)
+term_en: Make-to-order (MTO)
+url: https://inact.io/ordbog/produktion-til-ordre/
+---
+
+Produktion til ordre (make-to-order) — English: Make-to-order
+Produktion til ordre (Make-to-Order) er en produktionsstrategi, der minimerer risikoen for overskudslager og ukurans ved kun at sætte varer i produktion, når der foreligger en specifik kundeordre.
+Hvad er produktion til ordre (make-to-order)?
+Produktion til ordre (Make-to-Order - MTO) er en produktionsstrategi, hvor produktionen af en vare først igangsættes, når en kunde har afgivet en konkret ordre.
+I modsætning til Make-to-Stock
+(MTS), hvor varer produceres på forhånd baseret på prognoser, er MTO drevet af den faktiske efterspørgsel. Det betyder, at ingen varer produceres eller lagres som færdigvarer, før efterspørgslen er bekræftet, altså at der foreligger en ordre på varen.
+Denne strategi er ideel for produkter, der kræver en høj grad af kundetilpasning, har en uforudsigelig efterspørgsel, eller hvor lagerbinding er uønsket på grund af høj værdi eller risiko for forældelse.
+Hvornår bruger man en make-to-order strategi?
+Valget af en Make-to-Order strategi er en beslutning, der passer bedst til visse typer produkter og markedsforhold. Det giver typisk mening, når:
+Produkterne er komplekse eller specialiserede: Varer, der kræver omfattende tilpasning eller er designet specifikt til den enkelte kunde (f.eks. specialmaskiner, skræddersyet produkter, byggeprojekter).
+Efterspørgslen er uforudsigelig eller lav: For produkter med svingende eller lav efterspørgsel minimerer MTO risikoen for overskudslager og ukurans.
+Høj værdi eller risiko for forældelse: Dyre produkter eller varer med kort levetid (f.eks. modeprodukter, højteknologiske komponenter) drager fordel af den reducerede lagerbinding.
+Kunderne accepterer længere leveringstider: I brancher, hvor kundetilpasning vægtes højere end øjeblikkelig levering, er MTO en levedygtig model.
+Produktionsfleksibilitet er høj: Virksomheden skal have evnen til hurtigt at omstille produktionen til at imødekomme forskellige kundebehov.
+Hvad er fordelene og ulemperne ved en make-to-stock strategi?
+Som enhver produktionsstrategi har Make-to-Order både klare fordele og potentielle ulemper, som virksomheder skal overveje nøje:
+Fordele:
+Minimal lagerbinding: Reducerer behovet for at binde kapital i færdigvarelager, hvilket forbedrer likviditeten og reducerer lageromkostninger.
+Lav risiko for ukurans: Da produktionen er ordredrevet, er risikoen for at sidde med usælgelige eller forældede varer minimal.
+Høj kundetilpasning: Mulighed for at levere produkter, der præcist matcher kundens specifikke krav og ønsker, hvilket kan føre til højere kundetilfredshed og loyalitet.
+Bedre prognosenøjagtighed: Fokus på faktiske ordrer frem for usikre efterspørgselsprognoser.
+Ulemper:
+Længere leveringstide r: Kunder skal vente på, at produktet bliver produceret, hvilket kan være en ulempe i konkurrenceprægede markeder med krav om hurtig levering.
+Mindre effektive produktionsprocesser: Produktionen kan være mindre strømlinet og mere kompleks på grund af variation i ordrer, hvilket kan øge enhedsomkostningerne.
+Afhængighed af leverandører: Kræver pålidelige leverandører og en effektiv forsyningskæde for at sikre rettidig levering af råvarer og komponenter.
+Ujævn produktionsflow: Kan føre til perioder med høj og lav kapacitetsudnyttelse, hvilket kan gøre planlægning af ressourcer og arbejdskraft udfordrende.
+Hvad er forskellen på make-to-order og make-to-stock?
+Make-to-Order (MTO) og Make-to-Stock (MTS) repræsenterer to forskellige tilgange til produktion og levering, hvor hovedforskellen ligger i tidspunktet for produktion i forhold til kundeordren og den deraf følgende balance mellem leveringstid, lagerbinding og kundetilpasning.
+Make-to-stock (MTS)
+Make-to-order (MTO)
+Produktionstidspunkt
+Før kundeordre (baseret på prognose)
+Efter kundeordre
+Lager af færdigvarer
+Ja, betydeligt
+Minimalt eller intet
+Leveringstid
+Kort (fra lager)
+Lang (produktionstid + leveringstid)
+Kundetilpasning
+Lav (standardprodukter)
+Høj (skræddersyede produkter)
+Efterspørgsel
+Stabil og forudsigelig
+Variabel og ofte uforudsigelig
+Risiko for ukurans
+Høj
+Lav
+Kapitalbinding
+Høj (i lager)
+Lav (i lager)
+Eksempler
+Dagligvarer, standardelektronik, tøj
+Specialmaskiner, skræddersyet tøj, byggeprojekter

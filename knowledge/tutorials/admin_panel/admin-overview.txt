@@ -1,0 +1,16 @@
+---
+topic: Overview of the admin panel — what you can manage there
+source_type: tutorial
+language: english
+keywords: admin panel, manage account, users, subscriptions, organization, administration
+product_area: Admin
+question_type: how-to
+---
+
+The admin panel is accessible via the icon with three people on it in the top navigation bar. It opens a "Manage [Account Name]" page with two main tabs: Users and Subscriptions.
+
+Users covers everything to do with individual user accounts — creating, editing, disabling, and bulk-managing them.
+
+Subscriptions covers mail delivery — both admin-managed mail bundles and personal subscriptions users have set up themselves.
+
+All admin work happens from these two tabs.

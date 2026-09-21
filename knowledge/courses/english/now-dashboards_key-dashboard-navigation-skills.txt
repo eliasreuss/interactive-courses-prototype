@@ -1,0 +1,20 @@
+---
+topic: Key Dashboard Navigation Skills
+source: Now Dashboards
+source_type: course
+language: english
+product_area: platform
+question_type: what
+keywords:
+- Dashboards
+- KPIs
+- Widgets
+- Tables
+- Slicers
+- Filters
+- Drill down
+- Performance monitoring
+- Targets
+---
+
+Effective dashboard navigation involves monitoring key performance indicators (KPIs), reading widgets to check targets, and using tables to view detailed data. Users can apply slicers and filters to focus on specific areas of interest, and drill down into metrics to access underlying details. These skills enable users to track overall performance and gain actionable insights from their dashboards.

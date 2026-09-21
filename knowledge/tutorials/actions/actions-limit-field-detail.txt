@@ -1,0 +1,16 @@
+---
+topic: How the Limit field works in the Edit Action list dialog in Inact Now
+source_type: tutorial
+language: english
+keywords: limit, top, bottom, number of rows, select column, status tag, edit action list
+product_area: Actions
+question_type: how-to
+---
+
+In the Edit Action list dialog, ticking the Limit checkbox reveals three controls:
+
+Top or Bottom — sort direction, choosing whether the limit keeps the highest or lowest ranked items.
+A number of rows — Infinite, 5, 10, 25, 50, 75, or 100.
+Select column — the numeric column used to rank items, picked from the full column list for the data source.
+
+Clicking the "..." button next to these controls reveals an optional "of [status]" tag. This restricts the limit count to only rows currently in a specific status (e.g. only counting items still in the working/not-completed status). Clicking the tag cycles through the available statuses; clicking the "×" on it removes the restriction.

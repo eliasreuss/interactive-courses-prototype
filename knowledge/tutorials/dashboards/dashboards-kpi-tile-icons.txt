@@ -1,0 +1,18 @@
+---
+topic: The corner icons on KPI tiles in dashboard edit mode in Inact Now
+source_type: tutorial
+language: english
+keywords: kpi tile, click to edit, delete tile, drag tile, target icon, add kpi row
+product_area: Dashboards
+question_type: concept
+---
+
+In the Dashboard tab in edit mode, every KPI tile shows "Click to edit" as an overlay to indicate it's editable, plus three icons in its corners:
+
+🗑️ (top-left) — deletes this tile permanently.
+≡ (top-center) — drag to reposition the tile within the grid.
+⊙ (top-right) — opens the "Select target" dialog to set a performance target for the KPI.
+
+Clicking anywhere on the tile body (the "Click to edit" area) opens the Edit widget panel for that tile.
+
+At the bottom of the tile grid there's a dashed placeholder tile showing "No KPI — Click to add KPI" — clicking it opens the Edit widget panel for a new empty tile. A green "+ Add KPI row" button at the very bottom adds a new full row to the tile grid.

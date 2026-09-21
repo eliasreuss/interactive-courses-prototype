@@ -1,0 +1,24 @@
+---
+topic: How to read a KPI card on a dashboard in Inact Now
+source_type: tutorial
+language: english
+keywords: KPI card, read, target, trend, min, max, change indicator, performance, colour, pink, red
+product_area: Dashboards
+question_type: concept
+---
+
+Each KPI card on a dashboard tells a story about a single metric. Here's what the different parts mean:
+
+The large number is the current value of the metric — for example, 89,61 for OTD Outbound %.
+
+The target appears in the bottom-right or top-right, shown as "min. 98,00" or "max. 2.500.000" with a small clock icon. A minimum target means the value should be at least that number. A maximum target means it should not exceed that number.
+
+The change label (e.g., "▲ 2,91% Since last month" or "▼ -32,54% Since start 2026") shows how the value has moved compared to a reference point. Green and red colouring depends on whether the metric is set as Positive or Negative trend.
+
+The performance label at the bottom of the card (e.g., "8% below" or "252% above") tells you directly how far off the target you are.
+
+The trend chart on large cards shows historical performance over recent quarters, with a dashed line marking the target.
+
+The card background turns pink or red when a metric is below its minimum target — a quick visual signal that something needs attention.
+
+Clicking any KPI card takes you directly to the underlying Insight for more detail.

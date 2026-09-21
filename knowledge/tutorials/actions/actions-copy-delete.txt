@@ -1,0 +1,16 @@
+---
+topic: How to copy or delete an Action list in Inact Now
+source_type: tutorial
+language: english
+keywords: copy action list, duplicate, delete, manage, action list options, restore
+product_area: Actions
+question_type: how-to
+---
+
+To copy an Action list, open it and click the gear icon in the top right corner. Choose Copy this Action list. A duplicate is created with the same setup, columns, and filters. You can then rename and reassign the copy as needed.
+
+Alternatively, from the Actions library page, click the dropdown arrow (▾) on the right side of the Action list row and choose Copy this Action list.
+
+To delete an Action list, open it and click the gear icon, then choose Delete. A confirmation window appears — click Delete to confirm. Deleted lists are not immediately gone; they move to a recoverable state. At the bottom of the Actions library page, click See Deleted Action lists to view and restore them if needed.
+
+You can also delete from the library page using the row dropdown menu.

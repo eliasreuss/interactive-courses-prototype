@@ -1,0 +1,23 @@
+---
+topic: Perfect order rate
+source_type: glossary
+language: danish
+keywords: perfect order rate, perfekt ordre, leveringskvalitet, OTIF, fejlfri ordre, KPI, dokumentation, servicegrad, kundeoplevelse
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: Perfect order rate
+term_en: Perfect Order Rate
+---
+
+Perfect order rate — English: Perfect Order Rate
+Perfect order rate er andelen af ordrer, der gennemføres fejlfrit hele vejen — rigtig vare, rigtig mængde, til tiden, ubeskadiget og med korrekt dokumentation og fakturering.
+Hvordan adskiller den sig fra OTIF?
+OTIF måler to ting: kom det til tiden, og kom det fuldtalligt. Perfect order rate lægger resten af kundeoplevelsen oveni — at varen var ubeskadiget, at papirerne var rigtige, og at fakturaen stemte. En ordre kan derfor sagtens være OTIF og alligevel ikke perfekt.
+Hvordan beregnes den?
+Antal fejlfrie ordrer divideret med det samlede antal ordrer. Fordi den er sammensat af flere betingelser, der alle skal være opfyldt, falder den hurtigt. Fire delmål på hver 95 % giver en perfect order rate på cirka 81 %.
+Netop dét er pointen: tallet afslører, hvor meget der forsvinder mellem delmålene, når man kun kigger på dem hver for sig.
+Hvad bruger man den til?
+Til at se den samlede kvalitet med kundens øjne frem for afdelingens. Lager måler plukpræcision, transport måler leveringstid, og økonomi måler fakturafejl — hver især kan se fine ud, mens kunden oplever, at hver femte ordre har noget galt.
+Hvad kræver den?
+At de enkelte fejltyper registreres, ikke bare tælles samlet. Værdien ligger i nedbrydningen: er det dokumentationen, mængden eller datoen, der oftest fejler? Uden den nedbrydning er perfect order rate bare et lavt tal, ingen kan handle på.

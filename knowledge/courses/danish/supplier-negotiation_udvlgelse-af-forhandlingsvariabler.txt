@@ -1,0 +1,18 @@
+---
+topic: Udvælgelse af forhandlingsvariabler
+source: Supplier Negotiation
+source_type: course
+language: danish
+product_area: supplier
+question_type: how
+keywords:
+- forhandling
+- variabler
+- løftestænger
+- leverandør
+- produkter
+- strategi
+- målsætning
+---
+
+Når et klart forhandlingsmål er fastlagt, er næste skridt at identificere, hvilke variabler eller løftestænger du kan anvende for at opnå dette mål. Variabler i leverandørforhandlinger kan omfatte pris, leveringsbetingelser, betalingsvilkår, produktkvalitet eller ordremængder. Valget af hvilke produkter eller vilkår, der skal fokuseres på, bør stemme overens med dit overordnede mål. Ved nøje at udvælge og prioritere disse variabler kan du tilpasse din forhandlingsstrategi og øge sandsynligheden for at opnå et fordelagtigt resultat.

@@ -1,0 +1,17 @@
+---
+topic: Creating and editing a mail bundle
+source_type: tutorial
+language: english
+keywords: mail bundle, create bundle, setup, content, bundle name, dashboards, insights
+product_area: Admin
+question_type: how-to
+---
+
+Click + New Mail Bundle to create a bundle. The setup dialog has four tabs:
+
+Setup — Give the bundle a name (required). Add content by selecting from the Dashboards dropdown, the Insights dropdown, or by pasting an Insight View link into the Insight View field and clicking Add. Selected dashboards appear in a panel on the right with × to remove them.
+Schedule — Pick a delivery frequency. Options are organized into three columns: Daily (Monday-Sunday at 12:00, Monday-Friday at 12:00, Monday-Friday at 8:00), Weekly (each day of the week at 12:10, plus Monday at 8:00), and Monthly (first day of month at 12:00, last day at 9:00 or 12:00).
+Recipients — A two-panel user picker with search. Left lists all available users; click a name to move them to the right "Selected Recipients" panel. Click × to remove.
+PDF Settings — Choose between Merged PDF (one PDF containing all items) or Separate PDFs (one PDF per item). Below that, an Order section lets you drag items to reorder them in the output.
+
+Save with Save (draft, inactive) or Save & Activate (live, starts sending). Existing bundles also have an Activate button directly in the table.

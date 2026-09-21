@@ -1,0 +1,18 @@
+---
+topic: Indvirkning af serviceniveau på sikkerhedslager
+source: Safety Stock
+source_type: course
+language: danish
+product_area: inventory
+question_type: why
+keywords:
+- serviceniveau
+- sikkerhedslager
+- lageromkostninger
+- produkttilgængelighed
+- lagerreduktion
+- forsyningskæde
+- Inact Now
+---
+
+At reducere serviceniveauet i lagerstyring kan føre til et uforholdsmæssigt stort fald i den nødvendige mængde sikkerhedslager. For eksempel vil en sænkning af serviceniveauet fra 98% til 80% resultere i en reduktion af sikkerhedslageret på 58%, selvom serviceniveauet kun falder med 18%. Dette viser, at små justeringer af serviceniveauet kan sænke lageromkostningerne markant, samtidig med at der stadig opretholdes en tilstrækkelig produkttilgængelighed, især for varer der ikke er kritiske. Virksomheder kan udnytte denne sammenhæng til at optimere lageret og reducere overflødigt lager uden at gå væsentligt på kompromis med servicen.

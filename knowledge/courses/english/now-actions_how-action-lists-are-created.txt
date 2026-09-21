@@ -1,0 +1,19 @@
+---
+topic: How Action Lists Are Created
+source: Now Actions
+source_type: course
+language: english
+product_area: platform
+question_type: what
+keywords:
+- Actions
+- action list
+- filters
+- inventory
+- rules
+- categories
+- thresholds
+- to-do items
+---
+
+Action lists are generated based on filters set by their creator. These filters define specific criteria, such as item categories or inventory value thresholds, that determine which items appear on the list. For example, a user can create a rule so that any item in a certain category, like CC items, with an inventory value above a specified amount, such as 100,000, is automatically added to the action list as a to-do item. This approach ensures that only relevant items requiring attention are included, making it easier to manage tasks and maintain control over stock levels.

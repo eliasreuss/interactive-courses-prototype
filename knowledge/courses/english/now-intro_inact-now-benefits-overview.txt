@@ -1,0 +1,20 @@
+---
+topic: Inact Now Benefits Overview
+source: Now Intro
+source_type: course
+language: english
+product_area: platform
+question_type: why
+keywords:
+- Inact Now
+- data-driven decisions
+- best practices
+- shared language
+- commercial teams
+- operational teams
+- daily operations
+- control
+- reactive decisions
+---
+
+Inact Now helps organizations manage supply chain complexity by enabling users to make informed, data-driven decisions instead of relying on reactive or instinctive choices. The platform promotes the use of best practices and fosters a shared language between commercial and operational teams, ensuring everyone works with the same information and understanding. This approach gives users greater control over daily operations and improves overall efficiency and collaboration.

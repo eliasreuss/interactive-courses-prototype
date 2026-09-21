@@ -1,0 +1,10 @@
+---
+topic: Gode data og cost-to-serve
+source_type: article
+language: danish
+article_source: Sådan skaber du en succesfuld supply chain
+keywords: dataanalyse, transparens, cost-to-serve, kundebehov, omkostningsstruktur
+---
+
+1. Gode data er afgørende. 
+2. Cost-to-serve giver overblik over omkostninger ved forskellige serviceniveauer.

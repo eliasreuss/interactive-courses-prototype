@@ -1,0 +1,19 @@
+---
+topic: The Trap of Routine Purchasing
+source: Suppliers Intro
+source_type: course
+language: english
+product_area: supplier
+question_type: what
+keywords:
+- routine purchasing
+- procurement
+- reactive tasks
+- supply chain
+- immediate needs
+- order placement
+- support function
+- business operations
+---
+
+The trap of routine purchasing refers to the tendency for procurement teams to focus only on immediate, day-to-day needs, such as placing orders to restock empty shelves and addressing urgent issues as they arise. While this approach ensures that basic business operations continue, it limits procurement to a reactive, support-oriented role. This mindset prevents the team from taking a strategic view of purchasing, missing opportunities for long-term improvement, cost savings, and value creation within the supply chain.

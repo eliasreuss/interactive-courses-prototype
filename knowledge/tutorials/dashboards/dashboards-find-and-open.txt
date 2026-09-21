@@ -1,0 +1,16 @@
+---
+topic: How to find and open a dashboard in Inact Now
+source_type: tutorial
+language: english
+keywords: open dashboard, dashboard list, search, navigate, find, access
+product_area: Dashboards
+question_type: how-to
+---
+
+Click Dashboards in the top menu bar. This brings you to a list of all dashboards you have access to.
+
+Dashboards are organised into named groups — for example, "Inventory" — displayed as labelled sections. If you have many dashboards, use the Search box near the top-right to filter the list by name as you type.
+
+To open a dashboard, simply click its name in the list.
+
+Once you're inside a dashboard, you can jump to another one without going back to the list: click the dashboard name in the top-left corner of the page to open a dropdown, then select a different dashboard from the list that appears.

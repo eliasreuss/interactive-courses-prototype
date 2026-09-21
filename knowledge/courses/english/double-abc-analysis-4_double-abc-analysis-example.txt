@@ -1,0 +1,19 @@
+---
+topic: Double ABC Analysis Example
+source: Double Abc Analysis 4
+source_type: course
+language: english
+product_area: inventory
+question_type: how
+keywords:
+- Double ABC Analysis
+- inventory management
+- cost of inventory
+- demand
+- matrix
+- categories
+- management strategy
+- office supply inventory
+---
+
+Double ABC Analysis is a method that evaluates inventory items based on two dimensions, such as cost and demand. In a typical example, items are plotted on a matrix with cost of inventory on the vertical axis and demand on the horizontal axis. This creates four main categories, each representing a different combination of cost and demand. Management strategies should be tailored to each category. For instance, high-cost, high-demand items require close monitoring and frequent review, while low-cost, low-demand items may need less attention. By categorizing inventory this way, organizations can optimize their focus and resources for better inventory control.

@@ -1,0 +1,20 @@
+---
+topic: Konsekvenser af lagerubalance
+source: Intro
+source_type: course
+language: danish
+product_area: inventory
+question_type: what
+keywords:
+- overflødigt lager
+- lagerbalance
+- omkostninger
+- ressourcedræn
+- forsyningskæde
+- lagerstyring
+- kontrol
+- forebyggelse
+- forretningspåvirkning
+---
+
+Lagerubalance opstår, når en virksomhed har mere lager end nødvendigt, ofte som følge af udfordringer med præcist at matche udbud og efterspørgsel. Dette overflødige lager, som kan ligge mellem 15 og 35 procent over det optimale niveau, medfører betydelige skjulte omkostninger. Disse omkostninger dræner ressourcer ved at binde kapital, øge udgifter til opbevaring og håndtering samt potentielt føre til spild eller forældelse. Effektiv styring af lagerbalancen er afgørende for at opretholde både operationel effektivitet og økonomisk sundhed.

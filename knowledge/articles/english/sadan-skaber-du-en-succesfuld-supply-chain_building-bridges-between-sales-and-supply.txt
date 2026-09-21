@@ -1,0 +1,9 @@
+---
+topic: Building Bridges between Sales and Supply
+source_type: article
+language: english
+article_source: Sådan skaber du en succesfuld supply chain
+keywords: sales, supply chain, collaboration, value chain, operations planning
+---
+
+To establish a customer-centric and profitable value chain, bridging commercial aspects with the backend functions is crucial. Limited collaboration between silos within companies often leads to counterproductive behaviors. Company leadership must promote a shared understanding, language, and goals across the value chain functions.

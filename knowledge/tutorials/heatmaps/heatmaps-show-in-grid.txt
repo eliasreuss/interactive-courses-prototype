@@ -1,0 +1,16 @@
+---
+topic: How to see the underlying records of a Heatmap in a grid in Inact Now
+source_type: tutorial
+language: english
+keywords: show in grid, open grid, underlying data, records, list, which suppliers, which products
+product_area: Heatmaps
+question_type: how-to
+---
+
+Click Show in Grid on the right of the heatmap toolbar to open the records behind the matrix as a list.
+
+Because a heatmap normally crosses two data sources, a small window appears first — "Choose a grid to open" — offering one entry per data source with the number of records in each, for example "214 Suppliers" and "2.006 Products". Click Open grid next to the one you want.
+
+The grid that opens is the standard Inact grid: a searchable, sortable table with a Showing N of N counter, column controls, and buttons for downloading and copying the data. Each row has an icon on the left that opens that record's detail panel.
+
+If you have drilled into the heatmap first, the grid contains only the records inside your drill-down, which makes this the natural way to go from "this cell looks wrong" to the actual list of items behind it.

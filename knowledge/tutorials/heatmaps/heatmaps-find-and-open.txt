@@ -1,0 +1,16 @@
+---
+topic: How to find and open a Heatmap in Inact Now
+source_type: tutorial
+language: english
+keywords: find heatmap, open heatmap, library, search, showing of, groups
+product_area: Heatmaps
+question_type: how-to
+---
+
+Click End2End in the top navigation to open the library. Heatmaps are listed in the right-hand column under the Heatmaps heading, arranged in groups such as "Main Heatmaps" or groups your organisation has created. Click a heatmap's name to open it.
+
+Use the Search box at the top right of the library if the list is long. The counter next to it shows how many items match out of the total, and the search covers both End2End views and heatmaps.
+
+If a heatmap you expect is missing, check whether its group is collapsed — click the arrow next to the group name to expand it.
+
+You can also reach heatmaps from inside an End2End view: the Heatmap button in each link area lists the heatmaps built on that particular relation.

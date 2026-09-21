@@ -1,0 +1,9 @@
+---
+topic: Valider din ABC-analyse og dine data
+source_type: article
+language: danish
+article_source: Få 6 tips til at eksekvere på din data
+keywords: validering, dataopdatering, nøjagtighed
+---
+
+Brug tid på at validere resultatet af ABC-analysen. Dataopdatering og -validering er et værdifuldt biprodukt for hele organisationen.

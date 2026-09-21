@@ -1,0 +1,16 @@
+---
+topic: How to view where an item appears across the platform in Inact Now
+source_type: tutorial
+language: english
+keywords: item references, cross-reference, appears in, action lists, insights, related
+product_area: Actions
+question_type: how-to
+---
+
+When you are looking at an item inside an Action list, you can see which other lists and Insights contain that same item.
+
+Open an item by clicking its row to open the detail panel. In the top-right corner of the panel, click the document icon (the first icon in the top-right icon row). A panel appears titled Item also appears in, listing the Action lists and Insights that include this item. For each category, you see the count and the names of the lists.
+
+If there are more than a few Insights listed, click ...show more to see the full list.
+
+This is useful when you want to understand the full context of an item — for example, whether it is already being actioned in another list, or which analyses it features in.

@@ -1,0 +1,9 @@
+---
+topic: Usund kompleksitet i virksomheder
+source_type: article
+language: danish
+article_source: Direktørens bedste ven og værste fjende (1)
+keywords: usund kompleksitet, kunder, produkter, omkostninger, kapitalbinding
+---
+
+Usund kompleksitet opstår ved forkert kunde- og produktmiks. Omkostninger inkluderer ukurans, lav indtjening, høj kapitalbinding og lange leveringstider.

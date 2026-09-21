@@ -1,0 +1,47 @@
+---
+topic: Customer profitability
+source_type: glossary
+language: english
+keywords: Customer profitability, Kundelønsomhed, customer, profitability, customers, costs, cost-to-serve, service, associated, understanding
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Kundelønsomhed
+term_en: Customer profitability
+url: https://inact.io/en/glossary/customer-profitability/
+---
+
+Customer profitability — Danish: Kundelønsomhed
+Customer profitability is a key business concept that defines the actual profit a customer contributes to a company over a given period, after all costs associated with serving that customer have been deducted.
+What is customer profitability?
+Simply put, customer profitability is about the relationship between revenue and the total costs associated with serving a customer.
+It is about understanding which customers create the most value for the business—and which may cost more to serve than they generate.
+So, instead of only looking at the revenue associated with a customer, the focus is on the underlying costs involved in acquiring, selling to, and servicing that specific customer.
+Why is it relevant to analyze your customers’ profitability?
+Understanding the profitability of each customer is essential for strategic decision-making and a prerequisite for optimizing the company’s overall profitability.
+A clear understanding of customer profitability enables:
+Efficient resource allocation:
+Companies can focus sales and marketing efforts on the most profitable customer segments, ensuring a higher return on investment.
+Improved customer service and loyalty:
+By differentiating service levels based on customer profitability, companies can ensure that high-value customers receive the attention and service they require—without overservicing less profitable customers. This strengthens loyalty among the most important customers.
+Optimization of pricing and discounts:
+Insight into customer profitability provides a solid foundation for adjusting pricing and discount structures so they reflect the true value of the customer relationship and maximize margins.
+Targeted product and service development:
+Companies can develop and tailor products and services specifically for the most profitable customer segments, increasing market penetration and customer satisfaction.
+Proactive risk management:
+Identifying customers that drain resources or pose financial risk makes it possible to implement strategies to improve their profitability—or, if necessary, phase out unprofitable relationships.
+What is the relationship between customer profitability and cost-to-serve?
+Cost-to-serve (CTS) is a central component in calculating customer profitability.
+While customer profitability provides the overall picture of a customer’s financial value, cost-to-serve is the detailed breakdown of the specific costs associated with delivering products and services to that customer.
+A high cost-to-serve can significantly reduce a customer’s profitability even if the customer generates substantial revenue. Understanding CTS is therefore essential for optimizing customer profitability.
+Several factors influence cost-to-serve and therefore have a direct impact on customer profitability, for example:
+Order size and frequency:
+Customers placing many small, frequent orders are often more expensive to serve per unit than customers placing fewer but larger orders.
+Delivery requirements and complexity:
+Specific delivery windows, urgent orders, deliveries to remote locations, or special packaging requirements can significantly increase logistics costs.
+Product mix:
+Customers ordering a wide range of SKUs (Stock Keeping Units) or customized products can lead to higher inventory and picking costs.
+Return rates and claims:
+A high return rate or frequent claims increase costs related to reverse logistics, administration, and customer service.
+Customer support needs:
+Customers requiring frequent or extensive support, technical assistance, or having many inquiries will naturally be more costly to serve..

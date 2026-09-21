@@ -1,0 +1,9 @@
+---
+topic: 'Trin 1: Silotænkning & fravær af fakta'
+source_type: article
+language: danish
+article_source: De 5 fejlsikre trin til en superoptimeret supply chain
+keywords: silotænkning, fakta, varelager, beslutningsgrundlag, siloer
+---
+
+Virksomheder på trin 1 fokuserer på toplinjevækst og forsyningssikkerhed. De opererer med unødvendigt højt varelager og lav omsætningshastighed. Beslutninger træffes ofte på mavefornemmelser. Data bruges ikke strategisk, og silotænkning er udbredt.

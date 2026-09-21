@@ -1,0 +1,25 @@
+---
+topic: Planning Parameters
+source_type: glossary
+language: english
+keywords: Planning Parameters, Planlægningsparametre, planning, parameters, production, chain, demand, inventory, purchasing, stock
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Planlægningsparametre
+term_en: Planning Parameters
+url: https://inact.io/en/glossary/planning-parameters/
+---
+
+Planning Parameters — Danish: Planlægningsparametre
+Planning parameters are the key variables used to control and optimize production, purchasing, and inventory in a supply chain. They help companies make decisions based on demand, capacity, and capital tied up in inventory.
+What are Planning Parameters?
+Planning parameters can include factors such as safety stock, r eorder points, lead time, demand forecast, minimum and maximum stock levels, and production time. Together, they provide a basis for planning and managing materials and resources effectively.
+What are Planning Parameters used for?
+Planning parameters are used to ensure that production and purchasing are aligned with demand, that there is neither too much nor too little in stock, and that tied-up capital is minimized. They serve as tools to balance risk, service level, and costs in the supply chain.
+When are Planning Parameters used?
+Planning parameters are used continuously in:
+Production planning
+Inventory management
+Purchasing planning
+Forecasting and supply chain optimization

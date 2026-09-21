@@ -1,0 +1,27 @@
+---
+topic: Ny produktintroduktion (NPI)
+source_type: glossary
+language: danish
+keywords: Ny produktintroduktion (NPI), New Product Introduction (NPI), lager, logistik, produktion, kapacitet, lancering, processen, sikre, chain
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Ny produktintroduktion (NPI)
+term_en: New Product Introduction (NPI)
+url: https://inact.io/ordbog/ny-produktintroduktion/
+---
+
+Ny produktintroduktion (NPI) — English: New Product Introduction
+Ny produktintroduktion (NPI) er processen, hvor et nyt produkt lanceres på markedet eller indføres i virksomhedens supply chain. Formålet er at sikre en hurtig, problemfri introduktion, hvor produktion, lager og logistik fungerer optimalt fra start.
+Hvad er NPI?
+NPI dækker hele processen fra idé til lancering:
+Produktudvikling – Design og specifikationer for nye produkter
+Pilotproduktion – Test af produktion, kvalitet og kapacitet
+Lager og logistik – Planlægning af lagerbeholdning og distribution
+Markedsintroduktion – Koordinering af salg og marketing for en effektiv lancering
+Hvorfor er NPI vigtigt?
+En struktureret NPI-proces hjælper med at:
+Reducere fejl og forsinkelser ved produktlancering
+Sikre korrekt lager og kapacitet fra dag ét
+Optimere samarbejdet mellem udvikling, produktion og logistik
+Minimere risiko for overproduktion eller udsolgte varer

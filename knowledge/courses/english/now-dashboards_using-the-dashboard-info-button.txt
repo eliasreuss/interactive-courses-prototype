@@ -1,0 +1,18 @@
+---
+topic: Using the Dashboard Info Button
+source: Now Dashboards
+source_type: course
+language: english
+product_area: platform
+question_type: how
+keywords:
+- Dashboards
+- Insights
+- data buckets
+- customization
+- overview
+- information
+- i button
+---
+
+To understand the specific data and insights displayed on a Dashboard, use the 'i' button. Clicking this button reveals detailed information about the Insights and data buckets that contribute to the Dashboard's content. This feature helps users identify exactly what data sources and metrics are being visualized, ensuring clarity when reviewing customized overviews. Utilizing the 'i' button is especially useful when Dashboards are tailored to show different sets of information, as it provides transparency about the underlying data.

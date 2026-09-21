@@ -1,0 +1,35 @@
+---
+topic: XYZ-analyse
+source_type: glossary
+language: danish
+keywords: XYZ-analyse, XYZ-analysis, produkter, bruges, efterspørgsel, lagerstyring, optimere, planlægning, abc-analyse
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: XYZ-analyse
+term_en: XYZ-analysis
+url: https://inact.io/ordbog/xyz-analyse/
+---
+
+XYZ-analyse — English: XYZ-analysis
+XYZ-analyse er en metode til at kategorisere varer i lager baseret på variationen i deres forbrug over tid. Den bruges til at optimere lagerstyring og planlægning ved at fokusere på produkter med forskellig grad af forudsigelighed i efterspørgslen.
+Hvad er en XYZ-analyse?
+I XYZ-analysen bruges til at opdele varer, typisk i tre grupper:
+X-varer: Har stabil og forudsigelig efterspørgsel
+Y-varer: Har moderat variation og delvis forudsigelig efterspørgsel
+Z-varer: Har uforudsigelig eller sjælden efterspørgsel
+Analysen giver et overblik over, hvilke produkter der kræver streng lagerstyring og hvilke, der kan håndteres mere fleksibelt.
+Hvad bruger man XYZ-analyser til?
+Man laver en XYZ-analyse for at kunne:
+Prioritere fokus på produkter med høj forudsigelighed
+Tilpasse sikkerhedslagre og bestillingspunkter efter forbrugsmønstre
+Optimere kapitalbinding og lageromkostninger
+Hvornår giver det mening at lave en XYZ-analyse?
+XYZ-analyse anvendes typisk ved:
+Lageroptimering og planlægning af sikkerhedslagre
+Beslutning om genbestillingsstrategier
+Identifikation af produkter med behov for særlig overvågning eller fleksible løsninger
+Hvad er forskellen på en ABC-analyse og en XYZ-analyse?
+Mens XYZ-analysen fokuserer på variationen i efterspørgslen over tid og dermed forudsigeligheden af forbruget, kategoriserer ABC-analysen produkter ud fra deres økonomiske værdi eller omsætningsbidrag.
+En
+ABC-analyse hjælper med at prioritere ressourcer ud fra værdien af lagerbeholdningen, mens en XYZ-analyse hjælper med at tilpasse lagerstyring og planlægning baseret på forbrugsstabilitet. Begge analyser kan bruges sammen for at optimere lager og kapitalbinding mere effektivt.

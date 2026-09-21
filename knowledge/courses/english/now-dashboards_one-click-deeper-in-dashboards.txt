@@ -1,0 +1,20 @@
+---
+topic: One Click Deeper in Dashboards
+source: Now Dashboards
+source_type: course
+language: english
+product_area: platform
+question_type: how
+keywords:
+- Dashboards
+- Widgets
+- Trend View
+- Tables
+- One Click Deeper
+- category
+- product
+- detailed view
+- data exploration
+---
+
+The One Click Deeper feature in Dashboards allows users to quickly access more detailed information. By clicking directly on a Widget or using the button next to a category or product in a Table, users can open a detailed Trend View for that specific data. This enables efficient exploration and analysis of underlying trends without navigating away from the main Dashboard, making it easier to investigate specific metrics or items in greater depth.

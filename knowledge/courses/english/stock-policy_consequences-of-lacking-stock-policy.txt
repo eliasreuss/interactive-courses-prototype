@@ -1,0 +1,18 @@
+---
+topic: Consequences of Lacking Stock Policy
+source: Stock Policy
+source_type: course
+language: english
+product_area: inventory
+question_type: why
+keywords:
+- stock policy
+- inventory
+- costs
+- service levels
+- differentiated policy
+- what to stock
+- inventory management
+---
+
+Operating without a clear stock policy leads to disorganized inventory management, which can simultaneously cause excessive costs and inadequate service levels. Without defined guidelines on what items to stock and in what quantities, organizations may overstock some products, tying up capital and increasing holding costs, while understocking others, resulting in stockouts and poor customer service. This combination negatively impacts both profitability and customer satisfaction.

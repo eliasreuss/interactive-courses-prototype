@@ -1,0 +1,19 @@
+---
+topic: AC Items in Double ABC Analysis
+source: Double Abc Analysis 4
+source_type: course
+language: english
+product_area: inventory
+question_type: what
+keywords:
+- Double ABC Analysis
+- AC items
+- inventory cost
+- low demand
+- capital tie-up
+- stock risk
+- big-ticket items
+- copy machine
+---
+
+AC items in Double ABC Analysis are products that have a high cost of inventory but low demand. These are typically big-ticket items, such as copy machines, that are valuable but sell only occasionally. Stocking AC items is riskier because they require a significant investment of capital, yet there is little predictability regarding when or how many will be sold. Managing these items effectively is important to avoid tying up resources in inventory that may not move quickly.

@@ -1,0 +1,10 @@
+---
+topic: The Edit E2E Relation beta option on an Action list in Inact Now
+source_type: tutorial
+language: english
+keywords: edit e2e relation, end2end, beta feature, action list
+product_area: Actions
+question_type: how-to
+---
+
+Open Action lists linked to End2End data include an Edit E2E Relation option in the gear icon dropdown. Selecting it opens the End2End relation editor for that Action list.

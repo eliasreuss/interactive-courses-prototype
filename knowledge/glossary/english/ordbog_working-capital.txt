@@ -1,0 +1,24 @@
+---
+topic: Working Capital
+source_type: glossary
+language: english
+keywords: Working Capital, Working Capital (arbejdskapital), capital, working, company, current, inventory, liquidity, operations, accounts
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Working Capital (arbejdskapital)
+term_en: Working Capital
+url: https://inact.io/en/glossary/working-capital/
+---
+
+Working Capital
+Working capital shows the difference between a company's current assets and current liabilities. It is an expression of the liquidity available to finance daily operations and ensure that the company can maintain production and deliveries without problems.
+What is Working Capital?
+Working capital typically consists of inventory, receivables, and cash, minus current liabilities such as accounts payable and short-term loans. Positive working capital indicates that the company has surplus capital for operations, while negative working capital can signal liquidity challenges.
+What is Working Capital used for?
+Working capital is used to understand how much capital is tied up in operations, especially inventory and accounts receivable, and how much is available for daily activities. It is an important part of cash flow management, capital release, and supply chain optimization.
+When do you look into Working Capital?
+Working capital is used continuously in financial management and supply chain analyses, especially for:
+Liquidity planning and budgeting
+Optimization of inventory and tied-up capital
+Assessment of the company's financial flexibility

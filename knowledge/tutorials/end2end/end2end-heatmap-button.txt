@@ -1,0 +1,14 @@
+---
+topic: How to open a heatmap from an End2End view in Inact Now
+source_type: tutorial
+language: english
+keywords: heatmap button, new heatmap, relation heatmap, open heatmap, create heatmap
+product_area: End2End
+question_type: how-to
+---
+
+Each link area contains a Heatmap button. It is the entry point to the heatmaps built on that particular relation — supplier-to-product for the left link, product-to-customer for the right link.
+
+Click the button and a dropdown opens containing New Heatmap at the top, followed by a searchable list of the heatmaps that already exist for that relation. Click an existing name to open it, or New Heatmap to build one from the current relation.
+
+There is also a green Create Heatmap button at the top right of the End2End view, which creates a heatmap from the view as a whole.

@@ -1,0 +1,37 @@
+---
+topic: Servicegrad
+source_type: glossary
+language: danish
+keywords: Servicegrad, Service level, betyder, kundernes, planlægning, virksomheden, andre, antal, chain
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Servicegrad
+term_en: Service level
+url: https://inact.io/ordbog/servicegrad/
+---
+
+Servicegrad — English: Service level
+Servicegrad er et mål for, hvor godt en virksomhed opfylder kundernes efterspørgsel. Det viser, hvor stor en del af ordrerne der kan leveres til tiden og i den ønskede mængde, og er en vigtig indikator for både kundetilfredshed og effektivitet i supply chain.
+Hvad er servicegrad?
+Servicegrad udtrykker typisk forholdet mellem antal opfyldte ordrer og det samlede antal ordrer.
+En høj servicegrad betyder, at virksomheden leverer det, kunden har bestilt, når kunden forventer det.
+En lav servicegrad fortæller det modsatte. Det betyder, at virksomheden oftere oplever udsolgte varer, forsinkelser eller ufuldstændige leverancer, hvilket kan påvirke både kundernes tilfredshed og omsætningen.
+Begrebet bruges både på produktniveau og for hele virksomheden, og det er tæt knyttet til lagerstyring og planlægning.
+Hvorfor er servicegraden vigtig?
+Servicegraden har direkte betydning for kundernes oplevelse og virksomhedens konkurrenceevne.
+En høj servicegrad kan være medvirkende til at sikre:
+Øget kundetilfredshed gennem stabile leverancer
+Stærkere kundeforhold – troværdighed og loyalitet øges
+Effektiv ressourceudnyttelse – planlægning af lager og produktion bliver mere præcis
+Mindre risiko for tabt salg – færre udsolgte varer betyder højere omsætning
+Det er dog vigtigt at være opmærksom på, at en meget høj servicegrad ofte kræver større lagre og højere sikkerhedslagre, hvilket kan øge kapitalbinding og lageromkostninger.
+Derfor skal servicegrad altid ses i sammenhæng med andre faktorer som lagerværdi, cash flow og omkostningseffektivitet for at finde den rette balance mellem kundeservice og ressourceudnyttelse.
+Hvordan forbedrer man sin servicegrad?
+Forbedring af servicegrad kræver et helhedsblik på supply chain og de underliggende processer.
+Typiske tiltag er:
+Optimering af lagerbeholdning og sikkerhedslagre
+Forbedring af prognoser og efterspørgselsanalyser
+Mere effektiv planlægning af produktion og logistik
+Løbende overvågning af performance med KPI’er og proaktiv handling
+Det er dog vigtigt fortsat at være opmærksom på, at en øget servicegrad påvirker andre dele af forretningen, så man sikrer at optimeringen understøtter virksomhedens samlede mål.

@@ -1,0 +1,19 @@
+---
+topic: Adgang til Insights fra startskærmen
+source: Now Insights
+source_type: course
+language: danish
+product_area: platform
+question_type: how
+keywords:
+- Insights
+- startskærm
+- kommandocenter
+- fastgjorte Insights
+- navigation
+- adgang
+- Inact Now
+- dashboard
+---
+
+For at få adgang til en Insight i Inact Now skal du gå til din startskærm, som fungerer som dit primære kommandocenter. Dine vigtigste Insights er fastgjort på denne skærm for hurtig adgang. Klik blot på navnet på den Insight, du ønsker at se, direkte fra startvisningen for at åbne den.

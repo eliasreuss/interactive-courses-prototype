@@ -1,0 +1,38 @@
+---
+topic: Ydeevne
+source_type: glossary
+language: danish
+keywords: Ydeevne, Performance, chain, kapitalbinding, levering, processer, supply, bruger, effektivitet
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Ydeevne
+term_en: Performance
+url: https://inact.io/ordbog/ydeevne/
+---
+
+Ydeevne — English: Performance
+Ydeevne i supply chain refererer til, hvor effektivt en virksomhed eller et system udfører sine opgaver i forhold til mål som kvalitet, levering, omkostning og fleksibilitet. Det bruges til at måle og forbedre processer på tværs af hele supply chain.
+Hvad er ydeevne?
+Ydeevne måles ofte gennem KPI’er (Key Performance Indicators), som kan inkludere levering til tiden, omsætningshastighed, kapitalbinding, produktionsoutput, fejlrate eller kundetilfredshed. Det giver et objektivt grundlag for at vurdere effektivitet og identificere forbedringsområder.
+Hvad bruger man ydeevnen til?
+Man bruger ydeevne til at:
+Vurdere effektivitet af processer, produkter og medarbejdere
+Identificere flaskehalse eller ineffektive processer
+Optimere ressourceanvendelse og kapitalbinding
+Forbedre kundeservice og konkurrenceevne
+Hvornår kigger man på ydeevnen?
+Ydeevne anvendes løbende til:
+Overvågning af supply chain og produktionsprocesser
+Strategisk planlægning og beslutningstagning
+Benchmarking mod industristandarder eller interne mål
+Løbende forbedringsprojekter
+Hvordan måler man ydeevne?
+Ydeevne måles ved at definere relevante KPI’er og sammenligne resultaterne mod målet.
+Eksempler kan være:
+Levering til tiden (%)
+Lageromsætningshastighed
+(gange pr. år)
+Gennemsnitlig gennemløbstid
+Kapitalbinding i lager
+Fejlrate i produktion eller logistik

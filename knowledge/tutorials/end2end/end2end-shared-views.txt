@@ -1,0 +1,17 @@
+---
+topic: End2End views are shared with colleagues in Inact Now
+source_type: tutorial
+language: english
+keywords: shared view, colleagues, affects everyone, permissions, who can see, save warning
+product_area: End2End
+question_type: concept
+---
+
+End2End views are shared objects, not personal ones. When you save a change to a view, rename it, move it to another group or delete it, the change applies to every colleague who has access to it. The library warns about this explicitly when you turn on edit mode: "Warning! You are editing a shared view! The changes will affect all of your colleagues".
+
+Two habits follow from this:
+
+Use Save as rather than Save when you are experimenting on a view others depend on. It keeps the original intact and gives you your own copy to work in.
+Selecting buckets, hovering and reading do not change anything for anyone — only saving does. You can drill around freely in someone else's view without disturbing it, as long as you do not click Save.
+
+What you can see is still governed by your access rights to the underlying data sources, so two colleagues may see different views listed in the same library.

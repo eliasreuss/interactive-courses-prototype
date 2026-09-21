@@ -1,0 +1,9 @@
+---
+topic: Det simple kunderegnskab
+source_type: article
+language: danish
+article_source: Kunderegnskab  Den rette service til de rette kunder
+keywords: basale elementer, indtjening, omkostninger
+---
+
+Start simpelt ud med et kunderegnskab der tager højde for de mest basale elementer: Indtjening, minus vareforbrug, minus direkte omkostninger (fragt, rabatter etc.), minus cost-to-serve.

@@ -1,0 +1,9 @@
+---
+topic: Cost of Uncontrolled Complexity
+source_type: article
+language: english
+article_source: Direktørens bedste ven og værste fjende (1)
+keywords: complexity, costs, symptoms, organization, efficiency
+---
+
+Complexity can lead to increased operating costs, additional support needs, and maintenance burdens, impacting budgets and resources. Symptoms include high operating costs, support needs, and maintenance burdens. Uncontrolled complexity can undermine efficiency, slow development, and even force a company out of business.

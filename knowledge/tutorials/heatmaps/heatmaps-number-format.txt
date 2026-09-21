@@ -1,0 +1,16 @@
+---
+topic: What the decimals and percentage buttons do on a Heatmap in Inact Now
+source_type: tutorial
+language: english
+keywords: decimals, percentage, percent button, number format, share of total, rounding
+product_area: Heatmaps
+question_type: how-to
+---
+
+Two small toggle buttons sit in the heatmap toolbar in edit mode, next to Hide total. They change how the numbers are displayed without changing the calculation.
+
+The decimals button switches decimals on and off, so values are shown either rounded or with their decimal places.
+
+The percentage button switches every cell from an absolute value to a percentage of the grand total. The Total row and Total column become percentages too, so a row total of 64 % tells you that supplier category holds 64 % of the whole matrix, and a cell showing 41 % is 41 % of the grand total — not of its own row.
+
+Percentages are the better view when you want to talk about concentration and share of business, and absolute values when you want to talk about amounts. Click Save to keep the choice.

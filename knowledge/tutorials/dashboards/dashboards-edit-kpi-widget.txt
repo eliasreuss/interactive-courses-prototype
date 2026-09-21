@@ -1,0 +1,24 @@
+---
+topic: How to edit a KPI widget in Inact Now dashboards
+source_type: tutorial
+language: english
+keywords: KPI widget, edit widget, label, trend, table selector, KPI card, dashboard tab
+product_area: Dashboards
+question_type: how-to
+---
+
+KPI widgets are the summary cards shown at the top of a dashboard. To edit one:
+
+1. Open the dashboard and click Edit.
+2. Go to the Dashboard tab.
+3. Click on any KPI widget — it shows a "Click to edit" label in edit mode.
+4. The edit dialog opens with the following fields:
+   - Label — the display name shown on the KPI card.
+   - Trend — sets how the value's direction is interpreted for colour coding:
+     - Neutral
+     - Positive (higher is better)
+     - Negative (higher is worse)
+   - Table selector — a dropdown that links the KPI widget to a specific table or data source.
+5. Click Save to apply changes or Cancel to close.
+
+To add a new row of KPI widgets, click + Add KPI row at the bottom of the Dashboard tab. Rows can be reordered using the drag handles on the left side of each row.

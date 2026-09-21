@@ -1,0 +1,16 @@
+---
+topic: How to filter items within an Action list in Inact Now
+source_type: tutorial
+language: english
+keywords: filter, search, column filter, narrow down, items, action list, sort
+product_area: Actions
+question_type: how-to
+---
+
+Inside an Action list, each column has a Filter input field directly below the column header. Type in any Filter field to narrow down the rows shown to only items that match your search.
+
+For example, typing "BB" in the Double ABC filter field will show only rows where the Double ABC classification is BB. Filters work across multiple columns at the same time.
+
+To clear a filter, delete the text from the filter field. All rows will reappear.
+
+You can also sort items by clicking any column header. An arrow appears showing whether items are sorted ascending or descending. Click again to reverse the sort order.

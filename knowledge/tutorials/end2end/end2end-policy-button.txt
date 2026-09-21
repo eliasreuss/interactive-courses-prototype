@@ -1,0 +1,16 @@
+---
+topic: What the Policy button does in an End2End view in Inact Now
+source_type: tutorial
+language: english
+keywords: policy, policy button, stock policy, guidelines, company policy, link area
+product_area: End2End
+question_type: how-to
+---
+
+Each link area in an End2End view has a Policy button. Clicking it opens a Policy window showing the policy your company has defined for that part of the value chain — for example the stock policy or supplier policy governing the relation between suppliers and products.
+
+The content of the window is set up for your account rather than written inside the End2End view, so what you see depends on what your organisation has uploaded. It can be a document or an image, and it is the same for everyone in the account.
+
+The point of having it here is that the policy is available at the moment you are making a decision, so you can check the agreed rule without leaving the analysis. Click Close to return to the view.
+
+If your account does not use policies, you can hide the button by unticking Policy button in the settings panel for that link.

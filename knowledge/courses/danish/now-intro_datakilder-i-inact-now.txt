@@ -1,0 +1,19 @@
+---
+topic: Datakilder i Inact Now
+source: Now Intro
+source_type: course
+language: danish
+product_area: platform
+question_type: what
+keywords:
+- ERP-system
+- dataopdatering
+- datadækning
+- datastruktur
+- Inact Now
+- platformopsætning
+- dataintegration
+- virksomhedsdata
+---
+
+Inact Now henter sine data direkte fra din virksomheds ERP-system, hvilket sikrer, at informationen er nøjagtig og opdateret. Dataene opdateres hver nat, så brugerne altid har adgang til de nyeste tal. Inden platformen tages i brug, samarbejder Inact med din virksomhed om at definere den specifikke datadækning, hvilket betyder, at I sammen beslutter præcis, hvilke data der skal inkluderes, og hvordan de skal organiseres i systemet. Det er vigtigt at forstå, hvordan dine data hentes og struktureres i Inact Now, for at få det mest effektive udbytte af platformens funktioner.

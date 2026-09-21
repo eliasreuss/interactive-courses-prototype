@@ -1,0 +1,29 @@
+---
+topic: Leverandørscorecard
+source_type: glossary
+language: danish
+keywords: leverandørscorecard, supplier scorecard, leverandørvurdering, leverandørperformance, OTIF, leveringspræcision, kvalitet, KPI, leverandørstyring
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: Leverandørscorecard
+term_en: Supplier Scorecard
+---
+
+Leverandørscorecard — English: Supplier Scorecard
+Et leverandørscorecard er en fast, tilbagevendende måling af, hvordan en leverandør rent faktisk præsterer, sat op på de samme kriterier for alle leverandører, så de kan sammenlignes og følges over tid.
+Hvad måles der typisk på?
+Leveringspræcision, altså hvor stor en andel der kommer til den aftalte dato
+Leveringsevne, om den fulde mængde kom, ofte målt samlet som OTIF
+Kvalitet, i form af reklamationer, fejlleverancer og returneringer
+Pris og prisudvikling sammenholdt med det aftalte
+Responstid og samarbejde ved afvigelser
+Hvorfor det virker
+Uden et scorecard bliver leverandørdialogen styret af den seneste hændelse. Den leverandør, der lige har svigtet spektakulært, får opmærksomheden, mens den, der leverer to dage for sent hver eneste gang, går under radaren — selvom den sidste koster mest i sikkerhedslager og planlægningsstøj.
+Målingen gør også forhandlingen konkret. Det er svært at diskutere leveringspræcision ud fra en fornemmelse, og let når tallet ligger på bordet.
+Sådan undgår du at det bliver en pligtøvelse
+Mål på data fra dit eget system frem for på leverandørens egen rapportering
+Hold antallet af kriterier lavt nok til at et dårligt tal peger på noget konkret
+Vægt leverandørerne efter, hvor meget de betyder — de vigtigste fortjener hyppigere opfølgning
+Aftal på forhånd hvad en given score udløser, ellers bliver scorecardet en rapport ingen handler på
+Et scorecard hører sammen med en aftalt kadence. Måler du uden at mødes om tallene, ændrer adfærden sig sjældent.

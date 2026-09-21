@@ -1,0 +1,18 @@
+---
+topic: Limits of 100% Service Level
+source: Safety Stock
+source_type: course
+language: english
+product_area: inventory
+question_type: why
+keywords:
+- service level
+- safety stock
+- inventory cost
+- stockouts
+- target setting
+- Inact Now
+- inventory management
+---
+
+Aiming for a 100% service level in inventory management means trying to have every product in stock at all times. While this might seem ideal, it is not practical because the cost of maintaining such high service levels increases dramatically. The relationship between service level and inventory cost is not linear; as service targets rise, especially above 95%, each additional percentage point requires a much larger increase in safety stock. This leads to rapidly escalating costs, making it far too expensive to justify aiming for 100% service on all products. Instead, companies balance service goals with cost efficiency.

@@ -1,0 +1,16 @@
+---
+topic: How to change which measure a column shows in an End2End view in Inact Now
+source_type: tutorial
+language: english
+keywords: measure, column dropdown, performance score, change value, revenue, what is shown
+product_area: End2End
+question_type: how-to
+---
+
+Open the settings panel with the chevron above the columns. The first dropdown above each column selects which column from that data source is shown on the tiles — for example Performance Score, Inventory Value, or Revenue.
+
+Click the dropdown to see the available columns from that data source. Small icons show each column's data type: # for a numeric value, a text icon for text or categorical values, ID for an identifier column, and the End2End icon for an End2End Score column. The list is scrollable and follows the columns configured for that data source, so Suppliers, Products and Customers each offer different options.
+
+Each of the three columns has its own measure, so you can compare, for example, supplier Performance Score against product Inventory Value against customer Revenue in the same view.
+
+The chosen measure is shown on the summary card at the top of the column and on every bucket tile below it. Click Save in the settings panel to store the change for everyone.

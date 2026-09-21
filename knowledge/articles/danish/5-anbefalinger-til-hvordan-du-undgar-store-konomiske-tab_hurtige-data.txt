@@ -1,0 +1,11 @@
+---
+topic: Hurtige data
+source_type: article
+language: danish
+article_source: 5 anbefalinger til hvordan du undgår store økonomiske tab
+keywords: friske data, manuelle udtræk, excelark, rettidige data, Inact Now
+---
+
+1. Brug altid friske data for rettidige beslutninger. 
+2. Undgå manuelle udtræk og gamle excelark. 
+3. Inact Now leverer dugfriske tal og analyser.

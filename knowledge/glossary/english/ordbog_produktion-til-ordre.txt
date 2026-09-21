@@ -1,0 +1,77 @@
+---
+topic: Make-to-order (MTO)
+source_type: glossary
+language: english
+keywords: Make-to-order (MTO), Produktion til ordre (make-to-order), production, products, inventory, make-to-order, customer, demand, strategy, capital
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Produktion til ordre (make-to-order)
+term_en: Make-to-order (MTO)
+url: https://inact.io/en/glossary/make-to-order/
+---
+
+Make-to-order (MTO) — Danish: Produktion til ordre
+Make-to-order (MTO) is a production strategy that minimizes the risk of excess inventory and obsolete stock by only initiating production when a specific customer order has been received.
+What is make-to-order (MTO)?
+Make-to-order (MTO) is a production strategy where the production of a product only begins once a customer has placed a specific order.
+In contrast to make-to-stock (MTS), where products are produced in advance based on forecasts, MTO is driven by actual demand. This means that no products are produced or stored as finished goods until demand has been confirmed i.e., until an order has been placed.
+This strategy is ideal for products that require a high degree of customization, have unpredictable demand, or where tied-up capital in inventory is undesirable due to high value or risk of obsolescence.
+When do you apply a make-to-order strategy?
+Choosing a make-to-order strategy is a decision that fits certain types of products and market conditions. It typically makes sense when:
+Products are complex or specialized:
+Items that require extensive customization or are designed specifically for individual customers (e.g. specialized machinery, customized products, construction projects).
+Demand is unpredictable or low:
+For products with fluctuating or low demand, MTO minimizes the risk of excess inventory and obsolete stock.
+High value or risk of obsolescence:
+Expensive products or items with a short lifecycle (e.g. fashion products, high-tech components) benefit from reduced tied-up capital.
+Customers accept longer lead times:
+In industries where customization is valued over immediate delivery, MTO is a viable model.
+Production flexibility is high: The company must be able to quickly adjust production to meet varying customer requirements.
+What are the advantages and disadvantages of a make-to-order strategy?
+Like any production strategy, make-to-order has both clear advantages and potential disadvantages that companies must carefully consider:
+Advantages:
+Minimal tied-up capital:
+Reduces the need to tie up capital in finished goods inventory, improving cash flow and lowering inventory costs.
+Low risk of obsolete inventory: Since production is order-driven, the risk of unsellable or outdated inventory is minimal.
+High customization:
+Ability to deliver products that precisely match customer requirements, which can increase customer satisfaction and loyalty.
+Better forecast accuracy:
+Focus on actual orders rather than uncertain demand forecasts.
+Disadvantages:
+Longer lead times:
+Customers must wait for production, which can be a disadvantage in competitive markets where fast delivery is expected.
+Less efficient production processes:
+Production can be less streamlined and more complex due to variation in orders, which can increase unit costs.
+Dependence on suppliers:
+Requires reliable suppliers and an efficient supply chain to ensure timely delivery of raw materials and components.
+Uneven production flow:
+Can lead to periods of high and low capacity utilization, making resource and workforce planning more challenging.
+What is the difference between make-to-order and make-to-stock?
+Make-to-order (MTO) and make-to-stock (MTS) represent two different approaches to production and fulfillment, where the main difference lies in the timing of production relative to the customer order and the resulting trade-offs between lead time, tied-up capital, and customization.
+Make-to-stock (MTS)
+Make-to-order (MTO)
+Production timing
+Before customer order (based on forecast)
+After customer order
+Finished goods inventory
+Yes, significant
+Minimal or none
+Lead time
+Short (from stock)
+Long (production time + delivery time)
+Mass Customization
+Low (standard products)
+High (customized products)
+Demand
+Stable and predictable
+Variable and often unpredictable
+Risk of obsolescence
+High
+Low
+Tied-up capital
+High (in inventory)
+Low (in inventory)
+Examples
+FMCG, standard electronics, clothing
+Specialized machinery, customized apparel, construction projects

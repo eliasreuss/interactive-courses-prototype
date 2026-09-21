@@ -1,0 +1,16 @@
+---
+topic: How to add a comment to an Action list in Inact Now
+source_type: tutorial
+language: english
+keywords: comments, notes, add comment, team communication, action list, comment bubble
+product_area: Actions
+question_type: how-to
+---
+
+You can leave comments on an Action list to communicate with your team or leave notes about the work.
+
+Open the Action list, then click the comment bubble icon in the toolbar on the right side of the page. A Comments panel opens on the right, showing any existing comments and a search bar.
+
+Type your comment in the input area and submit it. Comments are visible to anyone who opens the same Action list.
+
+To search through existing comments, type in the search bar at the top of the panel. Click the comment icon again to close the panel.

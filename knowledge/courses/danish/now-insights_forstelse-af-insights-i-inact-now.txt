@@ -1,0 +1,19 @@
+---
+topic: Forståelse af Insights i Inact Now
+source: Now Insights
+source_type: course
+language: danish
+product_area: platform
+question_type: what
+keywords:
+- Insights
+- Best-Practice Skabeloner
+- Tilpassede Insights
+- interaktive rapporter
+- ERP-integration
+- automatiske opdateringer
+- forsyningskædeanalyse
+- Inact Now
+---
+
+Insights i Inact Now er interaktive rapporter, der er designet til at hjælpe brugere med at analysere specifikke områder af deres forsyningskæde i dybden. Der findes to hovedtyper: Best-Practice Skabeloner, som er forudbyggede ud fra branchestandarder og dækker et bredt udvalg af løsninger, samt Tilpassede Insights, som er skræddersyede analyser, der oprettes af de enkelte virksomheder for at matche deres unikke arbejdsgange. Begge typer Insights er direkte forbundet til dit ERP-system og opdateres automatisk hver dag, hvilket sikrer, at informationen altid er aktuel og relevant for beslutningstagning.

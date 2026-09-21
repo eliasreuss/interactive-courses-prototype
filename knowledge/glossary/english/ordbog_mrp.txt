@@ -1,0 +1,23 @@
+---
+topic: MRP (Material Requirements Planning)
+source_type: glossary
+language: english
+keywords: MRP, material requirements planning, bill of materials, net requirements, purchase proposals, production orders, planning
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: MRP
+term_en: MRP (Material Requirements Planning)
+---
+
+MRP (Material Requirements Planning) — Danish: MRP
+MRP, material requirements planning, is the method an ERP system uses to work out what needs to be purchased and produced, when, and in what quantities, to cover a known requirement.
+What does MRP calculate?
+MRP takes three inputs: what has to be delivered or produced, what is already in stock and on order, and how products are composed via the bill of materials. Out of that comes the net requirement — what is genuinely missing.
+MRP then offsets the supplier's or production's lead time backwards from the date the item is needed, and proposes a purchase or production order that arrives on time.
+What MRP assumes
+MRP is only as good as the data it calculates on. Wrong lead times, outdated bills of materials, or stock figures that do not match reality produce proposals nobody can use. That is the usual reason planners stop trusting the system and start planning manually alongside it.
+MRP and planning parameters
+MRP does not decide how much buffer there should be. It calculates against parameters somebody set: safety stock, reorder point, reorder quantity and minimum order quantity. The quality of planning is therefore largely decided by whether those parameters are set deliberately and maintained — not by the MRP run itself.
+MRP or reorder point?
+A reorder point reacts to stock falling to a level. MRP plans forward from a known requirement. Many companies use both: reorder point for evenly consumed items, MRP for items with concrete orders or a bill of materials behind them.

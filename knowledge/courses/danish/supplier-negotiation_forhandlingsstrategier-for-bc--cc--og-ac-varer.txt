@@ -1,0 +1,21 @@
+---
+topic: Forhandlingsstrategier for BC-, CC- og AC-varer
+source: Supplier Negotiation
+source_type: course
+language: danish
+product_area: supplier
+question_type: how
+keywords:
+- ABC-kategorier
+- BC-varer
+- CC-varer
+- AC-varer
+- lager
+- leveringstider
+- mindste ordremængder
+- betalingsbetingelser
+- BTO
+- MTO
+---
+
+Når du ønsker at reducere lageromkostninger, bør du fokusere på BC- og CC-varer, som har lav værdi og sjældent indkøbes. For disse bør du prioritere fleksibilitet ved at forhandle korte leveringstider, lave mindste ordremængder eller aftaler om build-to-order (BTO) og make-to-order (MTO). Hvis en leverandør ikke kan imødekomme disse behov, bør du overveje at skifte til en, der kan. For AC-varer, som har høj værdi og også sjældent indkøbes, bør du forhandle længere betalingsbetingelser for at udskyde pengestrømmen, indtil varen er tættere på at blive solgt. Derudover bør du søge at minimere risikoen ved at anmode om lavere mindste ordremængder eller kortere leveringstider.

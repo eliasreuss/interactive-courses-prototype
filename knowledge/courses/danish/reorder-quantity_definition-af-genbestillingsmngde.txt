@@ -1,0 +1,18 @@
+---
+topic: Definition af genbestillingsmængde
+source: Reorder Quantity
+source_type: course
+language: danish
+product_area: inventory
+question_type: what
+keywords:
+- genbestillingsmængde
+- genbestillingspunkt
+- lager
+- lagerbeholdning
+- ordremængde
+- genopfyldning
+- salgsperiode
+---
+
+Genbestillingsmængde er den specifikke mængde af et produkt, som en virksomhed bestiller, hver gang lageret når genbestillingspunktet. Når lagerbeholdningen falder til dette udløsningsniveau, placeres en ordre på genbestillingsmængden for at genopfylde lageret til dets optimale eller maksimale niveau. Dette sikrer, at der er tilstrækkeligt med varer til den kommende salgsperiode. Processen hjælper med at opretholde en stabil varetilgængelighed og forebygger lagermangel.

@@ -1,0 +1,16 @@
+---
+topic: Bulk actions on multiple users
+source_type: tutorial
+language: english
+keywords: bulk actions, select all, permissions, welcome mail, disable users, multi-select
+product_area: Admin
+question_type: how-to
+---
+
+Check the header checkbox to select all visible users. A bulk action bar appears at the bottom with three actions:
+
+Set permissions for N users — opens a simplified role picker dialog to choose one role to apply to all selected users at once.
+Send welcome mail to N users — re-sends the welcome/invitation email to all selected users.
+Disable N users — disables all selected accounts (shown in red as a destructive action).
+
+The "Showing N of N" counter also updates, and the copy-to-clipboard button shows the count of selected users. Use the Deselect button to clear the selection.

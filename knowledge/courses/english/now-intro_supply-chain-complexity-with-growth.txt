@@ -1,0 +1,19 @@
+---
+topic: Supply Chain Complexity with Growth
+source: Now Intro
+source_type: course
+language: english
+product_area: platform
+question_type: what
+keywords:
+- supply chain
+- growth
+- complexity
+- customers
+- products
+- suppliers
+- operational teams
+- decision-making
+---
+
+As a business expands, its supply chain becomes more complex due to the need to serve more customers, manage a broader range of products, and coordinate with an increasing number of suppliers. This added complexity can overwhelm operational teams, making it difficult to maintain a clear overview of operations. As a result, teams may resort to reactive problem-solving and rely on intuition rather than data-driven decisions, which can negatively impact efficiency and performance.

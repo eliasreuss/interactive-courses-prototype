@@ -1,0 +1,17 @@
+---
+topic: How to configure the comparison period on a KPI widget in Inact Now
+source_type: tutorial
+language: english
+keywords: comparison period, KPI comparison, trend arrow, period selector, since last month, since last year
+product_area: Dashboards
+question_type: how-to
+---
+
+KPI widgets with a trend arrow compare the current value against a previous period. To change the comparison period, click the small dropdown arrow on the KPI widget. The available options are:
+
+- Since last month
+- Since 3 mos. ago
+- Since last year
+- Since start 2026
+
+Select the period you want and the widget updates to compare against that timeframe.

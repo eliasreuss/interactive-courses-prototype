@@ -1,0 +1,19 @@
+---
+topic: Næste skridt efter Double ABC-analyse
+source: Double Abc Analysis 4
+source_type: course
+language: danish
+product_area: inventory
+question_type: what
+keywords:
+- Double ABC-analyse
+- lagerpolitik
+- lagerstyring
+- lagerbeslutninger
+- ordremængde
+- vareudvælgelse
+- Insights
+- Actions
+---
+
+Når Double ABC-analysen er gennemført, består de næste skridt i at bruge dens indsigter til at træffe vigtige lagerbeslutninger. Dette omfatter at bestemme, hvilke varer der skal lagerføres, hvor meget af hver vare der skal være på lager, samt de optimale ordremængder. Det kommende kursus i lagerpolitik vil fokusere på at anvende resultaterne fra Double ABC-analysen til at beslutte, hvilke varer der skal fortsættes med at lagerføre, hvilke der skal reduceres, og hvilke der skal udfases, så lageret stemmer overens med virksomhedens værdi og operationelle mål.

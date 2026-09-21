@@ -1,0 +1,10 @@
+---
+topic: Pace Layered Architecture
+source_type: article
+language: english
+article_source: Sådan bygger du en handlingsorienteret techstack
+keywords: Pace Layered Architecture, system of record, system of differentiation,
+  system of innovation
+---
+
+Pace Layered Architecture divides systems into: 1. System of Record - stable, reliable data like ERP. 2. System of Differentiation - where strategy translates to operational activities. 3. System of Innovation - for agile tools to test new ideas. Systems should complement, not compete.

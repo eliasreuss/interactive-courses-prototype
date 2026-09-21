@@ -1,0 +1,18 @@
+---
+topic: The difference between Ranked and Proportional colours on a Heatmap in Inact Now
+source_type: tutorial
+language: english
+keywords: ranked, proportional, colour type, outlier, distribution, why is everything red
+product_area: Heatmaps
+question_type: concept
+---
+
+The Type setting in a heatmap's Color settings decides how values are turned into colours.
+
+Ranked spreads the colours evenly across the order of the values. The lowest value gets one end of the scale, the highest gets the other, and everything in between is coloured by its position in the ranking regardless of how far apart the numbers are. Every colour in the scale is used, so differences are always visible.
+
+Proportional scales the colours to the size of the values. A cell twice as large gets a colour twice as far along the scale. This is truthful about magnitude, but when a few outliers dominate, everything else collapses into the same colour — the Preview in the Color settings window shows this clearly: with Proportional, the values 1 to 5 all look identical while 100 stands alone.
+
+Use Ranked when you want to compare and sort — to see which cells are the worst regardless of scale. Use Proportional when the size of the difference is the point, and you want a handful of dominant cells to stand out as dominant.
+
+If a heatmap looks almost uniformly one colour, switching from Proportional to Ranked usually brings the pattern back.

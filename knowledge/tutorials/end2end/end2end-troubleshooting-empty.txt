@@ -1,0 +1,18 @@
+---
+topic: Why an End2End column shows dashes or no data in Inact Now
+source_type: tutorial
+language: english
+keywords: no data, dash, empty, nothing shown, missing products, troubleshooting, why is it empty
+product_area: End2End
+question_type: troubleshooting
+---
+
+If tiles in an End2End view show a dash ("–") instead of a number, or a column looks empty, work through these causes in order:
+
+A selection elsewhere in the chain. This is by far the most common reason. If you have selected buckets in another column, only records connected to that selection are counted, and unconnected buckets correctly show a dash. Click Reset next to the column heading with the selection to clear it.
+
+The Unique setting. With Unique switched on, only records tied exclusively to your selection are counted, which can empty a column that looked well populated a moment earlier. Click Unique again to switch it off.
+
+A slicer or filter. Open the info icon next to the view name, or hover the info icon next to the column heading, to see the active filters and slicers. A filter is the more likely culprit for surprisingly low relation counts, because filters remove records before the relations are built at all.
+
+Genuinely no relation in the data. If none of the above applies, the records really are not connected in the underlying data — for example a supplier with no sales history behind its items. That is a data question for your Inact administrator rather than a setting in the view.

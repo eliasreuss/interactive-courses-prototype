@@ -1,0 +1,19 @@
+---
+topic: Indkøbs indflydelse på rentabilitet
+source: Suppliers Intro
+source_type: course
+language: danish
+product_area: supplier
+question_type: why
+keywords:
+- indkøb
+- profitcenter
+- DuPont-modellen
+- ROCE
+- strategisk indkøb
+- økonomisk belønning
+- afkast af kapital
+- forsyningskæde
+---
+
+Strategisk indkøb spiller en afgørende rolle i at øge en virksomheds rentabilitet ved at fungere som et profitcenter i stedet for blot en omkostningsfunktion. DuPont-modellen viser, at effektive indkøbsbeslutninger direkte kan forbedre virksomhedens afkast af den investerede kapital (ROCE). Ved at optimere leverandørrelationer, forhandle bedre vilkår og reducere omkostninger øger indkøb både marginer og aktivernes effektivitet, hvilket samlet set styrker den finansielle præstation. Dette strategiske skifte i indkøbsfunktionen fører til målbare økonomiske gevinster for organisationen.

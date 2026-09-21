@@ -1,0 +1,19 @@
+---
+topic: Next Steps After Double ABC Analysis
+source: Double Abc Analysis 4
+source_type: course
+language: english
+product_area: inventory
+question_type: what
+keywords:
+- Double ABC Analysis
+- stock policy
+- inventory management
+- stock decisions
+- order quantity
+- item selection
+- Insights
+- Actions
+---
+
+After completing Double ABC Analysis, the next steps involve using its insights to make key inventory decisions. These include determining which items to stock, how much of each item to keep on hand, and the optimal order quantities. The upcoming Stock Policy course will focus on applying Double ABC Analysis results to decide which items to continue stocking, which to reduce, and which to phase out, ensuring inventory aligns with business value and operational goals.

@@ -1,0 +1,19 @@
+---
+topic: Grundlæggende om ABC-analyse
+source: Double Abc Analysis 4
+source_type: course
+language: danish
+product_area: inventory
+question_type: what
+keywords:
+- ABC-analyse
+- Pareto-princippet
+- lagerstyring
+- A-varer
+- B-varer
+- C-varer
+- 80/20-reglen
+- lagerværdi
+---
+
+ABC-analyse er en lagerstyringsteknik, der kategoriserer varer efter deres betydning, typisk ved hjælp af Pareto-princippet eller 80/20-reglen. Dette princip antyder, at en lille andel af varerne, kendt som A-varer, står for størstedelen af den samlede lagerværdi eller omsætning. De resterende varer, klassificeret som B- og C-varer, bidrager langt mindre til den samlede værdi. Ved at fokusere på de få væsentlige (A-varer) frem for de mange mindre vigtige (B- og C-varer), kan organisationer prioritere ressourcer og ledelsesindsats for at opnå størst mulig effekt.

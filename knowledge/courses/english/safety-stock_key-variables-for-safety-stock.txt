@@ -1,0 +1,18 @@
+---
+topic: Key Variables for Safety Stock
+source: Safety Stock
+source_type: course
+language: english
+product_area: inventory
+question_type: what
+keywords:
+- safety stock
+- variance
+- optimal level
+- inventory management
+- supply chain
+- product
+- stock calculation
+---
+
+Establishing the optimal level of safety stock for a product involves analyzing three key variables. These variables help determine how much extra inventory should be kept on hand to protect against uncertainties in demand and supply. By carefully evaluating each variable, organizations can set safety stock levels that minimize the risk of stockouts while avoiding excessive inventory. The process begins with understanding variance, which measures the unpredictability in demand or supply, and continues with assessing the other critical factors that influence safety stock requirements.

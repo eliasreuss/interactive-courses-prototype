@@ -1,0 +1,18 @@
+---
+topic: Oversigt over leverandørpræstationssporing
+source: Suppliers Intro
+source_type: course
+language: danish
+product_area: supplier
+question_type: what
+keywords:
+- Leverandørpræstation
+- Inact Now
+- leveringspræstation
+- lageromsætningshastighed
+- forbrug pr. leverandør
+- benchmarking
+- præstationsstyring
+---
+
+Sporing af leverandørpræstation indebærer overvågning af nøglemålepunkter såsom leveringspræstation, lageromsætningshastighed og forbrug pr. leverandør. Ved hjælp af Inact Now kan organisationer indsamle og analysere disse datapunkter for at vurdere, hvor godt leverandørerne lever op til forventningerne. Benchmarking gør det muligt for virksomheder at sammenligne leverandørernes målinger med branchens bedste standarder, hvilket hjælper med at identificere områder, hvor leverandørerne enten udmærker sig eller underpræsterer. Håndtering af dårlig præstation sikrer løbende forbedringer og styrker den samlede forsyningskæde.

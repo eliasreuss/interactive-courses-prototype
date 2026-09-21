@@ -1,0 +1,19 @@
+---
+topic: Slicers and Filters Overview
+source: Now Insights
+source_type: course
+language: english
+product_area: platform
+question_type: what
+keywords:
+- slicers
+- filters
+- data segmentation
+- Insights
+- data display
+- parameters
+- views
+- data points
+---
+
+Slicers and filters are tools that help you control which data is shown in your Insights by segmenting information based on selected parameters. They allow you to focus on specific subsets of data, making it easier to analyze relevant information and reduce distractions from unrelated data. The available slicers and filters depend on the particular insight you are viewing, and you can typically apply them to a wide range of data points to customize your analysis.

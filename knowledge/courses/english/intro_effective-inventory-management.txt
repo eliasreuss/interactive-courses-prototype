@@ -1,0 +1,19 @@
+---
+topic: Effective Inventory Management
+source: Intro
+source_type: course
+language: english
+product_area: inventory
+question_type: what
+keywords:
+- inventory
+- reorder points
+- reorder quantities
+- capital
+- stock
+- inventory management
+- optimal
+- products
+---
+
+Effective inventory management involves maintaining the right products in stock by determining optimal reorder points and quantities. This approach ensures that customer demand is met without tying up excessive capital in inventory. The goal is to balance product availability with cost efficiency, minimizing both stockouts and overstock situations.

@@ -1,0 +1,25 @@
+---
+topic: Sikkerhedslager
+source_type: glossary
+language: danish
+keywords: Sikkerhedslager, Safety Stock, efterspørgsel, levering, opretholde, produktion, varer, ændringer, anvendes
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Sikkerhedslager
+term_en: Safety Stock
+url: https://inact.io/ordbog/sikkerhedslager/
+---
+
+Sikkerhedslager — English: Safety Stock
+Sikkerhedslager er en buffer af varer, der opbevares ud over den normale efterspørgselsmængde for at sikre, at produktion og levering kan fortsætte, selv hvis der opstår forsinkelser eller uforudsete ændringer i efterspørgslen.
+Hvad er et sikkerhedslager?
+Det er en planlagt lagerbeholdning, der fungerer som en beskyttelse mod risiko i supply chain. Et sikkerhedslager hjælper med at opretholde serviceniveauer og undgå udsolgte varer, samtidig med at man kan reagere fleksibelt på ændringer i leveringstid eller efterspørgsel.
+Hvorfor har man et sikkerhedslager?
+Man bruger sikkerhedslager til at minimere risikoen for driftsstop og tabt salg. Det giver mulighed for at opretholde kontinuitet i produktion og levering uden at binde unødvendig kapital, når det kombineres med optimale planlægningsparametre.
+Hvornår er et sikkerhedslager relevant?
+Sikkerhedslager anvendes især i situationer med:
+Variabel efterspørgsel eller usikker forecast
+Lange eller ustabile leveringstider fra leverandører
+Højt serviceniveau som strategisk mål
+Produkter med høj værdi eller kritisk betydning i produktionen

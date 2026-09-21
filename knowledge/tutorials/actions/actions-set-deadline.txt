@@ -1,0 +1,16 @@
+---
+topic: How to set a deadline for an Action list in Inact Now
+source_type: tutorial
+language: english
+keywords: deadline, due date, edit deadline, remove deadline, action list
+product_area: Actions
+question_type: how-to
+---
+
+You can set a target completion date on any Action list to track when work should be finished.
+
+Open the Action list and click the gear icon in the top right corner. Choose Edit deadline from the dropdown.
+
+A date picker appears showing the current deadline (if one exists). Click the date field and type or select a new date in the format shown. Click Save to confirm.
+
+To remove an existing deadline, open the same window and click Remove deadline.

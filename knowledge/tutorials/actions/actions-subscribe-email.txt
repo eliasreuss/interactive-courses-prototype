@@ -1,0 +1,16 @@
+---
+topic: How to subscribe to email updates for an Action list in Inact Now
+source_type: tutorial
+language: english
+keywords: subscribe, email notification, alert, status update, daily report, new item alert, envelope
+product_area: Actions
+question_type: how-to
+---
+
+You can receive email updates about an Action list so you stay informed without having to check it manually.
+
+Open the Action list, then click the envelope icon in the toolbar on the right side of the page. The Subscribe to Action window opens.
+
+There are two subscription options. Tick Action Subscription to receive a regular status email. Use the dropdown below it to choose how often you receive it — for example, "Daily (Monday-Friday) at 8:00". Tick Alert mail to receive a notification each time a new item is added to the list.
+
+You can enable one or both options. Click Subscribe to save. To stop receiving emails, return to the same window, untick the options, and save again.

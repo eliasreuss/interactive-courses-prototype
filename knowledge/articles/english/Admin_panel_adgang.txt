@@ -1,0 +1,9 @@
+---
+topic: Admin Panel
+source_type: article
+language: english
+article_source: Inact Now Admin Panel Guide
+keywords: access to admin panel, permission, log in, find admin panel, support@inact.io
+---
+
+To access the Inact Now Admin Panel, you first need the necessary permission. If you don't have it, please contact your Inact consultant or Inact Support at Support@inact.io. Once you have the permission, log in to your Inact Now account. The "Admin Panel" icon will be visible in the main menu on the right. Click on the icon to open the Admin Panel. If you've just gained access, you may need to log out and log back in to see the icon.

@@ -1,0 +1,18 @@
+---
+topic: How to edit an Action list's status layout using the pencil icon in the status bar in Inact Now
+source_type: tutorial
+language: english
+keywords: edit layout, pencil icon, status bar, not completed, completed, add category, standard layout
+product_area: Actions
+question_type: how-to
+---
+
+Inside an open Action list, click the pencil icon (✏️) next to the status buttons in the status bar to open the Edit layout dialog directly, without going through Manage layouts.
+
+The dialog shows:
+A Not completed section — the first status, with a lock icon since it can't be deleted or reordered, plus its color swatch and name field.
+One or more Completed sections — each with a drag handle, color swatch, name field, an up/down reorder control, and a trash icon to delete it.
+A + Add category button to add another completed status.
+An "Or use a standard layout" dropdown to switch the whole list to a previously saved layout instead of editing this one manually.
+
+Click Save and update to apply the changes, or Close to discard them.

@@ -1,0 +1,11 @@
+---
+topic: Indkøbsparametre
+source_type: article
+language: danish
+article_source: 5 anbefalinger til hvordan du undgår store økonomiske tab
+keywords: indkøb, lagerniveauer, sikkerhedslager, aftræksmønster, Inact Now
+---
+
+1. Tilpas lagerniveauer til lavere efterspørgsel og usikkerhed. 
+2. Stram styring og opdater sikkerhedslager regelmæssigt. 
+3. Inact Now overvåger aftræksmønsteret dagligt og giver besked om afvigelser.

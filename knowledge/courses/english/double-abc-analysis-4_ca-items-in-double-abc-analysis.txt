@@ -1,0 +1,20 @@
+---
+topic: CA Items in Double ABC Analysis
+source: Double Abc Analysis 4
+source_type: course
+language: english
+product_area: inventory
+question_type: what
+keywords:
+- Double ABC Analysis
+- CA items
+- inventory cost
+- high demand
+- customer experience
+- inventory management
+- production
+- critical items
+- low cost
+---
+
+CA items in Double ABC Analysis are inventory items characterized by low cost but high demand. These items, such as paperclips or screws used in production, are often overlooked due to their minimal individual value. However, they play a critical role in ensuring smooth operations and maintaining a positive customer experience. Despite their low cost, their high usage frequency makes them essential to keep in stock, as shortages can disrupt production or service delivery.

@@ -1,0 +1,14 @@
+---
+topic: How to rename an End2End view in Inact Now
+source_type: tutorial
+language: english
+keywords: rename, change name, edit title, pencil icon, view name
+product_area: End2End
+question_type: how-to
+---
+
+Open the End2End view and click the small pencil icon just to the right of the view name at the top of the page. A Change name window opens with a Name field containing the current name.
+
+Type the new name and click Save, or click Cancel to leave it unchanged. The new name applies immediately and is what colleagues will see in the End2End library.
+
+Because views are shared, pick a name that describes the analysis rather than the person — "Single-source risk, EU suppliers" is more useful to the next colleague than "Elias test".

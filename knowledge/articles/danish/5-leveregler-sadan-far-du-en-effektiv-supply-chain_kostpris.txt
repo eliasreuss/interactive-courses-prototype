@@ -1,0 +1,9 @@
+---
+topic: Kostpris
+source_type: article
+language: danish
+article_source: 5 leveregler  sådan får du en effektiv supply chain
+keywords: kostpris, ordremængde, ABC-kategorier, efterspørgsel
+---
+
+4. Kostpris: Virksomheden bør se kritisk på ordremængden mod efterspørgslen, især på C-varerne, for at undgå at binde sig til svært afsættelige mængder.

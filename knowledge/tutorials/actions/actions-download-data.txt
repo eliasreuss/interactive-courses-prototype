@@ -1,0 +1,16 @@
+---
+topic: How to download data from an Action list in Inact Now
+source_type: tutorial
+language: english
+keywords: download, export, data, Action list, Excel, copy, clipboard
+product_area: Actions
+question_type: how-to
+---
+
+You can export the data from an Action list to use it outside the platform.
+
+Open the Action list and expand the status section you want to download. In the toolbar at the top right, click the download icon (the downward arrow icon). The data from the currently visible items will be downloaded.
+
+To copy the data to your clipboard instead, click the copy icon next to the download icon. You can then paste it into a spreadsheet.
+
+If you have specific rows selected using checkboxes, the download and copy icons will show a count — for example, "Copy (1)" — and will only include the selected rows. If nothing is selected, all visible rows are included.

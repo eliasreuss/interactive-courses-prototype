@@ -1,0 +1,18 @@
+---
+topic: How to drill down by selecting buckets in an End2End view in Inact Now
+source_type: tutorial
+language: english
+keywords: select bucket, click tile, drill down, filter chain, multi select, cascade, which customers buy from which suppliers
+product_area: End2End
+question_type: how-to
+---
+
+Selecting buckets is the main way of working in an End2End view. Click the header of any tile — in any of the three columns — and it is selected: a green checkmark appears in its header and the rest of the chain recalculates around it.
+
+When you select the A bucket in Suppliers, for example, everything else updates: the Products column now shows only the products those A-suppliers deliver, the Customers column shows only the customers buying those products, the relation counts between the columns drop accordingly, and the summary card at the top of each column is recalculated. Buckets that no longer contain anything show a dash.
+
+You can select more than one bucket in the same column — click A and then B, and the view covers both. The summary card then shows the combined value for the selection.
+
+The chain works in both directions. Selecting Turnaround in the Customers column shows which products those customers buy and which suppliers deliver them, which is the natural way to answer questions like "who supplies the products my worst customers depend on?".
+
+To undo, click a selected tile again to deselect it, or use the Reset link that appears next to the column heading to clear that column's selection in one click.

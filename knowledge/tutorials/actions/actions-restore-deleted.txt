@@ -1,0 +1,14 @@
+---
+topic: How to see and restore deleted Action lists in Inact Now
+source_type: tutorial
+language: english
+keywords: deleted action lists, restore, recover, see deleted, undo delete
+product_area: Actions
+question_type: how-to
+---
+
+When an Action list is deleted, it is not permanently removed right away. You can view and recover it for a period of time.
+
+From the Actions library page, scroll to the bottom and click See Deleted Action lists. The button shows a count of how many deleted lists are available — for example, "See Deleted Action lists (2)".
+
+A view opens showing the deleted lists. From here you can restore any list to bring it back to the active library. If you choose not to restore it, it will eventually be permanently removed.

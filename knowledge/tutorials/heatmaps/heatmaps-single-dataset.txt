@@ -1,0 +1,16 @@
+---
+topic: What the Single Dataset option does when creating a Heatmap in Inact Now
+source_type: tutorial
+language: english
+keywords: single dataset, single bucket, one data source, cross two columns, country against categorisation
+product_area: Heatmaps
+question_type: concept
+---
+
+In the Create Heatmap window, the Single Dataset checkbox changes what the heatmap crosses.
+
+Unticked (the normal case), you pick two different data sources — a Vertical Dataset and a Horizontal Dataset — and the heatmap crosses a column from one against a column from the other. This is what lets you see suppliers against products.
+
+Ticked, the two dataset dropdowns are replaced by one Select Dataset dropdown, and both the Vertical column and the Horizontal column are chosen from that same data source. The heatmap then cross-tabulates two attributes of the same records — for example supplier Country against Supplier Categorization, to see where your weak suppliers are located, or product Item Group against Double ABC.
+
+Heatmaps built this way are often named "single bucket" heatmaps in the library. Use them when the question is about one part of the chain rather than the relationship between two parts.

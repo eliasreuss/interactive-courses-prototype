@@ -1,0 +1,19 @@
+---
+topic: Reorder Point Calculation
+source: Reorder Point
+source_type: course
+language: english
+product_area: inventory
+question_type: how
+keywords:
+- reorder point
+- average consumption
+- lead time
+- safety stock
+- stockout
+- inventory
+- supplier
+- demand variability
+---
+
+The reorder point is calculated by multiplying your average daily product consumption by your supplier's lead time in days. This gives the number of units you expect to sell while waiting for a new delivery. To prevent stockouts caused by unexpected increases in demand or supplier delays, you add safety stock to this number. The complete formula is: Reorder Point = (Average Daily Consumption x Lead Time) + Safety Stock. Including safety stock ensures you reorder early enough to maintain inventory even when sales or delivery times fluctuate.

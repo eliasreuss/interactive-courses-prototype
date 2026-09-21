@@ -1,0 +1,29 @@
+---
+topic: Bestillingspunkt
+source_type: glossary
+language: danish
+keywords: Bestillingspunkt, Reorder point, bruger, inden, lageret, lagerstyring, modtager, servicegrad, sikre
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Bestillingspunkt
+term_en: Reorder point
+url: https://inact.io/ordbog/bestillingspunkt/
+---
+
+Bestillingspunkt — English: Reorder point
+Bestillingspunktet (også kendt som Reorder Point eller ROP) er et centralt begreb inden for lagerstyring og supply chain management. Det definerer det præcise lagerniveau, der automatisk udløser en ny bestilling for at genopfylde lageret. Formålet er at sikre, at man modtager nye varer, inden man risikerer at løbe tør, og dermed opretholde en høj servicegrad uden at binde unødig kapital.
+Hvad er et bestillingspunkt?
+Et bestillingspunkt er en dynamisk buffer, der sikrer, at du ikke løber tør for en vare i perioden fra du bestiller den, til du modtager den igen.
+Det er en kritisk balance mellem:
+Risikoen for at en vare er udsolgt: At skuffe kunder og miste salg.
+Omkostningen ved lagerbinding: At have for mange penge bundet i varer, der optager plads og ikke sælger.
+Et korrekt sat bestillingspunkt er fundamentet for en effektiv og automatiseret lagerstyring.
+Hvad bruger man et bestillingspunkt til?
+Man bruger et bestillingspunkt til at automatisere og standardisere genbestillingsprocessen.
+Det fungerer som en alarmklokke, der fortæller systemet eller indkøberen: "Nu er det tid til at bestille flere af denne vare."
+De primære formål er at:
+Sikre en høj servicegrad og kundetilfredshed.
+Minimere kapitalbinding i lageret.
+Reducere manuel overvågning og frigøre tid for indkøbsafdelingen.
+Skabe et stabilt og forudsigeligt flow i forsyningskæden.

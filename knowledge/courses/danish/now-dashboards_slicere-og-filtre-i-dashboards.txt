@@ -1,0 +1,19 @@
+---
+topic: Slicere og filtre i Dashboards
+source: Now Dashboards
+source_type: course
+language: danish
+product_area: platform
+question_type: how
+keywords:
+- Dashboards
+- Insights
+- Slicere
+- Filtre
+- segmentering af data
+- brugerdefineret filter
+- faste slicere
+- datavisning
+---
+
+Dashboards giver brugerne mulighed for at segmentere og analysere data på samme måde som i Insights ved hjælp af slicere og filtre. Faste slicere er altid tilgængelige øverst på dashboard-skærmen og gør det nemt at segmentere efter foruddefinerede kategorier. Derudover kan brugerne tilføje brugerdefinerede filtre for yderligere at finjustere de viste data, så de kan fokusere på netop de informationer eller nøgletal, de har brug for. Denne fleksibilitet gør det muligt for brugerne at tilpasse deres dashboard-visning, så den matcher deres unikke analysebehov.

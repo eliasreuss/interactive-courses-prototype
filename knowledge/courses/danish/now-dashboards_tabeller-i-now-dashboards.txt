@@ -1,0 +1,19 @@
+---
+topic: Tabeller i Now Dashboards
+source: Now Dashboards
+source_type: course
+language: danish
+product_area: platform
+question_type: what
+keywords:
+- Tabeller
+- Dashboards
+- KPI'er
+- ABC-kategorier
+- indkøber
+- produktliste
+- bedst sælgende varer
+- datagruppering
+---
+
+Tabeller i Now Dashboards præsenterer nøgletal (KPI'er) organiseret efter forskellige kategorier. Disse kategorier kan omfatte ABC-klassifikationer, som segmenterer lageret baseret på værdi eller vigtighed, eller efter den ansvarlige indkøber for varerne. Tabeller kan også vise data på produktniveau, for eksempel ved at liste de ti bedst sælgende produkter. Denne strukturerede præsentation hjælper brugerne med hurtigt at analysere præstationsmålinger og identificere tendenser eller områder, der kræver opmærksomhed.

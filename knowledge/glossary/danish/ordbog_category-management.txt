@@ -1,0 +1,28 @@
+---
+topic: Category Management (Kategoristyring)
+source_type: glossary
+language: danish
+keywords: Category Management (Kategoristyring), Category Management, management, category, strategisk, omkostninger, varer, bedre, bruger, bruges
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Category Management (Kategoristyring)
+term_en: Category Management
+url: https://inact.io/ordbog/category-management/
+---
+
+Category Management (Kategoristyring)
+Category Management er en strategisk tilgang, der organiserer og styrer produkter eller tjenester i logiske grupper (kategorier) for at maksimere den samlede værdi for virksomheden. I Supply chain management bruges det primært i strategisk indkøb til at optimere leverandørbasen, reducere omkostninger og styre risiko på tværs af hele kategorien af varer eller tjenester.
+Hvad er Category Management?
+Category Management er en holistisk metode, der erstatter individuelle indkøbstransaktioner med en strategisk styring af hele indkøbskategorier. I stedet for at forhandle med leverandører om enkelte produkter, samles alle relaterede varer (f.eks. alle IT-ydelser, alle emballagetyper eller alle råvarer) i én kategori.
+Målet er at opnå:
+Større købekraft: Ved at samle volumen på tværs af organisationen.
+Reducerede omkostninger: Gennem standardisering og optimerede kontrakter.
+Bedre risikostyring: Ved at diversificere leverandørbasen for kritiske kategorier.
+Hvad bruger man Category Management til?
+Man bruger Category Management til at udvikle indkøbsfunktionen fra en administrativ opgave til en strategisk værdidriver. Det primære formål er at opnå Total Cost of Ownership (TCO) reduktioner og forbedre leverandørperformance.
+Konkret bruges det til at:
+Opnå TCO-reduktioner: Ved at se på de samlede omkostninger (indkøbspris, lageromkostninger, transport, kvalitet) frem for kun enhedsprisen.
+Forbedre leverandørrelationer: Ved at etablere langsigtede, strategiske partnerskaber med færre, men bedre, leverandører.
+Standardisere sortimentet: Reducere kompleksiteten ved at minimere antallet af forskellige varer inden for samme kategori.
+Styre risiko: Identificere og håndtere risici relateret til forsyningssikkerhed og geopolitiske faktorer.

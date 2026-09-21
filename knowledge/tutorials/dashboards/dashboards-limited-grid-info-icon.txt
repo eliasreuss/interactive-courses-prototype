@@ -1,0 +1,12 @@
+---
+topic: The info icon on Limited Grid table tabs in Inact Now dashboards
+source_type: tutorial
+language: english
+keywords: limited grid, info icon, tab tooltip, row limit, table tab
+product_area: Dashboards
+question_type: concept
+---
+
+Some table sub-tabs show an ℹ️ icon next to their title in edit mode. This only appears on Limited Grid tabs — tables configured to show only the top or bottom N rows. Hovering or clicking the ℹ️ icon shows a tooltip describing the limit, for example "Top 25 based on Total Consumption Units 12 mos." along with the data source, for example "⊞ Products".
+
+Standard Dashboard table tabs (with no row limit) do not show this info icon.

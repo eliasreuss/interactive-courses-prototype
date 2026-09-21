@@ -1,0 +1,19 @@
+---
+topic: Håndtering af særlige varekategorier
+source: Double Abc Analysis 4
+source_type: course
+language: danish
+product_area: inventory
+question_type: what
+keywords:
+- Dobbelt ABC-analyse
+- særlige kategorier
+- nye produkter
+- udgåede varer
+- strategiske varer
+- Inact Now
+- klassifikationer
+- lagerstyring
+---
+
+Inden for lagerstyring passer nogle varer ikke problemfrit ind i de standardiserede Dobbelt ABC-analyse kategorier. For eksempel kan nye produkter fremstå som lavt præsterende, simpelthen fordi de endnu ikke har haft tid nok til at generere salg, selvom de har stort potentiale. For at håndtere sådanne tilfælde udvider Inact Now de typiske ni Dobbelt ABC-kategorier med fem ekstra klassifikationer. Disse ekstra kategorier er udviklet til at fange særlige tilfælde som nye, udgåede eller strategiske varer, hvilket muliggør en mere nuanceret analyse og beslutningstagning.

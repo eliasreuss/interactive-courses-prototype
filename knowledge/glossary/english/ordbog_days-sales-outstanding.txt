@@ -1,0 +1,49 @@
+---
+topic: Days Sales Outstanding (DSO)
+source_type: glossary
+language: english
+keywords: Days Sales Outstanding (DSO), company, inventory, payment, customers, customer, capital, terms, companies
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Days Sales Outstanding (DSO)
+term_en: Days Sales Outstanding (DSO)
+url: https://inact.io/en/glossary/days-sales-outstanding/
+---
+
+Days Sales Outstanding (DSO)
+Days Sales Outstanding (DSO) is a metric that measures how many days, on average, a company takes to collect payment from customers after issuing an invoice. DSO is used to assess a company's liquidity and cash flow. A high DSO typically means customers are paying slowly, while a low DSO usually indicates faster payment and improved cash flow.
+What does DSO actually mean?
+In practice, DSO shows how long a company's capital is tied up in accounts receivable. If a company issues an invoice today but doesn't receive payment until 60 days later, that capital remains tied up until the customer pays the invoice.
+DSO is therefore commonly used to analyze payment terms, customer behavior, cash flow, credit management, and working capital.
+The longer customers take to pay, the longer the company itself has to finance inventory, operations, and the flow of goods. DSO is closely linked to the cash conversion cycle, since customer payment time is a key part of the period during which capital remains tied up across the value chain.
+DSO is in fact one of three components of the cash conversion cycle — alongside DIO (Days Inventory Outstanding), which shows how long goods sit in inventory, and DPO (Days Payable Outstanding), which shows how long the company itself takes to pay its suppliers.
+The longer goods sit in inventory, and the longer customers take to pay, the longer it takes for the company to get its money back — unless it can hold off paying its own suppliers for a similarly long time.
+Inventory also plays an important role, because companies with high inventory levels and a high DSO often face a double squeeze on liquidity — first through inventory build-up, then through slow customer payments.
+Less accurate forecasts and large seasonal swings also play a role, since they often affect inventory build-up, lead times, and customer payments at the same time.
+Formula: How do you calculate DSO?
+Days Sales Outstanding is typically calculated as:
+DSO = (Accounts Receivable / Revenue) × Number of Days
+Note: the most accurate calculation uses credit sales — sales made on credit — rather than total revenue. If a company has a significant share of cash sales, calculating DSO based on total revenue will understate the result.
+Example:
+Accounts receivable: DKK 22 million
+Annual revenue: DKK 132 million
+DSO = (22 / 132) × 365 = 61 days
+This means the company collects payment, on average, 61 days after issuing an invoice. The lower the DSO, the faster cash is typically released back into the business.
+Why is DSO important to track?
+DSO matters because even profitable companies can run into liquidity problems if customers pay too slowly. When payments are delayed, the company can face increasing pressure on liquidity, working capital, inventory financing, credit facilities, and its ability to invest.
+This becomes especially critical for companies with large seasonal swings, high inventory levels, long lead times, large project orders, or many B2B customers with long payment terms.
+In these situations, companies may end up financing both inventory and customer credit at the same time — for example, when inventory is built up several months before the season starts, while key customers don't pay for another 60 to 75 days. The result is a double squeeze on liquidity.
+How companies work with DSO in practice
+A wholesaler of installation equipment experiences growing liquidity pressure throughout the year, even as revenue grows steadily. The pressure becomes especially clear after major seasonal deliveries in spring and autumn.
+When the company analyzes its DSO, the numbers show that payment terms vary significantly between customer groups. Some smaller customers pay within 30 days, while several of the largest B2B customers have negotiated payment terms of 75 days — at the same time as the company builds up inventory months ahead of deliveries to maintain a high service level.
+The result is that capital gets tied up twice in the same period: first in inventory, then in receivables, while the largest customers wait to pay.
+The company therefore starts working more deliberately with payment terms and invoicing. Going forward, payment terms are differentiated by customer size and payment history, and the largest project deliveries are split into staged invoicing instead of a single invoice at delivery. At the same time, follow-up is tightened on the segments where late payments have previously gone unnoticed.
+This doesn't solve every challenge at once. But the company gets far better control over how long its capital is actually tied up — and can plan liquidity based on customers' actual payment behavior rather than their agreed terms.
+What is a common mistake with DSO?
+A common mistake is focusing solely on reducing DSO as quickly as possible. Payment terms that are too strict can create friction in the sales process or strain relationships with strategically important customers. In some industries, larger customers simply expect longer payment terms.
+Many companies also underestimate how closely DSO is connected to the rest of the supply chain. If forecasts become less accurate, or lead times and inventory build-up change significantly, this can affect both invoicing and customer payments further down the value chain.
+How do you work with DSO in practice?
+Start by analyzing which customers, segments, or order types tie up the most capital for the longest period. Many companies only discover the real issues once DSO is broken down by customer type, industry, project orders, seasonal products, and geographic markets.
+From there, the company should analyze how forecasting, delivery, and invoicing are connected across the value chain. This typically requires linking data from sales, inventory, finance, and supply chain. Only then can the company see where capital is tied up, why it's tied up, and which decisions can reduce DSO without compromising customer relationships.
+Back to the glossary

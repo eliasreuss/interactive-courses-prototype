@@ -1,0 +1,20 @@
+---
+topic: Genbestillingsstrategier for CA- og AC-varer
+source: Reorder Quantity
+source_type: course
+language: danish
+product_area: inventory
+question_type: what
+keywords:
+- CA-varer
+- AC-varer
+- genbestillingsmængde
+- lageromsætningshastighed
+- kapitalbinding
+- overlager
+- dage på lager
+- høj volumen
+- lav volumen
+---
+
+Genbestillingsstrategier bør tilpasses typen af lagerførte varer. For CA-varer, som er billige og sælges i store mængder, er det hensigtsmæssigt at købe større partier ad gangen. Denne tilgang giver fordel af lavere enhedspriser, hurtige salg og minimale omkostninger ved at have overlager. Omvendt er AC-varer dyre, sælges langsomt og har uforudsigelig efterspørgsel. At købe store mængder af AC-varer kan binde betydelig kapital, sænke lageromsætningshastigheden og øge risikoen for at ligge inde med dyrt overlager. Derfor bør genbestillingsmængder tilpasses de enkelte varetypers karakteristika i stedet for at anvende én generel regel for alle produkter.

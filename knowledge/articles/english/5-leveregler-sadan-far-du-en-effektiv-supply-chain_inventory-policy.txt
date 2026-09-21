@@ -1,0 +1,9 @@
+---
+topic: Inventory Policy
+source_type: article
+language: english
+article_source: 5 leveregler  sådan får du en effektiv supply chain
+keywords: inventory, ABC categorization, stocking, risk management, cost reduction
+---
+
+1. Determine if items are Stocking Goods or Non-Stocking Goods. Convert selected Non-Stocking Goods to Stocking Goods to reduce inventory costs and risk of write-offs.

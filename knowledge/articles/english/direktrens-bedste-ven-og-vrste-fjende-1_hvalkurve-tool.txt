@@ -1,0 +1,11 @@
+---
+topic: Hvalkurve Tool
+source_type: article
+language: english
+article_source: Direktørens bedste ven og værste fjende (1)
+keywords: Hvalkurve, profitability, product, customer, visualization
+---
+
+1. The Hvalkurve tool visually represents a company's profit and loss based on product and customer composition.
+2. It helps identify which products and customers contribute to profitability.
+3. The tool assists in understanding where a company is making or losing money.

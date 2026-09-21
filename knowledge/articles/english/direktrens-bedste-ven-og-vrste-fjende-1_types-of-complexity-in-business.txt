@@ -1,0 +1,9 @@
+---
+topic: Types of Complexity in Business
+source_type: article
+language: english
+article_source: Direktørens bedste ven og værste fjende (1)
+keywords: IT complexity, project overload, KPIs, value chain, business survival
+---
+
+Business complexity manifests in various forms like IT systems overload, project bottlenecks, and excessive KPIs. Understanding complexity in the value chain is crucial for business survival and success.

@@ -1,0 +1,34 @@
+---
+topic: Customer Profitability Analysis
+source_type: glossary
+language: english
+keywords: Customer Profitability Analysis, Kundeprofitabilitetsanalyse, customer, analysis, costs, customers, profitability, service, pricing, sales
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Kundeprofitabilitetsanalyse
+term_en: Customer Profitability Analysis
+url: https://inact.io/en/glossary/customer-profitability-analysis/
+---
+
+Customer Profitability Analysis — Danish: Kundeprofitabilitetsanalyse
+Customer profitability analysis is a method for measuring the real earnings from an individual customer or a customer segment over a given period.
+What is a Customer Profitability Analysis?
+It is a data-driven approach that identifies which customers create the most value for the company and which potentially cost more to service than they contribute.
+Customer profitability analysis differs from traditional sales analysis, which focuses on revenue and gross margin, by including the hidden costs:
+Cost of Selling:
+Time spent on negotiation, travel, and administration.
+Cost of Serving (Supply Chain):
+This is the critical difference. It includes costs for frequent, small orders, special packaging requirements, inventory costs for maintaining a high safety stock for the customer, and expensive logistics solutions.
+In short: the analysis measures the real value of the customer relationship by subtracting all resource consumption from the revenue. This provides an honest picture of whether the customer is a profit driver or a cost driver.
+What is a Customer Profitability Analysis used for?
+The analysis is used to make strategic decisions about customer relationships, service levels, and pricing.
+It helps with, among other things:
+Differentiated Service Level:
+Determining which customers should be offered the highest service level (e.g., fast delivery, dedicated inventory) and which should receive a more cost-effective offer.
+Pricing and Discounts:
+Ensuring that pricing reflects the real costs of serving the customer.
+Optimization of Sales Effort:
+Shifting sales resources from non-profitable customers to customers with high potential.
+Improve Supply Chain Efficiency:
+Identifying inefficient processes that drive up costs for specific customer segments (e.g., many small orders).

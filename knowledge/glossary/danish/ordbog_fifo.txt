@@ -1,0 +1,40 @@
+---
+topic: FIFO (First-In, First-Out)
+source_type: glossary
+language: danish
+keywords: FIFO (First-In, First-Out), varer, først, altid, bliver, deres, lageret, værdi, forældede
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: FIFO (First-In, First-Out)
+term_en: FIFO (First-In, First-Out)
+url: https://inact.io/ordbog/fifo/
+---
+
+FIFO (First-In, First-Out)
+FIFO (First-In, First-Out) er et princip inden for lagerstyring og logistik. Navnet forklarer i sin enkelhed kernen i strategien: De varer, der først ankommer til lageret, skal også være de første, der forlader det igen. Selvom det lyder simpelt, er det en afgørende disciplin for at sikre, at virksomheden altid leverer friske produkter af høj kvalitet, samtidig med at man minimerer risikoen for økonomiske tab som følge af forældelse og spild.
+Hvad betyder FIFO?
+Princippet handler om at skabe et naturligt og logisk flow i lageret.
+En god måde at forstå FIFO på er ved at kigge på mælkekøleren i et supermarked; her fylder personalet op bagfra, så de ældste kartoner altid står forrest og bliver solgt først.
+I supply chain fungerer FIFO-princippet på samme måde. Ved konsekvent at bruge de ældste varer først, sikrer man, at produkter ikke får lov til at "samle støv" bagerst på en hylde, indtil de enten overskrider deres udløbsdato eller bliver forældet.
+Hvorfor er FIFO vigtigt i lagerstyring?
+Udover den fysiske håndtering har FIFO en direkte og mærkbar betydning for virksomhedens økonomi og kapitalbinding. De primære fordele, der kan være ved at implementere en konsekvent FIFO-strategi er:
+Minimering af spild:
+Ved at rotere lageret korrekt undgår man, at varer overskrider deres udløbsdato eller bliver forældede.
+Frigørelse af kapital:
+Du undgår at binde penge i ukurante varer, der mister deres værdi over tid.
+Højere produktkvalitet:
+Dine kunder modtager altid de nyeste og mest friske varer fra dit lager, hvilket øger kundetilfredsheden.
+Præcis værdiansættelse:
+I regnskabet giver FIFO et realistisk billede af lagerets værdi, da det resterende lager værdiansættes til de nyeste indkøbspriser.
+Hvornår er FIFO den rette lagerstrategi?
+Der kan være mange faktorer, der spiller ind i forhold til om FIFO er det rette for din virksomhed.
+Først og fremmest er FIFO ikke kun for fødevarer. Det er den foretrukne metode i mange brancher, hvor produktets levetid eller relevans er begrænset. Det kan være:
+Fødevarer og medicin:
+Hvor holdbarhedsdatoen er kritisk for sikkerhed og kvalitet.
+Mode og tekstil:
+Hvor sæsoner skifter, og "sidste års model" hurtigt mister værdi.
+Elektronik og tech:
+Hvor hurtig produktudvikling gør ældre komponenter forældede.
+Råvarer med risiko for dekomponering:
+Kemikalier eller materialer, der ændrer egenskaber over tid.

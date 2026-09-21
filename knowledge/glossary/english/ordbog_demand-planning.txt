@@ -1,0 +1,45 @@
+---
+topic: Demand Planning
+source_type: glossary
+language: english
+keywords: Demand Planning, Demand Planning (Efterspørgselsplanlægning), demand, planning, forecast, process, products, sales, inventory, supply
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Demand Planning (Efterspørgselsplanlægning)
+term_en: Demand Planning
+url: https://inact.io/en/glossary/demand-planning/
+---
+
+Demand Planning
+Demand Planning is the strategic and cross-functional process aimed at forecasting future customer demand. It ensures that the company has the right products in the right place at the right time. Effective Demand Planning is the foundation for a robust supply chain, as it minimizes the risk of both stock-outs and overstocked warehouses, which directly impacts company profitability.
+What is Demand Planning?
+Demand Planning (also known as demand forecasting) is a central discipline within Supply Chain Management (SCM) that focuses on predicting and managing customer demand for products or services.
+It's a process that combines:
+Historical sales data
+Market data (e.g., from sales and marketing departments)
+Statistical models
+The goal is to create a consensus forecast – as accurate and objective a prediction as possible – that ensures production, purchasing, and inventory can meet expected demand.
+What is Demand Planning used for?
+Demand Planning is used to create optimal balance between supply and demand, which is fundamental to an effective supply chain.
+The primary purposes and benefits are:
+Inventory optimization: Reduce capital tied up in inventory and minimize the risk of obsolete goods while maintaining high customer service levels.
+Improved cash flow and liquidity: More accurate forecasts lead to better purchasing agreements, reduced waste, and stronger liquidity.
+Foundation for S&OP (Sales & Operations Planning): The demand plan is the critical input to the S&OP process, where sales, marketing, operations, and finance are synchronized to make strategic decisions.
+Efficient resource allocation: Ensure that production capacity, staffing, and other resources are available when demand peaks.
+When is Demand Planning particularly important?
+Demand Planning is a continuous process that typically runs in fixed cycles (e.g., monthly or weekly). It's particularly critical in the following situations:
+Seasonal fluctuations: For products with clear seasonal patterns (e.g., Christmas items, summer clothing) to ensure inventory is stocked in time and cleared after the season.
+Product launches (New Product Introduction - NPI): When introducing new products where there's no historical data, and planning is largely based on market analysis and comparable products.
+Campaigns and promotions: To assess the expected increase in demand resulting from marketing activities and ensure the supply chain can deliver without over-ordering.
+Volatile markets: During periods of great uncertainty or rapid changes in consumer behavior, where frequent forecast adjustments are necessary.
+How do you work with Demand Planning?
+Demand Planning typically follows a four-step process that ensures a consistent forecast:
+Data collection and cleansing:
+Gathering historical sales data, orders, inventory movements, and external factors (e.g., economic indicators, weather data). Data is cleansed of outliers (extreme values) caused by, for example, large one-time orders.
+Statistical baseline forecast:
+Application of statistical models (e.g., time series analysis, regression) to generate an objective, unadjusted forecast.
+Collaboration and adjustment (Demand Review):
+The statistical forecast is adjusted with market data from the sales department (customer insights), marketing (campaigns), and product development (new products). This creates the final consensus forecast.
+Measurement and feedback:
+Measuring forecast accuracy and analyzing deviations to identify causes and continuously improve the Demand Planning process.

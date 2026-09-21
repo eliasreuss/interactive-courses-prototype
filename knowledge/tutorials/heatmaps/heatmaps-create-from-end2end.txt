@@ -1,0 +1,19 @@
+---
+topic: How to create a Heatmap from an End2End view in Inact Now
+source_type: tutorial
+language: english
+keywords: create heatmap, new heatmap, vertical dataset, horizontal dataset, vertical column, horizontal column, slicers
+product_area: Heatmaps
+question_type: how-to
+---
+
+Open an End2End view and click the green Create Heatmap button at the top right. The Create Heatmap window opens with these fields:
+
+Single Dataset — a checkbox for crossing two columns from the same data source instead of two different ones. Leave it unticked for a normal supplier-against-product style heatmap.
+Vertical Dataset and Horizontal Dataset — which data source goes down the side and which goes across the top, for example Suppliers and Products. A swap button between them switches the two.
+Vertical column and Horizontal column — the categorisation from each data source that becomes the rows and the columns, for example Supplier Categorization and Double ABC.
+Suppliers, Products and Customers slicer fields — optional slicers limiting the data that goes into the heatmap. Click the green + under a data source to add one.
+
+Click Create to build the heatmap, or Cancel to discard it. The new heatmap opens immediately and appears in the Heatmaps column of the End2End library.
+
+You can also start from the Heatmap button in a link area of the End2End view and choose New Heatmap there, which builds the heatmap on that specific relation.

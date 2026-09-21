@@ -1,0 +1,19 @@
+---
+topic: Understanding Dashboards
+source: Now Dashboards
+source_type: course
+language: english
+product_area: platform
+question_type: what
+keywords:
+- Dashboards
+- Insights
+- KPI
+- Widgets
+- Tables
+- trends
+- interactive
+- overview
+---
+
+A Dashboard is a focused tool designed to present key performance indicators (KPIs) and important trends in a single, easily accessible location. Each Dashboard is created with a specific purpose, drawing directly from relevant Insights to ensure the information displayed is meaningful. Dashboards are constructed using two main interactive components: Widgets, which visually represent data, and Tables, which organize detailed information. This structure allows users to quickly monitor and analyze the most critical aspects of their operations.

@@ -1,0 +1,38 @@
+---
+topic: Dobbelt ABC-analyse
+source_type: glossary
+language: danish
+keywords: Dobbelt ABC-analyse, Double ABC analysis, omsætning, volumen, abc-analyse, varer, dobbelt, giver, mange, ordrer
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Dobbelt ABC-analyse
+term_en: Double ABC analysis
+url: https://inact.io/ordbog/dobbelt-abc-analyse/
+---
+
+Dobbelt ABC-analyse — English: Double ABC analysis
+En dobbelt ABC-analyse er en metode, hvor du segmenterer din lagerbeholdning på tværs af to dimensioner på én gang — typisk omsætning eller fortjeneste over for volumen, leverandørrisiko eller servicegrad. Resultatet er en 3×3-matrix med ni segmenter, der giver dig et langt mere præcist billede af, hvilke varer der fortjener din opmærksomhed, end en simpel ABC-analyse kan.
+Uden den tværgående segmentering risikerer du at behandle alle A-varer ens — selv om en A-vare med lavt volumen og en A-vare med højt volumen stiller helt forskellige krav til din indkøbsstrategi.
+Hvad er forskellen på en simpel og en dobbelt ABC-analyse?
+En simpel ABC-analyse rangerer dine varer efter én variabel — oftest omsætning — og deler dem i tre grupper: A (top 70-80 %), B (næste 15-20 %) og C (de resterende). Det er nyttigt, men det giver dig kun ét perspektiv.
+En dobbelt ABC-analyse lægger to variable oven på hinanden. Du laver én ABC-inddeling på omsætning og én på eksempelvis volumen, og krydser dem i en 3×3-matrix. Det giver ni kombinationer — fra AA til CC — og dermed en segmentering du rent faktisk kan handle på.
+En vare kan sagtens være A på omsætning og C på volumen. Det er to vidt forskellige situationer, og de kræver to vidt forskellige strategier.
+Hvilke variabler kombinerer man typisk?
+De mest brugte kombinationer er:
+Omsætning × volumen (antal ordrelinjer): Skelner mellem varer, der skaber høj omsætning med få, store ordrer, og varer, der belaster din indkøbsproces med mange, små ordrer.
+Omsætning × leverandørrisiko: Identificerer varer, der både er forretningskritiske og forsyningssårbare — kandidater til sikkerhedslager eller dual sourcing.
+Omsætning × servicegrad: Afslører, om du bruger for mange ressourcer på at sikre høj tilgængelighed på varer, der ikke retfærdiggør det.
+Valget af variabler afhænger af, hvad du vil optimere. Vil du reducere kapitalbinding, er volumen × omsætning oplagt. Vil du styre forsyningsrisiko, giver omsætning × leverandørrisiko mere mening.
+Hvordan bruger man resultatet af sin dobbelt ABC-analyse i praksis?
+Matrixen er ikke et analyseredskab — det er et beslutningsredskab. Hvert segment bør udløse en konkret strategi:
+AA-varer (høj omsætning, høj volumen): Tæt opfølgning, forhandlede rammeaftaler, stabil forsyningskæde.
+AC-varer (høj omsætning, lavt volumen): Kritiske varer med få ordrer — typisk kandidater til sikkerhedslager.
+CA-varer (lav omsætning, høj volumen): Mange ordrer, lille værdi — se på standardisering eller konsolidering hos færre leverandører.
+CC-varer (lav omsætning, lavt volumen): Kandidater til udfasning, just-in-time
+-indkøb eller konsignationslager.
+De fire hjørner er de tydeligste signaler. Mellemkategorierne kræver et skøn baseret på din specifikke forretning.
+Hvilke fejl laver man typisk med en dobbelt ABC-analyse?
+Den mest udbredte fejl er at lave analysen og derefter lade resultatet ligge. En 3×3-matrix skaber kun værdi, når den fører til konkrete beslutninger — ikke når den bruges til at bekræfte det, man allerede vidste.
+En anden klassisk fejl er at vælge variabler, der måler det samme. Omsætning og dækningsbidrag er tæt forbundne og giver sjældent ny indsigt i kombination. Vælg variabler, der faktisk måler noget forskelligt.
+Endelig undervurderer mange, at analysen skal holdes opdateret. En vare, der var AA for to år siden, er ikke nødvendigvis AA i dag. Markedsbetingelser, produktmix og kundeadfærd ændrer sig — og din segmentering skal følge med.

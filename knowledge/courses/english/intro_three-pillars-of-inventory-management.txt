@@ -1,0 +1,19 @@
+---
+topic: Three Pillars of Inventory Management
+source: Intro
+source_type: course
+language: english
+product_area: inventory
+question_type: what
+keywords:
+- inventory optimization
+- inventory management
+- departments
+- targets
+- organizational goals
+- supply chain
+- decision making
+- pillars
+---
+
+Inventory management is fundamentally based on addressing three core questions that guide optimization efforts. These questions are central to determining how much inventory to hold, when to replenish stock, and where inventory should be located. Although the questions themselves are straightforward, finding the right answers is complex because different departments within an organization may have varying objectives and priorities. Effective inventory management requires balancing these diverse targets to ensure overall company success.

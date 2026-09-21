@@ -1,0 +1,17 @@
+---
+topic: How to use the Set limit field in an Insight's Setup panel in Inact Now
+source_type: tutorial
+language: english
+keywords: set limit, top rows, bottom rows, limit results, sort limit, row limit, setup panel
+product_area: Insights
+question_type: how-to
+---
+
+The "Set limit for this Insight" field, found in the Setup panel, controls whether the Insight shows only the top or bottom N rows, ranked by a specific column.
+
+Clicking the "Set limit" button expands three controls:
+Select column dropdown — pick the column to rank rows by. The list shows all columns currently in the Included list.
+Top / Bottom dropdown — choose "Top" to show the highest values, or "Bottom" to show the lowest.
+Number of rows dropdown — choose how many rows to show: "All rows", 5, 10, 25, 50, 75, or 100.
+
+After configuring, click the green checkmark to confirm, or the red X to cancel without changes.

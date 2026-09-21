@@ -1,0 +1,24 @@
+---
+topic: Contribution Margin
+source_type: glossary
+language: english
+keywords: contribution margin, dækningsbidrag, selling price, variable costs, profitability, product margin, assortment
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: Dækningsbidrag
+term_en: Contribution Margin
+---
+
+Contribution Margin — Danish: Dækningsbidrag
+Contribution margin is the amount left of the selling price once the variable costs of the item are deducted. It is the money the item contributes towards covering the company's fixed costs — and, beyond that, towards profit.
+How is contribution margin calculated?
+Contribution margin = selling price − variable costs.
+Variable costs are the ones that follow the individual item: purchase price or cost price, inbound freight, packaging, and any commission. Fixed costs such as rent, salaries and IT are not included.
+Sell an item for 500 that you bought for 300 and paid 20 to ship in, and the contribution margin is 180.
+Why does contribution margin matter in supply chain?
+Because revenue alone does not tell you whether an item is worth carrying. Two items can turn over the same amount and contribute very differently. When you categorise an assortment, contribution margin is therefore often a better variable than revenue — though be aware the two are closely correlated and rarely add new insight in combination.
+What contribution margin does not capture
+It takes no account of the costs the item triggers in the supply chain: many small orders, long time in stock, high tied-up capital, or expensive handling. An item with a healthy contribution margin can still be unprofitable once those are included. That is where cost-to-serve and product profitability come in.
+Contribution margin or contribution margin ratio?
+Contribution margin is an amount, the ratio is the same figure as a percentage. Use the amount when you want to know how much an item earns, and the percentage when comparing items at different price levels.

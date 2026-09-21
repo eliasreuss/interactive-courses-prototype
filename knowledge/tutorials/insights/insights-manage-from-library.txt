@@ -1,0 +1,24 @@
+---
+topic: How to manage an Insight from the library in Inact Now
+source_type: tutorial
+language: english
+keywords: insight options, library, move group, change owner, make private, subscribe, delete, dropdown
+product_area: Insights
+question_type: how-to
+---
+
+You can manage Insights directly from the library without opening them. First, expand a subgroup by clicking the ‹ arrow. Each Insight row has a ▾ dropdown button on the right side. Click it to see the following options:
+
+Edit Insight — opens the Insight in edit mode so you can change its setup, columns, and settings.
+
+Subscribe — sets up an email subscription to receive this Insight by email on a recurring schedule.
+
+Move to group — moves the Insight to a different group or subgroup in the library.
+
+Change owner — reassigns the Insight to a different user.
+
+Make private — changes the Insight's visibility to Private so only you can see it (or toggles it back to Public).
+
+Copy Insight — creates a duplicate of the Insight that you can modify independently.
+
+Delete — permanently removes the Insight. This cannot be undone.

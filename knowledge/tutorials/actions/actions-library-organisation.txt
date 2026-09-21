@@ -1,0 +1,16 @@
+---
+topic: How the Actions library is organised in Inact Now
+source_type: tutorial
+language: english
+keywords: actions library, groups, subgroups, Inventory, Category Management, Unsorted, organise
+product_area: Actions
+question_type: concept
+---
+
+The Actions library page shows all Action lists organised in a two-level group structure. At the top level you see master groups such as Inventory or Products — these represent broad categories that match your data domains. Each master group expands to show subgroups like Category Management or Unsorted, and the Action lists sit inside those subgroups.
+
+Each group row shows a number badge (how many Action lists are inside) and a name. Click the arrow on the right to collapse or expand any group. The Collapse all and Open all links at the top let you manage all groups at once.
+
+Each Action list row shows: the list name with an info icon, a status progress bar showing percentage complete and item count, the date of last activity, who the list is assigned to, and who created it. A recurring arrows icon indicates the list updates automatically when the underlying data refreshes.
+
+To find a specific list, use the Search bar at the top right. You can also filter the view by Assigned to, Created by, Datasource, or Group using the filter dropdowns.

@@ -1,0 +1,19 @@
+---
+topic: What the column type icons mean in an Insight's column lists in Inact Now
+source_type: tutorial
+language: english
+keywords: column type, icon, numeric, text, id, formula, categorization, end2end score
+product_area: Insights
+question_type: concept
+---
+
+Throughout the column lists and filter dropdowns, small icons indicate each column's data type:
+
+# — numeric value (e.g. revenue, cost)
+Tr (text icon) — text/categorical value (e.g. country, customer group)
+ID — identifier column (e.g. Customer ID)
+fx — formula/calculated column
+Grid icon — categorization column (e.g. Customer Categorization)
+End2End icon — End2End Score column
+
+These icons help you quickly identify what kind of data a column contains, which matters especially when setting up filters, since numeric and text columns have different condition options.

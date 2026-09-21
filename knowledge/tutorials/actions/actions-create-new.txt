@@ -1,0 +1,16 @@
+---
+topic: How to create a new Action list in Inact Now
+source_type: tutorial
+language: english
+keywords: new action, create action list, template, Inventory, Products, Stock Policy
+product_area: Actions
+question_type: how-to
+---
+
+From the Actions library page, click the + New Action button at the top right. A window titled Choose Action template opens.
+
+The templates are organised across two tabs: Inventory and Products. Each tab contains template groups — for example, Inventory has Stock Policy, ERP Planning Parameters, and Working Capital. Click the arrow on a group to expand it and see the individual templates inside, such as Update Responsible, Update Item Group, or Too Slow to Stock.
+
+Click the checkbox next to a template to select it. You can select multiple templates at once using Select all to add them all in one step, or expand a group and pick individual ones. When ready, confirm your selection to create the Action list.
+
+If none of the templates fit your needs, you can create a custom Action list directly from an Insight — see the guide on creating an Action list from an Insight.

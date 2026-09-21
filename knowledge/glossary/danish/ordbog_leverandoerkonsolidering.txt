@@ -1,0 +1,45 @@
+---
+topic: Leverandørkonsolidering
+source_type: glossary
+language: danish
+keywords: Leverandørkonsolidering, Supplier consolidation, leverandører, større, bedre, færre, indkøb, indkøbsvolumen, kompleksitet
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Leverandørkonsolidering
+term_en: Supplier consolidation
+url: https://inact.io/ordbog/leverandoerkonsolidering/
+---
+
+Leverandørkonsolidering — English: Supplier consolidation
+Leverandørkonsolidering er en strategisk tilgang til indkøb og supply chain management, hvor en virksomhed reducerer antallet af leverandører for at skabe større overblik, lavere kompleksitet og bedre indkøbsvilkår. Formålet er at samle indkøbsvolumen hos færre leverandører og dermed styrke både effektivitet og forhandlingsposition.
+Hvad er leverandørkonsolidering?
+Leverandørkonsolidering betyder, at virksomheden bevidst vælger at arbejde med færre leverandører inden for samme vare- eller produktkategori.
+I stedet for at købe lignende varer fra mange forskellige leverandører, samles indkøbet hos udvalgte partnere, som kan dække større dele af behovet. Det giver typisk bedre struktur i indkøbsprocessen og mere ensartede aftaler.
+Konsolidering handler ikke nødvendigvis om at vælge den billigste leverandør, men om at finde den rette balance mellem pris, leveringssikkerhed, fleksibilitet og risiko.
+Hvad bruger man leverandørkonsolidering til?
+Leverandørkonsolidering bruges til at reducere kompleksitet og skabe mere robuste indkøbsprocesser.
+Typiske anvendelser er:
+Reduktion af administrative omkostninger ved færre leverandørrelationer
+Bedre forhandlingsstyrke gennem større samlede indkøbsvolumener
+Mere ensartede priser, vilkår og leveringsbetingelser
+Større transparens i indkøb, lager og forecast
+Forbedret leveringssikkerhed gennem tættere samarbejde med nøgleleverandører
+For mange små- og mellemstore virksomheder er leverandørkonsolidering et vigtigt skridt mod en mere moden og professionel supply chain.
+Hvornår giver leverandørkonsolidering mening?
+Leverandørkonsolidering er særligt relevant, når en virksomhed oplever høj kompleksitet i indkøb eller manglende overblik over leverandørporteføljen.
+Det kan være relevant, hvis:
+Der er mange leverandører med overlappende sortiment
+Indkøbsvolumen er fragmenteret og svært at styre
+Der bruges uforholdsmæssigt meget tid på administration
+Leveringssikkerheden varierer på tværs af leverandører
+Indkøbspriserne ikke afspejler den samlede volumen
+Samtidig er det vigtigt at være opmærksom på risikoen ved for høj konsolidering, hvor afhængigheden af enkelte leverandører kan blive for stor.
+Hvordan arbejder man med leverandørkonsolidering i praksis?
+Arbejdet med leverandørkonsolidering starter typisk med en analyse af eksisterende leverandører og indkøbsdata.
+Processen omfatter ofte:
+Kortlægning af leverandører og indkøbsvolumen per kategori
+Identificering af overlappende leverandører og produkter
+Vurdering af leverandørperformance på pris, levering og kvalitet
+Udvælgelse af strategiske leverandører
+Løbende opfølgning for at sikre, at konsolideringen understøtter både drift og forretningsmål

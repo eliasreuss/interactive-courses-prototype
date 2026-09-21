@@ -1,0 +1,41 @@
+---
+topic: FIFO (First-In, First-Out)
+source_type: glossary
+language: english
+keywords: FIFO (First-In, First-Out), inventory, first, products, where, obsolete, strategy, value, always
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: FIFO (First-In, First-Out)
+term_en: FIFO (First-In, First-Out)
+url: https://inact.io/en/glossary/fifo/
+---
+
+FIFO (First-In, First-Out)
+FIFO (First-In, First-Out) is a principle within inventory management and logistics. The name itself explains the core of the strategy: the items that first arrive in inventory should also be the first to leave. While it sounds simple, it is a critical discipline for ensuring that a company always delivers fresh, high-quality products while minimizing the risk of financial losses due to obsolescence and waste.
+What does FIFO mean?
+The principle is about creating a natural and logical flow in inventory.
+A simple way to understand FIFO is by looking at a supermarket milk cooler; staff restock from the back so that the oldest cartons are always at the front and sold first.
+In supply chain, FIFO works the same way. By consistently using the oldest items first, you ensure that products do not “collect dust” at the back of a shelf until they either expire or become obsolete.
+Why is FIFO important in inventory management?
+Beyond physical handling, FIFO has a direct and measurable impact on a company’s financial performance and tied-up capital.
+The primary benefits of implementing a consistent FIFO strategy include:
+Minimization of waste:
+Proper inventory rotation reduces the risk of products expiring or becoming obsolete.
+Release of capital:
+You avoid tying up money in slow-moving or excess inventory that lose value over time.
+Higher product quality:
+Customers consistently receive the newest and freshest products from inventory, increasing customer satisfaction.
+Accurate valuation:
+In accounting, FIFO provides a realistic picture of inventory value, as remaining stock is valued at the most recent purchase prices.
+When is FIFO the right inventory strategy?
+There are several factors to consider when determining whether FIFO is the right approach for your business.
+First of all, FIFO is not only for food products. It is the preferred method in many industries where product lifespan or relevance is limited. This may include:
+Food and pharmaceuticals:
+Where expiration dates are critical for safety and quality.
+Fashion and textiles:
+Where seasons change, and last year’s models quickly lose value.
+Electronics and technology:
+Where rapid innovation makes older components obsolete.
+Raw materials with risk of degradation:
+Chemicals or materials that change properties over time.

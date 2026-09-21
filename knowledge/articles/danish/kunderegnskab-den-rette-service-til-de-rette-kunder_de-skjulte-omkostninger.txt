@@ -1,0 +1,9 @@
+---
+topic: De skjulte omkostninger
+source_type: article
+language: danish
+article_source: Kunderegnskab  Den rette service til de rette kunder
+keywords: usynlige omkostninger, cost-to-serve, kundeservice, transport
+---
+
+Eksempler på usynlige omkostninger, bedre kendt som 'cost-to-serve', er bl.a.: Salgsbesøg, levering, udvikling af kunderelation, account management, ordrehåndtering pr telefon, web og i butik, kundeservice/kundesupport, transport.

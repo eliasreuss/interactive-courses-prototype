@@ -1,0 +1,18 @@
+---
+topic: Editing a user's basic information
+source_type: tutorial
+language: english
+keywords: edit user, user profile, name, job title, department, language, welcome mail, disable
+product_area: Admin
+question_type: how-to
+---
+
+Click any user row to open the user edit dialog. The Information tab has fields for Firstname, Lastname, Phone number, Language (English or Danish), Job Title, Department (dropdown), and Location (dropdown).
+
+Department options include: Procurement, Logistics/Supply Chain Management, Production, Category management, Sourcing, Sales, Customer Service, Finance, IT, Management, and Other.
+
+There's a Send welcome mail button that re-sends the onboarding email — it also shows when the last welcome mail was sent.
+
+At the bottom of this tab is a Disable user button in red, which deactivates the account.
+
+Save changes with Save & close.

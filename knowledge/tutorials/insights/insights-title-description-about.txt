@@ -1,0 +1,17 @@
+---
+topic: How to rename an Insight, add a description, and view its data source and filters in Inact Now
+source_type: tutorial
+language: english
+keywords: insight name, rename insight, description, title, about this insight, data source, filters
+product_area: Insights
+question_type: how-to
+---
+
+Next to the Insight title, in edit mode, there are two small icons:
+
+Pencil icon (✏️) — opens the "Edit title and description" dialog with:
+Title field — rename the Insight
+Description field — add an optional text description
+Add to homepage checkbox — pin the Insight to the Home page
+
+ⓘ icon — opens "About this Insight", which shows which data source the Insight uses and whether any filters are currently applied. This is a quick way to check an Insight's configuration without opening the Setup panel.

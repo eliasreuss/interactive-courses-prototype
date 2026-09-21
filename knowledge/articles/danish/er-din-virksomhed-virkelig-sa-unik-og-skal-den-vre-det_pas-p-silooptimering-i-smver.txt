@@ -1,0 +1,9 @@
+---
+topic: Pas på silooptimering i SMV'er
+source_type: article
+language: danish
+article_source: Er din virksomhed virkelig så unik – og skal den være det
+keywords: silooptimering, SMV'er, best practice, værdikæde
+---
+
+1. Silooptimering kan være en faldgrube i organisationer. 2. Optimering bør forankres tværgående i organisationen. 3. Best practice skal forstås som et fælles sprog på tværs af afdelinger.

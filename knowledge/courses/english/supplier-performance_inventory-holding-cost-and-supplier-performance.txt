@@ -1,0 +1,19 @@
+---
+topic: Inventory Holding Cost and Supplier Performance
+source: Supplier Performance
+source_type: course
+language: english
+product_area: supplier
+question_type: what
+keywords:
+- inventory holding cost
+- supplier portfolio
+- supplier performance
+- working capital
+- obsolescence
+- profit margins
+- Inact Now
+- Insights
+---
+
+Inventory holding cost represents the expenses associated with storing unsold goods and is influenced by the performance and selection of suppliers. By strategically managing supplier relationships, companies can reduce the amount of capital tied up in inventory, minimize the risk of products becoming obsolete, and improve overall profit margins. Inact Now provides a comprehensive view of inventory holding costs at the supplier level, supporting a systematic approach to reducing working capital requirements.

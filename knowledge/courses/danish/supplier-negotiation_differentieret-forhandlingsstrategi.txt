@@ -1,0 +1,20 @@
+---
+topic: Differentieret forhandlingsstrategi
+source: Supplier Negotiation
+source_type: course
+language: danish
+product_area: supplier
+question_type: how
+keywords:
+- forhandling
+- Double ABC
+- strategi
+- variable
+- leverandør
+- mål
+- kategorier
+- differentiering
+- forsyningskæde
+---
+
+En differentieret forhandlingsstrategi indebærer, at du tilpasser din forhandlingsmetode ved at anvende forskellige variable for hver Double ABC-kategori, afhængigt af dine specifikke mål. Double ABC-kategorisering segmenterer leverandører eller varer baseret på deres betydning og indflydelse. Ved at tilpasse forhandlingstaktikker til de unikke karakteristika og prioriteter for hver kategori, kan du optimere resultaterne og nå dine mål mere effektivt. Denne tilgang sikrer, at forhandlingsindsatsen er fokuseret og relevant, i stedet for at anvende en standardiseret metode for alle.

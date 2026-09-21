@@ -1,0 +1,17 @@
+---
+topic: Dashboard Widgets Overview
+source: Now Dashboards
+source_type: course
+language: english
+product_area: platform
+question_type: what
+keywords:
+- Widgets
+- Dashboards
+- KPI
+- target
+- trend line
+- Insights
+---
+
+Widgets are components within Dashboards that provide quick, actionable insights. Each widget typically displays a key performance indicator (KPI) on the top left, showing the current value of a critical metric. The top right section shows your target for that KPI and indicates whether you are meeting it. To view detailed month-by-month data, you can hover over the trend line within the widget. This design helps users quickly assess performance and identify trends at a glance.

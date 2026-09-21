@@ -1,0 +1,21 @@
+---
+topic: What the row and toolbar icons mean inside an open Action list in Inact Now
+source_type: tutorial
+language: english
+keywords: action list icons, external link, relations, expand row, kpi score, layout toggle, column info
+product_area: Actions
+question_type: concept
+---
+
+Inside an open Action list, each row has a few small icons on the left in addition to its checkbox:
+
+External link icon (🔗) — opens the item in its source system.
+Expand arrow (›) — expands the row to reveal a Relations sub-table showing related data points (for example counts and values tied to a related supplier or entry).
+
+In the toolbar, alongside email, comment, download, and copy icons, you'll also find:
+
+A KPI score display — shows the summary KPI value configured for the list, if one is set.
+A layout toggle (□□) — switches the list between its normal layout and a side-by-side view.
+An expand/fullscreen icon (⤢) — expands the Action list to fill the screen.
+
+Column headers can also show an ⓘ icon — clicking it shows a short formatting guide tooltip explaining how that column's values are calculated or displayed.

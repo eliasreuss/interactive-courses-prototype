@@ -1,0 +1,19 @@
+---
+topic: How to configure a slicer filter's condition inside the Edit Action list dialog in Inact Now
+source_type: tutorial
+language: english
+keywords: slicer, filter, data slicer, condition, equal, contains, starts with, slice on column
+product_area: Actions
+question_type: how-to
+---
+
+Inside the Edit Action list dialog, clicking "+" next to a Suppliers, Products, or Customers filter area (or the Slicer field) opens a column picker. Type in the search box to find a column, then click it to open the Data slicer dialog.
+
+For categorical/text columns, the Data slicer dialog shows:
+A dropdown with the selected column (you can change it here)
+A condition dropdown: Equal, Not equal, Contains, Not contains, Starts with, Ends with, Not starts with, Not ends with
+A search box and scrollable list of the actual values in the data — click to select one or more, or use Select all
+A summary line describing what the filter will apply
+A Slice on column toggle at the bottom right, which controls whether the filter slices results on that column's value
+
+Click Save to apply the slicer or Cancel to discard it. To remove an existing slicer, click the "×" on its chip.

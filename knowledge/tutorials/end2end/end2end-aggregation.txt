@@ -1,0 +1,20 @@
+---
+topic: How to change the aggregation of a column in an End2End view in Inact Now
+source_type: tutorial
+language: english
+keywords: aggregation, avg, sum, count, min, max, average, calculation method
+product_area: End2End
+question_type: how-to
+---
+
+Under the measure dropdown in the settings panel, a second dropdown controls how the values for that column are calculated. The options are:
+
+Count — the number of records.
+Sum — the values added together.
+Avg — the average value. This is the default for score-type measures.
+Min — the lowest value.
+Max — the highest value.
+
+The aggregation applies to both the summary card at the top of the column and to every bucket tile, and the chosen method is written under the number on the summary card ("avg", "count", and so on) so you can always see which one is active.
+
+Choose Sum for money-like measures where a total is meaningful, such as revenue or inventory value, and Avg for scores and ratios where a total would be meaningless. Count is useful when you want to see how many suppliers, products or customers fall into each bucket rather than how much they are worth.

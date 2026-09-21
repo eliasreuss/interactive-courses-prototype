@@ -1,0 +1,31 @@
+---
+topic: Genbestillingsmængde
+source_type: glossary
+language: danish
+keywords: Genbestillingsmængde, Reorder Quantity, indkøb, lageret, bruger, genbestillingsmængden, genbestillingsmængder, leverandøraftaler, minimumsordrer
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Genbestillingsmængde
+term_en: Reorder Quantity
+url: https://inact.io/ordbog/genbestillingsmaengde/
+---
+
+Genbestillingsmængde — English: Reorder Quantity
+Genbestillingsmængde handler om, hvor meget du vælger at bestille, når det er tid til at fylde lageret op. Begrebet bruges i lagerstyring og indkøb til at skabe mere stabile og økonomiske bestillinger.
+Hvad er en genbestillingsmængde?
+Genbestillingsmængde er den mængde af en vare, som virksomheden bestiller ad gangen, når lageret rammer bestillingspunktet. Mængden kan tage udgangspunkt i en beregning som EOQ, men bliver ofte justeret i praksis ud fra for eksempel minimumsordrer, leverandøraftaler eller lagerplads.
+Hvordan fastsætter du genbestillingsmængden?
+I mange tilfælde tager man udgangspunkt i EOQ, men justerer for:
+Minimumsordrer
+(MOQ)
+Leverandøraftaler og rabatter
+Plads på lageret
+Usikker efterspørgsel
+Derfor er genbestillingsmængden sjældent identisk med EOQ.
+Hvad bruger du genbestillingsmængder til?
+Du bruger genbestillingsmængder til at:
+Sikre ensartede og effektive indkøb
+Undgå for små eller for store ordrer
+Styre kapitalbinding og lager
+Gøre indkøb mere operationelt og mindre tilfældigt

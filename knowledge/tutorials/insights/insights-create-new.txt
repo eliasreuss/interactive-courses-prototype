@@ -1,0 +1,21 @@
+---
+topic: How to create a new Insight in Inact Now
+source_type: tutorial
+language: english
+keywords: create insight, new insight, template, choose template, data source, setup, columns, public, private
+product_area: Insights
+question_type: how-to
+---
+
+1. Click Insights in the top menu bar to open the library.
+2. Click the green + New Insight button in the top-right corner.
+3. A Choose template window opens. It has tabs for each area — Inventory, Suppliers, Products, Customers, ERP Data Validation — plus a Create without template button.
+4. Choose how to start:
+   - Use a template: Click a tab to browse ready-made Insights grouped by category (e.g., under Inventory: Stock Policy with Double ABC Analysis, New Items, Discontinued Items, Dead Items, Strategic Items; or ERP Planning Parameters with Safety Stock, Safety Stock | Simulation, etc.). Tick the checkbox next to any template(s) you want.
+   - Start from scratch: Click Create without template to begin with a blank setup.
+5. The Setup page opens. Fill in:
+   - Data source — which type of data this Insight is built on (Products, Customers, or Suppliers).
+   - Owner — who owns this Insight (defaults to you).
+   - Status — Public (visible to everyone) or Private (only visible to you).
+   - Included columns — select which metrics/columns to include by moving them from the Available columns list to the Included columns list.
+6. Once you've added at least one column, click Continue to finish creating the Insight.

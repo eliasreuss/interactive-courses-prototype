@@ -1,0 +1,17 @@
+---
+topic: What the info icon next to a column heading shows in an End2End view in Inact Now
+source_type: tutorial
+language: english
+keywords: info icon, column tooltip, slicers, filters, current selection, hover
+product_area: End2End
+question_type: how-to
+---
+
+Each of the three column headings — Suppliers, Products and Customers — has a small info icon beside it. Hover over it to see a tooltip describing the state of that data source:
+
+The Slicers currently applied to it, or "None".
+The Filters currently applied to it, or "None".
+
+When you have selected buckets, the tooltip also opens with a sentence describing the current selection, for example "A + B suppliers purchase 1744 products", and your selection appears in the slicer list expressed as a condition such as "Supplier categorization = A, B".
+
+Use it as a quick check before you trust a number: if a column is narrower than you expected, the tooltip tells you exactly what is narrowing it.

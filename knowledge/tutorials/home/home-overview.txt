@@ -1,0 +1,20 @@
+---
+topic: What the Home page shows in Inact Now
+source_type: tutorial
+language: english
+keywords: home page, overview, KPI cards, actions, insights, filter bar, dashboard
+product_area: Home
+question_type: concept
+---
+
+The Home page is the first thing you see when you log in to Inact Now. Click Home in the top menu bar at any time to return to it.
+
+It brings together your most important information in one place, organised into three sections stacked on top of each other:
+
+KPI cards fill the top of the page. These show the key metrics from whichever dashboard has been pinned to Home — for example, OTD Outbound % or Inventory Turnover Ratio. Each card shows the current value, whether it's on track against a target, and how it's been trending. Large cards include a chart showing performance over recent quarters.
+
+Actions appear below the KPI cards. This is a list of your active Action items — the tasks and work items being tracked in Inact Now. Each row shows the action name, a count of items inside it, and its last updated date. Clicking any action takes you directly into it.
+
+Insights appear at the bottom. This is a list of Insights you've chosen to pin to your Home page for quick access. Clicking an Insight name opens it.
+
+Along the top of the page is a filter bar with dropdown filters (such as Customer Group, Supplier Group, and Country). Selecting a value here filters the KPI cards to show only data matching that selection.

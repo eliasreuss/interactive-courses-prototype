@@ -1,0 +1,19 @@
+---
+topic: Filtrering af Dashboard efter kategori
+source: Now Dashboards
+source_type: course
+language: danish
+product_area: platform
+question_type: how
+keywords:
+- Dashboards
+- Tabeller
+- Filtrering
+- Kategorier
+- Widgets
+- A items
+- Brugergrænseflade
+- Datavisning
+---
+
+For at filtrere et Dashboard efter kategori skal du klikke på en hvilken som helst kategori, der er vist i en tabel. Denne handling opdaterer hele Dashboardet, så det kun viser data for den valgte gruppe. Når et filter er aktivt, ændrer Widgets farve, hvilket giver en visuel indikation af, at Dashboardet er filtreret. Hvis du for eksempel vælger kategorien 'A items', vil alle viste data kun vedrøre A items, indtil filteret fjernes eller ændres.

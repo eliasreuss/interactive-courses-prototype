@@ -1,0 +1,25 @@
+---
+topic: How to set a target on a KPI widget in Inact Now dashboards
+source_type: tutorial
+language: english
+keywords: KPI target, widget target, set target, target type, above target, KPI card
+product_area: Dashboards
+question_type: how-to
+---
+
+To set a performance target on a KPI widget, click the target icon (⊙) on the widget card. This opens the Select target dialog:
+
+- Above target is — sets what it means when the actual value exceeds the target:
+  - Neutral
+  - Positive (good)
+  - Negative (bad)
+
+- Target type — how the target value is defined:
+  - Number — you enter a fixed number as the target
+  - Table — the target is pulled from another table
+  - Average — the target is set to the average value
+
+- Value — the numeric target value (shown when Target type is set to Number).
+- Keep target when slicer applied — when ticked, the target stays fixed even when the user filters the dashboard with slicers.
+
+Click Set target to save, Remove target to clear an existing target, or Cancel to close.

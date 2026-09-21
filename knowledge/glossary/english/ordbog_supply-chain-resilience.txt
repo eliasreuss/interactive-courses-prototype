@@ -1,0 +1,46 @@
+---
+topic: Supply chain resilience
+source_type: glossary
+language: english
+keywords: Supply chain resilience, supply, chain, resilience, inventory, demand, suppliers, product, where
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Supply chain resilience
+term_en: Supply chain resilience
+url: https://inact.io/en/glossary/supply-chain-resilience/
+---
+
+Supply chain resilience
+Supply chain resilience describes a company's ability to manage disruptions and return to normal operations. For many businesses, it also means learning from disruptions and building a stronger, more flexible supply chain over time. Disruptions can include delayed deliveries, raw material shortages, changes in demand, transportation issues, or unstable suppliers. The goal is not to prevent every problem, but to build a supply chain that is resilient enough to handle uncertainty without major consequences for customers, operations, or financial performance.
+What does supply chain resilience mean in practice?
+In practice, supply chain resilience is about how vulnerable a business is when things do not go according to plan. Many supply chains operate efficiently as long as everything runs as expected. The real challenge begins when reality changes faster than the plans.
+Supply chains are constantly affected by changes and disruptions. A supplier may fail to deliver on time, a shipping container may be delayed in transit, or a critical component may suddenly become unavailable. At the same time, demand can change more quickly than expected, making existing plans obsolete.
+This is when the true resilience of a supply chain becomes visible.
+Some companies identify problems early and respond quickly. Others lack visibility and end up firefighting through: emergency purchasing expedited freight increasing backorders lower service levels
+Supply chain resilience is therefore about more than safety stock or backup suppliers. It also depends on visibility, flexibility, and the ability to make informed decisions. This is why resilience is closely connected to both supply chain visibility and end-to-end intelligence.
+Why is supply chain resilience important?
+Supply chain resilience is becoming increasingly important because supply chains have grown more complex and more dependent on suppliers and transportation across continents. Over the years, many companies have focused on: lower inventory levels fewer suppliers higher capacity utilisation lower transportation costs
+That works well when everything is stable. But it also makes the supply chain more vulnerable when circumstances change.
+If a business depends on a single critical supplier, one delay can have significant consequences. Cut inventory too far, and there is less room to respond when demand or deliveries shift.
+Supply chain resilience does not mean avoiding every disruption. It means being able to respond quickly and make the right decisions when conditions change.
+This requires a clear understanding of where the supply chain is most vulnerable. That may include dependency on a small number of suppliers, products with long lead times, or safety stock levels that no longer reflect the actual level of risk.
+Resilience is not about building larger buffers everywhere. It is about understanding where the greatest risks exist and where increased resilience creates the greatest value.
+A practical example of supply chain resilience
+Imagine a mid-sized manufacturer of industrial components. The company has two product lines with very different demand profiles: one stable product line serving long-term service contracts, and one project-based product line where orders arrive in waves.
+For a period, demand for the project business grows rapidly, and purchasing increases inventory to keep up. Shortly afterwards, one major customer postpones three orders while another cancels its project altogether.
+Within a few weeks, the company is left with excess inventory for the project business while simultaneously running short of components for the service business because the purchasing budget has been allocated to the wrong products.
+Sales promises delivery dates that purchasing cannot support. Production is forced to manually prioritise between the two product lines while purchasing tries to adjust its plans.
+When the company later reviews what happened, it discovers that the data had actually indicated the slowdown several weeks earlier. No one had connected the changes in the order backlog with inventory and purchasing planning.
+The company therefore changes its approach. The two product lines receive separate inventory strategies, purchasing plans are linked more closely to the order backlog, and alerts are introduced whenever demand patterns change significantly.
+The next time demand shifts, the company identifies the change much earlier and responds before the disruption spreads throughout the supply chain.
+Common misconceptions about supply chain resilience
+One common misconception is that resilience is simply about carrying more inventory. While additional inventory can improve resilience in the short term, it does not necessarily solve problems caused by poor visibility, unstable suppliers, or inaccurate planning.
+Another misconception is that minimising costs should always be the highest priority. If a company focuses exclusively on the lowest purchase price, the supply chain often becomes more vulnerable over time. A single low-cost supplier can represent a significant risk if there are no viable alternatives.
+A third misconception is that resilience only matters during major global crises. Most disruptions are far more ordinary, including: delayed deliveries inaccurate forecasts sudden changes in demand capacity constraints supplier quality issues
+Small disruptions can quickly spread throughout the supply chain if they are not identified early. Many companies also underestimate how rapidly increasing complexity makes the supply chain more vulnerable. More products, more suppliers, and more exceptions all create additional dependencies—and therefore more opportunities for operations to break down.
+How can companies improve supply chain resilience?
+The first step is to identify where the supply chain is most vulnerable. Companies should analyse: which products are the most critical (and for whom) which suppliers represent the greatest risk where there is dependency on single suppliers which products have the longest lead times where inventory is under the greatest pressure
+Prioritisation is equally important. This is where product management plays a key role. Not every product should be managed in the same way. Some products are critical to customers or operations and therefore require greater resilience, while others may justify lower inventory levels, alternative sourcing strategies, or even removal from the product portfolio.
+Companies also benefit from improving visibility across the value chain, enabling changes in supply, demand, and inventory to become visible much earlier.
+Ultimately, supply chain resilience is not about creating a perfect or risk-free supply chain. It is about making the business better equipped to manage uncertainty whenever conditions change—and becoming stronger each time they do.

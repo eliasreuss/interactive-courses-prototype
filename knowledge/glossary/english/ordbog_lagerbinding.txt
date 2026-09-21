@@ -1,0 +1,44 @@
+---
+topic: Tied-up capital in inventory
+source_type: glossary
+language: english
+keywords: Tied-up capital in inventory, Lagerbinding, capital, inventory, tied-up, stock, refers, goods, invested, longer
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Lagerbinding
+term_en: Tied-up capital in inventory
+url: https://inact.io/en/glossary/tied-up-capital-in-inventory/
+---
+
+Tied-up capital in inventory — Danish: Lagerbinding
+Tied-up capital in inventory refers to the capital you have invested in your stock i.e. the value of goods that you have not yet sold. This can include raw materials, work-in-progress, or finished goods.
+What is tied-up capital in inventory?
+Tied-up capital in inventory refers to the financial value of the goods you have in stock. Each item represents an investment of capital that cannot be used for other purposes.
+Capital is tied up in a product from the moment it is purchased or produced and remains tied up until the product is sold and paid for by the customer. The longer a product stays in inventory, the longer the capital is tied up.
+What affects tied-up capital in inventory?
+Tied-up capital in inventory changes continuously and is influenced by several factors, such as:
+How much inventory you hold:
+The more stock you have, the more capital is tied up.
+How fast your products sell
+(inventory turnover):
+The slower the products move, the longer capital remains tied up.
+How you procure:
+Large purchase volumes (e.g. to secure discounts or due to high
+MOQ requirements) increase inventory levels and tied-up capital.
+Supplier agreements:
+Long lead times often require higher safety stock levels.
+How do you reduce tied-up capital in inventory?
+Reducing tied-up capital in inventory is about freeing up capital without creating service issues that ultimately impact your customers.
+It is rarely a one-time fix, but rather an ongoing optimization process, which may include:
+Reducing safety stock where possible
+Removing or reducing slow-moving items
+Reviewing planning parameters: Can you order smaller quantities more frequently at an acceptable cost?
+The goal is not to minimize inventory at all costs, but to have the right inventory.
+An Double ABC analysis can be useful here.
+What is the difference between tied-up capital in inventory and tied-up capital?
+The terms tied-up capital and tied-up capital in inventory are often used interchangeably, but there is a subtle difference:
+Tied-up capital in inventory:
+Refers specifically to capital invested in inventory. It is a subset of tied-up capital.
+Tied-up capital:
+Refers to all capital invested in a company’s assets, such as buildings, machinery, and inventory.

@@ -1,0 +1,9 @@
+---
+topic: Executing ABC Analysis
+source_type: article
+language: english
+article_source: Få 6 tips til at eksekvere på din data
+keywords: ABC analysis, goal setting, mission alignment
+---
+
+6. Run your ABC analysis and establish goals for each category to support the overall mission. Use the insights from the analysis to drive strategic decision-making and goal achievement.

@@ -1,0 +1,19 @@
+---
+topic: Views in Now Insights
+source: Now Insights
+source_type: course
+language: english
+product_area: platform
+question_type: what
+keywords:
+- Views
+- Now Insights
+- data formats
+- table
+- matrix
+- trend
+- navigation
+- Dashboards
+---
+
+Views in Now Insights are different ways to display and interact with the same set of data. They allow users to switch between formats such as structured tables, comparative matrices, or visual trends, depending on their analysis needs. This flexibility helps users interpret data more effectively by choosing the most suitable representation for their specific goals. Navigating between views is straightforward, enabling quick comparisons and deeper insights without altering the underlying data.

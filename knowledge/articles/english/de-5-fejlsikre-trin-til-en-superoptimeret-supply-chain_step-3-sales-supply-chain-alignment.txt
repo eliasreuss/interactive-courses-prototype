@@ -1,0 +1,9 @@
+---
+topic: 'Step 3: Sales & Supply Chain Alignment'
+source_type: article
+language: english
+article_source: De 5 fejlsikre trin til en superoptimeret supply chain
+keywords: sales alignment, supply chain integration, change management, ABC language
+---
+
+In this phase, companies bridge sales and supply chain, aligning commercial and operational goals. It involves people, shared priorities (using ABC language), change management, and analysis to unite the two traditionally distinct worlds.

@@ -1,0 +1,9 @@
+---
+topic: Overvej omkostninger ved servicegrad
+source_type: article
+language: danish
+article_source: 7 gode råd til din næste leverandørforhandling
+keywords: servicegrad, økonomiske konsekvenser, ABC-analyse
+---
+
+1. Vurder omkostningerne ved at hæve servicegraden. 2. Prioriter høj servicegrad kun på højfrekvente varer. 3. Brug ABC-analyse til at identificere varer der kræver høj servicegrad.

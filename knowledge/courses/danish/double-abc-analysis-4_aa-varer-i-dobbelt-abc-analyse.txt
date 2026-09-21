@@ -1,0 +1,20 @@
+---
+topic: AA-varer i dobbelt ABC-analyse
+source: Double Abc Analysis 4
+source_type: course
+language: danish
+product_area: inventory
+question_type: what
+keywords:
+- Dobbelt ABC-analyse
+- AA-varer
+- lager
+- høj efterspørgsel
+- høje omkostninger
+- risiko
+- styring
+- kopipapir
+- forsyningskæde
+---
+
+AA-varer i en dobbelt ABC-analyse er lagervarer, der både har høje omkostninger og høj efterspørgsel. Disse varer betragtes som essentielle og bruges hyppigt, på samme måde som kopipapir er uundværligt på et kontor. På trods af deres høje værdi og store omsætning er AA-varer typisk lette at håndtere og udgør en lav risiko for driften, da deres betydning sikrer, at de overvåges nøje og løbende genopfyldes. Effektiv styring af AA-varer er afgørende for at opretholde en velfungerende forsyningskæde.

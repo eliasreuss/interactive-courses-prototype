@@ -1,0 +1,18 @@
+---
+topic: What the three Insight view types are in Inact Now
+source_type: tutorial
+language: english
+keywords: grid view, matrix view, KPI view, insight views, view types, switch view
+product_area: Insights
+question_type: concept
+---
+
+Some Insights offer multiple ways to look at the same data. You switch between them using the buttons below the filter bar: Matrix, Grid, and KPI.
+
+Grid is the standard table view. Every row is a single item (a product, customer, or supplier) and every column is a metric. This is the most flexible view — you can sort by any column, show or hide columns, and download the data.
+
+Matrix is a visual categorisation view. It shows items grouped into labelled segments displayed as coloured tiles. For example, a Category Management Insight might show items broken into Protect, Develop, Grow, and Turnaround segments. This view is useful for understanding the distribution of your portfolio.
+
+KPI is a summary view showing aggregated metric totals and percentages broken down by category. It gives a high-level snapshot without showing individual rows.
+
+Not every Insight has all three views. If only one view is available, the view selector will only show that one option.

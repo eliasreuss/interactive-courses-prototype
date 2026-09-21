@@ -1,0 +1,18 @@
+---
+topic: How to read the bucket tiles in an End2End view in Inact Now
+source_type: tutorial
+language: english
+keywords: bucket, tile, categorisation, colour bar, dash, greyed out, ABC, double ABC, protect develop grow turnaround
+product_area: End2End
+question_type: concept
+---
+
+Each column in an End2End view is made up of tiles, one per categorisation bucket. A tile has three parts:
+
+The dark header with the bucket name — for example A, BC, New, or Protect.
+A coloured bar under the header. The colour belongs to the bucket in your categorisation (green for the best categories, yellow for the middle, red for the weakest, and distinct colours for lifecycle buckets), so you can read the health of a column at a glance without reading the numbers.
+The value at the bottom — the measure and aggregation currently chosen for that column, calculated over only the records in that bucket.
+
+A dash ("–") instead of a number means the bucket contains no records under the current selection. That normally happens after you have selected buckets elsewhere in the chain: the bucket still exists, but nothing in it is connected to what you selected.
+
+Tiles that are greyed out are not part of the current selection. Tiles with a green checkmark in the header are the ones you have selected.

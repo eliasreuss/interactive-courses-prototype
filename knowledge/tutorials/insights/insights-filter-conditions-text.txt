@@ -1,0 +1,23 @@
+---
+topic: How to configure a filter condition for text/categorical columns in Inact Now
+source_type: tutorial
+language: english
+keywords: filter condition, text filter, equal, contains, starts with, categorical filter, data slicer
+product_area: Insights
+question_type: how-to
+---
+
+When you add an Insight filter on a text-type column, a Data slicer dialog opens. At the top you'll see the column name and a condition dropdown, which defaults to "Equal". The available conditions for text columns are:
+
+Equal — rows must match one of the selected values exactly
+Not equal — rows must not match any of the selected values
+Contains — the column value must contain the typed string
+Not contains — the column value must not contain the typed string
+Starts with — the column value must start with the typed string
+Ends with — the column value must end with the typed string
+Not starts with — the column value must not start with the typed string
+Not ends with — the column value must not end with the typed string
+
+For "Equal" and "Not equal", the dialog shows a searchable checklist of all actual values in the data (including a "No value" option). Select the values you want to match.
+
+Click Save to apply the filter or Cancel to discard it.

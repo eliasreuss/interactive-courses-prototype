@@ -1,0 +1,20 @@
+---
+topic: ABC Analysis in Supplier Management
+source: Supplier Performance
+source_type: course
+language: english
+product_area: supplier
+question_type: what
+keywords:
+- ABC Analysis
+- supplier performance
+- Inact Now
+- A items
+- B items
+- C items
+- negotiation
+- order quantities
+- delivery terms
+---
+
+ABC analysis is a method used in supplier performance management to categorize suppliers or their items into three groups: A, B, and C. 'A' items are the most valuable, typically representing the highest financial or operational impact, while 'B' and 'C' items have progressively less impact. Inact Now uses ABC analysis to identify these categories among your suppliers, enabling you to focus negotiation efforts, optimize prices, improve delivery terms, and adjust order quantities for maximum benefit. This approach increases transparency and helps prioritize resources on the most critical supplier relationships.

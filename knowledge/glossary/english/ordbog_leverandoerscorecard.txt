@@ -1,0 +1,29 @@
+---
+topic: Supplier Scorecard
+source_type: glossary
+language: english
+keywords: supplier scorecard, supplier evaluation, supplier performance, OTIF, delivery reliability, quality, KPI, supplier management
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: Leverandørscorecard
+term_en: Supplier Scorecard
+---
+
+Supplier Scorecard — Danish: Leverandørscorecard
+A supplier scorecard is a regular, structured measurement of how a supplier actually performs, built on the same criteria for every supplier so they can be compared and tracked over time.
+What is typically measured?
+Delivery reliability, the share arriving on the agreed date
+Delivery capability, whether the full quantity arrived, often combined as OTIF
+Quality, in the form of complaints, incorrect deliveries and returns
+Price and price development against what was agreed
+Responsiveness and cooperation when something goes wrong
+Why it works
+Without a scorecard, supplier conversations are driven by the most recent incident. The supplier who just failed spectacularly gets the attention, while the one arriving two days late every single time slips under the radar — even though the latter costs more in safety stock and planning noise.
+Measurement also makes negotiation concrete. Delivery reliability is hard to discuss from a feeling and easy to discuss from a number.
+How to stop it becoming a paper exercise
+Measure from your own system's data rather than the supplier's own reporting
+Keep the number of criteria low enough that a poor score points at something specific
+Weight suppliers by how much they matter — the most important deserve more frequent review
+Agree in advance what a given score triggers, otherwise the scorecard becomes a report nobody acts on
+A scorecard belongs with an agreed cadence. Measuring without meeting about the numbers rarely changes behaviour.

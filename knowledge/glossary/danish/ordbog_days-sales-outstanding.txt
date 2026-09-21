@@ -1,0 +1,47 @@
+---
+topic: Days Sales Outstanding (DSO)
+source_type: glossary
+language: danish
+keywords: Days Sales Outstanding (DSO), virksomheden, bliver, samtidig, kunder, længere, bundet, lager, store
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Days Sales Outstanding (DSO)
+term_en: Days Sales Outstanding (DSO)
+url: https://inact.io/ordbog/days-sales-outstanding/
+---
+
+Days Sales Outstanding (DSO)
+Days Sales Outstanding (DSO) er et nøgletal, der måler, hvor mange dage virksomheden i gennemsnit er om at modtage betaling fra kunder, efter en faktura er udstedt. DSO bruges til at analysere virksomhedens likviditet og cash flow. En høj DSO betyder typisk, at kunderne betaler langsomt, mens en lav DSO ofte indikerer hurtigere betaling og hurtigere frigivelse af likviditet.
+Hvad betyder DSO i virkeligheden?
+I praksis viser DSO, hvor længe virksomhedens kapital er bundet i tilgodehavender hos kunderne. Hvis virksomheden eksempelvis udsteder en faktura i dag, men først modtager betaling 60 dage senere, er kapitalen bundet, indtil kunden betaler fakturaen.
+DSO bliver derfor ofte brugt til at analysere betalingsbetingelser, kundeadfærd, cash flow, kreditstyring og working capital.
+Jo længere tid kunderne er om at betale, desto længere tid skal virksomheden selv finansiere lager, drift og vareflow. DSO hænger tæt sammen med cash conversion cycle, fordi kundernes betalingstid er en central del af den periode, hvor kapital er bundet gennem hele værdikæden.
+DSO er nemlig én af tre komponenter i cash conversion cycle — sammen med DIO (Days Inventory Outstanding), der viser, hvor længe varer ligger på lager, og DPO (Days Payable Outstanding), der viser, hvor længe virksomheden selv er om at betale sine leverandører. Jo længere tid varerne ligger på lager, og jo længere tid kunderne er om at betale, desto længere er virksomheden om at få sine penge tilbage — medmindre den samtidig kan holde sin egen betaling til leverandørerne tilsvarende lang tid ude.
+Samtidig bliver lagerbinding vigtig, fordi virksomheder med store lagre og høj DSO ofte oplever et dobbelt pres på likviditeten – først gennem lageropbygning og derefter gennem langsomme kundeindbetalinger.
+Supply chain planning spiller også en vigtig rolle, fordi ustabile forecast og store sæsonudsving ofte påvirker både lageropbygning, leveringstid og betalingsflow samtidig.
+Formel: Hvordan beregner man DSO?
+Days Sales Outstanding bliver typisk beregnet sådan:
+DSO = (Debitorer / Omsætning) × Antal dage
+Bemærk: Den mest præcise beregning bruger kreditomsætning – altså salg på kredit – i stedet for den samlede omsætning. Hvis virksomheden har en betydelig andel kontantsalg, vil en beregning baseret på den samlede omsætning undervurdere DSO.
+Eksempel:
+Debitorer: 22 mio. kr.
+Årlig omsætning: 132 mio. kr.
+DSO = (22 / 132) × 365 = 61 dage
+Det betyder, at virksomheden i gennemsnit modtager betaling cirka 61 dage efter fakturering. Jo lavere DSO er, desto hurtigere bliver likviditeten typisk frigivet tilbage til virksomheden.
+Hvorfor er DSO vigtigt at holde øje med?
+DSO er vigtigt, fordi selv profitable virksomheder kan få likviditetsproblemer, hvis kunderne betaler for sent. Når betalingerne trækker ud, kan virksomheden samtidig opleve stigende pres på likviditet, working capital, lagerfinansiering, kreditfaciliteter og investeringsevne.
+Det bliver især kritisk i virksomheder med store sæsonudsving, høje lagre, lange leveringstider, store projektordrer eller mange B2B-kunder med lange betalingsfrister.
+Her kan virksomheden ende med at finansiere både lager og kundekredit i lange perioder samtidig – for eksempel når store lagre bliver bygget op flere måneder før en sæson, samtidig med at de største kunder har betalingsfrister på 60-75 dage. Så bliver likviditeten presset fra to sider på én gang.
+Sådan arbejder virksomheder med DSO
+En grossist inden for installationsudstyr oplever stigende pres på likviditeten hen over året, selvom omsætningen vokser stabilt. Presset bliver særligt tydeligt efter de store sæsonleverancer i forår og efterår.
+Da virksomheden analyserer sin DSO, viser tallene, at betalingsbetingelserne varierer markant mellem kundesegmenterne. Nogle mindre kunder betaler efter 30 dage, mens flere af de største B2B-kunder har forhandlet sig frem til betalingsfrister på 75 dage — samtidig med at virksomheden bygger lager op måneder før leverancerne for at kunne holde en høj leveringsevne.
+Resultatet er, at kapitalen bliver bundet to gange i samme periode: først i lageret, og derefter i debitorerne, mens de største kunder venter med at betale.
+Virksomheden begynder derfor at arbejde mere målrettet med betalingsbetingelser og fakturering. Fremover bliver betalingsfrister differentieret efter kundens størrelse og betalingshistorik, og de største projektleverancer opdeles i flere faktureringstrin i stedet for én samlet faktura ved levering. Samtidig strammes opfølgningen op på de segmenter, hvor forsinkede betalinger hidtil er gået ubemærket hen.
+Det løser ikke alle udfordringer på én gang. Men virksomheden får langt bedre styr på, hvor længe kapitalen reelt er bundet — og kan planlægge likviditeten ud fra kundernes faktiske betalingsmønster i stedet for deres aftalte betalingsfrist.
+Hvad er en typisk fejl med DSO?
+En typisk fejl er kun at fokusere på at reducere DSO hurtigst muligt. For stramme betalingskrav kan skabe udfordringer i salgsarbejdet eller presse relationen til strategisk vigtige kunder. I nogle brancher forventer større kunder ganske enkelt længere betalingsfrister.
+Mange virksomheder undervurderer også, hvor tæt DSO hænger sammen med resten af supply chain. Hvis forecast bliver mindre præcise, eller leveringstider og lageropbygning ændrer sig markant, kan det påvirke både fakturering og kundeindbetalinger længere nede i værdikæden.
+Hvordan arbejder man med DSO i praksis?
+Start med at analysere, hvilke kunder, segmenter eller ordretyper der binder mest kapital i længst tid. Mange virksomheder opdager først udfordringerne, når DSO bliver opdelt på kundetyper, brancher, projektordrer, sæsonvarer og geografiske markeder.
+Derefter bør virksomheden analysere, hvordan forecast, levering og fakturering hænger sammen på tværs af værdikæden. Det kræver typisk, at data fra salg, lager, regnskab og supply chain bliver koblet sammen. Først da får virksomheden et reelt overblik over, hvor kapitalen er bundet, hvad der binder den, og hvilke beslutninger der kan reducere DSO uden at gå på kompromis med kunderelationerne.

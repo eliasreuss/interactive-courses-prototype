@@ -1,0 +1,16 @@
+---
+topic: What the Actions module is in Inact Now
+source_type: tutorial
+language: english
+keywords: actions, action list, task management, items, status, TO DO, DONE, progress
+product_area: Actions
+question_type: concept
+---
+
+The Actions module is where you manage work that needs to happen on specific products or items. Think of it as a structured to-do list built directly from your data — each Action list contains a set of items that require attention, and you track progress by moving them through statuses like TO DO and DONE.
+
+Action lists are created from Insights, which means they pull in items that match a specific set of filters and criteria. When the data updates, the Action list updates automatically, so you are always working with current information.
+
+On the Actions overview page, you can see all Action lists available to you, organised into groups. Each row shows the Action list name, a progress bar with the percentage of items completed, the date of last activity, who it is assigned to, and who created it. Clicking any Action list opens the full list of items to work through.
+
+The module supports multiple layouts for statuses, so your team can customise how work flows. You can also subscribe to email notifications, leave comments, download data, and assign lists to specific team members.

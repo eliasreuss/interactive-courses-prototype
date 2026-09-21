@@ -1,0 +1,28 @@
+---
+topic: Category Management
+source_type: glossary
+language: english
+keywords: Category Management, Category Management (Kategoristyring), category, management, strategic, costs, supplier, achieve, categories, purchasing
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Category Management (Kategoristyring)
+term_en: Category Management
+url: https://inact.io/en/glossary/category-management/
+---
+
+Category Management
+Category Management is a strategic approach that organizes and manages products or services into logical groups (categories) to maximize overall value for the company. In Supply Chain Management, it's primarily used in strategic sourcing to optimize the supplier base, reduce costs, and manage risk across an entire category of goods or services.
+What is Category Management?
+Category Management is a holistic method that replaces individual purchasing transactions with strategic management of entire procurement categories. Instead of negotiating with suppliers about individual products, all related goods (e.g., all IT services, all packaging types, or all raw materials) are combined into one category.
+The goal is to achieve:
+Greater purchasing power: By consolidating volume across the organization.
+Reduced costs: Through standardization and optimized contracts.
+Better risk management: By diversifying the supplier base for critical categories.
+What is Category Management used for?
+Category Management is used to develop the purchasing function from an administrative task to a strategic value driver. The primary purpose is to achieve Total Cost of Ownership (TCO) reductions and improve supplier performance.
+Specifically, it's used to:
+Achieve TCO reductions: By looking at total costs (purchase price, inventory costs, transportation, quality) rather than just unit price.
+Improve supplier relationships: By establishing long-term, strategic partnerships with fewer, but better, suppliers.
+Standardize assortment: Reduce complexity by minimizing the number of different items within the same category.
+Manage risk: Identify and handle risks related to supply security and geopolitical factors.

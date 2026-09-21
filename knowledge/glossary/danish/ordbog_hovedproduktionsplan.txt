@@ -1,0 +1,22 @@
+---
+topic: Hovedproduktionsplan
+source_type: glossary
+language: danish
+keywords: hovedproduktionsplan, MPS, master production schedule, produktionsplan, kapacitet, planlægning, frossen periode, S&OP
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: Hovedproduktionsplan
+term_en: Master Production Schedule (MPS)
+---
+
+Hovedproduktionsplan — English: Master Production Schedule (MPS)
+En hovedproduktionsplan, på engelsk master production schedule eller MPS, er planen for hvilke færdigvarer der skal produceres, hvor mange, og i hvilke perioder. Den er bindeleddet mellem den overordnede salgs- og driftsplanlægning og den detaljerede materialeplanlægning.
+Hvad står der i den?
+For hver færdigvare og hver periode — typisk uger — angiver planen den mængde, der skal være færdig. Den tager højde for eksisterende ordrer, prognosen for det der endnu ikke er solgt, og den kapacitet der faktisk er til rådighed.
+Hvordan hænger den sammen med det øvrige?
+S&OP lægger rammen på produktgruppeniveau og i måneder. Hovedproduktionsplanen bryder den ramme ned på konkrete varenumre og uger. MRP tager derefter planen og regner sig ned til de komponenter og råvarer, der skal bruges.
+Den frosne periode
+De nærmeste uger i planen holdes typisk låst, fordi materialer er bestilt og kapacitet er reserveret. Jo længere ud i fremtiden, jo mere må planen gerne ændre sig. Uden en aftalt frossen periode bliver planen ustabil, og ustabiliteten forplanter sig hele vejen ned gennem MRP til leverandørerne.
+Hvornår giver den mening?
+Hovedproduktionsplanen hører hjemme i virksomheder, der producerer. Hos rene handels- og distributionsvirksomheder er der ingen produktion at planlægge, og styringen sker i stedet gennem lagerpolitikker, bestillingspunkter og indkøbsplanlægning.

@@ -1,0 +1,46 @@
+---
+topic: Vendor Managed Inventory (VMI)
+source_type: glossary
+language: danish
+keywords: Vendor Managed Inventory (VMI), leverandøren, varer, genopfyldningen, inventory, kunden, managed, vendor, forbrug
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Vendor Managed Inventory (VMI)
+term_en: Vendor Managed Inventory (VMI)
+url: https://inact.io/ordbog/vendor-managed-inventory-vmi/
+---
+
+Vendor Managed Inventory (VMI)
+Vendor Managed Inventory (VMI) er en samarbejdsmodel, hvor leverandøren får ansvar for at overvåge og genopfylde kundens lager inden for aftalte rammer. I stedet for at kunden selv afgiver alle indkøbsordrer, bruger leverandøren data om blandt andet lagerbeholdning, forbrug og forventet efterspørgsel til at planlægge genopfyldningen.
+VMI bruges ofte til varer med gentaget forbrug, hvor kunden og leverandøren ønsker høj tilgængelighed og mindre arbejde med manuel genbestilling.
+Hvad betyder Vendor Managed Inventory i praksis?
+I praksis betyder Vendor Managed Inventory, at kunden deler relevante oplysninger med leverandøren, så leverandøren kan vurdere, hvornår lageret skal genopfyldes, og hvor meget der skal leveres.
+Leverandøren kan for eksempel bruge data om: aktuel lagerbeholdning historisk forbrug eller salg forecast åbne ordrer
+Genopfyldningen sker inden for aftalte rammer. Det kan blandt andet være minimumslagerbeholdning, maksimumsniveauer, serviceniveau og leveringsfrekvens.
+Det ændrer ansvarsfordelingen mellem kunde og leverandør. Kunden skal ikke længere manuelt oprette alle genbestillinger, mens leverandøren får en mere aktiv rolle i at holde de aftalte varer på lager. Kunden skal stadig definere rammerne og følge udviklingen i service, lagerbinding og sortiment.
+VMI hænger på den måde tæt sammen med leverandørstyring, lagerstyring og supply chain planning.
+Hvad er forskellen på VMI og konsignationslager?
+Vendor Managed Inventory og konsignationslager bliver nogle gange brugt om det samme, men beskriver to forskellige ting.
+VMI handler om, hvem der styrer genopfyldningen. Leverandøren overvåger lageret og beslutter inden for aftalte rammer, hvornår der skal genopfyldes, og hvor meget der skal leveres.
+Konsignationslager handler derimod om, hvem der ejer varerne. Ved et konsignationslager er varerne typisk placeret hos kunden, mens leverandøren beholder ejerskabet, indtil kunden bruger eller overtager dem efter de aftalte betingelser.
+En virksomhed kan godt have VMI uden konsignationslager og konsignationslager uden VMI. De to modeller kan også kombineres, så leverandøren både ejer varerne og står for genopfyldningen.
+Hvad er fordelene og ulemperne ved Vendor Managed Inventory?
+VMI kan gøre genopfyldningen enklere, fordi leverandøren får den information, der er nødvendig for at reagere på kundens aktuelle lagerbeholdning og forbrug. Det kan reducere antallet af manuelle indkøbsordrer og gøre det lettere at have de rigtige varer på lager, når de skal bruges.
+En velfungerende VMI-model kan blandt andet bidrage til: færre manuelle genbestillinger mere stabil varetilgængelighed bedre koordinering mellem kunde og leverandør mere effektiv genopfyldning færre situationer med udsolgte varer eller unødigt høje lagre
+Men VMI reducerer ikke automatisk lageret eller forbedrer servicen. Hvis leverandøren primært bliver målt på høj tilgængelighed, kan resultatet være større lagerbeholdninger. Hvis data er upræcise eller forsinkede, kan leverandøren samtidig træffe beslutninger på et forkert grundlag.
+VMI kræver klare aftaler om ansvar, data, serviceniveau og lagergrænser. Kunden afgiver en del af den daglige styring, men har stadig ansvaret for, at modellen leverer de ønskede resultater.
+Hvem er Vendor Managed Inventory relevant for?
+Vendor Managed Inventory er især relevant for virksomheder med varer, der bliver genopfyldt løbende, og hvor manuel genbestilling skaber unødigt arbejde. Det kan for eksempel være produktionsvirksomheder, handelsvirksomheder eller eftermarkedsforretninger, der løbende bruger eller sælger de samme komponenter, forbrugsvarer eller reservedele.
+VMI er ofte lettere at få til at fungere, når: der er et gentaget og nogenlunde forudsigeligt forbrug leverandøren kan levere stabilt kunde og leverandør kan dele relevante data der er klare rammer for lager og service genopfyldningen sker relativt ofte
+Varer med meget volatil eller uforudsigelig efterspørgsel er ikke nødvendigvis uegnede til VMI, men de stiller større krav til data, forecast, lagergrænser og opfølgning. Det samme gælder varer med høj risiko for ukurans eller store økonomiske konsekvenser ved for høje lagre.
+VMI fungerer bedst, når leverandøren får ansvar for genopfyldningen, mens virksomheden fortsat styrer de overordnede rammer.
+Hvordan kan du arbejde med Vendor Managed Inventory?
+Start med at vælge de varer, hvor VMI giver mening. Det vil ofte være varer med gentaget forbrug, hyppig genopfyldning og relativt lav kompleksitet. Det kan for eksempel være forbrugsvarer, standardkomponenter, emballage eller reservedele med tilbagevendende efterspørgsel.
+Fastlæg derefter tydelige rammer for: minimums- og maksimumsniveauer serviceniveau genopfyldningsfrekvens datadeling og datakvalitet ansvar ved afvigelser leverandørens leveringsmål opfølgning på lagerudvikling
+En typisk fejl er at betragte VMI som en overdragelse af hele ansvaret for lageret. Leverandøren styrer genopfyldningen, men du skal stadig fastlægge blandt andet serviceniveau, sortiment og lagergrænser.
+Hold samtidig øje med, om lagergrænserne fungerer efter hensigten. Hvis maksimumsniveauerne er for høje, eller leverandøren prioriterer tilgængelighed uden at tage højde for kapitalbinding, kan lageret vokse. Varer med meget ustabil efterspørgsel eller høj risiko for ukurans kræver også tættere opfølgning.
+Følg løbende, om VMI giver de ønskede resultater. Du kan blandt andet følge udviklingen i varetilgængelighed, lagerbeholdning, stockouts og manuelt arbejde samt leverandørens
+OTIF og øvrige leverandørperformance.
+Når data om lager, forbrug og leverandører samles på tværs af værdikæden, bliver det lettere at opdage, hvis lageret bevæger sig uden for de aftalte rammer. Her kan end-to-end intelligence give et samlet billede af udviklingen.
+VMI er en fælles styringsmodel. Leverandøren får ansvar for genopfyldningen, mens du sætter rammerne og følger, om modellen skaber den ønskede balance mellem varetilgængelighed, lager og omkostninger.

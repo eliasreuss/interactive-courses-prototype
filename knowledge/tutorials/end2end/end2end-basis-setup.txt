@@ -1,0 +1,16 @@
+---
+topic: What a Basis Setup is in End2End in Inact Now
+source_type: tutorial
+language: english
+keywords: basis setup, end2end setup, relation setup, data sources, link, configuration
+product_area: End2End
+question_type: concept
+---
+
+Every End2End view is built on a Basis Setup. The Basis Setup defines which data sources are linked together and on which keys the relations between them are created — typically Suppliers to Products via the item, and Products to Customers via sales transactions.
+
+You choose the Basis Setup once, when you create a new End2End view, in the Basis Setup dropdown of the Create new End2End View window. Most accounts have a single setup (often named "End-2-End"), so the dropdown may contain only one option.
+
+The Basis Setup itself is configured at account level as part of your data setup, not from inside an End2End view. If the setup you need is missing, or the relations do not look right, contact your Inact consultant or your internal Inact administrator rather than trying to change it from the End2End page.
+
+Note that a Basis Setup is different from the filters and slicers you set inside a view: the setup decides what can be linked at all, while filters and slicers decide which part of that linked data you are currently looking at.

@@ -1,0 +1,18 @@
+---
+topic: How to use layouts to manage statuses across Action lists in Inact Now
+source_type: tutorial
+language: english
+keywords: layouts, manage layouts, status layout, custom layout, TO DO, DONE, reuse, change layout
+product_area: Actions
+question_type: how-to
+---
+
+Layouts let you save a set of status categories and reuse them across multiple Action lists, so you do not have to re-create the same statuses every time.
+
+From the Actions library page, click Manage layouts in the top right corner. The Manage Layouts page opens.
+
+On the left, under Add/edit a layout, you build a layout by giving it a name and defining its status categories. The layout always has a Not completed section (your main working status, shown in blue as TO DO by default) and a Completed section (the final done status, shown in green as DONE by default). Click + Add category to insert additional statuses between them. For each category, click the colour swatch to choose a colour and type the name in the text field.
+
+On the right, under Edit/delete a layout, existing layouts are listed. Click a layout name to load it into the editor for changes, or click the trash icon to delete it. Click Save to save the layout.
+
+To apply a saved layout to an Action list, open the list, click the gear icon, and choose Change layout. A window shows available layouts — select one and click Save and update.

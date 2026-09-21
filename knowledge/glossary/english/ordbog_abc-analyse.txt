@@ -1,0 +1,48 @@
+---
+topic: ABC-analysis
+source_type: glossary
+language: english
+keywords: ABC-analysis, ABC-analyse, products, revenue, inventory, value, customers, management, based
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: ABC-analyse
+term_en: ABC-analysis
+url: https://inact.io/en/glossary/abc-analysis/
+---
+
+ABC-analysis — Danish: ABC-analyse
+ABC-analysis is a classic method for inventory and supply chain management that divide products (or customers/suppliers into three groups based on value or revenue. The aim is to prioritize resources where they create the most value - it's often a small amount of products that generate the majority of revenue.
+What is an ABC-analysis?
+An ABC-analysis is a strategic method within the field of supply chain and inventory management. It is used to categorize, for example, products, customers, and suppliers based on their value.
+Typically, the elements are divided into three groups:
+A-category: Most valuable (often 70-80% of revenue, but only 10-20% of products)
+B-category: Intermediate group (15-25% of revenue, 20-30% of products)
+C-category: Least valuable  (5-10% of r, men revenue,  50-70% of products)
+The method is based on the Pareto-principle (also known as the 80/20-rule) which states that a small amount of causes are responsible for the majority of consequences.
+In practice, this means that a small segment of products or customers (typically 20%) are responsible for the majority of revenue or profit (typically 80%).
+When familiar with these key elements, you are able to optimize inventory management, prioritize purchases, and strengthen customer performance, to ensure optimal use of resources.
+What is ABC-analysis for?
+The ABC analysis is used to focus efforts where they create the most value. It provides a data-based foundation for making better decisions.
+For example, it can be used to:
+Prioritize inventory management and optimize warehouse layout (e.g., place A-items closest to the packing area).
+Focus sales and marketing efforts on A-customers.
+Optimize purchasing strategies and negotiate better terms with suppliers of A-items.
+Identify "dead" or slow-moving products (C-items) with high levels of tied-up capital.
+When should you use an ABC-analyse?
+An ABC analysis is not a one-time exercise but should be performed regularly (e.g., annually or quarterly), as market conditions and customer behavior change.
+The analysis is particularly useful when a company wants to:
+Reduce capital tied up in inventory. Improve inventory turnover rate.
+Increase profitability by focusing on the most profitable customers and products.
+Make strategic decisions about assortment, supplier management, and pricing.
+How do you make an ABC-analyse? (5 easy steps)
+Define purpose and data:
+Determine what you want to analyze (products, customers, etc.) and what data basis you will use (revenue, contribution margin, number of order lines).
+Collect and process data:
+Retrieve the necessary data from your ERP system.
+Calculate and sort:
+Calculate the total value (e.g., annual revenue) for each element and sort the list from highest to lowest.
+Categorize (A, B, C):
+Divide the elements into the three categories. Start with the A-category (the top 80% of total value), then B (the next 15%), and finally C (the remaining 5%).
+Implement actions:
+Develop an action plan based on the categories. Example: Special inventory strategy for A-items, standardized handling of B-items, and automation/phase-out for C-items.

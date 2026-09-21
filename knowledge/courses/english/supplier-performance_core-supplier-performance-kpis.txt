@@ -1,0 +1,19 @@
+---
+topic: Core Supplier Performance KPIs
+source: Supplier Performance
+source_type: course
+language: english
+product_area: supplier
+question_type: what
+keywords:
+- supplier performance
+- KPIs
+- measurement
+- key performance indicators
+- evaluation
+- success metrics
+- tracking
+- supplier management
+---
+
+Supplier performance is evaluated using five core key performance indicators, or KPIs. These KPIs provide a consistent and comprehensive way to measure how well each supplier is meeting expectations. By tracking these specific metrics, organizations can objectively assess supplier effectiveness, identify areas for improvement, and ensure that suppliers contribute positively to overall supply chain goals. Consistent measurement across all suppliers enables fair comparisons and supports data-driven decision-making in supplier management.

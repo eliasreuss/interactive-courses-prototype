@@ -1,0 +1,53 @@
+---
+topic: Dead stock
+source_type: glossary
+language: english
+keywords: Dead stock, Døde varer, stock, inventory, items, costs, demand, products, sales, space
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Døde varer
+term_en: Dead stock
+url: https://inact.io/en/glossary/dead-stock/
+---
+
+Dead stock — Danish: Døde varer
+Dead stock refers to products that have not had any sales activity over a prolonged period. They tie up capital, take up space, and create costs—making them important to monitor.
+What is dead stock?
+Dead stock refers to inventory that has had no movement (sales or usage) over a defined period and therefore no longer contributes to revenue. This period varies by industry and product type, but dead stock is often defined as products with no sales for 6, 12, or 24 months.
+It is important to distinguish between dead stock and obsolete inventory.
+Obsolete inventory consists of products that are damaged, outdated, or otherwise unsellable.
+Dead stock, on the other hand, is still sellable  but there is no demand.
+An example could be a product that has had no sales for 12 months, while 40 units are still in stock. Even though the items are technically sellable, they tie up capital and occupy space without contributing to revenue.
+Why does dead stock occur?
+Dead stock typically occurs when procurement and demand are no longer aligned.
+Common causes include:
+Inaccurate demand forecasting:
+Overestimating future demand leads to overproduction or over-purchasing.
+Over-ordering:
+Buying too large quantities, often to secure volume discounts or meet minimum order quantities (MOQ), without sufficient demand.
+Product phase-out:
+Products are replaced by newer models or technologies, leaving older versions without demand.
+Changing market trends:
+Shifts in customer needs or preferences reduce product attractiveness.
+Lack of inventory management:
+Failure to react to slow-moving items in time.
+Dead stock rarely results from a single issue, but rather from a series of decisions over time.
+What does dead stock cost your business?
+Dead stock costs more than just the purchase price and impacts your business in several ways:
+Tied-up capital:
+Money is locked in products that do not create value.
+Inventory costs:
+Dead stock occupies valuable warehouse space that could be used for fast-moving items. It also incurs costs related to insurance, administration, and handling.
+Loss of value:
+The longer items remain unsold, the higher the risk they must be written down or sold at a significant loss.
+Handling costs:
+Costs associated with identifying, moving, disposing of, or discounting dead stock.
+Dead stock is therefore both an inventory issue and a financial challenge.
+How do you manage dead stock?
+Once items become dead stock, the goal is to minimize losses as quickly as possible.
+This may involve selling them at a discount, bundling them into campaigns, or moving them to alternative sales channels. In some cases, the best option is simply to liquidate them and free up warehouse space.
+The most important step, however, is prevention.
+Continuously monitor which products are not moving and act early on slow-moving items. Better forecasting, more flexible procurement, and closer monitoring of inventory data can make a significant difference.
+In short
+Dead stock refers to items that are no longer selling but still occupy space and tie up capital. The earlier you identify them, the easier they are to manage -  and the smaller the financial impact.

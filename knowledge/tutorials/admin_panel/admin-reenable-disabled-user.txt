@@ -1,0 +1,10 @@
+---
+topic: Re-enabling a disabled user
+source_type: tutorial
+language: english
+keywords: disabled users, enable user, reactivate, restore, user account
+product_area: Admin
+question_type: how-to
+---
+
+Click the Disabled users (N) button at the bottom of the Users tab to open a dialog showing all deactivated accounts. The dialog lists each disabled user's name and email, with an Enable button next to each. Clicking Enable immediately reactivates that account. Click OK to close the dialog when done.

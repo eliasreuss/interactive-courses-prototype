@@ -1,0 +1,17 @@
+---
+topic: What the column type icons mean in Data Setup for an Action list in Inact Now
+source_type: tutorial
+language: english
+keywords: column type icons, data setup, numeric, text, id, date, action list
+product_area: Actions
+question_type: concept
+---
+
+In the Data Setup dialog for an Action list, each column in the Available and Included lists shows a small icon indicating its data type:
+
+# — numeric value
+Tr — text/categorical value
+ID — identifier column
+Calendar icon — date column
+
+These icons help you quickly tell what kind of data a column holds before adding it to the Action list.

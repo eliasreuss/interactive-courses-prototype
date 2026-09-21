@@ -1,0 +1,19 @@
+---
+topic: How to manage table sub-tabs in a dashboard in Inact Now
+source_type: tutorial
+language: english
+keywords: table tab, sub-tabs, add table, limited grid, dashboard table, rename tab, multiple tables
+product_area: Dashboards
+question_type: how-to
+---
+
+Inside the Table tab in edit mode, a sub-tab bar lets you work with multiple tables in one dashboard.
+
+Each existing table appears as a named sub-tab (e.g. Main). To rename a sub-tab, click the pencil icon next to its name — a dialog appears where you can edit the Name field, then click Save.
+
+To add a new table, click the + New button at the end of the sub-tab bar. A menu appears with two options:
+
+- Dashboard table — a standard data table.
+- Limited Grid — a more compact grid-style table.
+
+Select the type you want to create the new table.

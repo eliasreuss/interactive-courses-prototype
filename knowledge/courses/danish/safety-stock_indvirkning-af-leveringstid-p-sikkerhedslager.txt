@@ -1,0 +1,19 @@
+---
+topic: Indvirkning af leveringstid på sikkerhedslager
+source: Safety Stock
+source_type: course
+language: danish
+product_area: inventory
+question_type: why
+keywords:
+- leveringstid
+- sikkerhedslager
+- lagerbeholdning
+- serviceniveauer
+- lagerreduktion
+- levering
+- efterspørgsel
+- forsyningskæde
+---
+
+Leveringstid er perioden mellem afgivelse af en ordre og modtagelse af varerne. Den har stor betydning for, hvor meget sikkerhedslager en virksomhed skal have. Selv hvis efterspørgslen er forudsigelig og serviceniveauerne er fastsat, kræver længere leveringstider mere sikkerhedslager for at sikre, at produkterne er tilgængelige, indtil næste levering ankommer. For eksempel kan en reduktion af leveringstiden fra 60 dage til 40 dage sænke det nødvendige sikkerhedslager fra 289 enheder til 236 enheder, hvilket svarer til en reduktion på 18%. Dette viser, at kortere leveringstider kan reducere lagerbeholdningen og de tilhørende lageromkostninger betydeligt.

@@ -1,0 +1,25 @@
+---
+topic: Safety Stock
+source_type: glossary
+language: english
+keywords: Safety Stock, Sikkerhedslager, safety, stock, demand, production, changes, delivery, level, service
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Sikkerhedslager
+term_en: Safety Stock
+url: https://inact.io/en/glossary/safety-stock/
+---
+
+Safety Stock — Danish: Sikkerhedslager
+Safety stock is a buffer of goods held in addition to the normal demand quantity to ensure that production and delivery can continue, even if delays or unforeseen changes in demand occur.
+What is safety stock?
+It is a planned inventory level that serves as protection against risk in the supply chain. Safety stock helps maintain service levels and avoid stockouts, while allowing for a flexible response to changes in lead time or demand.
+Why do you have a safety stock?
+Safety stock is used to minimize the risk of operational shutdowns and lost sales. It allows for the maintenance of continuity in production and delivery without tying up unnecessary capital when combined with optimal planning parameters.
+When is Safety Stock relevant?
+Safety stock is particularly used in situations with:
+Variable demand or uncertain forecasts
+Long or unstable lead times from suppliers
+High service level as a strategic goal
+Products with high value or critical importance in production

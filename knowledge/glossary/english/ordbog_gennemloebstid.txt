@@ -1,0 +1,30 @@
+---
+topic: Lead time
+source_type: glossary
+language: english
+keywords: Lead time, Gennemløbstid (Lead time), capital, customer, delivery, order, production, shorter, times, waiting
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Gennemløbstid (Lead time)
+term_en: Lead time
+url: https://inact.io/en/glossary/lead-time/
+---
+
+Lead time — Danish: Gennemløbstid
+Lead time indicates how long it takes for an item, an order, or a product to move through the entire process from start to finish - typically from when the order is placed until it is delivered to the customer. Shorter lead time is a direct indicator of higher efficiency, lower capital tied up, and better customer service.
+What is lead time?
+Lead time measures the total time an order spends in the supply chain. It is important to understand that lead time includes not only active time (production, transport) but also passive time (waiting times, queues, storage).
+Lead time is a critical measure for productivity, customer satisfaction, and liquidity, as a long lead time ties up capital for a longer period.
+What is lead time used for?
+Lead time is used as a diagnostic tool to identify bottlenecks, optimize processes, and reduce waste. The primary purposes are:
+Identification of bottlenecks: By dividing the total lead time into phases, one can precisely see where the passive time (waiting time) is greatest.
+Process optimization: Reducing waiting times and improving flow, which leads to faster delivery to customers.
+Better planning: Makes it possible to plan capacity in production and logistics more accurately, thereby reducing the need for a large safety stock.
+Improvement of Time-to-Market: Especially for companies that manufacture goods, a short lead time is crucial for being able to react quickly to market trends.
+When is lead time relevant?
+Lead time is a fundamental measure in Lean principles and is used when analyzing supply chain efficiency, planning production, or setting goals for delivery time. It is particularly relevant when:
+The company wants to reduce capital tied up: Shorter lead time means capital is tied up for a shorter period.
+Realistic delivery times need to be set: Lead time is the basis for customer promises.
+Lean principles are to be implemented: Lead time is a central KPI for measuring waste reduction.
+Inventory management needs to be optimized: Lead time is a critical factor in calculating the reorder point.

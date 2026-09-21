@@ -1,0 +1,54 @@
+---
+topic: Inventory Policies
+source_type: glossary
+language: english
+keywords: Inventory Policies, Lagerpolitikker, inventory, policies, example, stock, level, service, capital, defining
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Lagerpolitikker
+term_en: Inventory Policies
+url: https://inact.io/en/glossary/inventory-policies/
+---
+
+Inventory Policies — Danish: Lagerpolitikker
+Inventory policies or stock policies are the strategic guidelines for how a company manages its inventory. This includes decisions about quantities, reordering, safety stock, and inventory rotation, with the goal of ensuring an optimal balance between service level, costs, and capital tied up.
+What are Inventory Policies?
+Inventory policies are the formal rules and strategies that govern when and how much of an item should be ordered or produced. They are designed to translate the company's business strategy into operational actions regarding inventory.
+They may include principles such as:
+Ordering Methods:
+For example,
+Reorder Point
+(ROP), periodic ordering, or Material Requirements Planning (MRP).
+Buffers:
+Setting safety stock and maximum stock levels.
+Management Strategies:
+For example,
+Just-in-Time (JIT) or Make-to-Stock.
+Rotation Principles:
+For example,
+First-In, First-Out (FIFO) or Last-In, First-Out (LIFO).
+What are Inventory Policies used for?
+Inventory policies are used to standardize and automate inventory management.
+They help to:
+Optimize cash flow:
+By reducing stockouts and minimizing capital tied up in excess inventory.
+Ensure consistent service level:
+By defining the desired service level for different product categories.
+Support differentiated management:
+By applying different policies for A, B, and C items.
+Reduce manual work:
+By allowing systems (ERP/SCM) to manage reorders based on the established rules.
+How are Inventory Policies developed?
+Developing effective inventory policies is an analytical and strategic process that requires data insight:
+Segmentation:
+Analysis of historical sales and demand, often via
+ABC-analysis, to group items into categories.
+Strategic Goal Setting:
+Defining the desired service level (for example, 98% delivery precision) and the financial goals (for example, maximum tied-up capital).
+Defining Parameters:
+Calculating and establishing reorder points, safety stocks, and maximum stock levels for each segment.
+Method Selection:
+Evaluating inventory rotation methods (FIFO/LIFO) and the optimal reordering method (ROP/MRP).
+Implementation and Monitoring:
+Introducing the policies into IT systems and continuously monitoring KPIs to ensure they function as intended.

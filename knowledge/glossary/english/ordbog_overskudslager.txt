@@ -1,0 +1,32 @@
+---
+topic: Excess inventory (overstock)
+source_type: glossary
+language: english
+keywords: Excess inventory (overstock), Overskudslager (overlager), inventory, excess, demand, products, stock, quantities, safety, capital
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Overskudslager (overlager)
+term_en: Excess inventory (overstock)
+url: https://inact.io/en/glossary/excess-inventory/
+---
+
+Excess inventory (overstock) — Danish: Overskudslager
+Excess inventory, also referred to as overstock, occurs when a company holds more inventory than needed to meet expected demand, including an appropriate safety stock. In other words, it’s the right products — just in quantities that are too high.
+What is excess inventory?
+Excess inventory is the portion of stock that exceeds the optimal level required to meet demand. It can include raw materials, components, work-in-progress (WIP), and finished goods.
+It differs from obsolete or distressed inventory in that the products are still in demand and can be sold at full price. The issue with excess inventory is the volume — not the product itself.
+Why does excess inventory occur?
+Excess inventory is rarely the result of a single mistake. It typically arises when demand forecasts are too optimistic, when supplier minimum order quantities (MOQs) exceed short-term demand, or when safety stock levels are set too high.
+Underlying all of this is often a lack of coordination between sales, procurement, and production.
+What are the consequences of excess inventory?
+Excess inventory ties up capital and puts pressure on profitability — and the consequences go further than most expect:
+Tied-up capital:
+Cash tied up in excess inventory cannot be used for other investments or operational needs
+Increased holding costs: Storage, insurance, and handling costs remain — regardless of whether the products are moving
+Risk of obsolescence:
+The longer products sit, the higher the risk that excess inventory turns into a permanent loss in value
+How do you reduce excess inventory?
+It starts with better data.
+Improved demand forecasting and regular reviews of reorder points, safety stock, and order quantities are the foundation.
+In addition, negotiating more flexible supply agreements with suppliers and ensuring tighter coordination across sales, procurement, and production makes a significant difference.

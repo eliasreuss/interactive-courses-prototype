@@ -1,0 +1,19 @@
+---
+topic: Forsyningskædens kompleksitet ved vækst
+source: Now Intro
+source_type: course
+language: danish
+product_area: platform
+question_type: what
+keywords:
+- forsyningskæde
+- vækst
+- kompleksitet
+- kunder
+- produkter
+- leverandører
+- operationelle teams
+- beslutningstagning
+---
+
+Når en virksomhed vokser, bliver dens forsyningskæde mere kompleks, fordi der skal betjenes flere kunder, håndteres et bredere sortiment af produkter og koordineres med et stigende antal leverandører. Denne øgede kompleksitet kan overvælde de operationelle teams og gøre det vanskeligt at bevare et klart overblik over driften. Som følge heraf kan teams ende med at løse problemer reaktivt og basere beslutninger på intuition frem for data, hvilket kan have en negativ indvirkning på effektivitet og resultater.

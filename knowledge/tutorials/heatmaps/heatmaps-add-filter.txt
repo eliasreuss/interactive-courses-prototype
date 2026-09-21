@@ -1,0 +1,16 @@
+---
+topic: How to add a filter to a Heatmap in Inact Now
+source_type: tutorial
+language: english
+keywords: add filter, edit filter setup, before linking, reduce data, filter vs slicer
+product_area: Heatmaps
+question_type: how-to
+---
+
+In edit mode, click the Add Filter link above the toolbar. The Edit Filter setup window opens — the same one used in End2End views — with filter areas for Suppliers, Products and Customers side by side.
+
+The window states the important part: filters apply before linking Data sources. A record removed by a filter never becomes part of a relation at all, so filters change the relations the heatmap is built from, not just what is displayed.
+
+Click the green + under a data source to pick a column and set the condition in the Data slicer dialog, then Close the window. Use a filter when the excluded records should not count as connections in the first place, and a slicer when you only want to look at part of an otherwise correctly built heatmap.
+
+Click Save to store the filters with the heatmap.

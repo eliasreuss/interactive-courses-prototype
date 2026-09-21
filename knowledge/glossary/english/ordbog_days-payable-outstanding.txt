@@ -1,0 +1,44 @@
+---
+topic: Days Payable Outstanding (DPO)
+source_type: glossary
+language: english
+keywords: Days Payable Outstanding (DPO), payment, suppliers, inventory, terms, supplier, capital, liquidity, longer
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Days Payable Outstanding (DPO)
+term_en: Days Payable Outstanding (DPO)
+url: https://inact.io/en/glossary/days-payable-outstanding/
+---
+
+Days Payable Outstanding (DPO)
+Days Payable Outstanding (DPO) measures the average number of days you take to pay your suppliers. DPO is used to assess your working capital, liquidity, and your ability to finance operations through supplier credit.
+A high DPO usually means you retain cash for longer, while a low DPO means you pay your suppliers sooner. However, a high DPO isn't automatically a good thing. If you extend payment terms too aggressively, it can strain supplier relationships, cost you early payment discounts, and ultimately put your security of supply at risk.
+What does DPO show in practice?
+In practice, DPO shows how long you finance inventory purchases through supplier credit. If you receive goods today but don't pay the invoice for 60 days, you've financed that purchase through supplier credit instead of your own cash.
+DPO is used to assess payment terms, supplier relationships, liquidity, working capital, and purchasing strategy. The longer your payment terms, the less working capital and liquidity you typically need to fund operations in the short term.
+Days Payable Outstanding (DPO) is also a key part of the cash conversion cycle: the longer you can delay paying suppliers, the shorter the period your own capital stays tied up in the flow of goods.
+DPO is in fact one of three components of the cash conversion cycle — alongside DIO (Days Inventory Outstanding), which shows how long goods sit in inventory, and DSO (Days Sales Outstanding), which shows how long your customers take to pay. The longer DIO and DSO are, the longer it takes to get your money back — but a high DPO can offset this, since you hold onto your own liquidity for longer.
+Payment terms usually depend on supplier relationships, collaboration, and purchase volume, so DPO is closely linked to supplier relationship management — and working capital plays a central role here too, since DPO directly affects how much liquidity you need to finance your operations.
+How do you calculate DPO?
+Days Payable Outstanding is typically calculated as:
+DPO = (accounts payable / cost of goods sold) × number of days in the period
+Example:
+Accounts payable: 14 million DKK
+Annual COGS (cost of goods sold): 84 million DKK
+DPO = (14 / 84) × 365 = 61 days
+That means the company pays its suppliers after roughly 61 days on average.
+Why does DPO matter?
+DPO matters because payment terms have a real impact on your liquidity. If you can delay payments without straining supplier relationships, it eases pressure on cash flow and frees up capital for the rest of the business.
+Short payment terms hit hardest if you carry high levels of inventory, face long lead times, deal with seasonal swings, have significant capital tied up in inventory or buy in large volumes — because then you end up paying for goods long before you sell them. That's why DPO plays a central role in supply chain optimization, where inventory, purchasing, forecasting, and payment terms all influence how much capital you have tied up in your business.
+How companies work with DPO in practice
+A distributor of electronic components faces growing liquidity pressure heading into the last quarter of the year. The company builds up a high level of inventory ahead of peak season, because several Asian suppliers work with long lead times and high minimum order quantities.
+When the company analyzes its DPO, the analysis shows payment terms vary significantly between suppliers. Some European suppliers offer 60-day payment terms, while several Asian suppliers require payment after just 14 or 21 days — even on goods that won't sell for months.
+For one specific product group, the analysis shows that inventory builds up nearly four months before peak season, that DIO (how long inventory sits before it is sold) exceeds 120 days at times, and that payment to the supplier happens long before the sale is realized.
+The company starts working more actively with seasonal forecasts and shares them earlier with its most critical suppliers. Payment terms get renegotiated on the product groups where tied-up capital is highest — for some suppliers, payment terms are extended from 21 to 45 days in exchange for longer forecast horizons and more stable order plans. At the same time, the company reduces safety stock on items with more reliable suppliers, cutting the need for early purchases.
+It doesn't solve every challenge. But the pressure on liquidity drops significantly during periods with the highest inventory levels, and the balance between purchasing, inventory, and cash flow improves.
+How do companies improve their DPO?
+The work usually starts by analyzing which suppliers and product groups affect liquidity the most. Many companies only discover the real issues once they break DPO down across suppliers, product groups, seasonal items, payment terms, and products with high inventory levels.
+From there, you look at how cash flow, forecasting, and inventory connect. This is where supply chain planning becomes important, since more accurate forecasts often make it easier to negotiate longer payment terms and more flexible delivery agreements.
+Supplier performance matters too — stable suppliers make it possible to reduce safety stock and strike a better balance between delivery performance and tied-up capital.
+Companies with disciplined Days Payable Outstanding (DPO) management don't focus on delaying payments as long as possible. Instead, they focus on balancing liquidity, security of supply, and strong supplier relationships.

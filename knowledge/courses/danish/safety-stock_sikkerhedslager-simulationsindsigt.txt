@@ -1,0 +1,18 @@
+---
+topic: Sikkerhedslager / Simulationsindsigt
+source: Safety Stock
+source_type: course
+language: danish
+product_area: inventory
+question_type: what
+keywords:
+- Inact Now
+- Sikkerhedslager
+- Simulation
+- Indsigter
+- Serviceniveauer
+- Lageromkostning
+- Kategori­styring
+---
+
+Inact Now tilbyder en Sikkerhedslager / Simulationsindsigt, der hjælper organisationer med at fastsætte og styre sikkerhedslager for forskellige kategorier. Denne indsigt gør det muligt for brugerne at simulere forskellige serviceniveauer og straks se effekten på lageromkostningerne. Ved at justere serviceniveauerne kan brugerne vurdere balancen mellem højere produkt­tilgængelighed og øgede lageromkostninger, hvilket understøtter velinformerede beslutninger om optimale sikkerhedslager­indstillinger for hver kategori.

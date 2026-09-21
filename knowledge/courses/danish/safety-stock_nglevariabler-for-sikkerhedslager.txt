@@ -1,0 +1,18 @@
+---
+topic: Nøglevariabler for sikkerhedslager
+source: Safety Stock
+source_type: course
+language: danish
+product_area: inventory
+question_type: what
+keywords:
+- sikkerhedslager
+- varians
+- optimalt niveau
+- lagerstyring
+- forsyningskæde
+- produkt
+- lagerberegning
+---
+
+Fastlæggelse af det optimale niveau for sikkerhedslager for et produkt indebærer en analyse af tre nøglevariabler. Disse variabler hjælper med at bestemme, hvor meget ekstra lager der skal holdes for at beskytte mod usikkerheder i efterspørgsel og forsyning. Ved nøje at vurdere hver variabel kan organisationer fastsætte sikkerhedslagerniveauer, der minimerer risikoen for lagerudtømning uden at opbygge unødvendigt store lagre. Processen starter med at forstå varians, som måler uforudsigeligheden i efterspørgsel eller forsyning, og fortsætter med at vurdere de andre kritiske faktorer, der påvirker behovet for sikkerhedslager.

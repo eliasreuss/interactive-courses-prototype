@@ -1,0 +1,16 @@
+---
+topic: How to read the status progress bar on an Action list in Inact Now
+source_type: tutorial
+language: english
+keywords: progress bar, status, TO DO, DONE, completion, percentage, items, last activity
+product_area: Actions
+question_type: concept
+---
+
+Every Action list in the library shows a status progress bar in the Status column. This bar gives you an instant view of how much work has been done.
+
+The bar fills from left to right as items are moved to a completed status. To the right of the bar you see the count in the format X of Y — for example, "6 of 6" means all items are done, while "0 of 50" means no items have been actioned yet. Above the bar, a percentage (such as "0%") shows the overall completion rate.
+
+When all items are done, the bar turns fully green and shows the label Done.
+
+Each list also shows a Last activity date, which tells you when an item was last moved or updated. This helps you quickly spot lists that have been neglected or are actively being worked on.

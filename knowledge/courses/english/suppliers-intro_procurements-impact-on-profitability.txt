@@ -1,0 +1,19 @@
+---
+topic: Procurement's Impact on Profitability
+source: Suppliers Intro
+source_type: course
+language: english
+product_area: supplier
+question_type: why
+keywords:
+- procurement
+- profit center
+- DuPont model
+- ROCE
+- strategic purchasing
+- financial reward
+- return on capital
+- supply chain
+---
+
+Strategic procurement plays a crucial role in enhancing a company's profitability by acting as a profit center rather than just a cost function. The DuPont model demonstrates that effective purchasing decisions can directly improve the company's return on capital employed (ROCE). By optimizing supplier relationships, negotiating better terms, and reducing costs, procurement increases margins and asset efficiency, which in turn boosts overall financial performance. This strategic shift in procurement approach leads to measurable financial rewards for the organization.

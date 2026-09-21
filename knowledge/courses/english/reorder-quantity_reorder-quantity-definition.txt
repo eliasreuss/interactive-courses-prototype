@@ -1,0 +1,18 @@
+---
+topic: Reorder Quantity Definition
+source: Reorder Quantity
+source_type: course
+language: english
+product_area: inventory
+question_type: what
+keywords:
+- reorder quantity
+- reorder point
+- inventory
+- stock level
+- order amount
+- refill
+- sales period
+---
+
+Reorder quantity is the specific amount of a product that a business orders each time its inventory reaches the reorder point. When stock falls to this trigger level, placing an order for the reorder quantity replenishes inventory back to its optimal or maximum level, ensuring there is enough stock available for the next period of sales. This process helps maintain consistent product availability and prevents stockouts.

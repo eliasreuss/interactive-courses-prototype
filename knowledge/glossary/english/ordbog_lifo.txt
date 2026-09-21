@@ -1,0 +1,22 @@
+---
+topic: LIFO (Last In, First Out)
+source_type: glossary
+language: english
+keywords: LIFO, last in first out, inventory principle, FIFO, inventory valuation, rotation, bulk goods
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: LIFO
+term_en: LIFO (Last In, First Out)
+---
+
+LIFO (Last In, First Out) — Danish: LIFO
+LIFO, last in first out, is the principle that the most recently received goods are used or sold first. It is the opposite of FIFO, where the oldest goods go first.
+When does LIFO occur in practice?
+Physically, LIFO often happens unintentionally, because the newest goods are the easiest to reach — at the front of the shelf or on top of the stack. For bulk materials such as sand, gravel or coal, where the pile is filled from above and drawn from the top, LIFO is the natural consequence of how storage works.
+What is the problem with LIFO?
+For any item with a shelf life, a technological lifespan, or a risk of going out of fashion, LIFO is actively harmful. The oldest goods stay put, get older, and end up as obsolete inventory. A warehouse effectively running LIFO without knowing it discovers the problem only when the stock has to be written down.
+LIFO and accounting
+LIFO is also used as an inventory valuation method, where cost of goods sold is booked at the most recent cost price. In periods of rising prices this produces a higher cost of goods sold and a lower inventory value than FIFO. Note that LIFO as an accounting principle is not permitted under IFRS.
+What should you do?
+Unless there is a physical reason for it, stock rotation should follow FIFO or, for items with an expiry date, FEFO where the item with the shortest remaining shelf life goes first. If goods are in fact moving LIFO without anyone deciding it, that is a storage layout problem, not a planning problem.

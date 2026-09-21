@@ -1,0 +1,45 @@
+---
+topic: BOM (Bill of Materials)
+source_type: glossary
+language: danish
+keywords: BOM (Bill of Materials), komponenter, hvilke, styklisten, bliver, derfor, mange, produktionen, virksomheden
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: BOM (Bill of Materials)
+term_en: BOM (Bill of Materials)
+url: https://inact.io/ordbog/bom-bill-of-materials/
+---
+
+BOM (Bill of Materials)
+En BOM (Bill of Materials) eller en stykliste, som den kaldes på dansk, viser hvilke råvarer, komponenter og dele der indgår i produktionen af et produkt. Styklisten fungerer som grundlaget for produktionsplanlægning, materialebehov, indkøb og lagerstyring. Den beskriver typisk, hvilke komponenter der skal bruges, i hvilke mængder, og hvordan de indgår i det færdige produkt.
+Hvilken rolle spiller BOM’en for en produktionsvirksomhed?
+I praksis er styklisten en central del af styringen i mange produktionsvirksomheder. Når virksomheden producerer et produkt, bruger systemerne styklisten til at beregne, hvilke komponenter der skal være tilgængelige, hvor meget der skal købes hjem, og hvilke materialer der bliver brugt i produktionen.
+En stykliste kan indeholde råvarer, halvfabrikata, komponenter, emballage, underenheder og samlinger. Det er derfor ikke bare en teknisk liste, men et datagrundlag, som flere dele af virksomheden arbejder ud fra.
+Derfor hænger BOM tæt sammen med MRP, fordi Material Requirements Planning bruger styklisterne til at beregne, hvilke materialer der skal bruges, i hvilke mængder og hvornår de skal være tilgængelige. Samtidig er styklisten vigtig for supply chain-optimering i produktionsvirksomheder, fordi fejl i styklister hurtigt kan føre til forkerte indkøb, manglende komponenter, unødigt lager eller forsinkelser i produktionen.
+Hvorfor er BOM vigtigt?
+Styklisten er vigtig, fordi den fungerer som forbindelsen mellem produktet og hele supply chain-flowet bag produktionen. Hvis styklisterne er upræcise, kan virksomheden eksempelvis købe for mange komponenter hjem, mangle kritiske dele i produktionen, planlægge forkert kapacitet, skabe forsinkelser i levering eller opbygge unødigt lager.
+Jo mere kompleks produktionen er, desto større betydning får styklisten typisk også. Det gælder især virksomheder med mange produktvarianter eller teknisk komplekse produkter, hvor én forkert komponent i BOM’en hurtigt kan påvirke mange planlagte produktionsordrer samtidig.
+Derfor bliver produkt management og supply chain planning vigtig, fordi styklisterne påvirker både prognoser, materialebehov og kapacitetsplanlægning gennem hele produktionen.
+Sådan kan en BOM se ud:
+En virksomhed producerer eksempelvis en industriel ventilator til produktionshaller. Når virksomheden opretter ventilatoren i ERP- eller MRP-systemet, bliver der tilknyttet en BOM, som viser præcis hvilke komponenter der indgår i produktet. BOM’en kan eksempelvis se sådan ud:
+1 stk. elmotor
+1 stk. ventilatorhus
+4 stk. monteringsbeslag
+12 stk. bolte
+12 stk. møtrikker
+2 meter kabel
+1 stk. styreenhed
+1 stk. emballagesæt
+Når virksomheden planlægger produktion af 250 ventilatorer, bruger systemet styklisten til automatisk at beregne det samlede materialebehov. Virksomheden skal derfor eksempelvis bruge 250 elmotorer, 1.000 monteringsbeslag, 3.000 bolte, 3.000 møtrikker, 500 meter kabel og 250 styreenheder.
+Hvis bare én kritisk komponent mangler,  eksempelvis styreenheden, kan hele produktionsordren blive forsinket, selvom alle andre komponenter er tilgængelige.
+Det er også derfor styklister spiller en central rolle i både MRP, indkøb, lagerstyring og produktionsplanlægning.
+Derfor bliver BOM ofte mere kompleks over tid
+I mange produktionsvirksomheder vokser BOM-strukturen gradvist gennem årene. Nye produktvarianter, kundetilpasninger og tekniske ændringer betyder ofte, at styklisterne bliver mere omfattende og sværere at vedligeholde.
+Problemet er bare, at kompleksiteten sjældent kun bliver i konstruktionen. Når styklisten vokser, påvirker det ofte flere komponenter på lager, flere leverandører, flere planlagte ordrer, større salgsprognose-usikkerhed og mere kompleks produktionsplanlægning.
+Det er også derfor, at virksomheder med mange produktvarianter ofte oplever stigende kompleksitet i både lager og produktion, selv når omsætningen ikke vokser tilsvarende.
+Hvordan kan produktionsvirksomheder arbejde bedre med BOM?
+Start med at analysere, hvilke produktlinjer, komponenter og styklister, der skaber størst kompleksitet eller ustabilitet i planlægningen. Det kræver, at virksomheden kobler BOM-data sammen med lager, produktion og leverandørdata frem for at vedligeholde dem isoleret.
+Her bliver end-to-end intelligence vigtigt, fordi virksomheder først får reelt overblik over konsekvenserne af BOM-ændringer, når data kan analyseres på tværs af hele værdikæden. En supply chain platform kan her gøre en stor forskel, fordi virksomheder ofte har brug for et samlet overblik over lager, komponenter, leverandører og produktionsflow.
+Produkt management skal også være i fokus, da mange produktvarianter og specialtilpasninger ofte øger kompleksiteten i BOM-strukturen markant.
+Virksomheder med stærk BOM-styring arbejder sjældent kun med tekniske styklister. De arbejder med hvordan produktdata påvirker hele supply chain-flowet fra forecast til færdigvare.

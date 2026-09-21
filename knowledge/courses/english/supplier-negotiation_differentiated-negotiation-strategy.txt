@@ -1,0 +1,20 @@
+---
+topic: Differentiated Negotiation Strategy
+source: Supplier Negotiation
+source_type: course
+language: english
+product_area: supplier
+question_type: how
+keywords:
+- negotiation
+- Double ABC
+- strategy
+- variables
+- supplier
+- goal
+- categories
+- differentiation
+- supply chain
+---
+
+A differentiated negotiation strategy involves tailoring your negotiation approach by using different variables for each Double ABC category, depending on your specific objectives. Double ABC categorization segments suppliers or items based on their importance and impact. By aligning negotiation tactics with the unique characteristics and priorities of each category, you can optimize outcomes and achieve your goals more effectively. This approach ensures that negotiation efforts are focused and relevant, rather than applying a one-size-fits-all method.

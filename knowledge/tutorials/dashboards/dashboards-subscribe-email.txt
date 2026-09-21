@@ -1,0 +1,22 @@
+---
+topic: How to subscribe to a dashboard email report in Inact Now
+source_type: tutorial
+language: english
+keywords: subscribe, email, dashboard report, schedule, email delivery, envelope, unsubscribe
+product_area: Dashboards
+question_type: how-to
+---
+
+You can have any dashboard delivered to your email automatically on a schedule.
+
+1. Open the dashboard you want to receive by email.
+2. Click the Subscribe button (the envelope icon) in the top-right corner.
+3. Choose how often you want to receive it from the Select schedule dropdown. Options include:
+   - Daily on weekdays at 8:00 or 12:00
+   - Daily every day (including weekends) at 12:00 or 23:00
+   - Weekly on a specific day of your choice
+   - Monthly on the first or last day of the month
+4. The Include table toggle is on by default — this means the email will include both the KPI cards and the data table. Turn it off if you only want the KPI summary.
+5. Click Subscribe.
+
+You'll receive the dashboard as a snapshot on the schedule you chose. To unsubscribe, click Subscribe again on the same dashboard — the option to cancel your subscription will be shown.

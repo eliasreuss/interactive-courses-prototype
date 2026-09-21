@@ -1,0 +1,28 @@
+---
+topic: Inventory Shrinkage
+source_type: glossary
+language: english
+keywords: inventory shrinkage, stock loss, stock discrepancy, cycle counting, spoilage, theft, recording errors, inventory accuracy
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: Lagersvind
+term_en: Inventory Shrinkage
+---
+
+Inventory Shrinkage — Danish: Lagersvind
+Inventory shrinkage is the difference between the stock your system says you have and the stock actually on the shelf. It is usually discovered at a count and has to be written off as a loss.
+Where does shrinkage come from?
+Very few cases are theft. The common causes are far more mundane:
+Recording errors at receiving, picking or returns
+Items damaged or scrapped without being booked
+The wrong item number used on an issue or receipt
+Spoilage and expiry on items with limited shelf life
+Loss through theft or misplacement
+Why does it matter more than the amount?
+Because unreliable stock figures undermine everything built on top of them. Reorder points trigger against a wrong number, MRP calculates on stock that does not exist, and planners start compensating with extra safety stock because they do not trust the system. The hidden cost of low inventory accuracy is therefore usually larger than the shrinkage itself.
+How do you keep it down?
+Count continuously rather than once a year. Cycle counting, where a small part of the assortment is counted each week, catches errors while the cause can still be traced
+Count high-value or fast-moving items more often than the rest
+Book scrapping and damage as it happens, not at year end
+Look at patterns in the discrepancies rather than only the total — repeated errors on the same item numbers point to a broken process, not to shrinkage

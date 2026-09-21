@@ -1,0 +1,46 @@
+---
+topic: Vendor Managed Inventory (VMI)
+source_type: glossary
+language: english
+keywords: Vendor Managed Inventory (VMI), inventory, supplier, levels, customer, replenishment, items, parameters, managed
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Vendor Managed Inventory (VMI)
+term_en: Vendor Managed Inventory (VMI)
+url: https://inact.io/en/glossary/vendor-managed-inventory-vmi/
+---
+
+Vendor Managed Inventory (VMI)
+Vendor Managed Inventory (VMI) is a collaborative inventory model in which the supplier takes responsibility for monitoring and replenishing the customer's inventory within agreed parameters. Instead of the customer placing every purchase order, the supplier uses data on inventory levels, consumption, and expected demand to plan replenishment.
+VMI is commonly used for items with recurring consumption, where the customer and supplier want high availability and less manual reordering.
+What does Vendor Managed Inventory mean in practice?
+In practice, Vendor Managed Inventory means that the customer shares relevant information with the supplier, allowing the supplier to determine when inventory needs to be replenished and how much to deliver.
+The supplier can, for example, use data on: current inventory levels historical consumption or sales forecasts open orders
+Replenishment takes place within agreed parameters, which can include minimum and maximum inventory levels, service levels, and delivery frequency.
+This changes how responsibility is divided between the customer and supplier. The customer no longer has to manually create every reorder, while the supplier takes a more active role in keeping the agreed items in stock. The customer still defines the parameters and monitors service levels, working capital and assortment.
+VMI is closely connected to supplier management, inventory management, and supply chain planning.
+What's the difference between VMI and consignment stock?
+Vendor Managed Inventory and consignment stock are sometimes used interchangeably, but they describe two different things.
+VMI is about who controls replenishment. The supplier monitors inventory and decides, within agreed parameters, when to replenish and how much to deliver.
+Consignment stock, on the other hand, is about who owns the goods. Under a consignment arrangement, the goods are typically located at the customer's site, while the supplier retains ownership until the customer uses them or takes ownership under the agreed terms.
+A company can have VMI without consignment stock and consignment stock without VMI. The two models can also be combined, with the supplier both owning the goods and handling replenishment.
+What are the advantages and disadvantages of Vendor Managed Inventory?
+VMI can simplify replenishment because the supplier gets the information needed to respond to the customer's current inventory levels and consumption. This can reduce the number of manual purchase orders and make it easier to have the right items in stock when they're needed.
+A well-functioning VMI model can contribute to: fewer manual reorders more stable item availability better coordination between customer and supplier more efficient replenishment fewer stockouts or unnecessarily high inventory levels
+But VMI doesn't automatically reduce inventory or improve service. If the supplier is primarily measured on high availability, the result can be higher inventory levels. If data is inaccurate or delayed, the supplier may make decisions based on incorrect information.
+VMI requires clear agreements on responsibilities, data, service levels, and inventory limits. The customer hands over part of the day-to-day control but remains responsible for whether the model delivers the intended results.
+Who is Vendor Managed Inventory suitable for?
+Vendor Managed Inventory is especially relevant for companies with items that are replenished regularly and where manual reordering creates unnecessary work. This can include manufacturing companies, wholesale companies, or aftermarket businesses that regularly use or sell the same components, consumables, or spare parts.
+VMI tends to be easier to manage when: consumption is recurring and reasonably predictable the supplier can deliver reliably the customer and supplier can share relevant data there are clear parameters for inventory and service replenishment happens relatively frequently
+Items with highly volatile or unpredictable demand aren't necessarily unsuitable for VMI, but they place greater demands on data, forecasting, inventory limits, and monitoring. The same applies to items with a high risk of obsolescence or significant financial consequences from excess inventory.
+VMI works best when the supplier takes responsibility for replenishment while the company continues to set the overall parameters.
+How can you work with Vendor Managed Inventory?
+Start by choosing the items where VMI makes sense. These will often be items with recurring consumption, frequent replenishment, and relatively low complexity. Examples include consumables, standard components, packaging, or spare parts with recurring demand.
+Then set clear parameters for: minimum and maximum inventory levels service levels replenishment frequency data sharing and data quality responsibility for deviations supplier delivery targets monitoring inventory levels
+A common mistake is treating VMI as handing over full responsibility for inventory. The supplier controls replenishment, but you still need to define service levels, assortment, and inventory limits.
+Keep an eye on whether the inventory limits are working as intended. If maximum levels are set too high, or the supplier prioritizes availability without accounting for working capital, inventory can grow. Items with highly unpredictable demand or a high risk of obsolescence also require closer monitoring.
+Track whether VMI is delivering the intended results. You can, for example, monitor item availability, inventory levels, stockouts, and manual workload, as well as the supplier's
+OTIF and broader supplier performance.
+When data on inventory, consumption, and suppliers is brought together across the value chain, it becomes easier to spot when inventory moves outside the agreed parameters. This is where end-to-end intelligence can provide a complete picture of how inventory is developing.
+VMI relies on shared responsibility between customer and supplier. The supplier manages replenishment, while you set the parameters and track whether the model achieves the intended balance between item availability, inventory, and cost.

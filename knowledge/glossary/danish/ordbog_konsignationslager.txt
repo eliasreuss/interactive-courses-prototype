@@ -1,0 +1,25 @@
+---
+topic: Konsignationslager
+source_type: glossary
+language: danish
+keywords: konsignationslager, konsignation, consignment stock, ejerskab, leverandør, kapitalbinding, betaling ved forbrug, VMI
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: Konsignationslager
+term_en: Consignment Stock
+---
+
+Konsignationslager — English: Consignment Stock
+Konsignationslager er varer, der fysisk står hos kunden, men som leverandøren stadig ejer. Ejerskabet — og dermed betalingen — overgår først, når varen faktisk bruges eller sælges.
+Hvad er fordelen for kunden?
+Varen er tilgængelig med det samme, uden at der er bundet kapital i den. Man undgår både lang leveringstid og risikoen for at sidde med varer, der aldrig bliver brugt. Det gør konsignation attraktiv for dyre reservedele og for varer med uforudsigeligt forbrug.
+Hvad er ulempen for leverandøren?
+Leverandøren bærer kapitalbindingen og risikoen for ukurans, indtil varen bruges. Til gengæld får leverandøren typisk en tættere binding til kunden, bedre indsigt i det faktiske forbrug og ofte en større andel af kundens indkøb.
+Hvad kræver det at få til at fungere?
+Klar aftale om hvornår ejerskabet skifter, og hvordan forbruget rapporteres
+Adskilt registrering, så konsignationsvarer ikke tælles med i egen lagerværdi
+Aftale om hvem der bærer tabet ved svind, beskadigelse og ukurans
+Løbende afstemning, fordi differencer ellers først opdages ved årsafslutning
+Konsignation og VMI
+De to forveksles ofte. Vendor managed inventory handler om, hvem der styrer genopfyldningen. Konsignation handler om, hvem der ejer varen. Man kan have det ene uden det andet, men de optræder ofte sammen, fordi leverandøren, der ejer varen, også har en klar interesse i at styre beholdningen.

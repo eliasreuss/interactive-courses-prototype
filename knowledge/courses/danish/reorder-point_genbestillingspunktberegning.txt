@@ -1,0 +1,19 @@
+---
+topic: Genbestillingspunktberegning
+source: Reorder Point
+source_type: course
+language: danish
+product_area: inventory
+question_type: how
+keywords:
+- genbestillingspunkt
+- gennemsnitligt forbrug
+- leveringstid
+- sikkerhedslager
+- lagerudtømning
+- lagerbeholdning
+- leverandør
+- efterspørgselsvariation
+---
+
+Genbestillingspunktet beregnes ved at gange dit gennemsnitlige daglige forbrug af varen med leverandørens leveringstid i dage. Dette giver det antal enheder, du forventer at sælge, mens du venter på en ny levering. For at undgå lagerudtømning på grund af uventede stigninger i efterspørgslen eller forsinkelser fra leverandøren lægger du et sikkerhedslager til dette tal. Den fulde formel er: Genbestillingspunkt = (Gennemsnitligt dagligt forbrug x Leveringstid) + Sikkerhedslager. Ved at inkludere sikkerhedslager sikrer du, at du bestiller i tide til at opretholde lagerbeholdningen, selv når salget eller leveringstiderne varierer.

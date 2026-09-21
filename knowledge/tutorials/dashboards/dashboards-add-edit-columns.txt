@@ -1,0 +1,28 @@
+---
+topic: How to add and edit columns in a dashboard table in Inact Now
+source_type: tutorial
+language: english
+keywords: edit column, table column, KPI metric, trend, label, decimal, aggregation, reorder, hide column
+product_area: Dashboards
+question_type: how-to
+---
+
+Each column in the dashboard table shows a different KPI metric across all rows.
+
+To edit an existing column:
+1. Open the dashboard, click Edit, and go to the Table tab.
+2. Click the small dropdown arrow on any column header.
+3. Select Edit.
+
+In the Edit column window:
+- Column — choose which metric this column should display (e.g., Inventory Turnover Ratio, OTD Outbound Confirmed % 12 mos.).
+- Label — change the column header text that viewers see. Defaults to the metric name.
+- Trend — tick the Trend checkbox to colour-code the values, then choose Positive or Negative from the dropdown.
+- Decimal — tick to show decimal places.
+- Percentage — tick to display the value as a percentage.
+
+Click Save & Refresh to apply your changes and reload the data, or Save to apply without reloading.
+
+You can also Hide a column (removes it from view but keeps the config), Copy it to duplicate it, or Delete it entirely — all from the same dropdown on the column header.
+
+To reorder columns, drag them left or right using the handle on the column header.

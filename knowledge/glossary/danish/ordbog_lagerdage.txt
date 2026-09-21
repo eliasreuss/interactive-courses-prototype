@@ -1,0 +1,40 @@
+---
+topic: Lagerdage
+source_type: glossary
+language: danish
+keywords: Lagerdage, Days of supply (DOS), lager, efterspørgsel, nuværende, antal, begrebet, dække, højere
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Lagerdage
+term_en: Days of supply (DOS)
+url: https://inact.io/ordbog/lagerdage/
+---
+
+Lagerdage — English: Days of supply
+Lagerdage, også kaldet rækkeevne, viser hvor mange dage din nuværende lagerbeholdning kan dække den forventede efterspørgsel uden nye indkøb eller produktion. Det er et af de mest direkte mål for, om dit lager matcher dit forbrug eller salg.
+Hvad er lagerdage?
+Lagerdage måler forholdet mellem det, du har på lager, og det, du sælger eller forbruger. Begrebet bruges til at vurdere, hvor længe dit lager rækker ved den nuværende efterspørgsel.
+Formlen er:
+Lagerdage = Lagerbeholdning / Dagligt forbrug
+Hvis du har 500 enheder på lager og sælger 25 om dagen, er dine lagerdage 20. Du har altså lager nok til 20 dage.
+To måder at bruge begrebet på
+Begrebet lagerdage bruges ofte på to forskellige måder i supply chain og lagerstyring:
+Planlagte lagerdage — hvor mange dage det nuværende lager kan dække fremtidig efterspørgsel. Det er den betydning, vi bruger her.
+Historiske lagerdage — det gennemsnitlige antal dage en vare har ligget på lager, før den blev solgt. Denne beregning er tæt beslægtet med omsætningshastighed.
+Hvad er et godt antal lagerdage?
+Der er findes ikke ét korrekt antal lagerdage.
+Det afhænger af din branche, dine leverandører og din efterspørgsel. Varer med høj omsætningshastighed og korte leveringstider bør have få lagerdage, mens lange leveringstider eller sæsonudsving kan gøre et højere niveau nødvendigt.
+En god tommelfingerregel er, at A-varer bør have færre lagerdage end C-varer, fordi kapitalbindingen typisk er højere. Det vigtige er ikke ét fast tal — men at du styrer lagerdage per varekategori fremfor at kigge på gennemsnittet alene.
+Hvorfor er lagerdage vigtige?
+Lagerdage giver dig et hurtigt pejlemærke på tværs af varekategorier og hjælper dig med at:
+Identificere overskudslager
+— varer med unormalt høje lagerdage i forhold til efterspørgslen
+Prioritere indkøb — hvornår skal du genbestille, og hvornår skal du vente?
+Reducere kapitalbinding
+— jo højere lagerdage, jo mere kapital er låst i varelageret
+Det rette niveau afhænger af din leveringstid, dit sikkerhedslager og dit serviceniveau.
+Kort sagt
+Lagerdage viser, hvor længe dit nuværende lager kan dække efterspørgslen.
+For få lagerdage øger risikoen for lagerbrud. For mange lagerdage binder unødigt kapital.
+Tilbage til o rd bogen

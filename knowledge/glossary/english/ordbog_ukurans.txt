@@ -1,0 +1,40 @@
+---
+topic: Obsolete Inventory
+source_type: glossary
+language: english
+keywords: Obsolete Inventory, Ukurans, inventory, obsolete, items, products, cannot, product, value, avoid
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Ukurans
+term_en: Obsolete Inventory
+url: https://inact.io/en/glossary/obsolete-inventory/
+---
+
+Obsolete Inventory — Danish: Ukurans
+Obsolete inventory is stock that has permanently lost its value. It includes products that are technologically outdated, expired, or damaged during transport or storage. What they all have in common is simple: they can no longer be sold or used as intended — and there is no future demand.
+What is obsolete inventory?
+Obsolete inventory differs from excess inventory in that the issue isn’t the quantity — it’s the product itself. It also differs from distressed inventory in that these items are not just hard to sell — they realistically cannot be sold at all.
+Obsolete inventory typically includes:
+Outdated products replaced by newer models or technology.
+Expired goods with limited shelf life.
+Damaged items that cannot be sold or used.
+Why does obsolete inventory occur?
+Obsolete inventory rarely appears overnight. It is usually the result of misjudged demand, over-ordering, lack of phase-out planning, or long storage time without proper rotation.
+Market changes and new technology can also make products obsolete faster than expected — especially in industries with short product lifecycles.
+What does obsolete inventory cost you?
+Obsolete inventory is more than a warehouse issue — it’s a financial one.
+The items must be written down, they take up space that could be used for sellable products, and disposal costs both time and money.
+And unlike excess or distressed inventory, there is no recovery — the value is gone.
+What do you do about obsolete inventory?
+First step: identify it.
+Products with very low turnover and long time in stock are the obvious candidates.
+Then:
+Write down the inventory to reflect reality in your financials
+Check if components can be reused in production
+Dispose or destroy items that cannot be used or sold
+Document root causes to avoid repetition
+How do you avoid obsolete inventory?
+You rarely eliminate it completely — but you can reduce it significantly.
+Better forecasting, closer monitoring of slow-moving items, and a clear phase-out process are key.
+The earlier you spot a product heading in this direction, the more options you have — before the value disappears completely.

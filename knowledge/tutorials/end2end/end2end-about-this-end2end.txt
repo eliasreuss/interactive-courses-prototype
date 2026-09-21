@@ -1,0 +1,16 @@
+---
+topic: How to see what an End2End view is showing in Inact Now
+source_type: tutorial
+language: english
+keywords: about this end2end, info icon, what does this view show, data sources, slicers, filters, documentation
+product_area: End2End
+question_type: how-to
+---
+
+Click the info icon next to the view name at the top of the page to open the About this End2End window. It summarises how the view is configured, without you having to open the settings panel:
+
+Data sources — one line per data source stating what it is showing, for example "Suppliers – Showing average of Performance Score".
+Slicers — the slicers active on the view, or "None".
+Filters — the filters active on the view, or "None".
+
+This is the fastest way to understand a view a colleague built, and the first place to look when the numbers are not what you expected — an unnoticed filter or slicer is the usual explanation. Click Close to dismiss the window.

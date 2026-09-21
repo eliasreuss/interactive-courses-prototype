@@ -1,0 +1,19 @@
+---
+topic: Double ABC Analysis Explained
+source: Double Abc Analysis 4
+source_type: course
+language: english
+product_area: inventory
+question_type: what
+keywords:
+- Double ABC Analysis
+- product categorization
+- inventory cost
+- demand
+- A/B/C scores
+- two-letter category
+- inventory management
+- prioritization
+---
+
+Double ABC Analysis is a method for categorizing products based on two variables, such as inventory cost and demand. Each product receives a score of A, B, or C for each variable, resulting in a combined two-letter category like AA or CB. For example, AA indicates a product with both high inventory cost and high demand, while CB represents low inventory cost and medium demand. This categorization helps identify which products are most important and guides decisions on how to manage inventory effectively.

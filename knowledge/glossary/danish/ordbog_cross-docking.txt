@@ -1,0 +1,29 @@
+---
+topic: Cross-docking
+source_type: glossary
+language: danish
+keywords: cross-docking, crossdocking, omladning, distribution, gennemløb, uden lager, konsolidering, terminaler, leveringstid
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: Cross-docking
+term_en: Cross-Docking
+---
+
+Cross-docking — English: Cross-Docking
+Cross-docking er en distributionsmetode, hvor varer modtages på en terminal og sendes videre næsten med det samme, uden at blive lagt på lager. Varerne krydser bygningen fra indgående til udgående rampe frem for at blive opbevaret.
+Hvordan fungerer det?
+Indgående forsendelser er sorteret eller mærket, så de kan fordeles direkte til de udgående ruter. Terminalen bruges til at bryde store leverancer op og sætte dem sammen igen efter destination, ikke til at opbevare noget.
+Hvad opnår man?
+Kortere gennemløbstid fra leverandør til kunde
+Lavere lageromkostninger og mindre kapitalbinding
+Mindre håndtering, fordi varen ikke indlagres og plukkes igen
+Bedre konsolidering af fragt til den enkelte modtager
+Hvad kræver det?
+Cross-docking er følsomt over for timing. Kommer en indgående forsendelse for sent, mister den den udgående afgang, og fordelen forsvinder. Det forudsætter:
+Pålidelige leverandører med høj leveringspræcision
+Præcis forudgående information om, hvad der er i hver forsendelse
+Varer der ikke kræver ompakning eller kvalitetskontrol ved modtagelse
+Et stabilt og forudsigeligt volumen
+Hvornår giver det ikke mening?
+Ved uforudsigelig efterspørgsel, hvor der alligevel skal ligge en buffer, ved varer med lang og svingende leveringstid, og ved små volumener hvor terminalomkostningen ikke kan bæres. Cross-docking fjerner lageret, men fjerner ikke behovet for det — det behov skal først være løst et andet sted i kæden.

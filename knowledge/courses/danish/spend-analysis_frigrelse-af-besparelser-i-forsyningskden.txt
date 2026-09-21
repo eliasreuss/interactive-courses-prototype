@@ -1,0 +1,19 @@
+---
+topic: Frigørelse af besparelser i forsyningskæden
+source: Spend Analysis
+source_type: course
+language: danish
+product_area: supplier
+question_type: why
+keywords:
+- avance
+- omkostningsreduktion
+- forsyningskæde
+- forbrugsanalyse
+- gennemsigtighed
+- indkøb
+- optimering
+- omkostningskontrol
+---
+
+Forbedring af en virksomheds avance kan opnås enten ved at øge produktpriserne eller ved at reducere omkostningerne. Da omkring 80% af en virksomheds omkostninger typisk findes i forsyningskæden, giver optimering af dette område et betydeligt potentiale for besparelser. Mange indkøbsteams mangler detaljeret indsigt i deres forbrugsmønstre og ser ofte kun det samlede forbrug uden at forstå de underliggende tendenser og adfærd. Denne mangel på gennemsigtighed kan føre til oversete muligheder for at identificere ineffektivitet og reducere omkostninger, hvilket betyder, at virksomheder risikerer at tabe penge unødvendigt.

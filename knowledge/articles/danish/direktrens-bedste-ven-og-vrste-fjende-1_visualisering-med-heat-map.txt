@@ -1,0 +1,11 @@
+---
+topic: Visualisering med heat map
+source_type: article
+language: danish
+article_source: Direktørens bedste ven og værste fjende (1)
+keywords: profitabilitet, farvekoder, udfordringer, indsigt, handling
+---
+
+1. Visualiser virksomhedens profitabilitet med farvekodede heat maps. 
+2. Identificer områder der kræver opmærksomhed (røde områder). 
+3. Brug indsigt til at motivere handling og strategisk udvikling.

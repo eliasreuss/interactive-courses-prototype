@@ -1,0 +1,12 @@
+---
+topic: Setting a user's home page dashboards
+source_type: tutorial
+language: english
+keywords: homepage setup, home dashboard, user homepage, dashboard, admin
+product_area: Admin
+question_type: how-to
+---
+
+The Homepage setup tab controls which dashboards appear on a user's Home page when they log in. It's a two-panel layout: the left panel lists all available dashboards with "Add →" buttons; the right panel shows the selected dashboards.
+
+Each selected dashboard has a house icon (to mark it as the default starting dashboard) and an × to remove it. You can add multiple dashboards to a user's home page.

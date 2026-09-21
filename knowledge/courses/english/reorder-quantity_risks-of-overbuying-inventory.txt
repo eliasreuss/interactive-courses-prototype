@@ -1,0 +1,19 @@
+---
+topic: Risks of Overbuying Inventory
+source: Reorder Quantity
+source_type: course
+language: english
+product_area: inventory
+question_type: why
+keywords:
+- inventory turnover
+- stock management
+- capital tie-up
+- bulk purchasing
+- reorder quantity
+- discounts
+- inventory costs
+- excess stock
+---
+
+Purchasing large quantities of inventory to take advantage of supplier discounts can lead to significant problems if the stock far exceeds actual sales demand. While the unit price may be lower, this approach can severely reduce your inventory turnover ratio, meaning products remain unsold for long periods. As a result, capital is tied up in inventory that does not generate revenue, potentially causing cash flow issues and increasing the risk of obsolescence or spoilage. Effective inventory management requires balancing purchase incentives with realistic sales forecasts to avoid excessive stock and its negative financial consequences.

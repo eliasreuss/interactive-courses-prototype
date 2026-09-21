@@ -1,0 +1,20 @@
+---
+topic: ABC-analyse i leverandørstyring
+source: Supplier Performance
+source_type: course
+language: danish
+product_area: supplier
+question_type: what
+keywords:
+- ABC-analyse
+- leverandørpræstation
+- Inact Now
+- A-varer
+- B-varer
+- C-varer
+- forhandling
+- ordremængder
+- leveringsbetingelser
+---
+
+ABC-analyse er en metode, der bruges i leverandørpræstationsstyring til at opdele leverandører eller deres varer i tre grupper: A, B og C. 'A'-varer er de mest værdifulde og repræsenterer typisk den største økonomiske eller operationelle betydning, mens 'B'- og 'C'-varer har gradvist mindre betydning. Inact Now anvender ABC-analyse til at identificere disse kategorier blandt dine leverandører, hvilket gør det muligt at fokusere forhandlingsindsatsen, optimere priser, forbedre leveringsbetingelser og justere ordremængder for at opnå størst mulig fordel. Denne tilgang øger gennemsigtigheden og hjælper med at prioritere ressourcer på de mest kritiske leverandørrelationer.

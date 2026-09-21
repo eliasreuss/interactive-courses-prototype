@@ -1,0 +1,59 @@
+---
+topic: Indkøb til ordre (purchase to order)
+source_type: glossary
+language: danish
+keywords: Indkøb til ordre (purchase to order), Purchase-to-order (PTO), ordre, indkøb, varer, purchase-to-order, lager, purchase, strategi, fleksibilitet
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Indkøb til ordre (purchase to order)
+term_en: Purchase-to-order (PTO)
+url: https://inact.io/ordbog/indkoeb-til-ordre/
+---
+
+Indkøb til ordre (purchase to order) — English: Purchase-to-order
+Indkøb til ordre er en indkøbsstrategi, hvor varer først indkøbes hos leverandøren, når der foreligger en kundeordre. Formålet med denne strategi er at minimere lagerbinding og reducere risikoen for overskudslager og ukurans ved kun at anskaffe de varer, der allerede er solgt.
+Hvad er indkøb til ordre?
+Indkøb til ordre, også kaldet purchase-to-order, betyder, at indkøbsprocessen først aktiveres som direkte respons på en kundes ordre. I denne model opbevares varerne ikke som færdigvarer på virksomhedens eget lager; i stedet købes de specifikt hjem til den enkelte ordre eller kunde.
+Denne strategi er særligt udbredt i virksomheder, der arbejder med:
+Kundetilpassede produkter: Varer der konfigureres unikt til hver kunde.
+Lav-volumen varer: Produkter der sjældent sælges, og som derfor er dyre at lagerføre.
+Høj sortimentsvariation: Hvor det er fysisk eller økonomisk umuligt at have alle varianter på lager.
+Hvornår bruges indkøb til ordre?
+Valget af purchase-to-order som strategi er baseret på produktets karakteristika og kundens forventninger. Det er typisk en relevant strategi, når:
+Efterspørgslen er uforudsigelig: Når det er svært at lave præcise prognoser, beskytter PTO mod fejlkøb.
+Produkterne har høj værdi: Ved dyre varer er omkostningen ved kapitalbinding i lageret meget høj.
+Høj risiko for ukurans: For varer med kort teknisk levetid eller hurtigt skiftende trends (f.eks. high-end elektronik eller mode).
+Projektbaseret salg:
+Hvor indkøb sker specifikt til ét stort projekt eller en specifik kontrakt.
+Hvad er fordelene ved indkøb til ordre?
+Den største fordel ved purchase-to-order er den lave kapitalbinding.
+Da virksomheden ikke ejer varen, før den er solgt og derved undgår at opbygge lager, hvilket frigør likviditet til andre formål.
+Andre væsentlige fordele inkluderer:
+Ingen risiko for overskudslager: Man køber kun det, man skal bruge, hvilket fjerner behovet for lagernedskrivninger.
+Større sortiment: Virksomheden kan tilbyde et meget bredt udvalg af varer uden at øge lageromkostningerne.
+Høj fleksibilitet: Det er lettere at tilpasse sig kundespecifikke behov og ændringer i markedet.
+Hvad skal man være opmærksom på ved purchase-to-order?
+Selvom PTO fjerner lagerrisikoen, flytter det presset over på resten af supply chains hastighed og pålidelighed.
+Virksomheder skal være særligt opmærksomme på:
+Længere leveringstider: Kunden skal acceptere at vente på både leverandørens lead time og den efterfølgende transport.
+Leverandørafhængighed: Virksomhedens leveringsevne er 100% afhængig af leverandørens performance og præcision.
+Administrative omkostninger: Hver ordre kræver individuel håndtering og opfølgning, hvilket kan øge det administrative arbejde per enhed.
+Krav til koordination: Det kræver tæt samarbejde mellem salg, indkøb og logistik for at sikre, at varen når frem til kunden som lovet.
+Hvad er forskellen på purchase to order og purchase to stock?
+Purchase to order tager udgangspunkt i faktiske kundeordrer, mens purchase to stock baseres på prognoser og lageropbygning.
+Valget mellem de to handler om at finde den rette balance mellem leveringstid, fleksibilitet og kapitalbinding i virksomhedens supply chain.
+Purchase-to-order
+Purchase-to-stock
+Trigger
+Faktisk kundeordre
+Efterspørgsel og prognoser
+Lagerbinding
+Minimal eller ingen
+Høj
+Leveringstid
+Længere (afhænger af leverandør)
+Meget kort (fra eget lager)
+Fokus
+Fleksibilitet og likviditet
+Servicegrad og hurtig levering

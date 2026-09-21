@@ -1,0 +1,31 @@
+---
+topic: Raw Material Inventory
+source_type: glossary
+language: english
+keywords: Raw Material Inventory, Råvarelager, material, inventory, production, materials, chain, company, consumption, deliveries
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Råvarelager
+term_en: Raw Material Inventory
+url: https://inact.io/en/glossary/raw-material-inventory/
+---
+
+Raw Material Inventory — Danish: Råvarelager
+Raw material inventory is the part of the company's stock where unprocessed materials and components are stored until they are to be used in production. A well-functioning raw material inventory ensures stable production processes, minimizes the risk of downtime due to missing materials, and optimizes tied-up capital in the early part of the supply chain.
+What is a raw material inventory?
+The raw material inventory consists of the materials used as input in production, for example, metal, wood, packaging, or semi-finished goods. The size and composition of the raw material inventory depend on the type of production (for example, make-to-stock or make-to-order), the supplier lead time, and demand.
+What is raw material inventory used for?
+Raw material inventory is used, among other things, to:
+Ensure continuous production:
+Acts as a buffer against delays in deliveries or unforeseen increases in consumption.
+Create flexibility:
+Makes it possible to smooth out variations in deliveries and demand so that production can run stably.
+Optimize production efficiency:
+Ensures that materials are available when they are needed, which minimizes downtime.
+When do you have a raw material inventory?
+Raw material inventory is fundamentally used in all manufacturing companies but is particularly important:
+When the supplier chain is unstable or has long lead times
+For production with high resource consumption
+When the company works with Just-in-Time or Lean, and the raw material stock needs to be carefully balanced
+During seasonal fluctuations, where raw materials must be purchased well in advance

@@ -1,0 +1,30 @@
+---
+topic: Economic Order Quantity (EOQ)
+source_type: glossary
+language: danish
+keywords: Economic Order Quantity (EOQ), omkostninger, economic, order, ordrestørrelse, quantity, bestille, bruger, bruges
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Economic Order Quantity (EOQ)
+term_en: Economic Order Quantity (EOQ)
+url: https://inact.io/ordbog/economic-order-quantity/
+---
+
+Economic Order Quantity (EOQ)
+Economic Order Quantity (EOQ) bruges til at finde en passende ordrestørrelse, så du undgår at bestille for lidt eller for meget ad gangen. Formålet er at skabe balance mellem omkostninger ved at bestille varer og omkostninger ved at have dem på lager.
+Hvad er Economic Order Quantity?
+Economic Order Quantity (EOQ) er en beregningsmodel, der finder den ordrestørrelse, som giver de laveste samlede omkostninger ved indkøb og lagerføring. Modellen tager højde for efterspørgsel, bestillingsomkostninger og lageromkostninger.
+Hvad bruger man EOQ til?
+Du bruger EOQ til at:
+Beregne den mest økonomiske ordrestørrelse
+Reducere samlede lager- og indkøbsomkostninger
+Skabe et databaseret grundlag for indkøbsbeslutninger
+Understøtte bedre planlægning og cash flow
+Hvornår giver EOQ mening?
+EOQ fungerer bedst, når:
+Efterspørgslen er relativt stabil
+Omkostninger er kendte og nogenlunde faste
+Du arbejder med lagerførte varer
+EOQ bruges ofte som udgangspunkt for genbestillingsmængden
+– altså den mængde du faktisk bestiller i praksis.

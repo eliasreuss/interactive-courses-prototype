@@ -1,0 +1,19 @@
+---
+topic: Fastlæggelse af mål i leverandørforhandlinger
+source: Supplier Negotiation
+source_type: course
+language: danish
+product_area: supplier
+question_type: how
+keywords:
+- forhandlingsstrategi
+- indkøb
+- målsætning
+- Double ABC-kategorier
+- løftestænger
+- leverandørforhandling
+- variable
+- mål
+---
+
+Det første skridt i en leverandørforhandlingsstrategi er at definere dit mål klart og tydeligt. Dette mål vil styre dine beslutninger om, hvilke forhandlingsløftestænger du skal anvende, og hvilke Double ABC-kategorier du skal prioritere. Almindelige indkøbsmål omfatter omkostningsreduktion, kvalitetsforbedring, sikring af forsyning eller fremme af innovation. Ved at fastlægge et specifikt mål fra starten kan du identificere de variable og forhandlingstaktikker, der med størst sandsynlighed hjælper dig med at opnå det ønskede resultat. En klar måldefinition sikrer, at dine forhandlingsindsatser er fokuserede og i tråd med organisationens overordnede indkøbsstrategi.

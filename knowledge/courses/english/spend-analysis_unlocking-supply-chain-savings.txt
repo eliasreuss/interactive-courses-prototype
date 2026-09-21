@@ -1,0 +1,19 @@
+---
+topic: Unlocking Supply Chain Savings
+source: Spend Analysis
+source_type: course
+language: english
+product_area: supplier
+question_type: why
+keywords:
+- profit margin
+- cost reduction
+- supply chain
+- spend analysis
+- transparency
+- procurement
+- optimization
+- cost control
+---
+
+Improving a company's profit margin can be achieved by either increasing product prices or reducing costs. Since about 80% of a company's costs are typically found within the supply chain, optimizing this area offers significant potential for savings. Many procurement teams lack detailed visibility into their spending patterns, often only seeing the total spend without understanding the underlying trends and behaviors. This lack of transparency can result in missed opportunities to identify inefficiencies and reduce costs, meaning companies may be losing money unnecessarily.

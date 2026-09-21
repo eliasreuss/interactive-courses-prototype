@@ -1,0 +1,19 @@
+---
+topic: Drilling Down in Data Analysis
+source: Now Insights
+source_type: course
+language: english
+product_area: platform
+question_type: how
+keywords:
+- One Click Deeper
+- Double ABC Analysis
+- filtering
+- transparency
+- category
+- atomic level
+- cost of goods
+- item performance
+---
+
+Going one click deeper refers to the process of moving from broad data categories to detailed, item-level insights. For example, after filtering data using Double ABC Analysis, you can select a specific category such as AA to focus on your most critical items. By sorting these items by total cost of goods consumed, you identify the largest contributors. Clicking on a top item then reveals its individual performance metrics. This step-by-step approach enables users to achieve true transparency by examining data at the most granular level.

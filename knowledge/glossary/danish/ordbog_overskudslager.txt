@@ -1,0 +1,29 @@
+---
+topic: Overskudslager (overlager)
+source_type: glossary
+language: danish
+keywords: Overskudslager (overlager), Excess inventory (overstock), overskudslager, varer, opstår, varerne, andre, dække, efterspørgsel, efterspørgselsprognoser
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Overskudslager (overlager)
+term_en: Excess inventory (overstock)
+url: https://inact.io/ordbog/overskudslager/
+---
+
+Overskudslager (overlager) — English: Excess inventory
+Overskudslager, også kaldet overlager, opstår, når en virksomhed har flere varer på lager, end der er nødvendigt for at dække den forventede efterspørgsel, inklusiv et passende sikkerhedslager. Det er med andre ord de rigtige varer — bare i for store mængder.
+Hvad er overskudslager?
+Overskudslager er den del af lagerbeholdningen, der overstiger det optimale niveau for at dække efterspørgslen. Det kan omfatte råvarer, komponenter, varer under fremstilling (WIP) og færdigvarer. Det adskiller sig fra restlager og ukurans ved, at varerne stadig er efterspurgte og kan sælges til fuld pris. Udfordringen med overskudslager er mængden, ikke varen.
+Hvorfor opstår overskudslager?
+Overskudslager er sjældent et resultat af én enkelt fejl. Det opstår typisk når efterspørgselsprognoser er for optimistiske, når leverandørers minimumsordrestørrelser (MOQ) overstiger den kortsigtede efterspørgsel, eller når sikkerhedslagre er sat for højt.
+Bag det hele ligger ofte manglende koordinering mellem salg, indkøb og produktion.
+Hvad er konsekvenserne af overskudslager?
+Et overskudslager binder kapital og presser bundlinjen og konsekvenserne rækker længere end de fleste forventer:
+Kapitalbinding: Penge låst i overskydende varer kan ikke bruges til andre investeringer eller driftsformål
+Øgede lageromkostninger: Opbevaring, forsikring og håndtering koster uanset om varerne bevæger sig
+Risiko for ukurans: Jo længere varerne ligger, jo større er risikoen for at overskudslageret udvikler sig til et permanent værditab
+Hvordan reducerer man sit overskudslager?
+Det starter med bedre data.
+Forbedrede efterspørgselsprognoser og en regelmæssig gennemgang af bestillingspunkter, sikkerhedslagre og genbestillingsmængder er fundamentet.
+Derudover hjælper det at forhandle fleksible leveringsaftaler med leverandørerne og sikre tættere koordinering på tværs af salg, indkøb og produktion.

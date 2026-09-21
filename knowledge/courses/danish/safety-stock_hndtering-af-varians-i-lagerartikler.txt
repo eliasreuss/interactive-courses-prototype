@@ -1,0 +1,20 @@
+---
+topic: Håndtering af varians i lagerartikler
+source: Safety Stock
+source_type: course
+language: danish
+product_area: inventory
+question_type: how
+keywords:
+- varians
+- A-varer
+- C-varer
+- sikkerhedslager
+- serviceniveau
+- efterspørgselsudsving
+- lagerstyring
+- dødlager
+- leveringstider
+---
+
+Lagerartikler med forskellige efterspørgselsmønstre kræver forskellige strategier for sikkerhedslager. A-varer, som er kritiske og har stabil, forudsigelig efterspørgsel, bør beskyttes med et højere sikkerhedslager for at opretholde et højt serviceniveau. Omvendt har C-varer ofte lav, uforudsigelig efterspørgsel med lejlighedsvise udsving. Hvis man tilføjer betydeligt sikkerhedslager til C-varer, kan det føre til overflødigt lager og dødlager. For varer med høj varians som C-varer er det som regel mere effektivt at acceptere længere leveringstider eller lavere serviceniveauer, eller endda genoverveje om de skal lagerføres, fremfor at overfylde lageret. Denne tilgang sikrer, at ressourcerne fokuseres på de varer, hvor leveringssikkerhed er vigtigst.

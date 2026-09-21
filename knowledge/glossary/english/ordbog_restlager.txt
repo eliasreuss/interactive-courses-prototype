@@ -1,0 +1,36 @@
+---
+topic: Distressed inventory
+source_type: glossary
+language: english
+keywords: Distressed inventory, Restlager, inventory, distressed, products, items, leftovers, production, still, clear
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Restlager
+term_en: Distressed inventory
+url: https://inact.io/en/glossary/distressed-inventory/
+---
+
+Distressed inventory — Danish: Restlager
+Distressed inventory is — as the name suggests — what’s left of something that once made sense to stock. It could be seasonal items that didn’t sell, leftovers from completed production runs, or products that have been phased out but still occupy warehouse space. The items are not necessarily unusable, but there is no clear plan to move them.
+What is distressed inventory?
+Distressed inventory differs from excess inventory in that there is no longer active demand to match. It’s not about having too much of the right products — it’s about products that have become leftovers because the need has disappeared or changed.
+It also differs from obsolete inventory in that the products may still hold some sales value — they are just difficult to sell at full price.
+Typical examples of distressed inventory:
+Seasonal products that didn’t sell in time
+Leftovers from completed production runs
+Products phased out of the assortment but still in stock
+Remaining batches from campaigns or promotions
+What does distressed inventory cost you?
+Distressed inventory is rarely urgent, but it is a silent drain. It ties up capital, takes up space, and requires handling — without generating revenue.
+And the longer it sits, the harder it becomes to sell — and the greater the risk that it turns into obsolete inventory.
+What do you do about distressed inventory?
+The first step is to create an overview — what items are involved, how much is there, and what are they actually worth today?
+From there, the goal is to move them out of inventory as controlled as possible:
+Discounts or markdowns to accelerate sales
+Returns to suppliers where agreements allow
+Alternative use in production or as spare parts
+Write-offs and disposal as a last resort
+How do you avoid distressed inventory?
+Distressed inventory rarely appears overnight. It is typically the result of insufficient follow-up on slow-moving items, lack of phase-out planning, or forecasts that haven’t kept up with demand.
+Closer monitoring of days of supply by product category and a clear process for phasing out products can significantly reduce the risk.

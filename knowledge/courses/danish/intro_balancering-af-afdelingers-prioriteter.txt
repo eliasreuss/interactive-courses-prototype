@@ -1,0 +1,19 @@
+---
+topic: Balancering af Afdelingers Prioriteter
+source: Intro
+source_type: course
+language: danish
+product_area: inventory
+question_type: why
+keywords:
+- afdelinger
+- mål
+- prioriteter
+- forretningens sundhed
+- rentabilitet
+- balance
+- forsyningskæde
+- lagerstyring
+---
+
+Forskellige afdelinger i en virksomhed har ofte deres egne mål og prioriteter, som til tider kan være i konflikt med hinanden. For eksempel kan salgsafdelingen prioritere høj produkttilgængelighed, mens økonomiafdelingen fokuserer på at minimere lageromkostninger. Dette skaber en dynamik, hvor afdelingerne skal balancere deres mål for at sikre virksomhedens overordnede sundhed og rentabilitet. At opnå den rette balance hjælper med at undgå ineffektivitet og understøtter bæredygtig vækst.

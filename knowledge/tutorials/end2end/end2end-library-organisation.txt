@@ -1,0 +1,19 @@
+---
+topic: How to organise End2End views into groups in Inact Now
+source_type: tutorial
+language: english
+keywords: organise groups, edit mode, new setup group, rename group, delete group, unsorted, shared view warning
+product_area: End2End
+question_type: how-to
+---
+
+Click the gear icon at the top right of the End2End library to turn on edit mode. The button changes to a red "Edit mode: ON" and two notices appear:
+
+"NB: Empty groups will not be visible when exiting edit mode" — a group with no items in it disappears from the normal view.
+"Warning! You are editing a shared view! The changes will affect all of your colleagues" — the library layout is shared, so your grouping changes apply to everyone in the account.
+
+In edit mode each group heading gains three controls: a drag handle on the left for reordering groups, a red bin icon for deleting the group, and a pencil icon for renaming it. Deleting a group does not delete the views inside it — they move to Unsorted.
+
+Above the lists you get + New Setup group (for End2End views) and + New Heatmap group (for heatmaps). Click one to create an empty group, name it, and then move items into it using Change group from an item's "..." menu.
+
+Items with no group are shown under the Unsorted heading. Click the gear icon again to leave edit mode.

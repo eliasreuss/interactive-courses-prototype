@@ -1,0 +1,19 @@
+---
+topic: Differentierede serviceniveauer i lagerstyring
+source: Safety Stock
+source_type: course
+language: danish
+product_area: inventory
+question_type: why
+keywords:
+- serviceniveau
+- Dobbelt ABC-analyse
+- lager
+- beholdning
+- tilgængelighed
+- kritiske varer
+- differentieret servicemodel
+- forretningspåvirkning
+---
+
+Hvis man anvender ét samlet serviceniveau for alle produkter, kan det føre til for store lagre af mindre vigtige varer og utilstrækkelig beholdning af kritiske varer. Ved at indføre en differentieret servicemodel, baseret på Dobbelt ABC-analyse, kan virksomheder fastsætte højere serviceniveauer for produkter, der er afgørende for forretningen, og lavere niveauer for varer med mindre betydning. Denne tilgang forbedrer tilgængeligheden af produkter, hvor det er vigtigst, samtidig med at det samlede lager holdes på et håndterbart niveau, hvilket fører til en mere effektiv og målrettet lagerstyring.

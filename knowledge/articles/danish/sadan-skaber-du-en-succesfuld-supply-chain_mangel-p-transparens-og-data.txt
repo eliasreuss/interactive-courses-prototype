@@ -1,0 +1,10 @@
+---
+topic: Mangel på transparens og data
+source_type: article
+language: danish
+article_source: Sådan skaber du en succesfuld supply chain
+keywords: transparens, data, kundetilfredshed, lønsomhed, logistik
+---
+
+1. Mangel på transparens fører til dårlige resultater. 
+2. Udfordringer med lagerbeholdning og kundebehov skyldes ofte mangel på data.

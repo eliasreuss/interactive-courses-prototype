@@ -1,0 +1,22 @@
+---
+topic: How to move columns between Available and Included in an Insight's Setup panel in Inact Now
+source_type: tutorial
+language: english
+keywords: columns, available columns, included columns, add column, remove column, arrow buttons, setup panel
+product_area: Insights
+question_type: how-to
+---
+
+In the Setup panel, the right side shows two side-by-side lists: Available columns (columns from the data source that aren't in the Insight yet) and Included columns (columns that are part of this Insight).
+
+Columns in the Included list appear in two visual groups: those with full-contrast text are actively shown in the Insight views, while those with lighter/gray text are included but currently hidden from view.
+
+Between the two lists there are four arrow buttons:
+→ — moves the selected column from Available to Included
+← — moves the selected column from Included back to Available (this triggers a confirmation dialog)
+All → — moves all Available columns into Included
+← All — moves all Included columns back to Available
+
+To move a single column, click it to select it (it highlights in blue), then click the appropriate arrow.
+
+When you select a column in the Included list and click the ← (remove) arrow, a confirmation dialog appears: "You are removing a column from this Insight. The column will be removed from views and filters in this Insight. Do you want to proceed?" Click Proceed to remove it or Cancel to keep it — this warning exists because removing a column also removes it from any views or filters where it was being used.

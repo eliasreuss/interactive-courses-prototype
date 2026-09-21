@@ -1,0 +1,23 @@
+---
+topic: MRP
+source_type: glossary
+language: danish
+keywords: MRP, materialebehovsplanlægning, material requirements planning, styklister, BOM, nettobehov, indkøbsforslag, produktionsordrer, planlægning
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: MRP
+term_en: MRP (Material Requirements Planning)
+---
+
+MRP — English: MRP (Material Requirements Planning)
+MRP, materialebehovsplanlægning, er den metode, et ERP-system bruger til at regne ud, hvad der skal købes og produceres, hvornår og i hvilke mængder, for at dække et kendt behov.
+Hvad regner MRP på?
+MRP tager tre input: hvad der skal leveres eller produceres, hvad der allerede står på lager og er i bestilling, og hvordan produkterne er sat sammen via styklisten. Ud af det falder nettobehovet — altså det, der reelt mangler.
+Herefter lægger MRP leverandørens eller produktionens gennemløbstid bagud fra den dato, varen skal bruges, og foreslår en indkøbs- eller produktionsordre, der lander til tiden.
+Hvad MRP forudsætter
+MRP er kun så god som de data, den regner på. Forkerte gennemløbstider, forældede styklister eller lagerbeholdninger, der ikke stemmer, giver forslag, ingen kan bruge. Det er den typiske årsag til, at planlæggere holder op med at stole på systemet og begynder at disponere manuelt ved siden af.
+MRP og planlægningsparametre
+MRP træffer ikke beslutninger om, hvor meget buffer der skal være. Den regner på de parametre, nogen har sat: sikkerhedslager, bestillingspunkt, genbestillingsmængde og minimumsordremængde. Kvaliteten af planlægningen afgøres derfor i høj grad af, om de parametre er sat bevidst og vedligeholdes — ikke af MRP-kørslen i sig selv.
+MRP eller bestillingspunkt?
+Bestillingspunkt reagerer på, at lageret er faldet til et niveau. MRP planlægger fremad ud fra et kendt behov. Mange virksomheder bruger begge dele: bestillingspunkt til jævnt forbrugte varer, MRP til varer med konkrete ordrer eller stykliste bagved.

@@ -1,0 +1,32 @@
+---
+topic: Open Warehouse Capacity
+source_type: glossary
+language: english
+keywords: Open Warehouse Capacity, Åben lagerkapacitet, warehouse, goods, capacity, space, production, storage, available, bottlenecks
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Åben lagerkapacitet
+term_en: Open Warehouse Capacity
+url: https://inact.io/en/glossary/open-warehouse-capacity/
+---
+
+Open Warehouse Capacity — Danish: Åben lagerkapacitet
+Open warehouse capacity describes the actual available storage space after both the current inventory and all planned incoming goods have been taken into account. The concept is crucial for assessing how many additional goods can be received or produced without exceeding the warehouse's physical limits, thereby avoiding costly bottlenecks at goods reception.
+What is open warehouse capacity?
+Open warehouse capacity is the dynamic and forward-looking calculation of available space in the warehouse. Unlike simply looking at the empty space right now, it includes goods that are inbound. This provides a concrete picture of the warehouse's flexibility and is essential for effective planning of purchasing, production, and logistics. It is a key figure for ensuring a smooth flow throughout your supply chain.
+What is open warehouse capacity used for?
+Insight into open warehouse capacity is used to make smarter and more proactive decisions.
+Specifically, it is used to:
+Plan new purchases and production orders without the risk of overfilling and expensive external storage solutions
+Optimize the utilization of storage space and minimize internal transport time
+Improve goods reception by ensuring that there is space when the goods arrive
+Balance tied-up capital
+(not buying too much) with service level
+(not running out of goods)
+In which situations should knowledge of Open Warehouse Capacity be used?
+Knowledge of open warehouse capacity is particularly critical in the following situations:
+For daily operational planning to avoid bottlenecks
+Before large purchase orders are placed or new production series are started
+During seasonal fluctuations or campaigns where the goods flow is unusually high
+When evaluating whether there is a need to invest in warehouse expansion or optimize the existing setup

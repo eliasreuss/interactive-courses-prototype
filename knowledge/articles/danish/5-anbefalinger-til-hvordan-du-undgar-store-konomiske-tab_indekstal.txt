@@ -1,0 +1,10 @@
+---
+topic: Indekstal
+source_type: article
+language: danish
+article_source: 5 anbefalinger til hvordan du undgår store økonomiske tab
+keywords: salg, indekstal, afvigende salg, Inact Now, sikkerhedslager
+---
+
+1. Sammenlign salg i forskellige perioder med indekstal. 
+2. Brug Inact Now til at identificere varenumre med store afvigelser.

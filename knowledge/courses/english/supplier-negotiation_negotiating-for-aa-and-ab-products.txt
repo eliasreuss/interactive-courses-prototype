@@ -1,0 +1,20 @@
+---
+topic: Negotiating for AA and AB Products
+source: Supplier Negotiation
+source_type: course
+language: english
+product_area: supplier
+question_type: how
+keywords:
+- AA products
+- AB products
+- cost price
+- volume
+- MOQ
+- supplier negotiation
+- reliability
+- earnings
+- customer satisfaction
+---
+
+When negotiating with suppliers for AA and AB products, which are high-volume and high-value items, focus on securing the lowest possible cost price and ensuring reliable deliveries. Because you purchase these items in large quantities, you have strong bargaining power and can agree to a higher minimum order quantity (MOQ) in exchange for better pricing. Since demand for these products is stable, the risk of holding inventory is low, and even small reductions in cost price can significantly improve earnings. Reliable delivery is crucial to maintain customer satisfaction.

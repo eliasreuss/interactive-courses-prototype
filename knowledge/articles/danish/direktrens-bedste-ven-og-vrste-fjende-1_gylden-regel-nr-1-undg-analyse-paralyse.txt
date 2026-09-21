@@ -1,0 +1,9 @@
+---
+topic: 'Gylden regel nr. 1: Undgå analyse-paralyse'
+source_type: article
+language: danish
+article_source: Direktørens bedste ven og værste fjende (1)
+keywords: analyse, tidsspilde, ressourcer, forretningsmuligheder
+---
+
+Undgå at bruge for meget tid og ressourcer på dataindsamling uden handling. Analyse-paralyse kan føre til spild af tid, ressourcer og forretningsmuligheder.

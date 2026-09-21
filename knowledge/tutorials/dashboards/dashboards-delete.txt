@@ -1,0 +1,17 @@
+---
+topic: How to delete a dashboard in Inact Now
+source_type: tutorial
+language: english
+keywords: delete dashboard, remove dashboard, permanent, confirm delete, subscriptions
+product_area: Dashboards
+question_type: how-to
+---
+
+Deleting a dashboard is permanent — it cannot be recovered afterwards.
+
+1. Click Dashboards in the top menu bar.
+2. Find the dashboard you want to delete and click the ••• button on the right side of its row.
+3. Select Delete (shown in red).
+4. A confirmation message appears asking if you're sure. Click Delete to confirm, or Cancel to go back.
+
+Once deleted, the dashboard is gone. Any email subscriptions to it are also removed.

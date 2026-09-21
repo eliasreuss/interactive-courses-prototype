@@ -1,0 +1,20 @@
+---
+topic: What the Dashboards module is and what it shows in Inact Now
+source_type: tutorial
+language: english
+keywords: dashboards, overview, KPI, table, widgets, module, navigation, filter
+product_area: Dashboards
+question_type: concept
+---
+
+Dashboards give you a visual summary of your most important numbers in one place. Instead of digging through Insights, a Dashboard pulls key metrics to the surface so you can see at a glance how things are performing.
+
+To get there, click Dashboards in the top menu bar. You'll land on a page listing all available dashboards. Click any dashboard name to open it.
+
+A dashboard has three main areas stacked on top of each other:
+
+KPI cards sit at the top. Each card shows a single metric — its current value, whether it's trending up or down, and whether it's hitting its target. Large cards include a small trend chart showing performance over recent quarters.
+
+A data table sits below the cards. It shows the same metrics broken down into rows — for example, by product type (A items, B items, etc.) — so you can compare performance across segments side by side. The table may have multiple tabs across the top, each showing a different view of the data.
+
+A filter bar runs across the top of the content area, just below the header. It contains dropdown filters like Customer Group, Supplier Group, and Country. Selecting a value in any of these filters updates everything on the dashboard instantly to show only matching data.

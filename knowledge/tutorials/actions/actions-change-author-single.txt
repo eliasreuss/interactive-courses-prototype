@@ -1,0 +1,12 @@
+---
+topic: How to change the author of a single Action list in Inact Now
+source_type: tutorial
+language: english
+keywords: change author, creator, reassign author, action list, dropdown menu
+product_area: Actions
+question_type: how-to
+---
+
+To reassign who is recorded as the creator of a single Action list, open the Actions library, click the "..." (or ▾) dropdown on the right side of the Action list's row, and choose Change author. Select the new author from the list of users and confirm.
+
+To change the author on several Action lists at once instead, select them with the checkboxes and use the Change author option in the bulk action bar.

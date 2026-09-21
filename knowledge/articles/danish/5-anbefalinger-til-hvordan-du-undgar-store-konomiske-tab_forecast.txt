@@ -1,0 +1,11 @@
+---
+topic: Forecast
+source_type: article
+language: danish
+article_source: 5 anbefalinger til hvordan du undgår store økonomiske tab
+keywords: forecast, historiske data, fejldisponering, Sales & Operations Planning,
+  dialog mellem salg og indkøb
+---
+
+1. Brug dialog mellem salg og indkøb til forecast. 
+2. Hold månedlige Sales & Operations Planning møder for at afstemme forventninger.

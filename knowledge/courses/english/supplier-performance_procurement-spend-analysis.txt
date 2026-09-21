@@ -1,0 +1,19 @@
+---
+topic: Procurement Spend Analysis
+source: Supplier Performance
+source_type: course
+language: english
+product_area: supplier
+question_type: what
+keywords:
+- procurement spend
+- spend analysis
+- supplier portfolio
+- cost-saving
+- Insights
+- supplier negotiations
+- Inact Now
+- purchasing data
+---
+
+Procurement spend refers to the portion of a company's total costs that are dedicated to purchasing goods and services from suppliers, often representing 50 to 80 percent of overall expenses. Spend analysis is the systematic process of collecting, classifying, and analyzing purchasing data to determine how much is spent, which suppliers are involved, and what types of goods or services are being bought. Using tools like Inact Now, organizations can gain valuable insights into their supplier portfolio, uncover opportunities for cost savings, and strengthen their position in supplier negotiations.

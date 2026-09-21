@@ -1,0 +1,25 @@
+---
+topic: Restordre
+source_type: glossary
+language: danish
+keywords: restordre, backorder, manglende lager, stockout, leveringsevne, servicegrad, delleverance, restnotering, kundeordre
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: Restordre
+term_en: Backorder
+---
+
+Restordre — English: Backorder
+En restordre er en kundeordre eller en del af en ordre, der ikke kan leveres nu, fordi varen ikke er på lager, men som holdes åben og leveres, når varen kommer hjem.
+Restordre eller mistet salg?
+Forskellen er afgørende. En restordre betyder, at kunden venter — salget er udskudt, ikke tabt. Vælger kunden i stedet at annullere eller købe andetsteds, er det mistet salg. Hvor stor en andel der bliver til det ene frem for det andet, afhænger af varens kritikalitet, hvor let den kan skaffes andetsteds, og hvor troværdig den lovede leveringsdato er.
+Hvad koster restordrer?
+De koster mere end den forsinkede omsætning. En restordre udløser ekstra håndtering, en ekstra forsendelse ved delleverance, opfølgning fra salg og kundeservice og ofte en hastehjemtagning hos leverandøren. Dertil kommer den del af kunderne, der ikke vender tilbage.
+Hvad fortæller restordrerne dig?
+Restordrer er et af de mest direkte mål for, om lagerpolitikken virker. Hober de sig op på de samme varenumre, er sikkerhedslager eller bestillingspunkt sat forkert på netop de varer. Er de spredt jævnt ud, peger det snarere på leveringstider fra leverandøren eller på prognoser, der systematisk rammer for lavt.
+Hvad gør man ved dem?
+Se på restordrerne pr. varenummer frem for som en samlet total
+Skru op for sikkerhedslageret på de varer, hvor konsekvensen af manglende lager er størst — ikke på alle varer
+Meld en realistisk dato frem for den tidligst mulige, og hold den
+Følg op på, om leverandørens faktiske leveringstid svarer til den aftalte

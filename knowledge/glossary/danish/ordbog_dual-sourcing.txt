@@ -1,0 +1,36 @@
+---
+topic: Dual sourcing
+source_type: glossary
+language: danish
+keywords: Dual sourcing, sourcing, virksomheden, leverandør, leverandører, flere, varer, indkøb, bliver
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Dual sourcing
+term_en: Dual sourcing
+url: https://inact.io/ordbog/dual-sourcing/
+---
+
+Dual sourcing
+Dual sourcing er en indkøbsstrategi, hvor virksomheden bruger to leverandører på samme vare eller komponent for at reducere risikoen ved at være afhængig af én enkelt leverandør. Formålet er at forbedre forsyningssikkerheden og gøre supply chain mere robust over for forsinkelser, kapacitetsproblemer eller leverandørsvigt.
+Hvad betyder dual sourcing i praksis?
+I praksis betyder dual sourcing, at virksomheden fordeler indkøb af samme vare mellem to leverandører i stedet for kun én. Det kan enten være en fast fordeling, hvor begge leverandører bruges løbende, eller en model hvor én leverandør fungerer som backup ved problemer eller kapacitetsmangel.
+Mange virksomheder arbejder med dual sourcing på: kritiske komponenter varer med lange leveringstider produkter med høj omsætning varer med stor betydning for drift eller service
+Strategien bruges især, når konsekvensen af leveringsproblemer er større end fordelene ved kun at samle indkøb ét sted. Derfor hænger dual sourcing tæt sammen med både leverandørstyring, supply chain resilience og strategisk indkøb.
+Når én leverandør bliver et skjult risikopunkt
+Mange virksomheder samler indkøb hos én leverandør for at opnå bedre priser, større volumenrabatter eller enklere administration. Det kan fungere fint — lige indtil noget går galt.
+Hvis leverandøren pludselig får produktionsproblemer, mangel på råvarer eller transportforsinkelser, kan virksomheden hurtigt stå uden alternativer. På det tidspunkt bliver konsekvenserne ofte synlige andre steder: produktionen mangler varer lageret bliver tømt kunder oplever forsinkelser indkøb må hastefinde nye leverandører
+Dual sourcing handler derfor ikke kun om flere leverandører. Det handler om at reducere sårbarheden i forsyningskæden, før problemerne opstår.
+Hvornår giver dual sourcing mening?
+Dual sourcing giver ikke mening på alle varer. Strategien bruges typisk på varer, hvor leveringsproblemer kan få store konsekvenser for drift, service eller omsætning. Det kan være relevant, når leveringstiderne er lange, leverandøren er geografisk langt væk, varen er kritisk for produktionen, efterspørgslen svinger meget, virksomheden er stærkt afhængig af én leverandør, eller markedet er ustabilt.
+Til gengæld kan dual sourcing også skabe mere kompleksitet. Flere leverandører betyder ofte flere forecasts, flere kvalitetsgodkendelser, flere processer og mindre volumen hos hver leverandør. Derfor handler dual sourcing om balance.
+Virksomheden skal vurdere, om den ekstra sikkerhed er vigtigere end den ekstra kompleksitet og de potentielt højere indkøbsomkostninger. Det gør dual sourcing relevant i arbejdet med supply chain-optimering, fordi strategien påvirker både risiko, lager og fleksibilitet på tværs af hele værdikæden.
+Dual sourcing i praksis
+En producent af teknisk udstyr køber en central elektronikkomponent fra én asiatisk leverandør. Samarbejdet fungerer stabilt i flere år, og virksomheden opnår gode priser gennem høje indkøbsvolumener. Problemet opstår, da leverandøren pludselig bliver ramt af produktionsproblemer. Leveringstiden stiger fra otte til seksten uger på få måneder.
+Virksomheden har ingen alternative leverandører godkendt, og flere færdigvarer kan derfor ikke produceres som planlagt. For at beskytte kunderne begynder virksomheden at opbygge større sikkerhedslager på kritiske komponenter. Samtidig må indkøb bruge store ressourcer på hasteordrer og manuel koordinering.
+Efter situationen ændrer virksomheden strategi. De godkender en ekstra europæisk leverandør på den kritiske komponent og fordeler nu indkøbene mellem begge leverandører. Den asiatiske leverandør håndterer størstedelen af volumen til lav pris, mens den europæiske leverandør bruges til hurtigere genopfyldning og som backup ved forsinkelser.
+Det betyder ikke, at virksomheden eliminerer alle risici. Men de reducerer afhængigheden af én enkelt leverandør markant — og får langt større fleksibilitet, når markedet eller leveringstiderne ændrer sig.
+Hvordan kan virksomheden arbejde med dual sourcing?
+Start med at identificere, hvilke varer eller komponenter der er mest kritiske for virksomheden. Det er typisk varer med høj omsætning, lange leveringstider, høj risiko ved mangel, få alternative leverandører eller stor påvirkning på produktion og service.
+Derefter bør virksomheden vurdere, hvor stor risikoen faktisk er ved kun at have én leverandør. Her handler det ikke kun om pris, men også om geografisk risiko, kapacitetsproblemer, transportafhængighed, leveringstid, fleksibilitet og leverandørperformance.
+Her bliver arbejdet med leverandørperformance, og supply chain analytics vigtigt, fordi virksomheden både skal forstå leverandørens stabilitet, samarbejdets modenhed og den samlede risiko i værdikæden. Virksomheder med stærk dual sourcing arbejder sjældent med backup-leverandører kun på papiret. De sikrer løbende, at begge leverandører faktisk kan levere, når situationen kræver det.

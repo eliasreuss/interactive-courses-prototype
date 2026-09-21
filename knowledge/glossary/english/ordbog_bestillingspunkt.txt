@@ -1,0 +1,29 @@
+---
+topic: Reorder point
+source_type: glossary
+language: english
+keywords: Reorder point, Bestillingspunkt, point, reorder, inventory, management, order, capital, chain, ensure
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Bestillingspunkt
+term_en: Reorder point
+url: https://inact.io/en/glossary/reorder-point/
+---
+
+Reorder point — Danish: Bestillingspunkt
+Reorder point (also known as ROP) is a central concept in inventory management and supply chain management. It defines the precise inventory level that automatically triggers a new order to replenish stock. The purpose is to ensure that new goods are received before you risk running out, thereby maintaining a high service level without tying up unnecessary capital.
+What is a reorder point?
+A reorder point is a dynamic buffer that ensures you don't run out of an item in the period from when you order it until you receive it again.
+It's a critical balance between:
+The risk of stockout: Disappointing customers and losing sales.
+The cost of inventory carrying: Having too much money tied up in goods that take up space and don't sell.
+A correctly set reorder point is the foundation for efficient and automated inventory management.
+What is the reorder point used for?
+A reorder point is used to automate and standardize the reordering process.
+It functions as an alarm bell that tells the system or buyer: "Now it's time to order more of this item."
+The primary purposes are to:
+Ensure high service levels and customer satisfaction.
+Minimize capital tied up in inventory.
+Reduce manual monitoring and free up time for the purchasing department.
+Create a stable and predictable flow in the supply chain.

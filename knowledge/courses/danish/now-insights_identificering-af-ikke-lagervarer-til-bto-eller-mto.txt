@@ -1,0 +1,20 @@
+---
+topic: Identificering af ikke-lagervarer til BTO eller MTO
+source: Now Insights
+source_type: course
+language: danish
+product_area: platform
+question_type: how
+keywords:
+- Insights
+- Lagerpolitik
+- Ikke-lagervarer
+- BTO
+- MTO
+- arbejdskapital
+- filtre
+- visninger
+- lagerstyring
+---
+
+For at identificere ikke-lagervarer, der egner sig til Build-To-Order (BTO) eller Make-To-Order (MTO) opsætninger, skal du bruge Stock Policy: Non Stock Items Insight. Start med at navigere til den relevante visning og anvend filtre for at fokusere på varer, der ikke aktuelt er på lager. Brug de tilgængelige værktøjer til at dykke ned i vareoplysninger og vurdere deres efterspørgselsmønstre. Ved at udpege varer, som ikke kræver regelmæssig lagerføring, kan du anbefale at overføre dem til BTO- eller MTO-processer. Denne tilgang hjælper med at reducere unødvendigt lager og frigør arbejdskapital til andre forretningsbehov.

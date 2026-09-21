@@ -1,0 +1,19 @@
+---
+topic: Leverandørkategorisering for Effekt
+source: Supplier Performance
+source_type: course
+language: danish
+product_area: supplier
+question_type: how
+keywords:
+- leverandørkategorisering
+- leverandørpræstation
+- effekt
+- prioritering
+- fokus
+- leverandørstyring
+- måling
+- leverandørsegmentering
+---
+
+Når man håndterer et stort antal leverandører, er det vigtigt at kategorisere dem for at afgøre, hvor indsatsen skal fokuseres for at opnå størst mulig effekt. Ved at gruppere leverandører baseret på faktorer som deres betydning for dine operationer, indkøbsvolumen eller risikoniveau, kan du identificere, hvilke leverandører der kræver mest opmærksomhed. Denne tilgang gør det muligt at fordele ressourcer effektivt, tage hånd om de mest kritiske leverandørrelationer først og skabe forbedringer dér, hvor de vil gavne forsyningskæden mest.

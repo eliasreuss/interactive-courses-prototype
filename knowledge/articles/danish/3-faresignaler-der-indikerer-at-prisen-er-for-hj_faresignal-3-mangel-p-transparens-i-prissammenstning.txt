@@ -1,0 +1,11 @@
+---
+topic: 'Faresignal 3: Mangel på transparens i prissammensætning'
+source_type: article
+language: danish
+article_source: 3 faresignaler der indikerer, at prisen er for høj
+keywords: omkostninger, transparens, prissammensætning, leverandør, taktik
+---
+
+1. Kræv detaljeret indblik i omkostningerne.
+2. Leverandører bør være transparente om priser.
+3. Mangel på transparens kan presse prisen op.

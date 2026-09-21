@@ -1,0 +1,18 @@
+---
+topic: How to add and remove filters on an Insight in edit mode in Inact Now
+source_type: tutorial
+language: english
+keywords: insight filter, fixed slicer, add filter, edit mode, filter bar, item group, category filter
+product_area: Insights
+question_type: how-to
+---
+
+When editing an Insight, you can control which filters appear in the filter bar for all users of that Insight.
+
+1. Open the Insight and turn on edit mode by clicking the gear icon.
+2. Two buttons appear in the filter bar: + Insight filter and + Fixed slicer.
+   - + Insight filter — adds a numeric filter. Click it to see a searchable list of available metric columns. Select one to add it as a filter that viewers can use to narrow results by value ranges.
+   - + Fixed slicer — adds a category filter. Click it to see a list of categorical fields (e.g., Item Group, Product Group, Item Status, Responsible, Customer Group, Supplier Group). Select one to add it as a dropdown filter.
+3. To remove a filter in edit mode, click the red × button next to it in the filter bar.
+
+These changes affect all users of the Insight. Click Save to apply.

@@ -1,0 +1,28 @@
+---
+topic: Turnover Rate
+source_type: glossary
+language: english
+keywords: Turnover Rate, Omsætningshastighed, inventory, turnover, management, capital, chain, supply, company, concept
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Omsætningshastighed
+term_en: Turnover Rate
+url: https://inact.io/en/glossary/turnover-rate/
+---
+
+Turnover Rate — Danish: Omsætningshastighed
+The turnover rate measures how quickly a company sells its inventory or converts its assets into revenue. It is a central key figure in supply chain and inventory management, as it shows the efficiency of inventory holding and capital utilization.
+What is turnover rate?
+Inventory turnover is a key concept in supply chain and inventory management, as it shows how often a company sells and replaces its inventory during a period - usually a year. A high inventory turnover typically means efficient inventory management and low capital tied up
+(as long as it is not too high), while a low turnover can indicate that goods are sitting too long in stock and sales are slow.
+Why measure turnover rate?
+Turnover rate is used to:
+Assess how effectively products are sold and inventory is replaced.
+Identify slow-moving items that tie up unnecessary capital.
+Optimize inventory levels and liquidity.
+When is turnover rate used?
+The concept is used continuously in inventory and financial management, especially for:
+Analysis of inventory performance
+Planning of reorders and product portfolio
+Evaluation of supply chain efficiency

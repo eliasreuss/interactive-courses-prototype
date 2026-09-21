@@ -1,0 +1,29 @@
+---
+topic: Kundeprofitabilitetsanalyse
+source_type: glossary
+language: danish
+keywords: Kundeprofitabilitetsanalyse, Customer Profitability Analysis, omkostninger, hvilke, kunder, kunden, reelle, analysen, bruger
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Kundeprofitabilitetsanalyse
+term_en: Customer Profitability Analysis
+url: https://inact.io/ordbog/kundeprofitabilitetsanalyse/
+---
+
+Kundeprofitabilitetsanalyse — English: Customer Profitability Analysis
+Kundeprofitabilitetsanalyse er en metode til at måle den reelle indtjening fra en individuel kunde eller et kundesegment over en given periode.
+Hvad er en kundeprofitabilitetsanalyse?
+Det er en datastyret tilgang, der identificerer, hvilke kunder der skaber mest værdi for virksomheden, og hvilke der potentielt koster mere at servicere, end de bidrager med.
+Kundeprofitabilitetsanalysen adskiller sig fra traditionel salgsanalyse, der har fokus på omsætning og bruttoavance, ved at inkludere de skjulte omkostninger:
+Omkostninger ved at sælge: Tid brugt på forhandling, rejser og administration.
+Omkostninger ved at levere (Supply Chain): Dette er den kritiske forskel. Det inkluderer omkostninger til hyppige, små ordrer, særlige emballagekrav, lageromkostninger for at holde et højt sikkerhedslager for kunden og dyre logistikløsninger.
+Kort sagt: analysen måler den reelle værdi af kundeforholdet ved at trække alt ressourceforbrug fra indtægterne. Dette giver et ærligt billede af, om kunden er en profitdriver eller en omkostningsdriver.
+Hvad bruger man en kundeprofitabilitetsanalyse til?
+Man bruger analysen til at træffe strategiske beslutninger om kundeforhold, serviceniveauer og prissætning.
+Det hjælper blandt andet med at:
+Differentieret serviceniveau: Afgøre, hvilke kunder der skal tilbydes det højeste serviceniveau
+(f.eks. hurtig levering, dedikeret lager), og hvilke der skal have et mere omkostningseffektivt tilbud.
+Prissætning og rabatter: Sikre, at prissætningen afspejler de reelle omkostninger ved at servicere kunden.
+Optimering af salgsindsats: Flytte salgsressourcer fra ikke-profitable kunder til kunder med stort potentiale.
+Forbedre supply chain effektivitet: Identificere ineffektive processer, der driver omkostningerne op for specifikke kundesegmenter (f.eks. mange små ordrer).

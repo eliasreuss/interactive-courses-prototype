@@ -1,0 +1,31 @@
+---
+topic: Economic Order Quantity (EOQ)
+source_type: glossary
+language: english
+keywords: Economic Order Quantity (EOQ), order, costs, quantity, inventory, economic, holding, ordering, demand
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Economic Order Quantity (EOQ)
+term_en: Economic Order Quantity (EOQ)
+url: https://inact.io/en/glossary/economic-order-quantity/
+---
+
+Economic Order Quantity (EOQ)
+Economic Order Quantity (EOQ) is used to determine an appropriate order size, so you avoid ordering too little or too much at a time. The purpose is to balance the costs of ordering goods with the costs of holding them in inventory.
+What is Economic Order Quantity?
+Economic Order Quantity (EOQ) is a calculation model that identifies the order size that minimizes the total cost of purchasing and holding inventory. The model takes into account demand, ordering costs, and inventory holding costs.
+What is EOQ used for?
+You use EOQ to:
+Calculate the most cost-efficient order quantity
+Reduce total inventory and procurement costs
+Create a data-driven basis for purchasing decisions
+Support better planning and cash flow
+When does EOQ make sense?
+EOQ works best when:
+Demand is relatively stable
+Costs are known and fairly constant
+You are working with stocked items
+EOQ is often used as a starting point for the reorder quantity
+-  the actual quantity you order in practice.
+Back to the glossar y

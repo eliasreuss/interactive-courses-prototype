@@ -1,0 +1,11 @@
+---
+topic: Complexity in Value Chain
+source_type: article
+language: english
+article_source: Direktørens bedste ven og værste fjende (1)
+keywords: complexity, value chain, growth, products, customers
+---
+
+1. Complexity in value chain arises as a company grows and adds more products to its portfolio.
+2. Over time, companies lose track of which products are profitable due to the overwhelming number of products.
+3. Complexity leads to a disconnection between customers and products, where low-margin items consume resources while high-margin ones are neglected.

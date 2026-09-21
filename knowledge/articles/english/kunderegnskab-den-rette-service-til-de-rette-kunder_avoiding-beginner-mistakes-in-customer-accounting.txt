@@ -1,0 +1,9 @@
+---
+topic: Avoiding Beginner Mistakes in Customer Accounting
+source_type: article
+language: english
+article_source: Kunderegnskab  Den rette service til de rette kunder
+keywords: customer analysis, cost-to-serve, beginner mistakes, customer profitability
+---
+
+Start with a simple analysis to avoid beginner mistakes. Some cost-to-serve expenses, like service center costs, should be allocated among multiple customers. Begin with available data and refine the calculation over time.

@@ -1,0 +1,39 @@
+---
+topic: Minimum Inventory Level
+source_type: glossary
+language: english
+keywords: Minimum Inventory Level, Minimumslagerbeholdning, inventory, minimum, level, stock, safety, capital, production, buffer
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Minimumslagerbeholdning
+term_en: Minimum Inventory Level
+url: https://inact.io/en/glossary/minimum-inventory-level/
+---
+
+Minimum Inventory Level — Danish: Minimumslagerbeholdning
+Minimum inventory level indicates the lowest acceptable level of stock that a company wishes to hold for a given product to avoid stockouts and ensure continuous operation. It is a strategic decision point in inventory management that helps balance the risk of stockouts with the costs of tied-up capital.
+What is Minimum Inventory Level?
+Minimum inventory level is the point below which inventory absolutely should not fall, as it signals a critical shortage of goods. It is part of the overall inventory policy and functions as a 'warning limit.'
+The minimum inventory is closely linked to the safety stock, which is the buffer intended to cover uncertainty in demand or lead time. In many companies, the minimum inventory is set equal to the safety stock, but it is important to understand that:
+Minimum inventory is a limit.
+Safety stock is a buffer against uncertainty.
+Reorder point is the trigger that initiates a new order.
+Why set a Minimum Inventory Level?
+The minimum inventory level is used to monitor and manage risk in the inventory.
+It helps to:
+Ensure continuity:
+Acts as a buffer against unforeseen delays, high demand, or production stops.
+Reduce the risk of lost sales:
+Maintains a high service level for customers.
+Plan for emergencies: When inventory hits the minimum level, immediate action is triggered (e.g., rush order or production change).
+Optimize capital tied up: By setting a minimum level, it is ensured that unnecessary capital is not tied up in inventory.
+When is it relevant to set a Minimum Inventory Level?
+Minimum inventory level is an operational key figure used in daily inventory management and planning. It is particularly relevant for:
+Determining safety stock:
+The minimum inventory is often directly derived from the calculated safety stock.
+Planning purchases and reorders:
+It is an important reference to ensure that orders are placed in time.
+Balancing tied up capital and risk:
+This is where the economic and operational trade-off is made.
+Critical components: For items that are essential for production and where a stockout would lead to a costly production stop.

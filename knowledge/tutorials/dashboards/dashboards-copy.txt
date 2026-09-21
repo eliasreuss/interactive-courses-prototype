@@ -1,0 +1,18 @@
+---
+topic: How to copy a dashboard in Inact Now
+source_type: tutorial
+language: english
+keywords: copy dashboard, duplicate dashboard, clone, template, new dashboard
+product_area: Dashboards
+question_type: how-to
+---
+
+Copying a dashboard is a quick way to create a new one that starts with the same structure — same rows, columns, KPI cards, and settings — as an existing one.
+
+1. Click Dashboards in the top menu bar.
+2. Find the dashboard you want to copy and click the ••• button on the right side of its row.
+3. Select Copy.
+
+The copy is created immediately and appears in your dashboard list. Open it and click Edit to rename it and adjust anything you need.
+
+You can also copy when creating a new dashboard: click + New Dashboard, then use the Copy an existing Dashboard dropdown to pick the one you want to start from.

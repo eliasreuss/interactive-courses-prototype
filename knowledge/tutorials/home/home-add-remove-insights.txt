@@ -1,0 +1,19 @@
+---
+topic: How to add or remove Insights from the Home page in Inact Now
+source_type: tutorial
+language: english
+keywords: pin insight, home page insights, select insights, add insight, remove insight, search
+product_area: Home
+question_type: how-to
+---
+
+You can choose which Insights appear in the Insights section at the bottom of the Home page.
+
+1. Scroll to the Insights section at the bottom of the Home page.
+2. Click the Edit button next to the Insights heading.
+3. A window called Select Insights opens with a searchable list of all available Insights.
+4. Click any Insight name in the list to add it. It will appear in the Selected Insights area at the bottom of the window, shown as a tag with an × to remove it.
+5. To remove an Insight from the Home page, click the × on its tag in the Selected Insights area.
+6. Click Save.
+
+Use the Search field at the top of the window to quickly find an Insight by name.

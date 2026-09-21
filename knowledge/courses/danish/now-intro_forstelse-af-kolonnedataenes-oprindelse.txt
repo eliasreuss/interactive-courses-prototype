@@ -1,0 +1,21 @@
+---
+topic: Forståelse af kolonnedataenes oprindelse
+source: Now Intro
+source_type: course
+language: danish
+product_area: platform
+question_type: how
+keywords:
+- ERP-data
+- kolonnenavne
+- Inact Now
+- i-ikon
+- datakilde
+- datamapping
+- brugergrænseflade
+- dataklarificering
+- Actions
+- Insights
+---
+
+I Inact Now kan nogle datakolonner have andre navne end dem, der bruges i din virksomheds ERP-system, hvilket kan skabe forvirring, når du gennemgår information. For at tydeliggøre oprindelsen og betydningen af en kolonne kan du holde musen over 'i'-ikonet ved siden af kolonnenavnet. Denne handling viser detaljer om, hvor dataene stammer fra, og giver yderligere kontekst, der er nødvendig for at forstå formålet eller mappingen. Denne funktion hjælper brugere med hurtigt at afklare usikkerheder om datakilder og sikrer korrekt fortolkning af informationen i platformen.

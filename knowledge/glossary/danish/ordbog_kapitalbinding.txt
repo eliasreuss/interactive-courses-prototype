@@ -1,0 +1,33 @@
+---
+topic: Kapitalbinding
+source_type: glossary
+language: danish
+keywords: Kapitalbinding, Tied-up Capital, kapital, supply, varer, virksomheden, andre, beslutninger, binder
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Kapitalbinding
+term_en: Tied-up Capital
+url: https://inact.io/ordbog/kapitalbinding/
+---
+
+Kapitalbinding — English: Tied-up Capital
+Kapitalbinding beskriver den del af virksomhedens penge, der er investeret i operationelle aktiver som lager, produktion eller tilgodehavender, og som dermed ikke er tilgængelig til andre investeringer. Høj kapitalbinding i lageret er en direkte trussel mod likviditeten og begrænser fleksibiliteten i supply chain.
+Hvad er kapitalbinding?
+Kapitalbinding er værdien af de ressourcer, som virksomheden har investeret i varer, materialer eller produkter, der endnu ikke er solgt. Det er et centralt nøgletal i supply chain management, fordi det viser, hvor meget kapital der er bundet og dermed ikke kan bruges til f.eks. markedsføring, produktudvikling eller udbetaling af udbytte.
+Hvad bruger man kapitalbinding til?
+Man bruger kapitalbinding til at vurdere økonomisk effektivitet, optimere lagerbeholdning og træffe datadrevne beslutninger om indkøb og produktion.
+De primære formål er:
+Forbedring af cash flow: Lavere kapitalbinding betyder bedre cash flow og mulighed for investeringer i andre områder af virksomheden.
+Lageroptimering: Identificere og reducere overskudslager, især for varer med lav omsætningshastighed.
+Måling af omsætningshastighed: Kapitalbinding er en kritisk komponent i beregningen af lageromsætningshastigheden
+(Inventory Turnover), som er en central KPI for lagerets sundhed.
+Risikostyring: Vurdere risikoen for forældelse, da varer, der binder kapital i lang tid, har større risiko for at blive forældede.
+Hvornår kigger man på kapitalbindingen?
+Kapitalbinding er et strategisk nøgletal, der anvendes løbende i finansiel rapportering og supply chain-analyser.
+Det er særligt relevant ved:
+Budgettering og likviditetsplanlægning: For at sikre, at virksomheden har tilstrækkelig
+Working Capital.
+Lageroptimering: Når der skal træffes beslutninger om at reducere sikkerhedslagre eller genbestillingspunkter.
+Analyse af produktportefølje: For at identificere produkter, der binder uforholdsmæssigt meget kapital i forhold til deres profitmargin.
+Strategiske indkøbsbeslutninger: Vurdering af, om for eksempel mængderabatter opvejer omkostningerne ved øget kapitalbinding.

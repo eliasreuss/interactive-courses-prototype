@@ -1,0 +1,9 @@
+---
+topic: Lagerpolitik
+source_type: article
+language: danish
+article_source: 5 leveregler  sådan får du en effektiv supply chain
+keywords: lageromkostninger, risiko, skaffevarer, C-varer
+---
+
+1. Lagerpolitik: C-varerne binder 20-40% af virksomhedens kapital. Gør udvalgte C-varer til skaffevarer for at reducere lageromkostninger og risiko for tab.

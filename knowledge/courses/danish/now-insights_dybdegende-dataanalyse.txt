@@ -1,0 +1,19 @@
+---
+topic: Dybdegående Dataanalyse
+source: Now Insights
+source_type: course
+language: danish
+product_area: platform
+question_type: how
+keywords:
+- Et Klik Dybere
+- Dobbelt ABC Analyse
+- filtrering
+- gennemsigtighed
+- kategori
+- atomart niveau
+- vareforbrug
+- varepræstation
+---
+
+At gå et klik dybere henviser til processen, hvor man bevæger sig fra brede datakategorier til detaljerede, varebaserede indsigter. For eksempel kan du efter at have filtreret data med Dobbelt ABC Analyse vælge en specifik kategori som AA for at fokusere på dine mest kritiske varer. Ved at sortere disse varer efter det samlede vareforbrug identificerer du de største bidragsydere. Når du klikker på en topvare, vises dens individuelle præstationsmålinger. Denne trinvise tilgang gør det muligt for brugere at opnå reel gennemsigtighed ved at undersøge data på det mest detaljerede niveau.

@@ -1,0 +1,47 @@
+---
+topic: S&OP (Sales & Operations Planning)
+source_type: glossary
+language: danish
+keywords: S&OP (Sales & Operations Planning), virksomheden, lager, indkøb, efterspørgsel, fælles, produktion, tværs, kampagner
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: S&OP (Sales & Operations Planning)
+term_en: S&OP (Sales & Operations Planning)
+url: https://inact.io/ordbog/sop-sales-operations-planning/
+---
+
+S&OP (Sales & Operations Planning)
+S&OP står for Sales & Operations Planning og er en månedlig planlægningsproces, hvor salg, indkøb, produktion, lager, finans og ledelse afstemmer efterspørgsel, kapacitet og forretningsmål i én fælles plan. Formålet er at skabe balance mellem det, virksomheden forventer at sælge, og det, den faktisk kan levere. S&OP hjælper virksomheden med at prioritere på tværs af afdelinger i stedet for, at hver funktion optimerer ud fra egne mål.
+S&OP er ikke bare forecasts og statusmøder
+Mange forbinder S&OP med forecast-opdateringer og månedlige planlægningsmøder. Men S&OP handler bredere end det.
+Formålet er at samle salg, indkøb, lager, produktion, finans og ledelse omkring én fælles plan for virksomheden. Det giver et fælles billede af efterspørgsel, kapacitet, lager og leveringssituation, så beslutninger ikke bliver truffet isoleret i hver afdeling.
+Når virksomheden arbejder med S&OP, bliver det lettere at se konsekvenserne af beslutninger på tværs af forretningen. Hvis salg forventer højere efterspørgsel, påvirker det hurtigt indkøb, lager, produktion og leverandører. Hvis produktionen har kapacitetsbegrænsninger, påvirker det leveringstid og servicegrad. S&OP gør de sammenhænge synlige tidligere.
+Derfor handler S&OP ikke kun om planlægning. Det handler om at skabe fælles prioriteringer på tværs af virksomheden.
+Hvad betyder S&OP i praksis?
+I praksis er S&OP en fast proces, hvor virksomheden samler data og beslutninger på tværs af funktioner.
+Typisk arbejder virksomheden med forventet efterspørgsel, lagerudvikling, kapacitetsbegrænsninger, leverandørudfordringer, forecast-afvigelser, produktlanceringer, kampagner og risiko for restordrer.
+Målet er ikke perfekte forecasts. Målet er at opdage problemer tidligere og træffe beslutninger, der hænger sammen på tværs af forretningen.
+Hvis salg for eksempel forventer høj vækst på en produktgruppe, påvirker det hurtigt indkøb, produktion, lagerbehov, bemanding, leveringstid og leverandørkapacitet.
+Uden en fælles proces opdager virksomheder ofte konsekvenserne for sent. S&OP hænger derfor tæt sammen med supply chain planning, lagerstyring og supply chain analytics.
+Hvorfor er S&OP vigtigt?
+S&OP er vigtigt, fordi mange supply chain-problemer starter som manglende koordinering mellem afdelinger. Når funktionerne arbejder hver for sig, opstår der ofte situationer som: salg lover mere, end driften kan levere indkøb køber for store mængder hjem produktionen planlægger ud fra forældede forecasts lageret vokser uden klare prioriteringer kampagner skaber uventede restordrer
+En velfungerende S&OP-proces gør det lettere at prioritere mellem servicegrad, kapacitet, leveringstid, lagerbinding, vækst og kompleksitet. Det giver også ledelsen bedre indsigt i konsekvenserne af beslutningerne. Hvis virksomheden ønsker højere servicegrad eller bredere sortiment, bør konsekvensen for lager, drift og kapitalbinding være tydelig — også for finans.
+Sådan ser S&OP ud i virkeligheden
+En produktionsvirksomhed lancerer hvert år flere store kampagner op mod højsæsonen. Historisk har salg planlagt kampagnerne separat fra drift og indkøb. Forecasts er sendt videre sent i processen, og produktionen har haft svært ved at følge med.
+Konsekvenserne har været velkendte: hasteindkøb af råvarer stigende leveringstider overarbejde i produktionen høje lagre på nogle varer restordrer på andre produkter
+Virksomheden etablerer en fast S&OP-proces.
+Hver måned samles salg, indkøb, produktion, lager, finans og ledelse omkring én samlet plan. Salg fremlægger forventet efterspørgsel og kommende kampagner. Produktion vurderer kapacitet og flaskehalse. Indkøb gennemgår kritiske leverandører og leveringstider. Lager analyserer udviklingen i beholdninger og risiko for mangelvarer. Finans vurderer konsekvenserne for working capital og likviditet.
+Under processen opdager virksomheden at: enkelte kampagner skaber langt større belastning på produktionen end forventet nogle leverandører ikke kan følge den ønskede vækst flere produkter bliver produceret til lager uden reel efterspørgsel forecast på visse produktgrupper konsekvent rammer forkert
+Det ændrer måden, virksomheden arbejder på. Nogle kampagner flyttes i kalenderen. Enkelte produkter får lavere servicegrad. Kritiske råvarer købes tidligere hjem. Produkter med ustabil efterspørgsel produceres tættere på faktisk ordreindgang.
+Efter et år oplever virksomheden færre hasteordrer, mere stabil produktion, lavere lagerbinding og højere leveringssikkerhed. Men den største forskel er synligheden: virksomheden kan nu se konsekvenserne af beslutningerne, før problemerne rammer driften.
+Typiske S&OP-misforståelser
+S&OP er kun for store virksomheder.
+Selv mindre virksomheder oplever hurtigt problemer, hvis salg, indkøb, lager og drift arbejder uden fælles prioriteringer. Processen kan skaleres ned — behovet forsvinder ikke..
+Processen må ikke blive for tung. Nogle virksomheder bygger omfattende mødestrukturer og rapportering, som ingen reelt bruger til beslutninger. S&OP bør først og fremmest skabe handling og prioritering, ikke dokumentation.
+S&OP er ikke det samme som forecast.
+Hvis virksomheden ikke samtidig vurderer kapacitet, leverandører, finansielle konsekvenser og lagerkonsekvenser, bliver planerne hurtigt upraktiske. Forecast er input til S&OP, ikke målet.
+Hvordan kan virksomheder arbejde med S&OP?
+Start med at skabe én fælles proces for planlægning på tværs af salg, indkøb, lager, drift og finans. Saml indsigt om forecast, lagerudvikling, servicegrad, leverandørperformance, produktion, kampagner og produktlanceringer.
+Det er vigtigt, at processen ikke kun handler om rapportering. Målet skal være tydelige prioriteringer og synlige konsekvenser af beslutningerne.
+Her kan end-to-end intelligence og data på tværs af værdikæden hjælpe virksomheden med at skabe et fælles billede af efterspørgsel, lager, leverandører og drift. Når alle arbejder ud fra samme data og samme prioriteringer, bliver det lettere at træffe beslutninger, der hænger sammen på tværs af hele forretningen.

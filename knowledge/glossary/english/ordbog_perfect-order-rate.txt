@@ -1,0 +1,23 @@
+---
+topic: Perfect Order Rate
+source_type: glossary
+language: english
+keywords: perfect order rate, order accuracy, delivery quality, OTIF, error-free order, KPI, documentation, service level
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: Perfect order rate
+term_en: Perfect Order Rate
+---
+
+Perfect Order Rate — Danish: Perfect order rate
+Perfect order rate is the share of orders completed without a fault anywhere — right item, right quantity, on time, undamaged, with correct documentation and invoicing.
+How does it differ from OTIF?
+OTIF measures two things: did it arrive on time, and did it arrive complete. Perfect order rate adds the rest of the customer experience — that the goods were undamaged, the paperwork correct, and the invoice right. An order can therefore be OTIF and still not perfect.
+How is it calculated?
+Error-free orders divided by total orders. Because it compounds several conditions that must all hold, it drops quickly. Four sub-measures at 95% each produce a perfect order rate of roughly 81%.
+That is precisely the point: the figure exposes how much is lost between sub-measures that look fine in isolation.
+What is it used for?
+To see total quality through the customer's eyes rather than the department's. The warehouse measures picking accuracy, transport measures lead time, and finance measures invoice errors — each can look healthy while the customer experiences something wrong with every fifth order.
+What does it require?
+That individual fault types are recorded, not just counted in total. The value is in the breakdown: is it the documentation, the quantity or the date that fails most often? Without that breakdown, perfect order rate is just a low number nobody can act on.

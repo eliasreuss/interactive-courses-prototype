@@ -1,0 +1,18 @@
+---
+topic: How to manage columns shown in an Action list in Inact Now
+source_type: tutorial
+language: english
+keywords: column layout, show columns, hide columns, reorder, data columns, action list, eye icon
+product_area: Actions
+question_type: how-to
+---
+
+You can choose which data columns appear in an Action list and rearrange them to suit your workflow.
+
+Open the Action list and click the column layout icon (the rightmost icon in the toolbar, which looks like a table). The Column layout panel opens.
+
+The panel is split into two sections. Shown columns lists all columns currently visible in the list. Hidden columns lists all available columns that are not currently shown.
+
+To show a hidden column, click the eye icon next to it in the Hidden columns section. To hide a visible column, click the eye icon next to it in the Shown columns section. To reorder columns, use the drag handle (the dotted grid icon) to drag a column to a new position in the Shown columns list.
+
+Use the Search columns bar at the top to find a specific column by name. Click Save to apply your changes.

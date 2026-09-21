@@ -1,0 +1,9 @@
+---
+topic: What is Service-enabled SaaS?
+source_type: article
+language: english
+article_source: Service-enabled SaaS
+keywords: SaaS, expert advice, business model, customer satisfaction
+---
+
+Service-enabled SaaS combines software-as-a-service with access to experts as part of the service. This model includes ongoing expert advice in the subscription, making it easier for customers to achieve tangible business results.

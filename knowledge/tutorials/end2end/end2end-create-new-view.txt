@@ -1,0 +1,18 @@
+---
+topic: How to create a new End2End view in Inact Now
+source_type: tutorial
+language: english
+keywords: new end2end view, create view, basis setup, group, new view button
+product_area: End2End
+question_type: how-to
+---
+
+From the End2End library page, click the green + New View button at the top right. The Create new End2End View window opens with three fields:
+
+Name — the name of the view as it will appear in the library.
+Basis Setup — the End2End setup the view is built on. This defines which data sources are linked and how. Most accounts have only one option here.
+Group — which library group the view is placed in. It defaults to Unsorted, and you can only pick a group that already exists; new groups are created in library edit mode.
+
+Click Create to create the view, or Cancel to discard it. The new view opens with default settings, which you then adjust in the settings panel and store with Save.
+
+If you want a new view that is almost identical to an existing one, it is usually faster to open that view and use Save as, or to use Copy from the "..." menu in the library.

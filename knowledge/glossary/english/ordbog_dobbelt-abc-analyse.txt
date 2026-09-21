@@ -1,0 +1,44 @@
+---
+topic: Double ABC analysis
+source_type: glossary
+language: english
+keywords: Double ABC analysis, Dobbelt ABC-analyse, revenue, items, volume, analysis, double, variables, based, different
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Dobbelt ABC-analyse
+term_en: Double ABC analysis
+url: https://inact.io/en/glossary/double-abc-analysis/
+---
+
+Double ABC analysis — Danish: Dobbelt ABC-analyse
+A double ABC analysis is a method where you segment your inventory across two dimensions at the same time — typically revenue or profit versus volume, supplier risk, or service level. The result is a 3×3 matrix with nine segments, giving you a far more precise view of which items deserve your attention than a simple
+ABC analysis.
+Without this cross-segmentation, you risk treating all A-items the same — even though an A-item with low volume and an A-item with high volume place completely different demands on your procurement strategy.
+What is the difference between a simple and a double ABC analysis?
+A simple ABC analysis ranks your items based on one variable — most often revenue — and divides them into three groups: A (top 70–80%), B (next 15–20%), and C (the rest). It’s useful, but it only gives you one perspective.
+A double ABC analysis combines two variables. You create one ABC classification based on revenue and another based on, for example, volume, and then cross them in a 3×3 matrix. This gives you nine combinations — from AA to CC — and a segmentation you can actually act on.
+An item can easily be A on revenue and C on volume. These are two very different situations — and they require two very different strategies.
+Which variables are typically combined?
+The most common combinations are:
+Revenue × volume (number of order lines): Distinguishes between items that generate high revenue through a few large orders and items that burden your procurement process with many small orders.
+Revenue × supplier risk:
+Identifies items that are both business-critical and supply-risk exposed — candidates for safety stock or dual sourcing.
+Revenue × service level:
+Reveals whether you are spending too many resources ensuring high availability for items that don’t justify it.
+The choice of variables depends on what you want to optimize. If you want to reduce capital tied up in inventory, volume × revenue is a natural choice. If you want to manage supply risk, revenue × supplier risk makes more sense.
+How do you use the result of a double ABC analysis in practice?
+The matrix is not an analysis tool — it’s a decision tool. Each segment should trigger a specific strategy:
+AA items (high revenue, high volume):
+Close monitoring, negotiated framework agreements, stable supply chain.
+AC items (high revenue, low volume):
+Critical items with few orders — typically candidates for safety stock.
+CA items (low revenue, high volume):
+Many orders, low value — consider standardization or consolidation with fewer suppliers.
+CC items (low revenue, low volume):
+Candidates for phase-out, just-in-time purchasing, or consignment stock.
+The four corners are the clearest signals. The middle categories require judgment based on your specific business.
+What mistakes are typically made with a double ABC analysis?
+The most common mistake is running the analysis — and then doing nothing with it. A 3×3 matrix only creates value when it leads to concrete decisions — not when it’s used to confirm what you already knew.
+Another classic mistake is choosing variables that measure the same thing. Revenue and contribution margin are closely linked and rarely provide new insight when combined. Choose variables that actually measure different dimensions.
+Finally, many underestimate the need to keep the analysis updated. An item that was AA two years ago is not necessarily AA today. Market conditions, product mix, and customer behavior change — and your segmentation needs to keep up.

@@ -1,0 +1,18 @@
+---
+topic: Fordele ved dobbelt ABC-analyse
+source: Double Abc Analysis 4
+source_type: course
+language: danish
+product_area: inventory
+question_type: why
+keywords:
+- Dobbelt ABC-analyse
+- lager
+- kategorisering
+- fokus
+- prioritering
+- Insights
+- Actions
+---
+
+Dobbelt ABC-analyse tildeler hver lagervare en kategori baseret på to dimensioner, for eksempel værdi og efterspørgselsvariation. Denne dobbelte kategorisering giver et klarere billede af lagerets dynamik og gør det muligt at identificere, hvilke varer der kræver mest opmærksomhed. Ved at fremhæve kritiske produkter og afsløre mønstre hjælper analysen med at prioritere ledelsesindsatsen, optimere lagerniveauer og forbedre beslutningstagningen. Den muliggør målrettede handlinger, såsom at fokusere på varer med høj værdi og stor variation, og understøtter mere effektive lagerstyringsstrategier.

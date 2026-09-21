@@ -1,0 +1,19 @@
+---
+topic: Strategiske formål med lagerpolitik
+source: Stock Policy
+source_type: course
+language: danish
+product_area: inventory
+question_type: why
+keywords:
+- lagerpolitik
+- serviceniveau
+- kapital
+- lagerstyring
+- lagerregler
+- bestilling efter behov
+- strategisk værdi
+- forsyningskæde
+---
+
+En veldefineret lagerpolitik er afgørende for at balancere afvejningen mellem serviceniveau og kapitalbinding i lagerstyring. Ved at fastsætte klare regler—såsom at holde varer med høj efterspørgsel på lager og kun bestille eller producere mindre efterspurgte varer, når der er behov—kan organisationer optimere deres lagerbeholdning. Denne tilgang sikrer, at kundernes behov opfyldes effektivt, samtidig med at overskydende lager og tilhørende omkostninger minimeres. Den strategiske værdi af en god lagerpolitik ligger i dens evne til at understøtte forretningsmål ved at forbedre servicen, reducere kapital bundet i lager og muliggøre en mere fleksibel og omkostningseffektiv forsyningskæde.

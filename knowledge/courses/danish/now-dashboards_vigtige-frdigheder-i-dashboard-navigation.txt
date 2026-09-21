@@ -1,0 +1,20 @@
+---
+topic: Vigtige færdigheder i dashboard-navigation
+source: Now Dashboards
+source_type: course
+language: danish
+product_area: platform
+question_type: what
+keywords:
+- Dashboards
+- KPIs
+- Widgets
+- Tabeller
+- Slicere
+- Filtre
+- Drill down
+- Performanceovervågning
+- Målsætninger
+---
+
+Effektiv navigation i dashboards indebærer overvågning af nøgletal (KPIs), aflæsning af widgets for at kontrollere målsætninger og brug af tabeller til at se detaljerede data. Brugere kan anvende slicere og filtre for at fokusere på specifikke interesseområder og dykke ned i målinger for at få adgang til underliggende detaljer. Disse færdigheder gør det muligt for brugerne at følge den overordnede performance og opnå handlingsorienterede indsigter fra deres dashboards.

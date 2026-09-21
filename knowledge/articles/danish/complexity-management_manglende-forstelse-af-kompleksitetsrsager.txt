@@ -1,0 +1,9 @@
+---
+topic: Manglende forståelse af kompleksitetsårsager
+source_type: article
+language: danish
+article_source: Complexity Management
+keywords: kompleksitet, rentabilitet, beslutninger, produkter, kunder
+---
+
+Virksomheder mangler klar forståelse af nødvendige tiltag for at løse kompleksitetsproblemer. Risikoen ved manglende indsigt i rentabilitet inkluderer reaktive og skadelige beslutninger såsom at droppe forkerte produkter eller investere for meget i forkerte kunder.

@@ -1,0 +1,20 @@
+---
+topic: Definition af sikkerhedslager
+source: Safety Stock
+source_type: course
+language: danish
+product_area: inventory
+question_type: what
+keywords:
+- sikkerhedslager
+- lagerbeholdning
+- lagerudtømning
+- genbestillingspunkt
+- leveringstid
+- forsyningskæde
+- efterspørgselsusikkerhed
+- servicemål
+- indkøbsordre
+---
+
+Sikkerhedslager er en ekstra mængde lagerbeholdning, der opretholdes som buffer for at beskytte mod lagerudtømning, som kan opstå på grund af uforudsigelige udsving i udbud eller efterspørgsel. Når lageret når genbestillingspunktet, udløses en ny indkøbsordre for at dække det forventede behov i leverandørens leveringstid. Sikkerhedslageret forbliver som reserve under dette niveau og bruges kun, hvis det faktiske behov overstiger prognoserne, eller hvis leverancer fra leverandøren bliver forsinket. Traditionelt fastsættes sikkerhedslager ofte ud fra intuition eller historiske praksisser, men brug af data og klare servicemål kan hjælpe med at bestemme mere præcise og effektive mængder af sikkerhedslager.

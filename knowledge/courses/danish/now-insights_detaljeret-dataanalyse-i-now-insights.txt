@@ -1,0 +1,21 @@
+---
+topic: Detaljeret dataanalyse i Now Insights
+source: Now Insights
+source_type: course
+language: danish
+product_area: platform
+question_type: what
+keywords:
+- Now Insights
+- Atomer
+- produktanalyse
+- leverandøranalyse
+- kundeanalyse
+- datavisninger
+- detaljeret information
+- overblik
+- Actions
+- Dashboards
+---
+
+I Now Insights giver nedboring til niveauet for et specifikt produkt, en leverandør eller en kunde adgang til et detaljeret informationssæt kaldet 'Atomer'. På dette detaljerede niveau kan brugerne tilgå unikke datavisninger, der er skræddersyet til at hjælpe med at fortolke og analysere de specifikke forhold for det valgte element. Disse detaljerede visninger er designet til at give handlingsorienterede indsigter, ligesom det overordnede overblik, men med fokus på den valgte enhed, hvilket muliggør mere kvalificerede beslutninger i forsyningskæden.

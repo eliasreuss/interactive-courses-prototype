@@ -1,0 +1,20 @@
+---
+topic: CC Items in Double ABC Analysis
+source: Double Abc Analysis 4
+source_type: course
+language: english
+product_area: inventory
+question_type: what
+keywords:
+- Double ABC Analysis
+- CC items
+- inventory management
+- low demand
+- low cost
+- phase out
+- stock control
+- plastic sleeves
+- Inact Now
+---
+
+CC items in Double ABC Analysis are inventory items characterized by both low cost and low demand. These products, such as plastic sleeves, rarely sell and do not tie up significant capital, but they can accumulate and occupy valuable storage space. It is important to manage CC items carefully to avoid unnecessary stock buildup. In many cases, businesses may consider phasing out these items to optimize inventory and reduce carrying costs.

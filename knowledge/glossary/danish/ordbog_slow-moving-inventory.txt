@@ -1,0 +1,73 @@
+---
+topic: Slow-moving inventory
+source_type: glossary
+language: danish
+keywords: Slow-moving inventory, varer, bliver, inventory, slow-moving, varen, efterspørgsel, lager, efterspørgslen
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Slow-moving inventory
+term_en: Slow-moving inventory
+url: https://inact.io/ordbog/slow-moving-inventory/
+---
+
+Slow-moving inventory
+Slow-moving inventory er varer, der bliver solgt eller brugt sjældnere end forventet og derfor ligger længere på lager. Det kan eksempelvis være reservedele, sæsonvarer og nicheprodukter med lav eller uregelmæssig efterspørgsel eller varer, hvor efterspørgslen er faldet over tid.
+En slow mover er ikke nødvendigvis et problem. En kritisk reservedel kan eksempelvis blive brugt én gang om året og stadig være nødvendig for at opretholde den ønskede service. Problemet opstår, når varer bevæger sig langsomt, uden at du aktivt har taget stilling til, hvorfor de fortsat ligger på lager.
+Hvad betyder slow-moving inventory i praksis?
+I praksis er slow-moving inventory varer, der ligger på lager i længere tid. Nogle har altid haft lav efterspørgsel, mens andre er blevet slow movers, fordi efterspørgslen er faldet over tid.
+Du finder typisk slow-moving inventory blandt:
+Reservedele
+— nødvendige for service, men sjældent efterspurgte
+Sæsonvarer
+— høj efterspørgsel i bestemte perioder og lav i resten af året
+Tekniske komponenter
+— bundet til specifikke løsninger eller ældre maskiner
+Nicheprodukter
+— lav, men stabil efterspørgsel fra et smalt kundesegment
+Ældre produktvarianter
+— erstattet af nyere modeller, men stadig på lager
+Varer med uregelmæssig efterspørgsel
+— sælges i ryk uden et stabilt mønster
+Slow movers opstår ofte gradvist. Nye produkter og varianter kommer til, mens ældre varer ikke altid bliver udfaset. Efterspørgslen kan falde, uden at planlægningsparametre eller automatiske genbestillingsregler bliver ændret. Så fortsætter varen med at komme ind på lageret, selvom den bevæger sig langsommere end tidligere.
+Slow-moving inventory hænger derfor tæt sammen med lagerbinding. Jo længere en vare ligger på lager, desto længere er kapitalen bundet i den. En lav omsætningshastighed er dog ikke i sig selv et tegn på, at lagerbeholdningen er forkert. Det afhænger blandt andet af efterspørgslen, leveringstiden og den servicegrad, du ønsker at opretholde.
+Hvordan identificerer du slow-moving inventory?
+Der findes ikke én fast grænse for, hvornår en vare er slow-moving inventory. Det afhænger blandt andet af branche, produkttype og varens normale efterspørgsel.
+En simpel metode er at se på, hvor lang tid der er gået siden varens seneste salg eller forbrug. Virksomheder kan eksempelvis arbejde med grænser på 90, 180 eller 365 dage. Den relevante periode afhænger af varen: 180 dage uden salg betyder noget forskelligt for en reservedel, der normalt sælges én gang om året, og en standardvare, der normalt sælges hver uge.
+Du kan også se på udviklingen i varens omsætningshastighed og aftræk. En vare behøver ikke stå helt stille for at være en slow mover. Hvis aftrækket gradvist falder, kan du opdage udviklingen, før varen når en fast grænse for antal dage uden salg.
+En dobbelt ABC-analyse kan nuancere analysen ved eksempelvis at kombinere omsætning med antal pluk. Det gør det muligt at skelne mellem varer med både lav omsætning og få bevægelser og varer, der sælges sjældent, men skaber høj omsætning, når de gør.
+En vare med få årlige salg eller forbrug kan altså følge sit normale aftræk, mens et markant fald i aftrækket på en vare, der tidligere blev solgt ofte, kan være et signal om ændret efterspørgsel.
+Hvad er forskellen på slow-moving inventory, overskudslager, restlager og ukurans?
+Begreberne hænger tæt sammen, men beskriver forskellige situationer.
+Slow-moving inventory handler om hastighed. Varen bliver stadig solgt eller brugt, men bevæger sig langsomt eller sjældnere end forventet.
+Overskudslager handler om mængde. Du har mere af varen på lager, end den forventede efterspørgsel kræver. En vare kan derfor godt være en slow mover uden at være et overskudslager – eksempelvis hvis du kun har få enheder af en reservedel, der sjældent bliver brugt.
+Restlager opstår, når behovet for varen er væk eller har ændret sig, men du stadig har varer tilbage på lageret. Varen kan fortsat have en salgsværdi, selvom den kan være sværere at afsætte.
+Ukurans handler om varens værdi og anvendelighed. Varen kan ikke længere sælges eller bruges som tiltænkt, og hele eller dele af værdien må derfor afskrives.
+En slow mover kan stadig være nødvendig at have på lager. Men falder efterspørgslen, uden at lagerbeholdningen eller genbestillingen bliver tilpasset, kan der opstå overskudslager. Forsvinder behovet, kan du ende med restlager, og mister varen sin anvendelse eller salgsværdi, kan den blive ukurant.
+Hvornår bliver slow-moving inventory et problem?
+Lav omsætningshastighed er ikke automatisk et problem. Nogle varer bør bevidst ligge længe på lager. Det gælder eksempelvis kritiske reservedele eller produkter, der er nødvendige for bestemte kunder eller serviceaftaler. Her kan lav omsætningshastighed være en konsekvens af den servicegrad, du ønsker at opretholde.
+Lav omsætningshastighed kan også være resultatet af et bevidst indkøb. Du kan eksempelvis have købt et større parti for at opnå en lavere indkøbspris eller overholde en leverandørs minimumsordre. Besparelsen på indkøbet skal i så fald ses i forhold til den ekstra lagerbinding, lageromkostningerne og risikoen for, at efterspørgslen ændrer sig.
+Slow-moving inventory bliver et problem, når lagerbeholdningen ikke længere passer til det faktiske behov. Det kan blandt andet ske, hvis efterspørgslen falder, mens genbestillingen fortsætter uændret, eller hvis en vare bliver erstattet af en nyere variant uden at blive udfaset.
+Når du vurderer en slow mover, kan du blandt andet se på:
+Er varen stadig nødvendig for driften eller bestemte kunder?
+Hvor ofte bliver den faktisk brugt eller solgt?
+Hvor hurtigt kan du skaffe den hjem igen?
+Er lagerbeholdningen for høj i forhold til den faktiske efterspørgsel?
+Er genbestillingen tilpasset den nuværende efterspørgsel?
+Findes der et alternativt produkt eller en anden leverandør?
+Over tid kan mange små ændringer i sortimentet skabe en stor gruppe af slow movers. En ny kunde kræver et specialprodukt, en ekstra produktvariant bliver introduceret, eller en gammel vare bliver aldrig helt udfaset. Det kan både øge lagerbindingen og gøre sortimentet mere komplekst at håndtere i indkøb, planlægning og lagerstyring.
+Hvad kan du gøre ved slow-moving inventory?
+Start med at skelne mellem varer, hvor den lave omsætningshastighed er forventet, og varer, der er blevet slow movers som følge af ændret efterspørgsel eller et lager, der ikke er blevet tilpasset.
+Afhængigt af varen kan du eksempelvis:
+Beholde kritiske reservedele og kundeafhængige varer på lager, selvom omsætningen er lav
+Justere eller stoppe automatisk genbestilling, hvis efterspørgslen er faldet
+Reducere lagerbeholdningen, hvis den er højere end det forventede behov
+Overveje, om varen kan håndteres som skaffevare, så den først købes hjem ved et konkret behov
+Udfase varen, hvis behovet er forsvundet, og den ikke længere er nødvendig for driften eller kunderne
+Eksempel på slow-moving inventory
+Forestil dig en handelsvirksomhed med titusindvis af aktive
+SKU'er, der sælger tekniske komponenter til industrikunder.
+Over flere år er sortimentet vokset. Nye varianter er kommet til, gamle produkter er blevet liggende, og nogle varer bliver fortsat genbestilt efter regler, der blev fastlagt, da efterspørgslen var højere.
+En analyse viser, at en del af sortimentet har haft få eller ingen bevægelser det seneste år. Det betyder ikke, at alle varerne skal fjernes. Nogle er kritiske reservedele, mens andre er nødvendige for bestemte kunder.
+Virksomheden opdeler derfor varerne efter deres funktion og efterspørgsel. De kritiske varer bliver på lager. Genbestillingen reduceres eller stoppes på varer med faldende behov, nogle flyttes til skaffevarer, og produkter uden et forventet fremtidigt behov bliver vurderet til udfasning.
+En reservedel kan blive solgt én gang om året og stadig være nødvendig for en kunde med en ældre maskine. Omvendt kan en vare med løbende salg binde unødvendigt meget kapital, hvis lagerbeholdningen og genbestillingen ikke længere passer til efterspørgslen.

@@ -1,0 +1,20 @@
+---
+topic: Reorder Strategies for CA and AC Items
+source: Reorder Quantity
+source_type: course
+language: english
+product_area: inventory
+question_type: what
+keywords:
+- CA items
+- AC items
+- reorder quantity
+- inventory turnover
+- capital tie-up
+- excess stock
+- days-on-hand
+- high volume
+- low volume
+---
+
+Reorder strategies should differ based on the type of inventory item. For CA items, which are inexpensive and sell in high volumes, it is practical to purchase larger quantities. This approach benefits from lower unit prices, quick sales, and minimal holding costs for excess stock. In contrast, AC items are expensive, sell slowly, and have unpredictable demand. Buying large quantities of AC items can tie up significant capital, reduce inventory turnover, and increase the risk of holding costly excess stock. Therefore, reorder quantities should be tailored to the characteristics of each item type rather than applying a single rule to all products.

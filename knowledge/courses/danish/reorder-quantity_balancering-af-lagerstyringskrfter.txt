@@ -1,0 +1,20 @@
+---
+topic: Balancering af lagerstyringskræfter
+source: Reorder Quantity
+source_type: course
+language: danish
+product_area: inventory
+question_type: what
+keywords:
+- enhedspris
+- efterspørgsel
+- lageromsætningshastighed
+- lagerstyring
+- lagerbeholdning
+- indkøbere
+- omkostning
+- likviditet
+- genbestillingsmængde
+---
+
+Effektiv lagerstyring kræver en balance mellem tre centrale kræfter: enhedspris, efterspørgsel og lageromsætningshastighed. At sænke enhedsprisen betyder ofte, at man køber større mængder, hvilket kan binde likviditet og sænke lageromsætningshastigheden. At opfylde efterspørgslen sikrer, at der er tilstrækkelig lagerbeholdning til kunderne, men overlager kan reducere lageromsætningshastigheden. En høj lageromsætningshastighed betyder, at lageret hurtigt omsættes til kontanter, men for lav lagerbeholdning kan føre til tabte salg. Disse kræfter er indbyrdes forbundne, og hvis man maksimerer én, påvirker det ofte de andre negativt. Succesfuld lagerstyring handler om at finde den rette balance for at optimere omkostninger, opfylde kundebehov og opretholde en sund likviditet.

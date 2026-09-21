@@ -1,0 +1,24 @@
+---
+topic: How to add table tabs to a dashboard in Inact Now
+source_type: tutorial
+language: english
+keywords: table tab, add tab, dashboard table, limited grid, new tab, rename tab, reorder tabs
+product_area: Dashboards
+question_type: how-to
+---
+
+A dashboard table can have multiple tabs, each showing a different view of the data — for example, one tab broken down by ABC category, another by responsible person, and another showing the top 10 products.
+
+To add a new tab:
+1. Open the dashboard, click Edit, and go to the Table tab.
+2. Click + New in the tab bar at the top of the table area.
+3. Choose the type of tab you want:
+   - Dashboard table — a standard view where you configure rows and columns yourself, the same as the main table.
+   - Limited Grid — a more compact view for showing data in a tighter layout.
+4. The new tab appears and you can configure it with its own rows and columns.
+
+To rename or delete a tab:
+Click the pencil icon next to the tab name to rename it, or the bin icon to delete it. Tabs with a lock icon (like the main ABC tab) cannot be deleted.
+
+To reorder tabs:
+Drag them left or right using the handle on the tab.

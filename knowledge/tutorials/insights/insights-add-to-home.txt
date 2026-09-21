@@ -1,0 +1,16 @@
+---
+topic: How to add an Insight to your Home page in Inact Now
+source_type: tutorial
+language: english
+keywords: add to home, pin insight, home page, insight shortcut, house icon
+product_area: Insights
+question_type: how-to
+---
+
+You can pin an Insight to your Home page so you can access it quickly without searching through the library.
+
+While viewing any Insight, click the Add button (the house/home icon) next to the Insight title. The button will change to "Added to Home" and a confirmation message appears at the bottom of the screen.
+
+The Insight will now appear in the Insights section at the bottom of your Home page.
+
+To remove it from the Home page, go to the Home page, click Edit next to the Insights heading, and remove it from the Selected Insights list.

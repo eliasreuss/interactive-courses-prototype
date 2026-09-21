@@ -1,0 +1,20 @@
+---
+topic: Comprehensive Spend Visibility
+source: Spend Analysis
+source_type: course
+language: english
+product_area: supplier
+question_type: what
+keywords:
+- spend analysis
+- categories
+- suppliers
+- spend development
+- purchase patterns
+- drill down
+- item category
+- Inact Now
+- visibility
+---
+
+Spend analysis in Inact Now provides a comprehensive view of organizational spending by breaking down expenditures by categories and suppliers. Users can monitor how spending evolves over time, identifying changes in purchase patterns. The platform enables detailed exploration, allowing users to drill down to specific items within categories and see which suppliers are providing them. This level of detail ensures total visibility into what is being purchased, from whom, and when, supporting informed decision-making and effective spend management.

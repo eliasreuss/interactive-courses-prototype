@@ -1,0 +1,10 @@
+---
+topic: How to edit an Action list's description in Inact Now
+source_type: tutorial
+language: english
+keywords: edit description, action list, change description, notes
+product_area: Actions
+question_type: how-to
+---
+
+To add or change the description shown on an Action list, open the list, click the gear icon in the top right corner, and choose Edit description. A "Change description" dialog opens with a text area — type your description and click Save, or Close to discard changes.

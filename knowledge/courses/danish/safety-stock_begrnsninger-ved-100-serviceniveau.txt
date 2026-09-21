@@ -1,0 +1,18 @@
+---
+topic: Begrænsninger ved 100% serviceniveau
+source: Safety Stock
+source_type: course
+language: danish
+product_area: inventory
+question_type: why
+keywords:
+- serviceniveau
+- sikkerhedslager
+- lageromkostning
+- lagerudtømning
+- målsætning
+- Inact Now
+- lagerstyring
+---
+
+At sigte efter et 100% serviceniveau i lagerstyring betyder, at man forsøger at have alle varer på lager til enhver tid. Selvom dette kan virke ideelt, er det ikke praktisk, fordi omkostningerne ved at opretholde så høje serviceniveauer stiger markant. Forholdet mellem serviceniveau og lageromkostning er ikke lineært; når servicemålene øges, især over 95%, kræver hvert ekstra procentpoint en langt større stigning i sikkerhedslageret. Dette fører til hurtigt voksende omkostninger, hvilket gør det alt for dyrt at sigte efter 100% service på alle varer. I stedet balancerer virksomheder serviceniveauer med omkostningseffektivitet.

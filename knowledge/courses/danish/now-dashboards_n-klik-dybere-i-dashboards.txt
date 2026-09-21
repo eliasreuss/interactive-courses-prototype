@@ -1,0 +1,20 @@
+---
+topic: Én Klik Dybere i Dashboards
+source: Now Dashboards
+source_type: course
+language: danish
+product_area: platform
+question_type: how
+keywords:
+- Dashboards
+- Widgets
+- Trendvisning
+- Tabeller
+- Én Klik Dybere
+- kategori
+- produkt
+- detaljeret visning
+- dataudforskning
+---
+
+Funktionen Én Klik Dybere i Dashboards giver brugerne mulighed for hurtigt at få adgang til mere detaljeret information. Ved at klikke direkte på en Widget eller bruge knappen ved siden af en kategori eller et produkt i en Tabel, kan brugerne åbne en detaljeret Trendvisning for de specifikke data. Dette muliggør effektiv udforskning og analyse af underliggende tendenser uden at forlade hoveddashboardet, hvilket gør det lettere at undersøge specifikke nøgletal eller elementer i større dybde.

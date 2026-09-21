@@ -1,0 +1,16 @@
+---
+topic: What the 0,0 and % buttons do in an End2End view in Inact Now
+source_type: tutorial
+language: english
+keywords: decimals, 0.0 button, percent button, percentage, number format, rounding
+product_area: End2End
+question_type: how-to
+---
+
+Next to the aggregation dropdown in the settings panel are two small toggle buttons that change how the numbers in that column are displayed. They only affect the display — the underlying calculation is unchanged.
+
+0,0 — decimals. When active, values are shown with decimals (25,99). Click it to switch decimals off and show rounded whole numbers (26). This is useful when you want a cleaner column, or when the decimals are noise, for example with Count.
+
+% — percentage. When active, each bucket tile shows its value as a percentage of the column total instead of as an absolute number. With a Count aggregation the bucket percentages add up to 100 %, which makes it easy to see how the population is distributed — for example that C-suppliers are 57 % of all suppliers. With Avg the percentages are relative to the column's overall average, so a bucket that scores twice the average shows around 200 %.
+
+Each of the three columns has its own pair of buttons, so you can show suppliers as percentages while keeping products as absolute values. Click Save to store the choice.

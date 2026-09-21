@@ -1,0 +1,19 @@
+---
+topic: Risks of Price-Focused Ordering
+source: Reorder Quantity
+source_type: course
+language: english
+product_area: inventory
+question_type: why
+keywords:
+- reorder quantity
+- inventory management
+- C-item
+- demand
+- supplier discount
+- order size
+- hidden cost
+- price focus
+---
+
+Focusing solely on price when making reorder decisions can lead to poor inventory outcomes. For example, if a business sells only 100 units of a slow-moving item per year but is offered a discount for buying 1,000 units, the larger order may seem attractive due to the lower unit price. However, this approach ignores actual demand and can result in excess inventory, tying up capital and increasing storage costs. The hidden costs of over-ordering often outweigh the apparent savings from supplier discounts, making it important to balance price considerations with realistic demand forecasts.

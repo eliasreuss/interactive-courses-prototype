@@ -1,0 +1,40 @@
+---
+topic: Tied-up Capital
+source_type: glossary
+language: english
+keywords: Tied-up Capital, Kapitalbinding, capital, inventory, tied-up, company, chain, decisions, supply, turnover
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Kapitalbinding
+term_en: Tied-up Capital
+url: https://inact.io/en/glossary/tied-up-capital/
+---
+
+Tied-up Capital — Danish: Kapitalbinding
+Tied-up capital describes the portion of the company's money that is invested in operational assets such as inventory, production, or receivables, and is therefore not available for other investments. High capital tied up in operations is a direct threat to liquidity and limits flexibility in the supply chain.
+What is tied-up capital?
+Tied-up capital is the value of the resources that the company has invested in goods, materials, or products that have not yet been sold. It is a central key figure in supply chain management because it shows how much capital is locked in operations and thus cannot be used for, e.g., marketing, product development, or dividend payouts.
+What is tied-up capital used for?
+Tied-up capital is used to assess economic efficiency, optimize inventory levels, and make data-driven decisions about purchasing and production.
+The primary purposes are:
+Improvement of cash flow:
+Lower capital tied up means better cash flow and the possibility of investments in other areas of the company.
+Inventory optimization:
+Identifying and reducing excess inventory, especially for items with a low turnover rate.
+Measurement of turnover rate:
+Capital tied up is a critical component in the calculation of Inventory Turnover, which is a central KPI for inventory health.
+Risk management:
+Assessing the risk of obsolescence, as goods that tie up capital for a long time have a greater risk of becoming obsolete.
+When is tied-up relevant ?
+Tied-up capital is a strategic key figure that is used continuously in financial reporting and supply chain analyses.
+It is particularly relevant for:
+Budgeting and liquidity planning:
+To ensure that the company has sufficient
+Working Capital.
+Inventory optimization:
+When decisions are to be made about reducing safety stocks or reorder points.
+Analysis of product portfolio:
+To identify products that tie up a disproportionately large amount of capital relative to their profit margin.
+Strategic purchasing decisions:
+Assessing whether, for example, volume discounts outweigh the costs of increased capital tied up.

@@ -1,0 +1,12 @@
+---
+topic: The Alert mail option in the Assign Action dialog in Inact Now
+source_type: tutorial
+language: english
+keywords: assign, alert mail, notification, new item, assign action dialog
+product_area: Actions
+question_type: how-to
+---
+
+The Assign Action dialog also includes an Alert mail checkbox, separate from the subscription plan option. Ticking it sends assignees a mail whenever a new item is added to the Action list, in addition to any scheduled status subscription you set up.
+
+Note that ticking "Subscribe all assignees to this Action" only affects assignees who are not already subscribed — anyone already subscribed keeps their existing subscription settings.

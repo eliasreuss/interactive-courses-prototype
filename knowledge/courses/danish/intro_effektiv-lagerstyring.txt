@@ -1,0 +1,19 @@
+---
+topic: Effektiv lagerstyring
+source: Intro
+source_type: course
+language: danish
+product_area: inventory
+question_type: what
+keywords:
+- lager
+- genbestillingspunkter
+- genbestillingsmængder
+- kapital
+- beholdning
+- lagerstyring
+- optimal
+- produkter
+---
+
+Effektiv lagerstyring handler om at have de rette produkter på lager ved at fastsætte optimale genbestillingspunkter og -mængder. Denne tilgang sikrer, at kundernes efterspørgsel opfyldes uden at binde unødigt meget kapital i lageret. Målet er at balancere produkttilgængelighed med omkostningseffektivitet og dermed minimere både lagerudtømning og overflødigt lager.

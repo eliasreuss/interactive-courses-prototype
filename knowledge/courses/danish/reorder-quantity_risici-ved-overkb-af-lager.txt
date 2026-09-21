@@ -1,0 +1,19 @@
+---
+topic: Risici ved overkøb af lager
+source: Reorder Quantity
+source_type: course
+language: danish
+product_area: inventory
+question_type: why
+keywords:
+- lageromsætningshastighed
+- lagerstyring
+- kapitalbinding
+- storkøb
+- genbestillingsmængde
+- rabatter
+- lageromkostninger
+- overskudslager
+---
+
+Indkøb af store mængder lager for at udnytte leverandørrabatter kan føre til betydelige problemer, hvis beholdningen langt overstiger det reelle salg. Selvom enhedsprisen kan være lavere, kan denne tilgang kraftigt reducere din lageromsætningshastighed, hvilket betyder, at varerne forbliver usolgte i lange perioder. Som følge heraf bindes kapital i lager, der ikke genererer omsætning, hvilket kan skabe likviditetsproblemer og øge risikoen for forældelse eller fordærv. Effektiv lagerstyring kræver, at man balancerer indkøbsincitamenter med realistiske salgsprognoser for at undgå overskudslager og de negative økonomiske konsekvenser, det medfører.

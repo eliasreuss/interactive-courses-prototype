@@ -1,0 +1,16 @@
+---
+topic: What a relation is and how to read the relation counts in End2End in Inact Now
+source_type: tutorial
+language: english
+keywords: relations, relation count, link, connection, count circle, supplier product customer
+product_area: End2End
+question_type: concept
+---
+
+Between the Suppliers and Products columns, and again between the Products and Customers columns, there is a grey circle showing a number and the word "Relations". This is the number of individual links currently connecting the two data sources.
+
+A relation is one connection between one record on the left and one record on the right — one supplier supplying one product, or one product sold to one customer. The number is therefore usually much higher than the number of products, because the same product can be linked to many customers.
+
+The relation counts are live: they recalculate whenever you select a bucket, apply a filter or set a slicer. If you select the A bucket in Suppliers, the Suppliers-Products circle drops to the number of supplier-product links that involve only A-suppliers, and the Products-Customers circle drops to the links that involve only the products those suppliers deliver.
+
+You can hide the relation circle for a link by unchecking Relations in the settings panel for that link area.

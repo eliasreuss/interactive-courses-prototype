@@ -1,0 +1,45 @@
+---
+topic: Heatmap in supply chain management (SCM)
+source_type: glossary
+language: english
+keywords: Heatmap in supply chain management (SCM), Heatmap i supply chain management (SCM), heatmaps, inventory, analysis, chain, complex, heatmap, items, management
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Heatmap i supply chain management (SCM)
+term_en: Heatmap in supply chain management (SCM)
+url: https://inact.io/en/glossary/heatmap-supply-chain-management/
+---
+
+Heatmap in supply chain management (SCM) — Danish: Heatmap i supply chain management
+A Heatmap in Supply Chain Management is a powerful visual method for turning complex data into easily understandable insights. Color-coded maps are used to identify areas of high risk, critical activity, or optimization potential in the supply chain. Heatmaps enable decision-makers to see where the focus should be and make data-driven decisions in a matter of seconds.
+What is a Heatmap in SCM?
+A Heatmap is a graphical representation where data about inventory, products, suppliers, or customers is displayed with colors that indicate values or critical points. The color scale typically goes from "cold" (blue/green for low risk/good performance) to "warm" (yellow/red for high risk/poor performance).
+Heatmaps is a essential tool in Business Intelligence (BI) og SCM because they:
+Make complex data intuitive and easy to decode.
+Help discover patterns and outliers that would otherwise stay hidden in conventional spreadsheets.
+What are Heatmaps used for in the Supply Chain?
+Heatmaps are used to prioritize areas of focus, understand patterns in data, and make faster decisions. The primary purpose is to transform data into action.
+Specifically, they are typically used for:
+Risk Management:
+Visualizing supplier risk, delays, or bottlenecks in the production flow.
+Inventory Optimization:
+Mapping the inventory's capital tied up and risk, e.g., by showing items with high value and low turnover rate
+(potential C-items).
+Performance Analysis:
+Identifying products with high revenue but low margin, or customers with low profitability.
+Geographical Analysis:
+Displaying the concentration of orders, suppliers, or logistics costs on a map.
+When are Heatmaps relevant?
+Heatmaps are used when a quick, visual overview of large data volumes is needed.
+They are particularly relevant when you want to:
+Perform
+ABC Analysis:
+Visualize the segmentation of inventory in a matrix to define differentiated management strategies.
+Monitor KPIs:
+Get an immediate overview of which departments, locations, or products are performing below target.
+Prepare for S&OP
+Meetings:
+Present complex data intuitively for cross-functional teams.
+Identify Obsolescence:
+Show where the risk of obsolete items is greatest (e.g., items with long dwell time).

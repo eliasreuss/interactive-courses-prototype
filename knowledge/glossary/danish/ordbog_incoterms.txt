@@ -1,0 +1,29 @@
+---
+topic: Incoterms
+source_type: glossary
+language: danish
+keywords: incoterms, leveringsbetingelser, EXW, FOB, DAP, DDP, CIF, risikoovergang, fragt, told, international handel, ICC
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: Incoterms
+term_en: Incoterms
+---
+
+Incoterms — English: Incoterms
+Incoterms er et sæt standardiserede leveringsbetingelser fra Det Internationale Handelskammer, ICC. De fastlægger, hvor ansvaret for varen overgår fra sælger til køber, hvem der betaler fragt, forsikring og told, og hvem der bærer risikoen undervejs.
+Hvad en Incoterm afgør
+Hvor leveringen anses for sket
+Hvem der arrangerer og betaler transporten
+Hvem der bærer risikoen for skade eller bortkomst på hvert stykke af turen
+Hvem der står for eksport- og importfortoldning
+De hyppigste i praksis
+EXW, ab fabrik, hvor køber henter varen hos sælger og bærer alt derfra
+FOB, free on board, hvor sælgers ansvar slutter når varen er lastet på skibet
+CIF, hvor sælger betaler fragt og forsikring til bestemmelseshavnen, men risikoen alligevel er gået over ved lastning
+DAP, hvor sælger leverer til aftalt sted, men køber står for importfortoldning
+DDP, hvor sælger leverer alt betalt, inklusive told og afgifter
+Hvorfor det betyder noget for lagerstyring
+Incoterm bestemmer, hvornår varen reelt er din — og dermed hvornår den skal tælle med i lageret og i kapitalbindingen. To leverandører med samme pris og samme transittid kan koste vidt forskelligt, når fragt, forsikring og told fordeles anderledes.
+Incoterm påvirker også den reelle gennemløbstid. Ved EXW begynder din leveringstid først, når du selv får hentet varen, og forsinkelser i din egen transportbooking er dit problem, ikke leverandørens.
+Bemærk at Incoterms ikke regulerer ejendomsretten, betalingsbetingelser eller hvad der sker ved kontraktbrud. De skal stå i kontrakten.

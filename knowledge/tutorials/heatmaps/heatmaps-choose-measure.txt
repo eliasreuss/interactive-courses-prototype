@@ -1,0 +1,16 @@
+---
+topic: How to change the measure shown in a Heatmap in Inact Now
+source_type: tutorial
+language: english
+keywords: measure, cost amount, what is measured, sum, aggregation, value in cells
+product_area: Heatmaps
+question_type: how-to
+---
+
+The dropdown in the middle of the heatmap toolbar selects which column is measured in the cells — for example Cost Amount. The aggregation used is printed in italics right after it, for example "sum", so you can always see whether the cells are totals, averages or counts.
+
+Click the dropdown to pick a different measure. A small icon before each name shows its data type, with # marking numeric columns.
+
+The measure and its aggregation are also listed at the top of the About this Heatmap window, under "This Heatmap shows".
+
+Changing the measure rebuilds the colour scale as well, because the colour bands are derived from the values currently in the matrix. A heatmap that looked mostly green can turn mostly red simply because you switched to a measure with a different distribution — that is the scale adapting, not the business changing.

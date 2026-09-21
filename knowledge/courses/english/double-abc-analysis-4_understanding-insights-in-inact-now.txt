@@ -1,0 +1,19 @@
+---
+topic: Understanding Insights in Inact Now
+source: Double Abc Analysis 4
+source_type: course
+language: english
+product_area: inventory
+question_type: what
+keywords:
+- Insights
+- Double ABC Analysis
+- data views
+- interpretation
+- Inact Now
+- analysis
+- navigation
+- inventory management
+---
+
+An insight in Inact Now is a focused, easy-to-understand view that presents key information from your data. Insights are designed to help users quickly grasp important patterns, trends, or issues without needing to analyze raw data themselves. In the context of Double ABC Analysis, the insight provides a summarized visualization of inventory performance, helping users identify which items are most significant based on criteria such as value and movement. This enables more informed decision-making and efficient inventory management.

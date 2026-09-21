@@ -1,0 +1,25 @@
+---
+topic: Udfasning af produkter
+source_type: glossary
+language: danish
+keywords: Udfasning af produkter, Product Phasing Out, produkter, produkt, udfasning, frigøre, kapital, lager, optimere, produktion
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Udfasning af produkter
+term_en: Product Phasing Out
+url: https://inact.io/ordbog/udfasning-af-produkter/
+---
+
+Udfasning af produkter — English: Product Phasing Out
+Udfasning af produkter er processen, hvor et produkt gradvist tages ud af produktion og salg. Formålet er at optimere produktporteføljen, reducere lagerbinding og gøre plads til nye produkter.
+Hvad betyder det at udfase et produkt?
+Udfasning af et produkt indebærer planlægning af, hvordan et produkt trækkes tilbage fra markedet og supply chain. Dette kan inkludere beslutninger om stop af produktion, salg af resterende lager og kommunikation til kunder og leverandører.
+Hvorfor udfaser man produkter?
+Man bruger udfasning til at reducere omkostninger forbundet med lavt omsættende eller forældede produkter, frigøre kapital bundet i lager og sikre, at ressourcer kan bruges på produkter med højere værdi.
+Hvornår udfaser man et produkt?
+Udfasning anvendes typisk, når:
+Produktet har lav efterspørgsel eller faldende omsætning
+Produktionsomkostninger overstiger indtægter
+Der skal introduceres nye produkter eller opdaterede versioner
+Man vil optimere lageret og det er nødvendigt at frigøre kapital

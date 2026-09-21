@@ -1,0 +1,16 @@
+---
+topic: What the End2End module is in Inact Now
+source_type: tutorial
+language: english
+keywords: end2end, e2e, supply chain, suppliers products customers, module overview, value chain
+product_area: End2End
+question_type: concept
+---
+
+End2End is the module in Inact Now where you follow the value chain across three linked data sources at once: Suppliers, Products and Customers. It answers questions that a single Insight cannot, because it connects data that lives in separate tables — for example "which customers buy the products that come from my C-suppliers?" or "how much of my revenue depends on products from a single supplier?".
+
+You open it from End2End in the top navigation bar. The landing page is a library with two sections: End2End views (the three-column analyses described in these guides) and Heatmaps (a separate visualisation built on top of a relation).
+
+An End2End view always shows the same layout: a Suppliers column on the left, a Products column in the middle, a Customers column on the right, and a link area between each pair of columns showing how many relations connect them. Each column is split into the categorisation buckets used in your data — A, B, C and Inactive for suppliers, the Double ABC matrix (AA, AB, AC, BA, BB, ...) plus lifecycle groups for products, and Protect, Develop, Grow and Turnaround for customers.
+
+The core way you work in an End2End view is by clicking buckets. Clicking a bucket narrows the whole chain to just that part of the business, and the other two columns recalculate to show only what is connected to your selection.

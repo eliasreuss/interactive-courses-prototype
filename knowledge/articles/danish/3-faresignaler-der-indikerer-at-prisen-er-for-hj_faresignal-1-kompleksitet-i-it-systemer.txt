@@ -1,0 +1,11 @@
+---
+topic: 'Faresignal 1: Kompleksitet i IT-systemer'
+source_type: article
+language: danish
+article_source: 3 faresignaler der indikerer, at prisen er for høj
+keywords: kompleksitet, forståelse, udbyder, pris, ydelse
+---
+
+1. Forstå det arbejde udbyderen vil lave for dig.
+2. Komplekse IT-systemer kan presse prisen op.
+3. Vær opmærksom på enkle måder at optimere indkøb på.

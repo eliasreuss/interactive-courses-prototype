@@ -1,0 +1,19 @@
+---
+topic: Vigtigheden af leverandørpræstation
+source: Supplier Performance
+source_type: course
+language: danish
+product_area: supplier
+question_type: why
+keywords:
+- leverandørpræstation
+- rentabilitet
+- driftspræstation
+- strategisk vækst
+- finansiel præstation
+- innovation
+- konkurrenceevne
+- leverandørstyring
+---
+
+Leverandørpræstation er afgørende, fordi leverandører ikke blot er leverandører af varer eller tjenester, men vigtige partnere, der direkte påvirker en virksomheds økonomiske resultater, innovationskapacitet og konkurrenceposition. En betydelig del af en virksomheds udgifter går ofte til eksterne leverandører, så effektiv styring af disse relationer kan have stor indflydelse på rentabilitet, driftseffektivitet og evnen til at nå langsigtede strategiske mål. At sikre stærk leverandørpræstation hjælper organisationer med at forblive konkurrencedygtige og understøtter bæredygtig vækst.

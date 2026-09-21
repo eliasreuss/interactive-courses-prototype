@@ -1,0 +1,19 @@
+---
+topic: Lageromkostninger og leverandørpræstation
+source: Supplier Performance
+source_type: course
+language: danish
+product_area: supplier
+question_type: what
+keywords:
+- lageromkostninger
+- leverandørportefølje
+- leverandørpræstation
+- arbejdskapital
+- forældelse
+- profitmarginer
+- Inact Now
+- Insights
+---
+
+Lageromkostninger dækker over de udgifter, der er forbundet med opbevaring af usolgte varer, og disse påvirkes af leverandørernes præstation og udvælgelse. Ved at styre leverandørrelationer strategisk kan virksomheder reducere den kapital, der er bundet i lager, minimere risikoen for at produkter bliver forældede og forbedre de samlede profitmarginer. Inact Now giver et komplet overblik over lageromkostninger på leverandørniveau og understøtter en systematisk tilgang til at reducere behovet for arbejdskapital.

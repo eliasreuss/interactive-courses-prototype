@@ -1,0 +1,19 @@
+---
+topic: Slicers and Filters in Dashboards
+source: Now Dashboards
+source_type: course
+language: english
+product_area: platform
+question_type: how
+keywords:
+- Dashboards
+- Insights
+- Slicers
+- Filters
+- segmenting data
+- custom Filter
+- fixed Slicers
+- data view
+---
+
+Dashboards allow users to segment and analyze data similarly to Insights by using Slicers and Filters. Fixed Slicers are always available at the top of the dashboard screen, enabling quick segmentation by predefined categories. Additionally, users can add custom Filters to further refine the data displayed, ensuring they can focus on the specific information or metrics they need. This flexibility helps users tailor their dashboard view to match their unique analysis requirements.

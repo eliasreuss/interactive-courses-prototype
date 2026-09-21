@@ -1,0 +1,27 @@
+---
+topic: How to copy or delete an Insight in Inact Now
+source_type: tutorial
+language: english
+keywords: copy insight, duplicate insight, delete insight, edit mode, library
+product_area: Insights
+question_type: how-to
+---
+
+To copy an Insight:
+1. Open the Insight.
+2. Click the gear icon to turn on edit mode.
+3. Click the small dropdown arrow next to the Edit mode: ON button.
+4. Select Copy this Insight.
+
+A duplicate of the Insight is created. You can then rename and modify it independently from the original.
+
+Alternatively, from the Insights library, click the ▾ dropdown on any Insight row and select Copy Insight.
+
+To delete an Insight:
+1. Open the Insight and turn on edit mode (click the gear icon).
+2. Click the dropdown arrow next to Edit mode: ON.
+3. Select Delete.
+
+Or from the library, click the ▾ dropdown on any Insight row and select Delete.
+
+Deleting an Insight is permanent and cannot be undone. Make sure you're certain before confirming the deletion.

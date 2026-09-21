@@ -1,0 +1,28 @@
+---
+topic: Bullwhip-effekten
+source_type: glossary
+language: danish
+keywords: bullwhip, bullwhip-effekt, piskesmæld, efterspørgselsudsving, forsyningskæde, forvrængning, forecast, lageropbygning
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: Bullwhip-effekten
+term_en: Bullwhip Effect
+---
+
+Bullwhip-effekten — English: Bullwhip Effect
+Bullwhip-effekten er det fænomen, at små udsving i den faktiske efterspørgsel bliver kraftigere og kraftigere, jo længere op i forsyningskæden man kommer. En lille ændring hos slutkunden bliver til en stor ændring hos detailleddet, en større hos grossisten og en meget stor hos producenten og råvareleverandøren.
+Hvorfor opstår den?
+Hvert led i kæden bestiller ikke efter den reelle efterspørgsel, men efter det ordremønster, de ser fra leddet under sig — og lægger en buffer oveni. Fire ting driver effekten typisk:
+Hvert led laver sin egen prognose i stedet for at dele data om faktisk salg
+Ordrer samles i større partier for at opnå mængderabat eller spare fragt
+Kampagner og prisudsving får kunder til at købe ind i forvejen
+Ved leveringsproblemer bestiller kunder mere end de har brug for, for at sikre sig
+Hvad koster den?
+Bullwhip-effekten giver skiftevis for meget og for lidt lager. Resultatet er høj kapitalbinding, ukurans og hastehjemtagninger — og samtidig restordrer, når svinget vender. Den rammer hårdest langt oppe i kæden, hvor leveringstiderne er længst.
+Hvordan dæmper man den?
+Del faktiske salgstal opstrøms i stedet for kun ordrer
+Bestil hyppigere i mindre mængder frem for sjældne store partier
+Udjævn kampagner og prisændringer, så efterspørgslen ikke kunstigt svinger
+Brug faste planlægningsparametre frem for manuelle skøn, der reagerer på seneste måned
+Jo kortere afstand der er mellem den reelle efterspørgsel og den beslutning, der træffes, jo mindre bliver piskesmældet.

@@ -1,0 +1,29 @@
+---
+topic: Incoterms
+source_type: glossary
+language: english
+keywords: incoterms, delivery terms, EXW, FOB, DAP, DDP, CIF, risk transfer, freight, customs, international trade, ICC
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: Incoterms
+term_en: Incoterms
+---
+
+Incoterms — Danish: Incoterms
+Incoterms are a set of standardised delivery terms issued by the International Chamber of Commerce, the ICC. They define where responsibility for the goods passes from seller to buyer, who pays freight, insurance and duty, and who carries the risk along the way.
+What an Incoterm settles
+Where delivery is considered to have taken place
+Who arranges and pays for transport
+Who bears the risk of damage or loss on each leg of the journey
+Who handles export and import customs clearance
+The most common in practice
+EXW, ex works, where the buyer collects at the seller's premises and carries everything from there
+FOB, free on board, where the seller's responsibility ends once the goods are loaded on the vessel
+CIF, where the seller pays freight and insurance to the destination port, but risk has still passed at loading
+DAP, where the seller delivers to an agreed place but the buyer handles import clearance
+DDP, where the seller delivers everything paid, including duty and taxes
+Why it matters for inventory management
+The Incoterm determines when the goods are genuinely yours — and therefore when they should count in inventory and in tied-up capital. Two suppliers at the same price and the same transit time can cost very differently once freight, insurance and duty are allocated differently.
+The Incoterm also shapes real lead time. Under EXW your lead time only starts once you have arranged collection, and delays in your own transport booking are your problem, not the supplier's.
+Note that Incoterms do not govern title to the goods, payment terms, or what happens on breach of contract. Those belong in the contract.

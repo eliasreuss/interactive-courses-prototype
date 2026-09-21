@@ -1,0 +1,38 @@
+---
+topic: Performance
+source_type: glossary
+language: english
+keywords: Performance, Ydeevne, processes, capital, chain, delivery, measured, production, supply
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Ydeevne
+term_en: Performance
+url: https://inact.io/en/glossary/performance/
+---
+
+Performance — Danish: Ydeevne
+Performance in the supply chain refers to how effectively a company or a system executes its tasks in relation to goals such as quality, delivery, cost, and flexibility. It is used to measure and improve processes across the entire supply chain.
+What is Performance?
+Performance is often measured through KPIs (Key Performance Indicators), which can include on-time delivery, turnover rate, tied-up capital, production output, error rate, or customer satisfaction. It provides an objective basis for assessing efficiency and identifying areas for improvement.
+What is Performance used for?
+Performance is used to:
+Assess the efficiency of processes, products, and employees
+Identify bottlenecks or inefficient processes
+Optimize resource utilization and tied-up capital
+Improve customer service and competitiveness
+When is Performance monitored?
+Performance is used continuously for:
+Monitoring supply chain and production processes
+Strategic planning and decision-making
+Benchmarking against industry standards or internal goals
+Continuous improvement projects
+How is Performance measured?
+Performance is measured by defining relevant KPIs and comparing the results against the target.
+Examples are:
+On-time delivery (%)
+Inventory turnover
+(times per year)
+Average lead time
+Tied-up capital in inventory
+Error rate in production or logistics

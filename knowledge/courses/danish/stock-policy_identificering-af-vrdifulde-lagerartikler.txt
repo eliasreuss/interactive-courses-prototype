@@ -1,0 +1,18 @@
+---
+topic: Identificering af værdifulde lagerartikler
+source: Stock Policy
+source_type: course
+language: danish
+product_area: inventory
+question_type: what
+keywords:
+- lagerstyring
+- lagerpolitik
+- valg af varer
+- datadrevne beslutninger
+- værdi
+- optimering af lager
+- varesortiment
+---
+
+Et grundlæggende aspekt af lagerstyring er at afgøre, hvilke varer der skal lagerføres. Dette indebærer at identificere produkter, der reelt tilfører værdi til organisationen, i stedet for at basere sig på antagelser eller gætterier. Ved at træffe datadrevne beslutninger om, hvilke varer der fortjener plads på hylderne, undgår man ophobning af lavværdiprodukter og sikrer, at højværdiprodukter er tilgængelige for at opfylde efterspørgslen. Uden en klar tilgang til valg af varer risikerer organisationer ineffektiv ressourceanvendelse og tabte muligheder for at betjene deres kunder effektivt.

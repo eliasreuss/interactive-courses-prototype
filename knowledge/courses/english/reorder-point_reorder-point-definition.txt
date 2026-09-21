@@ -1,0 +1,18 @@
+---
+topic: Reorder Point Definition
+source: Reorder Point
+source_type: course
+language: english
+product_area: inventory
+question_type: what
+keywords:
+- reorder point
+- inventory level
+- purchase order
+- stock
+- demand
+- delivery
+- inventory management
+---
+
+A reorder point is the specific inventory level at which a new purchase order should be placed to replenish stock. It signals when to reorder, not how much to order. The reorder point acts as an early warning, ensuring there is enough inventory to meet customer demand during the time it takes for new stock to arrive after ordering. This helps prevent stockouts and keeps operations running smoothly.

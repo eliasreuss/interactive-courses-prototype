@@ -1,0 +1,49 @@
+---
+topic: Supplier Relationship Management (SRM)
+source_type: glossary
+language: english
+keywords: Supplier Relationship Management (SRM), supplier, company, suppliers, capacity, performance, sourcing, changes, collaboration
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Supplier Relationship Management (SRM)
+term_en: Supplier Relationship Management (SRM)
+url: https://inact.io/en/glossary/supplier-relationship-management/
+---
+
+Supplier Relationship Management (SRM)
+Supplier Relationship Management (SRM) is the practice of developing and managing relationships with a company's most important suppliers through closer collaboration, joint planning, and ongoing follow-up. The goal isn't just to secure the right goods at the right price, but also to create more stable deliveries, lower risk, and better decisions across the supply chain.
+What does SRM mean in practice?
+SRM is about working with suppliers on a longer-term basis. Instead of only contacting a supplier for price negotiations, delays, complaints, or new orders, the company works continuously on forecasting, capacity, lead times, risks, inventory, product changes, and improvements.
+SRM is typically applied to strategically important suppliers, where problems can quickly affect service levels, tied-up capital, production, delivery capability, and customer service. SRM is closely linked to supplier management in this context, since the company must continuously track supplier performance and collaborate more closely on improvements and risk.
+It's also closely linked to supply chain planning, since forecasting, capacity, and demand need to be coordinated earlier between the company and its suppliers.
+Supply chain resilience also plays an important role, since stronger supplier collaboration makes a company better equipped to handle delays, capacity constraints, and market changes.
+What happens when a supplier is only contacted about problems?
+Many companies still work with suppliers in a largely transactional way. The dialogue is mainly about price, order status, delays, errors, and reorders. The problem is that the collaboration often becomes reactive.
+The supplier only receives information late in the process. Forecasts may not be shared. Changes in demand aren't clearly communicated. And problems only become visible once the delivery is already delayed.
+This is where SRM tries to move the collaboration earlier in the planning process, so the supplier isn't only brought in once a problem has already hit inventory, production, or the customer. When forecasts, capacity, and risks are shared earlier, both parties get a better chance to react in time — and fewer problems turn into urgent, last-minute issues.
+What's the difference between SRM, strategic sourcing, and operational purchasing?
+Operational (transactional) purchasing focuses primarily on the purchase itself. The work typically involves creating purchase orders, following up on deliveries, handling order status and invoices, and managing day-to-day communication with suppliers.
+Strategic sourcing operates on a different level: here, the company makes decisions about which suppliers to use, how the supplier market is structured, and how the sourcing strategy should be designed — for example, whether critical goods require dual sourcing, or whether volume should be consolidated among fewer suppliers.
+SRM typically takes over once a supplier has been chosen. Where strategic sourcing decides who the company should work with, SRM is about how that collaboration is developed and managed over time.
+In short: operational purchasing is about executing the purchase. Strategic sourcing is about deciding who and how to buy from. SRM is about developing the relationship with the suppliers already chosen.
+In many companies — particularly mid-sized organizations — the same person handles both strategic sourcing and SRM. Here, the distinction is rarely experienced as two separate disciplines, but rather as two sides of the same role: one day involves negotiating a new supplier agreement, the next involves following up on forecasts and performance with a supplier already selected. The distinction is still worth knowing, since it helps prioritize time correctly — but in practice, the two often blend together.
+SRM and strategic sourcing also continuously influence each other: insights from SRM — for example, recurring capacity issues or unstable delivery performance — often feed into new strategic sourcing decisions, which in turn shape the supplier relationships SRM has to manage.
+This is also why SRM plays an important role in supply chain optimization. Many supply chain problems don't arise from the delivery itself, but from a lack of coordination between the company and its suppliers.
+What does effective SRM look like in practice?
+A manufacturer of technical equipment buys critical components from a European supplier. In the past, the collaboration seemed to work reasonably well. The company sent purchase orders, the supplier confirmed delivery, and dialogue mainly occurred around delays or errors.
+The problem was that demand fluctuated significantly throughout the year.
+When sales rose faster than expected, the supplier couldn't keep up. And when demand dropped, the company was often left with excess tied-up capital. The company therefore started working more actively with SRM. Every month, it shares a six-month forecast, planned sales campaigns, changes in demand, planned product changes, and risk assessments for critical goods.
+At the same time, the company holds regular performance meetings with the supplier, reviewing supplier performance, capacity challenges, forecast deviations, quality issues, and changes in lead times. For one specific component, both parties discover that demand rises sharply every September. Previously, the supplier only reacted once order volumes had already increased.
+Now the supplier receives forecasts several months in advance and can reserve capacity and raw materials well ahead of time. This doesn't eliminate every fluctuation. But the company significantly reduces the number of urgent delays, rush orders, and sudden inventory build-ups.
+What are common misconceptions about SRM?
+A common mistake is assuming SRM is about becoming "better friends" with the supplier. It isn't. SRM is about structure, transparency, and better collaboration around data and planning.
+Another mistake is applying SRM to all suppliers. This rarely makes sense. SRM creates the most value with strategically important suppliers, where the collaboration has a significant impact on operations, delivery capability, or service levels.
+A third misconception is sharing too little information. If a supplier doesn't have visibility into forecasts, changes, or upcoming needs, it becomes difficult to plan capacity reliably.
+A fourth mistake is assuming SRM replaces performance follow-up. On the contrary, SRM often requires even more precise KPIs and closer tracking of supplier performance.
+How can a company work with SRM?
+Start by identifying which suppliers are strategically most important to the company — this can include suppliers of critical goods, those with long lead times, high purchase volumes, a strong impact on service levels, or few alternative suppliers.
+From there, the company should establish fixed processes for forecast sharing, performance follow-up, risk assessment, capacity planning, and joint improvement initiatives. This is where Vendor Performance Management,
+OTIF, and end-to-end intelligence become important.
+Companies with strong SRM rarely treat suppliers as mere order fulfillers. Instead, they work with them as an active part of the company's overall supply chain.
+The earlier a supplier understands changes in demand and risk, the easier it becomes to react before problems reach inventory or the customer.

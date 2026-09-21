@@ -1,0 +1,17 @@
+---
+topic: How to configure a Filter row in a dashboard table in Inact Now
+source_type: tutorial
+language: english
+keywords: filter row, slicer, row filter, add row, label, column filter
+product_area: Dashboards
+question_type: how-to
+---
+
+A Filter row displays data filtered by one or more slicers, rather than by a linked Insight. To add one:
+
+1. In the Table tab, click + Add row and select Filter row.
+2. In the dialog that opens, fill in:
+   - Label — the name displayed in the leftmost column for this row.
+   - Slicer — click the + button to add a slicer. A dropdown appears where you can select which column to filter by.
+3. You can add multiple slicers to a single filter row to narrow down the data further.
+4. Click Save when done.

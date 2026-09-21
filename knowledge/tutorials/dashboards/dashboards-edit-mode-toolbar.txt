@@ -1,0 +1,18 @@
+---
+topic: Overview of the edit mode toolbar in Inact Now dashboards
+source_type: tutorial
+language: english
+keywords: toolbar, save, save and refresh, revert changes, refresh data, dashboard filter, fixed slicer, edit mode controls
+product_area: Dashboards
+question_type: how-to
+---
+
+When you enter edit mode on a dashboard, a toolbar appears at the top of the page with the following controls:
+
+- Save — saves your changes without reloading the data.
+- Save & Refresh — saves your changes and also refreshes the dashboard data at the same time.
+- Revert changes — undoes all unsaved changes and returns the dashboard to its last saved state. A confirmation dialog appears before anything is reverted.
+- Refresh Data — reloads the underlying data without saving any changes.
+- Show Dashboard — opens a dropdown with two options: Copy (duplicates the dashboard) and Delete (permanently removes it).
+- + Dashboard filter — adds a filter that applies across the whole dashboard.
+- + Fixed slicer — adds a slicer that stays fixed on the dashboard for users to interact with.

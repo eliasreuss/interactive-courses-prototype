@@ -1,0 +1,18 @@
+---
+topic: How to edit a Heatmap in Inact Now
+source_type: tutorial
+language: english
+keywords: edit mode, gear icon, edit heatmap, settings, save, where are the settings
+product_area: Heatmaps
+question_type: how-to
+---
+
+Click the gear icon at the far right of the heatmap toolbar to turn on edit mode. The button changes to a red "Edit mode: ON" and the extra controls appear:
+
+A pencil icon next to the heatmap name for renaming it.
+A colour swatch with a pencil, to the left of the colour legend, opening the Color settings window.
+An Add Filter link and slicer fields for Suppliers, Products and Customers above the toolbar. A data source that is not part of this heatmap is shown greyed out and cannot be used.
+Hide total, a decimals button and a percentage button in the toolbar.
+Save and Save as at the right.
+
+Everything you change takes effect on screen immediately so you can judge the result, but nothing is stored until you click Save. Click the gear again to leave edit mode.

@@ -1,0 +1,24 @@
+---
+topic: Dækningsgrad
+source_type: glossary
+language: danish
+keywords: dækningsgrad, contribution margin ratio, DG, procent, salgspris, variable omkostninger, indtjening, sammenligning, sortiment
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: Dækningsgrad
+term_en: Contribution Margin Ratio
+---
+
+Dækningsgrad — English: Contribution Margin Ratio
+Dækningsgrad er dækningsbidraget udtrykt som en procentdel af salgsprisen. Den fortæller, hvor stor en andel af hver solgt krone der bliver tilbage, efter de variable omkostninger er betalt.
+Hvordan beregnes dækningsgrad?
+Dækningsgrad = (dækningsbidrag ÷ salgspris) × 100.
+En vare, der sælges for 500 kr. med et dækningsbidrag på 180 kr., har en dækningsgrad på 36 %.
+Hvorfor bruge procent i stedet for kroner?
+Fordi procenten gør varer sammenlignelige på tværs af prisniveauer. En vare til 50 kr. og en til 5.000 kr. kan ikke sammenlignes på dækningsbidrag alene — den dyre vinder altid i kroner. På dækningsgrad kan du se, hvilken af dem der reelt er mest indbringende pr. omsat krone.
+Hvad bruges dækningsgrad til?
+Typisk til tre ting: at sammenligne varegrupper og leverandører, at vurdere om en prisændring eller en rabat kan bæres, og at sætte kriterier for hvilke varer der skal være lagervarer.
+Fælder man skal kende
+En høj dækningsgrad er ikke i sig selv et godt tegn. En vare kan have 60 % dækningsgrad og sælge tre stykker om året — den binder kapital uden at bidrage nævneværdigt. Omvendt kan en vare med 12 % dækningsgrad og høj omsætningshastighed være langt mere værd.
+Derfor bør dækningsgrad altid ses sammen med volumen og omsætningshastighed, for eksempel i en dobbelt ABC-analyse, hvor den ene akse er forbrug og den anden er indtjening.

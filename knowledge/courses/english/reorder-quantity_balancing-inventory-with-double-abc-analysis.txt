@@ -1,0 +1,19 @@
+---
+topic: Balancing Inventory with Double ABC Analysis
+source: Reorder Quantity
+source_type: course
+language: english
+product_area: inventory
+question_type: why
+keywords:
+- Double ABC Analysis
+- reorder quantity
+- unit price
+- inventory turn ratio
+- demand
+- stock duration
+- inventory management
+- Inact Now
+---
+
+Focusing solely on obtaining the lowest unit price can lead to excessive inventory and inefficient use of resources. By shifting attention to how long a product should remain in stock, businesses can better align inventory levels with actual demand. Using Double ABC Analysis helps guide this decision by categorizing products based on both their demand and value, allowing for a balanced approach that considers unit price, demand, and inventory turn ratio. This method supports healthier inventory management by ensuring products are reordered in quantities that optimize both cost and stock availability.

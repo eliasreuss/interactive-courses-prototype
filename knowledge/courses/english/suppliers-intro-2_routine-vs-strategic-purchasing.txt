@@ -1,0 +1,19 @@
+---
+topic: Routine vs Strategic Purchasing
+source: Suppliers Intro 2
+source_type: course
+language: english
+product_area: supplier
+question_type: what
+keywords:
+- routine purchasing
+- strategic purchasing
+- supplier performance
+- data transparency
+- cost optimization
+- profitability
+- hidden costs
+- purchasing process
+---
+
+Routine purchasing is a reactive approach focused on placing orders and maintaining operations without considering broader business impacts. This method often lacks data-driven insights, leading to overlooked hidden costs, acceptance of poor supplier performance, and missed savings opportunities. In contrast, strategic purchasing leverages data to provide transparency into spending and supplier effectiveness. By analyzing detailed cost breakdowns and supplier metrics, organizations can identify areas for improvement and optimization. This transforms purchasing from a basic administrative function into a strategic activity that directly contributes to company profitability.

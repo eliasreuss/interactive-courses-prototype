@@ -1,0 +1,16 @@
+---
+topic: What a Heatmap is in Inact Now
+source_type: tutorial
+language: english
+keywords: heatmap, matrix, cross tabulation, end2end, colours, overview, what is a heatmap
+product_area: Heatmaps
+question_type: concept
+---
+
+A Heatmap is a colour-coded matrix that crosses two categorisations against each other and shows a measure in every cell. It answers questions that a single list cannot, such as "how much cost sits with our A-suppliers delivering CC-products?" — one cell in the matrix holds that answer, and the colour tells you instantly whether it is a big number or a small one.
+
+Heatmaps live in the End2End module. Click End2End in the top navigation and you will find them in the Heatmaps column of the library, next to the End2End views. They are built on top of an End2End setup, which is what makes it possible to cross a supplier attribute against a product attribute in the first place.
+
+A typical heatmap has supplier categories down the side, product categories across the top, and a measure such as Cost Amount summed in each cell. Rows and columns each end in a Total, and a colour legend at the top right maps colours from High to Low.
+
+From a heatmap you can drill into individual buckets, open the underlying records in a grid, create an Action list from what you find, or jump back to the End2End view the heatmap came from.

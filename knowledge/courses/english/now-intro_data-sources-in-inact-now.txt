@@ -1,0 +1,19 @@
+---
+topic: Data Sources in Inact Now
+source: Now Intro
+source_type: course
+language: english
+product_area: platform
+question_type: what
+keywords:
+- ERP system
+- data refresh
+- data scope
+- data structure
+- Inact Now
+- platform setup
+- data integration
+- company data
+---
+
+Inact Now obtains its data directly from your company's ERP system, ensuring that the information is accurate and up to date. The data is refreshed every night, so users always have access to recent figures. Before the platform is launched, Inact collaborates with your company to define the specific data scope, which means deciding exactly what data will be included and how it will be organized within the system. Understanding how your data is sourced and structured in Inact Now is important for making the most effective use of the platform's features.

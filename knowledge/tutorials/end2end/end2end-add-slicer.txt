@@ -1,0 +1,16 @@
+---
+topic: How to add a slicer to a column in an End2End view in Inact Now
+source_type: tutorial
+language: english
+keywords: slicer, add slicer, no slicers, green plus, data slicer, narrow column, country
+product_area: End2End
+question_type: how-to
+---
+
+Each of the three columns in the settings panel has a slicer field at the bottom, reading "No slicers" when none is set, with a green + button beside it.
+
+Click the + button or the field itself to open a searchable column picker listing the columns available on that data source. Type in the Search columns box to narrow the list, then click a column to open the Data slicer dialog, where you choose a condition and the values to include, and click Save.
+
+The slicer is added to that data source only, and the whole chain recalculates to reflect it. A column with an active slicer shows it in the slicer field, and the info icon next to the column heading lists it under Slicers.
+
+To remove a slicer, click the "×" on its chip in the slicer field. Click Save in the settings panel to store the slicer with the view for everyone; leave it unsaved if it is just for your current session.

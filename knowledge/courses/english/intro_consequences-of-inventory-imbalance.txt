@@ -1,0 +1,20 @@
+---
+topic: Consequences of Inventory Imbalance
+source: Intro
+source_type: course
+language: english
+product_area: inventory
+question_type: what
+keywords:
+- excess inventory
+- inventory balance
+- costs
+- resource drain
+- supply chain
+- inventory management
+- control
+- prevention
+- business impact
+---
+
+Inventory imbalance occurs when a company holds more stock than necessary, often due to challenges in accurately matching supply with demand. This excess inventory, which can range from 15 to 35 percent above optimal levels, leads to significant hidden costs. These costs drain resources by tying up capital, increasing storage and handling expenses, and potentially leading to waste or obsolescence. Effectively managing inventory balance is crucial for maintaining operational efficiency and financial health.

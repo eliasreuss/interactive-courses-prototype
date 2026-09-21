@@ -1,0 +1,48 @@
+---
+topic: Supplier Relationship Management (SRM)
+source_type: glossary
+language: danish
+keywords: Supplier Relationship Management (SRM), leverandøren, virksomheden, leverandører, bliver, indkøb, strategisk, forecast, handler
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Supplier Relationship Management (SRM)
+term_en: Supplier Relationship Management (SRM)
+url: https://inact.io/ordbog/supplier-relationship-management/
+---
+
+Supplier Relationship Management (SRM)
+Supplier Relationship Management (SRM) er arbejdet med at udvikle og styre relationen til virksomhedens vigtigste leverandører gennem tættere samarbejde, fælles planlægning og løbende opfølgning. Formålet er ikke kun at sikre de rette varer til den rette pris, men også at skabe mere stabile leverancer, lavere risiko og bedre beslutninger på tværs af supply chain.
+Hvad betyder SRM i praksis?
+SRM handler om at arbejde mere langsigtet med leverandørerne. I stedet for kun at kontakte leverandøren ved prisforhandlinger, forsinkelser, reklamationer eller nye ordrer, arbejder virksomheden løbende med forecast, kapacitet, leveringstider, risici, lager, produktændringer og forbedringer.
+SRM anvendes typisk på strategisk vigtige leverandører, hvor problemer hurtigt kan påvirke servicegrad, lagerbinding, produktion, leveringsevne og kundeservice. SRM hænger i den forbindelse tæt sammen med leverandørstyring, fordi virksomheden løbende skal følge leverandørernes performance og samarbejde tættere om forbedringer og risici.
+Det hænger også tæt sammen med supply chain planning, fordi forecast, kapacitet og efterspørgsel skal koordineres tidligere mellem virksomhed og leverandør. Samtidig spiller supply chain resilience en vigtig rolle, da stærkere leverandørsamarbejde gør virksomheden bedre i stand til at håndtere forsinkelser, kapacitetsproblemer og ændringer i markedet.
+Hvad sker der, når leverandøren kun bliver kontaktet ved problemer?
+Mange virksomheder arbejder stadig meget transaktionelt med leverandører. Dialogen handler primært om pris, ordrestatus, forsinkelser, fejl og genbestillinger. Problemet er, at samarbejdet ofte bliver reaktivt.
+Leverandøren får først information sent i processen. Forecast deles måske ikke. Ændringer i efterspørgsel bliver ikke kommunikeret tydeligt. Og problemer bliver først synlige, når leverancen allerede er forsinket.
+Her forsøger SRM at flytte samarbejdet tidligere i planlægningsprocessen, så leverandøren ikke først bliver involveret, når problemet allerede har ramt lageret, produktionen eller kunden. Når forecast, kapacitet og risici deles tidligere, får begge parter bedre mulighed for at reagere i tide — og færre problemer ender som akutte hastesager.
+Hvad er forskellen på SRM, strategisk indkøb og operationelt indkøb?
+Operationelt (transaktionelt) indkøb fokuserer primært på selve købet. Arbejdet består typisk af at oprette indkøbsordrer, følge op på leverancer, håndtere ordrestatus og fakturaer samt gennemføre den daglige dialog med leverandørerne.
+Strategisk indkøb arbejder på et andet niveau: her træffer virksomheden beslutninger om, hvilke leverandører der skal bruges, hvordan markedet ser ud, og hvordan sourcing-strategien skal se ud — for eksempel om kritiske varer kræver dual sourcing, eller om volumen skal samles hos få leverandører.
+SRM tager typisk over, når leverandøren er valgt. Hvor strategisk indkøb beslutter, hvem virksomheden skal samarbejde med, handler SRM om, hvordan samarbejdet udvikles og styres over tid.
+Kort sagt: Operationelt indkøb handler om at gennemføre købet. Strategisk indkøb handler om at vælge, hvem og hvordan der købes. SRM handler om at udvikle samarbejdet med dem, der allerede er valgt.
+I mange virksomheder — særligt i mellemstore organisationer — er det den samme person, der står for både strategisk indkøb og SRM. Her opleves skellet sjældent som to adskilte discipliner, men nærmere som to sider af samme rolle: den ene dag forhandles en ny leverandøraftale, den næste dag følges der op på forecast og performance med en leverandør, der allerede er valgt. Skellet er stadig værd at kende, fordi det hjælper med at prioritere tiden rigtigt — men i praksis flyder det ofte sammen.
+SRM og strategisk indkøb påvirker samtidig hinanden løbende: indsigter fra SRM — for eksempel tilbagevendende kapacitetsproblemer eller ustabil levering — bliver ofte input til nye strategiske indkøbsbeslutninger, som igen former de leverandørrelationer, SRM skal forvalte.
+Det er også derfor, SRM spiller en vigtig rolle i arbejdet med supply chain-optimering. For mange problemer i supply chain opstår ikke kun på grund af selve leverancen, men på grund af manglende koordinering mellem virksomhed og leverandør.
+Sådan kan effektiv SRM se ud
+En producent af teknisk udstyr køber kritiske komponenter fra en europæisk leverandør. Tidligere fungerede samarbejdet tilsyneladende fint. Virksomheden sendte indkøbsordrer, leverandøren bekræftede levering, og dialogen opstod primært ved forsinkelser eller fejl.
+Problemet var, at efterspørgslen svingede kraftigt gennem året.
+Når salget steg hurtigere end forventet, kunne leverandøren ikke følge med. Og når efterspørgslen faldt, stod virksomheden ofte tilbage med for meget lagerbinding. Virksomheden begyndte derfor at arbejde mere aktivt med SRM. Hver måned deler virksomheden forecast for de næste seks måneder, forventede kampagner, ændringer i efterspørgslen, planlagte produktændringer og risikovurderinger af kritiske varer.
+Samtidig holder de faste performance-møder med leverandøren, hvor de gennemgår leverandørperformance, kapacitetsudfordringer, forecast-afvigelser, kvalitetsproblemer og udvikling i leveringstider. På én konkret komponent opdager begge parter eksempelvis, at efterspørgslen stiger markant hver september. Tidligere reagerede leverandøren først, når ordreindgangen allerede var steget.
+Nu får leverandøren forecast flere måneder tidligere og kan derfor reservere kapacitet og råvarer i god tid. Det betyder ikke, at alle udsving forsvinder. Men virksomheden reducerer antallet af akutte forsinkelser, hasteindkøb og pludselige lageropbygninger markant.
+Hvad er typiske misforståelser om SRM?
+En typisk fejl er at tro, at SRM handler om at være "bedre venner" med leverandøren. Det gør det ikke. SRM handler om struktur, transparens og bedre samarbejde omkring data og planlægning.
+En anden fejl er at arbejde med SRM på alle leverandører. Det giver sjældent mening. SRM skaber mest værdi på strategisk vigtige leverandører, hvor samarbejdet har stor betydning for drift, leveringsevne eller servicegrad.
+En tredje misforståelse er at dele for lidt information. Hvis leverandøren ikke får indsigt i forecast, ændringer eller kommende behov, bliver det svært at planlægge kapacitet stabilt.
+En fjerde fejl er at tro, at SRM erstatter performance-opfølgning. Tværtimod kræver SRM ofte endnu mere præcise KPI'er og opfølgning på leverandørernes performance.
+Hvordan kan virksomheden arbejde med SRM?
+Start med at identificere, hvilke leverandører der er strategisk vigtigst for virksomheden — det kan være leverandører med kritiske varer, lange leveringstider, høj omsætning, stor påvirkning på servicegrad eller få alternative leverandører.
+Derefter bør virksomheden etablere faste processer for forecast-deling, performance-opfølgning, risikovurdering, kapacitetsdialog og fælles forbedringsarbejde. Her bliver arbejdet med Vendor Performance Management,
+OTIF og end-to-end intelligence vigtigt.
+Virksomheder med stærk SRM ser sjældent leverandører som rene ordreleverandører. De arbejder med dem som en aktiv del af virksomhedens samlede supply chain.
+For jo tidligere leverandøren forstår ændringer i efterspørgsel og risiko, desto lettere bliver det at reagere, før problemerne rammer lageret eller kunden.

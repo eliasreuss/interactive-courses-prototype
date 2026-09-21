@@ -1,0 +1,18 @@
+---
+topic: How to filter and slice data inside an Insight in Inact Now
+source_type: tutorial
+language: english
+keywords: filter, slicer, insight filter, fixed slicer, item group, search, filter bar, item ID
+product_area: Insights
+question_type: how-to
+---
+
+The filter bar runs across the top of every Insight, just below the title. It contains dropdown filters — for example, Item Group, Product Group, Item Status, Responsible. Selecting a value in any dropdown instantly updates the data shown to match that selection.
+
+To reset a filter, click its dropdown and select the blank option at the top of the list.
+
+The green + button on the left of the filter bar lets you add a temporary personal filter. Click it to open a searchable list of available columns, then click one to add it as a filter for your current session.
+
+You can also search by item ID using the Search Item ID box on the right side of the filter bar. This is useful when you want to look up a specific product, supplier, or customer directly.
+
+The Showing N of N counter near the search box updates as you filter, telling you how many rows match your current selections out of the total available.

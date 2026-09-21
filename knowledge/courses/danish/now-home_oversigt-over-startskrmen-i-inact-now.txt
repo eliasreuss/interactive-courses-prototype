@@ -1,0 +1,20 @@
+---
+topic: Oversigt over startskærmen i Inact Now
+source: Now Home
+source_type: course
+language: danish
+product_area: platform
+question_type: what
+keywords:
+- Startfane
+- Dashboards
+- Actions
+- Insights
+- personalisering
+- brugerroller
+- Inact Now
+- sektioner
+- delt indhold
+---
+
+Startskærmen i Inact Now er opdelt i tre hovedsektioner: Dashboards, Actions og Insights. Disse sektioner giver brugerne et personligt overblik baseret på deres specifikke rolle og ansvar i organisationen. Afhængigt af dine tildelte opgaver og den information, der er delt med dig, kan du se alle tre sektioner, en kombination af dem eller måske ingen af dem. Denne skræddersyede tilgang sikrer, at hver bruger hurtigt får adgang til de mest relevante værktøjer og informationer til deres daglige arbejde.

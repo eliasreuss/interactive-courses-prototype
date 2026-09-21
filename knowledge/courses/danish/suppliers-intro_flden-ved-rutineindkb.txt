@@ -1,0 +1,19 @@
+---
+topic: Fælden ved rutineindkøb
+source: Suppliers Intro
+source_type: course
+language: danish
+product_area: supplier
+question_type: what
+keywords:
+- rutineindkøb
+- indkøb
+- reaktive opgaver
+- forsyningskæde
+- øjeblikkelige behov
+- ordreafgivelse
+- supportfunktion
+- forretningsdrift
+---
+
+Fælden ved rutineindkøb henviser til tendensen for indkøbsteams til udelukkende at fokusere på de umiddelbare, daglige behov, såsom at afgive ordrer for at genopfylde tomme hylder og håndtere akutte problemer, efterhånden som de opstår. Selvom denne tilgang sikrer, at de grundlæggende forretningsprocesser fortsætter, begrænser det indkøb til en reaktiv, supportorienteret rolle. Denne tankegang forhindrer teamet i at anlægge et strategisk perspektiv på indkøb og medfører, at man går glip af muligheder for langsigtede forbedringer, besparelser og værdiskabelse i forsyningskæden.

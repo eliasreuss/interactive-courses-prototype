@@ -1,0 +1,45 @@
+---
+topic: Supplier consolidation
+source_type: glossary
+language: english
+keywords: Supplier consolidation, Leverandørkonsolidering, supplier, consolidation, suppliers, purchasing, delivery, procurement, company, complexity
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Leverandørkonsolidering
+term_en: Supplier consolidation
+url: https://inact.io/en/glossary/supplier-consolidation/
+---
+
+Supplier consolidation — Danish: Leverandørkonsolidering
+Supplier consolidation is a strategic approach within procurement and supply chain management, where a company reduces the number of suppliers to create greater overview, lower complexity, and better purchasing conditions. The goal is to concentrate purchasing volume with fewer suppliers and thereby strengthen both efficiency and negotiating power.
+What is supplier consolidation?
+Supplier consolidation means that the company deliberately chooses to work with fewer suppliers within the same product or category.
+Instead of purchasing similar products from many different suppliers, procurement is consolidated with selected partners who can cover a larger share of demand. This typically creates better structure in the purchasing process and more consistent agreements.
+Consolidation is not necessarily about choosing the cheapest supplier, but about finding the right balance between price, delivery reliability, flexibility, and risk.
+What is supplier consolidation used for?
+Supplier consolidation is used to reduce complexity and create more robust procurement processes.
+Typical applications include:
+Reduction of administrative costs through fewer supplier relationships
+Stronger negotiating power through higher consolidated purchasing volumes
+More consistent pricing, terms, and delivery conditions
+Greater transparency in procurement, inventory, and forecasting
+Improved delivery reliability through closer collaboration with key suppliers
+For many small and medium-sized companies, supplier consolidation is an important step toward a more mature and professional supply chain.
+When does supplier consolidation make sense?
+Supplier consolidation is particularly relevant when a company experiences high complexity in procurement or lacks overview of its supplier base.
+It may be relevant if:
+There are many suppliers with overlapping assortments
+Purchasing volumes are fragmented and difficult to manage
+A disproportionate amount of time is spent on administration
+Delivery reliability varies across suppliers
+Purchase prices do not reflect total volume
+Simultaneously, it is important to be aware of the risks of excessive consolidation, where dependency on individual suppliers can become too high.
+How do you work with supplier consolidation in practice?
+Work on supplier consolidation typically starts with an analysis of existing suppliers and purchasing data.
+The process often includes:
+Mapping suppliers and purchasing volumes per category
+Identifying overlapping suppliers and products
+Evaluating supplier performance in terms of price, delivery, and quality
+Selecting strategic suppliers
+Ongoing follow-up to ensure consolidation supports both operations and business objectives

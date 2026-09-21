@@ -1,0 +1,9 @@
+---
+topic: ABC-klassificering
+source_type: article
+language: danish
+article_source: Direktørens bedste ven og værste fjende (1)
+keywords: ABC-klassificering, værdifulde kunder, værdifulde produkter, ressourceoptimering
+---
+
+ABC-klassificering opdeler elementer (kunder og produkter) i tre kategorier baseret på deres relative værdi eller betydning for virksomheden: A-kategori: De mest værdifulde elementer. B-kategori: Elementer med moderat værdi. C-kategori: Elementer med lav værdi. Identificer de mest værdifulde kunder og produkter og fokusér ressourcerne derefter.

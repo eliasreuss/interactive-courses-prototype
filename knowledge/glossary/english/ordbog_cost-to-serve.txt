@@ -1,0 +1,50 @@
+---
+topic: Cost-to-serve
+source_type: glossary
+language: english
+keywords: Cost-to-serve, service, costs, order, profitability, chain, customer, supply
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Cost-to-serve
+term_en: Cost-to-serve
+url: https://inact.io/en/glossary/cost-to-serve/
+---
+
+Cost-to-serve
+Cost-to-serve is a key concept in supply chain management that describes the total cost of serving a customer, a product, or an order. It provides insight into what it actually costs the business to deliver its service and enables more data-driven decision-making.
+What is cost-to-serve?
+Cost-to-serve includes all direct and indirect costs incurred from order to delivery.
+This may include:
+Procurement and production costs
+Inventory costs and tied-up capital
+Picking, packing, and handling
+Transportation and distribution
+Administration, customer service, and returns handling
+Cost-to-serve is typically analyzed at customer, product, or order level and provides a more nuanced view than traditional metrics such as contribution margin alone.
+What is cost-to-serve used for?
+Cost-to-serve is used to understand where profit is created  and where it is actually lost in the supply chain.
+It enables companies to:
+Identify customers or products with low or negative profitability
+Understand the impact of service requirements such as small orders or frequent deliveries
+Support differentiated service levels based on profitability
+Optimize pricing, minimum order quantities, and delivery terms
+Make more informed decisions about assortment and customer segments
+For many companies, cost-to-serve reveals that high revenue does not necessarily mean high profitability.
+When is cost-to-serve relevant?
+Cost-to-serve is particularly relevant when a company experiences pressure on margins or increasing complexity in the supply chain.
+It is often relevant when:
+There are large differences in customers’ ordering and delivery patterns
+Service levels are high, but profitability is low
+Logistics and inventory costs are rising without a clear explanation
+There are many exceptions and manual processes in order handling
+In these situations, cost-to-serve provides the necessary overview to prioritize effectively.
+How do you work with cost-to-serve?
+Working with cost-to-serve requires access to reliable data across functions.
+Typically, this involves:
+Collecting data from sales, inventory, logistics, and finance
+Allocating costs to customers, products, or orders
+Analyzing differences in service requirements and behavior
+Identifying improvement opportunities
+Adjusting processes, service levels, or commercial terms
+When used actively, cost-to-serve becomes a strategic tool for reducing complexity and improving overall supply chain profitability.

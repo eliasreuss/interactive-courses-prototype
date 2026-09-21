@@ -1,0 +1,20 @@
+---
+topic: Identifying Non Stock Items for BTO or MTO
+source: Now Insights
+source_type: course
+language: english
+product_area: platform
+question_type: how
+keywords:
+- Insights
+- Stock Policy
+- Non Stock Items
+- BTO
+- MTO
+- working capital
+- filters
+- views
+- inventory management
+---
+
+To identify non stock items suitable for Build-To-Order (BTO) or Make-To-Order (MTO) setups, use the Stock Policy: Non Stock Items Insight. Start by navigating to the relevant view and applying filters to focus on items not currently held in inventory. Use the available tools to drill down into item details and assess their demand patterns. By pinpointing items that do not require regular stocking, you can recommend shifting them to BTO or MTO processes. This approach helps reduce unnecessary inventory and frees up working capital for other business needs.

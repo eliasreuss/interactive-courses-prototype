@@ -1,0 +1,24 @@
+---
+topic: Working Capital (arbejdskapital)
+source_type: glossary
+language: danish
+keywords: Working Capital (arbejdskapital), Working Capital, arbejdskapital, capital, working, drift, kortfristede, lager, bruger, daglige
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Working Capital (arbejdskapital)
+term_en: Working Capital
+url: https://inact.io/ordbog/working-capital/
+---
+
+Working Capital (arbejdskapital)
+Working capital, eller arbejdskapital, viser forskellen mellem en virksomheds omsætningsaktiver og kortfristede forpligtelser. Det er et udtryk for den likviditet, der er til rådighed til at finansiere den daglige drift og sikre, at virksomheden kan opretholde produktion og leverancer uden problemer.
+Hvad er working capital?
+Arbejdskapital består typisk af lager, tilgodehavender og likvide midler fratrukket kortfristede gældsforpligtelser som kreditorer og kortfristede lån. En positiv arbejdskapital indikerer, at virksomheden har overskudskapital til drift, mens en negativ arbejdskapital kan betyde likviditetsudfordringer.
+Hvad bruger man working capital til?
+Man bruger working capital til at forstå, hvor meget kapital der er bundet i drift, især lager og debitorer, og hvor meget der er til rådighed til daglige aktiviteter. Det er en vigtig del af cash flow-styring, kapitalfrigørelse og supply chain-optimering.
+Hvornår kigger man på working capital?
+Arbejdskapital anvendes løbende i finansiel styring og supply chain-analyser, især ved:
+Likviditetsplanlægning og budgettering
+Optimering af lager og kapitalbinding
+Vurdering af virksomhedens finansielle fleksibilitet

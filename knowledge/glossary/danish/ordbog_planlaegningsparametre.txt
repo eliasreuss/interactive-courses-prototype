@@ -1,0 +1,25 @@
+---
+topic: Planlægningsparametre
+source_type: glossary
+language: danish
+keywords: Planlægningsparametre, Planning Parameters, bruger, supply, anvendes, chain, indkøb, lager, produktion
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Planlægningsparametre
+term_en: Planning Parameters
+url: https://inact.io/ordbog/planlaegningsparametre/
+---
+
+Planlægningsparametre — English: Planning Parameters
+Planlægningsparametre er de nøglevariabler, der anvendes til at styre og optimere produktion, indkøb og lager i en supply chain. De hjælper virksomheder med at træffe beslutninger baseret på efterspørgsel, kapacitet og kapital bundet i lageret.
+Hvad er planlægningsparametre?
+Planlægningsparametre kan inkludere faktorer som sikkerhedslager, bestillingspunkter, leveringstid, efterspørgselsforecast, minimums- og maksimumslagre samt produktionstid. Sammen giver de et grundlag for at planlægge og styre materialer og ressourcer effektivt.
+Hvad bruger man planlægningsparametre til?
+Man bruger planlægningsparametre til at sikre, at produktion og indkøb er afstemt med efterspørgslen, at der hverken er for meget eller for lidt på lager, og at kapitalbinding minimeres. De fungerer som værktøjer til at balancere risiko, servicegrad og omkostninger i supply chain.
+Hvornår bruger man planlægningsparametre?
+Planlægningsparametre anvendes løbende i:
+Produktionsplanlægning
+Lagerstyring
+Indkøbsplanlægning
+Forecasting og supply chain-optimering

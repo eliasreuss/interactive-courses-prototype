@@ -1,0 +1,19 @@
+---
+topic: Serviceniveau i lagerstyring
+source: Safety Stock
+source_type: course
+language: danish
+product_area: inventory
+question_type: what
+keywords:
+- serviceniveau
+- sikkerhedslager
+- lagerudtømningsrisiko
+- lagerstyring
+- strategisk beslutning
+- varians
+- leveringstid
+- forsyningskæde
+---
+
+Serviceniveau i lagerstyring refererer til det mål, en virksomhed sætter for at definere den acceptable risiko for at løbe tør for lager af et bestemt produkt. I modsætning til faktorer som varians og leveringstid, der ofte påvirkes af eksterne markeds- eller leverandørforhold, er serviceniveau en kontrollerbar, strategisk beslutning. Ved at fastsætte et højere serviceniveau sigter virksomheden mod at reducere sandsynligheden for lagerudtømning, men dette kræver typisk, at der holdes mere sikkerhedslager. Omvendt accepterer et lavere serviceniveau en højere risiko for lagerudtømning, men reducerer omkostningerne ved lagerbeholdning. Det valgte serviceniveau har direkte indflydelse på, hvor meget sikkerhedslager der opretholdes.

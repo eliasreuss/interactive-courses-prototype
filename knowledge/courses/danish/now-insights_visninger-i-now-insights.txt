@@ -1,0 +1,19 @@
+---
+topic: Visninger i Now Insights
+source: Now Insights
+source_type: course
+language: danish
+product_area: platform
+question_type: what
+keywords:
+- Visninger
+- Now Insights
+- dataformater
+- tabel
+- matrix
+- trend
+- navigation
+- Dashboards
+---
+
+Visninger i Now Insights er forskellige måder at vise og interagere med det samme datasæt på. De giver brugerne mulighed for at skifte mellem formater som strukturerede tabeller, sammenlignende matricer eller visuelle trends, alt efter analysebehov. Denne fleksibilitet hjælper brugerne med at fortolke data mere effektivt ved at vælge den mest hensigtsmæssige præsentation til deres specifikke formål. Det er nemt at navigere mellem visninger, hvilket muliggør hurtige sammenligninger og dybere indsigt uden at ændre på de underliggende data.

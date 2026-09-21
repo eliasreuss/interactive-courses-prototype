@@ -1,0 +1,9 @@
+---
+topic: Hvad koster det, når kompleksiteten løber løbsk?
+source_type: article
+language: danish
+article_source: Direktørens bedste ven og værste fjende (1)
+keywords: kompleksitet, omkostninger, vækst, symptomer
+---
+
+Selvom “kompleksitet” lyder lidt fluffy, er det ikke bare et abstrakt koncept: Konsekvenserne kan du måle i håndgribelige omkostninger, der påvirker alt fra daglig drift til virksomhedens langsigtede strategiske mål.

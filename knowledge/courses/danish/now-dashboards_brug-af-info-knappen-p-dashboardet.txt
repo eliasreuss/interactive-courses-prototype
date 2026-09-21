@@ -1,0 +1,18 @@
+---
+topic: Brug af Info-knappen på Dashboardet
+source: Now Dashboards
+source_type: course
+language: danish
+product_area: platform
+question_type: how
+keywords:
+- Dashboards
+- Insights
+- datagrupper
+- tilpasning
+- overblik
+- information
+- i-knap
+---
+
+For at forstå de specifikke data og indsigter, der vises på et Dashboard, skal du bruge 'i'-knappen. Når du klikker på denne knap, får du vist detaljeret information om de Insights og datagrupper, der bidrager til Dashboardets indhold. Denne funktion hjælper brugerne med præcist at identificere, hvilke datakilder og målepunkter der visualiseres, hvilket sikrer klarhed ved gennemgang af tilpassede overblik. Brug af 'i'-knappen er især nyttigt, når Dashboards er skræddersyet til at vise forskellige informationssæt, da den giver gennemsigtighed omkring de underliggende data.

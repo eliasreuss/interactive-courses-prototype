@@ -1,0 +1,24 @@
+---
+topic: Dækningsbidrag
+source_type: glossary
+language: danish
+keywords: dækningsbidrag, contribution margin, DB, salgspris, variable omkostninger, indtjening, vareavance, lønsomhed, sortiment
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: Dækningsbidrag
+term_en: Contribution Margin
+---
+
+Dækningsbidrag — English: Contribution Margin
+Dækningsbidrag er det beløb, der er tilbage af salgsprisen, når de variable omkostninger ved varen er trukket fra. Det er altså kronebeløbet, varen bidrager med til at dække virksomhedens faste omkostninger — og derefter til overskud.
+Hvordan beregnes dækningsbidrag?
+Dækningsbidrag = salgspris − variable omkostninger.
+De variable omkostninger er dem, der følger med den enkelte vare: indkøbsprisen eller kostprisen, fragt ind, emballage og eventuel provision. Faste omkostninger som husleje, lønninger og IT indgår ikke.
+Sælger du en vare til 500 kr., som du har købt for 300 kr. og betaler 20 kr. i fragt for, er dækningsbidraget 180 kr.
+Hvorfor er dækningsbidrag vigtigt i supply chain?
+Fordi omsætning alene ikke fortæller, om en vare er værd at have. To varer kan omsætte for det samme og bidrage vidt forskelligt. Når du kategoriserer sortimentet, er dækningsbidrag derfor ofte en bedre variabel end omsætning — men vær opmærksom på, at de to hænger tæt sammen og sjældent giver ny indsigt i kombination.
+Hvad dækningsbidrag ikke fanger
+Dækningsbidrag tager ikke højde for de omkostninger, varen udløser i supply chain: mange småordrer, lang lagertid, høj kapitalbinding eller dyr håndtering. En vare med pænt dækningsbidrag kan sagtens være urentabel, når de omkostninger regnes med. Det er dér, cost-to-serve og produktlønsomhed kommer ind.
+Dækningsbidrag eller dækningsgrad?
+Dækningsbidrag er et kronebeløb, dækningsgrad er den samme størrelse i procent. Brug beløbet, når du vil vide, hvor meget en vare tjener ind, og procenten, når du vil sammenligne varer med forskellige prisniveauer.

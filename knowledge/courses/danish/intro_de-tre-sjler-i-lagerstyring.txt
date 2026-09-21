@@ -1,0 +1,19 @@
+---
+topic: De tre søjler i lagerstyring
+source: Intro
+source_type: course
+language: danish
+product_area: inventory
+question_type: what
+keywords:
+- lageroptimering
+- lagerstyring
+- afdelinger
+- mål
+- organisatoriske mål
+- forsyningskæde
+- beslutningstagning
+- søjler
+---
+
+Lagerstyring bygger grundlæggende på at besvare tre centrale spørgsmål, som styrer optimeringsindsatsen. Disse spørgsmål er afgørende for at bestemme, hvor meget lager der skal opbevares, hvornår lageret skal genopfyldes, og hvor lageret skal placeres. Selvom spørgsmålene i sig selv er enkle, er det komplekst at finde de rette svar, fordi forskellige afdelinger i en organisation kan have forskellige mål og prioriteter. Effektiv lagerstyring kræver, at man balancerer disse forskellige mål for at sikre virksomhedens samlede succes.

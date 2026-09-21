@@ -1,0 +1,53 @@
+---
+topic: Days Inventory Outstanding (DIO)
+source_type: glossary
+language: english
+keywords: Days Inventory Outstanding (DIO), inventory, products, company, capital, companies, product, average, remain
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Days Inventory Outstanding (DIO)
+term_en: Days Inventory Outstanding (DIO)
+url: https://inact.io/en/glossary/days-inventory-outstanding/
+---
+
+Days Inventory Outstanding (DIO)
+Days Inventory Outstanding (DIO) is a metric that measures how many days, on average, goods remain in inventory before being sold. DIO is used to assess how efficiently a company converts inventory into sales. A high DIO typically means products remain in inventory for a long time, while a low DIO usually indicates a higher turnover rate and lower tied-up capital.
+What does DIO actually mean?
+DIO shows how long a company's capital is tied up in inventory. The longer inventory remains on hand, the longer it typically takes for the company to get its money back through sales.
+DIO is therefore commonly used to analyze tied-up capital, forecast quality, seasonal inventory, slow movers, and purchasing strategy.
+Many companies only discover the problem once specific product groups show a markedly higher DIO than the rest of the product portfolio — this can be caused by excessive purchasing, unstable forecasts, long lead times, low demand, or high minimum order quantities.
+DIO is closely linked to the cash conversion cycle, since the number of days products remain in inventory is often one of the biggest reasons capital stays tied up in the business for so long.
+DIO is in fact one of three components of the cash conversion cycle — alongside
+DSO (Days Sales Outstanding), which shows how long customers take to pay, and DPO (Days Payable Outstanding), which shows how long the company itself takes to pay its suppliers. The longer DIO and DSO are, the longer it typically takes for the company to get its money back. A high
+DPO can, in turn, reduce the period during which the company itself has to finance its inventory.
+DIO is also closely linked to inventory investment, because a rising DIO typically means products remain in inventory longer, tying up more capital.
+Inventory turnover is also closely linked to DIO, since the two KPIs measure the same inventory movement from opposite angles. Inventory turnover shows how many times inventory turns over during a given period, while DIO shows how many days, on average, inventory remains on hand.
+Formula: How do you calculate DIO?
+Days Inventory Outstanding is typically calculated as:
+DIO = (Average Inventory / Cost of Goods Sold) × Number of Days
+Note: the most commonly used calculation divides average inventory by cost of goods sold (COGS). Some companies use revenue instead, but this makes DIO less comparable across companies.
+Example:
+Average inventory: DKK 18 million
+Annual cost of goods sold: DKK 72 million
+DIO = (18 / 72) × 365 = 91 days
+This means products remain in inventory for around 91 days, on average, before being sold. The lower the DIO, the faster inventory is typically turned over.
+Why is DIO important?
+DIO matters because inventory is often one of the largest sources of tied-up capital in the supply chain. Even small changes in how long products remain in inventory can significantly affect liquidity, inventory holding costs, cash flow, and the risk of obsolescence. A high DIO can also reduce a company's flexibility, since large inventory levels make it harder to adapt quickly to changes in demand or product range.
+If DIO rises over time, it can be a sign that inventory is growing faster than demand, or that goods are turning over more slowly than expected. This is especially relevant for companies with seasonal products, broad product ranges, long lead times, many
+SKUs, or technical spare parts, where inventory often builds up gradually without the problem becoming visible right away.
+This is why DIO plays a central role in inventory optimization
+— the KPI helps companies identify which goods or categories tie up the most capital over time, and where inventory is moving more slowly than expected.
+How companies work with DIO in practice
+A wholesaler of workwear and safety equipment experiences rising tied-up capital ahead of the winter peak season for several years running. The company carries many seasonal products, and large parts of its inventory are purchased months before demand peaks.
+When the company analyzes DIO across product groups, it discovers significant differences. Some standard products remain in inventory for a stable 45 days, while several winter-related products exceed 130 days during periods of weak forecasting.
+For one specific product group, the analysis shows that DIO rises from 58 to 137 days ahead of the winter season, that forecast deviations create large amounts of excess inventory, and that several products remain unsold well after the season ends.
+The company therefore starts working more actively with seasonal forecasts, breaking them down into shorter update cycles closer to the start of the season. Purchasing is also shifted closer to expected demand for the most uncertain product groups, while safety stock is reduced for products with more reliable supply.
+After the following season, DIO for the specific product group falls from 137 to 96 days. Inventory still supports the peak season, but the company ends up with significantly less excess inventory once the season is over.
+What are common mistakes with DIO?
+A common mistake is assuming that a low DIO is always positive. If a company reduces inventory too aggressively, it can lead to more backorders, lower service levels, and a greater need for rush orders. A very low DIO can therefore also be a sign of insufficient inventory.
+Another mistake is only analyzing DIO at the company-wide level. This can hide major differences between seasonal products, standard products, and critical spare parts. Many companies also focus too heavily on average figures without analyzing how DIO develops over time. DIO can look stable on an annual basis even though inventory spikes dramatically during specific periods throughout the year.
+How can a company work with DIO?
+Start by analyzing DIO at different levels rather than only for the total inventory. Many companies only discover the biggest problems once the KPI is broken down by product groups, suppliers, seasonal products, warehouse locations, and slow movers.
+From there, the company should analyze why specific products or categories show a high DIO. This is where supply chain planning becomes important, since more accurate forecasts and better planning horizons often reduce the need for early or excessive purchasing. Supply chain analytics also plays a central role, since companies need to analyze trends across inventory, demand, and forecasting rather than relying only on average figures.
+Product management also becomes essential, since different products affect tied-up capital, complexity, and working capital requirements very differently. Companies with strong DIO management rarely focus only on reducing inventory across the board. Instead, they work to understand which products genuinely require high availability — and which primarily tie up capital without creating corresponding value.

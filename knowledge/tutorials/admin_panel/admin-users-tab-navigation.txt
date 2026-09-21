@@ -1,0 +1,16 @@
+---
+topic: Navigating the Users tab — what you see and how to filter
+source_type: tutorial
+language: english
+keywords: users tab, user list, filter, search, role, last login, admin
+product_area: Admin
+question_type: how-to
+---
+
+The Users tab shows a table of all active users with columns: Name, Email, Job Title, Department, Location, Role, and Last Login.
+
+At the top you'll find a search bar (search by name, email, or job title), a filter dropdown, and a counter showing how many users are displayed. The filter dropdown lets you narrow the list by: Unactivated, Active Users, Subscriptions, or New.
+
+Selecting all users via the header checkbox activates a bulk action bar at the bottom.
+
+At the bottom of the page is a "Disabled users (N)" button that opens a separate list of deactivated accounts.

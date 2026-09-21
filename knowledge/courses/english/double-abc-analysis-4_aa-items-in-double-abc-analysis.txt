@@ -1,0 +1,20 @@
+---
+topic: AA Items in Double ABC Analysis
+source: Double Abc Analysis 4
+source_type: course
+language: english
+product_area: inventory
+question_type: what
+keywords:
+- Double ABC Analysis
+- AA items
+- inventory
+- high demand
+- high cost
+- risk
+- management
+- copy paper
+- supply chain
+---
+
+AA items in Double ABC Analysis are inventory items that have both high cost and high demand. These items are considered essential and are frequently used, similar to how copy paper is indispensable in an office environment. Despite their high value and turnover, AA items are typically easy to manage and present a low risk to operations, as their importance ensures they are closely monitored and consistently replenished. Effective management of AA items is crucial for maintaining smooth supply chain operations.

@@ -1,0 +1,17 @@
+---
+topic: Vigtigheden af struktureret spend-analyse
+source: Spend Analysis
+source_type: course
+language: danish
+product_area: supplier
+question_type: why
+keywords:
+- spend-analyse
+- datamapping
+- ineffektivitet
+- overblik
+- kritiske spørgsmål
+- Insights
+---
+
+At gennemføre en struktureret spend-analyse er afgørende for at afdække ineffektivitet i indkøb og udgifter. Ved først at skabe et overblik og kortlægge dine data for at besvare nøglespørgsmål om organisationens forbrug, kan du identificere problemer og muligheder, som tidligere er blevet overset. Denne proces hjælper organisationer med at opnå klarhed, finde besparelsesmuligheder og træffe mere informerede beslutninger om deres forsyningskæde og indkøbsstrategier.

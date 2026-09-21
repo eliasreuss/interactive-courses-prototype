@@ -1,0 +1,59 @@
+---
+topic: SKU (Stock Keeping Unit)
+source_type: glossary
+language: english
+keywords: SKU (Stock Keeping Unit), inventory, product, stock, internal, number, products, identification, management
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: SKU (Stock Keeping Unit)
+term_en: SKU (Stock Keeping Unit)
+url: https://inact.io/en/glossary/sku-stock-keeping-unit/
+---
+
+SKU (Stock Keeping Unit)
+A SKU (Stock Keeping Unit) is an internal code used to identify products and their variants in your inventory.
+A SKU is typically an alphanumeric code (letters and numbers) that makes it possible to distinguish between products and their variants — for example size, color, or model. SKUs are used in inventory management and supply chain to track what is in stock, what is being sold, and what needs to be reordered.
+What is a SKU (Stock Keeping Unit)?
+A SKU is a unique code, usually consisting of both letters and numbers, assigned to each individual product and its specific variants (such as size, color, model, or material) that are part of the inventory.
+This means that each version of a product, for example a blue T-shirt in size M, has its own SKU.
+The purpose of a SKU is to provide precise and unambiguous identification of an inventory item. This makes it possible to track inventory movements, sales, and replenishment.
+Why use SKUs?
+Effective use of SKUs is essential for strong inventory management and provides several clear benefits:
+Accurate inventory control:
+Enables precise tracking of stock levels, reducing errors and discrepancies. You can see exactly how many units of each variant are in stock.
+Efficient replenishment:
+Makes it easier to identify fast-moving and slow-moving items, supporting optimized reorder points and quantities.
+Improved data analysis:
+Enables in-depth analysis of sales patterns, product performance, and customer preferences, making it easier and faster to make strategic decisions.
+Optimized picking and packing:
+Employees can find the right products faster and more easily in the warehouse.
+Reduced obsolescence:
+By maintaining a clear overview of each variant, the risk of holding outdated or unsellable inventory is minimized.
+What is the difference between SKU, EAN, and item number in supply chain?
+Although SKU, EAN (European Article Number), and item number are all used to identify products, they serve different purposes:
+Identifier
+SKU (stock keeping unit)
+EAN (European Article Number)
+Item number
+Purpose
+Internal inventory management and tracking of specific variants
+External identification and scanning across companies
+Internal identification of product families or base products
+Uniqueness
+Unique for each product variant within the company
+Globally unique for each product
+Unique for each product within the company
+Format
+Alphanumeric, company-defined (meaningful for internal use)
+Numeric (typically 13 digits), internationally standardized
+Alphanumeric, company-defined (often shorter than SKU)
+Usage
+Detailed inventory tracking, replenishment, demand forecasting, ABC analysis
+Point-of-sale systems, retail scanning, global trade, EDI
+Product catalogs, orders, invoices, basic product identification
+Example
+SHIRT-102-BLU-M (T-shirt, Model 102, Blue, Medium)
+5701234567890 (Universal code for the specific T-shirt variant)
+TSHIRT-ABC (General code for T-shirt model ABC)
+Effective inventory management leverages the interplay between these identifiers to ensure both internal efficiency and external compatibility.

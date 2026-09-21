@@ -1,0 +1,20 @@
+---
+topic: Oversigt over fordelene ved Inact Now
+source: Now Intro
+source_type: course
+language: danish
+product_area: platform
+question_type: why
+keywords:
+- Inact Now
+- datadrevne beslutninger
+- best practices
+- fælles sprog
+- kommercielle teams
+- operationelle teams
+- daglige operationer
+- kontrol
+- reaktive beslutninger
+---
+
+Inact Now hjælper organisationer med at håndtere kompleksiteten i forsyningskæden ved at gøre det muligt for brugerne at træffe informerede, datadrevne beslutninger i stedet for at basere sig på reaktive eller instinktive valg. Platformen fremmer brugen af best practices og understøtter et fælles sprog mellem kommercielle og operationelle teams, så alle arbejder ud fra samme information og forståelse. Denne tilgang giver brugerne større kontrol over de daglige operationer og forbedrer både effektivitet og samarbejde.

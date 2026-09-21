@@ -1,0 +1,14 @@
+---
+topic: How to open the settings panel in an End2End view in Inact Now
+source_type: tutorial
+language: english
+keywords: settings panel, chevron, expand, edit view, configure end2end, where are the settings
+product_area: End2End
+question_type: how-to
+---
+
+The settings for an End2End view are hidden behind a small chevron button centred just above the three columns. Click it to expand the settings panel; click it again (the arrow now points up) to collapse it.
+
+The panel mirrors the layout of the view itself. Above each column you get that data source's own controls: an Add Filter link, a measure dropdown, an aggregation dropdown with two number-format buttons, a Hide column button, and a slicer field with a green + button. Above each link area you get three checkboxes — Relations, Heatmap button and Policy button — controlling what is shown in that link area.
+
+At the bottom right of the panel are Save and Save as. Changes you make in the panel take effect on the columns immediately so you can see what they do, but they are only stored when you click Save. Save is greyed out until there is something to save.

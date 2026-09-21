@@ -1,0 +1,18 @@
+---
+topic: Supplier Performance Tracking Overview
+source: Suppliers Intro
+source_type: course
+language: english
+product_area: supplier
+question_type: what
+keywords:
+- Supplier Performance
+- Inact Now
+- delivery performance
+- inventory turnover ratio
+- spend per supplier
+- benchmarking
+- performance management
+---
+
+Supplier performance tracking involves monitoring key metrics such as delivery performance, inventory turnover ratio, and spend per supplier. Using Inact Now, organizations can collect and analyze these data points to assess how well suppliers are meeting expectations. Benchmarking allows companies to compare supplier metrics against industry best-in-class standards, helping to identify areas where suppliers excel or underperform. Addressing poor performance ensures continuous improvement and strengthens the overall supply chain.

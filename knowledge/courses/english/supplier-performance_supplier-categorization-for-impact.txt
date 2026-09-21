@@ -1,0 +1,19 @@
+---
+topic: Supplier Categorization for Impact
+source: Supplier Performance
+source_type: course
+language: english
+product_area: supplier
+question_type: how
+keywords:
+- supplier categorization
+- supplier performance
+- impact
+- prioritization
+- focus
+- supplier management
+- measurement
+- supplier segmentation
+---
+
+When managing a large number of suppliers, it is important to categorize them to determine where to focus your efforts for the greatest impact. By grouping suppliers based on factors such as their importance to your operations, spend volume, or risk level, you can identify which suppliers require the most attention. This approach allows you to allocate resources efficiently, address critical supplier relationships first, and drive improvements where they will benefit your supply chain the most.

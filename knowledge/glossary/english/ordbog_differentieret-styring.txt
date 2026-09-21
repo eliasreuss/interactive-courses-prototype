@@ -1,0 +1,30 @@
+---
+topic: Differentiated Management
+source_type: glossary
+language: english
+keywords: Differentiated Management, Differentieret styring, management, differentiated, different, service, approach, chain, customers, demand
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Differentieret styring
+term_en: Differentiated Management
+url: https://inact.io/en/glossary/differentiated-management/
+---
+
+Differentiated Management — Danish: Differentieret styring
+Differentiated management is a strategic approach within Supply Chain Management where the company applies different management principles, service levels, and processes to different segments of products, customers, or markets. It is a break from the "one-size-fits-all" approach and ensures that resources and planning efforts are targeted where they create the greatest value and profit.
+What is Differentiated Management?
+Differentiated management is the principle of avoiding a one-size-fits-all approach in supply chain management. Instead of managing all products, customers, or markets uniformly, it recognizes that they have different characteristics (e.g., demand volatility, profit margin, volume) and therefore require different logistics and planning strategies.
+The goal is to optimize the overall supply chain by matching the effort with the needs of the individual segment.
+What is Differentiated Management used for?
+The main purpose of differentiated management is to maximize profit and service by allocating resources most appropriately.
+It is used to:
+Optimize tied-up capital:
+Adjust safety stocks according to the value and demand of the items.
+Improve service level:
+Offer a high service level (e.g., fast delivery) to the most profitable customers or the most important products, without costs getting out of hand.
+Increase efficiency:
+Apply simple management methods (e.g.,
+Reorder Point).
+Reduce waste:
+Avoid having a large number of obsolete items by having tighter control over items with unstable demand.

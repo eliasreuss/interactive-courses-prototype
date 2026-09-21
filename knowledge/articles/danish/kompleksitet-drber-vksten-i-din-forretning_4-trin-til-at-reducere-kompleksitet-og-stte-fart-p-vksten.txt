@@ -1,0 +1,12 @@
+---
+topic: 4 trin til at reducere kompleksitet og sætte fart på væksten
+source_type: article
+language: danish
+article_source: Kompleksitet dræber væksten i din forretning
+keywords: kompleksitetsreduktion, dataanalyse, prioritering, serviceaftale
+---
+
+1. Data & Business Analytics
+2. Cost-to-serve
+3. Korrekt prioritering i ledelsen
+4. Service level agreement

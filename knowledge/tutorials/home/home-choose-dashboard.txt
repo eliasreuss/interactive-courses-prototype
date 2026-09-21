@@ -1,0 +1,20 @@
+---
+topic: How to choose which dashboard appears on the Home page in Inact Now
+source_type: tutorial
+language: english
+keywords: home dashboard, select dashboard, edit home, pin dashboard, KPI cards, multiple dashboards
+product_area: Home
+question_type: how-to
+---
+
+The KPI cards at the top of the Home page come from a dashboard that has been pinned to Home. You can choose which dashboard that is.
+
+1. On the Home page, click the pencil/edit icon in the top-right corner of the page.
+2. A window called Select Dashboards for Home opens, showing two columns:
+   - Left side — dashboards not currently on the Home page (grouped by their group name, e.g., "Unsorted"). Each has an Add → button.
+   - Right side — dashboards already showing on the Home page.
+3. Click Add → next to any dashboard on the left to add it to the Home page.
+4. Click the × next to a dashboard on the right to remove it.
+5. Click Save.
+
+The Home page will now show the KPI cards from your selected dashboard. If you add more than one dashboard, their KPI cards will all appear on the Home page, stacked in sections labelled by dashboard name.

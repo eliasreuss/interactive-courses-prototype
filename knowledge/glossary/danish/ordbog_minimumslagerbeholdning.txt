@@ -1,0 +1,33 @@
+---
+topic: Minimumslagerbeholdning
+source_type: glossary
+language: danish
+keywords: Minimumslagerbeholdning, Minimum Inventory Level, varer, lageret, buffer, kapitalbinding, minimumslageret, risikoen, sikre
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Minimumslagerbeholdning
+term_en: Minimum Inventory Level
+url: https://inact.io/ordbog/minimumslagerbeholdning/
+---
+
+Minimumslagerbeholdning — English: Minimum Inventory Level
+Minimumslagerbeholdning angiver det laveste acceptable niveau af lager, som en virksomhed ønsker at have på et givent produkt for at undgå udsolgte varer og sikre kontinuerlig drift. Det er et strategisk beslutningspunkt i lagerstyring, der hjælper med at balancere risikoen for udsolgte varer (stock-outs) med omkostningerne ved kapitalbinding.
+Hvad er minimumslagerbeholdning?
+Minimumslagerbeholdning er det niveau, hvor lageret absolut ikke bør falde under, da det signalerer en kritisk mangel på varer. Det er en del af den samlede lagerpolitik og fungerer som en 'advarselsgrænse'.
+Minimumslageret er tæt forbundet med sikkerhedslageret, som er den buffer, der skal dække usikkerhed i efterspørgsel eller leveringstid. I mange virksomheder sættes minimumslageret lig med sikkerhedslageret, men det er vigtigt at forstå, at:
+Minimumslager er en grænse.
+Sikkerhedslager er en buffer mod usikkerhed.
+Bestillingspunktet er den trigger, der udløser en ny ordre.
+Hvorfor sætter man en minimumslagerbeholdning?
+Man bruger minimumslagerbeholdning til at overvåge og styre risikoen i lageret. Det hjælper med at:
+Sikre kontinuitet: Fungerer som en buffer mod uforudsete forsinkelser, høj efterspørgsel eller produktionsstop.
+Reducere risikoen for tabt salg: Opretholder en høj servicegrad over for kunderne.
+Planlægge nødsituationer: Når lageret rammer minimumsniveauet, udløses en øjeblikkelig handling (f.eks. hastebestilling eller produktionsændring).
+Optimere kapitalbinding: Ved at fastsætte et minimumsniveau sikrer man, at der ikke bindes unødig kapital i lageret.
+Hvornår er det relevant at fastsætte en minimumslagerbeholdning?
+Minimumslagerbeholdning er et operationelt nøgletal, der anvendes i daglig lagerstyring og planlægning. Det er særligt relevant ved:
+Bestemmelse af sikkerhedslagre: Minimumslageret er ofte direkte afledt af det beregnede sikkerhedslager.
+Planlægning af indkøb og genbestillinger: Det er en vigtig reference for at sikre, at ordrer afgives i tide.
+Balancering mellem kapitalbinding og risiko: Det er her, den økonomiske og operationelle afvejning foretages.
+Kritiske komponenter: For varer, der er essentielle for produktionen, og hvor udsolgte varer (stock-out) vil medføre et dyrt produktionsstop.

@@ -1,0 +1,51 @@
+---
+topic: Days Inventory Outstanding (DIO)
+source_type: glossary
+language: danish
+keywords: Days Inventory Outstanding (DIO), bliver, lager, virksomheden, lageret, virksomheder, fordi, varer, ligger
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Days Inventory Outstanding (DIO)
+term_en: Days Inventory Outstanding (DIO)
+url: https://inact.io/ordbog/days-inventory-outstanding/
+---
+
+Days Inventory Outstanding (DIO)
+Days Inventory Outstanding (DIO) er et nøgletal, der måler, hvor mange dage varer i gennemsnit ligger på lager, før de bliver solgt. DIO bruges til at vurdere, hvor effektivt virksomheden omsætter sit lager i forhold til vareforbrug og salg. En høj DIO betyder typisk, at varer bliver liggende længe på lager, mens en lav DIO ofte indikerer højere omsætningshastighed og lavere kapitalbinding.
+Hvad betyder DIO i praksis?
+I praksis viser DIO, hvor længe virksomhedens kapital er bundet i lageret. Jo længere tid varerne ligger på lager, desto længere tid går der, før virksomheden får pengene tilbage gennem salget.
+DIO bliver derfor ofte brugt til at analysere lagerbinding, forecast-kvalitet, sæsonlager, slow movers og indkøbsstrategi.
+Mange virksomheder opdager først problemerne, når enkelte varegrupper får markant højere DIO end resten af sortimentet — det kan eksempelvis skyldes for store indkøb, ustabile forecast, lange leveringstider, lav efterspørgsel eller høje minimumsordrer.
+DIO hænger tæt sammen med cash conversion cycle, fordi antallet af dage, varer ligger på lager, ofte er en af de største årsager til, at kapital bliver bundet længe i virksomheden.
+DIO er nemlig én af tre komponenter i cash conversion cycle — sammen med DSO (Days Sales Outstanding), der viser, hvor lang tid kunderne er om at betale, og DPO (Days Payable Outstanding), der viser, hvor længe virksomheden selv er om at betale sine leverandører. Jo længere DIO og DSO er, desto længere går der typisk, før virksomheden får sine penge tilbage. En høj
+DPO kan til gengæld reducere den periode, hvor virksomheden selv skal finansiere vareflowet.
+Samtidig hænger DIO tæt sammen med lagerbinding, fordi en stigende DIO typisk betyder, at varer bliver liggende længere på lager og dermed binder mere kapital.
+Lageromsætningshastighed hænger også tæt sammen med DIO, fordi de to KPI'er måler den samme lagerbevægelse fra hver sin vinkel. Lageromsætningshastigheden viser, hvor mange gange lageret bliver omsat, mens DIO viser, hvor mange dage varerne i gennemsnit ligger på lager.
+Formel: Hvordan beregner man DIO?
+Days Inventory Outstanding bliver typisk beregnet sådan:
+DIO = (Gennemsnitligt lager / Vareforbrug) × Antal dage
+Bemærk: Den mest anvendte beregning bruger gennemsnitligt lager divideret med vareforbrug (COGS). Nogle virksomheder bruger i stedet omsætning, men det gør DIO mindre sammenligneligt på tværs af virksomheder.
+Eksempel:
+Gennemsnitligt lager: 18 mio. kr.
+Årligt vareforbrug: 72 mio. kr.
+DIO = (18 / 72) × 365 = 91 dage
+Det betyder, at varerne i gennemsnit ligger 91 dage på lager, før de bliver solgt. Jo lavere DIO er, desto hurtigere bliver lageret typisk omsat.
+Hvorfor er DIO vigtigt?
+DIO er vigtigt, fordi lager ofte er en af de største kapitalbindinger i supply chain. Selv små ændringer i, hvor længe varer ligger på lager, kan påvirke likviditet, lageromkostninger, cash flow og risikoen for ukurans markant. Samtidig kan en høj DIO reducere virksomhedens fleksibilitet, fordi store lagre gør det sværere hurtigt at tilpasse sig ændringer i efterspørgsel eller sortiment.
+Hvis DIO stiger over længere tid, kan det være tegn på, at lageret vokser hurtigere end efterspørgslen, eller at varerne bliver omsat langsommere end forventet. Det gælder især virksomheder med sæsonvarer, brede sortimenter, lange leveringstider, mange
+SKU'er eller tekniske reservedele, hvor lageret ofte vokser gradvist, uden at problemerne bliver synlige med det samme.
+Derfor bliver DIO central i arbejdet med lageroptimering, fordi KPI'en hjælper virksomheder med at identificere, hvilke varer eller kategorier der binder mest kapital over tid, og hvor lageret bevæger sig langsommere end forventet.
+Sådan arbejder virksomheder med DIO i praksis
+En grossist inden for arbejdstøj og sikkerhedsudstyr oplever gennem flere år stigende lagerbinding op mod vinterhøjsæsonen. Virksomheden arbejder med mange sæsonvarer, og store dele af lageret bliver købt hjem flere måneder før efterspørgslen topper.
+Da virksomheden analyserer DIO på tværs af produktgrupper, opdager den store forskelle. Nogle standardvarer ligger stabilt omkring 45 lagerdage, mens flere vinterrelaterede produkter overstiger 130 dage i perioder med svage forecast.
+På én konkret produktgruppe viser analysen, at DIO stiger fra 58 til 137 dage før vintersæsonen, at forecast-afvigelser skaber store mængder overskudslager, og at flere varer bliver liggende længe efter sæsonafslutning.
+Virksomheden begynder derfor at arbejde mere aktivt med sæsonprognoser og opdeler forecast i kortere opdateringsintervaller tættere på sæsonstart. Indkøb bliver samtidig flyttet tættere på den forventede efterspørgsel på de mest usikre varegrupper, mens sikkerhedslageret bliver reduceret på produkter med mere stabil leveringsevne.
+Efter næste sæson falder DIO på den konkrete produktgruppe fra 137 til 96 dage. Lageret understøtter stadig højsæsonen, men virksomheden står med markant mindre restlager, efter sæsonen er afsluttet.
+Hvad er typiske fejl med DIO?
+En typisk fejl er at tro, at en lav DIO altid er positiv. Hvis virksomheden reducerer lageret for aggressivt, kan det skabe flere restordrer, lavere servicegrad og stigende behov for hasteindkøb. En meget lav DIO kan derfor også være tegn på for lave lagerbeholdninger.
+En anden fejl er kun at analysere DIO samlet for hele virksomheden. Det kan skjule store forskelle mellem sæsonvarer, standardvarer og kritiske reservedele. Nogle virksomheder fokuserer også for meget på gennemsnitstal uden at analysere udviklingen over tid. DIO kan eksempelvis se stabil ud på årsbasis, selvom lageret vokser voldsomt i bestemte perioder gennem året.
+Hvordan kan virksomheden arbejde med DIO?
+Start med at analysere DIO på forskellige niveauer frem for kun samlet for hele lageret. Mange virksomheder opdager først de største problemer, når KPI'en bliver opdelt på varegrupper, leverandører, sæsonvarer, lagerlokationer og slow movers.
+Derefter bør virksomheden analysere, hvorfor enkelte produkter eller kategorier får en høj DIO. Her bliver supply chain planning vigtig, fordi mere præcise forecast og bedre planlægningshorisonter ofte reducerer behovet for tidlige eller for store indkøb. Supply chain analytics spiller også en central rolle, fordi virksomheder skal kunne analysere udviklingen på tværs af lager, efterspørgsel og forecast frem for kun at se på gennemsnitstal.
+Produkt management bliver også afgørende, fordi forskellige produkter påvirker lagerbinding, kompleksitet og kapitalforbrug meget forskelligt. Virksomheder med en stærk styring af DIO arbejder derfor sjældent kun med at reducere lageret generelt. De arbejder med at forstå, hvilke varer der reelt kræver høj tilgængelighed – og hvilke der primært binder kapital uden at skabe tilsvarende værdi.

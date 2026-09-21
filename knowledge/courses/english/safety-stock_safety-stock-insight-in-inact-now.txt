@@ -1,0 +1,21 @@
+---
+topic: Safety Stock Insight in Inact Now
+source: Safety Stock
+source_type: course
+language: english
+product_area: inventory
+question_type: what
+keywords:
+- Safety Stock
+- Insight
+- Inact Now
+- simulations
+- ERP
+- product-level analysis
+- inventory management
+- comparison
+- required stock
+- scenario analysis
+---
+
+The Safety Stock Insight in Inact Now allows users to analyze safety stock requirements at the individual product level. This feature enables you to see the exact amount of safety stock needed for each item, based on scenario simulations. If your organization already maintains safety stock levels in an ERP system, you can use this insight to compare your current settings with the levels calculated by Inact Now. This helps identify discrepancies and optimize inventory management by ensuring that safety stock levels are neither too high nor too low for each product.

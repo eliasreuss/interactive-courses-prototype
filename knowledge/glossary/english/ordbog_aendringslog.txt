@@ -1,0 +1,47 @@
+---
+topic: Change Log
+source_type: glossary
+language: english
+keywords: Change Log, Ændringslog, change, chain, supply, changed, inventory, systems, control, deviations
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Ændringslog
+term_en: Change Log
+url: https://inact.io/en/glossary/change-log/
+---
+
+Change Log — Danish: Ændringslog
+A change log is a systematic record of all significant changes in processes, products, plans, or systems. In a complex supply chain, a change log is crucial for ensuring traceability, accountability, and transparency when, for example, master data, inventory policies, or supplier agreements are updated. It functions as the organization's memory.
+What is a change log?
+A change log documents the four central questions:
+What was changed
+When did it happen
+Who made the change
+Why was it necessary
+It can cover everything from an adjustment to a product's reorder point, an update to a supplier's lead time, to a change in a production plan. The purpose is to create an audit trail that minimizes errors, prevents misunderstandings, and ensures that everyone in the supply chain works from the same, correct data.
+Why is a change log important in the supply chain?
+A change log is used to:
+Ensure full traceability and documentation, e.g., for quality control or recalls.
+Minimize the risk of costly errors in production, inventory, and purchasing that arise due to outdated data.
+Support compliance requirements (e.g., ISO standards) and facilitate internal and external audits.
+Analyze causes of deviations and identify patterns that can be used for process improvement.
+When is a Change Log used?
+A change log is not only for large projects but is a continuous tool in daily operations. It is especially critical for:
+Implementation of new processes, products, or IT systems
+Ongoing adjustments to master data such as inventory or purchasing parameters
+Version control of important documents such as quality manuals or standard operating procedures (SOPs)
+Troubleshooting and follow-up on unexpected events or deviations in the supply chain.
+How is a change log created?
+A simple change log can be maintained in a spreadsheet, but for professional and scalable use, it is typically an integrated part of systems such as ERP, WMS, SCM, or other specialized platforms.
+An effective log contains at least:
+Timestamp:
+Precise date and time of the change
+Object:
+What was changed (e.g., item number, customer ID)
+Description:
+A clear explanation of the change (e.g., "Reorder point changed from 50 to 60 units")
+Responsible:
+The person or system that made the change
+Reason:
+The justification for the change (e.g., "Based on new sales forecast")

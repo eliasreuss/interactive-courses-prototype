@@ -1,0 +1,18 @@
+---
+topic: Konsekvenser af manglende lagerpolitik
+source: Stock Policy
+source_type: course
+language: danish
+product_area: inventory
+question_type: why
+keywords:
+- lagerpolitik
+- lagerbeholdning
+- omkostninger
+- serviceniveauer
+- differentieret politik
+- hvad der skal lagerføres
+- lagerstyring
+---
+
+At drive forretning uden en klar lagerpolitik fører til uorganiseret lagerstyring, hvilket både kan medføre unødvendigt høje omkostninger og utilstrækkelige serviceniveauer. Uden definerede retningslinjer for, hvilke varer der skal lagerføres og i hvilke mængder, risikerer organisationer at overlagre nogle produkter, hvilket binder kapital og øger lageromkostningerne, mens andre varer underlagres, hvilket fører til udsolgte varer og dårlig kundeservice. Denne kombination påvirker både rentabilitet og kundetilfredshed negativt.

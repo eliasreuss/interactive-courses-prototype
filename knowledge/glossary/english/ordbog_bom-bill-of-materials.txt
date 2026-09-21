@@ -1,0 +1,46 @@
+---
+topic: BOM (Bill of Materials)
+source_type: glossary
+language: english
+keywords: BOM (Bill of Materials), production, materials, product, components, companies, planning, chain, inventory
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: BOM (Bill of Materials)
+term_en: BOM (Bill of Materials)
+url: https://inact.io/en/glossary/bom-bill-of-materials/
+---
+
+BOM (Bill of Materials)
+A BOM, or Bill of Materials, is a structured list of all the raw materials, components and parts that go into producing a product. It forms the foundation for production planning, material requirements, purchasing and inventory management
+— specifying what is needed, in what quantities, and how each component fits into the finished product.
+What role does a BOM play in a manufacturing company?
+In practice, the BOM is a core part of how manufacturing companies manage their operations. When a production order is created, the system uses the BOM to calculate which components need to be available, how much to purchase and what materials will be consumed in production.
+A BOM can include raw materials, semi-finished goods, components, packaging, subassemblies and assemblies. It is not just a technical document — it is a data foundation that multiple functions across the business rely on.
+This is why the BOM is closely tied to MRP. Material Requirements Planning uses the bill of materials to calculate what materials are needed, in what quantities and when they need to be available. Accurate BOMs are equally critical for supply chain optimisation in manufacturing, where errors in the bill of materials can quickly lead to incorrect purchasing, missing components, excess inventory or production delays.
+Why does BOM accuracy matter?
+The BOM matters because it connects the product to the entire supply chain flow behind its production. If the bill of materials is inaccurate, a company may purchase too many components, run short of critical parts, misplan capacity, cause delivery delays or build up unnecessary stock.
+The more complex the production, the more the BOM matters. This is especially true for companies with many product variants or technically complex products, where a single error in the bill of materials can affect multiple planned production orders at once.
+This is also why product management and supply chain planning are closely connected — BOMs directly influence forecasts, material requirements and capacity planning across the entire operation.
+What does a BOM look like?
+Consider a company producing industrial fans for manufacturing facilities. When the fan is set up in the ERP or MRP system, a BOM is attached that specifies exactly which components are required. The bill of materials might look like this:
+1 electric motor
+1 fan housing
+4 mounting brackets
+12 bolts
+12 nuts
+2 metres of cable
+1 control unit
+1 packaging set
+When the company plans a production run of 250 fans, the system uses the BOM to automatically calculate total material requirements. That means 250 electric motors, 1,000 mounting brackets, 3,000 bolts, 3,000 nuts, 500 metres of cable and 250 control units.
+If just one critical component is missing — the control unit, for example — the entire production order can be delayed, even if every other component is ready and available.
+This is why BOMs play a central role in MRP, purchasing, inventory management and production planning.
+Why BOMs tend to grow more complex over time
+In many manufacturing companies, the BOM structure expands gradually over the years. New product variants, customer customisations and engineering changes mean bills of materials become more extensive and harder to maintain.
+The problem is that complexity rarely stays contained within the engineering department. As BOMs grow, the effects ripple outward — more components to stock, more suppliers to manage, more planned orders, greater forecast uncertainty and more complex production planning.
+This is why companies with many product variants often experience increasing complexity across both inventory and production, even when revenue is not growing at the same rate.
+How can manufacturing companies get better control of their BOMs?
+Start by analysing which product lines, components and bills of materials create the most complexity or instability in your planning. That requires connecting BOM data with inventory, production and supplier data — rather than maintaining each in isolation.
+This is where end-to-end intelligence becomes important. Companies only get a true picture of the consequences of BOM changes when data can be analysed across the entire value chain. A supply chain platform can make a significant difference here, giving companies the overview they need across inventory, components, suppliers and production flow.
+Product management also needs to be part of the picture — product variants and custom configurations are often the primary driver of BOM complexity.
+Companies with strong BOM management rarely work with technical bills of materials alone. They work with how product data shapes the entire supply chain flow from forecast to finished goods.

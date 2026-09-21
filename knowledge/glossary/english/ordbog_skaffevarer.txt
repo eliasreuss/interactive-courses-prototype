@@ -1,0 +1,38 @@
+---
+topic: Special order items
+source_type: glossary
+language: english
+keywords: Special order items, Skaffevarer, items, order, special, supplier, inventory, stocked, assortment, customer
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Skaffevarer
+term_en: Special order items
+url: https://inact.io/en/glossary/special-order-items/
+---
+
+Special order items — Danish: Skaffevarer
+Special-order items refer to products that are not stocked as standard inventory but are instead purchased specifically for a customer order. The term is often used interchangeably with made-to-order items and is closely linked to the purchase-to-order (PTO) strategy.
+What is a special order item?
+A special order item is a product that a distributor or wholesaler can access through its supplier network but does not include in its regular stocked assortment. It is handled using a purchase-to-order (PTO) strategy, where procurement is only initiated once a confirmed customer order is in place.
+The decision to classify an item as a special-order item is often strategic and based on factors such as demand patterns (e.g. identified through
+ABC analysis), product value, and the risk of obsolescence. This means the item must be sourced from the manufacturer or an external supplier before it can be delivered to the end customer.
+Why do companies use special order items?
+Using special  order items is a strategic choice that enables a balance between assortment breadth and financial risk. The primary reasons include:
+Assortment expansion without tied-up capital:
+The company can offer a broad product range without tying up liquidity in physical inventory.
+Elimination of inventory risk: Since items are only purchased upon confirmed sales, the risk of excess inventory and obsolescence is minimized.
+Handling niche products:
+Items with low or unpredictable demand can be offered without justifying the cost of holding stock.
+Warehouse optimization: By reducing the number of stocked
+SKUs, warehouse capacity can be used more efficiently for high-frequency items.
+What are the operational challenges of special order items?
+While special-order items reduce financial risk, they introduce operational and customer-related challenges:
+Increased lead time:
+Total delivery time is longer, as it includes supplier lead time plus transportation and handling.
+Supplier dependency:
+Delivery performance depends directly on the supplier’s stock availability and reliability.
+Limited return options:
+In many agreements, special order items are excluded from standard return policies, as the distributor often cannot return them to the supplier.
+Administrative costs:
+Managing special  order items typically requires more manual follow-up in procurement and sales processes compared to stocked items.

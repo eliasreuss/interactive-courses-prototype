@@ -1,0 +1,19 @@
+---
+topic: Forståelse af Actions i Inact Now
+source: Now Actions
+source_type: course
+language: danish
+product_area: platform
+question_type: what
+keywords:
+- Actions
+- automatiserede opgavelister
+- overvågning
+- advarsler
+- opgavestyring
+- fokus
+- forsyningskæde
+- automatisering
+---
+
+Actions i Inact Now er automatiserede opgavelister, der løbende overvåger dine forsyningskædedata i baggrunden. Når der opstår en situation, som kræver din opmærksomhed, såsom en undtagelse eller en opgave, bliver den automatisk tilføjet til din liste over actions. Dette system sikrer, at du altid er opmærksom på de vigtigste problemer eller opgaver, der skal håndteres, hvilket hjælper dig med at bevare fokus og reagere hurtigt på ændrede forhold.

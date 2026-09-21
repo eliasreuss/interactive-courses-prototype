@@ -1,0 +1,24 @@
+---
+topic: Contribution Margin Ratio
+source_type: glossary
+language: english
+keywords: contribution margin ratio, dækningsgrad, percentage, selling price, variable costs, profitability, assortment comparison
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: Dækningsgrad
+term_en: Contribution Margin Ratio
+---
+
+Contribution Margin Ratio — Danish: Dækningsgrad
+The contribution margin ratio is the contribution margin expressed as a percentage of the selling price. It tells you what share of every sales unit is left once the variable costs are paid.
+How is it calculated?
+Contribution margin ratio = (contribution margin ÷ selling price) × 100.
+An item sold for 500 with a contribution margin of 180 has a contribution margin ratio of 36%.
+Why use a percentage instead of an amount?
+Because the percentage makes items comparable across price levels. An item at 50 and an item at 5,000 cannot be compared on contribution margin alone — the expensive one always wins in absolute terms. The ratio shows which of them actually earns more per unit of revenue.
+What is it used for?
+Typically three things: comparing product groups and suppliers, judging whether a price change or a discount can be absorbed, and setting the criteria for which items should be stocked.
+Traps worth knowing
+A high ratio is not good news by itself. An item can carry a 60% ratio and sell three units a year — it ties up capital without contributing much. An item at 12% with high turnover can be worth considerably more.
+So the contribution margin ratio should always be read together with volume and inventory turnover, for example in a double ABC analysis where one axis is consumption and the other is earnings.

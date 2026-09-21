@@ -1,0 +1,9 @@
+---
+topic: Vikan A/S kompleksitetsreduktion succeshistorie
+source_type: article
+language: danish
+article_source: Kompleksitet dræber væksten i din forretning
+keywords: succeshistorie, kompleksitetsstyring, leveringsperformance, samarbejde
+---
+
+Vikan A/S har med datastyring og samarbejde formået at fastholde høj leveringsperformance, sænke omkostninger og forbedre tværfagligt samarbejde.

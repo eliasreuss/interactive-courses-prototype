@@ -1,0 +1,10 @@
+---
+topic: Metode til håndtering af kompleksitet
+source_type: article
+language: danish
+article_source: Direktørens bedste ven og værste fjende (1)
+keywords: segmentering, linked revenue, adfærd, resultater, kompleksitet
+---
+
+1. Følg en 5-trins metode: Segmentering, Linked-revenue, Politikker, Adfærd, Resultater. 
+2. Operationalisér kompleksitetsstyring gennem 8 trin i Complexity Management-modellen.

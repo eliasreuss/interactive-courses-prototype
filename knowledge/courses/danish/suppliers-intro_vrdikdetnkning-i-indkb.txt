@@ -1,0 +1,16 @@
+---
+topic: Værdikædetænkning i indkøb
+source: Suppliers Intro
+source_type: course
+language: danish
+product_area: supplier
+question_type: what
+keywords:
+- værdikæde
+- indkøb
+- konkurrenceevne
+- innovation
+- bæredygtighed
+---
+
+Værdikædetænkning i indkøb handler om at betragte indkøb ikke blot som en støttefunktion, men som en strategisk drivkraft, der bidrager direkte til virksomhedens konkurrenceevne, innovation og bæredygtighed. Denne tilgang kræver et skift i tankegangen, hvor man anerkender, at indkøbsbeslutninger kan påvirke den samlede værdi, der leveres til både kunder og forretningen. Ved at anvende værdikædetænkning positionerer organisationer indkøb som en central aktør i opnåelsen af forretningsmål og fastholdelsen af en konkurrencemæssig fordel.

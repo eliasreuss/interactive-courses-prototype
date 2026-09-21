@@ -1,0 +1,19 @@
+---
+topic: Accessing Insights from Home Screen
+source: Now Insights
+source_type: course
+language: english
+product_area: platform
+question_type: how
+keywords:
+- Insights
+- Home screen
+- command center
+- pinned Insights
+- navigation
+- access
+- Inact Now
+- dashboard
+---
+
+To access an Insight in Inact Now, go to your Home screen, which serves as your main command center. Your most important Insights are pinned on this screen for quick access. Simply click on the name of the Insight you want to view directly from the Home view to open it.

@@ -1,0 +1,45 @@
+---
+topic: Days Payable Outstanding (DPO)
+source_type: glossary
+language: danish
+keywords: Days Payable Outstanding (DPO), bliver, leverandører, længere, likviditet, fordi, viser, arbejder, betalingsbetingelser
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Days Payable Outstanding (DPO)
+term_en: Days Payable Outstanding (DPO)
+url: https://inact.io/ordbog/days-payable-outstanding/
+---
+
+Days Payable Outstanding (DPO)
+Days Payable Outstanding (DPO) er et nøgletal, der måler, hvor mange dage du i gennemsnit bruger på at betale dine leverandører. DPO bruges til at analysere din working capital (arbejdskapital), likviditet og evne til at finansiere driften gennem leverandørkredit.
+En høj DPO betyder typisk, at du holder på likviditeten længere, mens en lav DPO betyder, at leverandørerne bliver betalt hurtigere. En høj DPO er dog ikke nødvendigvis positiv — udskyder du betalingerne for længe, kan det gå ud over leverandørrelationer, rabatter og i sidste ende din forsyningssikkerhed.
+Hvad viser DPO i praksis?
+I praksis viser DPO, hvor længe du finansierer dine varekøb gennem leverandørkredit. Modtager du eksempelvis varer i dag, men betaler først fakturaen 60 dage senere, har du finansieret varekøbet gennem leverandørkredit frem for din egen likviditet.
+DPO bruges derfor til at vurdere betalingsbetingelser, leverandørrelationer, likviditet, working capital og indkøbsstrategi. Jo længere betalingsfrister du arbejder med, desto mindre arbejdskapital og likviditet skal du typisk selv stille til rådighed for at finansiere driften på kort sigt.
+DPO er samtidig en vigtig del af cash conversion cycle: jo længere du kan udskyde betalingen til leverandørerne, desto kortere bliver den periode, hvor du selv har kapital bundet gennem vareflowet.
+DPO er nemlig én af tre komponenter i cash conversion cycle — sammen med DIO (Days Inventory Outstanding), der viser, hvor længe varer ligger på lager, og DSO (Days Sales Outstanding), der viser, hvor lang tid dine kunder er om at betale. Jo længere DIO og DSO er, desto længere er du om at få dine penge tilbage — men en høj DPO kan opveje det, fordi du selv holder på likviditeten længere.
+Betalingsbetingelser afhænger samtidig ofte af leverandørrelationer, samarbejde og indkøbsvolumen, så DPO hænger tæt sammen med leverandørstyring
+— og working capital spiller en central rolle, fordi DPO direkte påvirker, hvor meget likviditet du selv skal finansiere i driften.
+Formel: Hvordan beregner man DPO?
+Days Payable Outstanding beregnes typisk sådan:
+DPO = (leverandørgæld / vareforbrug) × antal dage
+Eksempel:
+Leverandørgæld: 14 mio. kr.
+Årligt vareforbrug: 84 mio. kr.
+DPO = (14 / 84) × 365 = 61 dage
+Det betyder, at virksomheden i gennemsnit betaler sine leverandører efter cirka 61 dage.
+Hvorfor er DPO vigtigt?
+DPO er vigtigt, fordi betalingsbetingelser har stor betydning for din likviditet. Kan du udskyde betalingerne uden at skabe problemer i leverandørsamarbejdet, reducerer det presset på cash flow og frigør kapital til resten af forretningen.
+Korte betalingsfrister rammer hårdest, hvis du har store lagre, lange leveringstider, sæsonudsving, høj lagerbinding eller store indkøbsvolumener — for så ender du med at betale for varerne længe før, du sælger dem videre. Derfor spiller DPO en central rolle i supply chain-optimering, hvor lager, indkøb, forecast og betalingsbetingelser tilsammen påvirker din kapitalbinding.
+Sådan arbejder virksomheder med DPO i praksis
+En distributør af elektronikkomponenter oplever stigende pres på likviditeten op mod årets sidste kvartal. Virksomheden bygger store lagre op før højsæsonen, fordi flere asiatiske leverandører arbejder med lange leveringstider og høje minimumsordrer.
+Da virksomheden analyserer sin DPO, viser analysen, at betalingsbetingelserne varierer betydeligt mellem leverandørerne. Nogle europæiske leverandører tilbyder 60 dages betalingsfrist, mens flere asiatiske leverandører kræver betaling efter kun 14 eller 21 dage — selv på varer, der først bliver solgt flere måneder senere.
+På én konkret produktgruppe viser analysen, at lageret bliver opbygget næsten fire måneder før højsæson, at DIO (hvor lang tid varerne ligger på lager, inden de bliver solgt) overstiger 120 dage i perioder, og at betalingen til leverandøren sker længe før salget bliver realiseret.
+Virksomheden begynder derfor at arbejde mere aktivt med sæsonprognoser og deler forecast tidligere med de mest kritiske leverandører. Betalingsbetingelserne bliver genforhandlet på de produktgrupper, hvor lagerbindingen er størst — på enkelte leverandører udvides betalingsfristen fra 21 til 45 dage mod længere forecast-horisonter og mere stabile ordreplaner. Samtidig reducerer virksomheden sikkerhedslageret på varer med mere stabil leveringsevne, så behovet for tidlige indkøb bliver mindre.
+Det løser ikke alle udfordringer. Men presset på likviditeten falder markant i de mest lagerintensive perioder, og balancen mellem indkøb, lager og betalingsflow bliver bedre.
+Hvordan forbedrer virksomheder deres DPO?
+Arbejdet begynder typisk med at analysere, hvilke leverandører og produktgrupper der påvirker likviditeten mest. Mange virksomheder opdager først udfordringerne, når de analyserer DPO på tværs af leverandører, produktgrupper, sæsonvarer, betalingsbetingelser og lagerintensive varer.
+Derefter analyserer du, hvordan betalingsflow, forecast og lager hænger sammen. Her bliver supply chain planning vigtig, fordi mere præcise forecast ofte gør det lettere at forhandle længere betalingsfrister og mere fleksible leveranceaftaler.
+Leverandørperformance spiller også en central rolle, fordi stabile leverandører gør det muligt at reducere sikkerhedslagre og skabe bedre balance mellem leveringsevne og kapitalbinding.
+Virksomheder med stærk styring af DPO arbejder sjældent med at presse leverandørerne mest muligt. De arbejder med at finde balancen mellem likviditet, forsyningssikkerhed og stærke leverandørrelationer.

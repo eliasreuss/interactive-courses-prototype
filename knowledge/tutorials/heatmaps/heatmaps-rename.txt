@@ -1,0 +1,12 @@
+---
+topic: How to rename a Heatmap in Inact Now
+source_type: tutorial
+language: english
+keywords: rename heatmap, change name, pencil icon, title
+product_area: Heatmaps
+question_type: how-to
+---
+
+Turn on edit mode with the gear icon, then click the pencil icon next to the heatmap name at the top of the page. A Change name window opens with the current name in a Name field.
+
+Type the new name and click Save, or Cancel to leave it unchanged. The name is what colleagues see in the Heatmaps column of the End2End library, so describe what the heatmap crosses — "Cost by supplier category and Double ABC" is more useful than "Heatmap 3".

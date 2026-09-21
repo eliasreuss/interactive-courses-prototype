@@ -1,0 +1,20 @@
+---
+topic: What the Actions section on the Home page shows in Inact Now
+source_type: tutorial
+language: english
+keywords: actions, home page, action list, tasks, count, open action, recurring
+product_area: Home
+question_type: concept
+---
+
+The Actions section on the Home page gives you a quick view of your active Action items without needing to navigate to the full Actions module.
+
+Each row in the list shows:
+- A number badge — the count of items inside that action.
+- The action name.
+- The last updated date.
+- A small recurring icon, indicating the action has a recurring schedule.
+
+Clicking any action row takes you directly into that action, where you can see the full list of items, mark them as done, and manage them.
+
+The Actions section on the Home page is a read-only summary — you can't create or delete actions from here. To manage actions in full, click Actions in the top menu bar.

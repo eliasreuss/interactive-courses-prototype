@@ -1,0 +1,18 @@
+---
+topic: Tretrinsforhandlingsstrategi
+source: Supplier Negotiation
+source_type: course
+language: danish
+product_area: supplier
+question_type: what
+keywords:
+- forhandling
+- strategi
+- leverandør
+- målsætning
+- mødeforberedelse
+- trin
+- planlægning
+---
+
+En tretrinsforhandlingsstrategi giver en struktureret tilgang til forhandlinger med leverandører. Det første trin indebærer at definere målet, hvilket betyder, at du klart identificerer, hvad du ønsker at opnå med forhandlingen. Dette kan omfatte mål som omkostningsbesparelser, forbedrede leveringsbetingelser eller højere kvalitet. Ved at fastlægge et klart mål inden mødet skaber du et fundament for fokuserede drøftelser og bedre resultater. Tretrinsmodellen hjælper forhandlere med at forberede sig effektivt og gå til leverandørmøder med klarhed og formål.

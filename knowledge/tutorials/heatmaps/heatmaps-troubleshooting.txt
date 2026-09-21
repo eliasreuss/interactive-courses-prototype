@@ -1,0 +1,20 @@
+---
+topic: Why a Heatmap looks empty or wrongly coloured in Inact Now
+source_type: tutorial
+language: english
+keywords: empty heatmap, blank cells, all one colour, no data, troubleshooting, wrong colours
+product_area: Heatmaps
+question_type: troubleshooting
+---
+
+If a heatmap does not look right, check these in order:
+
+Blank cells. An uncoloured, empty cell means no records exist for that row and column combination. This is often correct and informative — no supplier in that category delivers a product in that category.
+
+A drill-down still active. Look above the top left corner of the matrix for breadcrumb chips. If any are there, you are inside a bucket, not looking at the whole heatmap. Click the "×" on a chip to step back out.
+
+A filter or slicer. Open the info icon next to the heatmap name and read the Slicers and Filters sections. Filters are the more likely explanation for surprisingly little data, because they remove records before the relations are built at all.
+
+Everything one colour. This is usually the colour Type set to Proportional with a few dominant outliers. Switch to Ranked in the Color settings to bring the pattern back. If instead the colours look inconsistent between rows, check whether the Scope is Row or Column rather than Global.
+
+Totals dominating the colours. If the Total row and column are drowning out the cells, hide them with Hide total.

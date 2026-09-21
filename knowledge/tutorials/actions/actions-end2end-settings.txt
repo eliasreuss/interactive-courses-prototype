@@ -1,0 +1,12 @@
+---
+topic: How to configure End2End settings in the Edit Action list dialog in Inact Now
+source_type: tutorial
+language: english
+keywords: end2end settings, end2end relation, suppliers, products, customers, unique toggle, edit action list
+product_area: Actions
+question_type: how-to
+---
+
+For End2End Relation Actions, the Edit Action list dialog includes an End2End settings section with three filter areas: Suppliers, Products, and Customers. Each area has a "+" button to add a slicer filter that restricts which items from that data source are included.
+
+The Products area also has a Unique toggle button, which controls whether products are counted once each or allowed to repeat across matched relations.

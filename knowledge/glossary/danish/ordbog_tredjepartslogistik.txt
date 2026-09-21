@@ -1,0 +1,29 @@
+---
+topic: Tredjepartslogistik
+source_type: glossary
+language: danish
+keywords: 3PL, tredjepartslogistik, third party logistics, outsourcing, lagerhotel, fragt, distribution, logistikpartner, fulfilment
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: Tredjepartslogistik
+term_en: Third-Party Logistics (3PL)
+---
+
+Tredjepartslogistik — English: Third-Party Logistics (3PL)
+Tredjepartslogistik, oftest forkortet 3PL, er når en virksomhed lader en ekstern partner varetage dele af logistikken — typisk opbevaring, plukning, pakning og forsendelse — i stedet for at drive det selv.
+Hvad omfatter det typisk?
+Lagerplads og håndtering af varer
+Plukning, pakning og forsendelse til slutkunde
+Transportindkøb og fragtstyring
+Returhåndtering
+Told og eksportdokumentation ved international distribution
+Hvorfor vælger virksomheder 3PL?
+For at slippe for at investere i lagerkapacitet, der kun bruges i sæsontoppen, for at få adgang til distribution i nye markeder uden at bygge noget op, og for at gøre en fast omkostning variabel. For virksomheder med kraftige sæsonudsving er det ofte det stærkeste argument.
+Hvad giver man fra sig?
+Kontrol over den daglige udførelse og en del af den direkte kontakt med kunden ved levering og returnering. Beholdningsdata kommer fra partnerens system, så lagernøjagtigheden afhænger nu af deres processer og af, hvor godt de to systemer taler sammen.
+Hvad afgør om det lykkes?
+Datagrundlaget. Hvis beholdninger og ordrestatus ikke kommer tilbage rettidigt og korrekt, planlægger du i blinde
+Et aftalegrundlag der måler det, der betyder noget — plukpræcision, leveringstid og fejlrate, ikke kun pris pr. ordre
+En klar fordeling af ansvaret for svind, beskadigelse og ukurans på partnerens lager
+En realistisk vurdering af omkostningen ved at flytte tilbage eller skifte partner senere

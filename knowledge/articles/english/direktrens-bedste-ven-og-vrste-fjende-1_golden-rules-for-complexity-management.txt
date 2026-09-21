@@ -1,0 +1,9 @@
+---
+topic: Golden Rules for Complexity Management
+source_type: article
+language: english
+article_source: Direktørens bedste ven og værste fjende (1)
+keywords: analysis paralysis, continuous process, management, resistance
+---
+
+1. Avoid analysis paralysis by not spending excessive time on data without action. 2. Managing complexity is an ongoing process requiring attention and leadership effort. Address employee resistance when implementing changes.

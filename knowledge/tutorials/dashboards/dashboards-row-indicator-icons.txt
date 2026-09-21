@@ -1,0 +1,20 @@
+---
+topic: What the row indicator icons mean on a dashboard table row in Inact Now
+source_type: tutorial
+language: english
+keywords: insight row, row icon, filter icon, total row, edit insight row, row indicators
+product_area: Dashboards
+question_type: concept
+---
+
+In edit mode, rows in the dashboard table show small icons on the left that indicate the row type:
+
+Filter icon (▽) — this row is a filtered sub-row, for example "Country = CN".
+Document icon (📄) — this row is a top-level "Total" row, for example "Products Total".
+
+Each row also has an ℹ️ icon and a ▼ dropdown next to it. Both the ℹ️ icon and the "Edit" option in the dropdown open the same "Edit Insight row" dialog, which shows:
+
+Label field — an optional custom display label for the row that overrides the auto-generated name.
+Insight — shows which Insight this row is linked to, tagged with its data source.
+
+The dialog has three buttons: Save, Save & Refresh, and Cancel.

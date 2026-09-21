@@ -1,0 +1,20 @@
+---
+topic: Managing CA and CB Products
+source: Supplier Negotiation
+source_type: course
+language: english
+product_area: supplier
+question_type: how
+keywords:
+- CA products
+- CB products
+- low-value items
+- steady demand
+- supply reliability
+- order frequency
+- inventory management
+- supplier negotiation
+- efficiency
+---
+
+CA and CB products are low-value items that experience steady demand. To manage these products effectively, prioritize maintaining a reliable and efficient supply to prevent stockouts, which can lead to customer dissatisfaction. Although these items do not contribute significantly to profits, disruptions in their availability can cause operational issues. It is best to negotiate with suppliers for larger, less frequent orders, which helps reduce administrative workload and ensures a stable flow of goods. The main objective is to keep these products consistently available while minimizing the effort and cost involved in managing their replenishment.

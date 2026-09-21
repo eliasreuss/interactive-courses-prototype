@@ -1,0 +1,19 @@
+---
+topic: Service Level in Inventory Management
+source: Safety Stock
+source_type: course
+language: english
+product_area: inventory
+question_type: what
+keywords:
+- service level
+- safety stock
+- stockout risk
+- inventory management
+- strategic decision
+- variance
+- lead time
+- supply chain
+---
+
+Service level in inventory management refers to the target set by a business to define the acceptable risk of running out of stock for a specific product. Unlike factors such as variance and lead time, which are often influenced by external market or supplier conditions, service level is a controllable, strategic decision. By setting a higher service level, a company aims to reduce the likelihood of stockouts, but this typically requires holding more safety stock. Conversely, a lower service level accepts a higher risk of stockouts but reduces inventory holding costs. The chosen service level directly impacts how much safety stock is maintained.

@@ -1,0 +1,17 @@
+---
+topic: Oversigt over Dashboard Widgets
+source: Now Dashboards
+source_type: course
+language: danish
+product_area: platform
+question_type: what
+keywords:
+- Widgets
+- Dashboards
+- KPI
+- mål
+- trendlinje
+- Insights
+---
+
+Widgets er komponenter i Dashboards, der giver hurtige, handlingsorienterede indsigter. Hver widget viser typisk en nøglepræstationsindikator (KPI) øverst til venstre, hvor den aktuelle værdi af en kritisk måling fremgår. Øverst til højre vises dit mål for den pågældende KPI samt en indikation af, om du opfylder det. For at se detaljerede data måned for måned kan du holde musen over trendlinjen i widgetten. Dette design hjælper brugerne med hurtigt at vurdere præstationen og identificere tendenser med et enkelt blik.

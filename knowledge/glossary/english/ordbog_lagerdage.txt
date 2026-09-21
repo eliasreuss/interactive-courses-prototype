@@ -1,0 +1,39 @@
+---
+topic: Days of supply (DOS)
+source_type: glossary
+language: english
+keywords: Days of supply (DOS), Lagerdage, inventory, supply, demand, stock, level, current, capital, cover
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Lagerdage
+term_en: Days of supply (DOS)
+url: https://inact.io/en/glossary/days-of-supply/
+---
+
+Days of supply (DOS) — Danish: Lagerdage
+Days of Supply (DOS) shows how many days your current inventory can cover expected demand without new purchases or production. It’s one of the most direct measures of whether your inventory matches actual consumption or sales.
+What is Days of Supply (DOS)?
+Days of Supply measures the relationship between what you have in stock and what you sell or consume. It’s used to assess how long your inventory will last at the current demand level.
+The formula is:
+Days of Supply (DOS) = Inventory / Daily consumption
+If you have 500 units in stock and sell 25 per day, your DOS is 20. In other words, you have enough inventory to last 20 days.
+Two ways to use the concept
+Days of Supply is typically used in two different ways in supply chain and inventory management:
+Planned DOS — how many days current inventory can cover future demand. This is the definition used here.
+Historical DOS — the average number of days an item has been in stock before being sold. This is closely related to inventory turnover.
+What is a good level of DOS?
+There is no single “correct” number.
+It depends on your industry, suppliers, and demand patterns. Fast-moving items with short lead times should have fewer days of supply, while long lead times or seasonal fluctuations may require a higher level.
+A practical rule of thumb is that A-items should have fewer DOS than C-items, as they typically tie up more capita l. The key is not one fixed number — but managing DOS by category rather than relying on averages.
+Why is DOS important?
+DOS provides a quick benchmark across product categories and helps you:
+Identify excess inventory
+— items with unusually high DOS relative to demand
+Prioritize purchasing — when to reorder and when to wait
+Reduce tied-up capital in inventory
+— the higher the DOS, the more capital is locked in stock
+The right level depends on your lead time, safety stock, and service level.
+In short
+Days of Supply shows how long your current stock can cover demand.
+Too low DOS increases the risk of stockouts. Too high DOS ties up unnecessary capital.

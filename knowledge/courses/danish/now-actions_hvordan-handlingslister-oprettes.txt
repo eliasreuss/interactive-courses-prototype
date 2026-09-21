@@ -1,0 +1,19 @@
+---
+topic: Hvordan handlingslister oprettes
+source: Now Actions
+source_type: course
+language: danish
+product_area: platform
+question_type: what
+keywords:
+- Actions
+- handlingsliste
+- filtre
+- lager
+- regler
+- kategorier
+- grænseværdier
+- opgaver
+---
+
+Handlingslister genereres ud fra de filtre, som deres opretter har angivet. Disse filtre definerer specifikke kriterier, såsom varekategorier eller grænseværdier for lagerværdi, der afgør, hvilke varer der vises på listen. For eksempel kan en bruger oprette en regel, så enhver vare i en bestemt kategori, som CC-varer, med en lagerværdi over et angivet beløb, for eksempel 100.000, automatisk tilføjes til handlingslisten som en opgave. Denne tilgang sikrer, at kun relevante varer, der kræver opmærksomhed, inkluderes, hvilket gør det lettere at håndtere opgaver og bevare overblikket over lagerbeholdningen.

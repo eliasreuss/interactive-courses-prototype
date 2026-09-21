@@ -1,0 +1,28 @@
+---
+topic: Råvarelager
+source_type: glossary
+language: danish
+keywords: Råvarelager, Raw Material Inventory, materialer, produktionen, bruger, bruges, efterspørgsel, eksempel, leverancer
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Råvarelager
+term_en: Raw Material Inventory
+url: https://inact.io/ordbog/raavarelager/
+---
+
+Råvarelager — English: Raw Material Inventory
+Råvarelager er den del af virksomhedens lager, hvor uforarbejdede materialer og komponenter opbevares, indtil de skal indgå i produktionen. Et velfungerende råvarelager sikrer stabile produktionsprocesser, minimerer risikoen for stilstand på grund af manglende materialer og optimerer kapitalbinding i den tidlige del af supply chain.
+Hvad er et råvarelager?
+Råvarelageret består af de materialer, der bruges som input i produktionen, for eksempel metal, træ, emballage eller halvfabrikata. Størrelsen og sammensætningen af råvarelageret afhænger af produktionstype (for eksempel produktion-til-lager eller produktion-til-ordre), leverandørled ( gennemløbstid) og efterspørgsel.
+Hvad bruger man et råvarelager til?
+Man bruger råvarelager til blandt andet at:
+Sikre kontinuerlig produktion: Fungerer som en buffer mod forsinkelser i leverancer eller uforudsete stigninger i forbruget.
+Skabe fleksibilitet: Gør det muligt at udjævne variationer i leverancer og efterspørgsel, så produktionen kan køre stabilt.
+Optimere produktionseffektivitet: Sikrer, at materialer er tilgængelige, når de skal bruges, hvilket minimerer nedetid.
+Hvornår har man et råvarelager?
+Råvarelager anvendes som udgangspunkt i alle produktionsvirksomheder, men er særligt vigtigt:
+Når leverandørleddet er ustabilt eller har lange leveringstider
+Ved produktion med højt ressourceforbrug
+Når virksomheden arbejder med Just-in-Time eller Lean, og råvarebeholdningen skal balanceres nøje
+Under sæsonudsving, hvor råvarer skal indkøbes i god tid

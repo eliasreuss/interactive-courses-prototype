@@ -1,0 +1,23 @@
+---
+topic: How to add a KPI card to a dashboard in Inact Now
+source_type: tutorial
+language: english
+keywords: add KPI, KPI card, widget, dashboard tab, trend, label, positive, negative
+product_area: Dashboards
+question_type: how-to
+---
+
+KPI cards are the metric tiles at the top of a dashboard. Each one shows a single number pulled from your data.
+
+1. Open the dashboard and click Edit in the top-right.
+2. Click the Dashboard tab.
+3. You'll see the current KPI cards laid out in rows. Empty slots show "No KPI — Click to add KPI".
+4. Click an empty slot (or click Click to edit on an existing card) to open the Edit widget window.
+5. In the window, you'll see a table of your data. Click the cell that contains the value you want this card to display. The Label field at the top will update automatically with the metric name — you can edit this to change what's shown on the card.
+6. Set the Trend to control how the colour coding works:
+   - Positive — green means the number went up, red means it went down (good for metrics like revenue or delivery performance).
+   - Negative — green means it went down, red means it went up (good for metrics like excess inventory).
+   - Neutral — no colour coding.
+7. Click Save.
+
+To add a new row of cards, click + Add KPI row at the bottom of the layout. To remove a card, click the bin icon in the top-left corner of that card.

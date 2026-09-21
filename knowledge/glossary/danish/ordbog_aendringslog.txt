@@ -1,0 +1,43 @@
+---
+topic: Ændringslog
+source_type: glossary
+language: danish
+keywords: Ændringslog, Change Log, ændringen, chain, supply, ændret, afvigelser, bruger, foretog
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Ændringslog
+term_en: Change Log
+url: https://inact.io/ordbog/aendringslog/
+---
+
+Ændringslog — English: Change Log
+En ændringslog er en systematisk registrering af alle væsentlige ændringer i processer, produkter, planer eller systemer. I en kompleks supply chain er en ændringslog afgørende for at sikre sporbarhed, ansvarlighed og gennemsigtighed, når f.eks. stamdata, lagerpolitikker eller leverandøraftaler opdateres. Den fungerer som organisationens hukommelse.
+Hvad er en ændringslog?
+En ændringslog dokumenterer de fire centrale spørgsmål:
+Hvad blev ændret
+Hvornår skete det
+Hvem foretog ændringen
+Hvorfor var den nødvendig
+Det kan dække alt fra en justering af et produkts genbestillingspunkt, en opdatering af en leverandørs leveringstid til en ændring i en produktionsplan. Formålet er at skabe et revisionsspor (audit trail), der minimerer fejl, forebygger misforståelser og sikrer, at alle i supply chain arbejder ud fra de samme, korrekte data.
+Hvorfor er en ændringslog vigtig i supply chain?
+Man bruger en ændringslog til at:
+Sikre fuld sporbarhed og dokumentation, f.eks. ved kvalitetskontrol eller tilbagekaldelser.
+Minimere risikoen for dyre fejl i produktion, lager og indkøb, som opstår pga. forældede data.
+Understøtte compliance-krav (f.eks. ISO-standarder) og lette interne og eksterne revisioner.
+Analysere årsager til afvigelser og identificere mønstre, der kan bruges til procesforbedring.
+Hvornår bruger man en ændringslog?
+En ændringslog er ikke kun til store projekter, men er et kontinuerligt værktøj i den daglige drift. Den er især kritisk ved:
+Implementering af nye processer, produkter eller IT-systemer.
+Løbende justeringer af stamdata som lager- eller indkøbsparametre.
+Versionsstyring af vigtige dokumenter som kvalitetsmanualer eller standardprocedurer (SOP'er).
+Fejlfinding og opfølgning på uventede hændelser eller afvigelser i supply chain.
+Hvordan laver man en ændringslog?
+En simpel ændringslog kan føres i et regneark, men for professionel og skalerbar brug er den typisk en integreret del af systemer som ERP, WMS, SCM eller andre specialiserede platforme.
+En effektiv log indeholder som minimum:
+Tidsstempel: Præcis dato og tid for ændringen.
+Objekt: Hvad blev ændret (f.eks. varenummer, kunde-ID).
+Beskrivelse: En klar forklaring af ændringen (f.eks. "
+Genbestillingspunkt ændret fra 50 til 60 stk.").
+Ansvarlig: Personen eller systemet, der foretog ændringen.
+Årsag: Begrundelsen for ændringen (f.eks. "Baseret på ny salgsprognose").

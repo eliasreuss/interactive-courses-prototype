@@ -1,0 +1,18 @@
+---
+topic: Identifying Valuable Inventory Items
+source: Stock Policy
+source_type: course
+language: english
+product_area: inventory
+question_type: what
+keywords:
+- inventory management
+- stock policy
+- item selection
+- data-driven decisions
+- value
+- inventory optimization
+- product assortment
+---
+
+A fundamental aspect of inventory management is determining which items should be stocked. This involves identifying products that genuinely add value to the organization, rather than relying on assumptions or guesswork. Making data-driven decisions about which items deserve shelf space helps prevent the accumulation of low-value products and ensures that high-value items are available to meet demand. Without a clear approach to item selection, organizations risk inefficient use of resources and missed opportunities to serve their customers effectively.

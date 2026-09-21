@@ -1,0 +1,12 @@
+---
+topic: How to view and access comments on an Insight in Inact Now
+source_type: tutorial
+language: english
+keywords: comments, comment button, speech bubble, discussion, annotation
+product_area: Insights
+question_type: how-to
+---
+
+The speech bubble (💬) button in the Insight toolbar opens the Comments panel on the right side of the screen. The panel shows all comments left on this Insight, with timestamps and user initials, plus a search field to search through comments.
+
+Comments are visible to anyone who can access the Insight. The comment button itself shows a number badge when there are existing comments.

@@ -1,0 +1,22 @@
+---
+topic: Master Production Schedule (MPS)
+source_type: glossary
+language: english
+keywords: master production schedule, MPS, production plan, capacity, planning, frozen period, S&OP
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: Hovedproduktionsplan
+term_en: Master Production Schedule (MPS)
+---
+
+Master Production Schedule (MPS) — Danish: Hovedproduktionsplan
+A master production schedule, or MPS, is the plan for which finished goods are to be produced, in what quantities, and in which periods. It is the link between high-level sales and operations planning and detailed material planning.
+What does it contain?
+For each finished item and each period — typically weeks — the plan states the quantity that must be complete. It accounts for existing orders, the forecast for what has not yet been sold, and the capacity actually available.
+How does it relate to the rest?
+S&OP sets the frame at product group level in months. The master production schedule breaks that frame down to specific item numbers and weeks. MRP then takes the schedule and calculates down to the components and raw materials needed.
+The frozen period
+The nearest weeks of the schedule are usually locked, because materials are on order and capacity is reserved. The further into the future, the more freely the plan may change. Without an agreed frozen period the schedule becomes unstable, and that instability propagates all the way down through MRP to the suppliers.
+When does it apply?
+A master production schedule belongs in companies that manufacture. In pure trading and distribution businesses there is no production to schedule, and control happens instead through stock policies, reorder points and purchasing planning.

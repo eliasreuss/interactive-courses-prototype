@@ -1,0 +1,19 @@
+---
+topic: Understanding Insights in Inact Now
+source: Now Insights
+source_type: course
+language: english
+product_area: platform
+question_type: what
+keywords:
+- Insights
+- Best-Practice Templates
+- Custom Insights
+- interactive reports
+- ERP integration
+- automatic updates
+- supply chain analysis
+- Inact Now
+---
+
+Insights in Inact Now are interactive reports designed to help users analyze specific areas of their supply chain in depth. There are two main types: Best-Practice Templates, which are pre-built based on industry standards and cover a wide range of solutions, and Custom Insights, which are tailored analyses created by individual companies to fit their unique workflows. Both types of Insights connect directly to your ERP system and update automatically every day, ensuring that the information is always current and relevant for decision-making.

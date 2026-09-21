@@ -1,0 +1,332 @@
+[
+  {
+    "slug": "aaben-lagerkapacitet",
+    "da": "Åben lagerkapacitet",
+    "en": "Open Warehouse Capacity"
+  },
+  {
+    "slug": "abc-analyse",
+    "da": "ABC-analyse",
+    "en": "ABC-analysis"
+  },
+  {
+    "slug": "aendringslog",
+    "da": "Ændringslog",
+    "en": "Change Log"
+  },
+  {
+    "slug": "bestillingspunkt",
+    "da": "Bestillingspunkt",
+    "en": "Reorder point"
+  },
+  {
+    "slug": "bom-bill-of-materials",
+    "da": "BOM (Bill of Materials)",
+    "en": "BOM (Bill of Materials)"
+  },
+  {
+    "slug": "cash-conversion-cycle",
+    "da": "Cash Conversion Cycle (CCC)",
+    "en": "Cash Conversion Cycle (CCC)"
+  },
+  {
+    "slug": "category-management",
+    "da": "Category Management (Kategoristyring)",
+    "en": "Category Management"
+  },
+  {
+    "slug": "cost-to-serve",
+    "da": "Cost-to-serve",
+    "en": "Cost-to-serve"
+  },
+  {
+    "slug": "days-inventory-outstanding",
+    "da": "Days Inventory Outstanding (DIO)",
+    "en": "Days Inventory Outstanding (DIO)"
+  },
+  {
+    "slug": "days-payable-outstanding",
+    "da": "Days Payable Outstanding (DPO)",
+    "en": "Days Payable Outstanding (DPO)"
+  },
+  {
+    "slug": "days-sales-outstanding",
+    "da": "Days Sales Outstanding (DSO)",
+    "en": "Days Sales Outstanding (DSO)"
+  },
+  {
+    "slug": "demand-planning",
+    "da": "Demand Planning (Efterspørgselsplanlægning)",
+    "en": "Demand Planning"
+  },
+  {
+    "slug": "differentieret-styring",
+    "da": "Differentieret styring",
+    "en": "Differentiated Management"
+  },
+  {
+    "slug": "dobbelt-abc-analyse",
+    "da": "Dobbelt ABC-analyse",
+    "en": "Double ABC analysis"
+  },
+  {
+    "slug": "doede-varer",
+    "da": "Døde varer",
+    "en": "Dead stock"
+  },
+  {
+    "slug": "dual-sourcing",
+    "da": "Dual sourcing",
+    "en": "Dual sourcing"
+  },
+  {
+    "slug": "economic-order-quantity",
+    "da": "Economic Order Quantity (EOQ)",
+    "en": "Economic Order Quantity (EOQ)"
+  },
+  {
+    "slug": "fifo",
+    "da": "FIFO (First-In, First-Out)",
+    "en": "FIFO (First-In, First-Out)"
+  },
+  {
+    "slug": "fill-rate",
+    "da": "Fill rate",
+    "en": "Fill rate"
+  },
+  {
+    "slug": "finanslagervaerdi",
+    "da": "Finanslagerværdi",
+    "en": "Financial Inventory Value"
+  },
+  {
+    "slug": "genbestillingsmaengde",
+    "da": "Genbestillingsmængde",
+    "en": "Reorder Quantity"
+  },
+  {
+    "slug": "gennemloebstid",
+    "da": "Gennemløbstid (Lead time)",
+    "en": "Lead time"
+  },
+  {
+    "slug": "heatmap-supply-chain-management",
+    "da": "Heatmap i supply chain management (SCM)",
+    "en": "Heatmap in supply chain management (SCM)"
+  },
+  {
+    "slug": "indkoeb-til-lager",
+    "da": "Indkøb til lager (purchase-to-stock)",
+    "en": "Purchase-to-stock (PTS)"
+  },
+  {
+    "slug": "indkoeb-til-ordre",
+    "da": "Indkøb til ordre (purchase to order)",
+    "en": "Purchase-to-order (PTO)"
+  },
+  {
+    "slug": "indkoebsstrategi",
+    "da": "Indkøbsstrategi",
+    "en": "Purchasing Strategy"
+  },
+  {
+    "slug": "just-in-time",
+    "da": "Just-in-Time (JIT)",
+    "en": "Just-in-Time (JIT)"
+  },
+  {
+    "slug": "kapitalbinding",
+    "da": "Kapitalbinding",
+    "en": "Tied-up Capital"
+  },
+  {
+    "slug": "kundeloensomhed",
+    "da": "Kundelønsomhed",
+    "en": "Customer profitability"
+  },
+  {
+    "slug": "kundeprofitabilitetsanalyse",
+    "da": "Kundeprofitabilitetsanalyse",
+    "en": "Customer Profitability Analysis"
+  },
+  {
+    "slug": "lagerbinding",
+    "da": "Lagerbinding",
+    "en": "Tied-up capital in inventory"
+  },
+  {
+    "slug": "lagerdage",
+    "da": "Lagerdage",
+    "en": "Days of supply (DOS)"
+  },
+  {
+    "slug": "lagerpoltikker",
+    "da": "Lagerpolitikker",
+    "en": "Inventory Policies"
+  },
+  {
+    "slug": "leverandoerkonsolidering",
+    "da": "Leverandørkonsolidering",
+    "en": "Supplier consolidation"
+  },
+  {
+    "slug": "minimum-ordremaengde",
+    "da": "Minimum ordremængde (MOQ)",
+    "en": "Minimum order quantity (MOQ)"
+  },
+  {
+    "slug": "minimumslagerbeholdning",
+    "da": "Minimumslagerbeholdning",
+    "en": "Minimum Inventory Level"
+  },
+  {
+    "slug": "ny-produktintroduktion",
+    "da": "Ny produktintroduktion (NPI)",
+    "en": "New Product Introduction (NPI)"
+  },
+  {
+    "slug": "oevre-lagergraense",
+    "da": "Øvre lagergrænse",
+    "en": "Upper Inventory Limit"
+  },
+  {
+    "slug": "omsaetningshastighed",
+    "da": "Omsætningshastighed",
+    "en": "Turnover Rate"
+  },
+  {
+    "slug": "on-time-in-full",
+    "da": "OTIF (On Time In Full)",
+    "en": "OTIF (On Time In Full)"
+  },
+  {
+    "slug": "overskudslager",
+    "da": "Overskudslager (overlager)",
+    "en": "Excess inventory (overstock)"
+  },
+  {
+    "slug": "planlaegningsparametre",
+    "da": "Planlægningsparametre",
+    "en": "Planning Parameters"
+  },
+  {
+    "slug": "produktion-til-lager",
+    "da": "Produktion til lager (make-to-stock)",
+    "en": "Make-to-stock (MTS)"
+  },
+  {
+    "slug": "produktion-til-ordre",
+    "da": "Produktion til ordre (make-to-order)",
+    "en": "Make-to-order (MTO)"
+  },
+  {
+    "slug": "produktloensomhed",
+    "da": "Produktlønsomhed",
+    "en": "Product profitability"
+  },
+  {
+    "slug": "qr-kode",
+    "da": "QR-kode",
+    "en": "QR Code"
+  },
+  {
+    "slug": "raavarelager",
+    "da": "Råvarelager",
+    "en": "Raw Material Inventory"
+  },
+  {
+    "slug": "reservedelslager",
+    "da": "Reservedelslager",
+    "en": "Spare Parts Inventory"
+  },
+  {
+    "slug": "restlager",
+    "da": "Restlager",
+    "en": "Distressed inventory"
+  },
+  {
+    "slug": "servicegrad",
+    "da": "Servicegrad",
+    "en": "Service level"
+  },
+  {
+    "slug": "sikkerhedslager",
+    "da": "Sikkerhedslager",
+    "en": "Safety Stock"
+  },
+  {
+    "slug": "skaffevarer",
+    "da": "Skaffevarer",
+    "en": "Special order items"
+  },
+  {
+    "slug": "sku-stock-keeping-unit",
+    "da": "SKU (Stock Keeping Unit)",
+    "en": "SKU (Stock Keeping Unit)"
+  },
+  {
+    "slug": "slow-moving-inventory",
+    "da": "Slow-moving inventory",
+    "en": "Slow-moving inventory"
+  },
+  {
+    "slug": "sop-sales-operations-planning",
+    "da": "S&OP (Sales & Operations Planning)",
+    "en": "S&OP (Sales & Operations Planning)"
+  },
+  {
+    "slug": "supplier-relationship-management",
+    "da": "Supplier Relationship Management (SRM)",
+    "en": "Supplier Relationship Management (SRM)"
+  },
+  {
+    "slug": "supply-chain-resilience",
+    "da": "Supply chain resilience",
+    "en": "Supply chain resilience"
+  },
+  {
+    "slug": "total-cost-of-ownership",
+    "da": "Total cost of ownership (TCO)",
+    "en": "Total cost of ownership (TCO)"
+  },
+  {
+    "slug": "udfasning-af-produkter",
+    "da": "Udfasning af produkter",
+    "en": "Product Phasing Out"
+  },
+  {
+    "slug": "ukurans",
+    "da": "Ukurans",
+    "en": "Obsolete Inventory"
+  },
+  {
+    "slug": "vareflow",
+    "da": "Vareflow",
+    "en": "Goods Flow"
+  },
+  {
+    "slug": "vendor-managed-inventory-vmi",
+    "da": "Vendor Managed Inventory (VMI)",
+    "en": "Vendor Managed Inventory (VMI)"
+  },
+  {
+    "slug": "working-capital",
+    "da": "Working Capital (arbejdskapital)",
+    "en": "Working Capital"
+  },
+  {
+    "slug": "xyz-analyse",
+    "da": "XYZ-analyse",
+    "en": "XYZ-analysis"
+  },
+  {
+    "slug": "ydeevne",
+    "da": "Ydeevne",
+    "en": "Performance"
+  },
+  {
+    "slug": "zero-based-planning",
+    "da": "Zero-based planning (ZBP)",
+    "en": "Zero-based planning (ZBP)"
+  }
+]

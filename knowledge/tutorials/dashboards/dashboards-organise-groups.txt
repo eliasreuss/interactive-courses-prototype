@@ -1,0 +1,24 @@
+---
+topic: How to organise dashboards into groups in Inact Now
+source_type: tutorial
+language: english
+keywords: dashboard group, change group, move dashboard, rename group, organise, unsorted
+product_area: Dashboards
+question_type: how-to
+---
+
+Dashboards are organised into named groups on the Dashboards list page — for example, all inventory-related dashboards might sit under an "Inventory" group. This keeps things tidy when you have multiple dashboards.
+
+To move a dashboard to a different group:
+1. On the Dashboards list, click the ••• button next to the dashboard.
+2. Select Change group.
+3. In the window that appears, select or type the name of the group you want to move it to.
+4. Click Save.
+
+To rename a group:
+A group can be renamed by clicking the appropriate option when managing it. A window appears with a Name field — update it and click Save.
+
+To delete a group:
+Deleting a group is permanent and cannot be undone. A confirmation window will ask you to confirm before anything is removed.
+
+Dashboards that haven't been assigned to a group appear under an "Unsorted" section.

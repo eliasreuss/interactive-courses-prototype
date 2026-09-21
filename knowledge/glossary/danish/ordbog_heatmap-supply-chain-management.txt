@@ -1,0 +1,38 @@
+---
+topic: Heatmap i supply chain management (SCM)
+source_type: glossary
+language: danish
+keywords: Heatmap i supply chain management (SCM), Heatmap in supply chain management (SCM), heatmaps, risiko, chain, heatmap, komplekse, produkter, supply, varer
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Heatmap i supply chain management (SCM)
+term_en: Heatmap in supply chain management (SCM)
+url: https://inact.io/ordbog/heatmap-supply-chain-management/
+---
+
+Heatmap i supply chain management (SCM) — English: Heatmap in supply chain management
+Et Heatmap i Supply Chain Management er en kraftfuld visuel metode til at gøre komplekse data til letforståelige indsigter. Ved hjælp af farvekodede kort identificeres områder med høj risiko, kritisk aktivitet eller stort optimeringspotentiale i supply chain. Heatmaps gør det muligt for beslutningstagere at se, hvor fokus skal ligge, og træffe datadrevne beslutninger på få sekunder.
+Hvad er et heatmap i SCM?
+Et Heatmap er en grafisk fremstilling, hvor data om lager, produkter, leverandører eller kunder vises med farver, der indikerer værdier eller kritiske punkter. Farveskalaen går typisk fra "kold" (blå/grøn for lav risiko/god performance) til "varm" (gul/rød for høj risiko/dårlig performance).
+Heatmaps er et essentielt værktøj i Business Intelligence (BI) og SCM, fordi de:
+Gør komplekse data intuitive og lette at afkode.
+Hjælper med at opdage mønstre og outliers (afvigelser), som ellers ville være skjult i regneark.
+Hvad bruger man heatmaps til i supply chain?
+Man bruger Heatmaps til at prioritere indsatsområder, forstå mønstre i data og træffe hurtigere beslutninger. Det primære formål er at omdanne data til handling.
+Konkret bruges de typisk til:
+Risikostyring: Visualisere leverandørrisiko, forsinkelser eller flaskehalse i produktionsflowet.
+Lageroptimering: Kortlægge lagerets kapitalbinding og risiko, f.eks. ved at vise varer med høj værdi og lav omsætningshastighed
+(potentielle C-varer).
+Performance-analyse: Identificere produkter med høj omsætning, men lav margin, eller kunder med lav profitabilitet.
+Geografisk analyse: Vise koncentrationen af ordrer, leverandører eller logistikomkostninger på et kort.
+Hvornår er heatmaps relevante?
+Heatmaps anvendes, når man har brug for et hurtigt, visuelt overblik over store datamængder.
+De er særligt relevante, når man vil:
+Udføre
+ABC-analyse: Visualisere segmenteringen af varelageret i en matrix for at definere differentierede styringsstrategier.
+Overvåge KPI'er: Få et øjeblikkeligt overblik over, hvilke afdelinger, lokationer eller produkter der performer under målet.
+Forberede
+S&OP
+-møder: Præsentere komplekse data intuitivt for tværfunktionelle teams.
+Identificere forældelse: Vise, hvor risikoen for forældede varer er størst (f.eks. varer med lang liggetid).

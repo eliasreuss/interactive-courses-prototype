@@ -1,0 +1,9 @@
+---
+topic: Minimumslager
+source_type: article
+language: danish
+article_source: 5 leveregler  sådan får du en effektiv supply chain
+keywords: minimumslager, automatisk beregning, lead time, aftræksmønster
+---
+
+3. Minimumslager: Inact Now beregner og opdaterer automatisk minimumslageret baseret på varens lead time, aftræksmønster og ønsket leveringssikkerhed.

@@ -1,0 +1,14 @@
+---
+topic: Controlling which datasources a user can access
+source_type: tutorial
+language: english
+keywords: access control, datasource, user access, restrict, permissions
+product_area: Admin
+question_type: how-to
+---
+
+The Access control tab in the user edit dialog is a two-panel picker. The left panel shows datasources the user does not have access to; the right panel shows datasources they do have access to.
+
+Use the "Select all" button to grant access to everything at once, or click individual items to move them. The "Deselect all" button removes all granted access.
+
+There's also a search field at the top to find specific datasources quickly. Each datasource in the right panel has an × to remove it individually.

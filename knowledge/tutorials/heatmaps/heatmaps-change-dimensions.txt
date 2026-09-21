@@ -1,0 +1,16 @@
+---
+topic: How to change the rows and columns of a Heatmap in Inact Now
+source_type: tutorial
+language: english
+keywords: change dimension, row dimension, column dimension, categorisation dropdown, axis, rows columns
+product_area: Heatmaps
+question_type: how-to
+---
+
+The two dropdowns on the left of the heatmap toolbar control what the matrix is built from. The first, marked with a down arrow, is the row categorisation and carries the icon of the data source it comes from. The second, marked with a right arrow, is the column categorisation.
+
+Click either dropdown to open a searchable list of the categorisation columns available on that data source — for a supplier axis that might be Country, Payment Terms, Purchaser, Supplier Categorization and Supplier Group. The column currently in use is shown in bold. Click a different one and the matrix rebuilds immediately.
+
+This is the quickest way to interrogate the same measure from several angles: keep Double ABC across the top and switch the rows from Supplier Categorization to Country to see whether a cost pattern is about supplier quality or about geography.
+
+Changes take effect straight away on screen but are only stored when you click Save in edit mode.

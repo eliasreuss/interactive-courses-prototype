@@ -1,0 +1,19 @@
+---
+topic: Dobbelt ABC-analyse forklaret
+source: Double Abc Analysis 4
+source_type: course
+language: danish
+product_area: inventory
+question_type: what
+keywords:
+- Dobbelt ABC-analyse
+- produktkategorisering
+- lageromkostning
+- efterspørgsel
+- A/B/C-score
+- to-bogstavskategori
+- lagerstyring
+- prioritering
+---
+
+Dobbelt ABC-analyse er en metode til at kategorisere produkter baseret på to variable, såsom lageromkostning og efterspørgsel. Hvert produkt får en score på A, B eller C for hver variabel, hvilket resulterer i en kombineret to-bogstavskategori som for eksempel AA eller CB. For eksempel angiver AA et produkt med både høje lageromkostninger og høj efterspørgsel, mens CB repræsenterer lave lageromkostninger og mellemstor efterspørgsel. Denne kategorisering hjælper med at identificere, hvilke produkter der er mest vigtige, og vejleder beslutninger om, hvordan lageret skal styres effektivt.

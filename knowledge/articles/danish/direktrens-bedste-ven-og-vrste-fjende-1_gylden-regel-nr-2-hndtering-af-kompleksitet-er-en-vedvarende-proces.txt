@@ -1,0 +1,9 @@
+---
+topic: 'Gylden regel nr. 2: Håndtering af kompleksitet er en vedvarende proces'
+source_type: article
+language: danish
+article_source: Direktørens bedste ven og værste fjende (1)
+keywords: kompleksitet, ledelsesindsats, vedligeholdelse, ændringer, engagement
+---
+
+Kompleksitet kræver kontinuerlig opmærksomhed og ledelsesindsats ligesom havepleje. Vedligeholdelse er nødvendig for at opnå accept og engagement ved ændringer.

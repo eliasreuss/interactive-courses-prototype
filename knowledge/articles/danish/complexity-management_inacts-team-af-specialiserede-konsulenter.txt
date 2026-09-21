@@ -1,0 +1,9 @@
+---
+topic: Inact's team af specialiserede konsulenter
+source_type: article
+language: danish
+article_source: Complexity Management
+keywords: Inact, forretningskonsulenter, performanceproblemer, værktøjer, scenarier
+---
+
+Inact har et team af specialiserede forretningskonsulenter, der kan identificere årsager til performanceproblemer. Deres værktøjer skaber scenarier for at udforske muligheder for forbedret performance.

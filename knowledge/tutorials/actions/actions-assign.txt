@@ -1,0 +1,18 @@
+---
+topic: How to assign an Action list to a team member in Inact Now
+source_type: tutorial
+language: english
+keywords: assign, assignee, deadline, subscription, team member, responsibility
+product_area: Actions
+question_type: how-to
+---
+
+Assigning an Action list gives ownership to a specific team member so it is clear who is responsible for working through it.
+
+Open the Action list and click the gear icon in the top right corner. Choose Assign from the dropdown. The Assign Action window opens.
+
+In the Assignees field, the currently assigned person is shown. Click the field to search for and select a team member. You can assign to multiple people. To remove someone, click the × next to their name.
+
+Optionally, set a Deadline by picking a date, and choose whether to automatically subscribe the assignees to email updates by ticking Subscribe all assignees to this Action and selecting a notification plan.
+
+Click Save to confirm. The assigned person's name will appear in the Assigned to column on the Actions library page.

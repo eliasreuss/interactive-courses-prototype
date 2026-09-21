@@ -1,0 +1,14 @@
+---
+topic: How saving and unsaved changes work when editing an Insight in Inact Now
+source_type: tutorial
+language: english
+keywords: save, unsaved changes, save button, insight saved, discard changes, confirm navigation
+product_area: Insights
+question_type: how-to
+---
+
+In edit mode, a green Save button appears in the top-right toolbar. Clicking it saves the current configuration (columns, filters, slicers, view settings, setup fields) and shows an "Insight saved!" toast notification. Save just saves the configuration — it doesn't trigger a data refresh.
+
+Unsaved changes indicator: whenever you make changes in edit mode, a yellow banner appears at the top of the Setup panel reading "You have unsaved changes. Save" with a Save button inside it. This banner stays visible until you save.
+
+Leaving without saving: if you navigate away from the Insight (e.g. click the Insights menu or use the browser back button) while there are unsaved changes, a "Confirm navigation" dialog appears: "You have unsaved changes! Save before you leave this page." Two buttons appear: Leave this page (discards changes and navigates away) and Stay on this page (returns you to the Insight so you can save first).

@@ -1,0 +1,29 @@
+---
+topic: All fields in the Edit column window in Inact Now dashboards
+source_type: tutorial
+language: english
+keywords: edit column, column settings, aggregation, trend, categorization, label, column dialog, KPI metric
+product_area: Dashboards
+question_type: how-to
+---
+
+The Edit column dialog opens when you add a new column or edit an existing one. It contains the following fields:
+
+- Column — a searchable dropdown where you select which data column to display. Columns are grouped by category (e.g. Products, Customers, Suppliers). Over 200 options are available.
+- Label — the display name for this column. Type anything here to rename the column header as it appears to users.
+- Aggregation — controls how values are totalled at the bottom of the column. Options are:
+  - Sum
+  - Avg
+  - Min
+  - Max
+
+  Note: for percentage or ratio columns, this dropdown is disabled and set automatically to Per Category.
+
+- Select Trend — sets whether higher or lower values are considered good, which determines the colour coding of the column. Options:
+  - Neutral
+  - Positive (higher is better)
+  - Negative (higher is worse)
+
+- Categorization — an optional dropdown that links a categorisation column to this data column, so rows can be colour-coded by category. Options include: AA, AB, AC, BA, BB, BC, BTO/MTO, CA, CB, CC, Dead, Discontinued, New, Strategic.
+
+Click Save to apply changes or Cancel to discard them.

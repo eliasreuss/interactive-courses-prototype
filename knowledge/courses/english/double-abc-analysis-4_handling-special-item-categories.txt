@@ -1,0 +1,19 @@
+---
+topic: Handling Special Item Categories
+source: Double Abc Analysis 4
+source_type: course
+language: english
+product_area: inventory
+question_type: what
+keywords:
+- Double ABC Analysis
+- special categories
+- new products
+- discontinued items
+- strategic items
+- Inact Now
+- classifications
+- inventory management
+---
+
+In inventory management, some items do not fit neatly into standard Double ABC Analysis categories. For example, new products may appear as low performers simply because they have not had enough time to generate sales, even though they may have high potential. To address such cases, Inact Now extends beyond the typical nine Double ABC categories by introducing five additional classifications. These extra categories are designed to capture special cases such as new, discontinued, or strategic items, allowing for more nuanced analysis and decision-making.

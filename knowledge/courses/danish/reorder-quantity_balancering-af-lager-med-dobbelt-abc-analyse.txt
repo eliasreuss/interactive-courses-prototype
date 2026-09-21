@@ -1,0 +1,19 @@
+---
+topic: Balancering af lager med dobbelt ABC-analyse
+source: Reorder Quantity
+source_type: course
+language: danish
+product_area: inventory
+question_type: why
+keywords:
+- Dobbelt ABC-analyse
+- genbestillingsmængde
+- enhedspris
+- lageromsætningshastighed
+- efterspørgsel
+- lagertid
+- lagerstyring
+- Inact Now
+---
+
+Hvis man udelukkende fokuserer på at opnå den laveste enhedspris, kan det føre til for store lagre og ineffektiv ressourceudnyttelse. Ved i stedet at rette opmærksomheden mod, hvor længe et produkt bør være på lager, kan virksomheder bedre tilpasse lagerbeholdningen til den reelle efterspørgsel. Ved at anvende dobbelt ABC-analyse kan man kategorisere produkter ud fra både deres efterspørgsel og værdi, hvilket giver en balanceret tilgang, der tager højde for enhedspris, efterspørgsel og lageromsætningshastighed. Denne metode understøtter en sundere lagerstyring ved at sikre, at produkter genbestilles i mængder, der optimerer både omkostninger og tilgængelighed.

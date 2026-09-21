@@ -1,0 +1,19 @@
+---
+topic: Leverandørbenchmarking og årsagsanalyse
+source: Supplier Performance
+source_type: course
+language: danish
+product_area: supplier
+question_type: how
+keywords:
+- A-leverandører
+- nøglepræstationsindikatorer
+- årsagsanalyse
+- leverandørpræstation
+- lagerproblemer
+- serviceudfordringer
+- benchmarking
+- forbedring
+---
+
+Når du har identificeret dine vigtigste leverandører, kendt som A-leverandører, er det afgørende at vurdere deres præstation ved hjælp af nøglepræstationsindikatorer. Denne detaljerede analyse hjælper med at afdække de underliggende faktorer, der påvirker leverandørernes resultater. Ved at undersøge disse indikatorer kan du identificere de grundlæggende årsager til problemer som langsomt omsættende varer, overflødigt lager eller serviceudfordringer. Forståelsen af disse årsager giver et klart grundlag for at iværksætte målrettede forbedringer, der styrker leverandørpræstationen og den samlede effektivitet i forsyningskæden.

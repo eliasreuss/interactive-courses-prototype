@@ -1,0 +1,19 @@
+---
+topic: Oversigt over Double ABC-analyse
+source: Double Abc Analysis 4
+source_type: course
+language: danish
+product_area: inventory
+question_type: what
+keywords:
+- Double ABC-analyse
+- ABC-analyse
+- lager
+- lageromkostninger
+- efterspørgsel
+- Inact Now
+- forbrugsrækker
+- samlede vareomkostninger
+---
+
+Double ABC-analyse er en metode til lagerstyring, hvor to variable vurderes samtidigt for at klassificere produkter mere effektivt. I modsætning til traditionel ABC-analyse, som typisk kun tager højde for én faktor såsom forbrug eller værdi, undersøger double ABC-analysen i Inact Now både de samlede lageromkostninger over de seneste 12 måneder og efterspørgslen, målt ved hvor ofte hvert produkt er blevet solgt eller brugt i samme periode. Denne dobbelte tilgang hjælper organisationer med at identificere varer, der er væsentlige både i forhold til omkostninger og forbrug, hvilket muliggør mere informerede beslutninger om lagerstyring og prioritering.

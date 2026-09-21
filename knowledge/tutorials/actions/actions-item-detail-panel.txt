@@ -1,0 +1,20 @@
+---
+topic: What the item detail panel shows in an Action list in Inact Now
+source_type: tutorial
+language: english
+keywords: item detail, trend, profit, transactions, info, chart, KPI, product data, tabs
+product_area: Actions
+question_type: concept
+---
+
+Clicking on an item row within an Action list opens a detailed panel for that specific product or item. The panel has four tabs.
+
+Trend shows a chart of inventory units or another metric over time. You can switch between 12, 24, or 36 months, change the metric from the dropdown, and toggle between line and bar chart. Summary KPI cards show Inventory Value, Total Consumption Lines 12 mos., Availability % 12 mos., and Revenue 12 mos. Below the chart, key item attributes are listed: Item Group, Product Group, Responsible, Item Status, Safety Stock, Reorder Point, and Maximum.
+
+Profit shows the item's Net Margin chart by month (with navigation arrows to move through months) and a Product P&L table with Revenue, Cost of Goods, Gross Profit, Discount, Logistics, and Marketing for the current and trailing 12-month period.
+
+Transactions shows every individual transaction for the item, with a Group by dropdown and Slicer button to filter the data.
+
+Info shows a full grid of all available data fields for the item in a two-column layout.
+
+At the top of the panel, the document icon shows which other Action lists and Insights this item appears in. The comment icon shows any notes left on this item.

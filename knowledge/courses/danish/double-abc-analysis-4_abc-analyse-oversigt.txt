@@ -1,0 +1,19 @@
+---
+topic: ABC-analyse Oversigt
+source: Double Abc Analysis 4
+source_type: course
+language: danish
+product_area: inventory
+question_type: what
+keywords:
+- ABC-analyse
+- A-produkter
+- B-produkter
+- C-produkter
+- efterspørgselskategorisering
+- lagerstyring
+- produktsegmentering
+- Pareto-princippet
+---
+
+ABC-analyse er en metode, der bruges til at kategorisere produkter baseret på deres bidrag til den samlede efterspørgsel. I denne tilgang opdeles produkterne i tre grupper: A-produkter, som er de øverste 10 procent af varerne og står for cirka 80 procent af efterspørgslen; B-produkter, som er de næste 20 procent af varerne og dækker omtrent 15 procent af efterspørgslen; og C-produkter, som er de resterende 70 procent af varerne og kun bidrager med cirka 5 procent af efterspørgslen. Denne klassificering hjælper organisationer med at fokusere deres opmærksomhed og ressourcer på de produkter, der har størst indflydelse på den samlede efterspørgsel.

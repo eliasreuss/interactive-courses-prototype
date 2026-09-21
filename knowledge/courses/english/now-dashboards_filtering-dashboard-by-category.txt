@@ -1,0 +1,19 @@
+---
+topic: Filtering Dashboard by Category
+source: Now Dashboards
+source_type: course
+language: english
+product_area: platform
+question_type: how
+keywords:
+- Dashboards
+- Tables
+- Filtering
+- Categories
+- Widgets
+- A items
+- User Interface
+- Data Display
+---
+
+To filter a Dashboard by category, click on any category listed in a table. This action updates the entire Dashboard to display data only for the selected group. When a filter is active, the color of the Widgets changes, providing a visual indication that the Dashboard is currently filtered. For example, if you select the 'A items' category, all data shown will pertain only to A items until the filter is cleared or changed.

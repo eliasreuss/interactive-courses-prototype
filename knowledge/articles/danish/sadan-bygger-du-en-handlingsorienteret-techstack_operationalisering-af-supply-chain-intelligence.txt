@@ -1,0 +1,9 @@
+---
+topic: Operationalisering af supply chain intelligence
+source_type: article
+language: danish
+article_source: Sådan bygger du en handlingsorienteret techstack
+keywords: ERP, BI, supply chain, data, handling
+---
+
+Hvis beslutninger stadig ligger i ERP, og der mangler handling trods BI rapportering, kan det være tid til at operationalisere supply chain intelligence. Handling skaber værdi, ikke kun data.

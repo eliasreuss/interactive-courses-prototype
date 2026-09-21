@@ -1,0 +1,45 @@
+---
+topic: S&OP (Sales & Operations Planning)
+source_type: glossary
+language: english
+keywords: S&OP (Sales & Operations Planning), inventory, company, production, process, sales, decisions, procurement, across
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: S&OP (Sales & Operations Planning)
+term_en: S&OP (Sales & Operations Planning)
+url: https://inact.io/en/glossary/sop-sales-operations-planning/
+---
+
+S&OP (Sales & Operations Planning)
+S&OP — Sales & Operations Planning — is a monthly planning process where sales, procurement, production, inventory, finance and leadership align demand, capacity and business goals in one shared plan. The goal is to create balance between what the company expects to sell and what it can actually deliver. S&OP helps the business prioritise across departments instead of each function optimising for its own goals.
+S&OP is more than forecasts and status meetings
+Many associate S&OP with forecast updates and monthly planning meetings. But S&OP covers more than that.
+The purpose is to bring sales, procurement, inventory, production, finance and leadership together around one shared plan for the business. It creates a common picture of demand, capacity, stock levels and delivery situation — so decisions aren't made in isolation within each department.
+When a company works with S&OP, it becomes easier to see the consequences of decisions across the business. If sales expects higher demand, it quickly affects procurement, inventory, production and suppliers. If production has capacity constraints, it affects lead times and service levels. S&OP makes those connections visible earlier.
+S&OP isn't just about planning. It's about creating shared priorities across the organisation.
+What does S&OP mean in practice?
+In practice, S&OP is a fixed process where the company brings together data and decisions across functions.
+Typically, the company works with expected demand, inventory development, capacity constraints, supplier challenges, forecast deviations, product launches, campaigns and risk of backorders.
+The goal isn't perfect forecasts. The goal is to detect problems earlier and make decisions that hold together across the business.
+If sales expects strong growth on a product group, it quickly affects procurement, production, inventory needs, staffing, lead times and supplier capacity.
+Without a shared process, companies often discover the consequences too late. S&OP therefore connects closely with supply chain planning, inventory management and supply chain analytics.
+Why does S&OP matter?
+S&OP matters because many supply chain problems start as a lack of coordination between departments. When functions work in isolation, situations like these tend to arise sales promises more than operations can deliver procurement buys too much stock production plans from outdated forecasts inventory grows without clear priorities campaigns trigger unexpected backorders.
+A well-functioning S&OP process makes it easier to prioritise between service level, capacity, lead time, tied-up capital in inventory, growth and complexity. It also gives management better insight into the consequences of decisions. If the company wants higher service levels or a broader product range, the impact on inventory, operations and working capital should be clear — including for finance.
+What S&OP looks like in practice
+A manufacturing company launches several large campaigns every year ahead of peak season. Historically, sales planned the campaigns separately from operations and procurement. Forecasts were passed on late in the process, and production often struggled to keep up.
+The consequences were familiar: rush orders for raw materials longer lead times overtime in production excess stock on some products backorders on others.
+The company establishes a fixed S&OP process.
+Each month, sales, procurement, production, inventory, finance and leadership gather around one shared plan. Sales presents expected demand and upcoming campaigns. Production reviews capacity and bottlenecks. Procurement goes through critical suppliers and lead times. Inventory analyses stock development and risk of shortages. Finance assesses the consequences for working capital and liquidity.
+During the process, the company discovers that: certain campaigns place far greater strain on production than expected some suppliers can't keep up with the desired growth several products are being produced to stock without real demand forecasts on certain product groups consistently miss the mark
+That changes the way the company works. Some campaigns are moved in the calendar. Certain products receive lower service levels. Critical raw materials are sourced earlier. Products with unstable demand are produced closer to actual order intake.
+After a year, the company experiences fewer rush orders, more stable production, lower tied-up capital in inventory and higher delivery reliability. But the biggest difference is visibility: the company can now see the consequences of decisions before the problems hit operations.
+Common S&OP misconceptions
+S&OP is only for large companies. Even smaller companies quickly run into problems when sales, inventory and operations work without shared priorities. The process can be scaled down — the need doesn't disappear.
+The process can't become too heavy. Some companies build extensive meeting structures and reporting that nobody actually uses for decisions. S&OP should above all create action and prioritisation — not documentation.
+S&OP is not the same as forecasting. If the company doesn't also assess capacity, suppliers, financial consequences and inventory implications, the plans quickly become unworkable. Forecasting is an input to S&OP — not the goal.
+How can companies work with S&OP?
+Start by creating one shared planning process across sales, procurement, inventory, operations and finance. Bring together insight on forecast, inventory development, service level, supplier performance, production, campaigns and product launches.
+It's important that the process isn't just about reporting. The goal should be clear priorities and visible consequences of decisions.
+This is where end-to-end intelligence and data across the value chain can help the company build a shared picture of demand, inventory, suppliers and operations. When everyone works from the same data and the same priorities, it becomes easier to make decisions that hold together across the entire business.

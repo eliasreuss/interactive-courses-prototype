@@ -1,0 +1,19 @@
+---
+topic: Tables in Now Dashboards
+source: Now Dashboards
+source_type: course
+language: english
+product_area: platform
+question_type: what
+keywords:
+- Tables
+- Dashboards
+- KPIs
+- ABC categories
+- buyer
+- product list
+- best-selling items
+- data grouping
+---
+
+Tables in Now Dashboards present key performance indicators (KPIs) organized by various categories. These categories can include ABC classifications, which segment inventory based on value or importance, or by the responsible buyer managing the items. Tables can also display data at the product level, such as listing the top ten best-selling products. This structured presentation helps users quickly analyze performance metrics and identify trends or areas needing attention.

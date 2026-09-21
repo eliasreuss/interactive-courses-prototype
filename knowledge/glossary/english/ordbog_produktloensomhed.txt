@@ -1,0 +1,44 @@
+---
+topic: Product profitability
+source_type: glossary
+language: english
+keywords: Product profitability, Produktlønsomhed, product, profitability, costs, actual, capital, chain, factors, inventory
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Produktlønsomhed
+term_en: Product profitability
+url: https://inact.io/en/glossary/product-profitability/
+---
+
+Product profitability — Danish: Produktlønsomhed
+Product profitability refers to the actual profit a specific product contributes to the company’s bottom line after all costs have been accounted for.
+In supply chain management, understanding product profitability is critical, as it reveals the difference between a product’s revenue and its actual value creation. This insight makes it possible for companies to identify which products drive the business forward—and which ones actually cost money to keep in stock.
+What does product profitability mean?
+Simply put, product profitability is about the relationship between revenue and the total costs associated with a specific item.
+In practice, many companies only look at contribution margin (sales price minus purchase cost), but true profitability is only visible when “hidden” supply chain costs are included.
+It is about looking at the entire journey of the product — from the moment it is ordered from the supplier until it is delivered and paid for by the customer. Only by including factors such as tied-up capital in inventory, transportation, and handling do you get the true picture of the product’s financial contribution.
+What factors influence a product’s profitability?
+The list of factors may vary depending on industry and processes. However, to understand the true profitability of a product, there are typically several key cost drivers to consider:
+Tied-up capital and inventory costs:
+How much liquidity is tied up in the product, and what does it cost to store it in terms of warehouse space and insurance?
+Logistics and transportation:
+Costs such as freight, duties, and handling, which can vary significantly from product to product.
+Operational costs:
+The time and resources required to receive, pick, and pack the product.
+Risk of obsolescence:
+The cost of items that must be written down or discarded due to obsolescence or expired shelf life.
+Service requirements:
+The resources needed to maintain the required safety stock l evels to meet customer expectations.
+Why is it relevant to analyze product profitability?
+When you understand the true profitability of each
+SKU, your focus shifts from pure volume to actual results.
+This insight is necessary to:
+Optimize the assortment:
+Make data-driven decisions to remove unprofitable items and make room for the most profitable ones.
+Adjust pricing:
+Ensure that prices reflect the true supply chain costs, so each transaction contributes positively.
+Prioritize purchasing and warehouse space:
+Allocate resources and capacity to the most profitable products that create the most value.
+Improve cash flow:
+Reduce inventory of low-profit items and free up capital for growth and new investments.

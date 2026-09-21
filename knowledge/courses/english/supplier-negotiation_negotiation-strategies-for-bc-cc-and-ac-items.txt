@@ -1,0 +1,21 @@
+---
+topic: Negotiation Strategies for BC, CC, and AC Items
+source: Supplier Negotiation
+source_type: course
+language: english
+product_area: supplier
+question_type: how
+keywords:
+- ABC categories
+- BC items
+- CC items
+- AC items
+- inventory
+- lead times
+- minimum order quantities
+- payment terms
+- BTO
+- MTO
+---
+
+When aiming to reduce inventory costs, focus on BC and CC items, which are low-value and purchased infrequently. For these, prioritize flexibility by negotiating short lead times, low minimum order quantities, or build-to-order (BTO) and make-to-order (MTO) arrangements. If a supplier cannot meet these needs, consider switching to one who can. For AC items, which are high-value and also purchased infrequently, negotiate for longer payment terms to delay cash outflow until closer to the sale of the item. Additionally, seek to minimize risk by requesting lower minimum order quantities or shorter lead times.

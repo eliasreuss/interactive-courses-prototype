@@ -1,0 +1,21 @@
+---
+topic: Understanding Column Data Origins
+source: Now Intro
+source_type: course
+language: english
+product_area: platform
+question_type: how
+keywords:
+- ERP data
+- column names
+- Inact Now
+- i icon
+- data source
+- data mapping
+- user interface
+- data clarification
+- Actions
+- Insights
+---
+
+In Inact Now, some data columns may have different names compared to your company's ERP system, which can cause confusion when reviewing information. To clarify the origin and meaning of any column, you can hover your cursor over the 'i' icon next to the column name. This action will display details about where the data comes from and provide any additional context needed to understand its purpose or mapping. This feature helps users quickly resolve uncertainties about data sources and ensures accurate interpretation of information within the platform.

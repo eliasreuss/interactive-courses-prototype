@@ -1,0 +1,15 @@
+---
+topic: Category Management
+source_type: article
+language: danish
+keywords: early warning system, EWS, outliers, KPI, nøgletal, checklist, endl-of-life,
+  EOL, fast movers, slow movers
+---
+
+Source_Article: Guide til Category Management
+Et "Early Warning System" (EWS) er et værktøj, der er direkte koblet på virksomhedens Key Performance Indicators (KPI'er). Systemet overvåger varer, kategorier og leverandører og advarer om "outliers" og varer, der kræver opmærksomhed. Dette kan være i form af checklister for f.eks.:
+- End-of-life (EOL) produkter
+- Varer med negativ Gross Margin
+- New Fast Movers (nye varer der sælger hurtigt)
+- New Slow Movers (nye varer der sælger langsomt)
+- Obsolete Inventory (ukurant lager)

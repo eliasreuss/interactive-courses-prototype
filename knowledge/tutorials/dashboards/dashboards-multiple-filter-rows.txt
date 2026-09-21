@@ -1,0 +1,15 @@
+---
+topic: How to add multiple filter rows at once in a dashboard table in Inact Now
+source_type: tutorial
+language: english
+keywords: multiple filter rows, bulk rows, add rows, categorical column, expand rows, batch
+product_area: Dashboards
+question_type: how-to
+---
+
+Multiple filter rows lets you automatically create one row for each value in a categorical column — useful when you want to break down data by category without creating rows one by one.
+
+1. In the Table tab, click + Add row and select Multiple filter rows.
+2. In the dialog, use the Select column dropdown to choose a categorical column. Only categorical columns are available — not numeric ones.
+3. Once you select a column, tag pills appear showing all the values in that column. Each value will become its own row.
+4. Click Save to generate all the rows at once.

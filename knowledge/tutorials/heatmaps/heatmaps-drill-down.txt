@@ -1,0 +1,18 @@
+---
+topic: How to drill down in a Heatmap by clicking row and column headers in Inact Now
+source_type: tutorial
+language: english
+keywords: drill down, click header, breadcrumb, chip, next level, expand bucket, go deeper
+product_area: Heatmaps
+question_type: how-to
+---
+
+Clicking a row header or a column header drills into that bucket. The heatmap rebuilds showing only what is inside it, broken down one level further — click the New column header, for example, and the columns become the individual Item Groups within New.
+
+A breadcrumb chip appears above the top left corner of the matrix showing what you have drilled into, such as "→ New". Each further drill adds another chip, so the chips are the trail of where you are.
+
+To come back up, click the "×" on a chip. Removing a chip removes that level of the drill-down and everything below it, and the matrix rebuilds at the higher level.
+
+Hovering a header shows a tooltip with the bucket name and the number of records in it. At the deepest level the tooltip reads "Click to show item data", and clicking then opens the detail panel for that single record rather than drilling further.
+
+Drill-downs are a way of exploring — they are not part of the saved heatmap.

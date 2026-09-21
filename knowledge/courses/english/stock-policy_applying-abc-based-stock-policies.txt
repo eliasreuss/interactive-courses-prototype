@@ -1,0 +1,19 @@
+---
+topic: Applying ABC-Based Stock Policies
+source: Stock Policy
+source_type: course
+language: english
+product_area: inventory
+question_type: how
+keywords:
+- ABC categories
+- A-items
+- C-items
+- stock policy
+- service levels
+- buy-to-order
+- make-to-order
+- inventory management
+---
+
+Effective inventory management involves applying different stock policies based on ABC categories. For A-items, which have high and stable demand, it is best to keep them consistently in stock to ensure high service levels for key products and customers. In contrast, C-items, which experience irregular and unpredictable demand, are better managed with buy-to-order or make-to-order policies. This approach helps avoid tying up cash in inventory that may not sell for extended periods, optimizing both service and financial efficiency.

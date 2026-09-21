@@ -1,0 +1,10 @@
+---
+topic: Segmenting Customers and Services
+source_type: article
+language: english
+article_source: Guide  Sådan opnår du profitabel vækst
+keywords: customer segmentation, profitability, service levels, pricing, customer
+  satisfaction
+---
+
+Segment customers based on profitability to avoid overservicing some and underservicing others. Price and service must align for individual customer profitability, as overall profits can mask unprofitable areas.

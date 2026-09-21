@@ -1,0 +1,20 @@
+---
+topic: How to sort data in an Insight in Inact Now
+source_type: tutorial
+language: english
+keywords: sort, order, ascending, descending, column sort, grid view
+product_area: Insights
+question_type: how-to
+---
+
+In the Grid view, you can sort the table by any column.
+
+Click a column header to sort by that column. An arrow icon appears next to the column name to show the sort direction:
+- Arrow pointing up — sorted ascending (lowest to highest, A to Z).
+- Arrow pointing down — sorted descending (highest to lowest, Z to A).
+
+Click the same column header again to reverse the sort direction.
+
+To remove the sort and return to the default order, click the column header a third time or sort by a different column.
+
+Only one column can be sorted at a time. The sorted column is highlighted with an arrow so you can always see which column is active.

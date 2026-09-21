@@ -1,0 +1,32 @@
+---
+topic: Reorder Quantity
+source_type: glossary
+language: english
+keywords: Reorder Quantity, Genbestillingsmængde, reorder, quantity, inventory, quantities, order, adjusted, agreements, based
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Genbestillingsmængde
+term_en: Reorder Quantity
+url: https://inact.io/en/glossary/reorder-quantity/
+---
+
+Reorder Quantity — Danish: Genbestillingsmængde
+Reorder quantity refers to how much you choose to order when it is time to replenish inventory. The concept is used in inventory management and procurement to create more stable and cost-efficient ordering.
+What is a reorder quantity?
+Reorder quantity is the amount of a product a company orders at a time when inventory reaches the reorder point. The quantity may be based on a calculation such as
+EOQ, but is often adjusted in practice based on factors such as minimum order quantities, supplier agreements, or warehouse capacity.
+How do you determine the reorder quantity?
+In many cases, the starting point is
+EOQ, but it is adjusted for:
+Minimum order quantities (MOQ)
+Supplier agreements and discounts
+Warehouse capacity
+Demand uncertainty
+Therefore, the reorder quantity is rarely identical to EOQ.
+What do you use reorder quantities for?
+You use reorder quantities to:
+Ensure consistent and efficient purchasing
+Avoid orders that are too small or too large
+Manage tied-up capital and inventory levels
+Make procurement more operational and less ad hoc

@@ -1,0 +1,9 @@
+---
+topic: Brobygning mellem forsyning og salg
+source_type: article
+language: danish
+article_source: Sådan skaber du en succesfuld supply chain
+keywords: værdikæde, samarbejde, siloer, ledelse, sales & operations planning
+---
+
+1. Byg bro mellem de kommercielle og baglandet. 2. Skab fælles forståelse, sprog og målsætning på tværs af virksomhedens funktioner. 3. Ledelsen skal bane vejen for samarbejde. 4. Implementer en sales & operations planning proces for fælles forståelse.

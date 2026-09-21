@@ -1,0 +1,61 @@
+---
+topic: Purchase-to-stock (PTS)
+source_type: glossary
+language: english
+keywords: Purchase-to-stock (PTS), Indkøb til lager (purchase-to-stock), inventory, purchase-to-stock, delivery, demand, products, strategy, company, customer
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Indkøb til lager (purchase-to-stock)
+term_en: Purchase-to-stock (PTS)
+url: https://inact.io/en/glossary/purchase-to-stock/
+---
+
+Purchase-to-stock (PTS) — Danish: Indkøb til lager
+Purchase-to-stock is a procurement strategy where goods are purchased and stored based on expected demand. The purpose of this strategy is to ensure high delivery reliability and minimize lead time by having products ready for shipment as soon as an order is placed.
+What is purchase-to-stock?
+Purchase-to-stock (PTS) means that a company purchases goods without having a specific customer order. Procurement decisions are based on a combination of historical sales data, demand forecasts, and predefined planning parameters such as reorder points and safety stock.
+This ensures that products are available in inventory when customers place orders, enabling fast and reliable delivery.
+When does purchase-to-stock make sense?
+The strategy is not optimal for all types of products, but purchase-to-stock is particularly relevant when:
+Stable demand:
+When demand is predictable, the risk of holding inventory is low.
+Competition on lead time: If customers expect next-day delivery, PTS is often the only viable option.
+Long shelf life:
+Products with low risk of obsolescence are well suited for inventory stocking.
+Logistical advantages:
+When transportation costs or volume discounts make it economically beneficial to purchase in larger batches.
+What are the advantages of purchase-to-stock?
+The primary advantage of PTS is a high service level.
+By eliminating production or supplier lead time from the customer’s waiting time, the company reduces the risk of lost sales.
+In addition, it enables:
+Economies of scale:
+Lower purchase prices through higher volumes.
+Operational planning:
+More stable utilization of warehouse capacity and staffing.
+Freight optimization:
+The ability to fill containers or trucks, reducing CO₂ footprint and transportation costs per unit.
+What should you be aware of with purchase-to-stock?
+While the strategy ensures fast delivery, it also leads to increased tied-up capita l and a risk of excess inventory. If demand changes suddenly, the company may be left with unsellable goods.
+Therefore, PTS requires continuous monitoring of:
+Turnover rate:
+How quickly products move through inventory.
+Inventory policies:
+Adjustments to safety stock and reorder points.
+Liquidity:
+Ensuring that inventory does not grow faster than revenue.
+What is the difference between purchase-to-stock and purchase-to-order?
+Purchase-to-stock (PTS)
+Purchase-to-order (PTO)
+Trigger
+Forecast / planning
+Specific customer order
+Lead time
+Very short (from stock)
+Longer (procurement/production + delivery)
+Tied-up capital in inventory
+High
+Low
+Risk
+Excess inventory and obsolescence
+Lost sales due to longer lead time

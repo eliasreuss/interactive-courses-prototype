@@ -1,0 +1,13 @@
+---
+topic: Contact Information
+source_type: article
+language: english
+article_source: Reducér dit lager og øg din leveringsevne
+keywords: contact, email, phone, address, support
+---
+
+Inact ApS
+Rued Langgaards Vej 7, 5C, 2300 København S
+Email: sales@inact.io
+Phone: +45 7020 2668
+For support: Support@inact.io

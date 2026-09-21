@@ -1,0 +1,9 @@
+---
+topic: 'Success Story: Vikan A/S'
+source_type: article
+language: english
+article_source: Kompleksitet dræber væksten i din forretning
+keywords: success story, Vikan A/S, supply chain, data visualization, collaboration
+---
+
+Vikan A/S improved supply chain operations by visualizing data, aligning departments, and making data-driven decisions, resulting in high delivery performance, cost reduction, and improved collaboration.

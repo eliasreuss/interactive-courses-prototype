@@ -1,0 +1,16 @@
+---
+topic: How to open the detail of a single item from a Heatmap in Inact Now
+source_type: tutorial
+language: english
+keywords: item detail, click to show item data, detail panel, performance, trend, transactions, profit, stock balance
+product_area: Heatmaps
+question_type: how-to
+---
+
+When you have drilled down far enough that a header represents a single record, its tooltip changes to "Click to show item data". Clicking it opens the item detail panel over the heatmap.
+
+The panel shows the item's identity at the top, a set of tabs — Performance, Trend, Transactions, Transactions Graph, Profit, Info and Stock balance — and, on the Performance tab, the End2End Score with a Show calculation link, small Suppliers and Customers bucket overviews, KPI tiles such as Reorder Point, Avg Lead Time and Cost Price, and Top 10 tables of the customers and suppliers connected to that item.
+
+A "Show in End2End" button at the top of the panel takes you to the End2End view with that record applied as the selection.
+
+Close the panel with the "×" at the top right to return to the heatmap with your drill-down intact.

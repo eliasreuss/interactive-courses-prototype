@@ -1,0 +1,24 @@
+---
+topic: How to edit an Insight's setup and columns in Inact Now
+source_type: tutorial
+language: english
+keywords: edit insight, setup, columns, data source, status, owner, edit mode, gear icon, group
+product_area: Insights
+question_type: how-to
+---
+
+To edit an existing Insight — its columns, data source, owner, or status — you need to turn on edit mode.
+
+1. Open the Insight you want to edit.
+2. Click the gear icon in the top-right corner of the Insight page.
+3. The button changes to Edit mode: ON (highlighted in orange/red), and a Setup panel appears at the top of the page.
+4. In the Setup panel, you can change:
+   - Set limit — click this to restrict the Insight to a specific number of top or bottom rows.
+   - Data source — which entity type (Products, Customers, Suppliers) the Insight pulls from.
+   - Owner — who owns and manages this Insight.
+   - Status — toggle between Public (shared with all users) and Private (only visible to you).
+   - Group — which group in the library this Insight belongs to.
+   - Columns — add or remove columns by moving them between the Available columns and Included columns lists.
+5. When you're done, click Save at the top of the page.
+
+To leave edit mode without saving, click the dropdown arrow next to Edit mode: ON and select Edit mode to toggle it off.

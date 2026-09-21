@@ -1,0 +1,20 @@
+---
+topic: CA-varer i dobbelt ABC-analyse
+source: Double Abc Analysis 4
+source_type: course
+language: danish
+product_area: inventory
+question_type: what
+keywords:
+- Dobbelt ABC-analyse
+- CA-varer
+- lageromkostning
+- høj efterspørgsel
+- kundeoplevelse
+- lagerstyring
+- produktion
+- kritiske varer
+- lav omkostning
+---
+
+CA-varer i en dobbelt ABC-analyse er lagervarer, der kendetegnes ved lave omkostninger, men høj efterspørgsel. Disse varer, såsom papirclips eller skruer brugt i produktionen, bliver ofte overset på grund af deres minimale individuelle værdi. De spiller dog en afgørende rolle for at sikre en gnidningsfri drift og opretholde en positiv kundeoplevelse. På trods af deres lave omkostning gør den høje forbrugsfrekvens dem uundværlige at have på lager, da mangel kan forstyrre produktionen eller leveringen af service.

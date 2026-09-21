@@ -1,0 +1,18 @@
+---
+topic: Identificering af muligheder for lagerpolitik
+source: Stock Policy
+source_type: course
+language: danish
+product_area: inventory
+question_type: what
+keywords:
+- Inact Now
+- lagerpolitik
+- muligheder
+- risici
+- Double ABC
+- Insights
+- ikke-lagerførte varer
+---
+
+Inact Now hjælper organisationer med at identificere deres mest betydningsfulde muligheder og risici i forbindelse med lagerstyring. Ved at analysere data i platformen kan brugerne definere den rette lagerpolitik for hver Double ABC-kategori, så lagerbeslutninger tilpasses den enkelte vares specifikke betydning og omsætningshastighed. Platformen leverer målrettede indsigter, såsom rapporten 'Lagerpolitik | Ikke-lagerførte varer', der fremhæver områder, hvor lagerpolitikken kan have behov for justering. Denne tilgang understøtter en mere informeret og effektiv lagerstyring.

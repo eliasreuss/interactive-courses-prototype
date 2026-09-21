@@ -1,0 +1,42 @@
+---
+topic: Lagerpolitikker
+source_type: glossary
+language: danish
+keywords: Lagerpolitikker, Inventory Policies, eksempel, kapitalbinding, sikre, bruger, fastlæggelse, first-out, forskellige
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Lagerpolitikker
+term_en: Inventory Policies
+url: https://inact.io/ordbog/lagerpoltikker/
+---
+
+Lagerpolitikker — English: Inventory Policies
+Lagerpolitikker er de strategiske retningslinjer for, hvordan en virksomhed styrer sit lager. Det omfatter beslutninger om mængder, genbestilling, sikkerhedslager og lagerrotation, med det formål at sikre optimal balance mellem servicegrad, omkostninger og kapitalbinding.
+Hvad er lagerpolitikker?
+Lagerpolitikker er de formelle regler og strategier, der styrer, hvornår og hvor meget af en vare, der skal bestilles eller produceres. De er designet til at oversætte virksomhedens forretningsstrategi til operationelle handlinger omkring lageret.
+De kan omfatte principper som:
+Bestillingsmetoder: For eksempel genbestillingspunkt
+(ROP), periodisk bestilling eller Material Requirements Planning (MRP).
+Buffere: Fastsættelse af sikkerhedslager og maksimumslagre.
+Styringsstrategier: For eksempel
+Just-in-Time (JIT) eller produktion-til-lager.
+Rotationsprincipper:
+For eksempel
+First-In, First-Out (FIFO) eller Last-In, First-Out (LIFO).
+Hvad bruger man lagerpolitikker til?
+Man bruger lagerpolitikker til at standardisere og automatisere lagerstyringen.
+Det hjælper med at:
+Optimere cash flow: Ved at reducere udsolgte varer og minimere kapitalbinding i overskudslager.
+Sikre konsistent servicegrad:
+Ved at definere det ønskede serviceniveau for forskellige produktkategorier.
+Understøtte differentieret styring: Ved at anvende forskellige politikker for A-, B- og C-varer.
+Reducere manuelt arbejde: Ved at lade systemer (ERP/SCM) styre genbestillinger baseret på de fastlagte regler.
+Hvordan udarbejder man lagerpolitikker?
+Udarbejdelse af effektive lagerpolitikker er en analytisk og strategisk proces, der kræver dataindsigt:
+Segmentering: Analyse af historisk salg og efterspørgsel, ofte via
+ABC-analyse, for at gruppere varer i kategorier.
+Strategisk målsætning: Fastlæggelse af det ønskede serviceniveau (for eksempel 98% leveringspræcision) og de økonomiske mål (for eksempel maksimal kapitalbinding).
+Definering af parametre: Beregning og fastlæggelse af bestillingspunkter, sikkerhedslagre og maksimumslagre for hvert segment.
+Valg af metoder: Vurdering af lagerrotationsmetoder (FIFO/LIFO) og den optimale genbestillingsmetode (ROP/MRP).
+Implementering og overvågning: Indførelse af politikkerne i IT-systemer og løbende overvågning af KPI'er for at sikre, at de fungerer efter hensigten.

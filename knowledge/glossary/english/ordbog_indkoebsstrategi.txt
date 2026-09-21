@@ -1,0 +1,53 @@
+---
+topic: Purchasing Strategy
+source_type: glossary
+language: english
+keywords: Purchasing Strategy, Indkøbsstrategi, purchasing, strategy, management, goals, supplier, suppliers, analysis, collaboration
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Indkøbsstrategi
+term_en: Purchasing Strategy
+url: https://inact.io/en/glossary/purchasing-strategy/
+---
+
+Purchasing Strategy — Danish: Indkøbsstrategi
+A purchasing strategy is the company's overall plan for how to acquire goods and services in the most efficient and value-creating way. The strategy includes selecting suppliers, purchasing volumes, timing, contract management, and risk management with the goal of optimizing costs, quality, delivery capability, and tied-up capital.
+What is a Purchasing Strategy?
+A purchasing strategy is a systematic approach to managing the company's procurement. It translates overall business goals (for example, growth) into concrete actions and decisions within the purchasing department.
+A purchasing strategy typically includes::
+Supplier Selection and Management:
+Defining criteria for the selection, evaluation, and collaboration with suppliers.
+Purchasing Methods:
+E.g., spot buying, contract purchasing, or framework agreements.
+Price and Payment Strategies:
+Setting goals for costs, discounts, payment terms, and total cost of ownership.
+Risk Management:
+Identifying and managing supplier risks, capacity bottlenecks, and price fluctuations.
+Volume and Timing Management:
+Determining when and how much to buy to optimize inventory and liquidity.
+What is a Purchasing Strategy used for?
+A purchasing strategy helps create structure, overview, and targeted action in procurement work:
+Optimize costs:
+Reduce expenses through better contracts, volume utilization, and total cost of ownership.
+Ensure delivery reliability:
+Ensure that critical goods are always available, without superfluous inventory.
+Improve supplier collaboration:
+Build relationships that create quality, flexibility, and innovation.
+Reduce risk:
+Manage fluctuations in prices, supply, and capacity in a structured manner.
+Support strategic goals:
+Align purchasing with the company's overall goals for growth, margin, and service level.
+How is a Purchasing Strategy developed?
+Developing an effective purchasing strategy requires both data insight and a strategic overview:
+Analysis of spend and suppliers:
+Identifying where money is spent (spend analysis), which suppliers are critical, and where there are opportunities for improvement.
+Segmentation of goods:
+For example, using an
+ABC analysis to prioritize resources and focus.
+Strategic goal setting:
+Defining the desired service level, cost targets, and risk profile.
+Method selection:
+Evaluating contract forms, purchasing methods, and supplier collaboration.
+Implementation and monitoring:
+Implementing the strategy in systems and following KPIs to ensure it creates the desired effect.

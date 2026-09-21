@@ -1,0 +1,20 @@
+---
+topic: Home Screen Overview in Inact Now
+source: Now Home
+source_type: course
+language: english
+product_area: platform
+question_type: what
+keywords:
+- Home tab
+- Dashboards
+- Actions
+- Insights
+- personalization
+- user roles
+- Inact Now
+- sections
+- shared content
+---
+
+The Home screen in Inact Now is organized into three main sections: Dashboards, Actions, and Insights. These sections provide users with a personalized overview based on their specific role and responsibilities within the organization. Depending on your assigned tasks and the information shared with you, you may see all three sections, a combination of them, or possibly none. This tailored approach ensures that each user has quick access to the most relevant tools and information for their daily activities.

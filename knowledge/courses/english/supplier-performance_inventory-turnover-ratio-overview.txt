@@ -1,0 +1,19 @@
+---
+topic: Inventory Turnover Ratio Overview
+source: Supplier Performance
+source_type: course
+language: english
+product_area: supplier
+question_type: what
+keywords:
+- inventory turnover ratio
+- stocking policies
+- lead times
+- supplier performance
+- Inact Now
+- root-cause analysis
+- inventory overview
+- customer service
+---
+
+The inventory turnover ratio measures how often inventory is sold and replaced over a specific period. It reflects the effectiveness of stocking policies, lead times, and order volumes. A higher ratio indicates efficient inventory management, while a lower ratio may suggest overstocking or slow-moving goods. By strategically managing your supplier portfolio and using tools like Inact Now for comprehensive inventory visibility and root-cause analysis, you can improve your inventory turnover ratio without negatively impacting customer service.

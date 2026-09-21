@@ -1,0 +1,18 @@
+---
+topic: How to rename a dashboard and add a description in Inact Now
+source_type: tutorial
+language: english
+keywords: rename dashboard, dashboard title, description, edit name, pencil icon
+product_area: Dashboards
+question_type: how-to
+---
+
+1. Open the dashboard and click Edit in the top-right corner.
+2. Click the pencil icon next to the dashboard title at the top of the page.
+3. A small window appears with two fields:
+   - Title — type the new name for the dashboard.
+   - Description — optionally add a short description to help others understand what this dashboard is for.
+4. Click Save.
+5. Click the green Save button at the top of the page to save all your changes.
+
+You can also do this from the Settings tab in edit mode — both places update the same title and description.

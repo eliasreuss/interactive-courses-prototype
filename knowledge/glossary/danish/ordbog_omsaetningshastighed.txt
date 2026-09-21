@@ -1,0 +1,28 @@
+---
+topic: Omsætningshastighed
+source_type: glossary
+language: danish
+keywords: Omsætningshastighed, Turnover Rate, lagerstyring, supply, chain, lagerbeholdning, lageret, længe, måler
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Omsætningshastighed
+term_en: Turnover Rate
+url: https://inact.io/ordbog/omsaetningshastighed/
+---
+
+Omsætningshastighed — English: Turnover Rate
+Omsætningshastighed måler, hvor hurtigt en virksomhed sælger sit lager eller omsætter sine aktiver til indtægter. Det er et centralt nøgletal i supply chain og lagerstyring, da det viser effektiviteten af lagerbeholdning og kapitaludnyttelse.
+Hvad er omsætningshastighed?
+Omsætningshastighed er et nøglebegreb i supply chain og lagerstyring, da det viser, hvor ofte en virksomhed sælger og udskifter sit varelager i løbet af en periode – som regel et år. En høj omsætningshastighed betyder typisk effektiv lagerstyring og lav kapitalbinding
+(så længe den ikke er for høj), mens en lav kan tyde på, at varerne står for længe på lageret og salget går langsomt.
+Hvorfor måler man omsætningshastighed?
+Omsætningshastighed bruges til at:
+Vurdere hvor effektivt produkter sælges og lageret udskiftes.​
+Identificere varer med lav omsætning, som binder unødvendig kapital.​
+Optimere lagerbeholdning og likviditet
+Hvornår bruger man omsætningshastigheden?
+Begrebet anvendes løbende i lager- og økonomistyring, især ved:
+Analyse af lagerperformance
+Planlægning af genbestillinger og produktportefølje
+Evaluering af supply chain-effektivitet

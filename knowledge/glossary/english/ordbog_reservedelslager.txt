@@ -1,0 +1,55 @@
+---
+topic: Spare Parts Inventory
+source_type: glossary
+language: english
+keywords: Spare Parts Inventory, Reservedelslager, parts, inventory, spare, service, company, companies, often, critical
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Reservedelslager
+term_en: Spare Parts Inventory
+url: https://inact.io/en/glossary/spare-parts-inventory/
+---
+
+Spare Parts Inventory — Danish: Reservedelslager
+Spare parts inventory is inventory held to ensure that machinery, products, or equipment can be repaired and kept running. Unlike regular inventory, demand for many spare parts is often unpredictable, and some parts move rarely.
+Spare parts inventory isn't only about turnover. It's about balancing availability, lead time, and cost. Companies typically hold spare parts inventory to support service operations, production, aftermarket activities, or technical equipment, where downtime can cost more than the part itself.
+What is spare parts inventory?
+Spare parts inventory can serve different purposes depending on the company. In a manufacturing company, it may consist of parts for the company's own machinery and production equipment. The purpose is to enable quick maintenance and repairs and limit the risk of production downtime.
+In service and aftermarket businesses, spare parts inventory typically consists of parts for products already sold to customers. Here, the inventory needs to support service agreements, repairs, and customers' expectations for uptime – often for years after the original product was sold.
+In both cases, a part with very low turnover can still be important to keep on hand. The value of holding a part doesn't depend only on how often it is used or sold, but also on the consequences if it isn't available when needed.
+How does spare parts inventory balance service and working capital?
+Within aftermarket supply chain optimization, spare parts inventory is often where the balance between service and working capital becomes most visible.
+If inventory levels are too low, the company risks making customers wait for critical parts. If inventory levels are too high, the company ties up capital in parts that might only sell a few times a year.
+Managing spare parts inventory requires assessing which parts are critical to the customer's or company's operations, which can be sourced quickly, and which mainly tie up capital without providing a corresponding service benefit.
+What sets spare parts inventory apart from regular inventory?
+In regular inventory, inventory management is often closely tied to expected sales or consumption, inventory turnover, and replenishment.
+Spare parts inventory works differently. In the aftermarket, a part can sit unused for months and still be critical if a machine suddenly breaks down.
+Inventory isn't judged only by how quickly parts turn over, but also by how important each part is to operations, service, and uptime. Companies may accept more capital tied up in selected parts if the consequences of not having a part available are far greater than the cost of holding it.
+Why does spare parts inventory matter?
+Spare parts inventory affects customer satisfaction, operations, and financial performance. If a critical part is unavailable, the consequences can include production downtime, delayed service visits, or dissatisfied customers. In some industries, a few hours of downtime can cost more than the part itself.
+This often leads companies to buy extra parts "just in case." The problem is that this can quickly increase the amount of capital tied up in inventory. Many spare parts have low turnover, and some are never used at all.
+This creates the classic trade-off in spare parts inventory: high service levels require availability, while reducing working capital requires companies to avoid holding more inventory than necessary. The balance is difficult because demand for spare parts is often intermittent, and historical sales don't necessarily indicate when a part will next be needed.
+At the same time, complexity tends to grow over time. More products mean more versions and longer service obligations, creating more
+SKUs and more uncertainty. Spare parts inventory is therefore closely linked to inventory optimization and supply chain optimization.
+What does spare parts inventory look like in practice?
+A company sells industrial pumps to manufacturing companies across the Nordics. The pumps themselves might only be replaced once a decade. Customers, however, expect fast access to spare parts if something breaks.
+The company holds a large spare parts inventory of gaskets, motors, filters, valves, and specialty components. Some parts sell every week. Others haven't moved in two years.
+One day, a customer's production stops because a specific valve has failed. The customer expects same-day delivery. The problem is that the valve is no longer in stock because it had low turnover. Procurement can't source the part for another three weeks.
+On paper, reducing the inventory looked like a sound decision. In practice, the savings were small compared with the consequences for the customer and the service organization.
+Afterward, the company starts categorizing spare parts by criticality rather than turnover alone. It also analyzes lead time, the cost of downtime, and each part's importance to the customer's operations.
+That changes how the inventory is prioritized.
+What are common mistakes in managing spare parts inventory?
+A common mistake is managing spare parts inventory in the same way as regular sales inventory. This causes problems because spare parts often have intermittent demand while still being critical to operations. A part with few sales can still matter more than a part with high turnover.
+Another mistake is focusing solely on inventory value. If a company measures success only by inventory reduction, it risks removing parts that are critical to service and uptime. That can lead to more emergency shipments, higher expedited freight costs, and a worse customer experience.
+Some companies also underestimate the complexity of aging products. When products are phased out, the need for spare parts rarely disappears immediately. Customers often expect service for years after the last sale.
+If a company doesn't stay on top of phase-outs, service obligations, and product lifecycles, its inventory can gradually fill with slow-moving parts and face a growing risk of dead stock.
+How can companies optimize their spare parts inventory?
+Start by distinguishing between critical and non-critical parts. That takes more than looking at historical sales. You should also analyze: supplier lead time the consequences of downtime availability of alternative parts service agreements with customers phase-out risk expected product lifespan
+Many companies only get a clear overview once they bring data together across the value chain. Otherwise, key information remains scattered across ERP systems, service, procurement, and the warehouse.
+It's also important to actively work with product management. Not all spare parts should be treated in the same way.
+Some critical parts should remain permanent stock items, even when demand is low. Others can be sourced on request. And some parts should be phased out entirely once demand disappears.
+Supplier performance also plays a major role. When suppliers deliver reliably and quickly, companies can sometimes reduce inventory without lowering service levels.
+It also helps to use ongoing segmentation rather than fixed rules. A part's importance can change over time. As products age, the inventory strategy should be regularly reassessed based on demand, service obligations, criticality, and how easily the part can be sourced.
+If the same inventory rules apply to every spare part, complexity grows faster than control.
+Spare parts inventory works best when a company accepts one key thing: the goal isn't to hold as few parts as possible. The goal is to hold inventory where it best protects customers, operations, and the business.

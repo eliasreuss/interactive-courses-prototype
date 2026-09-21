@@ -1,0 +1,36 @@
+---
+topic: Dual sourcing
+source_type: glossary
+language: english
+keywords: Dual sourcing, supplier, sourcing, suppliers, company, supply, chain, critical, single
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Dual sourcing
+term_en: Dual sourcing
+url: https://inact.io/en/glossary/dual-sourcing/
+---
+
+Dual sourcing
+Dual sourcing is a procurement strategy where a company uses two suppliers for the same item or component to reduce the risk of depending on a single supplier. The goal is to improve supply security and make the supply chain more resilient to delays, capacity issues, or supplier failure.
+What does dual sourcing mean in practice?
+In practice, dual sourcing means splitting purchases of the same item between two suppliers instead of one. This can either be a fixed split where both suppliers are used on an ongoing basis, or a model where one supplier acts as a backup when problems or capacity shortages arise.
+Many companies apply dual sourcing to: critical components items with long lead times high-volume products items with significant impact on operations or service levels
+The strategy is most relevant when the consequences of supply disruptions outweigh the benefits of consolidating volume with a single supplier. That's why dual sourcing is closely linked to supplier management, supply chain resilience, and strategic procurement.
+When a single supplier becomes a hidden risk
+Many companies consolidate purchasing with one supplier to achieve better prices, larger volume discounts, or simpler administration. That works well — until something goes wrong.
+If a supplier is suddenly hit by production problems, raw material shortages, or transport delays, the company can quickly find itself without alternatives. At that point, the consequences tend to show up elsewhere: production lines run short of materials stock is depleted customers experience delays procurement scrambles to find alternative suppliers at short notice
+Dual sourcing is therefore not just about having more suppliers. It's about reducing vulnerability in the supply chain before problems arise.
+When does dual sourcing make sense?
+Dual sourcing doesn't make sense for every item. The strategy is typically used for items where supply disruptions can have serious consequences for operations, service, or revenue. It tends to be relevant when lead times are long, the supplier is geographically distant, the item is critical to production, demand is highly variable, the company is heavily dependent on one supplier, or the market is unstable.
+That said, dual sourcing also creates more complexity. More suppliers typically means more forecasts, more quality approvals, more administrative processes, and lower volume with each individual supplier. Dual sourcing is therefore a question of balance.
+The company needs to assess whether the added security justifies the added complexity and potentially higher procurement costs. That's what makes dual sourcing relevant in supply chain optimisation — the strategy affects risk, inventory, and flexibility across the entire value chain.
+Dual sourcing in practice
+A manufacturer of technical equipment sources a critical electronic component from a single Asian supplier. The relationship runs smoothly for several years, and the company achieves good pricing through high purchase volumes. The problem emerges when the supplier is suddenly hit by production issues. Lead times climb from eight to sixteen weeks within a matter of months.
+With no alternative suppliers approved, several finished goods can no longer be produced as planned. To protect customers, the company starts building larger safety stock on critical components. At the same time, procurement has to spend significant resources on rush orders and manual coordination.
+After the disruption, the company changes its approach. It qualifies a second European supplier for the critical component and now splits purchases between both. The Asian supplier handles the majority of volume at a lower cost, while the European supplier is used for faster replenishment and as a backup when delays occur.
+This doesn't eliminate all risk. But it significantly reduces dependence on a single supplier — and gives the company far greater flexibility when market conditions or lead times shift.
+How can companies work with dual sourcing?
+Start by identifying which items or components are most critical to the business. These are typically items with high turnover, long lead times, high risk in case of shortage, few alternative suppliers, or significant impact on production and service.
+From there, assess the real risk of relying on a single supplier — not just in terms of price, but also geographical risk, capacity constraints, transport dependency, lead times, flexibility, and supplier performance.
+This is where work on supplier performance, Supplier Relationship Management, and supply chain analytics becomes important, as the company needs to understand supplier stability, relationship maturity, and overall risk across the value chain. Companies with strong dual sourcing practices rarely keep backup suppliers on paper only. They make sure both suppliers are genuinely capable of delivering when the situation demands it.

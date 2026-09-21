@@ -1,0 +1,50 @@
+---
+topic: Cost-to-serve
+source_type: glossary
+language: danish
+keywords: Cost-to-serve, chain, supply, giver, lønsomhed, omkostninger, beslutninger, bruges
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Cost-to-serve
+term_en: Cost-to-serve
+url: https://inact.io/ordbog/cost-to-serve/
+---
+
+Cost-to-serve
+Cost-to-serve er et centralt begreb inden for supply chain management, der beskriver de samlede omkostninger ved at betjene en kunde, et produkt eller en ordre. Det giver indsigt i, hvad det faktisk koster virksomheden at levere sin service, og gør det muligt at træffe mere datadrevne beslutninger.
+Hvad er cost-to-serve?
+Cost-to-serve dækker over alle de direkte og indirekte omkostninger, der opstår fra ordre til levering.
+Det kan blandt andet omfatte:
+Indkøbs- og produktionsomkostninger
+Lageromkostninger og kapitalbinding
+Pluk, pak og håndtering
+Transport og distribution
+Administration, kundeservice og returhåndtering
+Cost-to-serve analyseres typisk på kunde-, produkt- eller ordreniveau og giver et mere nuanceret billede end klassiske nøgletal som dækningsbidrag alene.
+Hvad bruger man cost-to-serve til?
+Cost-to-serve bruges til at forstå, hvor profit skabes, og hvor den reelt forsvinder i supply chain.
+Det giver mulighed for at:
+Identificere kunder eller produkter med lav eller negativ lønsomhed
+Forstå konsekvenserne af servicekrav som små ordrer eller hyppige leveringer
+Understøtte differentieret servicegrad baseret på lønsomhed
+Optimere priser, minimumsordrer og leveringsvilkår
+Træffe mere kvalificerede beslutninger om sortiment og kundesegmenter
+For mange virksomheder afslører cost-to-serve, at høj omsætning ikke nødvendigvis betyder høj indtjening.
+Hvornår er cost-to-serve relevant?
+Cost-to-serve er særligt relevant, når virksomheden oplever pres på marginer eller stigende kompleksitet i supply chain.
+Det er ofte aktuelt, hvis:
+Der er store forskelle i kunders ordre- og leveringsmønstre
+Servicegraden er høj, men indtjeningen lav
+Logistik- og lageromkostninger stiger uden klar forklaring
+Der er mange undtagelser og manuelle processer i ordrehåndtering
+I disse situationer kan cost-to-serve skabe det nødvendige overblik til at prioritere rigtigt.
+Hvordan arbejder man med cost-to-serve?
+Arbejdet med cost-to-serve kræver adgang til pålidelige data på tværs af funktioner.
+Typisk indebærer det:
+Indsamling af data fra salg, lager, logistik og økonomi
+Allokering af omkostninger til kunder, produkter eller ordrer
+Analyse af forskelle i servicekrav og adfærd
+Identifikation af forbedringspotentialer
+Justering af processer, servicegrader eller kommercielle vilkår
+Når cost-to-serve bruges aktivt, bliver det et strategisk værktøj til at reducere kompleksitet og forbedre den samlede lønsomhed i supply chain.

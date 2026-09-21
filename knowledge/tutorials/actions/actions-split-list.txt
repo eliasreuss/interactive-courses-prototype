@@ -1,0 +1,14 @@
+---
+topic: How to split an Action list in Inact Now
+source_type: tutorial
+language: english
+keywords: split list, divide, separate, action list, subgroups, distribute work
+product_area: Actions
+question_type: how-to
+---
+
+The Split list feature lets you divide a single Action list into smaller, more focused lists — useful when a list has grown large or when you want to distribute work across team members.
+
+Open the Action list and click the gear icon in the top right corner. Choose Split list from the dropdown. Follow the prompts to define how the list should be split — for example, by a column value or a set number of items.
+
+Each resulting split becomes its own separate Action list that you can assign, manage, and track independently.

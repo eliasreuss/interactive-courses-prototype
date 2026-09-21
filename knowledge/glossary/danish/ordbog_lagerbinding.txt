@@ -1,0 +1,38 @@
+---
+topic: Lagerbinding
+source_type: glossary
+language: danish
+keywords: Lagerbinding, Tied-up capital in inventory, kapital, lager, varer, kapitalbinding, bundet, desto, længere
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Lagerbinding
+term_en: Tied-up capital in inventory
+url: https://inact.io/ordbog/lagerbinding/
+---
+
+Lagerbinding — English: Tied-up capital in inventory
+Lagerbinding er den kapital, du har bundet i dit varelager, altså værdien af de varer, du endnu ikke har solgt. Det kan være råvarer, varer under fremstilling eller færdigvarer.
+Hvad er lagerbinding?
+Lagerbinding refererer til den økonomiske værdi af de varer, du har liggende på lager. Hver vare repræsenterer en investering af kapital, som ikke kan anvendes til andre formål.
+Kapital bindes i en vare fra det øjeblik, den indkøbes eller produceres og fortsætter, indtil varen er solgt og betalt af kunden. Jo længere tid en vare ligger på lager, desto længere er kapitalen bundet.
+Hvad påvirker lagerbinding?
+Lagerbinding ændrer sig løbende og påvirkes af en flere faktorer, som:
+Hvor meget du har på lager: jo flere varer du har på lager, desto mere kapital binder du.
+Hvor hurtigt du sælger dine varer
+(omsætningshastighed): jo langsommere varerne sælger, desto længere er pengene bundet.
+Hvordan du køber ind: Store indkøb (for eksempel for at opnå mængderabat eller på grund af høje minimumsordrekrav) øger lagerniveauet og dermed lagerbindingen.
+Hvilke aftaler du har med dine leverandører: lange leveringstider kræver ofte større sikkerhedslagre.
+Hvordan reducerer man lagerbinding?
+At reducere din lagerbinding handler det om at frigøre kapital uden at skabe leveringsproblemer, som dine kunder i sidste ende betaler for.
+Det er sjældent en 'her og nu'-løsning uden omkostninger, men snarere en løbende optimeringsproces, som kan inkludere:
+Reducering af sikkerhedslager, hvor det et muligt
+Fjern eller nedbring langsomt omsættelige varer
+Gennemgå dine planlægningsparametre: kan du bestille mindre og oftere til en acceptabel pris?
+Målet er ikke at have mindst muligt lager, men at have det rette på lager.
+Her kan det være relevant med en dobbelt ABC-analyse, læs om metoden her.
+Forskellen på lagerbinding og kapitalbinding?
+Begreberne lagerbinding og kapitalbinding bruges ofte synonymt, men der er en nuanceret forskel:
+Lagerbinding: Refererer specifikt til den kapital, der er investeret i lagerbeholdningen. Det er en delmængde af kapitalbinding.
+Kapitalbinding: Omfatter al den kapital, en virksomhed har investeret i sine aktiver for eksempel bygninger, maskiner og lager.
+Tilbage til o rd bogen

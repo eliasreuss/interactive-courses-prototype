@@ -1,0 +1,16 @@
+---
+topic: How to clear a selection in an End2End view in Inact Now
+source_type: tutorial
+language: english
+keywords: reset, clear selection, undo drill down, deselect, start over
+product_area: End2End
+question_type: how-to
+---
+
+A Reset link appears next to a column heading as soon as that column has a selected bucket. Click it to clear all selections in that column; the chain recalculates immediately and the greyed-out tiles come back to life.
+
+If more than one column has selections, each has its own Reset link and you clear them one column at a time.
+
+You can also deselect a single bucket by clicking its tile again, which is useful when you have selected several buckets and only want to remove one of them.
+
+Selections are a way of exploring. They are not stored as part of the view unless you deliberately save the view while they are applied, so use Reset rather than Save when you just want to get back to the full picture.

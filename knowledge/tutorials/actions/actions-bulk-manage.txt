@@ -1,0 +1,21 @@
+---
+topic: How to bulk manage Action lists in Inact Now
+source_type: tutorial
+language: english
+keywords: bulk select, multiple action lists, assign, change layout, change group, delete multiple
+product_area: Actions
+question_type: how-to
+---
+
+You can take action on several Action lists at once from the Actions library page.
+
+Tick the checkbox on the left side of each Action list row you want to include. As you select items, a bar appears at the bottom of the page showing how many lists are selected and what you can do with them.
+
+The available bulk actions are:
+- Assign — assign all selected lists to a team member at once
+- Change layout — apply the same status layout to all selected lists
+- Change group — move all selected lists to a different group
+- Change author — change the author/creator on all selected lists
+- Delete — delete all selected lists at once (you will be asked to confirm)
+
+To cancel your selection, click Deselect in the bottom bar.

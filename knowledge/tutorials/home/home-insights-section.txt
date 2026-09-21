@@ -1,0 +1,18 @@
+---
+topic: What the Insights section on the Home page shows in Inact Now
+source_type: tutorial
+language: english
+keywords: insights, home page, pinned insights, quick access, insight list, personal
+product_area: Home
+question_type: concept
+---
+
+The Insights section at the bottom of the Home page is a personalised list of Insights you've chosen to pin there for quick access. It saves you from going through the full Insights library every time you want to open a specific one.
+
+Each row shows the Insight name with a small document icon. Clicking an Insight name opens it directly.
+
+Next to the Insights heading you'll see two buttons:
+- + New Insight — starts the process of creating a brand-new Insight, right from the Home page.
+- Edit — lets you choose which Insights appear in this section.
+
+The Insights list here is personal to you — choosing which Insights to pin here doesn't affect what other users see on their Home page.

@@ -1,0 +1,47 @@
+---
+topic: Supply chain resilience
+source_type: glossary
+language: danish
+keywords: Supply chain resilience, virksomheden, resilience, chain, supply, handler, leverandører, forsyningskæden, flere
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Supply chain resilience
+term_en: Supply chain resilience
+url: https://inact.io/ordbog/supply-chain-resilience/
+---
+
+Supply chain resilience
+Supply chain resilience handler om virksomhedens evne til at håndtere forstyrrelser og vende tilbage til normal drift. For mange virksomheder handler det også om at lære af forstyrrelserne og opbygge en stærkere og mere fleksibel forsyningskæde. Det kan for eksempel være forsinkede leverancer, mangel på råvarer, ændringer i efterspørgslen, transportproblemer eller ustabile leverandører. Målet er ikke at undgå alle problemer, men at gøre forsyningskæden robust nok til at håndtere usikkerhed uden store konsekvenser for kunder, drift og økonomi.
+Hvad betyder supply chain resilience i praksis?
+I praksis handler supply chain resilience om, hvor sårbar virksomheden er, når noget ikke går som planlagt. Mange forsyningskæder fungerer effektivt, så længe driften kører som planlagt. Problemerne opstår, når virkeligheden ændrer sig hurtigere end planerne.
+Forsyningskæder bliver konstant påvirket af ændringer og forstyrrelser. Det kan være en leverandør, der ikke leverer til tiden, en container, der bliver forsinket under transport, eller en kritisk komponent, som pludselig ikke kan skaffes. Samtidig kan efterspørgslen ændre sig hurtigere end virksomheden forventer, så planerne ikke længere passer til virkeligheden.
+Her bliver det hurtigt tydeligt, hvor robust forsyningskæden egentlig er.
+Nogle virksomheder opdager problemerne tidligt og kan reagere hurtigt. Andre mangler overblik og ender i brandslukning i form af: hasteindkøb ekspresfragt flere restordrer lavere servicegrad
+Supply chain resilience handler derfor ikke kun om sikkerhedslagre eller backup-leverandører.
+Det handler også om synlighed, fleksibilitet og beslutningsevne. Her hænger resilience tæt sammen med både supply chain visibility og end-to-end intelligence.
+Hvorfor er supply chain resilience vigtigt?
+Supply chain resilience er vigtigt, fordi mange forsyningskæder er blevet mere komplekse og mere afhængige af leverandører og transport på tværs af kontinenter. Mange virksomheder har gennem årene fokuseret på: lave lagerbeholdninger færre leverandører høj kapacitetsudnyttelse lave transportomkostninger
+Det skaber en effektiv drift under stabile forhold. Men det gør samtidig forsyningskæden mere sårbar, når noget ændrer sig.
+Hvis virksomheden kun har én kritisk leverandør, kan en enkelt forsinkelse få store konsekvenser. Hvis lageret er reduceret meget, bliver der mindre plads til at reagere på udsving i efterspørgslen eller leverancer.
+Supply chain resilience betyder ikke, at man undgår alle problemer. Det handler om at kunne reagere hurtigt og træffe de rigtige beslutninger, når virkeligheden ændrer sig.
+Det kræver et klart billede af, hvor virksomheden er mest sårbar. Det kan være afhængighed af få leverandører, varer med lang lead time eller et sikkerhedslager, der ikke længere matcher den reelle risiko.
+Robusthed betyder ikke at bygge større buffere overalt. Det handler om at forstå, hvor risikoen er størst, og hvor øget robusthed skaber mest værdi.
+Eksempel på supply chain resilience fra hverdagen
+Forestil dig en mellemstor producent af industrikomponenter. Virksomheden har to produktlinjer med meget forskellig efterspørgsel: én stabil linje til faste servicekontrakter og én projektbaseret linje, hvor ordrerne kommer i bølger.
+I en periode vokser projektforretningen kraftigt, og indkøb øger lageret for at følge med. Kort efter udskyder en stor kunde tre ordrer, mens en anden annullerer sit projekt.
+På få uger sidder virksomheden med for meget lager til projektlinjen – samtidig med, at der mangler komponenter til servicelinjen, fordi indkøbsbudgettet er brugt de forkerte steder.
+Salg lover leveringstider, som indkøb ikke kan holde. Produktionen må prioritere manuelt mellem de to produktlinjer, mens indkøb forsøger at rette op på planerne.
+Da virksomheden efterfølgende analyserer forløbet, viser det sig, at dataene faktisk pegede på udviklingen flere uger tidligere. Ingen havde koblet ændringerne i ordrereserven til lager- og indkøbsplanlægningen.
+Virksomheden ændrer derfor sin tilgang. De to produktlinjer får forskellige lagerstrategier, indkøbsplanen kobles tættere til ordrereserven, og der sættes alarmer op, når efterspørgselsmønstret ændrer sig markant.
+Næste gang opdager virksomheden ændringen tidligere og kan reagere, før problemerne spreder sig gennem forsyningskæden. Det er i praksis det, supply chain resilience handler om.
+Typiske misforståelser om supply chain resilience
+En typisk fejl er at tro, at resilience kun handler om at have mere lager. Ekstra lager kan skabe robusthed på kort sigt. Men store lagerbeholdninger løser ikke nødvendigvis problemer med dårlig synlighed, ustabile leverandører eller upræcis planlægning.
+En anden fejl er at fokusere ensidigt på lave omkostninger. Hvis virksomheden kun optimerer efter laveste pris, kan forsyningskæden blive mere sårbar over tid. Én billig leverandør kan skabe høj risiko, hvis virksomheden mangler alternativer.
+En tredje misforståelse er, at resilience kun er relevant ved store globale kriser. Mange problemer opstår i den almindelige drift: forsinkede leverancer upræcise forecasts pludselige efterspørgselsændringer kapacitetsproblemer kvalitetsfejl hos leverandører
+Små forstyrrelser kan hurtigt sprede sig gennem hele forsyningskæden, hvis virksomheden ikke opdager dem tidligt. Mange virksomheder undervurderer også, hvor hurtigt kompleksitet gør forsyningskæden mere sårbar. Flere produkter, flere leverandører samt flere undtagelser og specialhåndteringer giver flere afhængigheder - og dermed flere steder, hvor driften kan bryde sammen.
+Hvordan kan virksomheden arbejde med supply chain resilience?
+Start med at identificere, hvor forsyningskæden er mest sårbar. Virksomheden bør blandt andet analysere: hvilke varer, der er mest kritiske (og for hvem) hvilke leverandører, som skaber størst risiko hvor virksomheden er afhængig af enkelte leverandører hvilke produkter, der har lange leveringstider hvor lageret er mest presset
+Det er også vigtigt at arbejde med prioritering. Her spiller produkt management en vigtig rolle. Ikke alle produkter skal behandles ens. Nogle produkter er kritiske for kunderne eller driften og kræver højere robusthed, mens andre bør have lavere lager, alternative forsyningsmodeller eller måske helt ud af sortimentet.
+Virksomheder får også stor værdi af bedre data på tværs af værdikæden, så ændringer i leverancer, efterspørgsel og lager bliver synlige tidligere.
+Supply chain resilience handler i sidste ende ikke om at skabe en perfekt eller risikofri forsyningskæde. Det handler om at gøre virksomheden bedre til at håndtere usikkerhed, når virkeligheden ændrer sig, og stærkere hver gang den gør det.

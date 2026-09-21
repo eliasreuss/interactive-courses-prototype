@@ -1,0 +1,40 @@
+---
+topic: OTIF (On Time In Full)
+source_type: glossary
+language: danish
+keywords: OTIF (On Time In Full), leverer, kunder, højere, rigtige, aftale, antal, bedre, beregne
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: OTIF (On Time In Full)
+term_en: OTIF (On Time In Full)
+url: https://inact.io/ordbog/on-time-in-full/
+---
+
+OTIF (On Time In Full)
+OTIF (On Time In Full) måler, hvor ofte du leverer den rigtige vare, i den rigtige mængde og til den aftale tid.
+OTIF er en af de vigtigste måder at måle din leveringsevne på. Det handler om at levere præcis det, kunden har bestilt, til den aftale tid og i den fulde mængde. For handels- og produktionsvirksomheder er OTIF et udtryk for, hvor godt dine processer fungerer og, hvor tilfredse dine kunder er.
+Hvorfor er OTIF vigtigt for din forretning?
+OTIF viser, hvor godt du leverer på dine aftaler og hvor robust din drift er.
+En høj OTIF-score betyder, at du leverer, hvad du lover, hvilket har flere fordele:
+Højere kundetilfredshed: Kunder stoler på leverandører, der leverer stabilt
+Lavere omkostninger: Fejl i leverancer skaber ekstra arbejde og omkostninger
+Bedre planlægning: En stabil OTIF indikerer, at dine processer hænger sammen
+Stærkere omdømme: Du bliver opfattet som en pålidelig leverandør
+Hvordan beregner man OTIF?
+OTIF er forholdsvis simpelt at beregne, hvis du har styr på dine data.
+OTIF (%) = (Antal OTIF-leverancer / Samlet antal leverancer) x 100
+For at beregne OTIF skal du:
+Definere "On Time
+": Fastlæg et klart leveringsvindue (f.eks. +/- 1 dag fra aftalt dato).
+Definere "In Full": Afklar om det gælder hele ordren eller per varelinje
+Måle konsekvent: Registrér for hver leverance, om den opfylder begge kriterier.
+Kort sagt
+OTIF måler, om du leverer det rigtige til tiden – hver gang.
+Jo højere din OTIF er, desto bedre fungerer din supply chain og desto mere kan dine kunder stole på dig.
+Hvad er en god OTIF?
+En god OTIF afhænger af branche, kundekrav og kompleksitet i supply chain.
+Som tommelfingerregel ligger et acceptabelt niveau ofte omkring 85–95 %, mens
+95 % eller derover typisk betragtes som stærk leveringsevne. I nogle brancher eller kundeaftaler kan kravet dog være højere.
+Det vigtigste er derfor ikke kun at sammenligne sig med et generelt benchmark, men at måle OTIF konsekvent og sætte et mål, der passer til dine kunder og leveringsaftaler.
+Tilbage til o rd bogen

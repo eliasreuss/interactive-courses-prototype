@@ -1,0 +1,18 @@
+---
+topic: Indkøbsmodenhedens udvikling
+source: Suppliers Intro
+source_type: course
+language: danish
+product_area: supplier
+question_type: what
+keywords:
+- indkøb
+- modenhed
+- sourcing
+- samlede ejeromkostninger
+- værdikæde
+- strategisk partner
+- organisatorisk vækst
+---
+
+Indkøbsmodenhed refererer til udviklingen af en organisations indkøbsfunktion fra basal, reaktiv ordrebehandling til en mere avanceret og strategisk rolle. Efterhånden som organisationer vokser, udvikler indkøb sig fra blot at søge den laveste pris til at koordinere sourcingaktiviteter, reducere de samlede ejeromkostninger og i sidste ende optimere hele værdikæden. Denne rejse indebærer et skift i fokus fra kortsigtede transaktioner til langsigtet værdiskabelse, hvilket gør indkøb til en central strategisk partner i organisationen.

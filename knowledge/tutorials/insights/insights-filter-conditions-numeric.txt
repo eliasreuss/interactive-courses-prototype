@@ -1,0 +1,21 @@
+---
+topic: How to configure a filter condition for numeric columns in Inact Now
+source_type: tutorial
+language: english
+keywords: filter condition, numeric filter, greater than, less than, between, number filter, data slicer
+product_area: Insights
+question_type: how-to
+---
+
+When you add an Insight filter on a numeric column, the Data slicer dialog shows a number input field instead of a value checklist. The condition dropdown has these options for numeric columns:
+
+Greater — column value must be greater than the entered number
+Equal or greater — column value must be ≥ the entered number
+Less — column value must be less than the entered number
+Equal or less — column value must be ≤ the entered number
+Equal — column value must exactly match the number
+Not equal — column value must not match the number
+Between — column value must fall between two numbers
+Not between — column value must fall outside two numbers
+
+Enter the number(s) in the input field(s), then click Save to apply the filter or Cancel to discard it.

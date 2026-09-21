@@ -1,0 +1,19 @@
+---
+topic: Accessing Actions from Home Screen
+source: Now Actions
+source_type: course
+language: english
+product_area: platform
+question_type: how
+keywords:
+- Actions
+- Home screen
+- Insights
+- pinned
+- navigation
+- access
+- user interface
+- click
+---
+
+To access an Action, go to your Home screen where your most important Actions are pinned for convenience. Locate the Action you want and click on its name directly from the Home view to open it. This process is similar to accessing Insights, ensuring quick and easy navigation to frequently used features.

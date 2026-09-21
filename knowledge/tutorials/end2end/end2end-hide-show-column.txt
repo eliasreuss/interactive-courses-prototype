@@ -1,0 +1,14 @@
+---
+topic: How to hide or show a column in an End2End view in Inact Now
+source_type: tutorial
+language: english
+keywords: hide column, show column, two columns, remove suppliers, simplify view
+product_area: End2End
+question_type: how-to
+---
+
+Each data source in the settings panel has a Hide column button. Click it and that column disappears from the view; the button changes to Show column, and clicking it brings the column back.
+
+Hiding is useful when a question only concerns two of the three data sources — for example a pure product-to-customer analysis where the supplier side would only distract. The relation counts and link areas for the remaining columns stay in place.
+
+Hiding a column is a display setting stored with the view, so click Save if you want it to stay hidden for everyone who opens the view. If you only need it hidden while you work, leave it unsaved.

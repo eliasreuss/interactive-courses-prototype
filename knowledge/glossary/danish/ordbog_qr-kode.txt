@@ -1,0 +1,30 @@
+---
+topic: QR-kode
+source_type: glossary
+language: danish
+keywords: QR-kode, QR Code, qr-koder, chain, supply, bruger, information, bedre, bruges
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: QR-kode
+term_en: QR Code
+url: https://inact.io/ordbog/qr-kode/
+---
+
+QR-kode — English: QR Code
+En QR-kode (Quick Response-kode) er en todimensionel stregkode, der hurtigt kan aflæses med en scanner eller smartphone. I supply chain bruges QR-koder til at spore produkter, lagerbeholdning og leverancer, hvilket skaber bedre kontrol og synlighed i hele kæden.
+Hvad er en QR-kode?
+QR-koder indeholder digital information, som kan indeholde produktdata, serienummer, batchnummer eller links til systemer. De gør det muligt hurtigt at hente information uden manuel indtastning og bruges i stigende grad til automatisering og dokumentation i logistik og lagerstyring.
+Hvad bruger man QR-koder til?
+Man bruger QR-koder til at digitalisere operationelle processer som at:
+Identificere og spore produkter i lager og under transport
+Forenkle scanning og registrering af varer
+Integrere produktdata med IT-systemer for bedre beslutningsgrundlag
+Hvornår bruger man QR-koder i supply chain?
+I supply chain anvendes QR-koder typisk til:
+Lagerstyring og inventaroptælling
+Transport og levering, hvor scanning sikrer korrekt modtagelse
+Produktionsprocesser, hvor sporing af komponenter eller batcher er kritisk
+Kundekommunikation, for eksempel ved returnering eller produktinformation
+Hvordan laver man en QR-kode?
+QR-koder kan genereres via software, hvor man indtaster den information, der skal være i koden. Den kan derefter printes på etiketter, emballage eller dokumenter. I supply chain kan koder kobles til ERP- eller WMS-systemer for automatiseret tracking.

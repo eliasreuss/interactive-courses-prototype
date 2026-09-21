@@ -1,0 +1,20 @@
+---
+topic: How to download data from an Insight in Inact Now
+source_type: tutorial
+language: english
+keywords: download, export, insight data, CSV, copy to clipboard, wrap text, decimals
+product_area: Insights
+question_type: how-to
+---
+
+You can download the data from an Insight's Grid view for use in other tools.
+
+In the small toolbar above the data table, you'll find:
+
+Copy to clipboard (the copy icon) — copies the current visible data to your clipboard so you can paste it directly into Excel or another tool.
+
+Download (the download arrow icon) — downloads the data as a file. The download includes the rows and columns currently visible, respecting any active filters.
+
+Both options export only what is currently shown — meaning your active filters apply. If you want to export all data, make sure to clear any filters first.
+
+The toolbar also has a Wrap text button (to control whether long text in cells wraps onto multiple lines) and a Show/hide decimals button to toggle decimal precision.

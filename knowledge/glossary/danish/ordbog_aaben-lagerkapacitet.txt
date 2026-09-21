@@ -1,0 +1,32 @@
+---
+topic: Åben lagerkapacitet
+source_type: glossary
+language: danish
+keywords: Åben lagerkapacitet, Open Warehouse Capacity, lagerkapacitet, varer, plads, bruger, flaskehalse, indkøb, konkret, lagerets
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Åben lagerkapacitet
+term_en: Open Warehouse Capacity
+url: https://inact.io/ordbog/aaben-lagerkapacitet/
+---
+
+Åben lagerkapacitet — English: Open Warehouse Capacity
+Åben lagerkapacitet beskriver den reelt tilgængelige lagerplads, efter at både den nuværende beholdning og alle planlagte indgående varer er taget i betragtning. Begrebet er afgørende for at vurdere, hvor mange yderligere varer man kan modtage eller producere uden at overskride lagerets fysiske grænser, og dermed undgå dyre flaskehalse ved varemodtagelsen.
+Hvad er åben lagerkapacitet?
+Åben lagerkapacitet er den dynamiske og fremadskuende beregning af ledig plads på lageret. I modsætning til blot at se på den tomme plads her og nu, medregner den varer, der er på vej ind. Dette giver et konkret billede af lagerets fleksibilitet og er essentielt for effektiv planlægning af indkøb, produktion og logistik. Det er et nøgletal for at sikre et jævnt flow i hele din supply chain.
+Hvad bruger man åben lagerkapacitet til?
+Man bruger indsigt i åben lagerkapacitet til at træffe smartere og mere proaktive beslutninger.
+Konkret bruges det til at:
+Planlægge nye indkøb og produktionsordrer uden risiko for overfyldning og dyre eksterne lagerløsninger.
+Optimere udnyttelsen af lagerplads og minimere intern transporttid.
+Forbedre varemodtagelsen ved at sikre, at der er plads, når varerne ankommer.
+Balancere kapitalbinding
+(ikke købe for meget) med servicegrad
+(ikke løbe tør for varer).
+I hvilke situationer skal man bruge viden om åben lagerkapacitet?
+Viden om åben lagerkapacitet er især kritisk i følgende situationer:
+Ved daglig operationel planlægning for at undgå flaskehalse.
+Før der afgives store indkøbsordrer eller startes nye produktionsserier.
+Ved sæsonudsving eller kampagner, hvor vareflowet er unormalt højt.
+Når man evaluerer, om der er behov for at investere i lagerudvidelse eller optimere det eksisterende setup.

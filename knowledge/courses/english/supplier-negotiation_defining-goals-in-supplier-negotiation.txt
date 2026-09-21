@@ -1,0 +1,19 @@
+---
+topic: Defining Goals in Supplier Negotiation
+source: Supplier Negotiation
+source_type: course
+language: english
+product_area: supplier
+question_type: how
+keywords:
+- negotiation strategy
+- procurement
+- goal setting
+- Double ABC categories
+- levers
+- supplier negotiation
+- variables
+- objectives
+---
+
+The first step in a supplier negotiation strategy is to clearly define your goal. This goal will guide your decisions on which negotiation levers to use and which Double ABC categories to prioritize. Common procurement goals include cost reduction, quality improvement, securing supply, or fostering innovation. By establishing a specific objective at the outset, you can then identify the variables and negotiation tactics most likely to help you achieve your desired outcome. Defining the goal ensures that your negotiation efforts are focused and aligned with your organization's broader procurement strategy.

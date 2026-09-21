@@ -1,0 +1,19 @@
+---
+topic: Adgang til Actions fra startskærmen
+source: Now Actions
+source_type: course
+language: danish
+product_area: platform
+question_type: how
+keywords:
+- Actions
+- startskærm
+- Insights
+- fastgjort
+- navigation
+- adgang
+- brugergrænseflade
+- klik
+---
+
+For at få adgang til en Action skal du gå til din startskærm, hvor dine vigtigste Actions er fastgjort for nemheds skyld. Find den ønskede Action, og klik på navnet direkte fra startvisningen for at åbne den. Denne proces ligner adgangen til Insights og sikrer hurtig og nem navigation til ofte anvendte funktioner.

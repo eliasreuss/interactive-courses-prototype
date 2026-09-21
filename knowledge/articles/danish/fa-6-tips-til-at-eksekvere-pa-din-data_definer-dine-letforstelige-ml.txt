@@ -1,0 +1,9 @@
+---
+topic: Definer dine letforståelige mål
+source_type: article
+language: danish
+article_source: Få 6 tips til at eksekvere på din data
+keywords: mål, projektmission, cause-and-effect diagram
+---
+
+Uden et mål vil dit projekt ikke tilfredsstille nogen. Start med en 'projektmission' f.eks. forbedret omsætning, reduktion af arbejdskapital, øget service level mv., og nedbryd missionen i milepæle.

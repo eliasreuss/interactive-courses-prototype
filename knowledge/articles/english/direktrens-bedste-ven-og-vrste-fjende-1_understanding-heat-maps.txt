@@ -1,0 +1,11 @@
+---
+topic: Understanding Heat Maps
+source_type: article
+language: english
+article_source: Direktørens bedste ven og værste fjende (1)
+keywords: heat map, visualization, profitability, insight, strategy
+---
+
+1. Heat maps visualize a company's profitability based on selected dimensions like product and customer groups. 
+2. Use color codes (green, yellow, red) for profit, neutral, and loss areas. 
+3. Provides insights for optimizing business strategies and identifying areas for improvement.

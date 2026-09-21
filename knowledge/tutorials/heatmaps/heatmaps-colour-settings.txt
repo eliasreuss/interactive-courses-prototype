@@ -1,0 +1,18 @@
+---
+topic: How to change the colours of a Heatmap in Inact Now
+source_type: tutorial
+language: english
+keywords: color settings, colour settings, presets, gradient, colour stops, apply, change colours
+product_area: Heatmaps
+question_type: how-to
+---
+
+In edit mode, click the small colour swatch with a pencil, just left of the colour legend, to open the Color settings window. It contains:
+
+Scope — whether the colouring is calculated across the whole matrix (Global), within each Row, or within each Column.
+Type — Ranked or Proportional. A sentence under the two dropdowns always spells out what the current combination does, for example "Colors show overall rank across the entire Heatmap."
+Presets — six ready-made gradients, including red-to-green in both directions and single-colour scales.
+A custom gradient bar with colour stops beneath it. Click a stop to change its colour, or click the "×" under a stop to remove it, and the gradient rebuilds.
+Preview — a strip of sample values from 1 to 100 showing how the scale will look before you commit.
+
+Click Apply to use the scale, or Cancel to discard. Then click Save in the toolbar to store it with the heatmap.

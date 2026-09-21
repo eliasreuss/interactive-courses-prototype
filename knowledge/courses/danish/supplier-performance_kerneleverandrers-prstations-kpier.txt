@@ -1,0 +1,19 @@
+---
+topic: Kerneleverandørers præstations-KPI'er
+source: Supplier Performance
+source_type: course
+language: danish
+product_area: supplier
+question_type: what
+keywords:
+- leverandørpræstation
+- KPI'er
+- måling
+- nøglepræstationsindikatorer
+- evaluering
+- succesmålinger
+- opfølgning
+- leverandørstyring
+---
+
+Leverandørpræstation vurderes ved hjælp af fem kerne-nøglepræstationsindikatorer, eller KPI'er. Disse KPI'er giver en ensartet og omfattende metode til at måle, hvor godt hver leverandør lever op til forventningerne. Ved at følge disse specifikke målinger kan organisationer objektivt vurdere leverandørernes effektivitet, identificere forbedringsområder og sikre, at leverandørerne bidrager positivt til de overordnede mål for forsyningskæden. Ensartet måling på tværs af alle leverandører muliggør retfærdige sammenligninger og understøtter databaserede beslutninger i leverandørstyringen.

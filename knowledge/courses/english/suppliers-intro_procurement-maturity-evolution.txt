@@ -1,0 +1,18 @@
+---
+topic: Procurement Maturity Evolution
+source: Suppliers Intro
+source_type: course
+language: english
+product_area: supplier
+question_type: what
+keywords:
+- procurement
+- maturity
+- sourcing
+- total cost of ownership
+- value chain
+- strategic partner
+- organizational growth
+---
+
+Procurement maturity refers to the progression of an organization's procurement function from basic, reactive order handling to a more advanced, strategic role. As organizations grow, procurement evolves from simply seeking the lowest price to coordinating sourcing activities, reducing the total cost of ownership, and ultimately optimizing the entire value chain. This journey involves shifting focus from short-term transactions to long-term value creation, making procurement a key strategic partner within the organization.

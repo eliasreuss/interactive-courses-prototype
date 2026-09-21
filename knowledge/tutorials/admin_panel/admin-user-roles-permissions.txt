@@ -1,0 +1,17 @@
+---
+topic: Setting a user's role and permissions
+source_type: tutorial
+language: english
+keywords: role, permissions, user, super user, admin, subscription only, access control
+product_area: Admin
+question_type: how-to
+---
+
+The Permissions tab in the user edit dialog is where you assign a role. There are four roles to choose from:
+
+User (most common) — basic access to view dashboards, insights, and actions.
+Super User — can create content (insights and actions) but only for themselves.
+Admin — full administrative control. Has granular checkboxes for Dashboards (View, Administrate), Insights (View, Create, Administrate), Actions (View, Create, Administrate), and End2End (View, Administrate).
+Subscription Only — no login access. Content is delivered directly to their mailbox. Can receive dashboards, insights, and actions by email.
+
+There's also a Simple view (Home only) toggle at the top (with an info icon), and a Download Data checkbox that controls whether the user can export data.

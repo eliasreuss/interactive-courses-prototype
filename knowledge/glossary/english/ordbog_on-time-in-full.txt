@@ -1,0 +1,46 @@
+---
+topic: OTIF (On Time In Full)
+source_type: glossary
+language: english
+keywords: OTIF (On Time In Full), deliver, delivery, customer, customers, agreed, calculate, consistently, higher
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: OTIF (On Time In Full)
+term_en: OTIF (On Time In Full)
+url: https://inact.io/en/glossary/on-time-in-full/
+---
+
+OTIF (On Time In Full)
+OTIF (On Time In Full) measures how often you deliver the right product, in the right quantity, at the agreed time.
+OTIF is one of the most important ways to measure your delivery performance. It reflects your ability to deliver exactly what the customer ordered, at the agreed time and in full. For trading and manufacturing companies, OTIF is an indicator of how well your processes work and how satisfied your customers are.
+Why is OTIF important for your business?
+OTIF shows how well you deliver on your commitments and how robust your operations are.
+A high OTIF score means you deliver what you promise, which brings several benefits:
+Higher customer satisfaction:
+Customers trust suppliers who deliver consistently.
+Lower costs:
+Delivery errors create extra work and additional costs.
+Better planning:
+A stable OTIF indicates that your processes are aligned.
+Stronger reputation:
+You are perceived as a reliable supplier.
+How do you calculate OTIF?
+OTIF is relatively simple to calculate if you have control over your data.
+OTIF (%) = (Number of OTIF deliveries / Total number of deliveries) × 100
+To calculate OTIF, you need to:
+Define “On Time”:
+Set a clear delivery window (e.g. +/- 1 day from the agreed date).
+Define “In Full”:
+Clarify whether it applies to the entire order or per order line.
+Measure consistently:
+Record for each delivery whether it meets both criteria.
+In short
+OTIF measures whether you deliver the right product on time every time.
+The higher your OTIF, the better your supply chain performs and the more your customers can rely on you.
+What is a good OTIF?
+A good OTIF depends on industry, customer requirements, and supply chain complexity.
+As a rule of thumb, an acceptable level is often around 85–95%, while
+95% or above is typically considered strong delivery performance.
+In some industries or customer agreements, the requirement may be even higher.
+The key is not just to benchmark against general standards, but to measure OTIF consistently and set a target that fits your customers and delivery agreements.

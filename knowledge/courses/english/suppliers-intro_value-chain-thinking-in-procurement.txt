@@ -1,0 +1,16 @@
+---
+topic: Value Chain Thinking in Procurement
+source: Suppliers Intro
+source_type: course
+language: english
+product_area: supplier
+question_type: what
+keywords:
+- value chain
+- procurement
+- competitiveness
+- innovation
+- sustainability
+---
+
+Value chain thinking in procurement involves viewing procurement not just as a support function, but as a strategic driver that contributes directly to a company's competitiveness, innovation, and sustainability. This approach requires a mindset shift, recognizing that procurement decisions can influence the overall value delivered to customers and the business. By adopting value chain thinking, organizations position procurement as a key player in achieving business goals and maintaining a competitive edge.

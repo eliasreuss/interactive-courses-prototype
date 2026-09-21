@@ -1,0 +1,14 @@
+---
+topic: How to open the filter picker to add an Insight filter in Inact Now
+source_type: tutorial
+language: english
+keywords: insight filter, add filter, filter column picker, data slicer, search box
+product_area: Insights
+question_type: how-to
+---
+
+In edit mode, a "+ Insight filter" button appears in the toolbar next to the view tabs. Clicking it opens a column picker dropdown with a search box at the top, listing all columns from the Insight's data source — not just numeric ones. Each column is shown with a type icon (# for numeric, Tr for text, ID for identifiers, and so on).
+
+If a column already has an active filter, it's marked "Active" in the list.
+
+Click any column name to open the Data slicer dialog for that column, where you set the filter condition and values (the available conditions differ for text versus numeric columns).

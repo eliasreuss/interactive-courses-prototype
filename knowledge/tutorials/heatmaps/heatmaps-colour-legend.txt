@@ -1,0 +1,14 @@
+---
+topic: How to read the colour legend on a Heatmap in Inact Now
+source_type: tutorial
+language: english
+keywords: colour legend, colour scale, high low, colour bands, what do the colours mean
+product_area: Heatmaps
+question_type: concept
+---
+
+The bar at the top right of a heatmap is the colour legend. It is divided into bands, each labelled with a value, and marked High at the left end and Low at the right end. Every cell in the matrix is coloured according to which band its value falls into.
+
+Read the legend before you read the matrix, because the colours mean nothing on their own — the same red can represent a large negative cost in one heatmap and a small positive number in another. The labels on the bands are the actual boundary values in your data.
+
+How the colours are distributed depends on the colour settings: the Type decides whether colours follow the rank of the values or scale proportionally to them, and the Scope decides whether the ranking is done across the whole heatmap, within each row, or within each column. Both are shown in the About this Heatmap window and can be changed in edit mode.

@@ -1,0 +1,16 @@
+---
+topic: How to hide the totals on a Heatmap in Inact Now
+source_type: tutorial
+language: english
+keywords: hide total, show total, total row, total column, remove totals
+product_area: Heatmaps
+question_type: how-to
+---
+
+In edit mode, the Hide total button in the toolbar removes both the Total row and the Total column from the matrix. The button then reads Show total; click it to bring them back.
+
+Hiding the totals is mostly a readability choice. The totals are usually much larger than the individual cells, and on a proportional colour scale they can dominate the colouring and flatten the differences you actually wanted to see.
+
+Note that the sort arrows live in the Total headers, so with the totals hidden you lose the quickest way to reorder rows and columns. Sort first, then hide.
+
+Click Save to store the choice with the heatmap.

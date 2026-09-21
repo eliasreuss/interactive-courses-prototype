@@ -1,0 +1,20 @@
+---
+topic: Håndtering af CA- og CB-produkter
+source: Supplier Negotiation
+source_type: course
+language: danish
+product_area: supplier
+question_type: how
+keywords:
+- CA-produkter
+- CB-produkter
+- lavværdiprodukter
+- stabil efterspørgsel
+- leveringssikkerhed
+- ordrefrekvens
+- lagerstyring
+- leverandørforhandling
+- effektivitet
+---
+
+CA- og CB-produkter er lavværdiprodukter med en stabil efterspørgsel. For at håndtere disse produkter effektivt bør man prioritere at opretholde en pålidelig og effektiv forsyning for at undgå lagerudtømning, da dette kan føre til utilfredse kunder. Selvom disse varer ikke bidrager væsentligt til overskuddet, kan forstyrrelser i deres tilgængelighed skabe driftsmæssige problemer. Det er bedst at forhandle med leverandørerne om større, men sjældnere ordrer, hvilket reducerer det administrative arbejde og sikrer en stabil varestrøm. Hovedmålet er at holde disse produkter konstant tilgængelige, samtidig med at indsatsen og omkostningerne ved genopfyldning minimeres.

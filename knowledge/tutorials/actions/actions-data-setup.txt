@@ -1,0 +1,16 @@
+---
+topic: How to add and manage data columns in an Action list using Data Setup in Inact Now
+source_type: tutorial
+language: english
+keywords: data setup, available columns, included columns, add column, remove column
+product_area: Actions
+question_type: how-to
+---
+
+Data Setup controls which columns are part of the Action list at all — this is different from showing or hiding columns visually. Use Data Setup to add or remove columns from the list entirely.
+
+Open the Action list and click the gear icon in the top right corner. Choose Data setup. The Data Setup window opens with two panels side by side.
+
+Available columns shows all columns that can be added. Click the + button next to a column to move it to Included columns. Included columns shows the columns currently in the list. Click the − button next to a column to remove it.
+
+Use the Search columns bar at the top to quickly find a specific column by name. Click Save when you are done.

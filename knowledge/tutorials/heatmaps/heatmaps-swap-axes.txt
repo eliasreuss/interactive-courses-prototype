@@ -1,0 +1,14 @@
+---
+topic: How to swap the axes of a Heatmap in Inact Now
+source_type: tutorial
+language: english
+keywords: swap, transpose, switch axes, rotate, rows to columns
+product_area: Heatmaps
+question_type: how-to
+---
+
+The small button with two opposing arrows, sitting between the two categorisation dropdowns in the toolbar, swaps the axes of the heatmap. Click it and the rows become the columns and the columns become the rows.
+
+The numbers are unchanged — it is the same matrix transposed. Swap when one axis has many more values than the other, because a matrix with many rows and few columns is usually easier to read on screen than the other way round.
+
+The same swap button also appears in the Create Heatmap window, where it switches the Vertical Dataset and the Horizontal Dataset before the heatmap is built.

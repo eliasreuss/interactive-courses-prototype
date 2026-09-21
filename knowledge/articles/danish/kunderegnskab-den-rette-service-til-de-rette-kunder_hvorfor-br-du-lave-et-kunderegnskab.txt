@@ -1,0 +1,9 @@
+---
+topic: Hvorfor bør du lave et kunderegnskab?
+source_type: article
+language: danish
+article_source: Kunderegnskab  Den rette service til de rette kunder
+keywords: kundeanalyse, profitabilitet, cost-to-serve, kundetilfredshed
+---
+
+Mange salgsafdelinger er modvillige når det handler om at analysere deres kunder. Styrer man primært efter toplinjen, ender man med at overservicere de forkerte kunder. Virksomheden bør spørge sig selv: Hvilke kunder kan vi ikke tåle at miste? Hvordan løfter vi lønsomheden på hver enkelt kunde, gennem små forandringer?

@@ -1,0 +1,19 @@
+---
+topic: Differentiated Service Levels in Inventory
+source: Safety Stock
+source_type: course
+language: english
+product_area: inventory
+question_type: why
+keywords:
+- service level
+- Double ABC Analysis
+- inventory
+- stock
+- availability
+- critical items
+- differentiated service model
+- business impact
+---
+
+Using a single service level for all products can result in excess inventory for less important items and insufficient stock for critical ones. Adopting a differentiated service model, guided by Double ABC Analysis, allows companies to set higher service levels for products that are crucial to the business and lower levels for those with less impact. This approach improves product availability where it matters most while keeping overall inventory levels manageable, leading to more efficient and effective inventory management.

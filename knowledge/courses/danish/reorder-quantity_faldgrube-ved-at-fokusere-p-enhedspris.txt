@@ -1,0 +1,19 @@
+---
+topic: Faldgrube ved at fokusere på enhedspris
+source: Reorder Quantity
+source_type: course
+language: danish
+product_area: inventory
+question_type: why
+keywords:
+- enhedspris
+- ordremængde
+- efterspørgsel
+- lagerstyring
+- lagerbeholdning
+- omkostningsoptimering
+- genbestillingsmængde
+- forsyningskæde
+---
+
+Hvis man udelukkende fokuserer på at opnå den laveste enhedspris ved bestilling, kan det føre til betydelige problemer i lagerstyringen. Selvom en lavere enhedspris kan virke attraktiv, kræver leverandører ofte større ordremængder for at tilbyde disse rabatter. Dette kan resultere i, at man køber mere lager end nødvendigt for at dække den aktuelle efterspørgsel, hvilket fører til overflødig lagerbeholdning, øgede lageromkostninger og potentiel spild. Den optimale ordremængde bør balancere enhedsprisen med den faktiske efterspørgsel og lagerkapacitet, i stedet for kun at prioritere prisen.

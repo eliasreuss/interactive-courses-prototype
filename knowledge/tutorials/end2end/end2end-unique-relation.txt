@@ -1,0 +1,16 @@
+---
+topic: What the Unique button does in an End2End view in Inact Now
+source_type: tutorial
+language: english
+keywords: unique, unique relation, exclusively, single source, sole supplier, dependency
+product_area: End2End
+question_type: concept
+---
+
+When you have selected one or more buckets, a Unique button appears in the link area between the columns, and a "Unique Relation: OFF" indicator appears in the page header.
+
+By default (OFF), a product is included if any of the selected suppliers deliver it — even if other, unselected suppliers deliver it too. With Unique switched ON, only products that come exclusively from the selected suppliers are counted. Products with a second source are excluded.
+
+You switch it on by clicking the Unique button. The header sentence then changes to include the word "exclusively", the summary card of the affected column is marked with a green Unique tag, and the numbers update. Click the button again to switch it back off.
+
+Unique is the setting to use for dependency and risk questions — "which products would we lose if this supplier group stopped delivering?" — because it separates genuine single-source exposure from products where an alternative supplier already exists.

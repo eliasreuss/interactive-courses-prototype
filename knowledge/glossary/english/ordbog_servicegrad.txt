@@ -1,0 +1,37 @@
+---
+topic: Service level
+source_type: glossary
+language: english
+keywords: Service level, Servicegrad, level, service, customer, company, inventory, important, improving, orders
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Servicegrad
+term_en: Service level
+url: https://inact.io/en/glossary/service-level/
+---
+
+Service level — Danish: Servicegrad
+Service level is a measure of how well a company meets customer demand. It shows the proportion of orders that can be delivered on time and in the requested quantity, and is a key indicator of both customer satisfaction and supply chain efficiency.
+What is service level?
+Service level typically expresses the ratio between fulfilled orders and the total number of orders.
+A high service level means that the company delivers what the customer ordered, when the customer expects it.
+A low service level indicates the opposite. It means the company more frequently experiences stockouts, delays, or incomplete deliveries, which can impact both customer satisfaction and revenue.
+The concept is used both at product level and across the entire business, and is closely linked to inventory management and planning.
+Why is service level important?
+Service level has a direct impact on customer experience and the company’s competitiveness.
+A high service level helps ensure:
+Increased customer satisfaction through reliable deliveries
+Stronger customer relationships – improved trust and loyalty
+More efficient resource utilization – better planning of inventory and production
+Lower risk of lost sales – fewer stockouts lead to higher revenue
+However, it is important to note that a very high service level often requires larger inventories and higher safety stock, which can increase tied-up capital and inventory costs.
+Therefore, service level should always be considered alongside other factors such as inventory value, cash flow, and cost efficiency to find the right balance between customer service and resource utilization.
+How do you improve service level?
+Improving service level requires a holistic view of the supply chain and the underlying processes.
+Typical initiatives include:
+Optimizing inventory levels and safety stock
+Improving forecasting and demand planning
+More efficient production and logistics planningOngoing performance monitoring through KPIs and proactive actions
+It is important to remain aware that improving service level impacts other parts of the business, ensuring that optimization supports the company’s overall objectives.
+Back to the glossa ry

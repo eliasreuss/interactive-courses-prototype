@@ -1,0 +1,19 @@
+---
+topic: How to edit an Action list's name, filters, and settings in Inact Now
+source_type: tutorial
+language: english
+keywords: edit action list, rename, limit, slicer, KPI, group, save and refresh
+product_area: Actions
+question_type: how-to
+---
+
+To change the setup of an Action list, open the list and click the gear icon in the top right corner, then choose Edit Action list.
+
+The Edit Action list window shows:
+- Name — click the field and type a new name.
+- Limit — tick the checkbox to enable a row limit. Choose whether to show the Top or bottom items, set the number, and pick the metric to rank by (for example, Avg Lead Time).
+- Slicer — click + to add a filter that restricts which items appear in the list.
+- Select KPI — tick the checkbox and choose a metric to display as the summary KPI for the list.
+- Group — choose which subgroup the list belongs to.
+
+Click Save to save without refreshing the data, or Save and refresh to save and immediately update the list with the latest data.

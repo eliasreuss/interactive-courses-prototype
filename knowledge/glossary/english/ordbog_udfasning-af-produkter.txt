@@ -1,0 +1,25 @@
+---
+topic: Product Phasing Out
+source_type: glossary
+language: english
+keywords: Product Phasing Out, Udfasning af produkter, product, products, inventory, phasing, capital, production, costs, phased
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Udfasning af produkter
+term_en: Product Phasing Out
+url: https://inact.io/en/glossary/product-phasing-out/
+---
+
+Product Phasing Out — Danish: Udfasning af produkter
+Product phasing out is the process where a product is gradually withdrawn from production and sales. The purpose is to optimize the product portfolio, reduce capital tied up in inventory, and make room for new products.
+What does it mean to phase out a product?
+Phasing out a product involves planning how a product is withdrawn from the market and the supply chain. This can include decisions about stopping production, selling off remaining inventory, and communicating with customers and suppliers.
+Why are products phased out?
+Phasing out is used to reduce costs associated with slow-moving or obsolete products, free up capital tied up in inventory, and ensure that resources can be used on products with higher value.
+When is a product phased out?
+Phasing out is typically used when:
+The product has low demand or falling revenue
+Production costs exceed revenue
+New products or updated versions are to be introduced
+Inventory is to be optimized and it is necessary to free up capital

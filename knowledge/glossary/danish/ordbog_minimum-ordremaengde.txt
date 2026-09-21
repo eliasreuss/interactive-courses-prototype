@@ -1,0 +1,42 @@
+---
+topic: Minimum ordremængde (MOQ)
+source_type: glossary
+language: danish
+keywords: Minimum ordremængde (MOQ), Minimum order quantity (MOQ), leverandører, minimum, mængde, større, chain, deres, flere, indkøb
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Minimum ordremængde (MOQ)
+term_en: Minimum order quantity (MOQ)
+url: https://inact.io/ordbog/minimum-ordremaengde/
+---
+
+Minimum ordremængde (MOQ) — English: Minimum order quantity
+Minimum ordremængde (MOQ) er en central parameter i supply chain management og indkøbsplanlægning. Begrebet dækker over de mængdemæssige begrænsninger, som leverandører fastsætter for transaktioner, og som har direkte indvirkning på en virksomheds lageromsætningshastighed og kapitalbinding.
+Hvad er en minimums ordremængde (MOQ)?
+Minimum ordremængde, også brugt med sin engelske term minimum order quantity
+(MOQ), er et begreb inden for indkøb og supply chain management, der definerer den mindste mængde af et produkt, en leverandør er villig til at sælge i en enkelt ordre. Dette krav er en standardpraksis i mange brancher og har betydelig indflydelse på en virksomheds lagerstyring, kapitalbinding og operationelle fleksibilitet.
+Der findes typisk to hovedtyper af MOQ:
+Enkeltvare-MOQ: Den mindste mængde for et specifikt varenummer (SKU).
+Samlet ordre-MOQ: Den mindste samlede mængde eller værdi for en hel ordre, uanset antallet af forskellige varenumre.
+Hvorfor stiller leverandører krav om MOQ?
+Leverandører fastsætter minimum ordremængder af flere strategiske og operationelle årsager, primært for at sikre rentabilitet i deres egen forretning:
+Stordriftsfordele i produktionen: Det er ofte mere omkostningseffektivt at producere i større partier. En MOQ sikrer, at produktionslinjen kører effektivt og minimerer omkostninger per enhed.
+Opsætningsomkostninger: Hver produktionskørsel eller ordrebehandling indebærer faste opsætningsomkostninger (f.eks. maskinindstilling, dokumentation). En MOQ hjælper med at fordele disse omkostninger over et større antal enheder.
+Logistik og transport: Det er ofte mere økonomisk at transportere større mængder, da omkostningerne til fragt og håndtering kan være de samme for en lille som for en stor forsendelse.
+Råvareindkøb: Leverandøren kan selv være underlagt MOQ'er fra deres egne råvareleverandører, hvilket de viderefører til deres kunder.
+Hvilken betydning har MOQ for din lagerstyring?
+Minimum ordremængder har en direkte og ofte betydelig indflydelse på en virksomheds lagerstyring og økonomi. En høj MOQ kan føre til:
+Øget kapitalbinding: Virksomheden tvinges til at købe mere, end den umiddelbart har brug for, hvilket binder kapital i lageret og påvirker likviditeten.
+Risiko for overskudslager: Hvis den indkøbte mængde overstiger den faktiske efterspørgsel, opstår der overskudslager, med dertilhørende omkostninger til opbevaring, forsikring og risiko for ukurans.
+Reduceret lageromsætningshastighed: Varerne ligger længere på lager, før de sælges, hvilket indikerer ineffektiv kapitaludnyttelse.
+Pladsproblemer: Større indkøb kræver mere lagerplads, hvilket kan være en udfordring for virksomheder med begrænset kapacitet.
+Hvordan håndterer og forhandler man MOQ?
+Selvom MOQ'er kan virke som en fastlåst størrelse, er der flere strategier, en virksomhed kan anvende for at mindske de negative effekter:
+Forhandling: Indgå i dialog med leverandøren. Nogle leverandører er villige til at acceptere mindre ordrer mod en højere enhedspris eller ved strategiske partnerskaber.
+Konsolidering af ordrer: Saml indkøb fra flere afdelinger eller projekter for at nå MOQ-kravet samlet.
+Alternative leverandører: Undersøg markedet for leverandører med lavere MOQ'er, selvom det kan betyde en højere enhedspris.
+Lageroptimering: Implementér systemer der kan forbedre prognoser og optimere genbestillingspunkter, så man minimerer risikoen for overskudslager, når MOQ skal opfyldes.
+Standardisering: Hvis muligt, standardiser komponenter på tværs af produkter for at øge volumen for den enkelte vare og dermed lettere opfylde MOQ.
+Effektiv håndtering af MOQ er afgørende for at opretholde en sund balance mellem indkøbsomkostninger, lagerbinding og leveringsevne i supply chain.
+Tilbage til o rd bogen

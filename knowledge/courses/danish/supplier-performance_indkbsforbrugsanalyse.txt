@@ -1,0 +1,19 @@
+---
+topic: Indkøbsforbrugsanalyse
+source: Supplier Performance
+source_type: course
+language: danish
+product_area: supplier
+question_type: what
+keywords:
+- indkøbsforbrug
+- forbrugsanalyse
+- leverandørportefølje
+- omkostningsbesparelse
+- Insights
+- leverandørforhandlinger
+- Inact Now
+- indkøbsdata
+---
+
+Indkøbsforbrug refererer til den del af en virksomheds samlede omkostninger, der bruges på at købe varer og tjenester fra leverandører, hvilket ofte udgør 50 til 80 procent af de samlede udgifter. Forbrugsanalyse er den systematiske proces, hvor man indsamler, klassificerer og analyserer indkøbsdata for at fastslå, hvor meget der bruges, hvilke leverandører der er involveret, og hvilke typer varer eller tjenester der købes. Ved at bruge værktøjer som Inact Now kan organisationer opnå værdifulde indsigter i deres leverandørportefølje, identificere muligheder for omkostningsbesparelser og styrke deres position i leverandørforhandlinger.

@@ -1,0 +1,55 @@
+---
+topic: SKU (Stock Keeping Unit)
+source_type: glossary
+language: danish
+keywords: SKU (Stock Keeping Unit), intern, eksempel, identifikation, keeping, lager, lagerstyring, model, produkt
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: SKU (Stock Keeping Unit)
+term_en: SKU (Stock Keeping Unit)
+url: https://inact.io/ordbog/sku-stock-keeping-unit/
+---
+
+SKU (Stock Keeping Unit)
+SKU (Stock Keeping Unit) er en intern kode, som bruges til at identificere produkter og varianter i dit lager.
+En SKU er typisk en alfanumerisk kode (bogstaver og tal), som gør det muligt at skelne mellem produkter og deres varianter – for eksempel størrelse, farve eller model. SKU’er bruges i lagerstyring og supply chain til at holde styr på, hvad du har på lager, hvad der bliver solgt, og hvad der skal genbestilles.
+Hvad er en SKU (stock keeping unit)?
+En SKU, forkortelse for Stock Keeping Unit, er en unik kode, som typisk indeholder både bogstaver og tal, der tildeles hvert enkelt produkt og dets specifikke varianter (for eksempel størrelse, farve, model, materiale), som indgår i lageret.
+Det betyder, at hver enkelt version af et produkt, for eksempel en blå T-shirt i størrelse M, har sin egen SKU.
+Formålet med en SKU er at give en præcis og entydig identifikation af en lagerenhed. Det gør det muligt at spore lagerbevægelser, salg og genbestilling.
+Hvorfor bruge SKU'er?
+Effektiv brug af SKU'er er vigtig for god lagerstyring og har flere klare fordele:
+Præcis lagerkontrol: Giver mulighed for nøjagtig sporing af lagerbeholdning, hvilket reducerer fejl og uoverensstemmelser. Du kan se præcist, hvor mange af hver variant du har på lager.
+Effektiv genbestilling: Letter identifikation af hurtigt sælgende varer og langsomt omsættelige varer, hvilket understøtter optimerede genbestillingspunkter og - mængder.
+Forbedret dataanalyse: Muliggør dybdegående analyse af salgsmønstre, produktperformance og kundepræferencer, hvilket gør det nemmere og hurtigere at træffe strategiske beslutninger.
+Optimeret plukning og pakning: Medarbejdere kan hurtigere og nemmere finde de rigtige varer på lageret.
+Reduceret ukurans: Ved at have et præcist overblik over hver enkelt variant minimeres risikoen for at have forældede eller usælgelige varer på lager.
+Hvad er forskellen på SKU, EAN og varenummer i supply chain?
+Selvom SKU, EAN (European Article Number) og varenummer alle bruges til at identificere produkter, har de forskellige formål og anvendelsesområder:
+Identifikator
+SKU (stock keeping unit)
+EAN (European Article Number)
+Varenummer
+Formål
+Intern lagerstyring og sporing af specifikke varianter
+Ekstern identifikation og scanning på tværs af virksomheder
+Intern identifikation af produktfamilier eller grundprodukter
+Unikhed
+Unik for hver produktvariant internt i virksomheden
+Globalt unik for hvert produkt
+Unik for hvert produkt internt i virksomheden
+Format
+Alfanumerisk, virksomhedsdefineret (meningsfuld for intern brug)
+Numerisk (typisk 13 cifre), internationalt standardiseret
+Alfanumerisk, virksomhedsdefineret (ofte kortere end SKU)
+Anvendelse
+Detaljeret lageroptælling, genbestilling, efterspørgselsprognoser, ABC-analyser
+Kasseapparater, POS-systemer, global handel, EDI
+Produktkataloger, ordrer, fakturaer, grundlæggende produktidentifikation
+Eksempel
+SHIRT-102-BLU-M (T-shirt, Model 102, Blå, Medium)
+5701234567890 (Universel kode for den specifikke T-shirt variant)
+TSHIRT-ABC (Generel kode for T-shirt model ABC)
+En effektiv lagerstyring udnytter samspillet mellem disse forskellige identifikatorer for at sikre både intern effektivitet og ekstern kompatibilitet.
+Tilbage til o rd bogen

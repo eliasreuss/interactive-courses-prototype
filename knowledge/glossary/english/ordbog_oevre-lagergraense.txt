@@ -1,0 +1,30 @@
+---
+topic: Upper Inventory Limit
+source_type: glossary
+language: english
+keywords: Upper Inventory Limit, Øvre lagergrænse, inventory, limit, upper, capital, level, planning, purchasing, aiming
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Øvre lagergrænse
+term_en: Upper Inventory Limit
+url: https://inact.io/en/glossary/upper-inventory-limit/
+---
+
+Upper Inventory Limit — Danish: Øvre lagergrænse
+An upper inventory limit is the maximum number of units of a product that a company wishes to hold in stock. The limit is set to avoid overcrowded warehouses, reduce tied-up capital, and minimize the risk of obsolescence or waste.
+What is an Upper Inventory Limit?
+It is a planning parameter that sets an upper boundary for the inventory level. The limit helps control purchasing and production so that the inventory does not exceed the level that is economically and operationally justifiable.
+Why is an Upper Inventory Limit set?
+An upper inventory limit is used to:
+Limit capital tied up in inventory
+Ensure space for new products or items with a higher turnover rate
+Prevent waste and obsolescence
+Optimize inventory management and purchasing planning
+When is an Upper Inventory Limit set?
+Upper inventory limits are typically used:
+When planning purchasing and production
+When aiming to control inventory costs
+In combination with safety stock and reorder point
+When aiming to maintain a balance between service level and tied-up capital
+Back to th e glossary

@@ -1,0 +1,21 @@
+---
+topic: How to read a Heatmap in Inact Now
+source_type: tutorial
+language: english
+keywords: read heatmap, rows, columns, cells, total row, total column, empty cell, colour
+product_area: Heatmaps
+question_type: concept
+---
+
+A heatmap is read like a cross table:
+
+Row headers down the left are the values of the row categorisation — for example Supplier Categorization A, B, C, Inactive.
+Column headers across the top are the values of the column categorisation — for example the Double ABC groups CC, BC, AB and the lifecycle groups Discontinued, Dead, Strategic, New.
+Each cell holds the measure for the combination of that row and that column, calculated with the aggregation shown next to the measure name in the toolbar ("sum", "avg", and so on).
+The Total column and Total row give the value for the whole row and the whole column, and the corner cell is the grand total.
+
+Cell colours come from the colour scale, not from the sign of the number: the legend at the top right runs from High on the left to Low on the right, with the value boundaries printed on it.
+
+An empty, uncoloured cell means there is no data for that combination — no supplier in that category delivers a product in that category. That is information in itself; a whole empty column often means a product group is sourced from somewhere you did not expect.
+
+Clicking a cell highlights its row and column headers, which helps when the matrix is wide.

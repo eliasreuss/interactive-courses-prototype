@@ -1,0 +1,18 @@
+---
+topic: Three-Step Negotiation Strategy
+source: Supplier Negotiation
+source_type: course
+language: english
+product_area: supplier
+question_type: what
+keywords:
+- negotiation
+- strategy
+- supplier
+- goal setting
+- meeting preparation
+- steps
+- planning
+---
+
+A three-step negotiation strategy provides a structured approach to supplier negotiations. The first step involves defining the goal, which means clearly identifying what you want to achieve from the negotiation. This could include objectives such as cost savings, improved delivery terms, or enhanced quality. By establishing a clear goal before entering the meeting, you set a foundation for focused discussions and better outcomes. The three-step model helps negotiators prepare effectively and approach supplier meetings with clarity and purpose.

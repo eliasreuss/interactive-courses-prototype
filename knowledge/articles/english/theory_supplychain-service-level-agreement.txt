@@ -1,0 +1,15 @@
+---
+topic: Supply Chain Management
+source_type: article
+language: english
+article_source: Guide to Supply Chain
+keywords: service level agreement, SLA, inventory policy, cost prices, safety stock,
+  delivery reliability, order size, inventory turnover
+---
+
+A Service Level Agreement (SLA) is a common set of rules translated into policies and control parameters across procurement, logistics, and sales. The purpose is to meet customer expectations at the lowest possible cost. A well-defined SLA addresses several factors for different product categories, including:
+- Inventory policy (procurement or stocked item)
+- Delivery reliability (percentage)
+- Cost prices and order size (MOQ)
+- Size of safety stock
+- Inventory turnover

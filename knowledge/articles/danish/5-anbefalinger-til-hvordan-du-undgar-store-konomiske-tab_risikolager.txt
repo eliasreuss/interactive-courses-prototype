@@ -1,0 +1,10 @@
+---
+topic: Risikolager
+source_type: article
+language: danish
+article_source: 5 anbefalinger til hvordan du undgår store økonomiske tab
+keywords: lagerbinding, likviditet, indtjening, ABC-analyse, trimme lageret
+---
+
+1. Analyser lagerbinding i varer med lav efterspørgsel. 
+2. Brug ABC-analyse til at fokusere på trimning af lageret under lavkonjunktur.

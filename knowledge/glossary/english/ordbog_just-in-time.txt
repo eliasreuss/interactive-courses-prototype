@@ -1,0 +1,43 @@
+---
+topic: Just-in-Time (JIT)
+source_type: glossary
+language: english
+keywords: Just-in-Time (JIT), production, inventory, capital, costs, where, demand, just-in-time, minimize
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Just-in-Time (JIT)
+term_en: Just-in-Time (JIT)
+url: https://inact.io/en/glossary/just-in-time/
+---
+
+Just-in-Time (JIT)
+Just-in-Time (JIT) is a production and inventory strategy within Supply Chain Management where goods and materials arrive precisely when they are needed instead of being stored in inventory for long periods. JIT is a cornerstone of the Lean philosophy and aims to eliminate waste, minimize inventory costs, and free up capital without compromising the production flow.
+What is Just-In-Time?
+JIT is a strategy where production is controlled by actual demand - production only occurs when there is a need. This differs from traditional production, where goods are produced in advance based on sales expectations.
+JIT requires:
+Precise planning:
+To predict the exact time of need.
+Close collaboration with suppliers:
+To ensure frequent, small, and reliable deliveries.
+Continuous monitoring:
+Of production and demand to react quickly to changes.
+Why is JIT used
+?
+JIT is used to maximize efficiency and minimize waste throughout the entire value chain.
+The strategy helps companies to:
+Reduce inventory levels and costs:
+Frees up capital and minimizes costs for storage space, insurance, and obsolescence.
+Improve cash flow:
+Due to lower capital tied up in inventory.
+Increase flexibility:
+Makes production more responsive to changes in demand and allows for quicker shifts between products.
+Expose bottlenecks:
+Since there are no large inventories to hide problems, JIT forces the company to continuously identify and eliminate inefficiency.
+When can Just-In-Time be relevant?
+JIT is primarily used in Lean Manufacturing and logistics, where close coordination with suppliers is possible.
+It can be relevant when you want to:
+Minimize inventory costs and obsolescence.
+Reduce waste and overproduction.
+Improve cash flow through lower tied-up capital .
+Work with stable and predictable suppliers: JIT is very sensitive to delays and therefore requires extremely reliable partners.

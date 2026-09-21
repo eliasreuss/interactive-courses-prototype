@@ -1,0 +1,22 @@
+---
+topic: How to configure Dashboard Settings in Inact Now
+source_type: tutorial
+language: english
+keywords: dashboard settings, hide table, hide slicers, show extra tables as tabs, visibility
+product_area: Dashboards
+question_type: how-to
+---
+
+The Settings tab controls what viewers see when they open the dashboard. To access it, open the dashboard, click Edit, then click the Settings tab.
+
+The options you'll find there:
+
+Title and Description — the dashboard name and an optional explanation. These are the same fields available via the pencil icon on the title.
+
+Hide table from Dashboard — tick this if you only want to show the KPI cards at the top and hide the data table below. Useful for a high-level summary dashboard.
+
+Hide Slicers — tick this to hide the filter bar (the Customer Group, Supplier Group, Country dropdowns). Viewers will see the full dataset without the ability to filter.
+
+Show extra tables as tabs — when ticked (the default), multiple table views appear as clickable tabs across the top of the table. Unticking this changes how those extra views are displayed.
+
+Click the green Save button when done.

@@ -1,0 +1,25 @@
+---
+topic: Consignment Stock
+source_type: glossary
+language: english
+keywords: consignment stock, consignment inventory, ownership, supplier, tied-up capital, pay on consumption, VMI
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: Konsignationslager
+term_en: Consignment Stock
+---
+
+Consignment Stock — Danish: Konsignationslager
+Consignment stock is inventory that physically sits at the customer but is still owned by the supplier. Ownership — and therefore payment — transfers only when the item is actually used or sold.
+What is the benefit for the customer?
+The item is available immediately without capital being tied up in it. You avoid both long lead times and the risk of holding goods that are never used. That makes consignment attractive for expensive spare parts and for items with unpredictable consumption.
+What is the drawback for the supplier?
+The supplier carries the tied-up capital and the obsolescence risk until the item is consumed. In return the supplier usually gains a closer tie to the customer, better visibility of actual consumption, and often a larger share of that customer's spend.
+What does it take to work?
+A clear agreement on when ownership transfers and how consumption is reported
+Separate registration, so consignment goods are not counted in your own inventory value
+An agreement on who bears the loss from shrinkage, damage and obsolescence
+Regular reconciliation, since discrepancies otherwise surface only at year end
+Consignment and VMI
+The two are often confused. Vendor managed inventory is about who controls replenishment. Consignment is about who owns the goods. You can have either without the other, but they frequently appear together, since a supplier who owns the stock has a clear interest in managing it.

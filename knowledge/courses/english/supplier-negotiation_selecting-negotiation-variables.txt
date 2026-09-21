@@ -1,0 +1,18 @@
+---
+topic: Selecting Negotiation Variables
+source: Supplier Negotiation
+source_type: course
+language: english
+product_area: supplier
+question_type: how
+keywords:
+- negotiation
+- variables
+- levers
+- supplier
+- products
+- strategy
+- goal setting
+---
+
+After establishing a clear negotiation goal, the next step is to identify which variables or levers you can use to achieve that goal. Variables in supplier negotiations might include price, delivery terms, payment conditions, product quality, or order quantities. The choice of which products or terms to focus on should align with your overall objective. By carefully selecting and prioritizing these variables, you can tailor your negotiation approach to maximize the likelihood of reaching a favorable outcome.

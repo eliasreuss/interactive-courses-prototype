@@ -1,0 +1,14 @@
+---
+topic: Activating and monitoring mail bundles
+source_type: tutorial
+language: english
+keywords: activate bundle, mail bundle status, last sent, recipients, warning, plan
+product_area: Admin
+question_type: how-to
+---
+
+Each bundle in the Bundles list shows its current status. A grey Activate button means the bundle is inactive — click it to start delivery. A green Activated badge means it's running.
+
+The Last sent column shows the most recent delivery date. The Recipients column shows the count — a yellow warning icon (⚠) next to a count of 0 means the bundle has no recipients assigned, so it won't send to anyone.
+
+You can also filter the bundle list by frequency using the pill buttons at the top (Daily, Weekly, Monthly).

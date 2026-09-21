@@ -1,0 +1,19 @@
+---
+topic: How to use bulk actions on selected rows inside an Action list in Inact Now
+source_type: tutorial
+language: english
+keywords: bulk actions, select rows, deselect all, email selected, comment selected, select again
+product_area: Actions
+question_type: how-to
+---
+
+Checking one or more row checkboxes inside an open Action list switches the toolbar into bulk action mode, showing:
+
+Deselect all (N) — clears the current selection
+Delete (N) — deletes the selected items
+Email icon — emails the selected items
+Comment icon — adds a comment tied to the selected items
+Copy icon (N) — copies the selected rows to the clipboard
+Download icon (N) — downloads the selected rows
+
+The (N) shows how many items are currently selected. After clicking Deselect all, a Select again button appears in the toolbar so you can quickly restore your previous selection.

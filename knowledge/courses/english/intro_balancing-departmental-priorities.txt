@@ -1,0 +1,19 @@
+---
+topic: Balancing Departmental Priorities
+source: Intro
+source_type: course
+language: english
+product_area: inventory
+question_type: why
+keywords:
+- departments
+- targets
+- priorities
+- business health
+- profitability
+- balance
+- supply chain
+- inventory management
+---
+
+Different departments within a business often have their own targets and priorities, which can sometimes conflict with each other. For example, sales may prioritize high product availability, while finance may focus on minimizing inventory costs. This creates a dynamic where departments must balance their objectives to ensure the overall health and profitability of the business. Achieving the right balance helps prevent inefficiencies and supports sustainable growth.

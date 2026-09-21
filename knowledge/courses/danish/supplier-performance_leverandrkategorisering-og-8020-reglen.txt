@@ -1,0 +1,20 @@
+---
+topic: Leverandørkategorisering og 80/20-reglen
+source: Supplier Performance
+source_type: course
+language: danish
+product_area: supplier
+question_type: what
+keywords:
+- leverandørkategorisering
+- 80/20-reglen
+- A-leverandører
+- Supplier Categorisation Insight
+- strategiske leverandører
+- leverandørstyring
+- long tail
+- forbrugsanalyse
+- volumenanalyse
+---
+
+Leverandørkategorisering er en metode, der bruges til at identificere, hvilke leverandører der har størst indflydelse på en virksomhed. 80/20-reglen, også kendt som Pareto-princippet, antyder, at omkring 20% af leverandørerne typisk står for 80% af det samlede forbrug og volumen. Disse leverandører med stor betydning kaldes A-leverandører. Værktøjer som Supplier Categorisation Insight hjælper organisationer med at udpege disse strategiske leverandører, så de kan fokusere ressourcerne på at opbygge relationer, der skaber mest værdi, i stedet for at bruge unødvendig tid på de mange mindre og mindre betydningsfulde leverandører, ofte kaldet long tail.

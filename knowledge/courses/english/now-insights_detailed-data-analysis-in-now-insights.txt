@@ -1,0 +1,21 @@
+---
+topic: Detailed Data Analysis in Now Insights
+source: Now Insights
+source_type: course
+language: english
+product_area: platform
+question_type: what
+keywords:
+- Now Insights
+- Atoms
+- product analysis
+- supplier analysis
+- customer analysis
+- data views
+- detailed information
+- overview
+- Actions
+- Dashboards
+---
+
+In Now Insights, drilling down to the level of a specific product, supplier, or customer reveals a detailed set of information known as 'Atoms.' At this granular level, users can access unique data views tailored to help interpret and analyze the specifics of the selected item. These detailed views are designed to provide actionable insights, similar to the main overview but focused on the chosen entity, enabling more informed decision-making within the supply chain.

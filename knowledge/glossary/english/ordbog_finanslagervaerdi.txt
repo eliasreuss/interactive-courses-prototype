@@ -1,0 +1,29 @@
+---
+topic: Financial Inventory Value
+source_type: glossary
+language: english
+keywords: Financial Inventory Value, Finanslagerværdi, inventory, value, financial, capital, company, figure, goods, investments
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Finanslagerværdi
+term_en: Financial Inventory Value
+url: https://inact.io/en/glossary/financial-inventory-value/
+---
+
+Financial Inventory Value — Danish: Finanslagerværdi
+Financial Inventory Value indicates the total economic value of an inventory, typically calculated based on the cost of goods sold or acquisition value. The concept is a critical  figure for the company's Working Capital and is used to understand how much capital the company has tied up in inventory and to make strategic decisions about inventory management and investment.
+What is financial inventory value?
+Financial Inventory Value shows how much an inventory represents of the company's tied-up capital. It is a key figure in supply chain and financial management because it combines both the quantity and price of stocked items. It is the value that cannot be used for other investments until the goods are sold.
+What is financial inventory value used for?
+Financial Inventory Value is used to monitor and optimize the company's liquidity. It is a crucial tool for:
+Assessing capital tied up: Finding the balance between having enough goods in stock (high service level) and simultaneously avoiding unnecessary tied-up capital.
+Optimizing inventory levels: Identifying items with high value and low turnover rate that can potentially be reduced.
+Financial reporting: Constitutes a significant item on the company's balance sheet and is the basis for calculating Inventory Turnover.
+Planning investments: Freeing up capital from inventory for use in other strategic investments.
+When is financial inventory value relevant?
+Financial Inventory Value is a continuously relevant key figure that is used in financial reporting, inventory management, and supply chain analyses. It is particularly relevant for:
+Budgeting and forecasts: To predict future tied-up capital.
+Inventory optimization: As part of the ongoing ABC analysis, where the focus is on the items that tie up the most capital.
+Strategic decisions: Regarding product assortment, purchasing volume, and supplier selection (e.g., whether to buy in bulk to get a discount, or keep inventory low to maintain liquidity).
+Annual accounts: Where the value must be correctly stated in accordance with accounting principles.

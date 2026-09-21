@@ -1,0 +1,18 @@
+---
+topic: How to show or hide the data table on the Home page in Inact Now
+source_type: tutorial
+language: english
+keywords: show table, hide table, home page, data table, toggle, chevron
+product_area: Home
+question_type: how-to
+---
+
+Below the KPI cards on the Home page, there is a small chevron arrow (∨) button. This toggles the data table on and off.
+
+Click the arrow when it points down (∨) — the table appears below the KPI cards, showing the same data broken down into rows and tabs (for example, ABC, Responsible, Top 10 Selling Products).
+
+Click the arrow again when it points up (∧) — the table is hidden, leaving just the KPI cards, Actions, and Insights visible.
+
+The tooltip on the button confirms what it will do: "Show table" or "Hide table".
+
+This is useful if you want a cleaner, more summary-focused view of the Home page without the detailed table underneath.

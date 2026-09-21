@@ -1,0 +1,16 @@
+---
+topic: How to organise Action lists into groups in Inact Now
+source_type: tutorial
+language: english
+keywords: groups, subgroups, organise, change group, move action list, category
+product_area: Actions
+question_type: how-to
+---
+
+Action lists can be organised into groups and subgroups so they are easy to find and logically categorised.
+
+To move an Action list to a different group, click the dropdown arrow (▾) on the right side of its row in the Actions library. Choose Edit from the menu. In the Edit Action list window, find the Group dropdown and select the group you want to move it to. Click Save.
+
+You can also move multiple lists at once: select them using checkboxes, then click Change group for X Action lists in the bulk action bar at the bottom.
+
+Groups at the top level (such as "Inventory") are fixed master groups linked to data categories. Subgroups within them (such as "Category Management" or "Unsorted") can be managed per list.

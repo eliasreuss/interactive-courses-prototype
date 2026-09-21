@@ -1,0 +1,19 @@
+---
+topic: How to create a new Insight from the Home page in Inact Now
+source_type: tutorial
+language: english
+keywords: new insight, create insight, home page, choose template, insight template, inventory, suppliers
+product_area: Home
+question_type: how-to
+---
+
+You can start creating a new Insight directly from the Home page without navigating to the Insights module.
+
+1. Scroll to the Insights section at the bottom of the Home page.
+2. Click the green + New Insight button.
+3. A window called Choose template opens. It shows tabs for different areas: Inventory, Suppliers, Products, Customers, ERP Data Validation, and Create without template.
+4. Click a tab to browse ready-made Insight templates for that area. Templates are grouped by category — for example, under Inventory you'll find Stock Policy (with templates like Double ABC Analysis, New Items, Discontinued Items, Dead Items, Strategic Items) and ERP Planning Parameters (with templates like Stock Policy | Non Stock Items, Safety Stock, Safety Stock | Simulation).
+5. Tick the checkbox next to any template you want to use, then continue through the setup.
+6. If you'd rather start from scratch, click Create without template.
+
+Creating an Insight from the Home page works exactly the same as creating one from the Insights module — it's just a shortcut to get there faster.

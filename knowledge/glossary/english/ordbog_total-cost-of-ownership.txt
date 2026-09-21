@@ -1,0 +1,24 @@
+---
+topic: Total cost of ownership (TCO)
+source_type: glossary
+language: english
+keywords: Total cost of ownership (TCO), total, costs, ownership, investments, price, applied, chain, decisions
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Total cost of ownership (TCO)
+term_en: Total cost of ownership (TCO)
+url: https://inact.io/en/glossary/total-cost-of-ownership/
+---
+
+Total cost of ownership (TCO)
+Total Cost of Ownership is a method for assessing the total costs associated with a product, an investment, or a supplier over its entire life cycle - not just the purchase price.
+What is Total Cost of Ownership?
+TCO includes all direct and indirect costs, such as purchase price, transport, inventory, installation, maintenance, operation, and disposal. It provides a more realistic picture of what an investment actually costs the company over time.
+Why is Total Cost of Ownership monitored?
+TCO is used to make better decisions regarding purchasing, investments, and supplier selection. By focusing on total costs rather than just the acquisition price, companies can optimize both their finances and supply chain efficiency.
+When is Total Cost of Ownership applied?
+TCO can be applied to almost all investments, but is especially used for:
+Purchasing machinery, equipment, or IT solutions
+Evaluating suppliers and contracts
+Strategic decisions about investments in the supply chain or production

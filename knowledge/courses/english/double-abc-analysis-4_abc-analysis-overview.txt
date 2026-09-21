@@ -1,0 +1,19 @@
+---
+topic: ABC Analysis Overview
+source: Double Abc Analysis 4
+source_type: course
+language: english
+product_area: inventory
+question_type: what
+keywords:
+- ABC Analysis
+- A products
+- B products
+- C products
+- demand categorization
+- inventory management
+- product segmentation
+- Pareto principle
+---
+
+ABC analysis is a method used to categorize products based on their contribution to total demand. In this approach, products are divided into three groups: A products, which are the top 10 percent of items accounting for about 80 percent of demand; B products, which are the next 20 percent of items covering roughly 15 percent of demand; and C products, which are the remaining 70 percent of items contributing only about 5 percent of demand. This classification helps organizations focus their attention and resources on the products that have the greatest impact on overall demand.

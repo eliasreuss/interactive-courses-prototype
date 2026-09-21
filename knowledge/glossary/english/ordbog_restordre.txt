@@ -1,0 +1,25 @@
+---
+topic: Backorder
+source_type: glossary
+language: english
+keywords: backorder, back order, stockout, availability, service level, partial delivery, customer order
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: Restordre
+term_en: Backorder
+---
+
+Backorder — Danish: Restordre
+A backorder is a customer order, or part of one, that cannot be delivered now because the item is out of stock, but which is kept open and shipped once the item arrives.
+Backorder or lost sale?
+The distinction matters. A backorder means the customer waits — the sale is deferred, not lost. If the customer cancels or buys elsewhere instead, it is a lost sale. How much falls into each depends on how critical the item is, how easily it can be sourced elsewhere, and how credible the promised date is.
+What do backorders cost?
+More than the deferred revenue. A backorder triggers extra handling, an extra shipment if the order is split, follow-up from sales and customer service, and often an expedited purchase from the supplier. On top of that comes the share of customers who do not come back.
+What do backorders tell you?
+They are one of the most direct measures of whether your stock policy works. If they pile up on the same item numbers, safety stock or the reorder point is set wrong on precisely those items. If they are spread evenly, the cause is more likely supplier lead times or forecasts that are systematically too low.
+What do you do about them?
+Look at backorders per item number rather than as one total
+Raise safety stock on the items where a stockout hurts most — not on every item
+Promise a realistic date rather than the earliest possible one, and hold it
+Check whether the supplier's actual lead time matches the agreed one

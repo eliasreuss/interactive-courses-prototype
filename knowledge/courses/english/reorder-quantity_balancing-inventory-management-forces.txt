@@ -1,0 +1,20 @@
+---
+topic: Balancing Inventory Management Forces
+source: Reorder Quantity
+source_type: course
+language: english
+product_area: inventory
+question_type: what
+keywords:
+- unit price
+- demand
+- inventory turn ratio
+- inventory management
+- stock
+- buyers
+- cost
+- cash flow
+- reorder quantity
+---
+
+Effective inventory management requires balancing three key forces: unit price, demand, and inventory turn ratio. Lowering unit price often means buying in larger quantities, which can tie up cash and slow inventory turnover. Meeting demand ensures enough stock is available for customers, but overstocking can reduce the inventory turn ratio. A high inventory turn ratio means converting stock into cash quickly, but keeping inventory too low may result in missed sales. These forces are interconnected, and maximizing one often negatively impacts the others. Successful inventory management involves finding the right balance to optimize costs, meet customer needs, and maintain healthy cash flow.

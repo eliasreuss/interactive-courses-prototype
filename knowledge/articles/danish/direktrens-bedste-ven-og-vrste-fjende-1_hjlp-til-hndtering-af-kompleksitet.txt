@@ -1,0 +1,9 @@
+---
+topic: Hjælp til håndtering af kompleksitet
+source_type: article
+language: danish
+article_source: Direktørens bedste ven og værste fjende (1)
+keywords: metoder, værktøjer, indsigt, prioritering, KPI-styring
+---
+
+Der findes metoder og værktøjer til at skabe indsigt i kompleksitetsbilledet, prioritere handlinger og styre efter KPI'er. Få hjælp til at operationalisere kompleksitet.

@@ -1,0 +1,20 @@
+---
+topic: How to set which dashboard appears on the Home page in Inact Now
+source_type: tutorial
+language: english
+keywords: home page, edit home, pin dashboard, home dashboard, select dashboards, house icon
+product_area: Dashboards
+question_type: how-to
+---
+
+The Home page in Inact Now can show KPI cards and data from one or more dashboards. You choose which dashboards appear there.
+
+1. Open any dashboard.
+2. Click Edit Home in the top-right corner (the house icon).
+3. A window opens showing two columns:
+   - Left side — dashboards not currently on your Home page, listed by group. Each has an Add → button.
+   - Right side — dashboards already on your Home page. The one you're currently viewing is marked "Currently viewing".
+4. Click Add → to move a dashboard to the Home page, or click × on the right side to remove one.
+5. Click Save.
+
+Any dashboard included on the Home page shows a small house icon next to its name in the Dashboards list.

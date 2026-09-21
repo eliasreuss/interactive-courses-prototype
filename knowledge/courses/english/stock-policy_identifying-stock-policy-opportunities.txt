@@ -1,0 +1,18 @@
+---
+topic: Identifying Stock Policy Opportunities
+source: Stock Policy
+source_type: course
+language: english
+product_area: inventory
+question_type: what
+keywords:
+- Inact Now
+- stock policy
+- opportunities
+- risks
+- Double ABC
+- Insights
+- Non Stock Items
+---
+
+Inact Now helps organizations identify their most significant opportunities and risks related to inventory management. By analyzing data within the platform, users can define the appropriate stock policy for each Double ABC category, ensuring that inventory decisions are tailored to the specific importance and movement of each item. The platform provides targeted insights, such as the 'Stock Policy | Non Stock Items' report, which highlights areas where stock policies may need adjustment. This approach supports more informed and effective inventory management.

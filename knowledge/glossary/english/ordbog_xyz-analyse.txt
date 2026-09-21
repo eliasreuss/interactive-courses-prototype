@@ -1,0 +1,37 @@
+---
+topic: XYZ-analysis
+source_type: glossary
+language: english
+keywords: XYZ-analysis, XYZ-analyse, analysis, inventory, demand, products, based, consumption, optimize, planning
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: XYZ-analyse
+term_en: XYZ-analysis
+url: https://inact.io/en/glossary/xyz-analysis/
+---
+
+XYZ-analysis — Danish: XYZ-analyse
+XYZ analysis is a method for categorizing items in inventory based on the variation in their consumption over time. It is used to optimize inventory management and planning by focusing on products with different degrees of predictability in demand.
+What is an XYZ-analyse?
+The XYZ analysis is used to divide items, typically into three groups:
+X-items:
+Have stable and predictable demand
+Y-items: Have moderate variation and partially predictable demand
+Z-items:
+Have unpredictable or rare demand
+The analysis provides an overview of which products require strict inventory control and which can be handled more flexibly.
+What are XYZ Analyses used for?
+An XYZ analysis is performed to be able to:
+Prioritize focus on products with high predictability
+Adjust safety stocks and reorder points according to consumption patterns
+Optimize tied-up capital and inventory costs
+When does it make sense to perform an XYZ Analysis?
+XYZ analysis is typically used for:
+Inventory optimization and planning of safety stocks
+Decisions on reordering strategies
+Identification of products requiring special monitoring or flexible solutions
+What is the difference between an ABC Analysis and an XYZ Analysis?
+While the XYZ analysis focuses on the variation in demand over time and thus the predictability of consumption, the ABC analysis categorizes products based on their economic value or revenue contribution.
+An
+ABC analysis helps prioritize resources based on the value of the inventory, while an XYZ analysis helps adapt inventory management and planning based on consumption stability. Both analyses can be used together to optimize inventory and tied-up capital more effectively.

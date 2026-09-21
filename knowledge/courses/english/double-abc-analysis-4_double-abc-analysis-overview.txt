@@ -1,0 +1,19 @@
+---
+topic: Double ABC Analysis Overview
+source: Double Abc Analysis 4
+source_type: course
+language: english
+product_area: inventory
+question_type: what
+keywords:
+- Double ABC Analysis
+- ABC analysis
+- inventory
+- cost of inventory
+- demand
+- Inact Now
+- consumption lines
+- total cost of goods
+---
+
+Double ABC analysis is an inventory management method that evaluates two variables simultaneously to classify products more effectively. Unlike traditional ABC analysis, which typically considers only one factor such as usage or value, double ABC analysis in Inact Now examines both the total cost of inventory over the past 12 months and the demand, measured by how often each product was sold or used during the same period. This dual approach helps organizations identify items that are significant in terms of both cost and consumption, enabling more informed decisions about inventory control and prioritization.

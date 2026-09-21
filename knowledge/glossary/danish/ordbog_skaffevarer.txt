@@ -1,0 +1,37 @@
+---
+topic: Skaffevarer
+source_type: glossary
+language: danish
+keywords: Skaffevarer, Special order items, håndtering, skaffevare, varen, varer, indkøbes, inkluderer, kundeordre
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Skaffevarer
+term_en: Special order items
+url: https://inact.io/ordbog/skaffevarer/
+---
+
+Skaffevarer — English: Special order items
+Skaffevarer er et begreb, der beskriver produkter, som ikke lagerføres som standard, men som indkøbes specifikt til en kundeordre. Begrebet anvendes ofte synonymt med bestillingsvarer og er tæt forbundet med indkøbsstrategien
+Purchase-to-Order (PTO).
+Hvad er en skaffevare?
+En skaffevare er et produkt, som en forhandler eller grossist har adgang til gennem sit leverandørnetværk, men som ikke indgår i det faste, lagerførte sortiment.
+Det er en vare, der håndteres via en indkøb-til-ordre (PTO) strategi, hvor indkøbsprocessen først aktiveres, når der foreligger en bekræftet kundeordre.
+Beslutningen om at klassificere en vare som skaffevare er ofte strategisk og baseret på faktorer som varens efterspørgselsmønster (f.eks. identificeret via en
+ABC-analyse), dens værdi, og risikoen for ukurans. Dette betyder, at varen fysisk skal hentes hjem fra producenten eller en ekstern leverandør, før den kan leveres videre til slutkunden.
+Hvorfor anvender virksomheder skaffevarer?
+Anvendelsen af skaffevarer er en strategisk beslutning, der muliggør en balance mellem sortimentsbredde og økonomisk risiko. De primære årsager til at benytte skaffevarer inkluderer:
+Sortimentsudvidelse uden kapitalbinding: Virksomheden kan tilbyde et omfattende produktkatalog uden at binde likviditet i fysiske varer på eget lager.
+Eliminering af lagerrisiko: Da varen kun indkøbes ved et garanteret salg, mindskes risikoen for ukurans og overskudslager for de pågældende produkter.
+Håndtering af nicheprodukter:
+Varer med lav eller uforudsigelig efterspørgsel kan tilbydes som skaffevarer, da de ikke retfærdiggør omkostningerne ved fast lagerføring.
+Pladsoptimering: Ved at minimere antallet af lagerførte varenumre (
+SKU'er) kan lagerkapaciteten udnyttes mere effektivt til højfrekvente varer.
+Hvad er de operationelle udfordringer ved skaffevarer?
+Selvom skaffevarer reducerer den økonomiske risiko, medfører de en række operationelle og kundemæssige overvejelser:
+Forøget leveringstid: Den samlede leveringstid til kunden forlænges, da den inkluderer både leverandørens lead time og den efterfølgende transport og håndtering.
+Leverandørafhængighed:
+Virksomhedens leveringsevne er direkte betinget af leverandørens lagerstatus og præcision i leveringen.
+Begrænset returret: I mange handelsaftaler er skaffevarer undtaget fra den normale returret, da forhandleren ofte ikke kan returnere varen til sin egen leverandør.
+Administrative omkostninger: Håndtering af skaffevarer kræver ofte mere manuel opfølgning i indkøbs- og salgsprocessen sammenlignet med automatiserede lagervarer.
+Tilbage til o rd bogen

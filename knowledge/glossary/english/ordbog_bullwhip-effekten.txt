@@ -1,0 +1,28 @@
+---
+topic: Bullwhip Effect
+source_type: glossary
+language: english
+keywords: bullwhip effect, demand amplification, supply chain distortion, forecast, overstocking, order batching
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: Bullwhip-effekten
+term_en: Bullwhip Effect
+---
+
+Bullwhip Effect — Danish: Bullwhip-effekten
+The bullwhip effect is the phenomenon where small swings in actual end demand grow larger and larger the further up the supply chain you go. A minor change at the end customer becomes a bigger change at the retailer, a larger one at the wholesaler, and a very large one at the manufacturer and raw material supplier.
+Why does it happen?
+Each tier orders not against real demand but against the order pattern it sees from the tier below, adding a buffer on top. Four things typically drive it:
+Every tier forecasts on its own instead of sharing actual sales data
+Orders are batched into larger lots to earn volume discounts or save freight
+Promotions and price swings make customers buy ahead
+When supply is unreliable, customers over-order to protect themselves
+What does it cost?
+The bullwhip effect produces alternating excess and shortage. The result is high tied-up capital, obsolete inventory and expedited purchases — and backorders when the swing reverses. It bites hardest far up the chain, where lead times are longest.
+How do you dampen it?
+Share actual sales figures upstream rather than only orders
+Order more frequently in smaller quantities instead of rare large batches
+Smooth promotions and price changes so demand is not artificially volatile
+Use stable planning parameters rather than manual judgement reacting to last month
+The shorter the distance between real demand and the decision being made, the smaller the whip.

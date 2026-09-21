@@ -1,0 +1,73 @@
+---
+topic: Slow-moving inventory
+source_type: glossary
+language: english
+keywords: Slow-moving inventory, demand, inventory, stock, items, slow-moving, still, spare, longer
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Slow-moving inventory
+term_en: Slow-moving inventory
+url: https://inact.io/en/glossary/slow-moving-inventory/
+---
+
+Slow-moving inventory
+Slow-moving inventory is stock that is sold or used less frequently than expected and therefore remains in inventory for longer. This can include spare parts, seasonal items and niche products with low or irregular demand, as well as items where demand has declined over time.
+A slow mover isn't necessarily a problem. A critical spare part, for example, might only be used once a year and still be necessary to maintain the desired service level. The problem arises when items move slowly without you having actively considered why they are still in stock.
+What does slow-moving inventory mean in practice?
+In practice, slow-moving inventory consists of items that remain in stock for longer periods. Some have always had low demand, while others have become slow movers because demand has declined over time.
+You'll typically find slow-moving inventory among:
+Spare parts
+– necessary for service, but rarely requested
+Seasonal items
+– high demand during certain periods and low demand during the rest of the year
+Technical components
+– tied to specific solutions or older equipment
+Niche products
+– low but steady demand from a narrow customer segment
+Older product variants
+– replaced by newer models, but still in stock
+Items with irregular demand
+– sold or used in bursts without a stable pattern
+Slow movers often build up gradually. New products and variants are added, while older items aren't always phased out. Demand can decline without planning parameters or automatic reorder rules being adjusted. As a result, the item continues to be replenished even though it is moving more slowly than before.
+Slow-moving inventory is therefore closely linked to tied-up capital. The longer an item remains in stock, the longer capital stays tied up in it. Low inventory turnover isn't in itself a sign that your stock level is wrong, though. It also depends on demand, lead time and the service level you want to maintain.
+How do you identify slow-moving inventory?
+There is no single fixed threshold for when an item is considered slow-moving inventory. It depends on the industry, product type and the item's normal demand pattern.
+A simple method is to look at how much time has passed since the item's most recent sale or use. Businesses might, for example, work with thresholds of 90, 180 or 365 days. The relevant period depends on the item: 180 days without a sale means something different for a spare part that normally sells once a year than for a standard item that normally sells every week.
+You can also look at changes in the item's inventory turnover and demand frequency. An item doesn't have to stop moving entirely to be a slow mover. If demand gradually declines, you can spot the trend before the item reaches a fixed threshold for the number of days without a sale.
+Adouble ABC analysis can add nuance by, for example, combining revenue with pick frequency. This makes it possible to distinguish between items with both low revenue and few picks and items that sell rarely but generate high revenue when they do.
+An item that is sold or used only a few times a year may still be following its normal demand pattern, while a marked decline in demand for an item that previously sold frequently can signal changing demand.
+What's the difference between slow-moving inventory, excess inventory, distressed inventory and obsolete inventory?
+The terms are closely related but describe different situations.
+Slow-moving inventory is about speed. The item is still being sold or used, but moves slowly or less frequently than expected.
+Excess inventory is about quantity. You're holding more of the item than expected demand requires. An item can therefore be a slow mover without being excess inventory – for example, if you only keep a few units of a spare part that is rarely used.
+Distressed inventory arises when the need for the item has disappeared or changed, but you still have units left in stock. The item may still have sales value, even if it is more difficult to sell.
+Obsolete inventory is about the item's value and usability. The item can no longer be sold or used as intended, so some or all of its value has to be written off.
+A slow mover can still be necessary to keep in stock. But if demand declines without stock levels or reordering being adjusted accordingly, excess inventory can build up. If the need disappears, you can end up with distressed inventory, and if the item loses its usability or sales value, it can become obsolete.
+When does slow-moving inventory become a problem?
+Low inventory turnover isn't automatically a problem. Some items may deliberately remain in stock for a long time. This can apply to critical spare parts or products that are necessary for specific customers or service agreements. In these cases, low turnover can be a consequence of the service level you want to maintain.
+Low turnover can also be the result of a deliberate purchasing decision. You might, for example, have bought a larger batch to secure a lower purchase price or meet a supplier's minimum order quantity. In that case, the savings on the purchase need to be weighed against the additional tied-up capital, holding costs and the risk of demand changing.
+Slow-moving inventory becomes a problem when your stock level no longer matches actual demand. This can happen if demand declines while reordering continues unchanged, or if an item is replaced by a newer variant without being phased out.
+When assessing a slow mover, you can look at:
+Is the item still necessary for operations or specific customers?
+How often is it actually used or sold?
+How quickly could you source it again if needed?
+Is the stock level too high relative to actual demand?
+Has reordering been adjusted to match current demand?
+Is there an alternative product or supplier available?
+Over time, many small changes to the assortment can build up into a large group of slow movers. A customer requests a special product, an additional variant is introduced, or an old item is never fully phased out. This can increase tied-up capital and make the product assortment more complex to manage across purchasing, planning and inventory management.
+What can you do about slow-moving inventory?
+Start by distinguishing between items where low turnover is expected and items that have become slow movers because demand has changed or stock levels have not been adjusted.
+Depending on the item, you can, for example:
+Keep critical spare parts and items required for specific customers in stock, even when turnover is low
+Adjust or stop automatic reordering if demand has declined
+Reduce stock levels if they are higher than expected demand justifies
+Consider whether the item can be handled as a special order item, so it is only ordered when there is an actual need
+Phase out the item if the need has disappeared and it is no longer necessary for operations or customers
+Example of slow-moving inventory
+Consider a wholesaler that stocks tens of thousands of active
+SKUs and sells technical components to industrial customers.
+Over several years, the assortment has grown. New variants have been added, older products have remained in stock, and some items are still being reordered according to rules that were set when demand was higher.
+An analysis shows that part of the assortment has seen little or no activity over the past year. That doesn't mean every item should be removed. Some are critical spare parts, while others are necessary for specific customers.
+The company therefore segments the items based on their function and demand. Critical items remain in stock. Reordering is reduced or stopped for items with declining demand, some are moved to special-order status, and products with no expected future demand are considered for phase-out.
+A spare part might sell once a year and still be necessary for a customer with older equipment. Conversely, an item with ongoing sales can tie up unnecessary capital if stock levels and reordering no longer match actual demand.

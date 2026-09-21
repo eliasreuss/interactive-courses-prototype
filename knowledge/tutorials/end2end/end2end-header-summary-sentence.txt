@@ -1,0 +1,18 @@
+---
+topic: The sentence at the top of an End2End view explaining the current selection in Inact Now
+source_type: tutorial
+language: english
+keywords: summary sentence, customers purchase products provided by suppliers, header text, what does this sentence mean
+product_area: End2End
+question_type: concept
+---
+
+As soon as you select a bucket in an End2End view, a sentence appears at the top right of the page, next to the Create Heatmap button. It reads in the form:
+
+"624 customers purchase 1297 products provided by 37 suppliers"
+
+This is a plain-language summary of the chain you are currently looking at, read from the customer end backwards. The three numbers are the record counts left in each column after your selection, so the sentence is the quickest way to sanity-check that a drill-down did what you expected.
+
+If the Unique setting is switched on, the wording changes to "... purchase 1297 products exclusively provided by 37 suppliers" — the word "exclusively" is the signal that you are now looking only at products that come from the selected suppliers and no one else.
+
+The sentence disappears again when you clear the selection with Reset.

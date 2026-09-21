@@ -1,0 +1,18 @@
+---
+topic: How to control whether an Action list updates automatically in Inact Now
+source_type: tutorial
+language: english
+keywords: automatic update, disable update, manual, refresh, data sync, freeze list, snapshot
+product_area: Actions
+question_type: how-to
+---
+
+By default, Action lists update automatically when the underlying data refreshes. This means new items that match the list's filters are added, and items that no longer match are removed.
+
+If you want to freeze the list at its current state — for example, to preserve a snapshot for a specific review period — you can turn off automatic updates.
+
+Open the Action list and click the gear icon in the top right corner. Choose Disable automatic update from the dropdown. The list will stop syncing with new data until you re-enable it.
+
+To turn automatic updates back on, open the gear menu again and choose Enable automatic update.
+
+The Updated X days ago badge near the top of the list shows when the data was last refreshed.

@@ -1,0 +1,10 @@
+---
+topic: Skab transparens i værdikæden
+source_type: article
+language: danish
+article_source: Sådan skaber du en succesfuld supply chain
+keywords: værdikæde, transparens, kortlægning, produktmix, kundemix
+---
+
+1. Luk op for 'den sorte boks' i værdikæden. 
+2. Skab transparens og kortlæg sammenhænge i produkt- og kundemixet.

@@ -1,0 +1,18 @@
+---
+topic: How to find and open an Action list in Inact Now
+source_type: tutorial
+language: english
+keywords: open action list, find action, search, filter, navigate
+product_area: Actions
+question_type: how-to
+---
+
+To find and open an Action list, click Actions in the top navigation bar to go to the Actions library.
+
+The library shows all lists grouped by category. If a group is collapsed, click the arrow on the right side of the group row to expand it and see the lists inside.
+
+To search by name, type in the Search bar at the top right. The list updates as you type.
+
+To narrow down by owner, creator, data source, or group, use the filter dropdowns along the top: Assigned to, Created by, Datasource, and Group. Select a value from any dropdown and the library will show only matching lists.
+
+Once you find the list you need, click its name to open it.

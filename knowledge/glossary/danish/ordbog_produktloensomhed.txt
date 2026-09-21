@@ -1,0 +1,35 @@
+---
+topic: Produktlønsomhed
+source_type: glossary
+language: danish
+keywords: Produktlønsomhed, Product profitability, faktiske, omkostninger, varer, lønsomhed, produkt, chain, faktorer
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Produktlønsomhed
+term_en: Product profitability
+url: https://inact.io/ordbog/produktloensomhed/
+---
+
+Produktlønsomhed — English: Product profitability
+Produktlønsomhed er et udtryk for den faktiske profit, et specifikt produkt bidrager med til virksomhedens bundlinje, når alle omkostninger er modregnet.
+I Supply Chain Management er forståelsen af produktlønsomhed afgørende, da den afslører forskellen på et produkts omsætning og dets faktiske værdiskabelse. Det er denne indsigt, der gør det muligt for virksomheder at identificere, hvilke varer der driver forretningen fremad, og hvilke der i virkeligheden koster penge at have på hylden.
+Hvad betyder produktlønsomhed?
+Helt simpelt handler produktlønsomhed om forholdet mellem indtægter og de samlede omkostninger forbundet med en specifik vare.
+I praksis kigger mange kun på dækningsbidraget (salgspris minus indkøbspris), men den faktiske profitabilitet eller lønsomhed findes først, når man medregner de "skjulte" omkostninger i supply chain.
+Det handler om at se på hele varens rejse – fra den bestilles hos leverandøren, til den er leveret og betalt af kunden. Kun ved at medregne faktorer som lagerbinding, fragt og håndtering får man det sande billede af varens økonomiske bidrag.
+Hvilke faktorer har indflydelse på et produkts lønsomhed?
+Listen af faktorer kan variere afhængig af branche, processer m.v. Men for at forstå den faktiske profitabilitet af et konkret produkt, er der typisk nogle store omkostningsdrivere, det er relevant at kigge på:
+Kapitalbinding og lageromkostninge r: Hvor meget likviditet binder varen, og hvad koster det i form af lagerplads og forsikring at opbevare den?
+Logistik og transport: Omkostninger til for eksempel fragt, told og håndtering, som kan varierer markant fra produkt til produkt.
+Operationelle omkostninge r: Den tid og de ressourcer, der bruges på at modtage, plukke og pakke varen.
+Risiko for ukurans: Omkostningen ved varer, der må nedskrives eller kasseres på grund af forældelse eller overskredet holdbarhed.
+Servicekrav:
+Hvor mange ressourcer kræver det at opretholde den nødvendige sikkerhedslagerbeholdning for at imødekomme kundernes forventninger?
+Hvorfor er det relevant at kigge på dine produkters lønsomhed?
+Når du kender den reelle profitabilitet for hvert enkelt varenummer, skifter dit fokus fra ren volumen til faktiske resultater.
+Denne indsigt er nødvendig for at kunne :
+Optimere sortimentet: Træffe databaserede beslutninger om at fjerne ulønsomme varer og give plads til de mest profitable.
+Justere prissætningen: Sikre, at priserne afspejler de omkostninger der faktisk er i supply chain, så hver handel bidrager positivt.
+Prioritere indkøb og lagerplads: Allokere virksomhedens ressourcer og lagerkapacitet til de mest lønsomme varer, der skaber størst værdi.
+Forbedre likviditeten: Reducere lageret af varer med lav lønsomhed og dermed frigøre kapital til vækst og nye investeringer.

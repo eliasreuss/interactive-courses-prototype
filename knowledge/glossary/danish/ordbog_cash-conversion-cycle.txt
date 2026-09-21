@@ -1,0 +1,53 @@
+---
+topic: Cash Conversion Cycle (CCC)
+source_type: glossary
+language: danish
+keywords: Cash Conversion Cycle (CCC), virksomheden, bliver, bundet, kapital, længere, samtidig, lager, leverandører
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Cash Conversion Cycle (CCC)
+term_en: Cash Conversion Cycle (CCC)
+url: https://inact.io/ordbog/cash-conversion-cycle/
+---
+
+Cash Conversion Cycle (CCC)
+Cash Conversion Cycle (CCC) er et nøgletal, der måler, hvor lang tid virksomhedens kapital er bundet i drift, før den bliver omdannet tilbage til likviditet. CCC dækker tiden fra virksomheden betaler sine leverandører, til den modtager betaling fra kunderne. KPI'en bruges ofte til at vurdere virksomhedens likviditet, working capital og effektiviteten i supply chain og lagerstyring.
+Hvad betyder CCC i praksis?
+I praksis viser CCC, hvor hurtigt virksomheden får sine penge tilbage gennem vareflowet. Jo længere tid varer ligger på lager (DIO), og jo længere kunderne er om at betale (
+DSO), desto længere bliver kapitalen bundet. Omvendt kan længere betalingsfrister hos leverandører (
+DPO) reducere den periode, hvor virksomheden selv skal finansiere vareflowet.
+CCC består typisk af tre centrale dele: tid på lager (DIO) kundernes betalingstid (DSO) og leverandørbetalingstid (DPO)
+Hvis virksomheden har store lagre, lange kredittider til kunder og samtidig korte betalingsfrister hos leverandører, vil CCC ofte blive høj. Det skyldes, at virksomheden både har kapital bundet længe i lageret og samtidig venter længere tid på at få pengene tilbage fra salget. Derfor hænger CCC tæt sammen med lagerbinding, fordi store lagre typisk er en af de største årsager til, at kapital bliver bundet gennem længere tid i supply chain.
+Formel: Hvordan beregner man CCC?
+Cash Conversion Cycle bliver typisk beregnet sådan:
+CCC = DIO + DSO – DPO
+Hvor:
+DIO = Days Inventory Outstanding
+DSO = Days Sales Outstanding
+DPO = Days Payable Outstanding
+Eksempel:
+DIO: 74 dage
+DSO: 42 dage
+DPO: 38 dage
+CCC = 74 + 42 – 38 = 78 dage
+Det betyder, at virksomheden i gennemsnit har kapital bundet i 78 dage, før pengene kommer tilbage gennem salget. Jo lavere CCC er, desto hurtigere bliver kapitalen typisk frigivet tilbage til virksomheden.
+Hvorfor er CCC vigtigt?
+CCC er vigtigt, fordi mange virksomheder undervurderer, hvor tæt supply chain og likviditet hænger sammen. Små ændringer i lager, forecast eller leveringstider kan hurtigt påvirke kapitalbinding, likviditet, finansieringsbehov, lageromkostninger og leveringsevne.
+Hvis virksomheden eksempelvis bygger for store lagre op før højsæsoner, kan det forbedre servicegraden på kort sigt, men samtidig binde store mængder kapital i måneder før salget realiseres.
+CCC bliver derfor ofte brugt som et samlet mål for, hvor effektivt virksomheden styrer både lager, indkøb og betalingsflow. Det gør KPI'en central i arbejdet med supply chain-optimering, fordi beslutninger om lager, forecast og indkøb direkte påvirker, hvor længe kapitalen er bundet i værdikæden.
+Sådan arbejder virksomheder med CCC i praksis
+En nordisk handelsvirksomhed sælger tekniske komponenter til industrikunder i hele Europa. Virksomheden oplever stigende omsætning, men samtidig bliver likviditeten mere presset gennem året. Problemet viser sig især op mod højsæsonen i efteråret, hvor lageret vokser markant flere måneder før salget topper.
+Da virksomheden analyserer sin CCC, opdager de hurtigt årsagen. Store mængder varer bliver købt hjem meget tidligt for at sikre tilgængelighed i højsæsonen. Flere asiatiske leverandører har samtidig lange leveringstider og høje minimumsordrer.
+På én konkret produktgruppe viser analysen, at DIO stiger fra 68 til 121 dage før højsæson, at forecast-afvigelser øger overskudslageret markant, og at flere varer bliver liggende længe efter sæsonen er slut.
+Virksomheden begynder derfor at arbejde mere aktivt med sæsonprognoser og opdeler forecast i kortere planlægningsperioder gennem året. Indkøb bliver flyttet tættere på den forventede efterspørgsel på de mest ustabile produktgrupper, mens sikkerhedslageret bliver reduceret på varer med mere stabil leveringsevne. Samtidig genforhandler virksomheden betalingsbetingelser med enkelte strategiske leverandører for at reducere presset på likviditeten i de mest lagerintensive perioder.
+Efter næste sæson falder DIO på produktgruppen fra 121 til 89 dage, og virksomhedens Cash Conversion Cycle bliver tilsvarende kortere. Lageret er stadig højt nok til at understøtte salget i højsæsonen, men virksomheden binder kapital i kortere tid og står med færre varer tilbage efter sæsonen.
+Det reducerer ikke alle udsving. Men virksomheden får langt bedre kontrol over, hvor og hvornår kapitalen bliver bundet gennem supply chain.
+Hvad er typiske fejl med CCC?
+En typisk fejl er kun at fokusere på at reducere lageret hurtigst muligt. For lave lagre kan ganske vist forbedre CCC på kort sigt, men samtidig skabe flere restordrer, hasteindkøb og lavere servicegrad, hvis virksomheden mister leveringsevne.
+Nogle virksomheder fokuserer også for ensidigt på længere betalingsfrister hos leverandører. Det kan forbedre likviditeten midlertidigt, men samtidig presse leverandørsamarbejdet eller reducere fleksibiliteten i forsyningskæden.
+En tredje fejl er at betragte CCC som et rent finansielt KPI. I praksis bliver udviklingen ofte påvirket direkte af forecasting, indkøb, lagerpolitikker og leverandørperformance længere tilbage i værdikæden.
+Hvordan kan virksomheden arbejde med CCC?
+Start med at analysere, hvilke dele af vareflowet der binder mest kapital. Mange virksomheder opdager først problemerne, når de analyserer CCC på produktgrupper, sæsonvarer, leverandører, kundetyper og lagerlokationer.
+Derefter bør virksomheden analysere, hvorfor kapitalen bliver bundet. Her bliver supply chain planning vigtigt, fordi mere præcise forecast og bedre planlægningshorisonter ofte reducerer behovet for store sikkerhedslagre og tidlige indkøb. Supply chain analytics spiller også en central rolle, fordi virksomheder skal kunne analysere sammenhængen mellem forecast, lager, leveringstider og betalingsflow på tværs af hele værdikæden.
+Leverandørperformance spiller også en vigtig rolle, fordi ustabile leveringstider eller høje minimumsordrer ofte tvinger virksomheder til at binde mere kapital i lager end nødvendigt.

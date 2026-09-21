@@ -1,0 +1,48 @@
+---
+topic: Fill rate
+source_type: glossary
+language: english
+keywords: Fill rate, order, stock, items, customer, demand, level, service, companies
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Fill rate
+term_en: Fill rate
+url: https://inact.io/en/glossary/fill-rate/
+---
+
+Fill rate
+Fill rate is a KPI that measures how much of customer demand a company can fulfil directly from stock, without backorders or delays. Low fill rate costs you sales, triggers emergency purchases and strains customer relationships — and the root cause is rarely the warehouse alone. The metric is used in inventory optimisation, purchasing management and supply chain planning, and can be measured at unit, order line or order level.
+What does fill rate mean in practice?
+Fill rate is a historical measure: it shows how well you have actually been able to deliver what customers ordered. If a customer orders 100 units and you ship 95 directly from stock, your fill rate is 95 %.
+That sounds straightforward, but fill rate depends on what you choose to measure:
+Unit fill rate measures the share of units delivered out of total units ordered.
+Line fill rate measures the share of order lines fulfilled in full.
+Order fill rate measures the share of complete orders shipped without any backorder.
+These three definitions can produce very different numbers for the same business. A company with high unit fill rate can still have low order fill rate if a single missing item blocks the entire order. Knowing what you are measuring — and what your customer expects — matters more than the number itself.
+In practice, companies track fill rate by product, order line, customer order, product category, supplier and seasonal period. A falling fill rate on specific items or categories usually points to unstable forecasting, insufficient safety stock or rising demand that hasn't been caught by planning.
+What is the difference between fill rate, service level and OTIF?
+These terms are often used interchangeably, but they measure different things.
+Fill rate, as described above, is a historical measure of how much you actually delivered from stock.
+Service level is a closely related concept — but not identical. Service level measures the share of orders delivered on time and in the requested quantity. That means service level includes a time element that fill rate does not necessarily capture. You can have high fill rate and still score poorly on service level if your deliveries are late.
+OTIF (On Time In Full) measures whether the customer receives the complete order by the agreed date. It resembles service level, but OTIF is typically used as a sharper supplier or customer requirement — either the order arrived on time and complete, or it didn't.
+The three KPIs show different dimensions of your delivery performance and work best when used together.
+Why does fill rate matter?
+Because low availability costs more than most companies realise. Stockouts create backorders, emergency purchases, lost sales and extra administration. Customers notice — and remember.
+But the opposite problem is just as real. Some companies chase high fill rate by buying large quantities across the full range, including slow-moving items. That improves availability in the short term but increases tied-up capital and the risk of excess inventory. Fill rate isn't about having as much stock as possible. It's about balancing availability, forecasting and working capital across your supply chain.
+What are the most common fill rate mistakes?
+The most widespread mistake is looking at fill rate as a single aggregate number. A strong average can hide the fact that your most important
+A-items regularly run out while you're sitting on large stocks of items nobody orders.
+A second mistake is confusing symptom with cause. Low fill rate is rarely a stock problem. It's a forecasting problem, a planning problem or a question of which items you actually prioritise. Buying more stock doesn't fix the underlying issue — it masks it.
+A third mistake is measuring without context. Fill rate on a spare part that sells once a year means something very different from fill rate on a standard item that ships every week. Combining fill rate with ABC analysis and demand behaviour gives you a much more useful picture.
+How do companies work with fill rate in practice?
+Let's look at an example:
+A Nordic spare parts wholesaler supplies components to service and maintenance companies across Scandinavia, working with more than 85,000 active
+SKUs. Demand varies sharply between stable standard items and slow-moving spare parts.
+Every summer, problems emerge in specific product groups. Sales grow faster than expected, and critical items go into backorder. When the company analyses fill rate in more detail, it becomes clear that a handful of A-items are driving most of the issues. In one product group, fill rate drops from 97 % to 82 % in June and July because the forecast doesn't account for seasonal spikes at several large customers.
+The company starts working with seasonal forecasts for the most critical items. Sales and supply chain share forecasts earlier in the year, and safety stock is temporarily increased on products where demand historically surges before summer. The range is segmented by demand stability and impact on delivery performance, with high-impact items monitored far more closely than slow-movers.
+Fill rate stabilises through peak season — not because every backorder disappears, but because stock is managed with intent rather than growing broadly across the full range.
+Where do you start with fill rate?
+Start by analysing fill rate at different levels rather than looking at a single company-wide number. Most companies only spot the real problems when they break the data down by product group, customer, supplier, seasonal period and critical items. An overall average rarely tells you where things are actually going wrong.
+From there, look at what is actually driving your delivery performance.
+Safety stock levels, reorder points and inventory strategies set the boundaries for what you can ship. Forecasting and planning determine how early you react to shifts in demand. Fill rate is a symptom — the causes live in your planning.

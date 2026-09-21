@@ -1,0 +1,9 @@
+---
+topic: Customer Profitability Analysis
+source_type: article
+language: english
+article_source: De 5 fejlsikre trin til en superoptimeret supply chain
+keywords: customer profitability, data analysis, contract negotiation, prioritization
+---
+
+At this stage, the company analyzes customers and their profitability to prioritize them and renegotiate contracts based on solid data showing profitability. This forms a strong foundation for decision-making.

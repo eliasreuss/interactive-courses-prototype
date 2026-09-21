@@ -1,0 +1,26 @@
+---
+topic: Zero-based planning (ZBP)
+source_type: glossary
+language: english
+keywords: Zero-based planning (ZBP), planning, zero-based, capital, plans, resources, where, budgeting, chain
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Zero-based planning (ZBP)
+term_en: Zero-based planning (ZBP)
+url: https://inact.io/en/glossary/zero-based-planning/
+---
+
+Zero-based planning (ZBP)
+Zero-Based Planning is a planning method where all activities, budgets, and resources are started from zero for each planning period. In the supply chain, it ensures that all plans are based on current needs rather than historical assumptions.
+What is Zero-based Planning?
+The method involves re-evaluating every activity, order, and resource requirement without taking previous plans as a starting point. This makes it possible to eliminate superfluous processes, reduce capital tied up in inventory, and optimize capacity utilization.
+What is Zero-based Planning used for?
+ZBP is used to ensure that planning and budgeting are data-driven and adapted to current consumption and demand. It helps reduce waste, free up capital, and prioritize resources where they create the most value.
+When is Zero-based Planning used?
+Zero-Based Planning is typically used for:
+Developing annual or quarterly plans
+Budgeting for inventory, production, and purchasing
+Optimizing supply chain resources and tied-up capital
+Implementing new strategies or products where historical data is not representative
+Back to the glossary

@@ -1,0 +1,19 @@
+---
+topic: ABC Analysis Fundamentals
+source: Double Abc Analysis 4
+source_type: course
+language: english
+product_area: inventory
+question_type: what
+keywords:
+- ABC analysis
+- Pareto principle
+- inventory management
+- A items
+- B items
+- C items
+- 80/20 rule
+- inventory value
+---
+
+ABC analysis is an inventory management technique that categorizes items based on their importance, typically using the Pareto principle or 80/20 rule. This principle suggests that a small proportion of items, known as A items, account for the majority of the total inventory value or sales. The remaining items, classified as B and C items, contribute much less to the overall value. By focusing on the vital few (A items) rather than the trivial many (B and C items), organizations can prioritize resources and management efforts for maximum impact.

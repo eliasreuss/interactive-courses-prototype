@@ -1,0 +1,14 @@
+---
+topic: Setting up two-factor authentication (2FA) on a user account
+source_type: tutorial
+language: english
+keywords: two-factor authentication, 2FA, security, authenticator app, enable 2FA, login
+product_area: Admin
+question_type: how-to
+---
+
+Two-factor authentication is available on the user profile settings page. The status shows as "Disabled" by default.
+
+To enable it: download an authenticator app on your mobile device (Microsoft Authenticator is recommended), then click the Enable 2FA button on the profile page and follow the steps in your authenticator app.
+
+Once enabled, you'll need to enter a one-time passcode every time you log into Inact Now.

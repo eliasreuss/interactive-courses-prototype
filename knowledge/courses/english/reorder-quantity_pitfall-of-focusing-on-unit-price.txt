@@ -1,0 +1,19 @@
+---
+topic: Pitfall of Focusing on Unit Price
+source: Reorder Quantity
+source_type: course
+language: english
+product_area: inventory
+question_type: why
+keywords:
+- unit price
+- order quantity
+- demand
+- inventory management
+- stock
+- cost optimization
+- reorder quantity
+- supply chain
+---
+
+Focusing solely on obtaining the lowest unit price when placing orders can lead to significant problems in inventory management. While a lower unit price may seem attractive, suppliers often require larger order quantities to offer these discounts. This can result in purchasing more stock than is actually needed to meet current demand, leading to excess inventory, increased holding costs, and potential waste. The optimal order quantity should balance unit price with actual demand and storage considerations, rather than prioritizing price alone.

@@ -1,0 +1,29 @@
+---
+topic: Cross-Docking
+source_type: glossary
+language: english
+keywords: cross-docking, transshipment, distribution, flow-through, no storage, consolidation, terminals, lead time
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: Cross-docking
+term_en: Cross-Docking
+---
+
+Cross-Docking — Danish: Cross-docking
+Cross-docking is a distribution method where goods are received at a terminal and sent onward almost immediately, without being put into storage. The goods cross the building from the inbound to the outbound dock rather than being stored.
+How does it work?
+Inbound shipments are sorted or labelled so they can be routed directly to outbound loads. The terminal is used to break bulk deliveries apart and reassemble them by destination, not to hold anything.
+What does it achieve?
+Shorter lead time from supplier to customer
+Lower storage costs and less tied-up capital
+Less handling, since goods are not put away and picked again
+Better freight consolidation per receiving point
+What does it require?
+Cross-docking is sensitive to timing. If an inbound shipment is late it misses the outbound departure and the benefit evaporates. It presupposes:
+Reliable suppliers with high delivery precision
+Accurate advance information about what is in each shipment
+Goods that need no repacking or inbound quality inspection
+Stable, predictable volume
+When does it not make sense?
+With unpredictable demand, where a buffer is needed anyway; with items on long and variable lead times; and at small volumes where the terminal cost cannot be carried. Cross-docking removes the warehouse but does not remove the need for one — that need has to be solved somewhere else in the chain first.

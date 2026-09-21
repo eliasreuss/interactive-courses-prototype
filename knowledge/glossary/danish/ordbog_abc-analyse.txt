@@ -1,0 +1,44 @@
+---
+topic: ABC-analyse
+source_type: glossary
+language: danish
+keywords: ABC-analyse, ABC-analysis, omsætning, værdi, produkter, antal, kunder, lagerstyring, a-varer
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: ABC-analyse
+term_en: ABC-analysis
+url: https://inact.io/ordbog/abc-analyse/
+---
+
+ABC-analyse — English: ABC-analysis
+ABC-analyse er en klassisk metode til lagerstyring og supply chain management, der opdeler produkter (eller kunder/leverandører) i tre grupper efter værdi eller omsætning. Formålet er at prioritere ressourcer dér, hvor de skaber mest værdi – ofte er det en lille del af varerne, der står for hovedparten af omsætningen
+Hvad er en ABC-analyse?
+En ABC-analyse er en strategisk metode inden for supply chain og lagerstyring, der bruges til at kategorisere for eksempel produkter, kunder eller leverandører efter deres værdi for virksomheden.
+Typisk opdeles elementerne i tre grupper:
+A-kategorien: Mest værdifulde (ofte 70-80% af omsætning, men kun 10-20% af antal varer)
+B-kategorien: Mellemgruppen (15-25% omsætning, 20-30% af antal)
+C-kategorien: Mindst værdifulde (5-10% af omsætning, men 50-70% af antal)
+Metoden bygger på Pareto-princippet (også kendt som 80/20-reglen), som siger, at en lille del af indsatsen ofte står for størstedelen af resultatet.
+I praksis betyder det, at en lille gruppe af produkterne eller kunderne (typisk 20%) kan stå for størstedelen af omsætningen eller profitten (typisk 80%).
+At kende disse nøgleelementer gør det muligt at optimere lagerstyring, prioritere indkøb og skærpe kundeindsatsen, så virksomheden får mest muligt ud af sine ressourcer.
+Hvad bruger man en ABC-analyse til?
+Man anvender ABC-analysen til at fokusere indsatsen der, hvor den skaber mest værdi. Den giver et databaseret grundlag for at træffe bedre beslutninger.
+For eksempel kan man bruge den til at:
+Prioritere lagerstyring og optimere lagerlayout (f.eks. placere A-varer tættest på pakkeområdet).
+Fokusere salgs- og marketingindsatsen på A-kunder.
+Optimere indkøbsstrategier og forhandle bedre vilkår med leverandører af A-varer.
+Identificere "døde" eller langsomt omsættelige produkter (C-varer) med høj kapitalbinding.
+Hvornår skal man bruge en ABC-analyse?
+En ABC-analyse er ikke en engangsøvelse, men bør udføres regelmæssigt (f.eks. årligt eller kvartalsvis), da markedsforhold og kundeadfærd ændrer sig.
+Analysen er særligt nyttig, når en virksomhed ønsker at:
+Reducere kapitalbinding i lageret.
+Forbedre lageromsætningshastigheden.
+Øge lønsomheden ved at fokusere på de mest profitable kunder og produkter.
+Træffe strategiske beslutninger om sortiment, leverandørstyring og prissætning.
+Hvordan laver man en ABC-analyse? (5 simple trin)
+Definér formål og data: Bestem, hvad du vil analysere (produkter, kunder etc.), og hvilket datagrundlag du vil bruge (omsætning, dækningsbidrag, antal ordrelinjer).
+Indsaml og bearbejd data: Hent de nødvendige data fra dit ERP-system
+Beregn og sortér: Beregn den samlede værdi (f.eks. årlig omsætning) for hvert element og sortér listen fra højest til lavest.
+Kategorisér (A, B, C): Opdel elementerne i de tre kategorier. Start med A-kategorien (de øverste 80% af den samlede værdi), derefter B (de næste 15%) og til sidst C (de resterende 5%).
+Implementér handlinger: Udarbejd en handlingsplan baseret på kategorierne. Eksempel: Særskilt lagerstrategi for A-varer, standardiseret håndtering af B-varer og automatisering/udfasning for C-varer.

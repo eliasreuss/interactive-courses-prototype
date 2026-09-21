@@ -1,0 +1,18 @@
+---
+topic: Impact of Service Level on Safety Stock
+source: Safety Stock
+source_type: course
+language: english
+product_area: inventory
+question_type: why
+keywords:
+- service level
+- safety stock
+- inventory costs
+- product availability
+- stock reduction
+- supply chain
+- Inact Now
+---
+
+Reducing the service level in inventory management can lead to a disproportionately large decrease in the amount of safety stock required. For example, lowering the service level from 98% to 80% results in a safety stock reduction of 58%, even though the service level only drops by 18%. This demonstrates that small adjustments to service levels can significantly lower inventory costs while still providing adequate product availability, especially for items that are less critical. Companies can use this relationship to optimize inventory and reduce excess stock without greatly compromising service.

@@ -1,0 +1,19 @@
+---
+topic: Forståelse af Dashboards
+source: Now Dashboards
+source_type: course
+language: danish
+product_area: platform
+question_type: what
+keywords:
+- Dashboards
+- Insights
+- KPI
+- Widgets
+- Tabeller
+- tendenser
+- interaktive
+- overblik
+---
+
+Et Dashboard er et fokuseret værktøj, der er designet til at præsentere nøgletal (KPI’er) og vigtige tendenser på ét samlet og let tilgængeligt sted. Hvert Dashboard oprettes med et specifikt formål og trækker direkte på relevante Insights for at sikre, at de viste oplysninger er meningsfulde. Dashboards opbygges med to hovedkomponenter: Widgets, som visuelt præsenterer data, og Tabeller, der organiserer detaljerede informationer. Denne struktur gør det muligt for brugerne hurtigt at overvåge og analysere de mest kritiske aspekter af deres drift.

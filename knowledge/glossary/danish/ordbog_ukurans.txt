@@ -1,0 +1,34 @@
+---
+topic: Ukurans
+source_type: glossary
+language: danish
+keywords: Ukurans, Obsolete Inventory, varer, forældede, produkter, sælges, varerne, adskiller, anvendes
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Ukurans
+term_en: Obsolete Inventory
+url: https://inact.io/ordbog/ukurans/
+---
+
+Ukurans — English: Obsolete Inventory
+Ukurans er varer på lageret, der har mistet deres værdi permanent. Det kan være produkter, der er teknologisk forældede, overskredet deres holdbarhed eller beskadiget under transport eller opbevaring. Fælles for dem alle er, at de ikke længere kan sælges eller anvendes som planlagt — og at der ingen fremtidig efterspørgsel er.
+Hvad er ukurans?
+Ukurans adskiller sig fra overskudslager ved, at problemet ikke er mængden — det er varen selv. Og det adskiller sig fra restlager ved, at varerne ikke blot er svære at afsætte til fuld pris — de kan reelt ikke afsættes overhovedet.
+Ukurans omfatter typisk:
+Forældede produkter erstattet af nyere modeller eller teknologi
+Varer med overskredet holdbarhed
+Beskadigede varer der ikke kan sælges eller anvendes
+Hvorfor opstår ukurans?
+Ukurans opstår sjældent fra den ene dag til den anden. Det er typisk resultatet af fejlvurderet efterspørgsel, for store indkøb, manglende udfasningsplanlægning eller lang lagertid uden rotation. Markedsændringer og ny teknologi kan også gøre varer forældede hurtigere end forventet — særligt i brancher med korte produktlivscyklusser.
+Hvad koster ukurans dig?
+Ukurans er mere end et lagerproblem — det er et regnskabsproblem. Varerne skal nedskrives, de optager plads der kunne bruges til salgbare varer, og bortskaffelse koster både tid og penge. Og i modsætning til overskudslager og restlager er der ingen vej tilbage — værdien er tabt.
+Hvad gør man ved ukurans?
+Første skridt er at identificere ukurans. Varer med meget lav omsætningshastighed og lang lagertid er de oplagte kandidater.
+Derefter:
+Afskriv varerne i regnskabet så kapitalbindingen afspejler virkeligheden
+Undersøg om dele eller komponenter kan genanvendes i produktion
+Bortskaf eller destruer varer der ikke kan bruges eller sælges
+Dokumenter årsagerne så du kan undgå dem fremover
+Hvordan undgår man ukurans?
+Man kan sjældent fjerne ukurans helt, men risikoen reduceres markant med bedre prognoser, tættere opfølgning på varer med lav omsætningshastighed og en klar proces for udfasning af produkter. Jo tidligere du spotter en vare på vej mod ukurans, jo flere muligheder har du for at handle — inden værdien er helt væk.

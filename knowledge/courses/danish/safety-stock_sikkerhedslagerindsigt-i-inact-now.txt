@@ -1,0 +1,21 @@
+---
+topic: Sikkerhedslagerindsigt i Inact Now
+source: Safety Stock
+source_type: course
+language: danish
+product_area: inventory
+question_type: what
+keywords:
+- Sikkerhedslager
+- Indsigt
+- Inact Now
+- simulationer
+- ERP
+- produktniveauanalyse
+- lagerstyring
+- sammenligning
+- påkrævet lager
+- scenarieanalyse
+---
+
+Sikkerhedslagerindsigten i Inact Now giver brugerne mulighed for at analysere behovet for sikkerhedslager på det enkelte produktniveau. Denne funktion gør det muligt at se den præcise mængde sikkerhedslager, der er nødvendig for hver vare, baseret på scenariesimulationer. Hvis din organisation allerede vedligeholder sikkerhedslager i et ERP-system, kan du bruge denne indsigt til at sammenligne dine nuværende indstillinger med de niveauer, som Inact Now beregner. Dette hjælper med at identificere afvigelser og optimere lagerstyringen ved at sikre, at sikkerhedslageret hverken er for højt eller for lavt for det enkelte produkt.

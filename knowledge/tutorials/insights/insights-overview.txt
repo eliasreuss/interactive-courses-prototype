@@ -1,0 +1,16 @@
+---
+topic: What the Insights module is and what it does in Inact Now
+source_type: tutorial
+language: english
+keywords: insights, module, overview, library, data analysis, grid, matrix, KPI
+product_area: Insights
+question_type: concept
+---
+
+Insights are the core analytical tool in Inact Now. Each Insight is a focused view of your data — a list of items (products, suppliers, customers) with the metrics that matter for a specific business question.
+
+You access all your Insights by clicking Insights in the top menu bar. This opens the Insights library — a list of every Insight you have access to, organised into groups like Inventory, Suppliers, Products, and Customers.
+
+Opening an Insight shows you a data table where each row is a product, customer, or supplier, and each column is a metric (e.g., Revenue 12 mos., Net Profit, Inventory Value). You can filter, sort, and slice this data to zero in on exactly what you need.
+
+Depending on how the Insight is configured, it may offer different views: Grid (a flat data table), Matrix (a visual categorisation layout), or KPI (summary metric tiles). Not all Insights have all three — it depends on what the Insight is designed to show.

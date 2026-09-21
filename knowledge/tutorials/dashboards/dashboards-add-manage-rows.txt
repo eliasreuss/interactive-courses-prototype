@@ -1,0 +1,30 @@
+---
+topic: How to add and manage rows in a dashboard table in Inact Now
+source_type: tutorial
+language: english
+keywords: add row, insight row, edit row, hide row, table row, dashboard data, reorder rows
+product_area: Dashboards
+question_type: how-to
+---
+
+Each row in the dashboard table represents a data segment — for example, A items, B items, or a specific Insight view. Rows are linked to Insights to pull their data.
+
+To add a new row:
+1. Open the dashboard, click Edit, and go to the Table tab.
+2. Click + Add row at the bottom of the table.
+3. Choose a row type from the menu:
+   - Insight row — pulls data from a saved Insight. Fill in a Label and select an Insight from the dropdown.
+   - Filter row — filters data by one or more slicers. Fill in a Label and add slicers using the + button.
+   - Multiple filter rows — automatically creates one row per value in a categorical column. Select the column and all values become individual rows.
+4. Click Save to add the row.
+
+To edit an existing row:
+Click the dropdown arrow on the row and select Edit. Update the label or the linked Insight, then save.
+
+To hide a row:
+Click the dropdown arrow on the row and select Hide row. The row stays in the configuration but disappears from the dashboard view. You can unhide it later.
+
+To reorder rows:
+Drag any row up or down using the handle on its left side.
+
+The top row (shown in bold) is typically a summary total and is locked — it cannot be deleted.

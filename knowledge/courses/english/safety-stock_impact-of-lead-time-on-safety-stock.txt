@@ -1,0 +1,19 @@
+---
+topic: Impact of Lead Time on Safety Stock
+source: Safety Stock
+source_type: course
+language: english
+product_area: inventory
+question_type: why
+keywords:
+- lead time
+- safety stock
+- inventory
+- service levels
+- stock reduction
+- delivery
+- demand
+- supply chain
+---
+
+Lead time is the period between placing an order and receiving the goods. It significantly affects the amount of safety stock a business needs to hold. Even if demand is predictable and service levels are set, longer lead times require more safety stock to ensure products are available until the next delivery arrives. For example, reducing lead time from 60 days to 40 days can lower the required safety stock from 289 units to 236 units, representing an 18% reduction. This demonstrates that shortening lead times can meaningfully decrease inventory levels and associated carrying costs.

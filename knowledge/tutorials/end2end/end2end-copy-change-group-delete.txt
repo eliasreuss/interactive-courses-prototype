@@ -1,0 +1,14 @@
+---
+topic: How to copy, move or delete an End2End view from the library in Inact Now
+source_type: tutorial
+language: english
+keywords: copy end2end, delete view, change group, move to group, three dots menu, duplicate
+product_area: End2End
+question_type: how-to
+---
+
+Each item in the End2End library has a "..." button on the right side of its row. Clicking it opens a menu with three options:
+
+Copy — creates a duplicate of the view. The copy is named after the original with " - Copy" added, and you can rename it afterwards.
+Change group — opens the Move to group window. Pick a group from the New group dropdown and click Save. The dropdown only lists groups that already exist plus Unsorted; you cannot type a new group name here. To create a group, turn on library edit mode with the gear icon and use + New Setup group.
+Delete — removes the view. Because End2End views are shared with your colleagues, only delete a view you are sure nobody else is using.

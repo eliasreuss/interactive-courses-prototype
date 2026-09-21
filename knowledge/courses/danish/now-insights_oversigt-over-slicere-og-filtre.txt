@@ -1,0 +1,19 @@
+---
+topic: Oversigt over slicere og filtre
+source: Now Insights
+source_type: course
+language: danish
+product_area: platform
+question_type: what
+keywords:
+- slicere
+- filtre
+- datasegmentering
+- Insights
+- datavisning
+- parametre
+- visninger
+- datapunkter
+---
+
+Slicere og filtre er værktøjer, der hjælper dig med at styre, hvilke data der vises i dine Insights ved at segmentere information baseret på udvalgte parametre. De gør det muligt at fokusere på specifikke datasæt, hvilket gør det lettere at analysere relevante oplysninger og minimere forstyrrelser fra uvedkommende data. De tilgængelige slicere og filtre afhænger af den specifikke Insight, du ser på, og du kan som regel anvende dem på en bred vifte af datapunkter for at tilpasse din analyse.

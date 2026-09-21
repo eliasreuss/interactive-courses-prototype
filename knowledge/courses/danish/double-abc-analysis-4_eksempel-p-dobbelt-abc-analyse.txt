@@ -1,0 +1,19 @@
+---
+topic: Eksempel på dobbelt ABC-analyse
+source: Double Abc Analysis 4
+source_type: course
+language: danish
+product_area: inventory
+question_type: how
+keywords:
+- Dobbelt ABC-analyse
+- lagerstyring
+- lageromkostninger
+- efterspørgsel
+- matrix
+- kategorier
+- styringsstrategi
+- kontorforsyningslager
+---
+
+Dobbelt ABC-analyse er en metode, der vurderer lagerartikler ud fra to dimensioner, såsom omkostninger og efterspørgsel. I et typisk eksempel placeres varerne i en matrix med lageromkostninger på den lodrette akse og efterspørgsel på den vandrette akse. Dette skaber fire hovedkategorier, som hver repræsenterer en forskellig kombination af omkostninger og efterspørgsel. Styringsstrategier bør tilpasses hver kategori. For eksempel kræver varer med høje omkostninger og høj efterspørgsel tæt overvågning og hyppig gennemgang, mens varer med lave omkostninger og lav efterspørgsel kan kræve mindre opmærksomhed. Ved at kategorisere lageret på denne måde kan organisationer optimere deres fokus og ressourcer for bedre lagerstyring.

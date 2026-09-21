@@ -1,0 +1,21 @@
+---
+topic: How to create a new dashboard in Inact Now
+source_type: tutorial
+language: english
+keywords: create dashboard, new dashboard, template, master insight, group, blank, build
+product_area: Dashboards
+question_type: how-to
+---
+
+1. Click Dashboards in the top menu bar.
+2. Click the green + New Dashboard button in the top-right corner.
+3. A window appears with two options:
+   - Click Create without template to build a dashboard from scratch.
+   - Or use the Copy an existing Dashboard dropdown to start from a copy of a dashboard you already have.
+4. If you chose to create without a template, fill in three fields:
+   - Dashboard name — what you want to call it.
+   - Group — which group to file it under (optional, but helps keep things organised).
+   - Master Insight — the Insight that will supply data to this dashboard. This determines which rows and metrics you can add later.
+5. Click Create.
+
+Your new dashboard opens straight away in edit mode, ready for you to add KPI cards and data columns.

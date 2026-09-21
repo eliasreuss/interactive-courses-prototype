@@ -1,0 +1,20 @@
+---
+topic: On-Time Delivery Performance
+source: Supplier Performance
+source_type: course
+language: english
+product_area: supplier
+question_type: what
+keywords:
+- On-Time Delivery
+- OTD
+- supplier performance
+- Inact Now
+- root-cause analysis
+- performance management
+- KPIs
+- delivery timeliness
+- transparency
+---
+
+On-Time Delivery Performance (OTD) is a key metric that evaluates how reliably suppliers deliver goods or services at the scheduled time. High OTD indicates that suppliers consistently meet agreed delivery dates, which is crucial for maintaining efficient operations, fulfilling customer commitments, and controlling costs. Inact Now enables organizations to monitor OTD, providing a transparent and structured framework for managing supplier performance. The platform also supports root-cause analysis, helping users identify and address factors that impact delivery timeliness, ultimately driving continuous improvement in supplier reliability.

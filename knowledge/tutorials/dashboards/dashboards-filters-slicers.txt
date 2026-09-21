@@ -1,0 +1,22 @@
+---
+topic: How to add and remove filters (slicers) on a dashboard in Inact Now
+source_type: tutorial
+language: english
+keywords: filter, slicer, add filter, customer group, supplier group, dashboard filter, fixed slicer, personal filter
+product_area: Dashboards
+question_type: how-to
+---
+
+Filters (called slicers) let you narrow the data shown on a dashboard. When you pick a filter value, all the KPI cards and table rows update instantly to show only matching data.
+
+As a dashboard editor, you can add two kinds of slicers in edit mode:
+
+Dashboard filters — let viewers filter by numeric metrics. In edit mode, click + Dashboard filter in the filter bar. A searchable list of available columns appears — select one to add it as a filter.
+
+Fixed slicers — let viewers filter by categories like Customer Group, Supplier Group, Country, Product Group, and so on. In edit mode, click + Fixed slicer in the filter bar. A searchable list of category fields appears — select one to add it.
+
+To remove a slicer in edit mode, click the red × button next to it in the filter bar.
+
+As a viewer (without editing), you can add temporary personal filters by clicking the green + button on the left of the filter bar. These only affect your own view and are not saved.
+
+To use a filter, simply click the dropdown and select a value. To reset a filter, select the blank or "No value" option at the top of the dropdown list.

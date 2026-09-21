@@ -1,0 +1,18 @@
+---
+topic: How to add a slicer to a Heatmap in Inact Now
+source_type: tutorial
+language: english
+keywords: slicer, no slicers, green plus, narrow heatmap, limit data, greyed out data source
+product_area: Heatmaps
+question_type: how-to
+---
+
+In edit mode, three slicer fields appear above the toolbar — Suppliers, Products and Customers — each with a green + button and the text "No slicers".
+
+Click the + button under a data source to open a searchable column picker, click a column, and the Data slicer dialog opens where you choose a condition and the values to include. Click Save in that dialog and the slicer is applied; the matrix and the colour scale recalculate around it.
+
+A data source that is not part of this heatmap is shown greyed out and in italics and cannot be sliced — a supplier-against-product heatmap, for example, has the Customers field disabled.
+
+Remove a slicer by clicking the "×" on its chip. Active slicers are listed in the About this Heatmap window, which is the first place to check when a heatmap shows less data than you expect.
+
+Click Save in the toolbar to store the slicers with the heatmap for everyone.

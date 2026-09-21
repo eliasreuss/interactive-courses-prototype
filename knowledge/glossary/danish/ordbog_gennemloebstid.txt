@@ -1,0 +1,30 @@
+---
+topic: Gennemløbstid (Lead time)
+source_type: glossary
+language: danish
+keywords: Gennemløbstid (Lead time), Lead time, gennemløbstid, gennemløbstiden, reducere, bruger, kortere, produktion, bedre, centralt
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Gennemløbstid (Lead time)
+term_en: Lead time
+url: https://inact.io/ordbog/gennemloebstid/
+---
+
+Gennemløbstid (Lead time) — English: Lead time
+Gennemløbstid angiver, hvor lang tid det tager for en vare, en ordre eller et produkt at bevæge sig gennem hele processen fra start til slut – typisk fra ordren afgives, til den leveres til kunden. Kortere gennemløbstid er en direkte indikator for højere effektivitet, lavere kapitalbinding og bedre kundeservice.
+Hvad er en gennemløbstid?
+Gennemløbstid måler den samlede tid, en ordre bruger i supply chain. Det er vigtigt at forstå, at gennemløbstiden ikke kun inkluderer aktiv tid (produktion, transport), men også passiv tid (ventetider, køer, lageropbevaring).
+Gennemløbstiden er et kritisk mål for både produktivitet, kundetilfredshed og likviditet, da en lang gennemløbstid binder kapital i længere tid.
+Hvad bruger man gennemløbstid til?
+Man bruger gennemløbstid som et værktøj til at identificere flaskehalse, optimere processer og reducere spild. De primære formål er:
+Identifikation af flaskehalse: Ved at opdele den samlede gennemløbstid i faser kan man præcist se, hvor den passive tid (ventetid) er størst.
+Optimering af processe r: Reducere ventetider og forbedre flowet, hvilket fører til hurtigere levering til kunderne.
+Bedre planlægning: Gør det muligt at planlægge kapacitet i produktion og logistik mere præcist og dermed reducere behovet for et stort sikkerhedslager.
+Forbedring af Time-to-Market: Især for virksomheder, der producerer varer, er en kort gennemløbstid afgørende for at kunne reagere hurtigt på markedstrends.
+Hvornår er gennemløbstid relevant?
+Gennemløbstid er et centralt mål i Lean-principper og anvendes, når man vil analysere effektiviteten i supply chain, planlægge produktion eller sætte mål for leveringstid. Det er særligt relevant, når:
+Virksomheden ønsker at reducere kapitalbinding: Kortere gennemløbstid betyder, at kapital er bundet i kortere tid.
+Man skal fastsætte realistiske leveringstider: Gennemløbstiden er grundlaget for kundeløfter.
+Der skal implementeres Lean-principper: Gennemløbstid er et centralt KPI for at måle reduktion af spild.
+Man skal optimere lagerstyring: Gennemløbstiden er en kritisk faktor i beregningen af bestillingspunktet.

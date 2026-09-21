@@ -1,0 +1,18 @@
+---
+topic: Benefits of Double ABC Analysis
+source: Double Abc Analysis 4
+source_type: course
+language: english
+product_area: inventory
+question_type: why
+keywords:
+- Double ABC Analysis
+- inventory
+- categorization
+- focus
+- prioritization
+- Insights
+- Actions
+---
+
+Double ABC Analysis assigns each inventory item a category based on two dimensions, such as value and demand variability. This dual categorization provides a clearer understanding of inventory dynamics, allowing you to identify which items require the most attention. By highlighting critical products and revealing patterns, the analysis helps prioritize management efforts, optimize stock levels, and improve decision-making. It enables targeted actions, such as focusing on high-value, high-variability items, and supports more effective inventory control strategies.

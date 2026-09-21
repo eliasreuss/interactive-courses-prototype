@@ -1,0 +1,19 @@
+---
+topic: Risici ved prisfokuseret genbestilling
+source: Reorder Quantity
+source_type: course
+language: danish
+product_area: inventory
+question_type: why
+keywords:
+- genbestillingsmængde
+- lagerstyring
+- C-vare
+- efterspørgsel
+- leverandørrabat
+- ordrestørrelse
+- skjult omkostning
+- prisfokus
+---
+
+Hvis man udelukkende fokuserer på prisen ved genbestillingsbeslutninger, kan det føre til uhensigtsmæssige lagerresultater. For eksempel, hvis en virksomhed kun sælger 100 enheder af en langsomt omsættende vare om året, men får tilbudt rabat ved køb af 1.000 enheder, kan den større ordre virke attraktiv på grund af den lavere enhedspris. Denne tilgang ignorerer dog den reelle efterspørgsel og kan resultere i overflødigt lager, hvilket binder kapital og øger lageromkostningerne. De skjulte omkostninger ved overbestilling overstiger ofte de umiddelbare besparelser fra leverandørrabatter, hvilket gør det vigtigt at afveje prisovervejelser med realistiske efterspørgselsprognoser.

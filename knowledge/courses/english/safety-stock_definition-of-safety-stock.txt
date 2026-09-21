@@ -1,0 +1,20 @@
+---
+topic: Definition of Safety Stock
+source: Safety Stock
+source_type: course
+language: english
+product_area: inventory
+question_type: what
+keywords:
+- safety stock
+- inventory
+- stockouts
+- reorder point
+- lead time
+- supply chain
+- demand uncertainty
+- service goals
+- purchase order
+---
+
+Safety stock is an extra quantity of inventory maintained as a buffer to protect against stockouts that can occur due to unpredictable fluctuations in supply or demand. When inventory reaches the reorder point, a new purchase order is triggered to meet expected demand during the supplier's lead time. The safety stock remains as a reserve below this level and is only used if actual demand exceeds forecasts or if supplier deliveries are delayed. Traditionally, safety stock levels are often set based on intuition or historical practices, but using data and clear service objectives can help determine more accurate and effective safety stock quantities.

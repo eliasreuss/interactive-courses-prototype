@@ -1,0 +1,19 @@
+---
+topic: Supplier Benchmarking and Root Cause Analysis
+source: Supplier Performance
+source_type: course
+language: english
+product_area: supplier
+question_type: how
+keywords:
+- A-suppliers
+- key performance indicators
+- root cause analysis
+- supplier performance
+- inventory issues
+- service challenges
+- benchmarking
+- improvement
+---
+
+After identifying your most important suppliers, known as A-suppliers, it is essential to evaluate their performance using key performance indicators. This detailed analysis helps reveal the underlying factors that influence supplier outcomes. By examining these indicators, you can detect the root causes of problems such as slow-moving stock, excess inventory, or service-related challenges. Understanding these causes provides a clear foundation for implementing targeted improvements to enhance supplier performance and overall supply chain efficiency.

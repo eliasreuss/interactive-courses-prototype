@@ -1,0 +1,12 @@
+---
+topic: How to check when an Insight's data was last updated in Inact Now
+source_type: tutorial
+language: english
+keywords: data freshness, last updated, stale data, data date, refresh, support
+product_area: Insights
+question_type: how-to
+---
+
+Every Insight shows an orange "Updated X ago" badge in the toolbar (e.g. "Updated 2 months ago"). Clicking it opens a "Data is not up to date" dialog showing the exact date and time of the last data update, and how long ago that was.
+
+If the data is outdated, the dialog suggests contacting the person responsible for the Insight or reaching out to Inact support at support@inact.io.

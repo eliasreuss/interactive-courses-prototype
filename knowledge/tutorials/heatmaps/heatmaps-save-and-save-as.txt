@@ -1,0 +1,17 @@
+---
+topic: How to save changes to a Heatmap in Inact Now
+source_type: tutorial
+language: english
+keywords: save heatmap, save as, copy, unsaved changes, shared
+product_area: Heatmaps
+question_type: how-to
+---
+
+Changes made in edit mode — dimensions, measure, colour scale, totals, number format, filters and slicers — are visible immediately but are only stored when you save. The two buttons sit at the right of the edit-mode bar:
+
+Save — writes the changes back to the heatmap you have open. Because heatmaps are shared, this changes it for every colleague who can see it.
+Save as — leaves the original untouched and creates a new heatmap from your current settings, with the name prefilled as the original plus " - Copy". Rename it and click Create.
+
+Drill-downs and cell selections are not part of what gets saved; they are exploration only.
+
+If you are experimenting on a heatmap that colleagues rely on, use Save as. If you have made changes you do not want to keep, leave the page without saving.

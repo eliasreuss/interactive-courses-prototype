@@ -1,0 +1,22 @@
+---
+topic: LIFO
+source_type: glossary
+language: danish
+keywords: LIFO, last in first out, sidst ind først ud, lagerprincip, FIFO, lagerværdi, rotation, bulkvarer
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: LIFO
+term_en: LIFO (Last In, First Out)
+---
+
+LIFO — English: LIFO (Last In, First Out)
+LIFO, last in first out, er princippet om at de senest modtagne varer bruges eller sælges først. Det er modsætningen til FIFO, hvor de ældste varer går først.
+Hvornår bruges LIFO i praksis?
+Fysisk sker LIFO ofte utilsigtet, fordi de nyeste varer er lettest at komme til — de står forrest på hylden eller øverst i stakken. For bulkvarer som sand, grus eller kul, hvor der påfyldes ovenfra og tages fra toppen, er LIFO den naturlige konsekvens af, hvordan lageret er indrettet.
+Hvad er problemet med LIFO?
+For alle varer med holdbarhed, teknologisk levetid eller risiko for at gå af mode er LIFO direkte skadeligt. De ældste varer bliver liggende, bliver ældre, og ender som ukurans. Et lager der reelt kører LIFO uden at vide det, opdager først problemet, når varerne skal afskrives.
+LIFO og regnskab
+LIFO bruges også som en metode til at værdisætte lageret, hvor vareforbruget bogføres til den seneste kostpris. I perioder med stigende priser giver det et højere vareforbrug og en lavere lagerværdi end FIFO. Bemærk at LIFO som regnskabsprincip ikke er tilladt efter IFRS, og at danske virksomheder derfor normalt ikke anvender det i årsregnskabet.
+Hvad bør man gøre?
+Med mindre der er en fysisk grund til det, bør lagerrotationen følge FIFO eller, for varer med udløbsdato, FEFO hvor varen med kortest resterende holdbarhed går først. Er der varer, der reelt ligger efter LIFO uden at det er besluttet, er det et lagerindretningsproblem, ikke et planlægningsproblem.

@@ -1,0 +1,32 @@
+---
+topic: Restlager
+source_type: glossary
+language: danish
+keywords: Restlager, Distressed inventory, varer, rester, lageret, produktion, stadig, adskiller, afsluttet
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Restlager
+term_en: Distressed inventory
+url: https://inact.io/ordbog/restlager/
+---
+
+Restlager — English: Distressed inventory
+Restlager er — som navnet antyder — en rest af noget, der engang gav mening at have. Det kan være sæsonvarer, der ikke blev solgt, rester fra en afsluttet produktion eller varer, der er udfaset fra sortimentet, men stadig fylder på lageret. Varerne er ikke nødvendigvis ubrugelige, men der er ingen plan for at få dem afsat.
+Hvad er restlager?
+Restlager adskiller sig fra overskudslager ved, at der ikke længere er en aktiv efterspørgsel at matche. Det er ikke et spørgsmål om at have for mange af de rigtige varer — det er varer, der er blevet til rester, fordi behovet er væk eller ændret. Det adskiller sig fra ukurans ved, at varerne stadig kan have en salgsværdi — de er bare svære at afsætte til fuld pris.
+Typiske eksempler på restlager:
+Sæsonvarer der ikke blev solgt i tide
+Rester fra en afsluttet produktion
+Varer der er udfaset fra sortimentet, men der stadig er rester tilbage på lageret
+Restpartier fra kampagner eller tilbud
+Hvad koster restlageret dig?
+Restlager er sjældent akut, men det er en stille dræner. Det binder kapital, optager lagerplads og kræver håndtering — uden at generere omsætning. Og jo længere det ligger, jo sværere bliver det at afsætte, og jo større er risikoen for at det ender som ukurans.
+Hvad gør man ved restlager?
+Første skridt er at skabe overblik — hvilke varer er det, hvor meget er der, og hvad er de reelt værd i dag? Derefter handler det om at få dem ud af lageret så kontrolleret som muligt:
+Udsalg eller prisnedslag for at fremskynde salget
+Returnering til leverandør hvis jeres aftale tillader det
+Alternativ anvendelse i produktion eller som reservedele
+Afskrivning og bortskaffelse som sidste udvej
+Hvordan undgår man restlager?
+Restlager opstår sjældent fra den ene dag til den anden. Det er typisk resultatet af manglende opfølgning på varer med lav omsætningshastighed, utilstrækkelig udfasningsplanlægning eller prognoser der ikke har fulgt med efterspørgslen. En tættere overvågning af lagerdage pr. varekategori og en klar proces for udfasning af varer reducerer risikoen betydeligt.

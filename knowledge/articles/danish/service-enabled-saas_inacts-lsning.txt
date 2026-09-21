@@ -1,0 +1,10 @@
+---
+topic: Inact's løsning
+source_type: article
+language: danish
+article_source: Service-enabled SaaS
+keywords: automatiserede analytiske workflows, forretningskonsulenter, abonnement,
+  succes, rådgivning
+---
+
+Inact leverer automatiserede analytiske workflows og forretningskonsulenter, der guider og hjælper med daglige handlinger for at nedbringe kompleksitet i værdikæden. Alt leveres på abonnement for at sikre succes med fokus på daglige handlinger og løbende rådgivning.

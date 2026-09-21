@@ -1,0 +1,54 @@
+---
+topic: Cash Conversion Cycle (CCC)
+source_type: glossary
+language: english
+keywords: Cash Conversion Cycle (CCC), company, inventory, capital, chain, supply, payment, liquidity, season
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Cash Conversion Cycle (CCC)
+term_en: Cash Conversion Cycle (CCC)
+url: https://inact.io/en/glossary/cash-conversion-cycle/
+---
+
+Cash Conversion Cycle (CCC)
+Cash Conversion Cycle (CCC) is a metric that measures how long a company's capital is tied up in operations before it converts back into cash. CCC represents the period during which a company's capital is tied up in the flow of goods before it returns as cash through customer payments. The KPI is often used to assess a company's liquidity, working capital, and the efficiency of its supply chain and inventory management.
+What does CCC mean in practice?
+In practice, CCC shows how quickly a company gets its money back through the flow of goods. The longer goods sit in inventory (DIO), and the longer customers take to pay (
+DSO), the longer capital stays tied up. Conversely, longer payment terms with suppliers (
+DPO) can reduce the period during which the company itself has to finance the flow of goods.
+CCC typically consists of three core components: days in inventory (DIO) customer payment time (DSO) and supplier payment time (DPO)
+If a company carries large inventories, offers long credit terms to customers, and at the same time has short payment terms with its own suppliers, CCC will often be high. This is because the company has capital tied up in inventory for an extended period while also waiting longer to get its money back from sales. This is why CCC is closely linked to tied-up capital, since large inventories are typically one of the biggest reasons capital stays tied up for extended periods in the supply chain.
+Formula: How do you calculate CCC?
+Cash Conversion Cycle is typically calculated as:
+CCC = DIO + DSO – DPO
+Where:
+DIO = Days Inventory Outstanding
+DSO = Days Sales Outstanding
+DPO = Days Payable Outstanding
+Example:
+DIO: 74 days
+DSO: 42 days
+DPO: 38 days
+CCC = 74 + 42 – 38 = 78 days
+This means the company has capital tied up for an average of 78 days before the money is recovered through customer payments. The lower the CCC, the faster capital is typically released back into the business.
+Why is CCC important?
+CCC matters because many companies underestimate how closely supply chain and liquidity are connected. Small changes in inventory, forecasting, or lead times can quickly affect tied-up capital, liquidity, financing needs, inventory holding costs, and service levels.
+For example, if a company builds up excessive inventory ahead of peak seasons, it may improve service levels in the short term but tie up large amounts of capital for months before the sale is realized.
+CCC is therefore often used as an overall measure of how effectively a company manages inventory, purchasing, and payment flow. This makes the KPI central to supply chain optimization, since decisions about inventory, forecasting, and purchasing directly affect how long capital stays tied up across the value chain.
+How companies work with CCC in practice
+A Nordic trading company sells technical components to industrial customers across Europe. The company is experiencing rising revenue, but liquidity is becoming more strained throughout the year. The liquidity pressure becomes most visible ahead of the autumn peak season, when inventory grows significantly months before sales peak.
+When the company analyzes its CCC, it quickly identifies the cause. Large volumes of goods are purchased well in advance to ensure availability during peak season. Several Asian suppliers also have long lead times and high minimum order quantities.
+For one specific product group, the analysis shows that DIO rises from 68 to 121 days ahead of peak season, that forecast deviations significantly increase excess inventory, and that several products remain unsold long after the season ends.
+The company therefore starts working more actively with seasonal forecasts, breaking them down into shorter planning periods throughout the year. For product groups with the most volatile demand, purchasing decisions are shifted closer to the point of actual demand, while safety stock is reduced for products with more reliable supply. At the same time, the company renegotiates payment terms with select strategic suppliers to ease pressure on liquidity during the most inventory-intensive periods.
+After the following season, DIO for the product group falls from 121 to 89 days, and the company's Cash Conversion Cycle shortens accordingly. Inventory levels are still high enough to support sales during peak season, but the company ties up capital for a shorter period and ends up with less excess inventory after the season.
+This doesn't solve every challenge. But the company gains far better control over where and when capital gets tied up across the supply chain.
+What are common mistakes with CCC?
+A common mistake is focusing solely on reducing inventory as fast as possible. Very low inventory levels can certainly improve CCC in the short term, but can also lead to more backorders, rush orders, and lower service levels if product availability suffers.
+Some companies also focus too heavily on extending payment terms with suppliers. This can improve liquidity temporarily, but may strain supplier relationships or reduce flexibility in the supply chain.
+A third mistake is treating CCC as a purely financial KPI. In practice, its development is often directly influenced by forecasting, purchasing, inventory policy, and supplier performance further back in the value chain.
+How can a company work with CCC?
+Start by analyzing which parts of the flow of goods tie up the most capital. Many companies only discover the real issues once they analyze CCC by product group, seasonal products, supplier, customer type, and warehouse location.
+From there, the company should analyze why capital is tied up. This is where supply chain planning becomes important, since more accurate forecasts and better planning horizons often reduce the need for high safety stock levels and early purchasing. Supply chain analytics also plays a central role, since companies need to analyze the relationship between forecasting, inventory, lead times, and payment flow across the entire value chain.
+Supplier performance also plays an important role, since unstable lead times or high minimum order quantities often force companies to tie up more capital in inventory than necessary.
+Bac k to the glossary

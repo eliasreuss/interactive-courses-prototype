@@ -1,0 +1,31 @@
+---
+topic: Finanslagerværdi
+source_type: glossary
+language: danish
+keywords: Finanslagerværdi, Financial Inventory Value, kapital, lager, varer, virksomhedens, investeringer, nøgletal, relevant
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Finanslagerværdi
+term_en: Financial Inventory Value
+url: https://inact.io/ordbog/finanslagervaerdi/
+---
+
+Finanslagerværdi — English: Financial Inventory Value
+Finanslagerværdi angiver den samlede økonomiske værdi af et lager, typisk beregnet ud fra varekostpriser eller anskaffelsesværdi. Begrebet er et kritisk nøgletal for virksomhedens
+Working Capital og bruges til at forstå, hvor meget kapital virksomheden har bundet i lager og til at træffe strategiske beslutninger om lagerstyring og investering.
+Hvad er en finanslagerværdi?
+Finanslagerværdi viser, hvor meget et lager repræsenterer af virksomhedens bundne kapital. Den er et centralt nøgletal i supply chain og økonomistyring, fordi den kombinerer både mængde og pris på lagerførte varer. Det er den værdi, som ikke kan bruges til andre investeringer, før varerne er solgt.
+Hvad bruger man finanslagerværdi til?
+Man bruger finanslagerværdi til at overvåge og optimere virksomhedens likviditet. Det er et afgørende værktøj til at:
+Vurdere kapitalbinding: Finde balancen mellem at have nok varer på lager (høj servicegrad) og samtidig undgå unødvendig bundet kapital.
+Optimere lagerbeholdning: Identificere varer med høj værdi og lav omsætningshastighed, som potentielt kan reduceres.
+Finansiel rapportering: Udgør en væsentlig post i virksomhedens balance og er grundlag for beregning af Inventory Turnover (lageromsætningshastighed).
+Planlægge investeringer: Frigøre kapital fra lageret til brug i andre strategiske investeringer.
+Hvornår er finanslagerværdi relevant?
+Finanslagerværdi er et kontinuerligt relevant nøgletal, der anvendes løbende i finansiel rapportering, lagerstyring og supply chain-analyser. Det er særligt relevant ved:
+Budgettering og prognoser: For at forudsige fremtidig kapitalbinding.
+Optimering af lagerbeholdning: Som en del af den løbende
+ABC-analyse, hvor man fokuserer på de varer, der binder mest kapital.
+Strategiske beslutninger: Om produktsortiment, indkøbsvolumen og valg af leverandør (f.eks. om man skal købe stort ind for at opnå rabat, eller holde lageret lavt for at bevare likviditeten).
+Årsregnskab: Hvor værdien skal opgøres korrekt i henhold til regnskabsprincipperne.

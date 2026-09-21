@@ -1,0 +1,12 @@
+---
+topic: How to connect a dashboard to an End2End setup in Inact Now
+source_type: tutorial
+language: english
+keywords: end2end, connect end2end setup, settings tab, dashboard settings
+product_area: Dashboards
+question_type: how-to
+---
+
+In the Settings tab of dashboard edit mode, the Connect End2End Setup dropdown lets you link the dashboard to an End2End configuration, allowing End2End data to flow into the dashboard.
+
+To use it, open the dashboard, click Edit, go to the Settings tab, and select the relevant setup from the Connect End2End Setup dropdown. Click Save when done.

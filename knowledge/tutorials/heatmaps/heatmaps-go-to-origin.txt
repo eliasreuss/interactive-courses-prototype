@@ -1,0 +1,14 @@
+---
+topic: How to get back to the End2End view a Heatmap came from in Inact Now
+source_type: tutorial
+language: english
+keywords: go to origin, back to end2end, navigate back, origin, where did this come from
+product_area: Heatmaps
+question_type: how-to
+---
+
+Every heatmap has a "Go to origin (End2End)" link at the very top left of the page, above the title. Clicking it opens the End2End view the heatmap was built from.
+
+This matters because a heatmap only shows two dimensions of the chain. When a cell raises a question about the third — which customers are behind these supplier and product combinations — going back to the origin lets you see the whole Supplier, Product and Customer chain again.
+
+The reverse route also exists: from the End2End view, the Heatmap button in a link area lists the heatmaps built on that relation, and from a heatmap grid the "Show in End2End" button carries the current records back into the End2End view as a selection.

@@ -1,0 +1,49 @@
+---
+topic: Fill rate
+source_type: glossary
+language: danish
+keywords: Fill rate, varer, måler, servicegrad, fordi, forecast, lager, virksomheder, andelen
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Fill rate
+term_en: Fill rate
+url: https://inact.io/ordbog/fill-rate/
+---
+
+Fill rate
+Fill rate er et nøgletal, der måler hvor stor en del af kundernes efterspørgsel virksomheden kan levere direkte fra lager uden restordre eller forsinkelse. Lav fill rate koster dig salg, skaber hasteindkøb og stresser kundeforholdet — og det er sjældent lageret alene der er problemet. KPI'en bruges i lageroptimering, indkøbsstyring og supply chain-planlægning, og du kan måle den på vareniveau, ordrelinjer eller hele ordrer.
+Hvad betyder fill rate i praksis?
+Fill rate er en historisk måling: den viser, i hvilken grad du faktisk har kunnet levere det, kunderne har bestilt. Hvis en kunde bestiller 100 enheder, og du leverer 95 direkte fra lager, er fill rate 95 %.
+Det lyder enkelt — men fill rate afhænger af, hvad du vælger at måle på:
+Unit fill rate måler andelen af leverede enheder ud af det samlede antal bestilte enheder.
+Line fill rate måler andelen af ordrelinker, du kan ekspedere fuldt ud.
+Order fill rate måler andelen af hele ordrer, du kan levere komplet og uden restordre.
+De tre målinger kan give meget forskellige tal for den samme forretning. En virksomhed med høj unit fill rate kan stadig have lav order fill rate, fordi én manglende vare blokerer hele ordren. Derfor er det vigtigt at vide, hvad du faktisk måler — og hvad kunden forventer.
+I praksis måler virksomheder fill rate på vareniveau, ordrelinjer, kundeordrer, produktgrupper, leverandører og sæsonperioder. Falder fill rate på bestemte varer eller kategorier, er det typisk et tegn på ustabilt forecast, for lavt sikkerhedslager eller stigende efterspørgsel der ikke er fanget i planlægningen.
+Hvad er forskellen på fill rate, servicegrad og OTIF?
+Begreberne bliver ofte blandet sammen, men de måler ikke det samme.
+Fill rate er, som beskrevet, en historisk opgørelse af hvor meget du faktisk har leveret direkte fra lager.
+Servicegrad bruges i mange virksomheder som et nært beslægtet begreb — men det er ikke helt det samme. Servicegrad er andelen af ordrer, der leveres til tiden og i den ønskede mængde. Det vil sige, at servicegrad indeholder et tidselement, som fill rate ikke nødvendigvis gør. Du kan have høj fill rate på lageret og stadig lav servicegrad, hvis leverancerne er forsinkede.
+OTIF (On Time In Full) måler om kunden modtager den fulde ordre til den aftalte tid. Det ligner servicegrad, men OTIF bruges typisk som et skarpere leverandør- eller kundekrav — enten er ordren leveret til tiden og komplet, eller ej. Du kan godt have høj fill rate og lav OTIF, hvis du leverer rigtigt antal, men for sent.
+De tre KPI'er viser altså forskellige sider af din leveringsevne og bruges bedst i kombination.
+Hvorfor er fill rate vigtigt?
+Fordi lav tilgængelighed koster mere end de fleste regner med. Mangler du varer, opstår der restordrer, hasteindkøb, tabt salg og ekstra administration. Kunden mærker det — og husker det.
+Men det modsatte problem findes også. Nogle virksomheder jagter høj fill rate ved at købe store lagre hjem på tværs af hele sortimentet, også på varer med lav efterspørgsel. Det forbedrer tilgængeligheden på kort sigt, men øger kapitalbindingen og risikoen for overskudslager.
+Fill rate handler ikke om at have flest mulige varer på lager. Det handler om at balancere tilgængelighed, forecast og kapitalbinding på tværs af din supply chain.
+Hvilke fejl laver man typisk med fill rate?
+Den mest udbredte fejl er at se på fill rate som ét samlet tal. Et flot gennemsnit kan dække over, at dine vigtigste
+A-varer jævnligt mangler, mens du sidder på store lagre af varer ingen bestiller.
+En anden fejl er at forveksle årsag og symptom. Lav fill rate er sjældent et lagerproblem. Det er et forecastproblem, et planlægningsproblem eller et spørgsmål om hvilke varer du prioriterer at have på lager. Køber du bare mere hjem, løser du ikke det underliggende problem — du skjuler det.
+En tredje fejl er at måle uden kontekst. Fill rate på en reservedel med ét salg om året betyder noget andet end fill rate på en standardvare, der går ud hver uge. Kobler du fill rate til ABC-analyse og efterspørgselsadfærd, får du et langt mere brugbart billede.
+Sådan arbejder virksomheder konkret med fill rate
+Lad os tage et konkret eksempel:
+En nordisk reservedelsgrossist leverer komponenter til service- og vedligeholdelsesvirksomheder i hele Skandinavien og arbejder med mere end 85.000 aktive varenumre. Efterspørgslen varierer kraftigt mellem stabile standardvarer og langsomt omsættelige reservedele.
+Hvert år opstår der problemer på udvalgte produktgrupper i sommerperioden. Salget stiger hurtigere end forventet, og kritiske varer går i restordre. Da virksomheden analyserer fill rate mere detaljeret, viser det sig, at en håndfuld
+A-varer trækker langt størstedelen af problemerne. På én produktgruppe falder fill rate fra 97 % til 82 % i juni og juli, fordi forecast ikke tager højde for sæsonudsving hos flere store kunder.
+Virksomheden begynder at arbejde med sæsonprognoser på de mest kritiske varer. Salg og supply chain deler forecast tidligere på året, og sikkerhedslageret justeres midlertidigt op på de produkter, hvor efterspørgslen historisk stiger markant før sommeren. Sortimentet opdeles efter stabilitet og betydning for leveringsevnen, og varer med høj påvirkning på fill rate overvåges langt tættere end varer med lav efterspørgsel.
+Fill rate bliver mere stabil gennem højsæsonen — ikke fordi alle restordrer forsvinder, men fordi lageret styres målrettet frem for at vokse bredt på tværs af hele sortimentet.
+Hvordan kommer du i gang med at arbejde med fill rate?
+Start med at analysere fill rate på forskellige niveauer frem for kun samlet for hele virksomheden. Mange virksomheder opdager først de reelle problemer, når de bryder tallene ned på produktgrupper, kunder, leverandører, sæsonperioder og kritiske varer. Et samlet gennemsnit fortæller dig sjældent, hvor skoen trykker.
+Derefter skal du se på, hvad der faktisk påvirker leveringsevnen.
+Sikkerhedslager, genbestillingspunkter og lagerstrategier sætter rammen for, hvad du kan levere. Forecast og planlægning bestemmer, hvor tidligt du reagerer på ændringer i efterspørgslen. Fill rate er med andre ord et symptom — det er i planlægningen, du finder årsagerne.

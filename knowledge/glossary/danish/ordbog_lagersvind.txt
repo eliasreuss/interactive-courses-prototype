@@ -1,0 +1,28 @@
+---
+topic: Lagersvind
+source_type: glossary
+language: danish
+keywords: lagersvind, svind, shrinkage, lagerdifference, optælling, cyklustælling, spild, tyveri, registreringsfejl, lagernøjagtighed
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: Lagersvind
+term_en: Inventory Shrinkage
+---
+
+Lagersvind — English: Inventory Shrinkage
+Lagersvind er forskellen mellem den beholdning, systemet siger du har, og den beholdning der faktisk står på lageret. Svindet opdages typisk ved en optælling og skal bogføres som et tab.
+Hvor kommer svindet fra?
+De færreste tilfælde skyldes tyveri. De almindeligste årsager er langt mere trivielle:
+Registreringsfejl ved modtagelse, plukning eller returnering
+Varer der er beskadiget eller kasseret uden at blive bogført
+Forkert varenummer brugt ved ud- eller indlevering
+Spild og udløbet holdbarhed på varer med begrænset levetid
+Svind ved tyveri eller bortkomst
+Hvorfor betyder det mere end kronebeløbet?
+Fordi upålidelige beholdninger ødelægger alt det, der bygger ovenpå. Bestillingspunkter udløses på et forkert tal, MRP regner på en beholdning der ikke findes, og planlæggere begynder at kompensere med ekstra sikkerhedslager, fordi de ikke stoler på systemet. Den skjulte omkostning ved lav lagernøjagtighed er derfor typisk større end selve svindet.
+Hvordan holder man det nede?
+Tæl løbende i stedet for én gang om året. Cyklustælling, hvor en lille del af sortimentet tælles hver uge, fanger fejl mens årsagen stadig kan findes
+Tæl varer med høj værdi eller høj omsætningshastighed oftere end resten
+Registrer kassationer og beskadigede varer som de sker, ikke ved årsafslutning
+Se på mønstre i differencerne frem for kun totalen — gentagne fejl på de samme varenumre peger på en procesfejl, ikke på svind

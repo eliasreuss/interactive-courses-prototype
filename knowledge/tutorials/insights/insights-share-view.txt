@@ -1,0 +1,18 @@
+---
+topic: How to share an Insight view with a colleague in Inact Now
+source_type: tutorial
+language: english
+keywords: share insight, share link, copy link, view sharing, filters, URL
+product_area: Insights
+question_type: how-to
+---
+
+If you want to share a specific view of an Insight — with particular filters or slicers already applied — you can copy a direct link that opens the Insight in exactly that state.
+
+1. Set up the Insight view the way you want it (apply filters, choose your view type, etc.).
+2. Click the link icon (chain link) in the top-right corner of the Insight page.
+3. The Share this view window appears, showing a URL and the message: "Copy a link to this view, complete with the current slicing and settings."
+4. Click Copy to clipboard.
+5. Paste the link wherever you want to share it — email, chat, etc.
+
+When someone opens that link, they'll see the Insight exactly as you had it set up, including any active filters.

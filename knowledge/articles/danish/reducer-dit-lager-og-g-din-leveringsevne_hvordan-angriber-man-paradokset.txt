@@ -1,0 +1,12 @@
+---
+topic: Hvordan angriber man paradokset?
+source_type: article
+language: danish
+article_source: Reducér dit lager og øg din leveringsevne
+keywords: varelager, omsætningshastighed, leveringsevne, ABC-analyse
+---
+
+1. Vurder varelageret i forhold til omsætningen.
+2. Brug varelagerets omsætningshastighed som pejlemærke.
+3. Omsætningshastigheden viser investeringens hastighed.
+4. Træf valg om servicegrad, working capital og omsætning.

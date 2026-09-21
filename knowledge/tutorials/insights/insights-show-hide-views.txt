@@ -1,0 +1,18 @@
+---
+topic: How to show, hide, and set the default view tab on an Insight in Inact Now
+source_type: tutorial
+language: english
+keywords: views, show hide views, matrix, grid, kpi, sum, trend, default view, view tabs, edit mode
+product_area: Insights
+question_type: how-to
+---
+
+In edit mode, an "Edit" button appears alongside the view tabs (Matrix, Grid, KPI, Sum, Trend). Clicking "Edit" opens the Show/hide views dialog.
+
+The dialog has two sections:
+Shown views — views with checkboxes, currently enabled. Uncheck a view to hide that tab from users.
+Hidden views — views that are disabled. The "Profit" view appears here if it's not enabled for your data source (it shows a note explaining this).
+
+There's also a Default view dropdown where you choose which view tab opens first when someone opens the Insight. Options are: Matrix, Grid, KPI, Sum, Trend.
+
+Click Save to apply, or Close to cancel. Note: the Insight can't be saved if all views are disabled — a warning icon replaces the Save button in that case.

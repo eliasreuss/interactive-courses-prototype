@@ -1,0 +1,18 @@
+---
+topic: The difference between filters and slicers in End2End in Inact Now
+source_type: tutorial
+language: english
+keywords: filter vs slicer, before linking, after linking, relations, difference, which one should I use
+product_area: End2End
+question_type: concept
+---
+
+End2End has two different ways of narrowing data, and the difference matters because they act at different points in the calculation.
+
+Filters apply before the data sources are linked. They reduce the amount of data that goes into building the relations at all, so a record removed by a filter never becomes part of any supplier-product or product-customer relation. The Edit Filter setup window states this directly: filters "help reduce the amount of data and ensure that only relevant information is used when creating relations between Data sources".
+
+Slicers apply after the linking, on the data that is already related. They narrow what you see without changing which relations exist underneath.
+
+The practical rule: use a filter when the excluded records should not count as connections at all — for example excluding inactive suppliers or discontinued items so they do not inflate the relation counts. Use a slicer when you want to look at a subset of a chain that is otherwise correctly built — for example viewing only Danish customers within the existing relations.
+
+Both are shown in the info dialogs: the info icon next to a column heading lists that data source's active Slicers and Filters, and the info icon next to the view name lists them for the whole view.

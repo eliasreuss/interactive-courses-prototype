@@ -1,0 +1,24 @@
+---
+topic: Total cost of ownership (TCO)
+source_type: glossary
+language: danish
+keywords: Total cost of ownership (TCO), ownership, total, investering, omkostninger, samlede, beslutninger, chain, indkøb
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Total cost of ownership (TCO)
+term_en: Total cost of ownership (TCO)
+url: https://inact.io/ordbog/total-cost-of-ownership/
+---
+
+Total cost of ownership (TCO)
+Total cost of ownership, eller samlede ejerskabsomkostninger, er en metode til at vurdere de samlede omkostninger forbundet med et produkt, en investering eller en leverandør over hele dens livscyklus – ikke kun indkøbsprisen.
+Hvad er total cost of ownership?
+TCO inkluderer alle direkte og indirekte omkostninger, såsom indkøbspris, transport, lager, installation, vedligehold, drift og afvikling. Det giver et mere realistisk billede af, hvad en investering faktisk koster virksomheden over tid.
+Hvorfor kigger man på total cost of ownership?
+Man bruger TCO til at træffe bedre beslutninger omkring indkøb, investeringer og leverandørvalg. Ved at fokusere på samlede omkostninger frem for blot anskaffelsespris kan virksomheder optimere både økonomi og supply chain effektivitet.
+Hvornår kigger man på total cost of ownership?
+TCO kan anvendes på mere eller mindre alle investering, men bruges  især ved:
+Indkøb af maskiner, udstyr eller it-løsninger
+Evaluering af leverandører og kontrakter
+Strategiske beslutninger om investeringer i supply chain eller produktion

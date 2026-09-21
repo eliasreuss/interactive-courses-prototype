@@ -1,0 +1,22 @@
+---
+topic: How the Insights library is organised in Inact Now
+source_type: tutorial
+language: english
+keywords: insights library, groups, subgroups, organisation, public, private, unsorted, owner, data source
+product_area: Insights
+question_type: concept
+---
+
+The Insights library organises Insights into a hierarchy of groups and subgroups, making it easier to find what you need.
+
+Top-level groups correspond to business areas: Inventory, Suppliers, Products, Customers. Each has a number showing how many Insights it contains and a toggle arrow to collapse or expand it.
+
+Subgroups sit inside each top-level group and provide a second level of organisation (for example, under Inventory you might see Stock Policy, ERP Planning Parameters, Working Capital). Clicking the ‹ arrow on a subgroup expands it to show individual Insights.
+
+Unsorted is a group that contains Insights not yet assigned to any group.
+
+Private Insights is a special section that contains Insights marked as private — only visible to you and not shared with others.
+
+Each Insight row shows: the Insight name, Owner (who created or manages it), and Data Source (which type of data it's built on — Products, Suppliers, or Customers).
+
+The Showing N of N counter at the top tells you how many Insights are displayed versus the total. Use the filters and search to reduce this when the list is long.

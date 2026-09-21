@@ -1,0 +1,14 @@
+---
+topic: How to sort a Heatmap and how to lock the sorting in Inact Now
+source_type: tutorial
+language: english
+keywords: sort heatmap, total arrow, order rows, order columns, sorting checkbox, lock, padlock
+product_area: Heatmaps
+question_type: how-to
+---
+
+A heatmap is sorted from its totals. The arrow in the Total column header sorts the rows by their row totals, and the arrow in the Total row sorts the columns by their column totals. Click an arrow to reorder, and click again to reverse the direction. This is what puts your biggest contributors at the top left and makes a matrix readable.
+
+Next to the toolbar there is a Sorting checkbox with a padlock icon. Tick it to lock the current order: the sort arrows turn into padlocks and the rows and columns stay where they are, even as the underlying values change. Untick it to unlock and sort freely again.
+
+Locking is useful when you want a heatmap to keep a fixed, familiar layout for the colleagues who open it — for example always A, B, C, Inactive in that order — rather than reordering itself as the data moves.

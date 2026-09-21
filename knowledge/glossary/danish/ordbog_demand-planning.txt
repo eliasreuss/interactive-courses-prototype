@@ -1,0 +1,43 @@
+---
+topic: Demand Planning (Efterspørgselsplanlægning)
+source_type: glossary
+language: danish
+keywords: Demand Planning (Efterspørgselsplanlægning), Demand Planning, demand, planning, produkter, prognose, chain, proces, supply, effektiv
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Demand Planning (Efterspørgselsplanlægning)
+term_en: Demand Planning
+url: https://inact.io/ordbog/demand-planning/
+---
+
+Demand Planning (Efterspørgselsplanlægning)
+Demand Planning er den strategiske og tværfunktionelle proces, der har til formål at forudsige fremtidig kundebehov. Den sikrer, at virksomheden har de rigtige produkter på det rigtige sted til det rigtige tidspunkt. Effektiv Demand Planning er fundamentet for en robust supply chain, da den minimerer risikoen for både udsolgte varer (stock-outs) og overfyldte lagre, hvilket direkte påvirker virksomhedens rentabilitet.
+Hvad er Demand Planning?
+Demand Planning (også kendt som efterspørgselsplanlægning) er en central disciplin inden for Supply Chain Management (SCM), der fokuserer på at forudsige og styre kundernes efterspørgsel efter produkter eller services.
+Det er en proces, der kombinerer:
+Historiske salgsdata
+Markedsdata (f.eks. fra salgs- og marketingafdelingen)
+Statistiske modeller
+Målet er at skabe en fælles prognose – en så præcis og objektiv forudsigelse som muligt – der sikrer, at produktion, indkøb og lager kan imødekomme den forventede efterspørgsel.
+Hvad bruger man Demand Planning til?
+Man bruger Demand Planning til at skabe optimal balance mellem udbud og efterspørgsel, hvilket er fundamentalt for en effektiv supply chain.
+De primære formål og gevinster er:
+Optimering af lagerbeholdning: Reducere kapitalbinding i lageret og minimere risikoen for forældede varer, samtidig med at en høj servicegrad over for kunderne opretholdes.
+Forbedring af cash flow og likviditet: Mere præcise prognoser fører til bedre indkøbsaftaler, reduceret spild og en stærkere likviditet.
+Fundament for S&OP (Sales & Operations Planning): Efterspørgselsplanen er det kritiske input til S&OP-processen, hvor salg, marketing, drift og økonomi synkroniseres for at træffe strategiske beslutninger.
+Effektiv ressourceallokering: Sikre, at produktionskapacitet, mandskab og andre midler er til rådighed, når efterspørgslen topper.
+Hvornår er Demand Planning særligt vigtigt?
+Demand Planning er en kontinuerlig proces, der typisk kører i faste cyklusser (f.eks. månedligt eller ugentligt). Den er særligt kritisk i følgende situationer:
+Sæsonudsving: Ved produkter med tydelige sæsonmønstre (f.eks. julevarer, sommertøj) for at sikre, at lageret er fyldt op i tide og tømt efter sæsonen.
+Produktlanceringer (New Product Introduction - NPI): Ved introduktion af nye produkter, hvor der ikke er historiske data, og planlægningen i høj grad baseres på markedsanalyser og sammenlignelige produkter.
+Kampagner og tilbud: For at vurdere den forventede stigning i efterspørgslen som følge af marketingaktiviteter og sikre, at supply chain kan levere uden at bestille for meget.
+Volatile markeder: I perioder med stor usikkerhed eller hurtige ændringer i forbrugeradfærd, hvor hyppig justering af prognosen er nødvendig.
+Hvordan arbejder man med Demand Planning?
+Demand Planning følger typisk en fire-trins proces, der sikrer en konsistent prognose:
+Dataindsamling og rensning: Indsamling af historiske salgsdata, ordrer, lagerbevægelser og eksterne faktorer (f.eks. økonomiske indikatorer, vejrdata). Data renses for outliers (ekstreme værdier) forårsaget af f.eks. store engangsordrer.
+Statistisk baseline-prognose:
+Anvendelse af statistiske modeller (f.eks. tidsserieanalyse, regression) til at generere en objektiv, ujusteret prognose.
+Samarbejde og justering
+(Demand Review): Den statistiske prognose justeres med markedsdata fra salgsafdelingen (kundeindsigt), marketing (kampagner) og produktudvikling (nye produkter). Dette skaber den endelige fælles prognose.
+Måling og feedback: Måling af prognosepræcision (Forecast Accuracy) og analyse af afvigelser for at identificere årsager og løbende forbedre Demand Planning-processen.

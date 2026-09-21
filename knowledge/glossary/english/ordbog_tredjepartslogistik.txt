@@ -1,0 +1,29 @@
+---
+topic: Third-Party Logistics (3PL)
+source_type: glossary
+language: english
+keywords: 3PL, third-party logistics, outsourcing, warehousing, freight, distribution, logistics partner, fulfilment
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Glossary (repo addition)
+term_da: Tredjepartslogistik
+term_en: Third-Party Logistics (3PL)
+---
+
+Third-Party Logistics (3PL) — Danish: Tredjepartslogistik
+Third-party logistics, usually abbreviated 3PL, is when a company has an external partner carry out parts of its logistics — typically storage, picking, packing and shipping — instead of running it in house.
+What does it usually cover?
+Warehouse space and goods handling
+Picking, packing and shipping to the end customer
+Freight purchasing and transport management
+Returns handling
+Customs and export documentation for international distribution
+Why do companies use 3PL?
+To avoid investing in warehouse capacity that is only used at the seasonal peak, to reach distribution in new markets without building anything, and to turn a fixed cost into a variable one. For businesses with strong seasonality that is often the strongest argument.
+What do you give up?
+Control over daily execution, and part of the direct contact with the customer at delivery and return. Stock data now comes from the partner's system, so inventory accuracy depends on their processes and on how well the two systems talk to each other.
+What decides whether it works?
+The data. If stock levels and order status do not come back promptly and correctly, you are planning blind
+An agreement that measures what matters — picking accuracy, lead time and error rate, not only price per order
+A clear split of responsibility for shrinkage, damage and obsolescence at the partner's site
+A realistic view of the cost of moving back in house or switching partner later

@@ -1,0 +1,20 @@
+---
+topic: How to edit a dashboard in Inact Now
+source_type: tutorial
+language: english
+keywords: edit dashboard, edit mode, dashboard admin, save, revert, table tab, settings tab
+product_area: Dashboards
+question_type: how-to
+---
+
+To make changes to a dashboard, open it and click the Edit button in the top-right corner. This switches the dashboard into edit mode.
+
+In edit mode you'll see three tabs: Table, Dashboard, and Settings. These let you configure different parts of the dashboard:
+
+- Table — manage the data rows and columns shown in the table below the KPI cards.
+- Dashboard — arrange and configure the KPI cards at the top.
+- Settings — change the dashboard name, description, and visibility options.
+
+When you're done making changes, click the green Save button at the top to apply them. If you want to undo everything you've changed since you last saved, click the circular arrow icon next to Save (Revert changes).
+
+To go back to viewing the dashboard without saving, click Show Dashboard in the top-right.

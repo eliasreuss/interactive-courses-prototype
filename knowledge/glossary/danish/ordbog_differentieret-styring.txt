@@ -1,0 +1,26 @@
+---
+topic: Differentieret styring
+source_type: glossary
+language: danish
+keywords: Differentieret styring, Differentiated Management, styring, differentieret, forskellige, chain, kunder, produkter, supply, bruger
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Differentieret styring
+term_en: Differentiated Management
+url: https://inact.io/ordbog/differentieret-styring/
+---
+
+Differentieret styring — English: Differentiated Management
+Differentieret styring er en strategisk tilgang inden for Supply Chain Management, hvor virksomheden anvender forskellige styringsprincipper, serviceniveauer og processer til forskellige segmenter af produkter, kunder eller markeder. Det er et opgør med "one-size-fits-all" og sikrer, at ressourcer og planlægningsindsats målrettes der, hvor de skaber størst værdi og profit.
+Hvad er differentieret styring?
+Differentieret styring er princippet om at undgå one-size-fits-all i supply chain management. I stedet for at styre alle produkter, kunder eller markeder ens, anerkender man, at de har forskellige karakteristika (f.eks. efterspørgselsvolatilitet, profitmargin, volumen) og derfor kræver forskellige logistik- og planlægningsstrategier.
+Målet er at optimere den samlede supply chain ved at matche indsatsen med det enkelte segments behov.
+Hvad bruger man differentieret styring til?
+Hovedformålet med differentieret styring er at maksimere profit og service ved at allokere ressourcerne mest hensigtsmæssigt.
+Man bruger det til at:
+Optimere kapitalbinding: Justere sikkerhedslagrene efter varenes værdi og efterspørgsmål.
+Forbedre servicegraden: Tilbyde et højt serviceniveau (f.eks. hurtig levering) til de mest profitable kunder eller de vigtigste produkter, uden at omkostningerne stikker af.
+Øge effektiviteten: Anvende simple styringsmetoder (f.eks.
+Bestillingspunkt).
+Reducere spild: Undgå at få et stort antal af forældede varer ved at have strammere styring på varer med ustabil efterspørgsel.

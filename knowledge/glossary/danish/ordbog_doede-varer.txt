@@ -1,0 +1,45 @@
+---
+topic: Døde varer
+source_type: glossary
+language: danish
+keywords: Døde varer, Dead stock, varer, produkter, efterspørgsel, længere, stadig, binder, derfor, desto
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Døde varer
+term_en: Dead stock
+url: https://inact.io/ordbog/doede-varer/
+---
+
+Døde varer — English: Dead stock
+Døde varer er produkter, som ikke har haft salgsaktivitet eller omsætning over en længere periode. De binder kapital, optager plads og skaber omkostninger og er derfor vigtige at holde øje med.
+Hvad er døde varer?
+Døde varer refererer til lagerbeholdning, der ikke har haft nogen bevægelse (salg eller forbrug) i en defineret periode, og derfor ikke længere bidrager til omsætningen. Denne periode kan variere afhængigt af branche og produkttype, men ofte defineres døde varer som produkter uden salg i 6, 12 eller 24 måneder.
+Det er vigtigt at skelne mellem døde varer og ukurante varer. Ukurante varer er produkter, der er beskadigede, forældede eller på anden måde uegnede til salg. Døde varer derimod er stadig salgbare, men der er ingen efterspørgsel.
+Et eksempel kan være et produkt, der ikke har haft salg i 12 måneder, men hvor der stadig ligger 40 stk på lager.
+Selvom varerne teknisk set stadig er salgbare, binder de kapital og optager plads uden at bidrage til omsætningen.
+Hvorfor opstår døde varer?
+Døde varer opstår typisk, når indkøb og efterspørgsel ikke længere hænger sammen.
+Typiske årsager er blandt andet:
+Upræcise efterspørgselsprognoser: Overvurdering af fremtidig efterspørgsel fører til overproduktion eller overindkøb.
+Overbestilling: Indkøb af for store mængder, ofte for at opnå mængderabatter eller opfylde minimum ordremængder
+(MOQ), uden tilstrækkelig efterspørgsel.
+Produktudfasning: Produkter erstattes af nye modeller eller teknologier, hvilket efterlader den gamle version uden efterspørgsel.
+Ændrede markedstendenser: Skift i behov eller præferencer gør produkter mindre attraktive.
+Manglende lagerstyring: Der reageres ikke på langsomt omsættelige varer i tide.
+Døde varer opstår derfor sjældent på grund af ét enkelt problem, men som resultat af flere beslutninger over tid.
+Hvad koster døde varer din virksomhed?
+Døde varer koster mere end selve indkøbsprisen, og de påvirker din økonomi på flere måder:
+Kapitalbinding: Penge er bundet i varer, der ikke skaber værdi.
+Lageromkostninger: Døde varer optager værdifuld lagerplads, som kunne have været brugt til omsættelige varer. Derudover medfører de omkostninger til forsikring, administration og eventuel håndtering.
+Værditab: Jo længere varerne er døde, desto større er sandsynligheden for, at de skal afskrives helt eller sælges med et betydeligt tab.
+Håndteringsomkostninger: Omkostninger forbundet med at identificere, flytte, bortskaffe eller sælge døde varer til reduceret pris.
+Døde varer er altså både et lagerproblem og en økonomisk udfordring.
+Hvordan håndterer man døde varer?
+Når varer først er døde, handler det om at minimere tabet så hurtigt som muligt.
+Det kan være relevant at sælge dem med rabat, samle dem i kampagner eller flytte dem til andre salgskanaler. I nogle tilfælde er det mest fornuftige ganske enkelt at afvikle dem og frigøre lagerpladsen.
+Det vigtigste er, at du arbejder forebyggende.
+Følg løbende, hvilke varer der ikke bevæger sig, og reagér tidligt på langsomt omsættelige produkter. Bedre prognoser, mere fleksible indkøb og tættere opfølgning på lagerdata kan gøre en stor forskel.
+Kort sagt
+Døde varer er varer, der ikke længere bliver solgt, men som stadig fylder og binder kapital på lageret. Jo tidligere du opdager dem, desto lettere er de at håndtere – og desto mindre bliver konsekvensen for din økonomi.
+Tilbage til o rd bogen

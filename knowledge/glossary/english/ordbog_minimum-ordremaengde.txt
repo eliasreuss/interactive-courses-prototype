@@ -1,0 +1,53 @@
+---
+topic: Minimum order quantity (MOQ)
+source_type: glossary
+language: english
+keywords: Minimum order quantity (MOQ), Minimum ordremængde (MOQ), inventory, order, suppliers, costs, minimum, quantity, capital, impact
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Minimum ordremængde (MOQ)
+term_en: Minimum order quantity (MOQ)
+url: https://inact.io/en/glossary/minimum-order-quantity-moq/
+---
+
+Minimum order quantity (MOQ) — Danish: Minimum ordremængde
+Minimum order quantity (MOQ) is a key parameter in supply chain management and procurement planning. The concept refers to the quantity constraints set by suppliers for transactions, which directly impact a company’s inventory turnover and tied-up capital.
+What is a minimum order quantity (MOQ)?
+Minimum order quantity (MOQ) defines the smallest quantity of a product that a supplier is willing to sell in a single order. This requirement is standard practice across many industries and has a significant impact on inventory management, tied-up capital, and operational flexibility.
+There are typically two main types of MOQ:
+Single-item MOQ:
+The minimum quantity required for a specific
+SKU.
+Order-level MOQ:
+The minimum total quantity or value for an entire order, regardless of the number of different SKUs.
+Why do suppliers set MOQ requirements?
+Suppliers establish minimum order quantities for several strategic and operational reasons, primarily to ensure profitability in their own operations:
+Economies of scale in production: It is often more cost-efficient to produce in larger batches. MOQ ensures efficient production runs and lowers unit costs.
+Setup costs:
+Each production run or order involves fixed setup costs (e.g. machine setup, documentation). MOQ helps distribute these costs across more units.
+Logistics and transportation:
+It is typically more economical to transport larger volumes, as freight and handling costs can be similar regardless of shipment size.
+Raw material purchasing: Suppliers may themselves be subject to MOQs from their own suppliers, which they pass on to customers.
+What impact does MOQ have on your inventory management?
+Minimum order quantities have a direct—and often significant—impact on inventory management and financial performance. A high MOQ can lead to:
+Increased tied-up capital:
+The company is forced to purchase more than immediately needed, tying up capital in inventory and affecting cash flow.
+Risk of excess inventory:
+If purchased volumes exceed actual demand, excess inventory arises, along with storage costs, insurance, and risk of obsolescence.
+Reduced inventory turnover:
+Products remain in stock longer before being sold, indicating inefficient use of capital.
+Space constraints:
+Larger purchase volumes require more storage space, which can be a challenge for companies with limited capacity.
+How do you manage and negotiate MOQ?
+Although MOQ may seem fixed, there are several strategies companies can use to reduce its negative impact:
+Negotiation:
+Engage in dialogue with suppliers. Some may accept smaller orders at a higher unit price or within strategic partnerships.
+Order consolidation:
+Combine purchases across departments or projects to meet MOQ requirements collectively.
+Alternative suppliers:
+Explore suppliers with lower MOQ - even if it means a higher unit price.
+Inventory optimization: Implement systems to improve forecasting and optimize reorder points, reducing the risk of excess inventory when meeting MOQ.
+Standardization:
+Where possible, standardize components across products to increase volume per item and make it easier to meet MOQ.
+Effective management of MOQ is essential to maintaining a healthy balance between procurement costs, tied-up capita l, and delivery performance in the supply chain.

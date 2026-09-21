@@ -1,0 +1,17 @@
+---
+topic: The End2End library page in Inact Now
+source_type: tutorial
+language: english
+keywords: end2end library, landing page, views, heatmaps, showing of, groups, overview page
+product_area: End2End
+question_type: how-to
+---
+
+Clicking End2End in the top navigation opens the End2End library. It is split into two columns:
+
+End2End views — the three-column Supplier / Product / Customer analyses. Each has its own "Showing N of N" counter above the list.
+Heatmaps — visualisations built on top of a relation from an End2End view. These are listed and organised the same way but are a separate object type.
+
+Within each column, items are arranged in groups (for example "Main Heatmaps" or a group you have named yourself). Click the arrow next to a group name to collapse or expand it. Items that have not been placed in a group appear at the bottom without a group heading; in edit mode this area is labelled Unsorted.
+
+At the top right of the page you have a Search box with a "Showing N of N" counter covering both columns, a gear icon that turns library edit mode on, and a green + New View button for creating a new End2End view.

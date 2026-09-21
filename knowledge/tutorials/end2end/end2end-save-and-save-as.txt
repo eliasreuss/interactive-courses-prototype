@@ -1,0 +1,15 @@
+---
+topic: How to save changes to an End2End view in Inact Now
+source_type: tutorial
+language: english
+keywords: save, save as, unsaved changes, copy view, shared view, store settings
+product_area: End2End
+question_type: how-to
+---
+
+Changes you make in the settings panel — measures, aggregations, number formats, hidden columns, filters, slicers — take effect on screen immediately, but they are not stored until you save. The two buttons sit at the bottom right of the settings panel:
+
+Save — writes the changes back to the view you have open. The button is greyed out when there is nothing to save and turns solid green as soon as you change something. Because End2End views are shared, saving changes the view for all colleagues who can see it.
+Save as — leaves the original view untouched and creates a new view from your current settings. A Save as window opens with the name prefilled as the original name plus " - Copy". Change it to something meaningful and click Create.
+
+If you are experimenting on a view that colleagues rely on, use Save as rather than Save. If you have made changes you do not want to keep, simply navigate away without saving.

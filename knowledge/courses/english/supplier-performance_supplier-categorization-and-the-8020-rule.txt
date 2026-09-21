@@ -1,0 +1,20 @@
+---
+topic: Supplier Categorization and the 80/20 Rule
+source: Supplier Performance
+source_type: course
+language: english
+product_area: supplier
+question_type: what
+keywords:
+- supplier categorization
+- 80/20 rule
+- A-suppliers
+- Supplier Categorisation Insight
+- strategic suppliers
+- vendor management
+- long tail
+- spend analysis
+- volume analysis
+---
+
+Supplier categorization is a method used to identify which suppliers have the greatest impact on a business. The 80/20 rule, also known as the Pareto Principle, suggests that about 20% of suppliers typically account for 80% of total spend and volume. These high-impact vendors are referred to as A-suppliers. Tools like the Supplier Categorisation Insight help organizations pinpoint these strategic suppliers, enabling them to focus resources on managing relationships that drive the most value, rather than spending excessive effort on the many smaller, less significant vendors often called the long tail.

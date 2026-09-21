@@ -1,0 +1,15 @@
+---
+topic: ABC-analyse
+source_type: article
+language: danish
+keywords: dobbelt ABC-analyse, AA-varer, CC-varer, vareforbrug, efterspørgsel, lagerværdi,
+  matrix
+---
+
+Source_Article: Guide til Kapitalbinding
+En dobbelt ABC-analyse kombinerer to dimensioner for at give et endnu mere nuanceret billede. Man kan f.eks. kombinere vareforbrug i kroner (første bogstav) og efterspørgsel i antal ordrelinjer (andet bogstav). Dette skaber kategorier som:
+- AA-varer: Høj omsætning og høj efterspørgsel. Meget vigtige.
+- AC-varer: Høj omsætning, men få kunder/ordrer.
+- CA-varer: Lav omsætning, men meget populære (høj efterspørgsel).
+- CC-varer: Lav omsætning og lav efterspørgsel.
+Denne metode er et godt grundlag for at differentiere lagerinvesteringen.

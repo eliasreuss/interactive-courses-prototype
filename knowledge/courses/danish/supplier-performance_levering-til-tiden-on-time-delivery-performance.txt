@@ -1,0 +1,20 @@
+---
+topic: Levering til tiden (On-Time Delivery) Performance
+source: Supplier Performance
+source_type: course
+language: danish
+product_area: supplier
+question_type: what
+keywords:
+- Levering til tiden
+- OTD
+- leverandørperformance
+- Inact Now
+- årsagsanalyse
+- performancestyring
+- KPIs
+- leveringstidspunkt
+- gennemsigtighed
+---
+
+Levering til tiden (On-Time Delivery Performance, OTD) er en central måleparameter, der vurderer, hvor pålideligt leverandører leverer varer eller tjenester på det aftalte tidspunkt. En høj OTD viser, at leverandører konsekvent overholder de aftalte leveringsdatoer, hvilket er afgørende for at opretholde effektive processer, opfylde kundeaftaler og holde omkostningerne under kontrol. Inact Now gør det muligt for organisationer at overvåge OTD og giver en gennemsigtig og struktureret ramme for styring af leverandørperformance. Platformen understøtter også årsagsanalyse, så brugerne kan identificere og håndtere faktorer, der påvirker leveringstidspunktet, hvilket i sidste ende fremmer løbende forbedringer af leverandørernes pålidelighed.

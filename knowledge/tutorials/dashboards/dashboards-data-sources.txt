@@ -1,0 +1,23 @@
+---
+topic: How to see which data sources and Insights power a dashboard in Inact Now
+source_type: tutorial
+language: english
+keywords: about dashboard, insights, data sources, connected, info button, end2end, trace data
+product_area: Dashboards
+question_type: how-to
+---
+
+Every dashboard pulls data from one or more Insights. To see exactly which ones:
+
+1. Open the dashboard.
+2. Click the small ℹ info icon next to the dashboard name in the top-left area.
+
+A window appears showing:
+
+Insights — a list of every Insight contributing data to this dashboard, with the type of data each one provides (e.g., Products, Customers, Suppliers).
+
+End2End — a summary of which entity types are connected, for example: "This Dashboard is connected to Suppliers / Products / Customers."
+
+This is useful if you're seeing unexpected numbers and want to trace them back to their source, or if you need to know which Insights need to be refreshed to keep the dashboard current.
+
+Click OK to close.

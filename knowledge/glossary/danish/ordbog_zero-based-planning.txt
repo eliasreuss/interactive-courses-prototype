@@ -1,0 +1,25 @@
+---
+topic: Zero-based planning (ZBP)
+source_type: glossary
+language: danish
+keywords: Zero-based planning (ZBP), planning, zero-based, bruger, planer, aktuelle, budgettering, historiske, reducere
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Zero-based planning (ZBP)
+term_en: Zero-based planning (ZBP)
+url: https://inact.io/ordbog/zero-based-planning/
+---
+
+Zero-based planning (ZBP)
+Zero-Based Planning er en planlægningsmetode, hvor alle aktiviteter, budgetter og ressourcer startes fra nul for hver planlægningsperiode. I supply chain sikrer det, at alle planer er baseret på aktuelle behov frem for historiske antagelser.
+Hvad er Zero-based planning?
+Metoden går ud på at revurdere hver aktivitet, ordre og ressourcebehov uden at tage udgangspunkt i tidligere planer. Dette gør det muligt at eliminere overflødige processer, reducere lagerbinding og optimere kapacitetsanvendelse.
+Hvad bruger man Zero-based planning til?
+Man bruger ZBP til at sikre, at planlægning og budgettering er datadrevet og tilpasset det aktuelle forbrug og efterspørgsel. Det hjælper med at reducere spild, frigøre kapital og prioritere ressourcer, hvor de skaber mest værdi.
+Hvornår bruger man Zero-based planning?
+Zero-Based Planning anvendes typisk ved:
+Udarbejdelse af årlige eller kvartalsvise planer
+Budgettering af lager, produktion og indkøb
+Optimering af supply chain-ressourcer og kapitalbinding
+Implementering af nye strategier eller produkter, hvor historiske data ikke er repræsentative

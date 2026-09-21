@@ -1,0 +1,29 @@
+---
+topic: Øvre lagergrænse
+source_type: glossary
+language: danish
+keywords: Øvre lagergrænse, Upper Inventory Limit, lagergrænse, kapitalbinding, sætter, forældelse, grænsen, indkøb, lager, produktion
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Øvre lagergrænse
+term_en: Upper Inventory Limit
+url: https://inact.io/ordbog/oevre-lagergraense/
+---
+
+Øvre lagergrænse — English: Upper Inventory Limit
+En øvre lagergrænse er det maksimale antal enheder af et produkt, som en virksomhed ønsker at have på lager. Grænsen fastsættes for at undgå overfyldte lagre, reducere kapitalbinding og minimere risikoen for forældelse eller spild.
+Hvad er en øvre lagergrænse?
+Det er en planlægningsparameter, der sætter en øvre grænse for lagerbeholdningen. Grænsen hjælper med at styre indkøb og produktion, så lageret ikke overstiger det niveau, der er økonomisk og operationelt forsvarligt.
+Hvorfor sætter man en øvre lagergrænse?
+Man bruger øvre lagergrænse til at:
+Begrænse kapitalbinding i lager
+Sikre plads til nye produkter eller varer med højere omsætningshastighed
+Forebygge spild og forældelse
+Optimere lagerstyring og indkøbsplanlægning
+Hvornår sætter man en øvre lagergrænser?
+Øvre lagergrænse anvendes typisk:
+Ved planlægning af indkøb og produktion
+Når man vil kontrollere lageromkostninger
+I kombination med sikkerhedslager og bestillingspunkt
+Når man ønsker at opretholde balance mellem servicegrad og kapitalbinding

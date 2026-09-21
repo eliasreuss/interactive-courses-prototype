@@ -1,0 +1,16 @@
+---
+topic: Understanding the Subscriptions tab — three sub-sections
+source_type: tutorial
+language: english
+keywords: subscriptions, bundles, personal, actions, mail, admin, subscriptions tab
+product_area: Admin
+question_type: how-to
+---
+
+The Subscriptions tab has three sub-tabs:
+
+Bundles — admin-created mail bundles that push content (dashboards, insights) to a defined list of recipients on a schedule. These are managed by admins.
+Personal — subscriptions that users have set up themselves from within their own content (for example, subscribing to an individual insight from its settings). Admins can see and manage these here.
+Actions — subscriptions tied to specific Action lists, where users receive emails when an Action is updated or on a set schedule.
+
+All three tabs share the same basic structure: a table with Name/Action, Recipients, Plan, Last sent, Status columns; frequency filter pills (Daily, Weekly, Monthly); a "Select recipient" dropdown filter; and a search bar. The Actions tab additionally has an "On Update" filter pill.

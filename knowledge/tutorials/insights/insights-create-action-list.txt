@@ -1,0 +1,22 @@
+---
+topic: How to create an Action list from an Insight in Inact Now
+source_type: tutorial
+language: english
+keywords: create action list, action, assign, insight, action list, KPI, assignees, limit, top rows
+product_area: Insights
+question_type: how-to
+---
+
+An Action list lets you take a slice of your Insight data and turn it into a task list that can be assigned to colleagues for follow-up.
+
+1. Open the Insight you want to work from.
+2. Apply any filters to narrow the data to the relevant items.
+3. Click the green Create Action list button in the top-right area.
+4. The Create Action List window opens. Fill in:
+   - Name — what to call the action list.
+   - Limit — optionally tick the checkbox to restrict the list to the top or bottom N rows, sorted by a column you choose (e.g., "Top 50 by Revenue 12 mos."). Click the "..." button for additional limit options.
+   - Select KPI — optionally attach a KPI metric to track progress on the action.
+   - Assignees — the people responsible for working through this list. Your name is added by default. You can add others.
+5. Click Next to continue through the setup and create the action list.
+
+The created action list will appear in the Actions module and on the Home page Actions section.

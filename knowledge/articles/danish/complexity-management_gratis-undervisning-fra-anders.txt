@@ -1,0 +1,9 @@
+---
+topic: Gratis undervisning fra Anders
+source_type: article
+language: danish
+article_source: Complexity Management
+keywords: Anders, undervisning, styring, segmentering, ABC-analyse
+---
+
+Anders tilbyder gratis undervisning i differentieret styring, segmentering, complexity management og ABC-analyse med fokus på formidling.

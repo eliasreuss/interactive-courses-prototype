@@ -1,0 +1,20 @@
+---
+topic: Filter conditions available in the dashboard filter Data slicer dialog in Inact Now
+source_type: tutorial
+language: english
+keywords: dashboard filter, data slicer, filter condition, greater than, contains, between, save and refresh
+product_area: Dashboards
+question_type: how-to
+---
+
+When you click + Dashboard filter and select a column, the Data slicer dialog opens with a condition dropdown. The available conditions depend on the column type:
+
+For numeric columns: Greater, Equal or greater, Less, Equal or less, Equal, Not equal, Between, Not between.
+
+For text/categorical columns: Equal, Not equal, Contains, Not contains, Starts with, Ends with, Not starts with, Not ends with.
+
+After choosing a condition and entering a value (or selecting values), the dialog offers three buttons:
+
+Save — saves the filter without refreshing data.
+Save & Refresh — saves the filter and immediately refreshes all data in the dashboard.
+Cancel — discards the filter.

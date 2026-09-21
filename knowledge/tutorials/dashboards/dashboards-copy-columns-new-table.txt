@@ -1,0 +1,10 @@
+---
+topic: Copying column setup when adding a new Dashboard table tab in Inact Now
+source_type: tutorial
+language: english
+keywords: new table, dashboard table, copy columns from, add table tab, table setup
+product_area: Dashboards
+question_type: how-to
+---
+
+When you click + New in the table tab bar and choose Dashboard table, the "Add new Dashboard table" dialog opens with a Title field and a "Copy Columns from" dropdown. Use "Copy Columns from" to select an existing tab whose column setup you want to reuse, so you don't have to rebuild the same columns from scratch on the new tab.

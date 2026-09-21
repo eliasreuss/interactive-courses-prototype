@@ -1,0 +1,16 @@
+---
+topic: How to organise Heatmaps into groups in Inact Now
+source_type: tutorial
+language: english
+keywords: heatmap groups, new heatmap group, edit mode, rename group, delete group, unsorted, copy delete
+product_area: Heatmaps
+question_type: how-to
+---
+
+Heatmaps are organised in the End2End library, in the right-hand Heatmaps column, using the same tools as End2End views.
+
+Click the gear icon at the top right of the library to turn on edit mode. A + New Heatmap group button appears above the Heatmaps column, and each group heading gains a drag handle for reordering, a bin icon for deleting the group and a pencil icon for renaming it. Deleting a group does not delete the heatmaps in it — they move to Unsorted. Empty groups disappear when you leave edit mode.
+
+Each heatmap row also has a "..." menu with Copy, Change group and Delete. Change group opens a picker listing existing groups plus Unsorted; you cannot create a new group from there.
+
+The library layout is shared, so grouping changes apply to all your colleagues — the warning shown in edit mode says so explicitly.

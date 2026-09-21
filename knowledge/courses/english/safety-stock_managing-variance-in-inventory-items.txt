@@ -1,0 +1,20 @@
+---
+topic: Managing Variance in Inventory Items
+source: Safety Stock
+source_type: course
+language: english
+product_area: inventory
+question_type: how
+keywords:
+- variance
+- A-items
+- C-items
+- safety stock
+- service level
+- demand spikes
+- inventory management
+- deadstock
+- lead times
+---
+
+Inventory items with different demand patterns require distinct safety stock strategies. A-items, which are critical and have stable, predictable demand, should be protected with higher safety stock to maintain high service levels. In contrast, C-items often have low, unpredictable demand with occasional spikes. Adding significant safety stock for C-items can lead to excess inventory and deadstock. For high-variance items like C-items, it is usually more effective to accept longer lead times or lower service levels, or even reconsider stocking them, rather than overstocking. This approach ensures resources are focused on items where service reliability is most important.

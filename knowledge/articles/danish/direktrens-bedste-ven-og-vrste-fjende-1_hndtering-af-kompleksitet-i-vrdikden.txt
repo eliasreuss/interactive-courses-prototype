@@ -1,0 +1,9 @@
+---
+topic: Håndtering af kompleksitet i værdikæden
+source_type: article
+language: danish
+article_source: Direktørens bedste ven og værste fjende (1)
+keywords: kompleksitet, værdikæde, analyse, produktportefølje, indtjening
+---
+
+Metoden til at håndtere kompleksitet består af 5 trin: 1. Analyse af kompleksitetens oprindelse. 2. Identifikation af ressourcebehov. 3. Implementering af ressourcer. 4. Implementering af politikker for fokus på vækst og indtjening. 5. Visualisering af indtjeningsstruktur.

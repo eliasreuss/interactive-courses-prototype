@@ -1,0 +1,35 @@
+---
+topic: Just-in-Time (JIT)
+source_type: glossary
+language: danish
+keywords: Just-in-Time (JIT), just-in-time, leverandører, minimere, spild, behov, bruger, efterspørgsel, eliminere
+question_type: definition
+product_area: Supply Chain Terminology
+article_source: Inact Supply Chain Ordbog
+term_da: Just-in-Time (JIT)
+term_en: Just-in-Time (JIT)
+url: https://inact.io/ordbog/just-in-time/
+---
+
+Just-in-Time (JIT)
+Just-in-Time (JIT) er en produktions- og lagerstrategi inden for Supply Chain Management, hvor varer og materialer ankommer præcist, når de skal bruges, i stedet for at blive opbevaret på lager i lange perioder. JIT er en hjørnesten i Lean-filosofien og har til formål at eliminere spild, minimere lageromkostninger og frigøre kapital uden at kompromittere produktionens flow.
+Hvad er Just-In-Time?
+JIT er en strategi, hvor produktionen styres af den faktiske efterspørgsel – man producerer først, når der er behov. Det adskiller sig fra traditionel produktion, hvor varer produceres på forhånd ud fra forventninger om salg.
+JIT kræver:
+Præcis planlægning: For at forudsige det nøjagtige tidspunkt for behov.
+Tæt samarbejde med leverandører: For at sikre hyppige, små og pålidelige leverancer.
+Løbende overvågning: Af produktion og efterspørgsel for at reagere hurtigt på ændringer.
+Hvorfor bruger man JIT?
+Man bruger JIT til at maksimere effektiviteten og minimere spild i hele værdikæden.
+Strategien hjælper virksomheder med at:
+Reducere lagerbeholdning og omkostninger: Frigør kapital og minimerer omkostninger til lagerplads, forsikring og forældelse.
+Forbedre cash flow: Ved lavere kapitalbinding i lageret.
+Øge fleksibiliteten: Gør produktionen mere responsiv over for ændringer i efterspørgslen og muliggør hurtigere skift mellem produkter.
+Afsløre flaskehalse: Da der ikke er store lagre til at skjule problemer, tvinger JIT virksomheden til løbende at identificere og eliminere ineffektivitet.
+Hvornår kan Just-In-Time være relevant?
+JIT anvendes især i Lean Manufacturing og logistik, hvor det er muligt at have tæt koordinering med leverandører.
+Det kan være relevant, når man ønsker at:
+Minimere lageromkostninger og forældelse.
+Reducere spild og overproduktion.
+Forbedre cash flow ved lavere kapitalbinding.
+Arbejde med stabile og forudsigelige leverandører: JIT er meget følsom over for forsinkelser og kræver derfor ekstremt pålidelige partnere.

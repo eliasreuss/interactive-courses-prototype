@@ -1,0 +1,19 @@
+---
+topic: Anvendelse af ABC-baserede lagerpolitikker
+source: Stock Policy
+source_type: course
+language: danish
+product_area: inventory
+question_type: how
+keywords:
+- ABC-kategorier
+- A-varer
+- C-varer
+- lagerpolitik
+- serviceniveauer
+- køb-til-ordre
+- fremstil-til-ordre
+- lagerstyring
+---
+
+Effektiv lagerstyring indebærer, at man anvender forskellige lagerpolitikker baseret på ABC-kategorier. For A-varer, som har høj og stabil efterspørgsel, er det bedst at holde dem konstant på lager for at sikre høje serviceniveauer for nøgleprodukter og -kunder. Omvendt håndteres C-varer, der har uregelmæssig og uforudsigelig efterspørgsel, bedst med køb-til-ordre- eller fremstil-til-ordre-politikker. Denne tilgang hjælper med at undgå at binde kapital i lager, der måske ikke bliver solgt i længere perioder, og optimerer både service og økonomisk effektivitet.
