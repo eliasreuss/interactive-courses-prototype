@@ -31,6 +31,41 @@ back to reading the directory listing, and says so when you try to upload.
 | **`now-hub.html`** | Inact Now Fundamentals learning path. |
 | **`course.html`** | Course viewer (flow map, slides, media). Query params vary by hub; see each hub’s “open course” links. |
 | **`creator.html`** | Visual editor to build courses and export `.txt` files. |
+| **`my-courses.html`** | Describe a topic and have a course generated for it. See below. |
+
+### Generating courses (optional)
+
+`my-courses.html` turns a prompt into a real course file, written by Claude
+Opus 5 and opened in the normal viewer. It needs two things beyond the quick
+start:
+
+```bash
+pip install anthropic
+export ANTHROPIC_API_KEY=sk-ant-...     # or put it in a .env file at the repo root
+python3 tools/dev-server.py 8765
+```
+
+Without them the server still serves the whole prototype — only the prompt box
+locks, and it says which of the two is missing. Generated courses land in
+`courses/custom/courses-for-local/` with a `gen-` prefix, are listed in
+`courses/custom/manifest.json`, and are gitignored: they are per-machine, not
+shared. Roughly $0.40–0.60 and one to three minutes each.
+
+They are ordinary `.txt` course files, so a good one can be moved into a real
+learning path and edited in `creator.html` from then on.
+
+The generator lives in `tools/flowgen/`. Two pieces are useful on their own:
+
+```bash
+# Check any course file the way the viewer's parser will read it.
+# --audit allows Supademo embeds, which generated courses may not carry.
+python3 tools/flowgen/validator.py --audit courses/*/courses-for-local/*.txt
+
+# See what the knowledge base returns for a question.
+python3 -m tools.flowgen.knowledge_index "reduce dead stock in spare parts"
+```
+
+`knowledge/` holds the chunked Inact AI material the generator draws on.
 
 ---
 
