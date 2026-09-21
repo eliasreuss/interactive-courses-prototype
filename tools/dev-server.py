@@ -64,6 +64,21 @@ def safe_filename(raw):
     return f"{stem[:80]}{ext.lower()}"
 
 
+def safe_filename_txt(raw):
+    """A generated course filename, or None.
+
+    Deliberately strict: the delete route acts on this, so it must be a bare
+    gen-*.txt basename with no path of any kind. Anything else is rejected
+    rather than sanitised.
+    """
+    name = (raw or "").strip()
+    if not re.fullmatch(r"gen-[A-Za-z0-9._-]{1,80}\.txt", name):
+        return None
+    if ".." in name:
+        return None
+    return name
+
+
 def kind_for(ext):
     if ext in IMAGE_EXTENSIONS:
         return "image"
@@ -93,6 +108,44 @@ class CreatorAssetHandler(SimpleHTTPRequestHandler):
 
     # -- helpers ---------------------------------------------------------
 
+    def local_request(self):
+        """Reject anything that did not come from this machine's own origin.
+
+        The /__ai/ routes spend money, so they need more than loopback binding:
+        a page on the open internet can still make a browser POST to
+        127.0.0.1, and a DNS rebinding attack can make it look same-origin.
+        Pinning Host closes the rebinding case, and requiring a custom header
+        closes the CSRF case, since a cross-origin fetch carrying one triggers
+        a preflight this server never answers.
+        """
+        host = (self.headers.get("Host") or "").split(":")[0]
+        if host not in ("localhost", "127.0.0.1", "[::1]", "::1"):
+            self.send_json({"error": "Unrecognised Host header"}, 403)
+            return False
+        if self.headers.get("X-Flowgen") != "1":
+            self.send_json({"error": "Missing X-Flowgen header"}, 403)
+            return False
+        return True
+
+    def read_json_body(self, limit=64 * 1024):
+        try:
+            length = int(self.headers.get("Content-Length", "0"))
+        except ValueError:
+            return None
+        if length <= 0 or length > limit:
+            return None
+        try:
+            return json.loads(self.rfile.read(length).decode("utf-8"))
+        except (ValueError, UnicodeDecodeError):
+            return None
+
+    def flowgen(self):
+        """Import the generator lazily, so a broken or absent tools/flowgen/
+        (or a missing anthropic SDK) never stops the server serving the site."""
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from flowgen import config as fg_config, jobs, pipeline
+        return fg_config, jobs, pipeline
+
     def send_json(self, payload, status=200):
         body = json.dumps(payload).encode("utf-8")
         self.send_response(status)
@@ -117,12 +170,133 @@ class CreatorAssetHandler(SimpleHTTPRequestHandler):
             return self.list_folders()
         if route == "/__assets/list":
             return self.list_assets()
+        if route.startswith("/__ai/"):
+            return self.ai_get(route)
         return super().do_GET()
 
     def do_POST(self):
-        if urlparse(self.path).path == "/__assets/upload":
+        route = urlparse(self.path).path
+        if route == "/__assets/upload":
             return self.upload_asset()
+        if route.startswith("/__ai/"):
+            return self.ai_post(route)
         self.send_error(404, "Not found")
+
+    # -- course generation ------------------------------------------------
+
+    def ai_get(self, route):
+        if not self.local_request():
+            return
+        try:
+            fg_config, jobs, pipeline = self.flowgen()
+        except Exception as exc:  # noqa: BLE001
+            return self.send_json({"error": f"Course generation is unavailable: {exc}"}, 503)
+
+        if route == "/__ai/health":
+            from flowgen import image_catalog, knowledge_index
+            sdk = True
+            try:
+                import anthropic  # noqa: F401
+            except ImportError:
+                sdk = False
+            running = jobs.current()
+            return self.send_json({
+                "key_present": bool(fg_config.api_key()),
+                "sdk_installed": sdk,
+                "model": fg_config.MODEL,
+                "knowledge_indexed": len(knowledge_index.load()),
+                "images_indexed": len(image_catalog.load()),
+                "running_job": running.id if running else None,
+            })
+
+        if route == "/__ai/status":
+            job_id = self.query().get("job", [""])[0]
+            job = jobs.get(job_id)
+            if job is None:
+                return self.send_json({"error": "Unknown job"}, 404)
+            return self.send_json(job.snapshot())
+
+        if route == "/__ai/draft":
+            job = jobs.get(self.query().get("job", [""])[0])
+            if job is None or not job.draft:
+                return self.send_json({"error": "No draft for that job"}, 404)
+            return self.send_json({"draft": job.draft})
+
+        if route == "/__ai/courses":
+            return self.send_json(pipeline.read_manifest())
+
+        return self.send_json({"error": "Unknown endpoint"}, 404)
+
+    def ai_post(self, route):
+        if not self.local_request():
+            return
+        try:
+            fg_config, jobs, pipeline = self.flowgen()
+        except Exception as exc:  # noqa: BLE001
+            return self.send_json({"error": f"Course generation is unavailable: {exc}"}, 503)
+
+        if route == "/__ai/generate":
+            body = self.read_json_body() or {}
+            prompt = (body.get("prompt") or "").strip()
+            if not fg_config.MIN_PROMPT_CHARS <= len(prompt) <= fg_config.MAX_PROMPT_CHARS:
+                return self.send_json(
+                    {"error": f"Prompt must be between {fg_config.MIN_PROMPT_CHARS} and "
+                              f"{fg_config.MAX_PROMPT_CHARS} characters"}, 400)
+
+            if body.get("dry_run"):
+                try:
+                    return self.send_json(pipeline.run(prompt, dry_run=True))
+                except Exception as exc:  # noqa: BLE001
+                    return self.send_json({"error": fg_config.redact(exc)}, 500)
+
+            if not fg_config.api_key():
+                return self.send_json(
+                    {"error": "ANTHROPIC_API_KEY is not set",
+                     "hint": "export ANTHROPIC_API_KEY=sk-ant-... and restart the server, "
+                             "or put it in a .env file at the repo root"}, 503)
+            try:
+                import anthropic  # noqa: F401
+            except ImportError:
+                return self.send_json(
+                    {"error": "The Anthropic SDK is not installed",
+                     "hint": "pip install anthropic"}, 503)
+
+            try:
+                job = jobs.start(prompt)
+            except jobs.AlreadyRunning as exc:
+                return self.send_json(
+                    {"error": "A generation is already running", "job_id": exc.job_id}, 409)
+            return self.send_json({"job_id": job.id, "status": job.status})
+
+        if route == "/__ai/cancel":
+            job = jobs.get(self.query().get("job", [""])[0])
+            if job is None:
+                return self.send_json({"error": "Unknown job"}, 404)
+            job.cancel.set()
+            return self.send_json({"status": "cancelling"})
+
+        if route == "/__ai/delete":
+            filename = safe_filename_txt(self.query().get("file", [""])[0])
+            if not filename:
+                return self.send_json({"error": "Invalid file"}, 400)
+            target = os.path.join(fg_config.OUTPUT_DIR, filename)
+            removed = pipeline.remove_from_manifest(filename)
+            if os.path.isfile(target):
+                os.remove(target)
+                removed = True
+            meta = os.path.join(fg_config.META_DIR, os.path.splitext(filename)[0] + ".json")
+            if os.path.isfile(meta):
+                os.remove(meta)
+            return self.send_json({"deleted": removed})
+
+        if route == "/__ai/reindex":
+            from flowgen import image_catalog, knowledge_index
+            return self.send_json({
+                "knowledge": len(knowledge_index.load(force=True)),
+                "images": len(image_catalog.load(force=True)),
+            })
+
+        return self.send_json({"error": "Unknown endpoint"}, 404)
 
     def list_folders(self):
         if not os.path.isdir(IMAGES_ROOT):
