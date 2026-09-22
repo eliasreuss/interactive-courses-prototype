@@ -10,3 +10,4 @@ tools/__pycache__/
 .env
 courses/custom/
 tools/flowgen/.cache/
+.venv/
