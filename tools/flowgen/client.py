@@ -28,7 +28,15 @@ def get_client():
         raise config.FlowgenUnavailable(
             "ANTHROPIC_API_KEY is not set. Export it, or put it in a .env file at the repo root."
         )
-    return anthropic.Anthropic(api_key=key)
+
+    # An org-scoped key has to name the workspace to bill against; a key made
+    # inside a workspace already carries one and needs no header.
+    headers = {}
+    workspace = config.workspace_id()
+    if workspace:
+        headers["anthropic-workspace-id"] = workspace
+
+    return anthropic.Anthropic(api_key=key, default_headers=headers or None)
 
 
 def cost_usd(usage):
@@ -72,8 +80,11 @@ def generate_json(client, *, system_prefix, volatile, messages, schema,
         # The breakpoint sits at the end of the stable prefix. Nothing volatile
         # may appear above it or the cache is thrown away every run.
         {"type": "text", "text": system_prefix, "cache_control": {"type": "ephemeral"}},
-        {"type": "text", "text": volatile},
     ]
+    # An empty text block is a 400, and both calls currently carry their
+    # per-request context in the user turn rather than here.
+    if volatile and volatile.strip():
+        system.append({"type": "text", "text": volatile})
 
     buffer = []
     with client.messages.stream(

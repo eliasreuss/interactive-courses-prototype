@@ -106,6 +106,24 @@ class CreatorAssetHandler(SimpleHTTPRequestHandler):
         if "/__assets/" in self.path or self.command == "POST":
             super().log_message(fmt, *args)
 
+    def send_header(self, keyword, value):
+        if keyword.lower() == "cache-control":
+            self._cache_header_sent = True
+        super().send_header(keyword, value)
+
+    def end_headers(self):
+        """Keep the browser off its own copy of the prototype.
+
+        The pages here are edited constantly, and SimpleHTTPRequestHandler
+        serves them with a Last-Modified that browsers happily cache against,
+        so a saved edit can keep showing the previous markup until a hard
+        reload. Routes that already picked their own policy keep it.
+        """
+        if not getattr(self, "_cache_header_sent", False):
+            super().send_header("Cache-Control", "no-store, must-revalidate")
+        self._cache_header_sent = False
+        super().end_headers()
+
     # -- helpers ---------------------------------------------------------
 
     def local_request(self):
@@ -202,6 +220,7 @@ class CreatorAssetHandler(SimpleHTTPRequestHandler):
             running = jobs.current()
             return self.send_json({
                 "key_present": bool(fg_config.api_key()),
+                "workspace_id_present": bool(fg_config.workspace_id()),
                 "sdk_installed": sdk,
                 "model": fg_config.MODEL,
                 "knowledge_indexed": len(knowledge_index.load()),

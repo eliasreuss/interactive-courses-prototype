@@ -31,6 +31,9 @@ PX_SIZE_RE = re.compile(r"^\d+px$")
 HERO_KEYS = {"hero_image", "hero_subtitle", "hero_title", "hero_body"}
 VALID_TYPES = {"hero", "main", "sidequest", "flip-cards"}
 FORBIDDEN_IMAGE_DIRS = ("animations/", "legacy/")
+# Banned in generated courses only: the hand-authored customers courses still
+# point at placeholder-images/, so an --audit run must not flag them.
+GENERATED_FORBIDDEN_IMAGE_DIRS = ("placeholder-images/",)
 # Bare <br> is the one HTML the renderer documents; everything else reaching
 # innerHTML unescaped is a hazard.
 HTML_RE = re.compile(r"<(?!br\s*/?>)[a-zA-Z/]")
@@ -350,6 +353,12 @@ def validate(text, repo_root=REPO_ROOT, check_files=True, generated=True):
         if ref.startswith(FORBIDDEN_IMAGE_DIRS):
             issues.append(Issue("error", "IMAGE_FORBIDDEN_DIR",
                                 f"{ref} is under a gitignored or deprecated folder", slide_label, line_no))
+            continue
+        if generated and ref.startswith(GENERATED_FORBIDDEN_IMAGE_DIRS):
+            issues.append(Issue("error", "IMAGE_PLACEHOLDER",
+                                f"{ref} is a placeholder, not real artwork — "
+                                "use an image from the course's own solution folder",
+                                slide_label, line_no))
             continue
         if check_files and not os.path.isfile(os.path.join(images_root, ref)):
             issues.append(Issue("error", "IMAGE_MISSING",

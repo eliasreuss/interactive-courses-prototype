@@ -18,6 +18,11 @@ EXPAND_EFFORT = "high"
 
 # Retrieval
 SHORTLIST_SIZE = 60          # frontmatter records sent to the outline call
+# A prompt the knowledge base has nothing to say about. Measured over the
+# current material: real topics score 19-28 on the best-matching record,
+# off-topic prompts score 4 or return nothing at all, so the gate sits in the
+# empty middle. It stops a doomed run before it costs an API call.
+MIN_COVERAGE_SCORE = 8.0
 MAX_CHUNK_CHARS = 40_000     # total retrieved body text sent to the expand call
 MAX_REPAIR_ROUNDS = 2
 
@@ -26,19 +31,25 @@ MIN_PROMPT_CHARS = 12
 MAX_PROMPT_CHARS = 2000
 
 # Image folders a generated course must never reference: animations/ is
-# gitignored so the file would 404 on another machine, legacy/ is deprecated.
-FORBIDDEN_IMAGE_DIRS = ("animations", "legacy")
+# gitignored so the file would 404 on another machine, legacy/ is deprecated,
+# and placeholder-images/ is exactly what the name says — Illustration.png is
+# a grey box reading "Illustration". Hand-authored courses still point at it
+# in places, so the ban applies to generation only, not to audits.
+FORBIDDEN_IMAGE_DIRS = ("animations", "legacy", "placeholder-images")
 
 # When no specific image fits, the hero falls back to the matching intro
 # course's hero. Verified against the hero_image: values actually in use.
+# The customers area ships no hero of its own — every hand-authored customers
+# course used the grey placeholder — so it borrows the linked-revenue chain
+# diagram, which is the one image that shows the whole customers story.
 TOPIC_HERO = {
     "inventory":     "intro/Intro-Path-Cover-2.png",
     "suppliers":     "suppliers-intro-2/Hero.png",
     "products":      "products-intro/Hero.png",
-    "customers":     "placeholder-images/Illustration.png",
+    "customers":     "customers-linked-revenue/Full-Chain.png",
     "functionality": "now-intro/Now-Intro-Hero.png",
     "admin":         "admin-intro/Hero-Illu.png",
-    "general":       "placeholder-images/Illustration.png",
+    "general":       "intro/Intro-Path-Cover-2.png",
 }
 
 # Matches the TOPIC_ICONS vocabulary in catalog.html so the card renderer can
@@ -107,6 +118,18 @@ def api_key():
     if key:
         return key
     return read_dotenv().get("ANTHROPIC_API_KEY") or None
+
+
+def workspace_id():
+    """Optional. An org-scoped key must name the workspace to bill against.
+
+    A key created inside a workspace carries it already and needs nothing here;
+    an org-level key returns 400 without it.
+    """
+    value = os.environ.get("ANTHROPIC_WORKSPACE_ID")
+    if value:
+        return value
+    return read_dotenv().get("ANTHROPIC_WORKSPACE_ID") or None
 
 
 def redact(text):

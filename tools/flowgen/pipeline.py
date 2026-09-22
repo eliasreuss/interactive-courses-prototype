@@ -70,6 +70,14 @@ def run(prompt, job=None, dry_run=False):
     _progress(job, "retrieving", "Understanding your topic", 0.04)
     records = knowledge_index.load()
     scored = knowledge_index.score(prompt, records)
+
+    # Nothing in the material is about this. Saying so here is both cheaper
+    # and more honest than letting the model improvise a course out of
+    # whatever the shortlist happened to return.
+    top_score = scored[0][0] if scored else 0.0
+    if top_score < config.MIN_COVERAGE_SCORE:
+        raise NoCoverage(prompt, top_score)
+
     shortlist_text = knowledge_index.shortlist_for_prompt(scored)
     catalog_records = image_catalog.load()
     catalog_text = image_catalog.catalog_for_prompt(catalog_records)
@@ -98,6 +106,14 @@ def run(prompt, job=None, dry_run=False):
         effort=config.OUTLINE_EFFORT,
         cancel=cancel,
     )
+    # Structured outputs rejects maxItems, so the upper bounds live in the
+    # field descriptions and are enforced here instead.
+    outline["chosen_chunks"] = (outline.get("chosen_chunks") or [])[:16]
+    outline["candidate_images"] = (outline.get("candidate_images") or [])[:40]
+    outline["topics"] = (outline.get("topics") or [])[:6]
+    for topic in outline["topics"]:
+        topic["slide_briefs"] = (topic.get("slide_briefs") or [])[:5]
+
     planned_slides = sum(len(t.get("slide_briefs") or []) for t in outline.get("topics") or [])
     if job is not None:
         job.update(outline=outline)
@@ -140,10 +156,16 @@ def run(prompt, job=None, dry_run=False):
         cancel=cancel,
     )
 
+    course["topics"] = (course.get("topics") or [])[:6]
+    for topic in course["topics"]:
+        topic["slides"] = (topic.get("slides") or [])[:5]
+
     usages = [outline_usage, expand_usage]
 
     # --- validate, with up to two repair rounds --------------------------
     _progress(job, "validating", "Checking the course", 0.86)
+    topic_hero = config.TOPIC_HERO.get(outline.get("topic"), config.TOPIC_HERO["general"])
+    _bookend_hero_image(course, topic_hero)
     text = emitter.emit(course)
     issues = validator.validate(text)
     errors = [i for i in issues if i.level == "error"]
@@ -166,6 +188,7 @@ def run(prompt, job=None, dry_run=False):
             cancel=cancel,
         )
         usages.append(repair_usage)
+        _bookend_hero_image(course, topic_hero)
         text = emitter.emit(course)
         issues = validator.validate(text)
         errors = [i for i in issues if i.level == "error"]
@@ -230,6 +253,40 @@ def run(prompt, job=None, dry_run=False):
     }
 
 
+def _bookend_hero_image(course, fallback_ref):
+    """Give the course a real hero and repeat it on the closing slide.
+
+    Every hand-authored course opens and closes on the same artwork — the
+    welcome slide and the "you have completed" slide share one hero_image —
+    so a generated course that picks two unrelated images, or none, reads as
+    unfinished. The model is told this in the prompt; this makes it true
+    regardless, because the closing image is the one detail it drops most.
+
+    The fallback only applies to the opening slide. If the model gave the
+    course no hero at all, there is nothing to echo and the topic hero stands
+    in for it.
+    """
+    flat = [slide
+            for topic in (course.get("topics") or [])
+            for slide in (topic.get("slides") or [])]
+    if not flat:
+        return
+
+    first, last = flat[0], flat[-1]
+    hero_ref = (first.get("image") or {}).get("ref") or fallback_ref
+    if not hero_ref:
+        return
+    first["image"] = dict(first.get("image") or {}, ref=hero_ref)
+
+    if last is first:
+        return
+    # A closing slide built from an image row would lose that row's meaning if
+    # we dropped a single image on top of it, so leave those alone.
+    if last.get("image_row"):
+        return
+    last["image"] = dict(last.get("image") or {}, ref=hero_ref)
+
+
 def _issue_dict(issue):
     return {"level": issue.level, "code": issue.code, "message": issue.message,
             "slide": issue.slide, "line": issue.line}
@@ -284,6 +341,15 @@ def write_sidecar(entry, prompt, outline, usage, issues, elapsed):
     path = os.path.join(config.META_DIR, f"{entry['id']}.json")
     with open(path, "w", encoding="utf-8") as handle:
         json.dump(payload, handle, indent=2, ensure_ascii=False)
+
+
+class NoCoverage(Exception):
+    """The knowledge base has no material close enough to the prompt."""
+
+    def __init__(self, prompt, top_score=0.0):
+        super().__init__("no material covers this topic")
+        self.prompt = prompt
+        self.top_score = top_score
 
 
 class GenerationFailed(Exception):

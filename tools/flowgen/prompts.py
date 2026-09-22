@@ -124,6 +124,16 @@ Only attach an image when you can say which part of the slide's argument it show
 Images described as "course cover art" are hero art for an existing course. Use \
 them for your own hero or outro slide, not to illustrate a point mid-course.
 
+**The course opens and closes on the same image.** Pick one piece of cover art \
+from the solution area your course is about, put it on the hero slide, and put \
+the same path on the final slide. Every real course does this, and a course that \
+ends on a different image — or on none — reads as unfinished.
+
+**Never use a placeholder.** Nothing under `placeholder-images/` is real \
+artwork; it is grey filler that says "Illustration". Those paths are not in the \
+list below and will fail validation. If no image in your solution area fits a \
+slide, leave the slide without one.
+
 When an image genuinely fits a concept slide, set `"align": "right"` and a pixel \
 size around `"500px"` — that produces the text-left, image-right layout the real \
 courses use. Use `"align": "center"` with `"size": "large"` for a diagram that \
@@ -161,7 +171,7 @@ The first two slides of the Linked Revenue course above correspond to:
         {
           "type": "hero",
           "index_title": "Welcome to Linked Revenue",
-          "image": {"ref": "placeholder-images/Illustration.png"},
+          "image": {"ref": "customers-linked-revenue/Full-Chain.png"},
           "hero": {
             "subtitle": "Welcome to the course:",
             "title": "Linked revenue",
@@ -184,8 +194,36 @@ The first two slides of the Linked Revenue course above correspond to:
 
 Note that the hero slide has no `title` of its own — `hero.title` is the heading — \
 and that the last slide of the course carries no `next_label`, because the viewer \
-adds its own Finish button.\
+adds its own Finish button. The course's final slide repeats the hero's image, \
+`customers-linked-revenue/Full-Chain.png`, the way the real courses close on the \
+artwork they opened with.\
 """
+
+
+def strip_unsupported(node):
+    """Remove schema keywords structured outputs rejects.
+
+    Probed against the API: `maxItems` on an array and `minimum` on an integer
+    are refused outright, and `minItems` accepts only 0 or 1 — anything higher
+    is a 400, so it is clamped rather than dropped. `enum`, `maxLength`,
+    `default`, nullable type lists and nested objects are all fine.
+
+    Every real bound therefore lives in the field descriptions and is enforced
+    in Python after the call; the schema only guarantees shape.
+    """
+    if isinstance(node, dict):
+        out = {}
+        for key, value in node.items():
+            if key in ("maxItems", "minimum", "maximum", "maxProperties"):
+                continue
+            if key == "minItems" and isinstance(value, int) and value > 1:
+                out[key] = 1
+                continue
+            out[key] = strip_unsupported(value)
+        return out
+    if isinstance(node, list):
+        return [strip_unsupported(v) for v in node]
+    return node
 
 
 def stable_prefix(catalog_text=None):
@@ -203,7 +241,7 @@ def stable_prefix(catalog_text=None):
 
 # --- schemas -------------------------------------------------------------
 
-OUTLINE_SCHEMA = {
+_OUTLINE_SCHEMA_RAW = {
     "type": "object",
     "additionalProperties": False,
     "required": ["slug", "course_title", "description", "topic",
@@ -219,13 +257,14 @@ OUTLINE_SCHEMA = {
         "chosen_chunks": {
             "type": "array", "minItems": 1, "maxItems": 16,
             "items": {"type": "string"},
-            "description": "Paths copied exactly from the candidate knowledge list",
+            "description": "Paths copied exactly from the candidate knowledge list. "
+                           "At most 16.",
         },
         "candidate_images": {
             "type": "array", "maxItems": 40,
             "items": {"type": "string"},
             "description": "Image paths from the catalog that might suit this course. "
-                           "Be generous here; you narrow down later.",
+                           "Be generous here; you narrow down later. At most 40.",
         },
         "topics": {
             "type": "array", "minItems": 2, "maxItems": 6,
@@ -234,17 +273,24 @@ OUTLINE_SCHEMA = {
                 "additionalProperties": False,
                 "required": ["name", "slide_briefs"],
                 "properties": {
-                    "name": {"type": "string", "description": "Short section name for the contents list"},
+                    "name": {"type": "string",
+                             "description": "Short section name for the contents list. "
+                                            "At most 6 sections in a course."},
                     "slide_briefs": {
                         "type": "array", "minItems": 1, "maxItems": 5,
                         "items": {"type": "string",
-                                  "description": "One line on what this slide will say"},
+                                  "description": "One line on what this slide will say. "
+                                                 "At most 5 slides per section, and 14 in "
+                                                 "the whole course."},
                     },
                 },
             },
         },
     },
 }
+
+
+OUTLINE_SCHEMA = strip_unsupported(_OUTLINE_SCHEMA_RAW)
 
 
 def expand_schema(image_refs):
@@ -266,7 +312,7 @@ def expand_schema(image_refs):
         "description": "An image from the catalog, or null. Prefer null.",
     }
 
-    return {
+    schema = {
         "type": "object",
         "additionalProperties": False,
         "required": ["course_title", "description", "topic", "topics"],
@@ -327,6 +373,7 @@ def expand_schema(image_refs):
             },
         },
     }
+    return strip_unsupported(schema)
 
 
 def outline_user_message(prompt, shortlist_text):
