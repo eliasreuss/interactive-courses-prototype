@@ -57,7 +57,7 @@
       border-bottom: 1px solid rgba(48,70,66,0.08);
     }
     .header-left { display: flex; align-items: center; gap: 40px; }
-    .logo { font-size: 22px; font-weight: 700; color: var(--color-primary); letter-spacing: -0.5px; text-decoration: none; }
+    .logo { font-size: 22px; font-weight: 700; color: var(--color-primary); letter-spacing: -0.5px; text-decoration: none; white-space: nowrap; }
     .logo span { color: var(--color-accent); font-weight: 600; }
     .nav { display: flex; align-items: center; gap: 8px; }
     .nav a {
@@ -66,8 +66,6 @@
     }
     .nav a:hover { opacity: 1; background: var(--color-tag-bg); }
     .nav a.active { opacity: 1; background: var(--pill-active-bg); color: var(--color-primary); font-weight: 600; }
-    .nav a.locked { display: inline-flex; align-items: center; gap: 6px; }
-    .nav a.locked .lock-icon { width: 12px; height: 12px; opacity: 0.5; }
     .header-right { display: flex; align-items: center; gap: 16px; }
     .nav-notif-btn {
       width: 36px; height: 36px; background: #304642; border-radius: 500px;
@@ -75,7 +73,18 @@
       flex-shrink: 0; transition: transform 0.2s, background 0.2s ease;
     }
     .nav-notif-btn:hover { transform: scale(1.08); background: #3d5a54; }
-    .nav-notif-icon { width: 12px; height: 16px; border-radius: 1px; border: 2px solid white; display: block; }
+    /* The real bookmark glyph, matching Home. This was a bare CSS rectangle
+       standing in for it, which read as a different icon next to index.html. */
+    .nav-notif-icon {
+      width: 14px; height: 18px;
+      display: block; flex-shrink: 0;
+      background-color: white;
+      -webkit-mask-image: url('SVGs/learn-bookmark-icon.svg');
+      mask-image: url('SVGs/learn-bookmark-icon.svg');
+      -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+      -webkit-mask-position: center; mask-position: center;
+      -webkit-mask-size: contain; mask-size: contain;
+    }
     .nav-avatar {
       width: 35px; height: 35px; background: #D9EBFF; border-radius: 100px;
       display: flex; align-items: center; justify-content: center;
@@ -598,9 +607,6 @@
       .catalog-sidebar { border-radius: 14px; }
       .catalog-grid { grid-template-columns: 1fr; }
       .lp-card-body { padding: 24px; }
-      .header { padding: 14px 20px; }
-      .header-left { gap: 20px; }
-      .nav { display: none; }
     }
   /* ── Nav Progress Widget ── */
   .nav-progress-widget { display: flex; align-items: center; gap: 20px; padding: 0 0 0 16px; background: rgba(48, 70, 66, 0.055); border-radius: 100px; }
@@ -616,6 +622,20 @@
   .nav-progress-tooltip::after { content: ''; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-bottom-color: #304642; }
   .nav-progress-bar-wrap:hover .nav-progress-tooltip { opacity: 1; transform: translateX(-50%) translateY(0); }
   @media (max-width: 680px) { .nav-progress-widget { background: transparent; padding: 0; } .nav-progress-bar-wrap { display: none; } .nav-continue-btn { font-size: 12px; padding: 0 15px; } }
+    /* ── Top nav: shared responsive behaviour (identical on Home/Catalog/My Courses) ── */
+    @media (max-width: 760px) {
+      .header { padding: 14px 20px; }
+      .header-left { gap: 20px; }
+      .nav { gap: 2px; }
+      .nav a { padding: 8px 10px; font-size: 13px; }
+    }
+    @media (max-width: 480px) {
+      .header { padding: 10px 16px; border-radius: 0 0 16px 16px; }
+      .header-left { gap: 12px; }
+      .logo { font-size: 18px; }
+      .nav a { padding: 7px 8px; font-size: 12px; }
+    }
+
   </style>
 </head>
 <body>
@@ -627,7 +647,6 @@
         <a href="index.html">Home</a>
         <a href="catalog.html" class="active">Catalog</a>
         <a href="my-courses.html">My Courses</a>
-        <a href="#" class="locked">Dictionary<svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></a>
       </nav>
     </div>
     <div class="header-right">

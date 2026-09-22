@@ -22,6 +22,7 @@
     --color-muted: #8A9A97;
     --color-text-secondary: rgba(48, 70, 66, 0.6);
     --color-tag-bg: #F0F0F0;
+    --pill-active-bg: #EEF0F0;
     --color-progress-bg: #EBEBEB;
     --font-family: 'Poppins', sans-serif;
     --shadow-card: 0 2px 8px rgba(48, 70, 66, 0.06), 0 8px 24px rgba(48, 70, 66, 0.08);
@@ -85,13 +86,14 @@
 
   .logo {
     font-size: 22px;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--color-primary);
     letter-spacing: -0.5px;
     text-decoration: none;
+    white-space: nowrap;
     cursor: pointer;
   }
-  .logo span { color: var(--color-accent); font-weight: 800; }
+  .logo span { color: var(--color-accent); font-weight: 600; }
 
   .nav {
     display: flex;
@@ -110,9 +112,7 @@
     opacity: 0.65;
   }
   .nav a:hover { opacity: 1; background: var(--color-tag-bg); }
-  .nav a.active { opacity: 1; background: rgba(48, 70, 66, 0.08); font-weight: 600; }
-  .nav a.locked { display: inline-flex; align-items: center; gap: 6px; pointer-events: none; }
-  .nav a.locked .lock-icon { width: 12px; height: 12px; opacity: 0.5; }
+  .nav a.active { opacity: 1; background: var(--pill-active-bg); color: var(--color-primary); font-weight: 600; }
 
   .header-right {
     display: flex;
@@ -911,8 +911,6 @@
     .content-area { padding: 16px 24px 32px; }
   }
   @media (max-width: 600px) {
-    .header { padding: 12px 20px; }
-    .nav { display: none; }
     .hero-header { margin: 12px 16px; padding: 32px 24px; }
     .content-area { padding: 16px 16px 24px; }
     .course-title { font-size: 19px; line-height: 28px; }
@@ -1654,11 +1652,6 @@
 
   /* ── Mobile breakpoint (≤480px) ── */
   @media (max-width: 480px) {
-    /* Header */
-    .header { padding: 10px 16px; border-radius: 0 0 16px 16px; }
-    .header-left { gap: 12px; }
-    .logo { font-size: 18px; }
-
     /* Hero */
     .hero-header { margin: 10px 12px 12px; padding: 24px 20px; gap: 20px; }
     .hero-title { font-size: clamp(22px, 5.5vw, 28px); }
@@ -1707,6 +1700,20 @@
   .nav-progress-tooltip::after { content: ''; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-bottom-color: #304642; }
   .nav-progress-bar-wrap:hover .nav-progress-tooltip { opacity: 1; transform: translateX(-50%) translateY(0); }
   @media (max-width: 680px) { .nav-progress-widget { background: transparent; padding: 0; } .nav-progress-bar-wrap { display: none; } .nav-continue-btn { font-size: 12px; padding: 0 15px; } }
+  /* ── Top nav: shared responsive behaviour (identical on Home/Catalog/My Courses) ── */
+  @media (max-width: 760px) {
+    .header { padding: 14px 20px; }
+    .header-left { gap: 20px; }
+    .nav { gap: 2px; }
+    .nav a { padding: 8px 10px; font-size: 13px; }
+  }
+  @media (max-width: 480px) {
+    .header { padding: 10px 16px; border-radius: 0 0 16px 16px; }
+    .header-left { gap: 12px; }
+    .logo { font-size: 18px; }
+    .nav a { padding: 7px 8px; font-size: 12px; }
+  }
+
 </style>
 </head>
 <body>
@@ -1718,7 +1725,6 @@
       <a href="index.html" id="nav-home" class="active">Home</a>
       <a href="catalog.html">Catalog</a>
       <a href="my-courses.html">My Courses</a>
-      <a href="#" class="locked">Dictionary<svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></a>
     </nav>
   </div>
   <div class="header-right">

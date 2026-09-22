@@ -7,11 +7,11 @@
  *
  *  Contains:
  *    - Logo ("Inact learn")
- *    - Navigation links (Home, Learning Paths, Catalog, Dictionary)
+ *    - Navigation links (Home, Learning Paths, Catalog)
  *    - BETA badge
  *
  *  Notes:
- *    - "Home", "Catalog", "Dictionary" are locked (grayed + lock icon).
+ *    - "Home" and "Catalog" are locked (grayed + lock icon).
  *    - "Learning Paths" is active.
  *    - Sticky at top with frosted backdrop blur.
  */
@@ -37,10 +37,6 @@ export default function TopNav() {
           </a>
           <a href="#" className="top-nav__link top-nav__link--locked">
             Catalog
-            <LockIcon />
-          </a>
-          <a href="#" className="top-nav__link top-nav__link--locked">
-            Dictionary
             <LockIcon />
           </a>
         </nav>
