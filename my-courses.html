@@ -30,6 +30,32 @@
       --radius-sm: 10px;
       --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
       --page-margin: 48px;
+
+      /* Type ramp — fixed rem-equivalent steps, ~1.18 ratio. Product UI reads
+         at a consistent DPI, so headings are stepped, not fluid, apart from
+         the one display size. Replaces the old 12.5/13/13.5/14/15/16/17/18
+         soup, where the steps were too close together to register. */
+      --text-micro: 11px;
+      --text-xs: 13px;
+      --text-sm: 15px;
+      --text-md: 18px;
+      --text-lg: 21px;
+      --text-xl: 26px;
+      --text-display: clamp(32px, 3.4vw, 46px);
+
+      /* Spacing scale. Rhythm comes from choosing across the scale, not from
+         one value repeated. */
+      --space-3xs: 4px;
+      --space-2xs: 8px;
+      --space-xs: 12px;
+      --space-sm: 16px;
+      --space-md: 24px;
+      --space-lg: 36px;
+      --space-xl: 56px;
+      --space-2xl: 88px;
+
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
     }
     @media (min-width: 1400px) { :root { --page-margin: 72px; } }
     @media (min-width: 1600px) { :root { --page-margin: 96px; } }
@@ -39,6 +65,10 @@
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+    /* Any author `display` rule outranks the UA's [hidden] { display: none },
+       so an element styled display:flex ignores the hidden attribute entirely.
+       This page toggles panels with .hidden, so make the attribute win. */
+    [hidden] { display: none !important; }
     body {
       font-family: var(--font-family);
       background: var(--color-bg);
@@ -59,7 +89,7 @@
       border-bottom: 1px solid rgba(48,70,66,0.08);
     }
     .header-left { display: flex; align-items: center; gap: 40px; }
-    .logo { font-size: 22px; font-weight: 700; color: var(--color-primary); letter-spacing: -0.5px; text-decoration: none; }
+    .logo { font-size: 22px; font-weight: 700; color: var(--color-primary); letter-spacing: -0.5px; text-decoration: none; white-space: nowrap; }
     .logo span { color: var(--color-accent); font-weight: 600; }
     .nav { display: flex; align-items: center; gap: 8px; }
     .nav a {
@@ -68,8 +98,6 @@
     }
     .nav a:hover { opacity: 1; background: var(--color-tag-bg); }
     .nav a.active { opacity: 1; background: var(--pill-active-bg); color: var(--color-primary); font-weight: 600; }
-    .nav a.locked { display: inline-flex; align-items: center; gap: 6px; }
-    .nav a.locked .lock-icon { width: 12px; height: 12px; opacity: 0.5; }
     .header-right { display: flex; align-items: center; gap: 16px; }
     .nav-notif-btn {
       width: 36px; height: 36px; background: #304642; border-radius: 500px;
@@ -77,7 +105,18 @@
       flex-shrink: 0; transition: transform 0.2s, background 0.2s ease;
     }
     .nav-notif-btn:hover { transform: scale(1.08); background: #3d5a54; }
-    .nav-notif-icon { width: 12px; height: 16px; border-radius: 1px; border: 2px solid white; display: block; }
+    /* The real bookmark glyph, matching Home. This was a bare CSS rectangle
+       standing in for it, which read as a different icon next to index.html. */
+    .nav-notif-icon {
+      width: 14px; height: 18px;
+      display: block; flex-shrink: 0;
+      background-color: white;
+      -webkit-mask-image: url('SVGs/learn-bookmark-icon.svg');
+      mask-image: url('SVGs/learn-bookmark-icon.svg');
+      -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+      -webkit-mask-position: center; mask-position: center;
+      -webkit-mask-size: contain; mask-size: contain;
+    }
     .nav-avatar {
       width: 35px; height: 35px; background: #D9EBFF; border-radius: 100px;
       display: flex; align-items: center; justify-content: center;
@@ -111,6 +150,10 @@
       opacity: 0; transform: translateY(24px);
     }
     .course-card.visible { animation: cardEnter 0.55s cubic-bezier(0.22,1,0.36,1) forwards; }
+    /* A card rendered inside a view transition must already be at its final
+       state when the new snapshot is taken, so it skips the entry keyframes
+       and lets the transition carry the motion instead. */
+    .course-card.instant { opacity: 1; transform: none; animation: none; }
     .course-card:hover { transform: translateY(-6px); box-shadow: 0 22px 56px var(--card-glow, rgba(48,70,66,0.22)); }
     .course-card:hover .course-title { color: var(--color-primary-light); }
     .course-card:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
@@ -193,14 +236,17 @@
     }
     .standalone-thumb-icon svg { width: 100%; height: 100%; }
 
-    .catalog-toolbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
-    .catalog-count { font-size: 15px; font-weight: 600; color: var(--color-primary); letter-spacing: -0.01em; }
+    .catalog-toolbar {
+      display: flex; align-items: center; justify-content: space-between; gap: var(--space-md);
+      margin-bottom: 20px;
+    }
+    .catalog-count { font-size: var(--text-md); font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; color: var(--color-primary); }
     .catalog-sort { display: flex; align-items: center; gap: 10px; }
-    .catalog-sort-label { font-size: 13px; font-weight: 500; color: var(--color-muted); white-space: nowrap; }
+    .catalog-sort-label { font-size: var(--text-xs); font-weight: 500; color: var(--color-muted); white-space: nowrap; }
     .catalog-sort-wrap { position: relative; display: inline-flex; align-items: center; }
     .catalog-sort-select {
       appearance: none; -webkit-appearance: none;
-      font-family: var(--font-family); font-size: 13px; font-weight: 500;
+      font-family: var(--font-family); font-size: var(--text-xs); font-weight: 500;
       color: var(--color-primary); background: #FFFFFF;
       border: 1.5px solid oklch(0.88 0.008 165); border-radius: 10px;
       padding: 8px 34px 8px 14px; cursor: pointer; outline: none;
@@ -210,7 +256,7 @@
     .catalog-sort-select:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(48,70,66,0.08); }
     .catalog-sort-chevron { position: absolute; right: 11px; top: 50%; transform: translateY(-50%); pointer-events: none; color: var(--color-muted); display: flex; align-items: center; }
     .catalog-sort-chevron svg { width: 13px; height: 13px; }
-    .catalog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .catalog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
     .catalog-grid .course-card { height: 100%; }
     .catalog-grid .course-card:nth-child(1) { animation-delay: 0.02s; }
     .catalog-grid .course-card:nth-child(2) { animation-delay: 0.06s; }
@@ -218,71 +264,244 @@
     .catalog-grid .course-card:nth-child(4) { animation-delay: 0.14s; }
     .catalog-grid .course-card:nth-child(5) { animation-delay: 0.18s; }
     .catalog-grid .course-card:nth-child(n+6) { animation-delay: 0.22s; }
-    .catalog-empty { display: flex; flex-direction: column; align-items: center; padding: 72px 24px; gap: 14px; text-align: center; }
+    .catalog-empty { display: flex; flex-direction: column; align-items: center; padding: var(--space-2xl) var(--space-md); gap: var(--space-2xs); text-align: center; }
     .catalog-empty[hidden] { display: none; }
-    .catalog-empty-icon { width: 44px; height: 44px; color: oklch(0.75 0.008 165); margin-bottom: 4px; }
-    .catalog-empty-title { font-size: 17px; font-weight: 600; color: var(--color-primary); }
-    .catalog-empty-sub { font-size: 14px; color: var(--color-muted); margin-top: -4px; max-width: 420px; line-height: 20px; }
+    .catalog-empty-icon { width: 40px; height: 40px; color: oklch(0.78 0.008 165); margin-bottom: var(--space-2xs); }
+    .catalog-empty-title { font-size: var(--text-md); font-weight: 600; letter-spacing: -0.02em; color: var(--color-primary); }
+    .catalog-empty-sub { font-size: var(--text-sm); font-weight: 300; color: var(--color-muted); max-width: 46ch; line-height: 1.55; }
 
     /* ══════════════════════════════════════════════
        MY COURSES — new
     ══════════════════════════════════════════════ */
-    .mc-page { padding: 40px var(--page-margin) 80px; }
+    /* Same shell as the catalog: page margin, sidebar rail, content beside it.
+       Only the rail is wider here, because it holds a composer rather than a
+       filter list — which is also what takes the grid from three up to two. */
+    .mc-page { padding: 32px var(--page-margin) 80px; }
+    .mc-layout { display: flex; gap: 40px; align-items: flex-start; }
 
-    .mc-hero { max-width: 760px; margin: 0 auto 56px; text-align: center; }
-    .mc-eyebrow {
-      font-size: 11px; font-weight: 600; letter-spacing: 0.11em; text-transform: uppercase;
-      color: var(--color-accent); margin-bottom: 12px;
+    /* The rail is where the AI lives, so it carries the same gleam language as
+       the Generate button rather than a second, unrelated effect: one slow
+       conic arc riding the border box, and a warm halo under the card that
+       breathes with it. Slower and far dimmer than the button — this runs the
+       whole time the page is open, so it has to sit at the edge of notice.
+       Border-box gradient over a padding-box white keeps the card opaque, so
+       nothing washes over the text. */
+    .mc-sidebar {
+      width: clamp(470px, 34vw, 560px); flex-shrink: 0;
+      position: sticky; top: calc(72px + 20px);
+      border: 1.5px solid transparent;
+      border-radius: 20px;
+      background:
+        linear-gradient(#FFFFFF, #FFFFFF) padding-box,
+        /* The travelling shine: a wide warm band with a white-hot core,
+           against the hairline the rest of the ring keeps. */
+        conic-gradient(from var(--mc-angle),
+          oklch(0.91 0.006 165) 0deg,
+          rgba(255,90,0,0.35) 40deg,
+          rgba(255,150,70,0.85) 72deg,
+          rgba(255,228,205,1) 92deg,
+          rgba(255,255,255,1) 100deg,
+          rgba(255,228,205,1) 108deg,
+          rgba(255,150,70,0.85) 128deg,
+          rgba(255,90,0,0.32) 160deg,
+          oklch(0.91 0.006 165) 215deg,
+          rgba(48,70,66,0.26) 290deg,
+          oklch(0.91 0.006 165) 360deg) border-box;
+      padding: 28px 26px 26px;
+      text-align: left;
+      animation: mcGleamAngle 18s linear infinite, mcRailHalo 7s ease-in-out infinite;
     }
-    .mc-hero h1 {
-      font-size: clamp(30px, 3.4vw, 42px); font-weight: 700; letter-spacing: -0.03em;
-      line-height: 1.1; color: var(--color-primary); margin-bottom: 12px;
+    /* Tinted glow, cast outward only: a box-shadow rather than a blurred
+       pseudo-element, because a sticky element makes its own stacking context
+       and a negative-z child would paint over the card's white. Kept light —
+       the shine on the ring is what should carry the effect, not the lift. */
+    @keyframes mcRailHalo {
+      0%, 100% {
+        box-shadow: 0 1px 4px rgba(48,70,66,0.04), 0 5px 16px rgba(48,70,66,0.05),
+                    0 4px 24px -12px rgba(255,90,0,0.10);
+      }
+      50% {
+        box-shadow: 0 1px 4px rgba(48,70,66,0.04), 0 6px 20px rgba(48,70,66,0.055),
+                    0 8px 36px -12px rgba(255,90,0,0.18);
+      }
     }
-    .mc-hero-sub { font-size: 16px; line-height: 24px; color: var(--color-text-secondary); margin-bottom: 28px; }
+    /* Matched to catalog.html .catalog-title, so the two columns open at the
+       same pitch instead of the rail shouting over the grid. */
+    .mc-hero-title {
+      display: flex; align-items: center; gap: 9px;
+      font-size: 20px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2;
+      color: var(--color-primary); margin-bottom: 6px;
+    }
+    .mc-hero-icon {
+      width: 18px; height: 18px; flex: none; color: var(--color-accent);
+    }
+    /* A step under the title now that the title itself stepped down. */
+    .mc-hero-sub {
+      font-size: var(--text-xs); font-weight: 400; line-height: 1.5;
+      color: rgba(48,70,66,0.55); margin-bottom: 18px;
+    }
 
+    .mc-content { flex: 1; min-width: 0; }
+
+    /* On a white rail a drop shadow would read as a second card, so the
+       composer is drawn with a hairline instead. */
     .mc-composer {
-      background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-card);
-      border: 1px solid rgba(48,70,66,0.07);
+      background: #fff; border-radius: 14px;
+      border: 1.5px solid rgba(48,70,66,0.12);
       text-align: left; overflow: hidden;
-      transition: box-shadow 0.25s var(--transition-smooth), opacity 0.25s ease;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
-    .mc-composer:focus-within { box-shadow: var(--shadow-card-hover); }
+    .mc-composer:focus-within { border-color: rgba(48,70,66,0.32); box-shadow: 0 0 0 3px rgba(48,70,66,0.06); }
     .mc-composer textarea {
       width: 100%; border: none; outline: none; resize: none;
-      font-family: var(--font-family); font-size: 16px; line-height: 25px;
+      font-family: var(--font-family); font-size: 14px; font-weight: 400; line-height: 20px;
       color: var(--color-primary); background: transparent;
-      padding: 22px 24px 14px; min-height: 96px;
+      padding: 13px 14px 6px; min-height: 72px; text-align: left;
     }
-    .mc-composer textarea::placeholder { color: rgba(48,70,66,0.34); }
+    .mc-composer textarea::placeholder { color: rgba(48,70,66,0.38); font-weight: 400; }
     .mc-composer-foot {
-      display: flex; align-items: center; justify-content: space-between; gap: 16px;
-      padding: 12px 16px 16px 24px; border-top: 1px solid rgba(48,70,66,0.07);
+      display: flex; align-items: center; justify-content: flex-end;
+      padding: 0 10px 10px 14px;
     }
-    .mc-hint { font-size: 12.5px; color: var(--color-muted); line-height: 17px; }
-    .mc-hint kbd {
-      font-family: var(--font-family); font-size: 11px; font-weight: 600;
-      background: rgba(48,70,66,0.07); border-radius: 5px; padding: 2px 6px; color: var(--color-primary);
-    }
-    .mc-generate {
-      display: inline-flex; align-items: center; gap: 9px; flex-shrink: 0;
-      font-family: var(--font-family); font-size: 14px; font-weight: 500; color: #fff;
-      height: 42px; padding: 0 22px; border: none; border-radius: 100px; cursor: pointer;
-      background: var(--color-accent); box-shadow: 0 2px 10px rgba(255,90,0,0.24);
-      transition: background 0.2s ease, box-shadow 0.22s ease, transform 0.22s cubic-bezier(0.22,1,0.36,1);
-    }
-    .mc-generate:hover:not(:disabled) { background: #D94E00; box-shadow: 0 6px 18px rgba(255,90,0,0.34); transform: translateY(-1px); }
-    .mc-generate:disabled { background: rgba(48,70,66,0.16); color: rgba(48,70,66,0.45); box-shadow: none; cursor: not-allowed; }
-    .mc-generate svg { width: 13px; height: 13px; }
+    /* ── Generate button ───────────────────────────────────────────────
+       The "shiny button" effect (21st.dev), ported from React/Tailwind to
+       plain CSS: a conic gradient rides the border box while the fill stays
+       flat, plus a speckle layer, a rotating sheen and a breathing inner
+       glow. The registered custom properties are what make the angle and the
+       arc width animatable at all — without @property they are plain strings
+       and cannot be interpolated, so browsers that lack it get the flat
+       orange button and nothing else changes.
+       Kept in brand: the fill is the Inact accent and the arc is white,
+       rather than the source's black fill with an orange arc. */
+    @property --mc-angle        { syntax: "<angle>";      initial-value: 0deg;   inherits: false; }
+    @property --mc-angle-offset { syntax: "<angle>";      initial-value: 0deg;   inherits: false; }
+    @property --mc-arc          { syntax: "<percentage>"; initial-value: 5%;     inherits: false; }
+    @property --mc-shine        { syntax: "<color>";      initial-value: #ffffff; inherits: false; }
 
-    .mc-starters { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 18px; }
-    .mc-starter {
-      font-family: var(--font-family); font-size: 13px; font-weight: 450; line-height: 18px;
-      color: var(--color-primary); background: rgba(48,70,66,0.055);
-      border: 1px solid rgba(48,70,66,0.07); border-radius: 100px;
-      padding: 8px 15px; cursor: pointer; text-align: left;
-      transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+    .mc-generate {
+      --gleam-base: var(--color-accent);
+      --gleam-inset: rgba(120,34,0,0.35);
+      --gleam-arc: #ffffff;
+      --gleam-arc-soft: #FFE2CE;
+      --sweep: 3s;
+      --gleam-transition: 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+      --animation: mcGleamAngle linear infinite;
+
+      isolation: isolate; position: relative; overflow: hidden;
+      display: inline-flex; align-items: center; justify-content: center; gap: 7px; flex-shrink: 0;
+      font-family: var(--font-family); font-size: 13px; font-weight: 500; line-height: 1; color: #fff;
+      height: 36px; padding: 0 17px; white-space: nowrap; cursor: pointer;
+      border: 1px solid transparent; border-radius: 100px;
+      outline-offset: 4px;
+      background:
+        linear-gradient(var(--gleam-base), var(--gleam-base)) padding-box,
+        conic-gradient(
+          from calc(var(--mc-angle) - var(--mc-angle-offset)),
+          transparent,
+          var(--gleam-arc) var(--mc-arc),
+          var(--mc-shine) calc(var(--mc-arc) * 2),
+          var(--gleam-arc) calc(var(--mc-arc) * 3),
+          transparent calc(var(--mc-arc) * 4)
+        ) border-box;
+      box-shadow: inset 0 0 0 1px var(--gleam-inset), 0 2px 10px rgba(255,90,0,0.24);
+      transition: var(--gleam-transition);
+      transition-property: --mc-angle-offset, --mc-arc, --mc-shine, box-shadow, background-color;
     }
-    .mc-starter:hover { background: rgba(48,70,66,0.10); border-color: rgba(48,70,66,0.14); transform: translateY(-1px); }
+
+    /* Three decorative layers, all below the label. `isolation` keeps the
+       negative z-index inside the button instead of dropping it behind the
+       composer. */
+    .mc-generate::before,
+    .mc-generate::after,
+    .mc-generate > span::before {
+      content: ''; pointer-events: none; position: absolute;
+      inset-inline-start: 50%; inset-block-start: 50%;
+      translate: -50% -50%; z-index: -1;
+    }
+    /* Speckle: a dot grid masked to the leading edge of the sweep. */
+    .mc-generate::before {
+      --size: calc(100% - 6px);
+      --position: 2px;
+      --space: calc(var(--position) * 2);
+      width: var(--size); height: var(--size);
+      background: radial-gradient(circle at var(--position) var(--position),
+        #fff calc(var(--position) / 4), transparent 0) padding-box;
+      background-size: var(--space) var(--space);
+      background-repeat: space;
+      mask-image: conic-gradient(from calc(var(--mc-angle) + 45deg), black, transparent 10% 90%, black);
+      border-radius: inherit;
+      opacity: 0.4;
+    }
+    /* Sheen: a soft bar rotating inside the pill. */
+    .mc-generate::after {
+      --animation: mcGleamShimmer linear infinite;
+      width: 100%; aspect-ratio: 1;
+      background: linear-gradient(-50deg, transparent, rgba(255,255,255,0.9), transparent);
+      mask-image: radial-gradient(circle at bottom, transparent 40%, black);
+      opacity: 0.5;
+    }
+    .mc-generate > span { z-index: 1; display: inline-flex; align-items: center; gap: 7px; }
+    /* Inner glow, breathing, only while hovered. */
+    .mc-generate > span::before {
+      --size: calc(100% + 1rem);
+      width: var(--size); height: var(--size);
+      box-shadow: inset 0 -1ex 2rem 4px rgba(255,255,255,0.85);
+      opacity: 0; transition: opacity var(--gleam-transition);
+      animation: calc(var(--sweep) * 1.5) mcGleamBreathe linear infinite;
+    }
+    /* Two passes of the same keyframe, the second reversed and paused, so
+       hover speeds the sweep up rather than restarting it. */
+    .mc-generate,
+    .mc-generate::before,
+    .mc-generate::after {
+      animation:
+        var(--animation) var(--sweep),
+        var(--animation) calc(var(--sweep) / 0.4) reverse paused;
+      animation-composition: add;
+    }
+    .mc-generate:is(:hover, :focus-visible):not(:disabled) {
+      --mc-arc: 20%;
+      --mc-angle-offset: 95deg;
+      --mc-shine: var(--gleam-arc-soft);
+      box-shadow: inset 0 0 0 1px var(--gleam-inset), 0 6px 18px rgba(255,90,0,0.34);
+    }
+    .mc-generate:is(:hover, :focus-visible):not(:disabled),
+    .mc-generate:is(:hover, :focus-visible):not(:disabled)::before,
+    .mc-generate:is(:hover, :focus-visible):not(:disabled)::after {
+      animation-play-state: running;
+    }
+    .mc-generate:is(:hover, :focus-visible):not(:disabled) > span::before { opacity: 1; }
+    .mc-generate:active:not(:disabled) { translate: 0 1px; }
+
+    @keyframes mcGleamAngle   { to { --mc-angle: 360deg; } }
+    @keyframes mcGleamShimmer { to { rotate: 360deg; } }
+    @keyframes mcGleamBreathe { from, to { scale: 1; } 50% { scale: 1.2; } }
+
+    /* Nothing to gleam when there is nothing to submit. */
+    .mc-generate:disabled {
+      background: rgba(48,70,66,0.16); color: rgba(48,70,66,0.45);
+      box-shadow: none; cursor: not-allowed;
+    }
+    .mc-generate:disabled { animation: none; }
+    .mc-generate:disabled::before,
+    .mc-generate:disabled::after { animation: none; opacity: 0; }
+    /* The chevron every other button in the product carries, with its
+       nudge on hover (see .nav-continue-btn). */
+    .mc-generate svg {
+      width: 12px; height: 12px; flex-shrink: 0;
+      transition: transform 0.22s cubic-bezier(0.22,1,0.36,1);
+    }
+    .mc-generate:hover:not(:disabled) svg { transform: translateX(2px); }
+
+    .mc-starters { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-start; margin-top: 16px; }
+    .mc-starter {
+      font-family: var(--font-family); font-size: 14px; font-weight: 400; line-height: 20px;
+      color: oklch(0.44 0.025 165); background: rgba(48,70,66,0.05);
+      border: 1px solid rgba(48,70,66,0.07); border-radius: 100px;
+      padding: 7px 14px; cursor: pointer; text-align: left;
+      transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+    }
+    .mc-starter:hover { background: rgba(48,70,66,0.09); border-color: rgba(48,70,66,0.14); color: var(--color-primary); }
 
     /* Locked composer — reuses the nav's .locked vocabulary */
     .mc-locked {
@@ -291,56 +510,170 @@
       border: 1px solid rgba(48,70,66,0.09); box-shadow: var(--shadow-card); text-align: left;
     }
     .mc-locked svg { width: 17px; height: 17px; flex-shrink: 0; margin-top: 2px; color: var(--color-muted); }
-    .mc-locked-text { font-size: 14px; line-height: 21px; color: var(--color-text-secondary); }
+    .mc-locked-text { font-size: var(--text-xs); line-height: 1.55; color: var(--color-text-secondary); }
     .mc-locked-text strong { color: var(--color-primary); font-weight: 600; display: block; margin-bottom: 3px; }
     .mc-locked code {
       font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px;
       background: rgba(48,70,66,0.07); border-radius: 5px; padding: 2px 6px; color: var(--color-primary);
     }
 
-    /* Generating state — replaces the composer in place */
+    /* ── The workshop surface ──────────────────────────────────────────
+       Generation is the most interesting thing this page does, so it gets
+       the page's one moment of scale: the composer morphs into this surface
+       (View Transitions), the loader plays at size, and the stage list reads
+       as a timeline beside it. Two zones, one card — not a card in a card. */
     .mc-gen {
-      background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-card);
-      border: 1px solid rgba(48,70,66,0.07); padding: 26px 28px; text-align: left;
+      background: #fff; border-radius: 14px; box-shadow: none;
+      border: 1.5px solid rgba(48,70,66,0.12); text-align: left; overflow: hidden;
     }
+    .mc-locked { text-align: left; box-shadow: none; border-color: oklch(0.91 0.006 165); }
+    /* The loader used to sit in a side column, which in a rail this narrow
+       left it about 150px wide — a speck. It reads as a banner instead: full
+       card width across the top, text beneath it. Same card, no extra
+       chrome, and the artwork gets three times the width. */
+    .mc-gen-body { display: block; padding: 0; text-align: left; }
+
+    /* Loader stage. The Lottie is authored on an off-white ground and carries
+       white shapes, so it needs the canvas tone behind it, not card white. */
+    .mc-gen-art {
+      position: relative; width: 100%; height: clamp(210px, 21vw, 260px);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    /* The 405x279 composition draws close to its full artboard, so scaling it
+       up to fill the band clipped the ground plane at the top and the cursor
+       at the bottom. It sits unscaled instead and the band is sized to give it
+       the presence the zoom was after. --loader-zoom stays as an escape hatch;
+       anything above 1 crops, since the band clips. */
+    .mc-gen-art > svg:not(.mc-gen-art-fallback) {
+      display: block; width: 100%; height: 100%;
+      /* !important because lottie writes transform: translate3d(0,0,0) inline
+         on the emitted SVG, and an inline style outranks this rule. */
+      transform: scale(var(--loader-zoom, 1)) !important;
+      transform-origin: center;
+    }
+    /* Shown until the player is up, and permanently if it can't load at all. */
+    .mc-gen-art-fallback {
+      width: 54px; height: 54px; flex: none; color: var(--color-primary); opacity: 0.22;
+      animation: mcBreathe 2.6s ease-in-out infinite;
+    }
+    .mc-gen-art.is-live .mc-gen-art-fallback { display: none; }
+    @keyframes mcBreathe {
+      0%, 100% { transform: scale(1); opacity: 0.18; }
+      50%      { transform: scale(1.07); opacity: 0.30; }
+    }
+
+    .mc-gen-main { min-width: 0; padding: 18px 20px 20px; }
+    /* Eyebrow spec lifted from index.html .hero-next-label. */
+    .mc-gen-label {
+      font-size: 10px; font-weight: 600; letter-spacing: 1.6px; line-height: 1;
+      text-transform: uppercase; color: var(--color-muted); margin-bottom: 8px;
+    }
+    /* Card-title size, because that is what it becomes. */
     .mc-gen-prompt {
-      font-size: 14px; line-height: 21px; color: var(--color-text-secondary);
+      font-size: 18px; font-weight: 600; line-height: 24px; letter-spacing: -0.3px;
+      color: var(--color-primary);
       display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical;
-      overflow: hidden; margin-bottom: 18px;
+      overflow: hidden; margin-bottom: 16px;
     }
-    .mc-gen-barrow { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
-    .mc-gen-track { flex: 1; height: 6px; background: rgba(48,70,66,0.12); border-radius: 100px; overflow: hidden; }
-    .mc-gen-fill {
-      height: 100%; width: 0%; border-radius: 100px;
-      background: linear-gradient(90deg, #304642, #3d5a54);
-      transition: width 0.7s cubic-bezier(0.22,1,0.36,1);
+
+    /* Timeline. The hairline rail between marks is the progress: it fills
+       behind you as stages land, so the list reads as distance covered
+       rather than as five unrelated rows. */
+    .mc-stages { display: flex; flex-direction: column; }
+    .mc-stage {
+      position: relative; display: flex; align-items: center; gap: 12px;
+      font-size: 14px; line-height: 20px; padding: 6px 0;
+      color: rgba(48,70,66,0.36);
+      transition: color 0.35s var(--ease-out-quart);
     }
-    .mc-gen-clock { font-size: 13px; font-weight: 600; color: var(--color-primary); font-variant-numeric: tabular-nums; min-width: 40px; text-align: right; }
-    .mc-stages { display: flex; flex-direction: column; gap: 11px; margin-bottom: 20px; }
-    .mc-stage { display: flex; align-items: center; gap: 11px; font-size: 14px; color: var(--color-muted); transition: color 0.3s ease; }
-    .mc-stage.is-done { color: var(--color-text-secondary); }
+    .mc-stage.is-done { color: rgba(48,70,66,0.6); }
     .mc-stage.is-active { color: var(--color-primary); font-weight: 500; }
+    .mc-stage + .mc-stage::before {
+      content: ''; position: absolute; left: 8.25px; top: -8px; width: 1.5px; height: 16px;
+      border-radius: 2px; background: rgba(48,70,66,0.14);
+      transition: background 0.35s var(--ease-out-quart);
+    }
+    .mc-stage.is-done::before, .mc-stage.is-active::before { background: rgba(48,70,66,0.55); }
     .mc-stage-mark {
       width: 18px; height: 18px; flex-shrink: 0; border-radius: 50%;
-      border: 1.5px solid rgba(48,70,66,0.22);
+      border: 1.5px solid rgba(48,70,66,0.2);
       display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.3s var(--ease-out-quart), background 0.3s var(--ease-out-quart);
     }
-    .mc-stage.is-done .mc-stage-mark { background: var(--color-primary); border-color: var(--color-primary); }
+    .mc-stage.is-done .mc-stage-mark {
+      background: var(--color-primary); border-color: var(--color-primary);
+      animation: mcMark 0.42s var(--ease-out-expo);
+    }
+    @keyframes mcMark { from { transform: scale(0.7); } to { transform: scale(1); } }
     .mc-stage.is-done .mc-stage-mark::after {
       content: ''; width: 5px; height: 8px; margin-top: -2px;
       border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg);
     }
     .mc-stage.is-active .mc-stage-mark { border-color: var(--color-primary); border-top-color: transparent; animation: mcSpin 0.9s linear infinite; }
     @keyframes mcSpin { to { transform: rotate(360deg); } }
-    .mc-gen-foot { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-    .mc-gen-note { font-size: 13px; color: var(--color-muted); line-height: 19px; }
-    .mc-ghost {
-      font-family: var(--font-family); font-size: 13.5px; font-weight: 500; color: var(--color-primary);
-      background: rgba(48,70,66,0.07); border: none; border-radius: 100px;
-      padding: 9px 18px; cursor: pointer; transition: background 0.18s ease; white-space: nowrap;
+
+    /* Second zone: the measured facts (elapsed, progress, controls) sit on a
+       tinted band so they read as instrumentation, not content. */
+    .mc-gen-foot {
+      padding: 14px 20px; background: #fff; border-top: 1px solid rgba(48,70,66,0.08);
     }
-    .mc-ghost:hover { background: rgba(48,70,66,0.13); }
-    .mc-gen-actions { display: flex; gap: 8px; }
+    .mc-gen-barrow { display: flex; align-items: center; gap: var(--space-xs); margin-bottom: var(--space-xs); }
+    .mc-gen-track { flex: 1; height: 8px; background: rgba(48,70,66,0.11); border-radius: 100px; overflow: hidden; }
+    /* Scaled, not resized: animating width would lay the bar out again on
+       every poll. The sheen rides along inside the scaled box, which stretches
+       the gradient horizontally and is imperceptible on a soft highlight. */
+    .mc-gen-fill {
+      position: relative; height: 100%; width: 100%; border-radius: 100px;
+      background: var(--color-accent); overflow: hidden;
+      transform-origin: left center; transform: scaleX(var(--fill, 0));
+      transition: transform 0.7s var(--ease-out-expo);
+    }
+    /* Determinate fill, indeterminate sheen. The poll is once a second and a
+       run takes minutes, so the bar would otherwise look stalled between
+       stages when it is in fact working. The sheen carries that state. */
+    .mc-gen-fill::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
+      animation: mcSheen 1.9s var(--ease-out-quart) infinite;
+    }
+    /* A run that stopped before it started building has no artwork and no
+       progress to show — leaving a frozen loader frame and a 0:00 clock on
+       screen dresses a dead end up as work in progress. */
+    .mc-gen.is-stalled .mc-gen-art,
+    .mc-gen.is-stalled .mc-gen-foot .mc-gen-barrow { display: none; }
+    .mc-gen.is-stalled .mc-gen-main { padding-top: 20px; }
+    .mc-gen.is-halted .mc-gen-fill { background: rgba(48,70,66,0.42); }
+    .mc-gen.is-halted .mc-gen-fill::after { display: none; }
+    @keyframes mcSheen { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
+    .mc-gen-clock {
+      font-size: var(--text-xs); font-weight: 600; color: var(--color-primary);
+      font-variant-numeric: tabular-nums; min-width: 42px; text-align: right; letter-spacing: -0.01em;
+    }
+    .mc-gen-footrow { display: flex; align-items: center; justify-content: space-between; gap: var(--space-sm); }
+    .mc-gen-note { font-size: 13px; color: var(--color-muted); line-height: 18px; }
+    .mc-ghost {
+      font-family: var(--font-family); font-size: 13px; font-weight: 500; color: var(--color-primary);
+      background: rgba(48,70,66,0.08); border: none; border-radius: 100px;
+      height: 36px; padding: 0 17px; cursor: pointer; white-space: nowrap;
+      transition: background 0.18s ease, transform 0.22s var(--ease-out-expo);
+    }
+    .mc-ghost:hover { background: rgba(48,70,66,0.14); transform: translateY(-1px); }
+    .mc-gen-actions { display: flex; gap: var(--space-2xs); }
+
+    /* The composer, the locked notice and the workshop are the same surface
+       in three states, so they share one transition name and the browser
+       morphs between them instead of cutting. */
+    #mc-composer, #mc-locked, #mc-gen { view-transition-name: mc-surface; }
+    ::view-transition-old(mc-surface),
+    ::view-transition-new(mc-surface) {
+      animation-duration: 460ms;
+      animation-timing-function: var(--ease-out-expo);
+    }
+    ::view-transition-group(mc-surface) {
+      animation-duration: 460ms;
+      animation-timing-function: var(--ease-out-expo);
+    }
 
     /* Card overflow menu */
     .card-menu-btn {
@@ -360,7 +693,7 @@
     .mc-menu[hidden] { display: none; }
     .mc-menu button {
       display: block; width: 100%; text-align: left;
-      font-family: var(--font-family); font-size: 13.5px; font-weight: 450; color: var(--color-primary);
+      font-family: var(--font-family); font-size: var(--text-xs); font-weight: 450; color: var(--color-primary);
       background: none; border: none; border-radius: 8px; padding: 9px 12px; cursor: pointer;
       transition: background 0.14s ease;
     }
@@ -370,20 +703,43 @@
     /* Inline delete confirm, in place of the card body */
     .mc-confirm { padding: 20px; background: #fff; flex: 1; display: flex; flex-direction: column; gap: 6px;
                   border-bottom-right-radius: 17.76px; border-bottom-left-radius: 17.76px; }
-    .mc-confirm-title { font-size: 15px; font-weight: 600; color: var(--color-primary); }
-    .mc-confirm-sub { font-size: 13.5px; color: var(--color-muted); line-height: 19px; }
+    .mc-confirm-title { font-size: var(--text-sm); font-weight: 600; letter-spacing: -0.01em; color: var(--color-primary); }
+    .mc-confirm-sub { font-size: var(--text-xs); color: var(--color-muted); line-height: 1.45; }
     .mc-confirm-row { margin-top: auto; padding-top: 14px; display: flex; gap: 8px; justify-content: flex-end; }
-    .mc-confirm-row button { font-family: var(--font-family); font-size: 13px; font-weight: 500; border: none;
+    .mc-confirm-row button { font-family: var(--font-family); font-size: var(--text-xs); font-weight: 500; border: none;
                              border-radius: 100px; padding: 8px 16px; cursor: pointer; }
     .mc-confirm-cancel { background: rgba(48,70,66,0.07); color: var(--color-primary); }
     .mc-confirm-go { background: var(--color-primary); color: #fff; }
 
-    .mc-error {
-      font-size: 13.5px; line-height: 20px; color: var(--color-primary);
-      background: rgba(48,70,66,0.05); border-radius: 12px; padding: 14px 16px; margin-bottom: 18px;
+    /* A failure is a message to a person, so it is typeset like the rest of
+       the page: a headline and a sentence. The raw server text is kept, but
+       folded away — it is for whoever is running the dev server, not for the
+       reader deciding what to type next. */
+    .mc-error { margin-bottom: 16px; }
+    .mc-error-title {
+      font-size: 15px; font-weight: 600; line-height: 20px; letter-spacing: -0.01em;
+      color: var(--color-primary); margin-bottom: 4px;
     }
-    .mc-error code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px;
-                     background: rgba(48,70,66,0.08); border-radius: 5px; padding: 2px 6px; }
+    .mc-error-body { font-size: 14px; line-height: 20px; color: rgba(48,70,66,0.55); }
+    .mc-error-body code, .mc-error-raw code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px;
+      background: rgba(48,70,66,0.08); border-radius: 5px; padding: 2px 6px; color: var(--color-primary);
+    }
+    .mc-error-more { margin-top: 10px; }
+    .mc-error-more summary {
+      font-size: 13px; color: var(--color-muted); cursor: pointer; list-style: none;
+      display: inline-flex; align-items: center; gap: 5px;
+    }
+    .mc-error-more summary::-webkit-details-marker { display: none; }
+    .mc-error-more summary::before { content: '▸'; font-size: 10px; line-height: 1; }
+    .mc-error-more[open] summary::before { content: '▾'; }
+    .mc-error-more summary:hover { color: var(--color-primary); }
+    .mc-error-raw {
+      margin-top: 8px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px; line-height: 17px; color: rgba(48,70,66,0.6);
+      background: rgba(48,70,66,0.05); border-radius: 10px; padding: 10px 12px;
+      max-height: 140px; overflow: auto; overflow-wrap: anywhere; white-space: pre-wrap;
+    }
 
     .mc-title-input {
       font-family: var(--font-family); font-size: 18px; font-weight: 600; line-height: 24px;
@@ -392,18 +748,55 @@
       background: transparent; padding: 0 0 2px; margin-bottom: 8px;
     }
 
-    @media (max-width: 1100px) { .catalog-grid { grid-template-columns: repeat(2, 1fr); } }
+    /* Below this the rail and a two-card row cannot both hold their width,
+       so the rail goes back on top of the grid. */
+    @media (max-width: 1100px) {
+      .mc-layout { flex-direction: column; gap: 24px; }
+      .mc-sidebar { width: 100%; position: static; border-radius: 16px; }
+      .mc-hero-sub { max-width: 60ch; }
+    }
+    @media (max-width: 860px) {
+      .mc-gen-art { height: 200px; }
+    }
     @media (max-width: 760px) {
       .catalog-grid { grid-template-columns: 1fr; }
-      .mc-page { padding: 28px 20px 60px; }
-      .header { padding: 14px 20px; }
-      .header-left { gap: 20px; }
-      .nav { display: none; }
-      .mc-composer-foot { flex-direction: column; align-items: stretch; gap: 12px; }
+      .mc-page { padding: 20px 16px 60px; }
+      .mc-sidebar { border-radius: 14px; padding: 22px 18px 20px; }
+      .mc-composer-foot { flex-direction: column; align-items: stretch; gap: var(--space-xs); }
       .mc-generate { width: 100%; justify-content: center; }
+      .mc-gen-footrow { flex-direction: column; align-items: stretch; gap: var(--space-xs); }
+      .mc-gen-actions { justify-content: flex-end; }
+      .catalog-toolbar { flex-direction: column; align-items: flex-start; gap: var(--space-xs); }
       .nav-progress-widget { background: transparent; padding: 0; }
       .nav-progress-bar-wrap { display: none; }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .mc-gen-fill::after { display: none; }
+      .mc-generate, .mc-generate::before, .mc-generate::after,
+      .mc-generate > span::before { animation: none !important; }
+      .mc-generate:is(:hover, :focus-visible) > span::before { opacity: 0; }
+    }
+    /* ── Top nav: shared responsive behaviour (identical on Home/Catalog/My Courses) ── */
+    @media (max-width: 760px) {
+      .header { padding: 14px 20px; }
+      .header-left { gap: 20px; }
+      .nav { gap: 2px; }
+      .nav a { padding: 8px 10px; font-size: 13px; }
+    }
+    @media (max-width: 480px) {
+      .header { padding: 10px 16px; border-radius: 0 0 16px 16px; }
+      .header-left { gap: 12px; }
+      .logo { font-size: 18px; }
+      .nav a { padding: 7px 8px; font-size: 12px; }
+    }
+
   </style>
 </head>
 <body>
@@ -415,7 +808,6 @@
         <a href="index.html">Home</a>
         <a href="catalog.html">Catalog</a>
         <a href="my-courses.html" class="active">My Courses</a>
-        <a href="#" class="locked">Dictionary<svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></a>
       </nav>
     </div>
     <div class="header-right">
@@ -433,21 +825,23 @@
   </header>
 
   <main class="mc-page">
+    <div class="mc-layout">
 
-    <section class="mc-hero">
-      <p class="mc-eyebrow">My Courses</p>
-      <h1>What do you want to learn?</h1>
-      <p class="mc-hero-sub">Describe a topic and Inact Learn writes a course for it, drawing on Inact's supply chain material.</p>
+    <aside class="mc-sidebar">
+      <h1 class="mc-hero-title">
+        <svg class="mc-hero-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>
+        What do you want to learn?</h1>
+      <p class="mc-hero-sub">Describe a topic and Inact Learn writes a course for it.</p>
 
       <div id="mc-composer" class="mc-composer">
         <label for="mc-prompt" class="sr-only" hidden>What do you want to learn?</label>
         <textarea id="mc-prompt" rows="3" maxlength="2000"
-          placeholder="e.g. How to decide which spare parts are worth keeping in stock and which are dead capital"></textarea>
+          placeholder="Write prompt here"></textarea>
         <div class="mc-composer-foot">
-          <p class="mc-hint">Takes one to three minutes. <kbd>⌘</kbd> <kbd>Enter</kbd> to start.</p>
           <button id="mc-generate" class="mc-generate" disabled>
-            <span>Generate course</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <span>Generate course
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </span>
           </button>
         </div>
       </div>
@@ -458,29 +852,41 @@
       </div>
 
       <div id="mc-gen" class="mc-gen" hidden>
-        <p id="mc-gen-prompt" class="mc-gen-prompt"></p>
-        <div id="mc-gen-error" class="mc-error" hidden></div>
-        <div class="mc-gen-barrow">
-          <div class="mc-gen-track"><div id="mc-gen-fill" class="mc-gen-fill"></div></div>
-          <span id="mc-gen-clock" class="mc-gen-clock">0:00</span>
+        <div class="mc-gen-body">
+          <div id="mc-gen-art" class="mc-gen-art" aria-hidden="true">
+            <svg class="mc-gen-art-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
+          <div class="mc-gen-main">
+            <p id="mc-gen-label" class="mc-gen-label">Building your course</p>
+            <p id="mc-gen-prompt" class="mc-gen-prompt"></p>
+            <div id="mc-gen-error" class="mc-error" hidden></div>
+            <div id="mc-stages" class="mc-stages" role="status" aria-live="polite"></div>
+          </div>
         </div>
-        <div id="mc-stages" class="mc-stages"></div>
         <div class="mc-gen-foot">
-          <p id="mc-gen-note" class="mc-gen-note">You can leave this tab open.</p>
-          <div id="mc-gen-actions" class="mc-gen-actions">
-            <button id="mc-cancel" class="mc-ghost">Cancel</button>
+          <div class="mc-gen-barrow">
+            <div class="mc-gen-track" role="progressbar" id="mc-gen-track" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Course generation progress">
+              <div id="mc-gen-fill" class="mc-gen-fill"></div>
+            </div>
+            <span id="mc-gen-clock" class="mc-gen-clock">0:00</span>
+          </div>
+          <div class="mc-gen-footrow">
+            <p id="mc-gen-note" class="mc-gen-note">Usually takes one to three minutes.</p>
+            <div id="mc-gen-actions" class="mc-gen-actions">
+              <button id="mc-cancel" class="mc-ghost">Cancel</button>
+            </div>
           </div>
         </div>
       </div>
 
       <div id="mc-starters" class="mc-starters"></div>
-    </section>
+    </aside>
 
-    <section class="mc-library">
+    <div class="mc-content">
       <div class="catalog-toolbar">
         <p id="mc-count" class="catalog-count">No courses yet</p>
         <div class="catalog-sort">
-          <label class="catalog-sort-label" for="mc-sort">Sort</label>
+          <label class="catalog-sort-label" for="mc-sort">Sort by</label>
           <span class="catalog-sort-wrap">
             <select id="mc-sort" class="catalog-sort-select">
               <option value="new">Newest</option>
@@ -495,14 +901,62 @@
       <div id="mc-empty" class="catalog-empty" hidden>
         <svg class="catalog-empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
         <p class="catalog-empty-title">No courses yet</p>
-        <p class="catalog-empty-sub">Describe something you want to learn above and it will appear here, ready to work through like any other course.</p>
+        <p class="catalog-empty-sub">Generated courses appear here.</p>
       </div>
-    </section>
+    </div>
+
+    </div>
   </main>
 
   <div id="mc-menu" class="mc-menu" hidden></div>
 
   <script src="profile-overlay.js"></script>
+
+  <!-- Design preview only. Off on localhost, where the real dev server answers.
+       Anywhere else (a published preview of this page) it answers /__ai/* with a
+       staged fake job, so the workshop surface, the loader and the timeline can
+       be seen and iterated on without a backend. -->
+  <script>
+  (function () {
+    'use strict';
+    const forced = /[?&]demo=1/.test(location.search);
+    const local = ['localhost', '127.0.0.1', '0.0.0.0', ''].includes(location.hostname);
+    if (!forced && local) return;
+
+    const STAGE_KEYS = ['retrieving', 'outlining', 'writing', 'validating', 'assembling'];
+    const SECONDS_PER_STAGE = 7;
+    const jobs = {};
+    const realFetch = window.fetch.bind(window);
+
+    function reply(body) {
+      return Promise.resolve(new Response(JSON.stringify(body), {
+        status: 200, headers: { 'Content-Type': 'application/json' },
+      }));
+    }
+
+    window.fetch = function (input, init) {
+      const url = String(typeof input === 'string' ? input : (input && input.url) || '');
+      if (url.includes('/__ai/health')) return reply({ key_present: true, sdk_installed: true });
+      if (url.includes('/__ai/generate')) {
+        const id = 'demo-' + Date.now();
+        jobs[id] = Date.now();
+        return reply({ job_id: id });
+      }
+      if (url.includes('/__ai/status')) {
+        const id = new URL(url, location.href).searchParams.get('job');
+        const elapsed = (Date.now() - (jobs[id] || Date.now())) / 1000;
+        const step = Math.min(Math.floor(elapsed / SECONDS_PER_STAGE), STAGE_KEYS.length - 1);
+        return reply({
+          status: STAGE_KEYS[step],
+          progress: Math.min(0.04 + elapsed / (SECONDS_PER_STAGE * STAGE_KEYS.length), 0.96),
+        });
+      }
+      if (url.includes('/__ai/cancel') || url.includes('/__ai/delete')) return reply({ ok: true });
+      return realFetch(input, init);
+    };
+  })();
+  </script>
+
   <script>
   (function () {
     'use strict';
@@ -522,20 +976,79 @@
       { key: 'assembling',  label: 'Assembling the course file' },
     ];
 
+    // Every way a run can end badly, in the reader's terms. `raw` is the
+    // server's own text and is only ever shown folded away; `stages` says
+    // whether the timeline still means anything (it does not when the run
+    // never got past understanding the topic).
+    const FAILURES = {
+      no_coverage: {
+        title: 'We don\u2019t have enough material on this topic',
+        body: 'Inact Learn only writes from Inact\u2019s own supply chain material, so it cannot cover this one. Try something closer to Inact Now \u2014 stock policy, Double ABC, service level, suppliers or heatmaps.',
+        actions: ['edit'], stages: false, starters: true,
+      },
+      refused: {
+        title: 'This prompt cannot be turned into a course',
+        body: 'Describe a supply chain topic you want to understand, and it will be written from Inact\u2019s material.',
+        actions: ['edit'], stages: false, starters: true,
+      },
+      validation_failed: {
+        title: 'The course did not pass its checks',
+        body: 'It was written but came out malformed, so nothing was saved. Trying again usually clears it.',
+        actions: ['retry', 'edit'], stages: true, starters: false,
+      },
+      timeout: {
+        title: 'This is taking longer than expected',
+        body: 'The server may still be working. Reload the page to see whether the course arrived.',
+        actions: ['edit'], stages: true, starters: false,
+      },
+      offline: {
+        title: 'Could not reach the dev server',
+        body: 'Start it with <code>python3 tools/dev-server.py 8765</code> and try again.',
+        actions: ['retry', 'edit'], stages: false, starters: false,
+      },
+      unavailable: {
+        title: 'Course generation is not available',
+        body: 'The dev server answered, but it cannot generate right now. The details below say why.',
+        actions: ['retry', 'edit'], stages: false, starters: false,
+      },
+      busy: {
+        title: 'A course is already being written',
+        body: 'Only one runs at a time. Wait for it to finish, then start this one.',
+        actions: ['edit'], stages: false, starters: false,
+      },
+      default: {
+        title: 'Something went wrong while building your course',
+        body: 'Nothing was saved. Try again, or edit the prompt and start over.',
+        actions: ['retry', 'edit'], stages: true, starters: false,
+      },
+    };
+
     const STARTERS = [
-      'How to decide which spare parts are worth stocking',
-      'Using Double ABC to prioritise a messy assortment',
+      'How can I manage CC products compared to AA products?',
       'What service level actually costs us',
-      'Reading a heatmap in Inact Now',
     ];
 
-    // Card tile colours, taken from SOLUTIONS[].bg in catalog.html so a
-    // generated course tile sits in the same palette as the rest of the app.
-    const TOPIC_BG = {
-      inventory: '#FFFDF9', suppliers: '#FDFCFF', products: '#FDFAEE',
-      customers: '#F8FAF4', functionality: '#F5F9FF', admin: '#F5F9FF',
-      general: '#F5F7F5',
+    // The whole per-topic palette from SOLUTIONS[] in catalog.html, not just
+    // the tile colour: `btn` tints the pills, `bdr` and `bar` draw the card's
+    // border and hover glow. Carrying only `bg` before left every pill on the
+    // default cream, which happened to look right on the inventory tile and
+    // wrong on every other one.
+    const TOPIC_THEME = {
+      inventory:     { bg: '#FFFDF9', btn: '#EEE0C3', bdr: '#EDE3CC', bar: '#B8964E' },
+      suppliers:     { bg: '#FDFCFF', btn: '#E1DBEB', bdr: '#D8D0E8', bar: '#7B68AA' },
+      products:      { bg: '#FDFAEE', btn: '#EDE0A6', bdr: '#E6DAAC', bar: '#B49B33' },
+      customers:     { bg: '#F8FAF4', btn: '#E3E8D8', bdr: '#DDE3D0', bar: '#8A9672' },
+      functionality: { bg: '#F5F9FF', btn: '#DBE9FF', bdr: '#D0DFEF', bar: '#5888D0' },
+      general:       { bg: '#F5F7F5', btn: null,      bdr: null,      bar: null },
     };
+    TOPIC_THEME.admin = TOPIC_THEME.functionality;
+
+    function hexToRgba(hex, alpha) {
+      const r = parseInt(hex.slice(1, 3), 16),
+            g = parseInt(hex.slice(3, 5), 16),
+            b = parseInt(hex.slice(5, 7), 16);
+      return `rgba(${r},${g},${b},${alpha})`;
+    }
 
     const TOPIC_ICONS = {
       inventory:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12V9a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/><path d="M16 20v-3a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3"/><path d="M20 22V2"/><path d="M4 12h16"/><path d="M4 20h16"/><path d="M4 2v20"/><path d="M4 4h16"/></svg>`,
@@ -557,6 +1070,126 @@
     let overrides = readJSON(OVERRIDES_KEY, {});
     let canGenerate = false;
     let poll = null, ticker = null, activeJob = null, startedAt = 0, justCreated = null;
+    let booted = false;
+
+    // ── Motion plumbing ─────────────────────────────────────────────────
+    // The composer, the locked notice and the workshop surface are three
+    // states of one element as far as the user is concerned, so they share a
+    // view-transition-name (set in CSS) and the browser morphs between them.
+    // Only the visible one is ever captured, so the name is never duplicated
+    // except during the hand-off to a finished card, which claimSurface
+    // arbitrates.
+    const SURFACES = ['mc-composer', 'mc-locked', 'mc-gen'];
+
+    function prefersReducedMotion() {
+      return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    }
+
+    function resetSurfaceNames() {
+      SURFACES.forEach((id) => { const node = $(id); if (node) node.style.viewTransitionName = ''; });
+    }
+
+    function claimSurfaceForCard(card) {
+      SURFACES.forEach((id) => { const node = $(id); if (node) node.style.viewTransitionName = 'none'; });
+      if (card) card.style.viewTransitionName = 'mc-surface';
+    }
+
+    function withTransition(mutate) {
+      if (!booted || !document.startViewTransition || prefersReducedMotion()) {
+        mutate();
+        return Promise.resolve();
+      }
+      try {
+        const run = document.startViewTransition(mutate);
+        // A transition started while another is still running is skipped, and
+        // every one of these promises rejects when that happens. None of it is
+        // a failure worth surfacing: the mutation still applied.
+        run.ready.catch(() => {});
+        run.updateCallbackDone.catch(() => {});
+        return run.finished.catch(() => {});
+      } catch { mutate(); return Promise.resolve(); }
+    }
+
+    // ── Loader artwork ──────────────────────────────────────────────────
+    // lottie-web is ~250KB, and most visits to this page never generate
+    // anything, so it is fetched on first focus of the composer at the
+    // earliest and on first generation at the latest. If the fetch fails
+    // (offline dev server, blocked CDN) the breathing mark in the markup
+    // stays put and nothing else changes.
+    const LOTTIE_SRC = 'https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js';
+    const LOADER_PATH = 'animations/LearnLoader.json';
+    // The composition is 405x279 but its subject only ever occupies a
+    // 121x90 box centred in it, measured across the whole loop, so at panel
+    // size the artwork would read as a speck in a field. Cropping the
+    // viewBox to the subject plus a margin scales it up losslessly, which a
+    // CSS transform would not: no clipping, no blur, no origin guesswork.
+    const LOADER_VIEWBOX = '116.5 76.5 176 121';
+    let lottieLoader = null, loaderArt = null, loaderWanted = false;
+
+    function loadLottieLib() {
+      if (lottieLoader) return lottieLoader;
+      lottieLoader = new Promise((resolve, reject) => {
+        if (window.lottie) return resolve(window.lottie);
+        const tag = document.createElement('script');
+        tag.src = LOTTIE_SRC;
+        tag.async = true;
+        tag.onload = () => (window.lottie ? resolve(window.lottie) : reject(new Error('lottie')));
+        tag.onerror = () => reject(new Error('lottie'));
+        document.head.appendChild(tag);
+      });
+      return lottieLoader;
+    }
+
+    async function startLoaderArt() {
+      const host = $('mc-gen-art');
+      loaderWanted = true;
+      if (!host || loaderArt) return;
+      let lib;
+      try { lib = await loadLottieLib(); } catch { return; }
+      // Generation may have ended while the script was in flight. Visibility
+      // is not a safe proxy here: the surface is unhidden inside a view
+      // transition callback that runs a frame after this call.
+      if (!loaderWanted || loaderArt) return;
+      try {
+        loaderArt = lib.loadAnimation({
+          container: host,
+          renderer: 'svg',
+          loop: true,
+          autoplay: !prefersReducedMotion(),
+          path: LOADER_PATH,
+          rendererSettings: {
+            preserveAspectRatio: 'xMidYMid meet',
+            viewBoxSize: LOADER_VIEWBOX,
+            progressiveLoad: true,
+          },
+        });
+      } catch { return; }
+      loaderArt.addEventListener('DOMLoaded', () => {
+        host.classList.add('is-live');
+        // Reduced motion still gets the artwork, held on a representative
+        // frame rather than removed.
+        if (prefersReducedMotion()) loaderArt.goToAndStop(150, true);
+      });
+      loaderArt.addEventListener('data_failed', stopLoaderArt);
+    }
+
+    function stopLoaderArt() {
+      loaderWanted = false;
+      if (loaderArt) {
+        try { loaderArt.destroy(); } catch { /* already torn down */ }
+        loaderArt = null;
+      }
+      const host = $('mc-gen-art');
+      if (!host) return;
+      host.classList.remove('is-live');
+      host.querySelectorAll('svg:not(.mc-gen-art-fallback)').forEach((node) => node.remove());
+    }
+
+    function setProgress(fraction) {
+      const value = Math.max(0, Math.min(1, fraction || 0));
+      $('mc-gen-fill').style.setProperty('--fill', String(value));
+      $('mc-gen-track').setAttribute('aria-valuenow', String(Math.round(value * 100)));
+    }
 
     function readJSON(key, fallback) {
       try { return JSON.parse(localStorage.getItem(key)) || fallback; }
@@ -633,13 +1266,19 @@
     // ── Rendering ───────────────────────────────────────────────────────
     function cardHtml(entry) {
       const progress = getCourseProgress(progressIdFor(entry.file));
-      const topic = TOPIC_BG[entry.topic] ? entry.topic : 'general';
+      const topic = TOPIC_THEME[entry.topic] ? entry.topic : 'general';
+      const theme = TOPIC_THEME[topic];
+      // Same derivations as catalog.html: pill at 40% of the button tone,
+      // hover glow at 20% of the bar tone.
+      const pillBg = theme.btn ? hexToRgba(theme.btn, 0.40) : 'rgba(48,70,66,0.07)';
+      const cardBdr = theme.bdr || 'transparent';
+      const cardGlow = theme.bar ? hexToRgba(theme.bar, 0.20) : 'rgba(48,70,66,0.22)';
       const isNew = justCreated === entry.file;
       return `
         <article class="course-card${isNew ? ' next-course' : ''}" tabindex="0" role="button"
                  data-file="${esc(entry.file)}" aria-label="Open ${esc(entry.title)}"
-                 style="--card-bg:${TOPIC_BG[topic]}">
-          <div class="course-card-top standalone-thumb" style="--card-bg:${TOPIC_BG[topic]}">
+                 style="--card-bg:${theme.bg};--card-bdr:${cardBdr};--card-glow:${cardGlow}">
+          <div class="course-card-top standalone-thumb" style="--card-bg:${theme.bg};--pill-bg:${pillBg}">
             <div class="standalone-thumb-icon">${TOPIC_ICONS[topic] || TOPIC_ICONS.general}</div>
             <div class="card-top-bar">
               <span class="card-type-pill"><span class="card-type-icon-course"></span>Generated</span>
@@ -666,64 +1305,152 @@
         </article>`;
     }
 
-    function render() {
+    function render(instant) {
       const courses = visibleCourses();
       const grid = $('mc-grid');
-      grid.innerHTML = courses.map(cardHtml).join('');
+
+      grid.innerHTML = courses.map((c) => cardHtml(c)).join('');
       $('mc-empty').hidden = courses.length > 0;
 
-      const done = courses.filter((c) => getCourseProgress(progressIdFor(c.file)).completed).length;
       $('mc-count').textContent = courses.length === 0
         ? 'No courses yet'
-        : `${courses.length} generated course${courses.length === 1 ? '' : 's'}` +
-          (done ? ` · ${done} completed` : '');
+        : `${courses.length} Course${courses.length === 1 ? '' : 's'}`;
 
+      if (instant) {
+        grid.querySelectorAll('.course-card').forEach((card) => card.classList.add('visible', 'instant'));
+        return;
+      }
       requestAnimationFrame(() => {
         grid.querySelectorAll('.course-card').forEach((card) => card.classList.add('visible'));
       });
     }
 
     // ── Generation ──────────────────────────────────────────────────────
+    // Built once, then patched. Rewriting innerHTML on every one-second poll
+    // would restart the tick animation on every already-completed stage and
+    // make the whole list flicker.
     function renderStages(activeIndex, labelOverride) {
-      $('mc-stages').innerHTML = STAGES.map((stage, i) => {
-        const state = i < activeIndex ? 'is-done' : (i === activeIndex ? 'is-active' : '');
-        const label = (i === activeIndex && labelOverride) ? labelOverride : stage.label;
-        return `<div class="mc-stage ${state}"><span class="mc-stage-mark"></span><span>${esc(label)}</span></div>`;
-      }).join('');
+      const host = $('mc-stages');
+      if (host.childElementCount !== STAGES.length) {
+        host.innerHTML = STAGES.map((stage) =>
+          `<div class="mc-stage"><span class="mc-stage-mark"></span><span class="mc-stage-label">${esc(stage.label)}</span></div>`
+        ).join('');
+      }
+      Array.prototype.forEach.call(host.children, (row, i) => {
+        const state = i < activeIndex ? ' is-done' : (i === activeIndex ? ' is-active' : '');
+        const next = 'mc-stage' + state;
+        if (row.className !== next) row.className = next;
+        const label = (i === activeIndex && labelOverride) ? labelOverride : STAGES[i].label;
+        const node = row.querySelector('.mc-stage-label');
+        if (node.textContent !== label) node.textContent = label;
+      });
     }
 
     function showComposer() {
-      $('mc-gen').hidden = true;
-      $('mc-composer').hidden = !canGenerate;
-      $('mc-locked').hidden = canGenerate;
-      $('mc-starters').hidden = false;
+      stopLoaderArt();
+      resetSurfaceNames();
+      return withTransition(() => {
+        $('mc-gen').hidden = true;
+        $('mc-gen').classList.remove('is-halted', 'is-stalled');
+        $('mc-composer').hidden = !canGenerate;
+        $('mc-locked').hidden = canGenerate;
+        $('mc-starters').hidden = false;
+      });
     }
 
     function showGenerating(prompt) {
-      $('mc-composer').hidden = true;
-      $('mc-locked').hidden = true;
-      $('mc-starters').hidden = true;
-      $('mc-gen').hidden = false;
-      $('mc-gen-error').hidden = true;
-      $('mc-gen-prompt').textContent = '“' + prompt + '”';
-      $('mc-gen-note').textContent = 'Usually takes one to three minutes. You can leave this tab open.';
-      $('mc-gen-actions').innerHTML = '<button id="mc-cancel" class="mc-ghost">Cancel</button>';
-      $('mc-cancel').addEventListener('click', cancelJob);
-      renderStages(0);
-      $('mc-gen-fill').style.width = '4%';
+      resetSurfaceNames();
+      withTransition(() => {
+        $('mc-composer').hidden = true;
+        $('mc-locked').hidden = true;
+        $('mc-starters').hidden = true;
+        $('mc-gen').hidden = false;
+        $('mc-gen').classList.remove('is-halted', 'is-stalled');
+        $('mc-gen-error').hidden = true;
+        $('mc-stages').hidden = false;
+        $('mc-gen-label').textContent = 'Building your course';
+        $('mc-gen-prompt').textContent = '“' + prompt + '”';
+        $('mc-gen-note').textContent = 'Usually takes one to three minutes.';
+        $('mc-gen-actions').innerHTML = '<button id="mc-cancel" class="mc-ghost">Cancel</button>';
+        $('mc-cancel').addEventListener('click', cancelJob);
+        renderStages(0);
+        setProgress(0.04);
+      });
+      startLoaderArt();
     }
 
-    function showFailure(message, hint) {
+    const ACTION_LABELS = { retry: 'Try again', edit: 'Edit prompt' };
+
+    function showFailure(code, raw) {
       stopPolling();
-      $('mc-gen').hidden = false;
-      $('mc-gen-error').hidden = false;
-      $('mc-gen-error').innerHTML = esc(message) + (hint ? ' ' + hint : '');
-      $('mc-gen-note').textContent = '';
-      $('mc-gen-actions').innerHTML =
-        '<button class="mc-ghost" data-act="retry">Try again</button>' +
-        '<button class="mc-ghost" data-act="edit">Edit prompt</button>';
-      $('mc-gen-actions').querySelector('[data-act="retry"]').addEventListener('click', () => startGeneration($('mc-prompt').value.trim()));
-      $('mc-gen-actions').querySelector('[data-act="edit"]').addEventListener('click', showComposer);
+      if (loaderArt) { try { loaderArt.pause(); } catch { /* already gone */ } }
+      resetSurfaceNames();
+      const copy = FAILURES[code] || FAILURES.default;
+      // The server's own words are worth keeping, but only where they do not
+      // compete with the sentence telling the reader what to do next.
+      const rawText = raw && String(raw).trim();
+      const showRaw = !!rawText && rawText !== copy.title;
+      // Applied straight to the DOM, not through withTransition: a view
+      // transition that stalls or is interrupted would leave the reader
+      // watching a progress bar for a run that has already failed. Every
+      // other state change on this surface can afford to wait for a morph;
+      // this one cannot.
+      (() => {
+        $('mc-composer').hidden = true;
+        $('mc-locked').hidden = true;
+        $('mc-starters').hidden = !copy.starters;
+        $('mc-gen').hidden = false;
+        $('mc-gen').classList.add('is-halted');
+        $('mc-gen').classList.toggle('is-stalled', !copy.stages);
+        $('mc-gen-label').textContent = 'Generation stopped';
+        $('mc-gen-note').textContent = '';
+        $('mc-gen-error').hidden = false;
+        $('mc-gen-error').innerHTML =
+          '<p class="mc-error-title">' + esc(copy.title) + '</p>' +
+          '<p class="mc-error-body">' + copy.body + '</p>' +
+          (showRaw
+            ? '<details class="mc-error-more"><summary>Technical details</summary>' +
+              '<div class="mc-error-raw">' + esc(rawText) + '</div></details>'
+            : '');
+        // A run that never got past understanding the topic has no progress
+        // to report, so the timeline goes rather than standing there frozen.
+        $('mc-stages').hidden = !copy.stages;
+        $('mc-stages').querySelectorAll('.mc-stage').forEach((row) => row.classList.remove('is-active'));
+        $('mc-gen-actions').innerHTML = copy.actions
+          .map((act) => '<button class="mc-ghost" data-act="' + act + '">' + ACTION_LABELS[act] + '</button>')
+          .join('');
+        const retry = $('mc-gen-actions').querySelector('[data-act="retry"]');
+        const edit = $('mc-gen-actions').querySelector('[data-act="edit"]');
+        if (retry) retry.addEventListener('click', () => startGeneration($('mc-prompt').value.trim()));
+        if (edit) edit.addEventListener('click', () => {
+          showComposer();
+          $('mc-prompt').focus();
+          $('mc-prompt').select();
+        });
+      })();
+    }
+
+    // The workshop surface morphs into the card it just produced, so the
+    // course arrives out of the thing that built it rather than appearing
+    // beside it. Everything else on the page cross-fades underneath.
+    async function revealCreated() {
+      stopLoaderArt();
+      let card = null;
+      await withTransition(() => {
+        $('mc-gen').hidden = true;
+        $('mc-gen').classList.remove('is-halted', 'is-stalled');
+        $('mc-composer').hidden = !canGenerate;
+        $('mc-locked').hidden = canGenerate;
+        $('mc-starters').hidden = false;
+        render(true);
+        card = document.querySelector(`[data-file="${CSS.escape(justCreated)}"]`);
+        claimSurfaceForCard(card);
+      });
+      resetSurfaceNames();
+      if (!card) return;
+      card.style.viewTransitionName = '';
+      card.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'center' });
+      card.focus({ preventScroll: true });
     }
 
     function startClock() {
@@ -732,7 +1459,7 @@
         const secs = Math.floor((Date.now() - startedAt) / 1000);
         $('mc-gen-clock').textContent = `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, '0')}`;
         if (Date.now() - startedAt > WATCHDOG_MS && activeJob) {
-          showFailure('This is taking longer than expected. The server may still be working — reload to check.');
+          showFailure('timeout');
         }
       }, 1000);
     }
@@ -759,13 +1486,13 @@
         });
         data = await res.json();
       } catch {
-        return showFailure('Could not reach the local dev server.',
-          'Start it with <code>python3 tools/dev-server.py 8765</code> and try again.');
+        return showFailure('offline');
       }
       if (!res.ok) {
         if (res.status === 409 && data.job_id) { activeJob = data.job_id; return startPolling(); }
-        return showFailure(data.error || 'Generation could not start.',
-          data.hint ? '<code>' + esc(data.hint) + '</code>' : '');
+        if (res.status === 409) return showFailure('busy');
+        return showFailure(data.code || 'unavailable',
+          [data.error, data.hint].filter(Boolean).join(' — '));
       }
       activeJob = data.job_id;
       startPolling();
@@ -790,23 +1517,27 @@
         return; // a dropped poll is not a failure; the next one will land
       }
 
-      const index = Math.max(0, STAGES.findIndex((s) => s.key === snapshot.status));
-      renderStages(index === -1 ? 0 : index, snapshot.phase_label);
-      $('mc-gen-fill').style.width = Math.round((snapshot.progress || 0.04) * 100) + '%';
+      const index = STAGES.findIndex((s) => s.key === snapshot.status);
+      if (index >= 0) {
+        renderStages(index, snapshot.phase_label);
+        setProgress(snapshot.progress || 0.04);
+      }
 
       if (snapshot.status === 'done' && snapshot.result) {
         stopPolling();
         justCreated = snapshot.result.entry.file;
         $('mc-prompt').value = '';
         syncGenerateButton();
+        autoGrow();
+        // Land every stage and top the bar out before the hand-off, so the
+        // timeline is seen finishing rather than vanishing mid-run.
+        renderStages(STAGES.length);
+        setProgress(1);
         await loadManifest();
-        render();
-        showComposer();
-        const card = document.querySelector(`[data-file="${CSS.escape(justCreated)}"]`);
-        if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        await revealCreated();
       } else if (snapshot.status === 'error') {
-        const message = (snapshot.error && snapshot.error.message) || 'Generation did not finish.';
-        showFailure(message);
+        const failure = snapshot.error || {};
+        showFailure(failure.code, failure.message);
       } else if (snapshot.status === 'cancelled') {
         stopPolling();
         showComposer();
@@ -1013,11 +1744,20 @@
       $('mc-prompt').focus();
     });
 
+    // Fetching lottie-web the moment the composer is touched means the
+    // artwork is already in memory by the time Generate is pressed, so the
+    // workshop surface never opens on an empty frame.
+    $('mc-prompt').addEventListener('focus', () => { loadLottieLib().catch(() => {}); }, { once: true });
+    $('mc-generate').addEventListener('pointerenter', () => { loadLottieLib().catch(() => {}); }, { once: true });
+
     (async function init() {
       canGenerate = await probeServer();
       await loadManifest();
       render();
+      // booted stays false through the first paint: a product page loads into
+      // a task, it does not perform an opening sequence.
       showComposer();
+      booted = true;
 
       // A generation that was running when the page was closed: the server
       // may well have finished it, so offer to look rather than assume.
@@ -1025,12 +1765,15 @@
       if (inflight && Date.now() - inflight.startedAt < 600000) {
         startedAt = inflight.startedAt;
         $('mc-composer').hidden = true;
+        $('mc-locked').hidden = true;
         $('mc-starters').hidden = true;
         $('mc-gen').hidden = false;
+        $('mc-gen-label').textContent = 'Picking up where you left off';
         $('mc-gen-prompt').textContent = '“' + inflight.prompt + '”';
         $('mc-gen-note').textContent = 'A course was generating when you left this page.';
         renderStages(2);
-        $('mc-gen-fill').style.width = '60%';
+        setProgress(0.6);
+        startLoaderArt();
         $('mc-gen-actions').innerHTML =
           '<button class="mc-ghost" data-act="check">Check again</button>' +
           '<button class="mc-ghost" data-act="dismiss">Dismiss</button>';
