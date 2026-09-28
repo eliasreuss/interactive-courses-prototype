@@ -26,21 +26,6 @@ You already know the product lifecycle. In this course, we focus on the very beg
 The key question is simple: **Are we introducing the right products?**
 ![image/size:large/align:center/frame:none](products-new-product-introduction/Lifecycle-Introduction.png)
 ---
-> [next] Continue -> afa45375-b581-4a72-8d5a-d0fd8bb73b75
-
-slide_id: afa45375-b581-4a72-8d5a-d0fd8bb73b75
-index_title: Are We Introducing the Right Products?
-title: Are We Introducing the Right Products?
-type: main
-layout: standard-2-col
----
-New products are not always introduced based on data.
-
-A customer asks for something. A supplier presents a new product. Or a new variant simply looks like a good opportunity, even though we may already have several similar products.
-
-The result can be more products on the shelf without enough demand behind them. This is adding unhealthy complexity.
-![video/size:large/align:right/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Products/Overfilled-Shelf.mp4)
----
 > [next] Continue -> 5c2aead5-f16b-48ce-8d1e-1439354cbadf
 
 slide_id: 5c2aead5-f16b-48ce-8d1e-1439354cbadf
@@ -49,7 +34,7 @@ title: What Happens After Launch?
 type: main
 layout: standard-2-col
 ---
-The problem is not just that new products add complexity. Many of them never develop into strong products.
+Introducing a new product is only the beginning. Once it is in the portfolio, we need to find out whether it actually develops into a strong product.
 
 Exact failure rates vary by industry and by how failure is measured, but estimates often place new product failure at around **30 to 50 percent,** with some industries reporting even higher rates.
 
@@ -58,107 +43,127 @@ That makes early follow up critical. The sooner we see that a new product is fal
 **If we do not follow up on new products, today’s new introductions can become tomorrow’s dead stock.**
 ![video/size:large/align:right/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Products/Failing-Products.mp4)
 ---
-> [next] Continue -> cc3f441d-88ae-4bbd-bb63-bee6684ba2c5
+> [next] Continue -> e2664aa4-81d8-49d8-b470-f2f8caeed754
 
 [id:2/topic: NPI Framework]
+
+slide_id: e2664aa4-81d8-49d8-b470-f2f8caeed754
+index_title: How Is a New Product Performing?
+title: How Is a New Product Performing?
+type: main
+---
+In Inact, we use the NPI Framework to track how new products develop after launch. The first thing we look at is performance.
+
+The exact criteria and thresholds can vary. Common examples include revenue, volume and actual sales compared with forecast.
+
+Based on the chosen criteria, each new product falls into one of three groups.
+![image/size:large/align:center/frame:none](products-new-product-introduction/The-Performance.png)
+---
+> [next] Continue -> 7d9c3c57-389c-4e79-8b28-3295d21ee31e
+
+slide_id: 7d9c3c57-389c-4e79-8b28-3295d21ee31e
+index_title: The First 12 Months
+title: The First 12 Months
+type: main
+---
+Performance is only one part of the picture. We also need to consider how long the product has been in the portfolio.
+
+The NPI Framework follows new products through their first 12 months and divides them into three age groups. As the product gets older, we expect more from its performance.
+![image/size:large/align:center/frame:none](products-new-product-introduction/First-12-Months.png)
+---
+> [next] Continue -> cc3f441d-88ae-4bbd-bb63-bee6684ba2c5
 
 slide_id: cc3f441d-88ae-4bbd-bb63-bee6684ba2c5
 index_title: The NPI Framework
 title: The NPI Framework
 type: main
 ---
-So how do we prevent this? 
+Now we bring the two dimensions together. The framework combines a product’s age with its performance at that point in time.
 
-Once a product is introduced, we need to follow how it develops. The NPI Framework tracks new products during their first 12 months and shows whether they are gaining traction or falling behind.
-
-In each period, products are assessed on revenue and net margin. Your organisation sets the exact thresholds. **The example below shows what the framework can look like:**
-![image/size:large/align:center/frame:none](products-new-product-introduction/NPI-Framework-Graphic.png)
+As the product moves through its first 12 months, we continue to assess whether it is **On track, Promising or Needs attention.** This makes it easy to see which new products are developing as expected and which ones require action.
+![image/size:large/align:center/frame:none](products-new-product-introduction/The-NPI-Framework.png)
 ---
 > [next] Continue -> 8f4b0d55-4f3a-4b16-9a3e-1f7e6c2d0a91
 
 slide_id: 8f4b0d55-4f3a-4b16-9a3e-1f7e6c2d0a91
 index_title: New Product Introduction Framework - Insight Walkthrough
-title: New Product Introduction Framework - Insight Walkthrough
+title: New Product Introduction Framework -  Insight Walkthrough
 type: main
 ---
-Let’s take a look at our own products. Go through the tutorial below to learn how to use the NPI Framework Insight.
+Now you know how the framework works.
+
+Go through the tutorial below to see how your new products are developing during their first 12 months.
 [supademo: New Product Introduction Framework - Insight Walkthrough](https://app.supademo.com/embed/cmtsfgd6v3twpqm30q0g5k86b?embed_v=2&utm_source=embed)
 ---
-> [next] Continue -> c0257761-a6c8-497a-9be5-f4035abca749
+> [next] Continue -> 712fff29-6787-428d-a052-8b9ffde0fa29
 
-[id:3/topic: Governance]
+[id:3/topic: Governance - Case]
 
-slide_id: c0257761-a6c8-497a-9be5-f4035abca749
-index_title: Who Owns the Decision?
-title: Who Owns the Decision?
+slide_id: 712fff29-6787-428d-a052-8b9ffde0fa29
+index_title: From a Black Box to a Clear Process
+title: From a Black Box to a Clear Process
 type: main
 ---
-The framework shows you which new products are performing and which are not. But it does not make the decisions for you.
+We have now seen how the NPI Framework can be used to follow new products during their first year. To make this more concrete, we will look at a real example from one company that changed how it managed new product introductions.
 
-That requires clear rules and clear ownership.
+Before the new process was introduced, the company estimated that only 50 to 70 percent of its new products were successful. Once a product had been launched, there was limited follow up and little visibility into which new products were developing well and which were becoming a problem.
 
-![image/size:large/align:center/frame:none](products-new-product-introduction/Who-Owns-The-Decision.png)
-
-Once this is clear, the framework can support three types of decisions:
+The company therefore set a target of more than 80 percent successful introductions and started by making responsibility for new products much clearer.
 ---
-> [next] Continue -> a23e92b7-6dca-4ba7-b6f3-a1dd270d9d7e
+> [next] Continue -> e2b390e8-cce7-4660-a942-05e419bfdf76
 
-slide_id: a23e92b7-6dca-4ba7-b6f3-a1dd270d9d7e
-index_title: What Do We Do With Products Already Introduced?
-title: What Do We Do With Products Already Introduced?
+slide_id: e2b390e8-cce7-4660-a942-05e419bfdf76
+index_title: Clear Responsibility From the Start
+title: Clear Responsibility From the Start
 type: main
-layout: standard-2-col
 ---
-The framework becomes useful when we decide what good performance should look like.
-
-For example, we could set a target that 80% of new products should develop towards the healthy side of the portfolio.
-
-If a product falls behind, we can act while there is still time.
-
-* Can we adjust the price?
-* Should we contact the customer?
-* Does the product need more commercial attention?
-
-**The goal is to deal with weak introductions early, instead of discovering them as dead stock two years later.**
-![image/size:large/align:right/frame:none](products-new-product-introduction/Already-Introduced.png)
+The company defined clear responsibilities for new products across three roles. Each role had its own responsibility during the introduction process and its own measures to follow.
+![image/size:large/align:center/frame:none](products-new-product-introduction/Responsibilities.png)
+This meant that responsibility no longer disappeared once a product had been introduced.
 ---
-> [next] Continue -> a83c8717-9bdb-4242-a2e8-9fcb360af692
+> [next] Continue -> 640c0160-2e7e-4d96-9975-56ec65ec3112
 
-slide_id: a83c8717-9bdb-4242-a2e8-9fcb360af692
-index_title: Which Products Should We Introduce in the Future?
-title: Which Products Should We Introduce in the Future?
+slide_id: 640c0160-2e7e-4d96-9975-56ec65ec3112
+index_title: Following New Products After Launch
+title: Following New Products After Launch
 type: main
 layout: standard-2-col
 ---
-Following new products also changes how we make future decisions.
+With clear ownership in place, the company could follow new products more closely after launch.
 
-If you know a new product will be reviewed after a few months, it becomes natural to ask harder questions before introducing it:
+Products that needed attention were reviewed by the Product Coordinator and Product Manager, who agreed on what to do next. Suppliers could also be involved when needed.
 
-* Do we already have a similar product?
-* Is there a real customer behind the request?
-* Have we spoken to the customer first?
-
-Sometimes the best decision is not to introduce the product at all.
-![image/size:large/align:right/frame:none](products-new-product-introduction/Introduce-In-Future.png)
+The goal was to act early, before weak products developed into dead stock.
+![image/size:large/align:right/frame:none](products-new-product-introduction/Follow-Up-After-Launch.png)
 ---
-> [next] Continue -> f4bf6658-ba7f-4065-9f7a-ee64daaebec7
+> [next] Continue -> 392b35df-1885-4d15-9300-a3a260770120
 
-slide_id: f4bf6658-ba7f-4065-9f7a-ee64daaebec7
-index_title: What Should We Discuss With Our Suppliers?
-title: What Should We Discuss With Our Suppliers?
+slide_id: 392b35df-1885-4d15-9300-a3a260770120
+index_title: Better Decisions Before Launch
+title: Better Decisions Before Launch
 type: main
 layout: standard-2-col
 ---
-Poor performance does not always mean the product itself is bad.
+The process also changed how the company decided which products to introduce.
 
-A supplier may tell you that the same product is performing well with other customers or in other markets.
+Knowing that every new product would be followed closely made Product Managers ask more questions before launch.
 
-If that is the case, the question changes:
+This helped the company become more selective about what entered the portfolio.
+![image/size:large/align:right/frame:none](products-new-product-introduction/Questions-NPI.png)
+---
+> [next] Continue -> c5a383d9-0e22-4306-b4e3-13528b6b1492
 
-* **Why is it not working for us?** Is it the price? The positioning? The customer base? Or the way we introduced it?
+slide_id: c5a383d9-0e22-4306-b4e3-13528b6b1492
+index_title: The Result
+title: The Result
+type: main
+---
+The company increased the success rate for new products from **62 percent to 88 percent.**
 
-The data gives you a better starting point for that conversation.
-![image/size:550px/align:right/frame:none](products-new-product-introduction/Discuss-With-Suppliers.png)
+At the same time, weak introductions were identified earlier, Product Managers became more selective, and suppliers were involved when support was needed.
+
+The process gave the company a clearer way to manage new products from launch to handover.
+![image/size:large/align:center/frame:none](products-new-product-introduction/Succesrate-Case.png)
 ---
 > [next] Continue -> cf8e1490-02a3-4cb8-a2fa-2b764be733cc
 
