@@ -1,34 +1,20 @@
-[id:1/topic: Welcome to Phase Out]
+[id:1/topic: Welcome to The Long Tail]
 
 slide_id: d263abc4-062d-47fa-87cf-46245e95e34d
-index_title: Welcome to Phase Out
+index_title: Welcome to The Long Tail
 title: 
 type: hero
 ---
 hero_image: products-phase-out/Hero.png
 hero_subtitle: Welcome to the course:
-hero_title: Phase Out
+hero_title: The Long Tail
 hero_body: A healthy portfolio does not only depend on which products you add. It also depends on knowing when to let products go.
 
 In this course, you will learn how to identify products that are no longer earning their place and decide where to act first.
 
 **Let’s get started!**
 ---
-> [next] Let's do it! -> 8c7d40c2-ba24-4749-99ed-92101e27993e
-
-slide_id: 8c7d40c2-ba24-4749-99ed-92101e27993e
-index_title: The Last Stage of the Product Lifecycle
-title: The Last Stage of the Product Lifecycle
-type: main
----
-In this course, we focus on the final stage in the product lifecycle, when sales begin to decline and some products no longer justify their place in the portfolio.
-
-The key question is simple. **Which products should we phase out?**
-![image/size:large/align:center/frame:none](products-phase-out/Lifecycle-Phase-Out.png)
----
-> [next] Continue -> ad20abb6-c1f0-4017-a554-c81fdbfe702e
-
-[id:2/topic: Kill it or bill it]
+> [next] Let's do it! -> ad20abb6-c1f0-4017-a554-c81fdbfe702e
 
 slide_id: ad20abb6-c1f0-4017-a554-c81fdbfe702e
 index_title: The Long Tail
@@ -42,19 +28,9 @@ These products take up space, tie up capital and create work across the business
 And phase out is not only a purchasing responsibility. Someone made the decision to bring the product into the portfolio, so product and category owners also need to take responsibility for when it should leave.
 ![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Products/Long-Tail-Animation.mp4)
 ---
-> [next] Continue -> 67f7d1d0-2ddc-437c-a80c-735941dd4bb7
-
-slide_id: 67f7d1d0-2ddc-437c-a80c-735941dd4bb7
-index_title: Turnaround Products
-title: Turnaround Products
-type: main
----
-You already know Turnaround products from Category Management. They have low revenue and low margin, which makes them natural candidates for a closer look.
-
-But a Turnaround product is not automatically a phase out. Some can still be improved, while others may have customers or reasons that make them worth keeping.
-![image/size:large/align:center/frame:none](products-phase-out/Turnaround-Highlighted.png)
----
 > [next] Continue -> ec717ec8-4cbc-4037-9c51-6e93d0d6e5ca
+
+[id:2/topic: Dead Items]
 
 slide_id: ec717ec8-4cbc-4037-9c51-6e93d0d6e5ca
 index_title: What Is Already Dead?
@@ -66,9 +42,21 @@ The easiest place to start is with products that have already stopped selling. T
 **Go through the tutorial below to find the dead products in your own portfolio.**
 [supademo: Dead Items - Insight Walkthrough](https://app.supademo.com/embed/cmtsnfr5v4f5iqm302acsrnly?embed_v=2&utm_source=embed)
 ---
-> [next] Continue -> f1479a3f-bf8d-4f68-bd26-bb736df0affa
+> [next] Continue -> 67f7d1d0-2ddc-437c-a80c-735941dd4bb7
 
 [id:3/topic: Linked Revenue]
+
+slide_id: 67f7d1d0-2ddc-437c-a80c-735941dd4bb7
+index_title: Turnaround Products
+title: Turnaround Products
+type: main
+---
+You already know Turnaround products from Category Management. They have low revenue and low margin, which makes them natural candidates for a closer look.
+
+But a Turnaround product is not automatically a phase out. Some can still be improved, while others may have customers or reasons that make them worth keeping.
+![image/size:large/align:center/frame:none](products-phase-out/Turnaround-Highlighted.png)
+---
+> [next] Continue -> f1479a3f-bf8d-4f68-bd26-bb736df0affa
 
 slide_id: f1479a3f-bf8d-4f68-bd26-bb736df0affa
 index_title: From Reactive to Proactive
@@ -76,8 +64,6 @@ title: From Reactive to Proactive
 type: main
 layout: standard-2-col
 ---
-Dead Items helps us clean up after the problem has already happened. But ideally, we should act earlier.
-
 A product can be a poor performer long before sales reach zero. If we can identify these products earlier, we can decide what to do before they become dead stock.
 
 But potential phase-out candidates are harder to judge than dead items. A product may have low revenue and poor margins, but somebody is still buying it. If that customer is important to the business, removing the product could have bad consequences.
@@ -86,20 +72,20 @@ But potential phase-out candidates are harder to judge than dead items. A produc
 > [next] Continue -> c09bb7e2-a2f1-471a-923b-997b558862b0
 
 slide_id: c09bb7e2-a2f1-471a-923b-997b558862b0
-index_title: Potential Phase Outs Insight Walkthrough
-title: Potential Phase Outs Insight Walkthrough
+index_title: Let’s Check Who’s Buying
+title: Let’s Check Who’s Buying
 type: main
 ---
-Therefore, before we phase out our bad products, we need to ask: **Who’s buying it?**
+Therefore, before we phase out our bad products, we need to ask: Who’s buying it?
 
 A Turnaround product that is not purchased by any important customers is very different from a Turnaround product that an important customer depends on.
 
-The **Potential Phase Outs Insight** helps us find the bad performing products that no important customers are buying. Go through the tutorial below to learn how to use it effectively:
-[supademo: Potential Phase Outs - Insight Walkthrough](https://app.supademo.com/embed/cmu0ymor01wzxqme9fs6pmk21?embed_v=2&utm_source=embed)
+When looking at individual products in Inact Now, you can see which specific customers buy that product, and which category those customers fall into. Let’s try it using the Category Management Insight. Go through the tutorial below,
+[supademo: Category Management - Performance View](https://app.supademo.com/embed/cmumkg7bh13k9qmfhbidnd7ky?embed_v=2&utm_source=embed)
 ---
 > [next] Continue -> eceb22bd-ec93-4648-a01f-6825c31b6c4a
 
-[id:4/topic: What’s Next?]
+[id:4/topic: What’s next?]
 
 slide_id: eceb22bd-ec93-4648-a01f-6825c31b6c4a
 index_title: Congratulations
@@ -107,10 +93,15 @@ title: Congratulations! You’ve Completed the Product Management Learning Path
 type: main
 layout: standard-2-col
 ---
-You can now answer the questions we started with. Which products and categories are performing. What it really costs to sell them. How your new products are doing. And which products should leave the portfolio.
+You can now answer the questions we started with.
 
-One question is still open. Before you phase a product out, you need to know who buys it.
+Which products and categories are performing?
+What does it really costs to sell them?
+How are your new products are doing?
+Which products should leave the portfolio?
 
-**That is where the Customer Management path begins.**
+Next, we bring these decisions together across the full value chain in the End to End learning path.
+
+**Let’s keep going!**
 ![image/size:large/align:right/frame:none](products-phase-out/Hero.png)
 ---
