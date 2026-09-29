@@ -103,12 +103,14 @@ slide_id: 712fff29-6787-428d-a052-8b9ffde0fa29
 index_title: From a Black Box to a Clear Process
 title: From a Black Box to a Clear Process
 type: main
+layout: standard-2-col
 ---
-We have now seen how the NPI Framework can be used to follow new products during their first year. To make this more concrete, we will look at a real example from one company that changed how it managed new product introductions.
+We have now seen how the NPI Framework follows new products during their first year. To make this more concrete, we will look at how one company used this NPI process in practice.
 
-Before the new process was introduced, the company estimated that only 50 to 70 percent of its new products were successful. Once a product had been launched, there was limited follow up and little visibility into which new products were developing well and which were becoming a problem.
+Before introducing the process, the company estimated that **only 50 to 70 percent** of its new products were successful. Follow up after launch was limited, making it difficult to see which products were developing well and which needed attention.
 
 The company therefore set a target of more than 80 percent successful introductions and started by making responsibility for new products much clearer.
+![image/size:large/align:right/frame:none](products-new-product-introduction/Failing-Products-Still.png)
 ---
 > [next] Continue -> e2b390e8-cce7-4660-a942-05e419bfdf76
 
