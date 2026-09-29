@@ -1,5 +1,3 @@
-[id:1/topic: Welcome to the Learning Path: Product Management]
-
 slide_id: a2104816-aa89-466a-88d6-630acc59733c
 index_title: Welcome to the Learning Path: Product Management
 title: 
@@ -15,8 +13,6 @@ In this learning path, you will learn how to manage products from introduction t
 **Let’s get started!**
 ---
 > [next] Let's do it! -> b0d1e64b-1092-44b2-8367-3ec8a88f0bf4
-
-[id:2/topic: The Product Life Cycle]
 
 slide_id: b0d1e64b-1092-44b2-8367-3ec8a88f0bf4
 index_title: The Product Life Cycle
@@ -63,8 +59,6 @@ But poor performance does not automatically mean a product should leave. Before 
 ![image/size:large/align:center/frame:none](products-intro/PLC-Decline.png)
 ---
 > [next] Continue -> bbdf7dee-7314-46e5-8558-e05644091080
-
-[id:3/topic: What’s next?]
 
 slide_id: bbdf7dee-7314-46e5-8558-e05644091080
 index_title: Congratulations
