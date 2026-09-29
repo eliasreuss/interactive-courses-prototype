@@ -1,23 +1,81 @@
-[id:1/topic: Welcome to the Course: Intro to Product Management]
+[id:1/topic: Welcome to the Learning Path: Product Management]
 
 slide_id: a2104816-aa89-466a-88d6-630acc59733c
-index_title: Welcome to the Course: Intro to Product Management
+index_title: Welcome to the Learning Path: Product Management
 title: 
 type: hero
 ---
 hero_image: products-intro/Hero.png
-hero_subtitle: Welcome to the course:
-hero_title: Intro to Product Management
-hero_body: ....
+hero_subtitle: Welcome to the Learning Path:
+hero_title: Product Management
+hero_body: Product Management is about managing your portfolio throughout the product life cycle.
+
+In this learning path, you will learn how to manage products from introduction to growth, maturity and eventually phase out.
+
+**Let’s get started!**
 ---
 > [next] Let's do it! -> b0d1e64b-1092-44b2-8367-3ec8a88f0bf4
 
-[id:2/topic: Course Outline]
+[id:2/topic: The Product Life Cycle]
 
 slide_id: b0d1e64b-1092-44b2-8367-3ec8a88f0bf4
-index_title: Intro Flow
-title: 
+index_title: The Product Life Cycle
+title: The Product Life Cycle
 type: main
 ---
-Dette kursus bliver lavet til sidst
+Products need different attention depending on where they are in their life cycle. The Products solution supports you across four areas.
+![image/size:large/align:center/frame:none](products-intro/PLC-All-Green.png)
+---
+> [next] Continue -> 4b3e07bb-27cb-46e8-9dd0-db65886f1aaf
+
+slide_id: 4b3e07bb-27cb-46e8-9dd0-db65886f1aaf
+index_title: Growth and Maturity
+title: Growth and Maturity
+type: main
+---
+We start with our established products. Here, we need to decide where to focus.
+
+With thousands of products in the portfolio, we cannot give them all the same attention. Category Management groups products into Protect, Develop, Grow and Turnaround, so we can focus on the products that matter most and ask the right questions for each category.
+![image/size:large/align:center/frame:none](products-intro/PLC-Growth-Maturity.png)
+---
+> [next] Continue -> 8acf2044-8305-4d42-81dd-de00db08ded2
+
+slide_id: 8acf2044-8305-4d42-81dd-de00db08ded2
+index_title: New Product Introduction
+title: New Product Introduction
+type: main
+---
+Then, we move to new product introduction. New products need close attention from the start.
+
+The NPI Framework follows new products during their first 12 months and helps you see whether they are developing as expected.
+![image/size:large/align:center/frame:none](products-intro/PLC-Introduction.png)
+---
+> [next] Continue -> c1466fe3-e11f-44c7-a25d-0edd608227e3
+
+slide_id: c1466fe3-e11f-44c7-a25d-0edd608227e3
+index_title: The Long Tail
+title: The Long Tail
+type: main
+---
+Over time, some products stop earning their place in the portfolio.
+
+But poor performance does not automatically mean a product should leave. Before we phase it out, we also need to understand who is buying it. Linked Revenue helps us make that connection.
+![image/size:large/align:center/frame:none](products-intro/PLC-Decline.png)
+---
+> [next] Continue -> bbdf7dee-7314-46e5-8558-e05644091080
+
+[id:3/topic: What’s next?]
+
+slide_id: bbdf7dee-7314-46e5-8558-e05644091080
+index_title: Congratulations
+title: Congratulations! You’ve Completed the Introduction to Product Management
+type: main
+layout: standard-2-col
+---
+You now know how the Products solution supports the product life cycle. In the next three courses, you will look at each part in more detail.
+
+We will start with Category Management and look at how to understand and manage your existing portfolio.
+
+**Let’s keep going!**
+![image/size:large/align:right/frame:none](products-intro/Hero.png)
 ---
