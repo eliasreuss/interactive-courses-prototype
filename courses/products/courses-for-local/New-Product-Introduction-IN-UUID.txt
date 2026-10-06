@@ -21,7 +21,7 @@ index_title: The First Stage of the Product Lifecycle
 title: The First Stage of the Product Lifecycle
 type: main
 ---
-You already know the product lifecycle. In this course, we focus on the very beginning. The goal is to make sure new products get the right start and that we quickly see whether they are developing as expected.
+In this course, we focus on the beginning of the product lifecycle. The goal is to make sure new products get the right start and that we quickly see whether they are developing as expected.
 
 The key question is simple: **Are we introducing the right products?**
 ![image/size:large/align:center/frame:none](products-new-product-introduction/Lifecycle-Introduction.png)
@@ -129,14 +129,13 @@ slide_id: 640c0160-2e7e-4d96-9975-56ec65ec3112
 index_title: Following New Products After Launch
 title: Following New Products After Launch
 type: main
-layout: standard-2-col
 ---
 With clear ownership in place, the company could follow new products more closely after launch.
 
 Products that needed attention were reviewed by the Product Coordinator and Product Manager, who agreed on what to do next. Suppliers could also be involved when needed.
 
 The goal was to act early, before weak products developed into dead stock.
-![image/size:large/align:right/frame:none](products-new-product-introduction/Follow-Up-After-Launch.png)
+![image/size:large/align:center/frame:none](products-new-product-introduction/Warning-Products.png)
 ---
 > [next] Continue -> 392b35df-1885-4d15-9300-a3a260770120
 

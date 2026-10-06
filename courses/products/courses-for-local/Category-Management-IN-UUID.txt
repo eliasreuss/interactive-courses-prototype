@@ -136,7 +136,7 @@ Say you buy a product for 100 and sell it for 150, so you made 50. But the freig
 **You thought you made 50, but you actually made 20.**
 ![video/size:large/align:right/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Products/Profit-Margin-Breakdown.mp4)
 ---
-> [next] Let's do it! -> 92f71642-d2a3-42a5-b052-d40f8137af3c
+> [next] Continue -> 92f71642-d2a3-42a5-b052-d40f8137af3c
 
 slide_id: 92f71642-d2a3-42a5-b052-d40f8137af3c
 index_title: Direct Costs
