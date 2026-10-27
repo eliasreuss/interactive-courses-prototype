@@ -98,6 +98,9 @@ def unique_path(folder_abs, filename):
     return candidate
 
 
+MEDIA_TYPES = (".mp4", ".m4a", ".mp3", ".wav")
+
+
 class CreatorAssetHandler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=REPO_ROOT, **kwargs)
@@ -190,7 +193,52 @@ class CreatorAssetHandler(SimpleHTTPRequestHandler):
             return self.list_assets()
         if route.startswith("/__ai/"):
             return self.ai_get(route)
+        if self.headers.get("Range") and route.lower().endswith(MEDIA_TYPES):
+            return self.send_range()
         return super().do_GET()
+
+    def send_range(self):
+        """Serve one byte range of a video or audio file.
+
+        SimpleHTTPRequestHandler ignores Range, so Safari refuses to play the
+        recap MP4s at all and Chrome cannot seek in them or in the launch
+        video's soundtrack.
+        """
+        path = self.translate_path(self.path)
+        if not os.path.isfile(path):
+            return self.send_error(404, "Not found")
+        size = os.path.getsize(path)
+        match = re.fullmatch(r"bytes=(\d*)-(\d*)", self.headers.get("Range", "").strip())
+        if not match or match.groups() == ("", ""):
+            return super().do_GET()
+        first, last = match.groups()
+        if first == "":
+            start, end = max(0, size - int(last)), size - 1
+        else:
+            start, end = int(first), min(int(last), size - 1) if last else size - 1
+        if start > end or start >= size:
+            self.send_response(416)
+            self.send_header("Content-Range", f"bytes */{size}")
+            self.end_headers()
+            return
+        self.send_response(206)
+        self.send_header("Content-Type", self.guess_type(path))
+        self.send_header("Accept-Ranges", "bytes")
+        self.send_header("Content-Range", f"bytes {start}-{end}/{size}")
+        self.send_header("Content-Length", str(end - start + 1))
+        self.end_headers()
+        with open(path, "rb") as handle:
+            handle.seek(start)
+            remaining = end - start + 1
+            while remaining > 0:
+                chunk = handle.read(min(64 * 1024, remaining))
+                if not chunk:
+                    break
+                try:
+                    self.wfile.write(chunk)
+                except (BrokenPipeError, ConnectionResetError):
+                    return
+                remaining -= len(chunk)
 
     def do_POST(self):
         route = urlparse(self.path).path

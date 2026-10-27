@@ -158,21 +158,21 @@
       height: 1px; background: rgba(48,70,66,0.07); margin: 12px 4px;
     }
 
-    /* ── Filter group with sliding indicator ── */
+    .sidebar-section-head {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .sidebar-clear {
+      border: none; background: none; cursor: pointer;
+      font-family: var(--font-family); font-size: 11px; font-weight: 500;
+      color: oklch(0.52 0.02 165);
+      padding: 6px 14px 2px;
+    }
+    .sidebar-clear:hover { color: var(--color-primary); text-decoration: underline; }
+
+    /* ── Filter group (multi-select checkboxes) ── */
     .filter-group {
-      position: relative;
       display: flex;
       flex-direction: column;
-    }
-    .filter-pill-indicator {
-      position: absolute;
-      left: 0; right: 0; top: 0;
-      height: 44px;
-      border-radius: 10px;
-      background: var(--pill-active-bg);
-      pointer-events: none;
-      z-index: 0;
-      will-change: transform;
     }
 
     /* ── Filter chips (sidebar vertical) ── */
@@ -183,19 +183,31 @@
       color: oklch(0.44 0.025 165);
       font-family: var(--font-family); font-size: 14px; font-weight: 400;
       cursor: pointer; text-align: left;
-      transition: color 0.18s ease;
-      outline: none;
+      transition: color 0.18s ease, background 0.18s ease;
       position: relative;
-      z-index: 1;
+      user-select: none;
     }
-    .filter-chip:hover { color: oklch(0.28 0.06 165); }
-    .filter-chip:not(.is-active):hover { background: oklch(0.96 0.005 165); }
-    .filter-chip:focus-visible { box-shadow: 0 0 0 2px var(--color-primary); }
-    .filter-chip.is-active {
-      background: transparent;
+    .filter-chip:hover { color: oklch(0.28 0.06 165); background: oklch(0.96 0.005 165); }
+    .filter-chip.is-checked {
       color: var(--chip-color, var(--color-primary));
       font-weight: 600;
     }
+    .filter-check { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+    .filter-check-box {
+      width: 16px; height: 16px; flex-shrink: 0; margin-left: auto;
+      display: flex; align-items: center; justify-content: center;
+      border: 1.5px solid oklch(0.82 0.01 165); border-radius: 5px;
+      background: #fff; color: #fff;
+      transition: background 0.18s ease, border-color 0.18s ease;
+    }
+    .filter-check-box svg { width: 10px; height: 10px; opacity: 0; transform: scale(0.6); transition: opacity 0.15s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1); }
+    .filter-chip:hover .filter-check-box { border-color: oklch(0.66 0.02 165); }
+    .filter-chip.is-checked .filter-check-box {
+      background: var(--chip-color, var(--color-primary));
+      border-color: var(--chip-color, var(--color-primary));
+    }
+    .filter-chip.is-checked .filter-check-box svg { opacity: 1; transform: scale(1); }
+    .filter-check:focus-visible ~ .filter-check-box { box-shadow: 0 0 0 3px rgba(48,70,66,0.18); }
     .filter-chip-icon {
       width: 20px; height: 20px; flex-shrink: 0;
       display: flex; align-items: center; justify-content: center;
@@ -203,16 +215,15 @@
       transition: color 0.18s ease;
     }
     .filter-chip-icon svg { width: 100%; height: 100%; display: block; }
-    #filter-group-type .filter-chip[data-type="lp"] .filter-chip-icon,
-    #filter-group-type .filter-chip[data-type="course"] .filter-chip-icon { width: 18px; height: 18px; }
-    .filter-chip.is-active .filter-chip-icon { color: var(--chip-color, var(--color-primary)); }
+    #filter-group-type .filter-chip-icon { width: 18px; height: 18px; }
+    .filter-chip.is-checked .filter-chip-icon { color: var(--chip-color, var(--color-primary)); }
     .filter-chip-label-wrap { display: flex; flex-direction: column; gap: 2px; }
     .filter-chip-eyebrow {
       font-size: 9px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
       color: oklch(0.66 0.008 165); line-height: 1;
       transition: color 0.18s ease;
     }
-    .filter-chip.is-active .filter-chip-eyebrow { color: var(--chip-color, var(--color-primary)); opacity: 0.65; }
+    .filter-chip.is-checked .filter-chip-eyebrow { color: var(--chip-color, var(--color-primary)); opacity: 0.65; }
     .filter-chip-label { font-size: 14px; line-height: 1.25; }
 
     /* ── Main content ── */
@@ -258,9 +269,11 @@
     .catalog-sort-chevron svg { width: 13px; height: 13px; }
 
     /* ── Cards grid ── */
+    /* Three columns while a card can be at least 310px wide (what a path card's
+       top row needs), then two, then one. Never more than three. */
     .catalog-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(max(310px, calc((100% - 40px) / 3)), 1fr));
       gap: 20px;
     }
     .catalog-grid .course-card { height: 100%; }
@@ -380,6 +393,8 @@
       -webkit-mask-size: contain; mask-size: contain;
       -webkit-mask-position: center; mask-position: center;
     }
+    .card-type-icon-svg { display: inline-flex; width: 14px; height: 14px; flex-shrink: 0; color: #304642; }
+    .card-type-icon-svg svg { width: 100%; height: 100%; }
     .card-type-icon-course {
       display: inline-block; width: 14px; height: 14px; flex-shrink: 0;
       background-color: #304642;
@@ -389,6 +404,22 @@
       -webkit-mask-position: center; mask-position: center;
     }
     .card-top-right { display: flex; align-items: center; gap: 6px; pointer-events: all; }
+    /* Learning path cards list what the path holds as type icons with counts;
+       hovering them spells it out ("6 courses · 1 video"), in the header
+       tooltip's style. */
+    .count-icons { position: relative; display: inline-flex; align-items: center; gap: 9px; }
+    .count-item { display: inline-flex; align-items: center; gap: 4px; }
+    .course-duration-pill:has(.count-icons) { padding: 10px 12px; }
+    .count-icon { display: inline-flex; }
+    .count-tip {
+      position: absolute; top: calc(100% + 14px); left: 50%; transform: translateX(-50%) translateY(-3px);
+      background: #304642; color: #fff; font-size: 12px; font-weight: 500; white-space: nowrap;
+      padding: 7px 11px; border-radius: 9px; box-shadow: 0 8px 20px rgba(48, 70, 66, 0.22);
+      pointer-events: none; opacity: 0; z-index: 5;
+      transition: opacity 0.18s ease, transform 0.18s cubic-bezier(0.22,1,0.36,1);
+    }
+    .count-tip::after { content: ''; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-bottom-color: #304642; }
+    .count-icons:hover .count-tip { opacity: 1; transform: translateX(-50%) translateY(0); }
     .course-duration-pill {
       display: inline-flex; align-items: center; justify-content: center;
       padding: 10px 14px; border-radius: 100px;
@@ -581,7 +612,6 @@
 
     /* ── Responsive ── */
     @media (max-width: 900px) {
-      .catalog-grid { grid-template-columns: 1fr; }
       .catalog-section-header { grid-column: span 1; padding-top: 28px; }
       .course-card.is-lp-card { grid-column: span 1; flex-direction: column; }
       .lp-banner-left { padding: 28px 28px; }
@@ -595,9 +625,8 @@
       .catalog-search { width: 100%; }
       .sidebar-filters { display: flex; flex-direction: row; flex-wrap: wrap; gap: 6px; }
       .filter-group { flex-direction: row; flex-wrap: wrap; gap: 6px; }
-      .filter-pill-indicator { display: none; }
-      .filter-chip.is-active { background: var(--pill-active-bg); }
-      .sidebar-section-label { display: none; }
+      .filter-chip.is-checked { background: var(--pill-active-bg); }
+      .sidebar-section-head { display: none; }
       .sidebar-divider { display: none; }
       .filter-chip { width: auto; padding: 7px 12px; border-radius: 100px; }
       .filter-chip-eyebrow { display: none; }
@@ -693,6 +722,7 @@
             <div class="catalog-sort-wrap">
               <select id="catalog-sort-select" class="catalog-sort-select" aria-label="Sort resources">
                 <option value="relevant">Most relevant</option>
+                <option value="newest">Newest first</option>
                 <option value="az">A–Z</option>
                 <option value="shortest">Shortest first</option>
                 <option value="longest">Longest first</option>
@@ -719,6 +749,8 @@
     </div>
   </main>
 
+  <script src="tutorials.js"></script>
+  <script src="recaps.js"></script>
   <script>
     // ── Data ─────────────────────────────────────────────────────────
 
@@ -760,7 +792,7 @@
       },
       {
         id: 'product-management', title: 'Product Management', category: 'products',
-        desc: 'Monitor the product lifecycle and manage your products from cradle to grave.',
+        desc: 'Product Management is about mastering all the stages in the product life cycle, and optimizing your product portfolio along the way. In this learning path, you will learn how to manage products from introduction to growth, maturity and eventually phase out.',
         duration: '36 min', courseCount: 4, href: 'products-hub.html', pathParam: 'products', hubFile: 'products-hub.html',
         courseIds: ['products-intro','category-management','new-product-introduction','phase-out'],
         gradFrom: '#2e3048', gradTo: '#4a4c68',
@@ -791,46 +823,54 @@
     // All courses, each with enough context to build the card and the link
     const ALL_COURSES = [
       // Inventory
-      { id: 'intro',           title: 'Introduction',         description: 'The big picture of inventory: what to stock, how much, and why balance matters.',               duration: '8 min',  file: 'with-UUID/Intro-IN-UUID.txt',                  thumbnail: 'Course-thumbnails/Inventory/Inventory_Intro.png',     pathId: 'inventory-management', pathParam: 'inventory', hubFile: 'hub.html',          category: 'inventory' },
-      { id: 'double-abc',      title: 'Double ABC Analysis',  description: 'Turn messy inventory into clear priorities with the Double ABC model.',                          duration: '15 min', file: 'with-UUID/Double-ABC-Analysis-4-IN-UUID.txt',    thumbnail: 'Course-thumbnails/Inventory/Double_ABC.png',           pathId: 'inventory-management', pathParam: 'inventory', hubFile: 'hub.html',          category: 'inventory' },
-      { id: 'stock-policy',    title: 'Stock Policy',         description: 'Decide what belongs on the shelf vs. buy-to-order and apply it in Inact.',                       duration: '10 min', file: 'with-UUID/Stock-Policy-IN-UUID.txt',             thumbnail: 'Course-thumbnails/Inventory/Stock_Policy.png',         pathId: 'inventory-management', pathParam: 'inventory', hubFile: 'hub.html',          category: 'inventory' },
-      { id: 'safety-stock',    title: 'Safety Stock',         description: 'Set the right buffer using variance, lead time, and service level.',                             duration: '12 min', file: 'with-UUID/Safety-Stock-IN-UUID.txt',             thumbnail: 'Course-thumbnails/Inventory/Safety_Stock.png',         pathId: 'inventory-management', pathParam: 'inventory', hubFile: 'hub.html',          category: 'inventory' },
-      { id: 'reorder-point',   title: 'Reorder Point',        description: 'Learn the reorder point formula and automate it in Inact Now.',                                  duration: '10 min', file: 'with-UUID/Reorder-Point-IN-UUID.txt',            thumbnail: 'Course-thumbnails/Inventory/Reorder_Point.png',        pathId: 'inventory-management', pathParam: 'inventory', hubFile: 'hub.html',          category: 'inventory' },
-      { id: 'reorder-quantity',title: 'Reorder Quantity',     description: 'Find the right order size by balancing price, demand, and turnover.',                            duration: '12 min', file: 'with-UUID/Reorder-Quantity-IN-UUID.txt',         thumbnail: 'Course-thumbnails/Inventory/Reorder_Quantity.png',     pathId: 'inventory-management', pathParam: 'inventory', hubFile: 'hub.html',          category: 'inventory' },
+      { id: 'intro',           title: 'Introduction',         description: 'The big picture of inventory: what to stock, how much, and why balance matters.',               duration: '8 min', added: '2025-08-08',  file: 'with-UUID/Intro-IN-UUID.txt',                  thumbnail: 'Course-thumbnails/Inventory/Inventory_Intro.png',     pathId: 'inventory-management', pathParam: 'inventory', hubFile: 'hub.html',          category: 'inventory' },
+      { id: 'double-abc',      title: 'Double ABC Analysis',  description: 'Turn messy inventory into clear priorities with the Double ABC model.',                          duration: '15 min', added: '2025-08-30', file: 'with-UUID/Double-ABC-Analysis-4-IN-UUID.txt',    thumbnail: 'Course-thumbnails/Inventory/Double_ABC.png',           pathId: 'inventory-management', pathParam: 'inventory', hubFile: 'hub.html',          category: 'inventory' },
+      { id: 'stock-policy',    title: 'Stock Policy',         description: 'Decide what belongs on the shelf vs. buy-to-order and apply it in Inact.',                       duration: '10 min', added: '2026-01-12', file: 'with-UUID/Stock-Policy-IN-UUID.txt',             thumbnail: 'Course-thumbnails/Inventory/Stock_Policy.png',         pathId: 'inventory-management', pathParam: 'inventory', hubFile: 'hub.html',          category: 'inventory' },
+      { id: 'safety-stock',    title: 'Safety Stock',         description: 'Set the right buffer using variance, lead time, and service level.',                             duration: '12 min', added: '2026-02-04', file: 'with-UUID/Safety-Stock-IN-UUID.txt',             thumbnail: 'Course-thumbnails/Inventory/Safety_Stock.png',         pathId: 'inventory-management', pathParam: 'inventory', hubFile: 'hub.html',          category: 'inventory' },
+      { id: 'reorder-point',   title: 'Reorder Point',        description: 'Learn the reorder point formula and automate it in Inact Now.',                                  duration: '10 min', added: '2026-02-04', file: 'with-UUID/Reorder-Point-IN-UUID.txt',            thumbnail: 'Course-thumbnails/Inventory/Reorder_Point.png',        pathId: 'inventory-management', pathParam: 'inventory', hubFile: 'hub.html',          category: 'inventory' },
+      { id: 'reorder-quantity',title: 'Reorder Quantity',     description: 'Find the right order size by balancing price, demand, and turnover.',                            duration: '12 min', added: '2026-02-04', file: 'with-UUID/Reorder-Quantity-IN-UUID.txt',         thumbnail: 'Course-thumbnails/Inventory/Reorder_Quantity.png',     pathId: 'inventory-management', pathParam: 'inventory', hubFile: 'hub.html',          category: 'inventory' },
       // Suppliers
-      { id: 'suppliers-intro',      title: 'Introduction',              description: 'The big picture of supplier management and what this learning path covers.',                       duration: '5 min',  file: 'with-UUID/Suppliers-Intro-2-IN-UUID.txt',        thumbnail: 'Course-thumbnails/Suppliers/Suppliers_Intro.png',      pathId: 'supplier-management',  pathParam: 'supplier', hubFile: 'supplier-hub.html',  category: 'suppliers' },
-      { id: 'supplier-performance', title: 'Supplier Performance',      description: 'Measure and compare your suppliers using five key performance indicators in Inact Now.',           duration: '12 min', file: 'with-UUID/Supplier-Performance-IN-UUID.txt',     thumbnail: 'Course-thumbnails/Suppliers/Supplier_Performance.png', pathId: 'supplier-management',  pathParam: 'supplier', hubFile: 'supplier-hub.html',  category: 'suppliers' },
-      { id: 'spend-analysis',       title: 'Spend Analysis',            description: 'Uncover inefficiencies and reduce costs using spend data in Inact Now.',                           duration: '10 min', file: 'with-UUID/Spend-Analysis-IN-UUID.txt',           thumbnail: 'Course-thumbnails/Suppliers/Spend_Analysis.png',       pathId: 'supplier-management',  pathParam: 'supplier', hubFile: 'supplier-hub.html',  category: 'suppliers' },
-      { id: 'supplier-negotiation', title: 'Supplier Negotiation',      description: 'Use supplier and spend insights to set goals and negotiate with leverage in Inact Now.',           duration: '8 min',  file: 'with-UUID/Supplier-Negotiation-IN-UUID.txt',     thumbnail: 'Course-thumbnails/Suppliers/Supplier_Negotiation.png', pathId: 'supplier-management',  pathParam: 'supplier', hubFile: 'supplier-hub.html',  category: 'suppliers' },
+      { id: 'suppliers-intro',      title: 'Introduction',              description: 'The big picture of supplier management and what this learning path covers.',                       duration: '5 min', added: '2026-04-15',  file: 'with-UUID/Suppliers-Intro-2-IN-UUID.txt',        thumbnail: 'Course-thumbnails/Suppliers/Suppliers_Intro.png',      pathId: 'supplier-management',  pathParam: 'supplier', hubFile: 'supplier-hub.html',  category: 'suppliers' },
+      { id: 'supplier-performance', title: 'Supplier Performance',      description: 'Measure and compare your suppliers using five key performance indicators in Inact Now.',           duration: '12 min', added: '2026-03-02', file: 'with-UUID/Supplier-Performance-IN-UUID.txt',     thumbnail: 'Course-thumbnails/Suppliers/Supplier_Performance.png', pathId: 'supplier-management',  pathParam: 'supplier', hubFile: 'supplier-hub.html',  category: 'suppliers' },
+      { id: 'spend-analysis',       title: 'Spend Analysis',            description: 'Uncover inefficiencies and reduce costs using spend data in Inact Now.',                           duration: '10 min', added: '2026-03-17', file: 'with-UUID/Spend-Analysis-IN-UUID.txt',           thumbnail: 'Course-thumbnails/Suppliers/Spend_Analysis.png',       pathId: 'supplier-management',  pathParam: 'supplier', hubFile: 'supplier-hub.html',  category: 'suppliers' },
+      { id: 'supplier-negotiation', title: 'Supplier Negotiation',      description: 'Use supplier and spend insights to set goals and negotiate with leverage in Inact Now.',           duration: '8 min', added: '2026-03-20',  file: 'with-UUID/Supplier-Negotiation-IN-UUID.txt',     thumbnail: 'Course-thumbnails/Suppliers/Supplier_Negotiation.png', pathId: 'supplier-management',  pathParam: 'supplier', hubFile: 'supplier-hub.html',  category: 'suppliers' },
       // Products
-      { id: 'products-intro',           title: 'Intro to Product Management', description: 'The big picture of product management and what this learning path covers.', duration: '2 min', file: 'with-UUID/Products-Intro-IN-UUID.txt',            thumbnail: 'Course-thumbnails/Products/Products-Dots.png', pathId: 'product-management', pathParam: 'products', hubFile: 'products-hub.html', category: 'products' },
-      { id: 'category-management',       title: 'Category Management',         description: 'Compare product and category performance, then split the portfolio into Protect, Develop, Grow and Turnaround.',                                                            duration: '12 min', file: 'with-UUID/Category-Management-IN-UUID.txt',        thumbnail: 'Course-thumbnails/Products/Products-Dots.png', pathId: 'product-management', pathParam: 'products', hubFile: 'products-hub.html', category: 'products' },
-      { id: 'new-product-introduction', title: 'New Product Introduction',    description: 'Follow new products after launch and decide early whether to keep pushing or stop.',                                                            duration: '12 min', file: 'with-UUID/New-Product-Introduction-IN-UUID.txt',   thumbnail: 'Course-thumbnails/Products/Products-Dots.png', pathId: 'product-management', pathParam: 'products', hubFile: 'products-hub.html', category: 'products' },
-      { id: 'phase-out',                title: 'The Long Tail',               description: 'Find dead items and potential phase outs, and decide which products should leave the portfolio.',                                                            duration: '10 min', file: 'with-UUID/The-Long-Tail-IN-UUID.txt',                  thumbnail: 'Course-thumbnails/Products/Products-Dots.png', pathId: 'product-management', pathParam: 'products', hubFile: 'products-hub.html', category: 'products' },
+      { id: 'products-intro',           title: 'Intro to Product Management', description: 'The big picture of product management and what this learning path covers.', duration: '2 min', added: '2026-08-19', file: 'with-UUID/Products-Intro-IN-UUID.txt',            thumbnail: 'Course-thumbnails/Products/Products-Dots.png', pathId: 'product-management', pathParam: 'products', hubFile: 'products-hub.html', category: 'products' },
+      { id: 'category-management',       title: 'Category Management',         description: 'Compare product and category performance, then split the portfolio into Protect, Develop, Grow and Turnaround.',                                                            duration: '12 min', added: '2026-08-19', file: 'with-UUID/Category-Management-IN-UUID.txt',        thumbnail: 'Course-thumbnails/Products/Products-Dots.png', pathId: 'product-management', pathParam: 'products', hubFile: 'products-hub.html', category: 'products' },
+      { id: 'new-product-introduction', title: 'New Product Introduction',    description: 'Follow new products after launch and decide early whether to keep pushing or stop.',                                                            duration: '12 min', added: '2026-08-19', file: 'with-UUID/New-Product-Introduction-IN-UUID.txt',   thumbnail: 'Course-thumbnails/Products/Products-Dots.png', pathId: 'product-management', pathParam: 'products', hubFile: 'products-hub.html', category: 'products' },
+      { id: 'phase-out',                title: 'The Long Tail',               description: 'Find dead items and potential phase outs, and decide which products should leave the portfolio.',                                                            duration: '10 min', added: '2026-08-19', file: 'with-UUID/The-Long-Tail-IN-UUID.txt',                  thumbnail: 'Course-thumbnails/Products/Products-Dots.png', pathId: 'product-management', pathParam: 'products', hubFile: 'products-hub.html', category: 'products' },
       // Customers
-      { id: 'customers-intro', title: 'Intro to End to End', description: 'The big picture of the End to End path and what it covers.', duration: '2 min', file: 'Customers-Intro-IN-UUID.txt', thumbnail: 'Course-thumbnails/Customers/Customers-Dots.png', pathId: 'end2end', pathParam: 'customers', hubFile: 'customers-hub.html', category: 'customers' },
-      { id: 'customer-segmentation', title: 'Customer Segmentation', description: 'Segment your customer portfolio into four categories and see which customers matter most.', duration: '8 min', file: 'Customer-Segmentation-IN-UUID.txt', thumbnail: 'Course-thumbnails/Customers/Customers-Dots.png', pathId: 'end2end', pathParam: 'customers', hubFile: 'customers-hub.html', category: 'customers' },
-      { id: 'customer-profitability', title: 'Customer Profitability', description: 'Look past the categories at what you actually earn on individual customer relationships.', duration: '8 min', file: 'Customer-Profitability-IN-UUID.txt', thumbnail: 'Course-thumbnails/Customers/Customers-Dots.png', pathId: 'end2end', pathParam: 'customers', hubFile: 'customers-hub.html', category: 'customers' },
-      { id: 'linked-revenue', title: 'Linked Revenue', description: 'Connect customers to the products they buy and the suppliers behind them, and tell healthy complexity from unhealthy.', duration: '15 min', file: 'Linked-Revenue-IN-UUID.txt', thumbnail: 'Course-thumbnails/Customers/Customers-Dots.png', pathId: 'end2end', pathParam: 'customers', hubFile: 'customers-hub.html', category: 'customers' },
-      { id: 'where-to-play-how-to-win', title: 'Where to Play, How to Win', description: 'Turn the analysis into policies, then use a heatmap to see where to focus.', duration: '15 min', file: 'Where-To-Play-How-To-Win-IN-UUID.txt', thumbnail: 'Course-thumbnails/Customers/Customers-Dots.png', pathId: 'end2end', pathParam: 'customers', hubFile: 'customers-hub.html', category: 'customers' },
+      { id: 'customers-intro', title: 'Intro to End to End', description: 'The big picture of the End to End path and what it covers.', duration: '2 min', added: '2026-08-24', file: 'Customers-Intro-IN-UUID.txt', thumbnail: 'Course-thumbnails/Customers/Customers-Dots.png', pathId: 'end2end', pathParam: 'customers', hubFile: 'customers-hub.html', category: 'customers' },
+      { id: 'customer-segmentation', title: 'Customer Segmentation', description: 'Segment your customer portfolio into four categories and see which customers matter most.', duration: '8 min', added: '2026-08-24', file: 'Customer-Segmentation-IN-UUID.txt', thumbnail: 'Course-thumbnails/Customers/Customers-Dots.png', pathId: 'end2end', pathParam: 'customers', hubFile: 'customers-hub.html', category: 'customers' },
+      { id: 'customer-profitability', title: 'Customer Profitability', description: 'Look past the categories at what you actually earn on individual customer relationships.', duration: '8 min', added: '2026-08-24', file: 'Customer-Profitability-IN-UUID.txt', thumbnail: 'Course-thumbnails/Customers/Customers-Dots.png', pathId: 'end2end', pathParam: 'customers', hubFile: 'customers-hub.html', category: 'customers' },
+      { id: 'linked-revenue', title: 'Linked Revenue', description: 'Connect customers to the products they buy and the suppliers behind them, and tell healthy complexity from unhealthy.', duration: '15 min', added: '2026-08-24', file: 'Linked-Revenue-IN-UUID.txt', thumbnail: 'Course-thumbnails/Customers/Customers-Dots.png', pathId: 'end2end', pathParam: 'customers', hubFile: 'customers-hub.html', category: 'customers' },
+      { id: 'where-to-play-how-to-win', title: 'Where to Play, How to Win', description: 'Turn the analysis into policies, then use a heatmap to see where to focus.', duration: '15 min', added: '2026-08-24', file: 'Where-To-Play-How-To-Win-IN-UUID.txt', thumbnail: 'Course-thumbnails/Customers/Customers-Dots.png', pathId: 'end2end', pathParam: 'customers', hubFile: 'customers-hub.html', category: 'customers' },
       // Software
-      { id: 'now-intro',       title: 'Introduction',          description: 'Get a high-level overview of the Inact Now platform and its four core areas.',                    duration: '3 min',  file: 'with-UUID/Now-Intro-IN-UUID.txt',                thumbnail: 'Course-thumbnails/Fundamentals/Intro.png',             pathId: 'now-fundamentals',     pathParam: 'now',      hubFile: 'now-hub.html',       category: 'functionality' },
-      { id: 'now-home',        title: 'Inact Now: Home',       description: 'Learn how your Home screen connects you to Dashboards, Insights, and Actions.',                  duration: '3 min',  file: 'with-UUID/Now-Home-IN-UUID.txt',                 thumbnail: 'Course-thumbnails/Fundamentals/Home.png',              pathId: 'now-fundamentals',     pathParam: 'now',      hubFile: 'now-hub.html',       category: 'functionality' },
-      { id: 'now-insights',    title: 'Inact Now: Insights',   description: 'Navigate views, apply filters, and drill down to uncover opportunities in your supply chain.',   duration: '10 min', file: 'with-UUID/Now-Insights-IN-UUID.txt',             thumbnail: 'Course-thumbnails/Fundamentals/Insights.png',          pathId: 'now-fundamentals',     pathParam: 'now',      hubFile: 'now-hub.html',       category: 'functionality' },
-      { id: 'now-actions',     title: 'Inact Now: Actions',    description: 'Learn how Actions work and how to navigate, filter, and sort through your lists.',               duration: '8 min',  file: 'with-UUID/Now-Actions-IN-UUID.txt',              thumbnail: 'Course-thumbnails/Fundamentals/Actions.png',           pathId: 'now-fundamentals',     pathParam: 'now',      hubFile: 'now-hub.html',       category: 'functionality' },
-      { id: 'now-dashboards',  title: 'Inact Now: Dashboards', description: 'Monitor your key KPIs at a glance using Widgets, Tables, and drill-down Trend Views.',           duration: '5 min',  file: 'with-UUID/Now-Dashboards-IN-UUID.txt',           thumbnail: 'Course-thumbnails/Fundamentals/Dashboards.png',        pathId: 'now-fundamentals',     pathParam: 'now',      hubFile: 'now-hub.html',       category: 'functionality' },
+      { id: 'now-intro',       title: 'Introduction',          description: 'Get a high-level overview of the Inact Now platform and its four core areas.',                    duration: '3 min', added: '2026-04-15',  file: 'with-UUID/Now-Intro-IN-UUID.txt',                thumbnail: 'Course-thumbnails/Fundamentals/Intro.png',             pathId: 'now-fundamentals',     pathParam: 'now',      hubFile: 'now-hub.html',       category: 'functionality' },
+      { id: 'now-home',        title: 'Inact Now: Home',       description: 'Learn how your Home screen connects you to Dashboards, Insights, and Actions.',                  duration: '3 min', added: '2026-04-15',  file: 'with-UUID/Now-Home-IN-UUID.txt',                 thumbnail: 'Course-thumbnails/Fundamentals/Home.png',              pathId: 'now-fundamentals',     pathParam: 'now',      hubFile: 'now-hub.html',       category: 'functionality' },
+      { id: 'now-insights',    title: 'Inact Now: Insights',   description: 'Navigate views, apply filters, and drill down to uncover opportunities in your supply chain.',   duration: '10 min', added: '2026-04-15', file: 'with-UUID/Now-Insights-IN-UUID.txt',             thumbnail: 'Course-thumbnails/Fundamentals/Insights.png',          pathId: 'now-fundamentals',     pathParam: 'now',      hubFile: 'now-hub.html',       category: 'functionality' },
+      { id: 'now-actions',     title: 'Inact Now: Actions',    description: 'Learn how Actions work and how to navigate, filter, and sort through your lists.',               duration: '8 min', added: '2026-05-02',  file: 'with-UUID/Now-Actions-IN-UUID.txt',              thumbnail: 'Course-thumbnails/Fundamentals/Actions.png',           pathId: 'now-fundamentals',     pathParam: 'now',      hubFile: 'now-hub.html',       category: 'functionality' },
+      { id: 'now-dashboards',  title: 'Inact Now: Dashboards', description: 'Monitor your key KPIs at a glance using Widgets, Tables, and drill-down Trend Views.',           duration: '5 min', added: '2026-04-15',  file: 'with-UUID/Now-Dashboards-IN-UUID.txt',           thumbnail: 'Course-thumbnails/Fundamentals/Dashboards.png',        pathId: 'now-fundamentals',     pathParam: 'now',      hubFile: 'now-hub.html',       category: 'functionality' },
       // Admin
-      { id: 'admin-intro',    title: 'Intro: Super Users & Admins', description: 'Learn your role in Inact Now, the difference between user types, and where this learning path takes you.',          duration: '5 min',  file: 'Admin-Intro.txt',    thumbnail: 'Course-thumbnails/Admin/Admin-Intro.png', pathId: 'admin', pathParam: 'admin', hubFile: 'admin-hub.html', category: 'functionality' },
-      { id: 'admin-standard', title: 'Your Standard Solution',               description: 'Explore the complete standard setup already waiting for you—solutions, tabs, insights, and the data behind it all.',  duration: '10 min', file: 'Admin-Standard.txt', thumbnail: 'Course-thumbnails/Admin/Admin-Standard.png', pathId: 'admin', pathParam: 'admin', hubFile: 'admin-hub.html', category: 'functionality' },
-      { id: 'admin-custom',   title: 'Customising Your Solution',            description: 'Create insights, edit them, build actions, and as an Admin, create dashboards to share with your team.',             duration: '15 min', file: 'Admin-Custom.txt',   thumbnail: 'Course-thumbnails/Admin/Admin-Custom.png', pathId: 'admin', pathParam: 'admin', hubFile: 'admin-hub.html', category: 'functionality' },
-      { id: 'admin-manage',   title: 'Managing Users',                       description: 'Manage users, set up their home screens, assign permissions, and configure automated reports.',                      duration: '10 min', file: 'Admin-Manage.txt',   thumbnail: 'Course-thumbnails/Admin/Admin-Manage.png', pathId: 'admin', pathParam: 'admin', hubFile: 'admin-hub.html', category: 'functionality' },
+      { id: 'admin-intro',    title: 'Intro: Super Users & Admins', description: 'Learn your role in Inact Now, the difference between user types, and where this learning path takes you.',          duration: '5 min', added: '2026-06-17',  file: 'Admin-Intro.txt',    thumbnail: 'Course-thumbnails/Admin/Admin-Intro.png', pathId: 'admin', pathParam: 'admin', hubFile: 'admin-hub.html', category: 'functionality' },
+      { id: 'admin-standard', title: 'Your Standard Solution',               description: 'Explore the complete standard setup already waiting for you—solutions, tabs, insights, and the data behind it all.',  duration: '10 min', added: '2026-06-17', file: 'Admin-Standard.txt', thumbnail: 'Course-thumbnails/Admin/Admin-Standard.png', pathId: 'admin', pathParam: 'admin', hubFile: 'admin-hub.html', category: 'functionality' },
+      { id: 'admin-custom',   title: 'Customising Your Solution',            description: 'Create insights, edit them, build actions, and as an Admin, create dashboards to share with your team.',             duration: '15 min', added: '2026-06-17', file: 'Admin-Custom.txt',   thumbnail: 'Course-thumbnails/Admin/Admin-Custom.png', pathId: 'admin', pathParam: 'admin', hubFile: 'admin-hub.html', category: 'functionality' },
+      { id: 'admin-manage',   title: 'Managing Users',                       description: 'Manage users, set up their home screens, assign permissions, and configure automated reports.',                      duration: '10 min', added: '2026-06-17', file: 'Admin-Manage.txt',   thumbnail: 'Course-thumbnails/Admin/Admin-Manage.png', pathId: 'admin', pathParam: 'admin', hubFile: 'admin-hub.html', category: 'functionality' },
     ];
 
     // ── Topic icons (same SVG paths as the solution toggle) ───────────
+    const CHECK_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+
     const TYPE_ICONS = {
-      all:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>`,
       lp:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>`,
+      tutorial: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4.1 12 6"/><path d="m5.1 8-2.9-.8"/><path d="m6 12-1.9 2"/><path d="M7.2 2.2 8 5.1"/><path d="M9.037 9.69a.498.498 0 0 1 .653-.653l11 4.5a.5.5 0 0 1-.074.949l-4.349 1.041a1 1 0 0 0-.74.739l-1.04 4.35a.5.5 0 0 1-.95.074z"/></svg>`,
       course: `<svg viewBox="1.5 4 21.5 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>`,
+    };
+
+    const STATUS_ICONS = {
+      // Tabler "check" and "x".
+      completed: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5l10 -10"/></svg>`,
+      open:      `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6l-12 12"/><path d="M6 6l12 12"/></svg>`,
     };
 
     const TOPIC_ICONS = {
@@ -845,8 +885,8 @@
     const GENERAL_SOL = { key: 'general', name: 'Quick Resources', label: 'Standalone', bar: '#8A9A97', toggleBg: 'rgba(138,154,151,0.10)', bdr: 'rgba(138,154,151,0.30)' };
 
     // ── State ─────────────────────────────────────────────────────────
-    let activeTopic = 'all';
-    let activeType  = 'all';
+    // Empty set = no filter on that group; ticked options within a group are OR'd
+    const FILTERS = { topic: new Set(), type: new Set(), status: new Set() };
     let searchQuery = '';
     let activeSort  = 'relevant';
 
@@ -918,6 +958,23 @@
 
     const SHARE_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>';
 
+    // What a path holds, as type icons with counts: courses, tutorials whose
+    // pathId is the path, and the recap videos (recaps.js) of its courses.
+    // One tooltip spells the counts out; screen readers read it instead of the icons.
+    const VIDEO_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M10 8.5v7l6-3.5z"/></svg>';
+    function pathContents(path) {
+      const ids = path.courseIds || [];
+      const recaps = window.LEARN_RECAPS || {};
+      const counts = [
+        [ids.length || path.courseCount || 0, 'course', 'courses', '<span class="card-type-icon-course"></span>'],
+        [(window.TUTORIALS || []).filter(t => t.pathId === path.id).length, 'tutorial', 'tutorials', `<span class="card-type-icon-svg">${TYPE_ICONS.tutorial}</span>`],
+        [ids.filter(id => recaps[id]).length, 'video', 'videos', `<span class="card-type-icon-svg">${VIDEO_ICON}</span>`],
+      ].filter(([n]) => n > 0);
+      const items = counts.map(([n, , , icon]) => `<span class="count-item" aria-hidden="true"><span class="count-icon">${icon}</span>${n}</span>`).join('');
+      const tip = counts.map(([n, one, many]) => `${n} ${n === 1 ? one : many}`).join(' · ');
+      return `${items}<span class="count-tip">${tip}</span>`;
+    }
+
     function renderLPCard(path) {
       const sol = SOLUTIONS.find(s => s.pathId === path.id);
       const prog = getLPProgress(path);
@@ -928,6 +985,7 @@
       const cardGlow = sol ? hexToRgba(sol.bar, 0.16) : 'rgba(48,70,66,0.10)';
       const pillBg   = sol ? hexToRgba(sol.btn, 0.40) : 'rgba(48,70,66,0.07)';
       const barClass = 'card-progress' + (pct === 100 ? ' completed' : '');
+      const contents = pathContents(path);
 
       const cardTopHtml = sol && sol.illu
         ? `<div class="course-card-top" style="background:${sol.toggleBg};--pill-bg:${pillBg}">
@@ -935,7 +993,7 @@
             <div class="card-top-bar">
               <div class="card-type-pill" style="background:${pillBg}"><span class="card-type-icon"></span>Learning Path</div>
               <div class="card-top-right">
-                <div class="course-duration-pill">${path.duration}</div>
+                <div class="course-duration-pill"><span class="count-icons">${contents}</span></div>
                 <button class="card-bm-btn" tabindex="-1" aria-hidden="true">${BM_SVG}</button>
               </div>
             </div>
@@ -945,7 +1003,7 @@
             <div class="card-top-bar">
               <div class="card-type-pill" style="background:${pillBg}"><span class="card-type-icon"></span>Learning Path</div>
               <div class="card-top-right">
-                <div class="course-duration-pill">${path.duration}</div>
+                <div class="course-duration-pill"><span class="count-icons">${contents}</span></div>
                 <button class="card-bm-btn" tabindex="-1" aria-hidden="true">${BM_SVG}</button>
               </div>
             </div>
@@ -1023,6 +1081,42 @@
       </div>`;
     }
 
+    function statusMatches(completed) {
+      return !FILTERS.status.size || FILTERS.status.has(completed ? 'completed' : 'open');
+    }
+
+    function renderTutorialCard(t) {
+      const { completed, progress } = getCourseProgress('tutorial-' + t.id);
+      const sol = SOLUTIONS.find(s => s.key === t.category);
+      const cardBdr  = sol ? sol.bdr : 'transparent';
+      const cardGlow = sol ? hexToRgba(sol.bar, 0.20) : 'rgba(48,70,66,0.22)';
+      const pillBg   = sol ? hexToRgba(sol.btn, 0.40) : 'rgba(48,70,66,0.07)';
+      const href = `course.html?tutorial=${t.id}&from=catalog`;
+      const pct = completed ? 100 : progress;
+      const ctaText = completed ? 'Review' : (progress > 0 ? 'Continue' : 'Start');
+
+      return `<div class="course-card" data-href="${href}" tabindex="0" style="--card-bdr:${cardBdr};--card-glow:${cardGlow}">
+        <div class="course-card-top standalone-thumb" style="--card-bg:${sol ? sol.bg : '#F5F7F5'};--pill-bg:${pillBg}">
+          <span class="standalone-thumb-icon">${TYPE_ICONS.tutorial}</span>
+          <div class="card-top-bar">
+            <div class="card-type-pill" style="background:${pillBg}"><span class="card-type-icon-svg">${TYPE_ICONS.tutorial}</span>Tutorial</div>
+            <div class="card-top-right">
+              <div class="course-duration-pill">${t.duration}</div>
+              <button class="card-bm-btn" tabindex="-1" aria-hidden="true">${BM_SVG}</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-progress${completed ? ' completed' : ''}"><div class="card-progress-fill" style="width:${pct}%"></div></div>
+        <div class="course-card-bottom">
+          <h2 class="course-title">${t.title}</h2>
+          <p class="course-description">${t.description}</p>
+          <div class="course-cta-row">
+            <a href="${href}" class="course-cta"><span>${ctaText}</span>${ARROW_IMG}</a>
+          </div>
+        </div>
+      </div>`;
+    }
+
     // ── Filter + render (flat mixed list, no section grouping) ──
     function applyFilters() {
       const q = searchQuery.toLowerCase().trim();
@@ -1033,30 +1127,46 @@
       // Collect visible items: { type: 'lp'|'course', data, title, durationMins }
       const items = [];
 
-      if (activeType !== 'course') {
+      const typeMatches = key => !FILTERS.type.size || FILTERS.type.has(key);
+      const topicMatches = key => !FILTERS.topic.size || FILTERS.topic.has(key);
+
+      if (typeMatches('lp')) {
         for (const path of PATHS) {
-          const topicMatches = activeTopic === 'all' || path.category === activeTopic;
-          if (!topicMatches) continue;
+          if (!topicMatches(path.category)) continue;
           const pathCourses = ALL_COURSES.filter(c => c.pathId === path.id);
           const lpQueryMatches = !q
             || path.title.toLowerCase().includes(q)
             || path.desc.toLowerCase().includes(q)
             || pathCourses.some(c => c.title.toLowerCase().includes(q) || c.description.toLowerCase().includes(q));
-          if (lpQueryMatches) items.push({ type: 'lp', data: path, title: path.title, durationMins: parseDuration(path.duration) });
+          if (!lpQueryMatches || !statusMatches(getLPProgress(path).pct === 100)) continue;
+          // A path counts as new when its most recent course was added
+          const added = pathCourses.reduce((max, c) => c.added > max ? c.added : max, '');
+          items.push({ type: 'lp', data: path, title: path.title, durationMins: parseDuration(path.duration), added });
         }
       }
 
-      if (activeType !== 'lp') {
+      if (typeMatches('course')) {
         const visibleCourses = ALL_COURSES.filter(c => {
-          if (activeTopic !== 'all' && c.category !== activeTopic) return false;
+          if (!topicMatches(c.category)) return false;
           if (q && !c.title.toLowerCase().includes(q) && !c.description.toLowerCase().includes(q)) return false;
-          return true;
+          return statusMatches(getCourseProgress(c.id).completed);
         });
-        for (const course of visibleCourses) items.push({ type: 'course', data: course, title: course.title, durationMins: parseDuration(course.duration) });
+        for (const course of visibleCourses) items.push({ type: 'course', data: course, title: course.title, durationMins: parseDuration(course.duration), added: course.added });
+      }
+
+      if (typeMatches('tutorial')) {
+        for (const t of window.TUTORIALS || []) {
+          if (!topicMatches(t.category)) continue;
+          if (q && !t.title.toLowerCase().includes(q) && !t.description.toLowerCase().includes(q)) continue;
+          if (!statusMatches(getCourseProgress('tutorial-' + t.id).completed)) continue;
+          items.push({ type: 'tutorial', data: t, title: t.title, durationMins: parseDuration(t.duration), added: t.added });
+        }
       }
 
       // Sort
-      if (activeSort === 'az') {
+      if (activeSort === 'newest') {
+        items.sort((a, b) => b.added.localeCompare(a.added));
+      } else if (activeSort === 'az') {
         items.sort((a, b) => a.title.localeCompare(b.title));
       } else if (activeSort === 'shortest') {
         items.sort((a, b) => a.durationMins - b.durationMins);
@@ -1074,7 +1184,8 @@
         return;
       }
 
-      const html = items.map(item => item.type === 'lp' ? renderLPCard(item.data) : renderCourseCard(item.data)).join('');
+      const RENDERERS = { lp: renderLPCard, course: renderCourseCard, tutorial: renderTutorialCard };
+      const html = items.map(item => RENDERERS[item.type](item.data)).join('');
 
       empty.hidden = true;
       grid.innerHTML = html;
@@ -1101,112 +1212,77 @@
     // ── Render sidebar filters ────────────────────────────────────────
     let TOPICS_DATA = [];
     let TYPES_DATA  = [];
+    let STATUS_DATA = [];
 
     function renderFilterBar() {
       const seenTopicKeys = new Set();
       const uniqueSolutions = SOLUTIONS.filter(s => seenTopicKeys.has(s.key) ? false : seenTopicKeys.add(s.key));
-      TOPICS_DATA = [
-        { key: 'all', name: 'All topics', eyebrow: '' },
-        ...uniqueSolutions.map(s => ({ key: s.key, name: s.name, eyebrow: s.label, bar: s.bar, toggleBg: s.toggleBg })),
-      ];
+      TOPICS_DATA = uniqueSolutions.map(s => ({ key: s.key, name: s.name, eyebrow: s.label, bar: s.bar }));
       TYPES_DATA = [
-        { key: 'all',    name: 'All types' },
         { key: 'lp',     name: 'Learning Paths' },
         { key: 'course', name: 'Courses' },
+        { key: 'tutorial', name: 'Tutorials' },
+      ];
+      STATUS_DATA = [
+        { key: 'completed', name: 'Completed' },
+        { key: 'open',      name: 'Not Completed' },
       ];
 
-      const topicHtml = TOPICS_DATA.map(t => {
-        const active = activeTopic === t.key;
-        const chipCol = active && t.bar ? t.bar : '';
-        const styleAttr = chipCol ? `style="--chip-color:${chipCol}"` : '';
-        const icon = TOPIC_ICONS[t.key] || TOPIC_ICONS.all;
+      const chipHtml = (group, t, icon) => {
+        const checked = FILTERS[group].has(t.key);
+        const styleAttr = t.bar ? `style="--chip-color:${t.bar}"` : '';
         const labelHtml = t.eyebrow
           ? `<span class="filter-chip-label-wrap"><span class="filter-chip-eyebrow">${t.eyebrow}</span><span class="filter-chip-label">${t.name}</span></span>`
           : `<span class="filter-chip-label">${t.name}</span>`;
-        return `<button class="filter-chip${active ? ' is-active' : ''}" data-topic="${t.key}" ${styleAttr}>
+        return `<label class="filter-chip${checked ? ' is-checked' : ''}" ${styleAttr}>
+          <input type="checkbox" class="filter-check" data-group="${group}" value="${t.key}"${checked ? ' checked' : ''}>
           <span class="filter-chip-icon">${icon}</span>${labelHtml}
-        </button>`;
-      }).join('');
+          <span class="filter-check-box" aria-hidden="true">${CHECK_SVG}</span>
+        </label>`;
+      };
 
-      const typeHtml = TYPES_DATA.map(t => {
-        const active = activeType === t.key;
-        const icon = TYPE_ICONS[t.key];
-        return `<button class="filter-chip${active ? ' is-active' : ''}" data-type="${t.key}">
-          <span class="filter-chip-icon">${icon}</span>
-          <span class="filter-chip-label">${t.name}</span>
-        </button>`;
-      }).join('');
+      const groupHtml = (group, label, data, icons) =>
+        `<div class="sidebar-section-head">
+          <span class="sidebar-section-label">${label}</span>
+          <button type="button" class="sidebar-clear" data-clear="${group}"${FILTERS[group].size ? '' : ' hidden'}>Clear</button>
+        </div>
+        <div class="filter-group" id="filter-group-${group}" role="group" aria-label="${label}">
+          ${data.map(t => chipHtml(group, t, icons[t.key] || TOPIC_ICONS.all)).join('')}
+        </div>`;
 
-      document.getElementById('filter-bar').innerHTML =
-        '<div class="sidebar-section-label">Topic</div>'
-        + `<div class="filter-group" id="filter-group-topic"><div class="filter-pill-indicator"></div>${topicHtml}</div>`
+      const bar = document.getElementById('filter-bar');
+      bar.innerHTML =
+        groupHtml('topic', 'Topic', TOPICS_DATA, TOPIC_ICONS)
         + '<div class="sidebar-divider"></div>'
-        + '<div class="sidebar-section-label">Type</div>'
-        + `<div class="filter-group" id="filter-group-type"><div class="filter-pill-indicator"></div>${typeHtml}</div>`;
+        + groupHtml('type', 'Type', TYPES_DATA, TYPE_ICONS)
+        + '<div class="sidebar-divider"></div>'
+        + groupHtml('status', 'Status', STATUS_DATA, STATUS_ICONS);
 
-      document.getElementById('filter-group-topic').addEventListener('click', e => {
-        const btn = e.target.closest('[data-topic]');
-        if (btn) setFilter('topic', btn.dataset.topic);
+      bar.addEventListener('change', e => {
+        const input = e.target.closest('.filter-check');
+        if (!input) return;
+        const set = FILTERS[input.dataset.group];
+        if (input.checked) set.add(input.value); else set.delete(input.value);
+        input.closest('.filter-chip').classList.toggle('is-checked', input.checked);
+        syncClearButton(input.dataset.group);
+        applyFilters();
       });
-      document.getElementById('filter-group-type').addEventListener('click', e => {
-        const btn = e.target.closest('[data-type]');
-        if (btn) setFilter('type', btn.dataset.type);
+      bar.addEventListener('click', e => {
+        const btn = e.target.closest('[data-clear]');
+        if (!btn) return;
+        const group = btn.dataset.clear;
+        FILTERS[group].clear();
+        document.querySelectorAll(`#filter-group-${group} .filter-check`).forEach(input => {
+          input.checked = false;
+          input.closest('.filter-chip').classList.remove('is-checked');
+        });
+        syncClearButton(group);
+        applyFilters();
       });
-
-      positionIndicators(true);
     }
 
-    function setFilter(type, key) {
-      if (type === 'topic') activeTopic = key;
-      else activeType = key;
-
-      const groupId = type === 'topic' ? 'filter-group-topic' : 'filter-group-type';
-      const group = document.getElementById(groupId);
-      const dataAttr = type === 'topic' ? 'topic' : 'type';
-      const data = type === 'topic' ? TOPICS_DATA : TYPES_DATA;
-
-      group.querySelectorAll('.filter-chip').forEach(btn => {
-        const isActive = btn.dataset[dataAttr] === key;
-        btn.classList.toggle('is-active', isActive);
-        if (isActive) {
-          const item = data.find(d => d.key === key);
-          if (item?.bar) btn.style.setProperty('--chip-color', item.bar);
-          else btn.style.removeProperty('--chip-color');
-        } else {
-          btn.style.removeProperty('--chip-color');
-        }
-      });
-
-      positionIndicators(false);
-      applyFilters();
-    }
-
-    function positionIndicators(instant) {
-      document.querySelectorAll('.filter-pill-indicator').forEach(indicator => {
-        const group = indicator.parentElement;
-        const activeChip = group.querySelector('.filter-chip.is-active');
-        if (!activeChip) return;
-
-        const newY = activeChip.offsetTop;
-        const newH = activeChip.offsetHeight;
-
-        if (group.id === 'filter-group-topic') {
-          const item = TOPICS_DATA.find(t => t.key === activeTopic);
-          indicator.style.background = item?.toggleBg || 'var(--pill-active-bg)';
-        } else {
-          indicator.style.background = 'var(--pill-active-bg)';
-        }
-
-        if (instant) {
-          indicator.style.transition = 'none';
-          indicator.style.height = newH + 'px';
-          indicator.style.transform = `translateY(${newY}px)`;
-        } else {
-          indicator.style.transition = 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)';
-          indicator.style.height = newH + 'px';
-          indicator.style.transform = `translateY(${newY}px)`;
-        }
-      });
+    function syncClearButton(group) {
+      document.querySelector(`[data-clear="${group}"]`).hidden = FILTERS[group].size === 0;
     }
 
     // ── Search ────────────────────────────────────────────────────────
@@ -1223,8 +1299,7 @@
 
     // ── Clear filters ─────────────────────────────────────────────────
     function clearFilters() {
-      activeTopic = 'all';
-      activeType  = 'all';
+      Object.values(FILTERS).forEach(set => set.clear());
       searchQuery = '';
       document.getElementById('catalog-search').value = '';
       renderFilterBar();

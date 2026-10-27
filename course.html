@@ -1522,6 +1522,36 @@
       .sidebar { display: none; }
       .content-area { padding: 16px; }
     }
+
+    /* ========== TUTORIAL MODE (course.html?tutorial=<id>) ========== */
+    /* One Supademo, full-bleed: no TOC, no progress bar, no fullscreen toggle */
+    .is-tutorial .sidebar,
+    .is-tutorial #course-fullscreen-btn,
+    .is-tutorial .card-scroll-wrapper,
+    .is-tutorial .card-footer { display: none; }
+    .is-tutorial .progress-container { visibility: hidden; }
+    .is-tutorial .content-area { padding: 24px; }
+    .is-tutorial .content-card { background: transparent; box-shadow: none; border-radius: 0; }
+    .tutorial-stage {
+      flex: 1; min-height: 0;
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px;
+      container-type: size;
+    }
+    .tutorial-stage iframe {
+      /* Largest 16:9 box that fits; other ratios misalign Supademo hotspots */
+      width: min(100cqw, 100cqh * 16 / 9);
+      aspect-ratio: 16 / 9;
+      border: 0; border-radius: 10px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    }
+    .is-tutorial .share-scope-wrap,
+    .is-tutorial #share-save-img-btn { display: none; }
+    .is-tutorial .share-actions { padding-top: 16px; }
+    @media (max-width: 768px) {
+      .is-tutorial .content-area { padding: 16px; }
+      .tutorial-stage { padding: 12px; }
+    }
   </style>
 </head>
 <body>
@@ -1611,6 +1641,7 @@
   </div>
   
   <script src="https://unpkg.com/lottie-web@5.12.2/build/player/lottie.min.js"></script>
+  <script src="tutorials.js"></script>
   <script>
     // ========== GLOBAL STATE ==========
     let courseData = [];
@@ -3685,10 +3716,41 @@
       localStorage.removeItem(`course_position_${currentCourseId}`);
     }
 
+    // ========== TUTORIAL MODE ==========
+    function initTutorial(urlParams) {
+      document.body.classList.add('is-tutorial');
+      const tutorial = (window.TUTORIALS || []).find(t => t.id === urlParams.get('tutorial'));
+
+      // "Course: " is a bare text node ahead of the title span
+      const flowName = document.querySelector('.flow-name');
+      flowName.firstChild.nodeValue = 'Tutorial: ';
+      document.getElementById('flow-title').textContent = tutorial ? tutorial.title : 'Not found';
+      document.title = (tutorial ? tutorial.title : 'Tutorial') + ' - Inact Learn';
+
+      const backBtn = document.getElementById('back-btn');
+      const fromCatalog = urlParams.get('from') === 'catalog';
+      document.getElementById('back-btn-text').textContent = fromCatalog ? 'Catalog' : 'Back';
+      backBtn.onclick = () => {
+        if (fromCatalog || history.length <= 1) window.location.href = 'catalog.html';
+        else history.back();
+      };
+
+      const card = document.getElementById('content-card');
+      const stage = document.createElement('div');
+      stage.className = 'tutorial-stage';
+      if (tutorial) {
+        stage.innerHTML = `<iframe src="${tutorial.embed}" title="${tutorial.title}" allow="clipboard-write; fullscreen" allowfullscreen></iframe>`;
+      } else {
+        stage.innerHTML = '<p style="color:var(--color-muted);font-size:15px;">This tutorial could not be found.</p>';
+      }
+      card.prepend(stage);
+    }
+
     // ========== INITIALIZATION ==========
     (async function() {
       try {
         const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('tutorial')) { initTutorial(urlParams); return; }
         const courseFile = urlParams.get('course') || 'with-UUID/Intro-IN-UUID.txt';
         currentCourseFile = courseFile;
         cameFromHub = urlParams.get('from') === 'hub';
@@ -4004,9 +4066,14 @@
       let activeTrigger = null;
       let currentScope = 'slide';
 
+      const isTutorial = document.body.classList.contains('is-tutorial');
+      const linkLabel = () => isTutorial ? 'Copy tutorial link'
+        : (currentScope === 'slide' ? 'Copy slide link' : 'Copy course link');
+
       function updateScopeUI() {
         const isSlide = currentScope === 'slide';
-        if (copyLbl) copyLbl.textContent = isSlide ? 'Copy slide link' : 'Copy course link';
+        const copyLbl = document.getElementById('copy-btn-label');
+        if (copyLbl) copyLbl.textContent = linkLabel();
         if (saveImgBtn) saveImgBtn.style.display = isSlide ? '' : 'none';
       }
 
@@ -4058,9 +4125,14 @@
       });
 
       copyBtn.addEventListener('click', () => {
+        if (isTutorial) {
+          const shareUrl = new URL(window.location.href);
+          shareUrl.searchParams.delete('from');
+          navigator.clipboard?.writeText(shareUrl.toString()).catch(() => {});
+        }
         copyBtn.classList.add('is-copied');
         copyBtn.innerHTML = '<svg class="sp-check" viewBox="0 0 20 20" fill="none"><polyline class="sp-check-line" points="4,10 8,14 16,6"/></svg> Copied!';
-        const lbl = currentScope === 'slide' ? 'Copy slide link' : 'Copy course link';
+        const lbl = linkLabel();
         const icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
         setTimeout(() => {
           copyBtn.innerHTML = icon + '<span id="copy-btn-label">' + lbl + '</span>';
