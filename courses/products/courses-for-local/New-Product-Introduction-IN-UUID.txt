@@ -14,19 +14,7 @@ In this course, we will look at the question: How are our new products performin
 
 **Let’s get started!**
 ---
-> [next] Let's do it! -> b3e262a3-ddd3-4d18-bc2a-c9af9ffd69bc
-
-slide_id: b3e262a3-ddd3-4d18-bc2a-c9af9ffd69bc
-index_title: The First Stage of the Product Lifecycle
-title: The First Stage of the Product Lifecycle
-type: main
----
-In this course, we focus on the beginning of the product lifecycle. The goal is to make sure new products get the right start and that we quickly see whether they are developing as expected.
-
-The key question is simple: **Are we introducing the right products?**
-![image/size:large/align:center/frame:none](products-new-product-introduction/Lifecycle-Introduction.png)
----
-> [next] Continue -> 5c2aead5-f16b-48ce-8d1e-1439354cbadf
+> [next] Let's do it! -> 5c2aead5-f16b-48ce-8d1e-1439354cbadf
 
 slide_id: 5c2aead5-f16b-48ce-8d1e-1439354cbadf
 index_title: What Happens After Launch?
@@ -42,6 +30,18 @@ That makes early follow up critical. The sooner we see that a new product is fal
 
 **If we do not follow up on new products, today’s new introductions can become tomorrow’s dead stock.**
 ![video/size:large/align:right/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Products/Failing-Products.mp4)
+---
+> [next] Continue -> b3e262a3-ddd3-4d18-bc2a-c9af9ffd69bc
+
+slide_id: b3e262a3-ddd3-4d18-bc2a-c9af9ffd69bc
+index_title: The First Stage of the Product Lifecycle
+title: The First Stage of the Product Lifecycle
+type: main
+---
+You already know the product lifecycle. In this course, we focus on the very beginning. The goal is to make sure new products get the right start and that we quickly see whether they are developing as expected.
+
+The key question is simple: **Are we introducing the right products?**
+![image/size:large/align:center/frame:none](products-new-product-introduction/Lifecycle-Introduction.png)
 ---
 > [next] Continue -> e2664aa4-81d8-49d8-b470-f2f8caeed754
 
