@@ -183,13 +183,14 @@
       color: oklch(0.44 0.025 165);
       font-family: var(--font-family); font-size: 14px; font-weight: 400;
       cursor: pointer; text-align: left;
-      transition: color 0.18s ease, background 0.18s ease;
+      transition: color 0.2s cubic-bezier(0.22,1,0.36,1), background 0.2s cubic-bezier(0.22,1,0.36,1);
       position: relative;
       user-select: none;
     }
     .filter-chip:hover { color: oklch(0.28 0.06 165); background: oklch(0.96 0.005 165); }
+    .filter-chip:active { transform: scale(0.97); transition-duration: 0.08s; }
     .filter-chip.is-checked {
-      color: var(--chip-color, var(--color-primary));
+      color: oklch(0.28 0.06 165);
       font-weight: 600;
     }
     .filter-check { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
@@ -212,9 +213,12 @@
       width: 20px; height: 20px; flex-shrink: 0;
       display: flex; align-items: center; justify-content: center;
       color: oklch(0.70 0.012 165);
-      transition: color 0.18s ease;
+      transition: color 0.2s cubic-bezier(0.22,1,0.36,1),
+                  rotate 0.28s cubic-bezier(0.22,1,0.36,1);
     }
     .filter-chip-icon svg { width: 100%; height: 100%; display: block; }
+    .filter-chip:hover .filter-chip-icon { rotate: -15deg; }
+    .filter-chip:hover:not(.is-checked) .filter-chip-icon { color: oklch(0.48 0.02 165); }
     #filter-group-type .filter-chip-icon { width: 18px; height: 18px; }
     .filter-chip.is-checked .filter-chip-icon { color: var(--chip-color, var(--color-primary)); }
     .filter-chip-label-wrap { display: flex; flex-direction: column; gap: 2px; }
@@ -223,7 +227,6 @@
       color: oklch(0.66 0.008 165); line-height: 1;
       transition: color 0.18s ease;
     }
-    .filter-chip.is-checked .filter-chip-eyebrow { color: var(--chip-color, var(--color-primary)); opacity: 0.65; }
     .filter-chip-label { font-size: 14px; line-height: 1.25; }
 
     /* ── Main content ── */
