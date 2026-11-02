@@ -571,7 +571,7 @@ Extensively used for fluid typography and spacing that scales smoothly between b
 - **Navigation Types**: 
   - `> [next] Label -> Target` for main path navigation
   - `> [sidequest] Label -> Target` for sidequest buttons
-  - `> [next:flow] Label -> URL` for external link buttons (flow links)
+  - `> [link] Label -> URL` for external link buttons (legacy `[next:flow]` is still parsed)
 - **Image Sizes**: Supports predefined sizes (`x-small`, `small`, `medium`, `large`, `third`, `fourth`) and custom pixel sizes (e.g., `size:400px`, `size:625px`)
 - **Image Alignment**: Supports `left`, `center`, `right`. For stacked text+image layouts, use `align:right` on the media; add `valign:top` in the same attribute path for top-aligned stacked layouts (e.g. `align:right/valign:top`).
 - **Hero Slides**: Type `hero` with `hero_image:`, `hero_subtitle:`, `hero_title:`, `hero_body:` fields

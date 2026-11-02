@@ -2619,7 +2619,7 @@
                         const buttonText = navMatch[2].trim();
                         const target = navMatch[3].trim();
                         
-                        if (navType === 'next:flow') {
+                        if (navType === 'next:flow' || navType === 'link') {
                             // External flow link - add to flowLinks
                             if (!currentBlock.flowLinks) currentBlock.flowLinks = [];
                             currentBlock.flowLinks.push({ buttonText, url: target });
@@ -2657,7 +2657,7 @@
                                     // External link or string target
                                     currentBlock.connections[buttonText] = target;
                                 }
-                            } else if (navType === 'next:flow') {
+                            } else if (navType === 'next:flow' || navType === 'link') {
                                 // External flow link
                                 if (!currentBlock.flowLinks) currentBlock.flowLinks = [];
                                 currentBlock.flowLinks.push({ buttonText, url: target });

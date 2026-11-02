@@ -4361,7 +4361,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Add links if present (inside content block)
                     if (slide.links && slide.links.length > 0) {
                         slide.links.forEach(link => {
-                            markdown += `\n> [next:flow] ${link.buttonText} -> ${link.url}`;
+                            markdown += `\n> [link] ${link.buttonText} -> ${link.url}`;
                         });
                     }
                     
@@ -5605,7 +5605,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         
                         if (navType === 'next') {
                             currentBlock.connections[buttonText] = parseInt(target) || target;
-                        } else if (navType === 'next:flow') {
+                        } else if (navType === 'next:flow' || navType === 'link') {
                             if (!currentBlock.links) currentBlock.links = [];
                             currentBlock.links.push({ buttonText, url: target, isFlowLink: true });
                         } else if (navType === 'sidequest') {
@@ -5750,7 +5750,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (!currentSlide.links) currentSlide.links = [];
                         if (!currentSlide.connections) currentSlide.connections = {};
                         
-                        if (navType === 'next:flow') {
+                        if (navType === 'next:flow' || navType === 'link') {
                             // External flow link
                             currentSlide.links.push({ buttonText, url: target, isFlowLink: true });
                         } else if (navType === 'next') {
@@ -6750,7 +6750,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                 if (btnText && url) {
                         if (isFlowLink) {
-                            finalOutput += `> [next:flow] ${btnText} -> ${url}\n`;
+                            finalOutput += `> [link] ${btnText} -> ${url}\n`;
                         } else {
                             // If it's not a URL, treat as sidequest target (slide ID)
                             finalOutput += `> [sidequest] ${btnText} -> ${url}\n`;
@@ -6782,7 +6782,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Add links if present (inside content block)
                     if (slide.links && slide.links.length > 0) {
                         slide.links.forEach(link => {
-                            finalOutput += `\n> [next:flow] ${link.buttonText} -> ${link.url}`;
+                            finalOutput += `\n> [link] ${link.buttonText} -> ${link.url}`;
                         });
                     }
                     

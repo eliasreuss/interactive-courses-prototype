@@ -23,7 +23,7 @@ If you already know your way around, you are good to go.
 ![image/size:large/align:center/frame:none](learn/images/188/c22a56836e0f6763b0651a603dfaa5f377728939882e810aa13e1aac98ee455d)
 ---
 > [next] Continue -> fef23b66-f42a-420e-b1c6-599d06c7476a
-> [next:flow] Open Inact Now Fundamentals -> https://inactnow.io/app/#/learn/learning-paths/3
+> [link] Open Inact Now Fundamentals -> https://inactnow.io/app/#/learn/learning-paths/3
 
 slide_id: fef23b66-f42a-420e-b1c6-599d06c7476a
 index_title: Not Everyone Has the Same Access

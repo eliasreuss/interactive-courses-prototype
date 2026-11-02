@@ -150,7 +150,7 @@ def parse(text):
                     nav_type = nav_match.group(1).strip().lower()
                     # Only next / next:flow are consumed inside content;
                     # a [sidequest] here falls through and renders as text.
-                    if nav_type in ("next", "next:flow"):
+                    if nav_type in ("next", "next:flow", "link"):
                         current.nav.append((line_no, nav_type, nav_match.group(2).strip(),
                                             nav_match.group(3).strip(), True))
                         continue
@@ -285,7 +285,7 @@ def validate(text, repo_root=REPO_ROOT, check_files=True, generated=True):
         # Nav
         labels = {}
         for line_no, nav_type, label, target, in_body in slide.nav:
-            if nav_type not in ("next", "next:flow", "sidequest"):
+            if nav_type not in ("next", "next:flow", "link", "sidequest"):
                 issues.append(Issue("error", "NAV_TYPE_UNKNOWN",
                                     f"unknown nav type {nav_type!r}", slide.label, line_no))
             if in_body and nav_type == "sidequest":
@@ -373,10 +373,10 @@ def validate(text, repo_root=REPO_ROOT, check_files=True, generated=True):
 
     for slide in main:
         for line_no, nav_type, label, target, _ in slide.nav:
-            if nav_type == "next:flow":
+            if nav_type in ("next:flow", "link"):
                 if not target.startswith(("http://", "https://")):
                     issues.append(Issue("error", "NAV_DANGLING",
-                                        f"[next:flow] target is not a URL: {target!r}", slide.label, line_no))
+                                        f"[{nav_type}] target is not a URL: {target!r}", slide.label, line_no))
             elif nav_type == "next":
                 if target not in known and str(coerce_id(target)) not in known:
                     issues.append(Issue("error", "NAV_DANGLING",
