@@ -1,0 +1,105 @@
+[id:1/topic: Welcome to the Course: Your Standard Solution]
+
+slide_id: ddba1bfc-49ba-44d4-9a2f-955495612301
+index_title: Welcome to the Course: Your Standard Solution
+title: Welcome to the Course: Your Standard Solution
+type: hero
+---
+hero_image: learn/images/195/3dd7bdaf4d029c34c01d45fe3ba295a82d061ed8b9359410d36e25a5ad8d74e9
+hero_subtitle: Welcome to the course:
+hero_title: Your Standard Solution
+hero_body: You do not start from zero in Inact Now. A complete standard setup is already waiting for you. This course shows you exactly what is included in your solution.
+
+**Let's get started!**
+---
+> [next] Continue -> a2c43bd4-bd14-4668-92ae-7e0d1c6481fd
+
+slide_id: a2c43bd4-bd14-4668-92ae-7e0d1c6481fd
+index_title: Your Solutions
+title: Your Solutions
+type: main
+---
+Your content in Inact Now is organized by solutions. A solution is a set of insights and a dashboard built around a specific area of your business, such as Inventory, Suppliers, Products, or Customers.
+
+You might have one solution or several.
+![image/size:large/align:center/frame:none](learn/images/196/7a311c76a85444db140c355ffc30186ba0951b26b3c6c81e2f054c25f07f7b73)
+---
+> [next] Continue -> b3a8399e-6853-4be2-83bd-70dcd979a3a1
+
+[id:2/topic: The Four Important Tabs]
+
+slide_id: b3a8399e-6853-4be2-83bd-70dcd979a3a1
+index_title: The Insights Tab
+title: The Insights Tab
+type: main
+---
+Let’s start by exploring the four most important tabs available to you, beginning with Insights.
+
+Each solution includes around 30 ready-to-use Insights. Open the tab to see everything included in your solution.
+
+Every Insight also shows its data source, so you can easily understand where the data comes from.
+
+At the bottom of the list, you’ll find Private Insights, which are only visible to you.
+![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Admin/Admin-Insights-Tab.mp4)
+---
+> [next] Continue -> dc77b097-511e-4e89-bb25-5a6250ea87b5
+
+slide_id: dc77b097-511e-4e89-bb25-5a6250ea87b5
+index_title: The Actions Tab
+title: The Actions Tab
+type: main
+---
+If you are an Admin, you also have an Actions tab.
+
+Right now, it may be empty, and that’s completely normal.
+
+In the following courses, you will learn how to create and distribute actions to your team.
+![image/size:large/align:center/frame:none](learn/images/192/4752e1aaeab0a5d975611464c259110a439745edd89530f366efeb8875d6925e)
+---
+> [next] Continue -> cea1a09d-bb89-4031-a0f9-1c6fac4a4527
+
+slide_id: cea1a09d-bb89-4031-a0f9-1c6fac4a4527
+index_title: The Dashboards Tab
+title: The Dashboards Tab
+type: main
+---
+Next, we have the Dashboards tab.
+
+Each solution includes one pre-built dashboard. For example, if you’re using the Inventory solution, you’ll have the Inventory dashboard ready to go.
+
+Admins typically build and distribute additional dashboards on top of this.In the following courses, you will learn how to create and distribute dashboards.
+![image/size:large/align:center/frame:none](learn/images/193/d6d9ab5ee4181f4cbd420d6692e8748e74d15e37d2eacc6619d035e5c10a9453)
+---
+> [next] Continue -> ccb9c7a4-9956-4886-b138-47f666765627
+
+slide_id: ccb9c7a4-9956-4886-b138-47f666765627
+index_title: The Data Tab
+title: The Data Tab
+type: main
+---
+If you’re ever unsure what a column means or want to understand exactly what data you’re working with, head to the **Data tab.**
+
+Here you can see all available columns, along with a description and a real example from your data.
+
+The Data tab is also where you can download your data, including historical data.
+
+Think of it as your go-to reference whenever something is unclear.
+![image/size:large/align:center/frame:none](learn/images/194/bf9a054b9a7ff50d8dbbdd7e7cbe9a86f4696e3aba2394cf7f575d05b068c5cc)
+---
+> [next] Continue -> a466afe9-dc45-4760-8948-83492d97de8f
+
+[id:3/topic: Congratulations! You Have Completed the Standard Course]
+
+slide_id: a466afe9-dc45-4760-8948-83492d97de8f
+index_title: Congratulations! You Have Completed the Standard Course
+title: Congratulations! You Have Completed the Standard Course
+type: main
+layout: standard-2-col
+---
+You now know what is already built for you and where to find it.
+
+Next up is the Custom course. You will learn how to customize your setup in edit mode.
+
+Let's keep going!
+![image/size:large/align:right/frame:none](learn/images/195/3dd7bdaf4d029c34c01d45fe3ba295a82d061ed8b9359410d36e25a5ad8d74e9)
+---

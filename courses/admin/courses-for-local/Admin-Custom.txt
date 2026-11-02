@@ -137,7 +137,7 @@ Let's keep going!
 
 [id:s1/topic: Edit Mode for Insights Walkthrough]
 
-slide_id: 1
+slide_id: bf15318f-999c-4f6e-892c-94aa13a6df60
 title: Edit Mode for Insights Walkthrough
 type: sidequest
 backLabel: Return to course
@@ -148,7 +148,7 @@ Go through the tutorial below to learn about Edit Mode for Insights:
 
 [id:s2/topic: Creating Actions Walkthrough]
 
-slide_id: 1
+slide_id: eb0d9f1f-c7d3-4077-885c-1454e0e1dc27
 title: Creating Actions Walkthrough
 type: sidequest
 backLabel: Return to course
@@ -159,7 +159,7 @@ Go through the tutorial below to learn how to create Actions.
 
 [id:s3/topic: Creating and Editing Dashboards]
 
-slide_id: 1
+slide_id: a02ae7c3-f1f3-4c7e-80aa-214955454fdf
 title: Creating and Editing Dashboards
 type: sidequest
 backLabel: Return to course

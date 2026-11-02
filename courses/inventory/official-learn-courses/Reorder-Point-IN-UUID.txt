@@ -103,7 +103,7 @@ In the next course, **Reorder Quantity**, you’ll learn how to calculate the ri
 
 [id:s1/topic: Opening the Insight: Reorder Point]
 
-slide_id: 61bc2a16-ed78-4309-8013-1ef80d70b5a4
+slide_id: f2401761-eee2-4a72-88d2-ad3ea70b73d8
 title: **Opening the Insight: Reorder Point**
 type: sidequest
 backLabel: Return to course

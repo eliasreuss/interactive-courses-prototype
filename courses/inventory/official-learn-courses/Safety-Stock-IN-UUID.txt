@@ -226,7 +226,7 @@ In the next course, **Reorder Point**, you’ll learn how to do just that.
 
 [id:s1/topic: Opening the Insight: Safety Stock / Simulation]
 
-slide_id: 1
+slide_id: b3dee91a-0046-4f0e-9b3f-f23a57e5f0f5
 title: Opening the Insight: Safety Stock / Simulation
 type: sidequest
 backLabel: Return to main path

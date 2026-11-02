@@ -12,7 +12,7 @@ hero_body: This is the intro to a five-part learning path. By the end, you’ll 
 > [next] Let's do it! -> c3f35e81-af77-49e8-b3aa-2db1d42796b9
 
 slide_id: c3f35e81-af77-49e8-b3aa-2db1d42796b9
-index_title: What to Stock? How Much to Stock? How Much to Order?
+index_title: What to Stock?
 title: **The Three Pillars of Inventory Management**
 type: main
 ---

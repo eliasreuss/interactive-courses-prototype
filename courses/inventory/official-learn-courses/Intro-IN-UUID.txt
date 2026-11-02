@@ -4,7 +4,7 @@ title:
 title-align: center
 type: hero
 ---
-hero_image: intro/Intro-Path-Cover-2.png
+hero_image: learn/images/11/bc65134005dfc0720397462183ba297347cf64dd334c3c18c4866912533cf338
 hero_subtitle: Welcome to the learning path:
 hero_title: Introduction to Inact for Inventory Management
 hero_body: This is the intro to a five-part learning path. By the end, you’ll understand the fundamentals of inventory management and be ready to use Inact Now confidently in your daily work!
@@ -12,7 +12,7 @@ hero_body: This is the intro to a five-part learning path. By the end, you’ll 
 > [next] Let's do it! -> c3f35e81-af77-49e8-b3aa-2db1d42796b9
 
 slide_id: c3f35e81-af77-49e8-b3aa-2db1d42796b9
-index_title: What to Stock? How Much to Stock? How Much to Order?
+index_title: What to Stock?
 title: **The Three Pillars of Inventory Management**
 type: main
 ---
@@ -20,13 +20,13 @@ At its core, inventory optimization boils down to answering three questions:
 
 {columns}
 {column}
-![image 1/size:third/align:center/frame:none](intro/What-To-Stock.png)
+![image 1/size:third/align:center/frame:none](learn/images/7/d4855086cca6ef11e047ffd772a590d87ee4877392c37e4ad0ee6b719d4c61e0)
 {/column}
 {column}
-![image 2/size:third/align:center/frame:none](intro/How-Much-To-Stock.png)
+![image 2/size:third/align:center/frame:none](learn/images/3/a8780c11ad2f74602e8ed0cce7a593c5629c2b90d0736f1d67c62dcd84ea88dc)
 {/column}
 {column}
-![image 3/size:third/align:center/frame:none](intro/How-Much-To-Order.png)
+![image 3/size:third/align:center/frame:none](learn/images/2/d24f4fc53c4ce73943ebd6fd7693146a0b28325183ef37c9b13f3a143c56dadd)
 {/column}
 {/columns}
 
@@ -41,7 +41,7 @@ type: main
 ---
 **You have probably seen this dynamic before:**
 
-![image/size:large/align:center/frame:none](intro/Triangle-Dynamic.png)
+![image/size:large/align:center/frame:none](learn/images/5/3975e985000c3f0f4d3fad75b24aa902c8baaf5a1cfe921b3ffd7934ce43ee7f)
 
 This tug of war between priorities makes it essential to find the right balance to keep the business healthy and profitable.
 ---
@@ -58,13 +58,13 @@ In fact, most companies are sitting on 15-35% excess inventory as a result of 
 
 {columns}
 {column}
-![image 1/size:third/align:center/frame:none](intro/Rising-Inventory-Capital.png)
+![image 1/size:third/align:center/frame:none](learn/images/10/366a87a21ab60ce1e37a69c5993a7d285afb2b698130e54bdcca15584f9330b9)
 {/column}
 {column}
-![image 2/size:third/align:center/frame:none](intro/Too-Low-Turnover-Rate.png)
+![image 2/size:third/align:center/frame:none](learn/images/6/08e940d661bb701541440bd3f03ebc4d79cdb626f2389f660bdc18b3488ff422)
 {/column}
 {column}
-![image 3/size:third/align:center/frame:none](intro/Obsolete-Goods-And-Write-Offs.png)
+![image 3/size:third/align:center/frame:none](learn/images/9/30889648360ef9d0969d1d8e47b3442b0ed7bca79a569634a2c2055c145a9bc9)
 {/column}
 {/columns}
 
@@ -79,7 +79,7 @@ type: main
 ---
 This is the goal: Inventory management that keeps the right products in stock - using optimal reorder points and quantities - without binding unnecessary capital. 
 
-![image/size:large/align:center/frame:none](intro/Full-Picture-ROP-ROQ.png)
+![image/size:large/align:center/frame:none](learn/images/1/9df9c3e1a4e335f45ea189cbd2ae765b3d6488d77d123b6231e1a92aba428c71)
 
 So, if you’re ready, let’s take a look at what we will go through in the learning path.
 ---
@@ -92,7 +92,7 @@ type: main
 ---
 Here are the five subjects we’ll cover:
 
-![image/size:large/align:center/frame:none](intro/Learning-Path-Overview.png)
+![image/size:large/align:center/frame:none](learn/images/15/eef66883804dd96e5921f557cc630153a65a7ff8ad9c76d8a78c7c379c4de3a6)
 
 From here, you can continue to the first course, “Double ABC Analysis,” or return to the learning path overview.
 ---

@@ -126,7 +126,7 @@ In the **Safety Stock** course, you’ll learn how to:
 
 [id:s1/topic: How to Open the Insight]
 
-slide_id: 1
+slide_id: f1241064-303c-4f05-b0bd-f83bafadede8
 title: How to Open the Insight
 type: sidequest
 backLabel: Return to course

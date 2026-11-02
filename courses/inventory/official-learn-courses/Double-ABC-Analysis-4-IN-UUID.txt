@@ -9,7 +9,7 @@ type: hero
 hero_image: learn/images/17/62dadf19f105f2b096eb973b7617c2f642ef5b0e1f0a887a9cb8f4a645743657
 hero_subtitle: Welcome to the course:
 hero_title: Double ABC Analysis
-hero_body: In this course you will explore what the double ABC analysis is , why it matters, how it looks in Inact Now and what the sepcial categories are. 
+hero_body: In this course you will explore what the double ABC analysis is , why it matters, how it looks in Inact Now and what the special categories are. 
 
 **Let’s get started!**
 ---
@@ -275,7 +275,7 @@ In the Stock Policy course, we will learn how to decide which items to stock, id
 
 [id:s1/topic: No Problem, We'll Go Through How to Open It Step by Step]
 
-slide_id: a3eac2fd-5b01-4ce4-8855-086866d1e838
+slide_id: d3e6caa7-8762-4764-8bec-88702cc37fd1
 title: No Problem, We'll Go Through How to Open It Step by Step
 type: sidequest
 backLabel: Return to course
@@ -288,7 +288,7 @@ Follow the interactive tutorial below to learn how to open the Double ABC Analys
 
 [id:s2/topic: Quick Tip]
 
-slide_id: a3eac2fd-5b01-4ce4-8855-086866d1e838
+slide_id: da390df7-6424-478b-b666-05de91d35b27
 title: Quick Tip
 type: sidequest
 backLabel: Return to main path

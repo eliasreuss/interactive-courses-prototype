@@ -203,7 +203,7 @@ You have successfully completed the learning path. You are ready to start optimi
 
 [id:s1/topic: Opening the Insight: Reorder Quantity]
 
-slide_id: fac051f3-6875-485f-98fa-21daac359ecd
+slide_id: a1d33f78-4a7b-44b7-8d47-5e071cec337f
 title: **Opening the Insight: Reorder Quantity**
 type: sidequest
 backLabel: Return to main path
