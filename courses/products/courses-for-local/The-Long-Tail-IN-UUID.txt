@@ -80,7 +80,7 @@ Therefore, before we phase out our bad products, we need to ask: Who’s buying 
 
 A Turnaround product that is not purchased by any important customers is very different from a Turnaround product that an important customer depends on.
 
-When looking at individual products in Inact Now, you can see which specific customers buy that product, and which category those customers fall into. Let’s try it using the Category Management Insight. Go through the tutorial below,
+When looking at individual products in Inact Now, you can see which specific customers buy that product, and which category those customers fall into. Let’s try it using the Category Management Insight. Go through the tutorial below.
 [supademo: Category Management - Performance View](https://app.supademo.com/embed/cmumkg7bh13k9qmfhbidnd7ky?embed_v=2&utm_source=embed)
 ---
 > [next] Continue -> eceb22bd-ec93-4648-a01f-6825c31b6c4a
@@ -96,8 +96,8 @@ layout: standard-2-col
 You can now answer the questions we started with.
 
 Which products and categories are performing?
-What does it really costs to sell them?
-How are your new products are doing?
+What does it really cost to sell them?
+How are your new products doing?
 Which products should leave the portfolio?
 
 Next, we bring these decisions together across the full value chain in the End to End learning path.

@@ -87,7 +87,7 @@ As the product moves through its first 12 months, we continue to assess whether 
 
 slide_id: 8f4b0d55-4f3a-4b16-9a3e-1f7e6c2d0a91
 index_title: New Product Introduction Framework - Insight Walkthrough
-title: New Product Introduction Framework -  Insight Walkthrough
+title: New Product Introduction Framework - Insight Walkthrough
 type: main
 ---
 Now you know how the framework works.
@@ -132,9 +132,7 @@ type: main
 ---
 With clear ownership in place, the company could follow new products more closely after launch.
 
-Products that needed attention were reviewed by the Product Coordinator and Product Manager, who agreed on what to do next. Suppliers could also be involved when needed.
-
-The goal was to act early, before weak products developed into dead stock.
+Products that needed attention were reviewed by the Product Coordinator and Product Manager, who agreed on what to do next. Suppliers could also be involved when needed. The goal was to act early, before weak products developed into dead stock.
 ![image/size:large/align:center/frame:none](products-new-product-introduction/Warning-Products.png)
 ---
 > [next] Continue -> 392b35df-1885-4d15-9300-a3a260770120
@@ -178,7 +176,7 @@ layout: standard-2-col
 ---
 You’ve learned how to follow new products after they enter the portfolio, identify products that are not gaining traction, and take action before they become a larger problem.
 
-But even with a better introduction process, every portfolio will contain products that have reached the end of their lifecycle. In the next course, Phase Out, we will look at how to identify which products should leave the portfolio.
+But even with a better introduction process, every portfolio will contain products that have reached the end of their lifecycle. In the next course, The Long Tail, we will look at how to identify which products should leave the portfolio.
 
 **Let’s keep going!**
 ![image/size:large/align:right/frame:none](products-new-product-introduction/Hero.png)

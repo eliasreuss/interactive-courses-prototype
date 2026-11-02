@@ -19,20 +19,8 @@ index_title: The Product Life Cycle
 title: The Product Life Cycle
 type: main
 ---
-Products need different attention depending on where they are in their life cycle. The Products solution supports you across four areas.
+Every stage of the product life cycle is different, and so is the approach. Inact Now provides insights and frameworks to help you master each stage.
 ![image/size:large/align:center/frame:none](products-intro/PLC-All-Green.png)
----
-> [next] Continue -> 4b3e07bb-27cb-46e8-9dd0-db65886f1aaf
-
-slide_id: 4b3e07bb-27cb-46e8-9dd0-db65886f1aaf
-index_title: Growth and Maturity
-title: Growth and Maturity
-type: main
----
-We start with our established products. Here, we need to decide where to focus.
-
-With thousands of products in the portfolio, we cannot give them all the same attention. Category Management groups products into Protect, Develop, Grow and Turnaround, so we can focus on the products that matter most and ask the right questions for each category.
-![image/size:large/align:center/frame:none](products-intro/PLC-Growth-Maturity.png)
 ---
 > [next] Continue -> 8acf2044-8305-4d42-81dd-de00db08ded2
 
@@ -41,21 +29,33 @@ index_title: New Product Introduction
 title: New Product Introduction
 type: main
 ---
-Then, we move to new product introduction. New products need close attention from the start.
+Your business depends on introducing new products successfully, but not every product makes it.
 
-The NPI Framework follows new products during their first 12 months and helps you see whether they are developing as expected.
+The New Product Introduction framework monitors your products during their first 12 months, so you can spot your future cash cows and the products that are falling behind.
 ![image/size:large/align:center/frame:none](products-intro/PLC-Introduction.png)
+---
+> [next] Continue -> 4b3e07bb-27cb-46e8-9dd0-db65886f1aaf
+
+slide_id: 4b3e07bb-27cb-46e8-9dd0-db65886f1aaf
+index_title: Growth and Maturity
+title: Growth and Maturity
+type: main
+---
+**Your product portfolio needs care and strategic insight for your business to grow.**
+
+The Category Management framework groups your products by performance, so you can dive into your cash cows, run a long-tail analysis and identify the products that erode your profits.
+![image/size:large/align:center/frame:none](products-intro/PLC-Growth-Maturity.png)
 ---
 > [next] Continue -> c1466fe3-e11f-44c7-a25d-0edd608227e3
 
 slide_id: c1466fe3-e11f-44c7-a25d-0edd608227e3
-index_title: The Long Tail
-title: The Long Tail
+index_title: End-of-life
+title: End-of-life
 type: main
 ---
 Over time, some products stop earning their place in the portfolio.
 
-But poor performance does not automatically mean a product should leave. Before we phase it out, we also need to understand who is buying it. Linked Revenue helps us make that connection.
+Inact Now runs a long-tail analysis so you can decide which products to cut from your portfolio. Beware, some long-tail items are linked to key customers.
 ![image/size:large/align:center/frame:none](products-intro/PLC-Decline.png)
 ---
 > [next] Continue -> bbdf7dee-7314-46e5-8558-e05644091080

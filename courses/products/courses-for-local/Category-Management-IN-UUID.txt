@@ -25,7 +25,7 @@ Most product portfolios follow a familiar pattern. A small share of products cre
 The 80/20 principle gives us a useful rule of thumb. Around 20% of your products often generate about 80% of the profit.
 
 So the first question is simple: Which products are driving your performance?
-![image/size:550px/align:right/frame:none](products-category-management/80:20.png)
+![image/size:550px/align:right/frame:none](products-category-management/80-20.png)
 ---
 > [next] Continue -> df020b81-2d0d-4e07-a8d4-7a3e17563d80
 
@@ -149,7 +149,7 @@ layout: standard-2-col
 ---
 Indirect costs are a hidden profit drain to most businesses. Cost to serve goes unnoticed, while profits are slowly eroding.
 
-What seems to be profitable at level one, is 19.8% less profitable in the example on the right when adding customer service, order handling and logistics.
+What seems to be profitable at level one, is 35.6% less profitable in the example on the right when adding customer service, order handling and logistics.
 ![image/size:large/align:right/frame:none](products-category-management/Indirect-Costs.png)
 ---
 > [next] Continue -> fa52b4fe-fc76-4dde-bf54-d756fe5fbe78
