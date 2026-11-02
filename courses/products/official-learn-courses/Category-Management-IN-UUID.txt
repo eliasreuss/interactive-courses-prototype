@@ -1,0 +1,171 @@
+[id:1/topic: Welcome to Category Management]
+
+slide_id: ee17c5e5-e853-480b-a2a6-04e5992c2924
+index_title: Welcome to Category Management
+title:
+type: hero
+---
+hero_image: learn/images/235/6c6b6e22f119cb010ba88056566318c8c37d2037861bf949ea98b21e944f1eff
+hero_subtitle: Welcome to the course:
+hero_title: Category Management
+hero_body: In this course, you will learn how to identify which products and categories perform well, which ones need attention, and where the biggest opportunities are.
+
+**Let’s get started!**
+---
+> [next] Let's do it! -> eb2a3812-a562-46ff-bef3-223d74117d10
+
+slide_id: eb2a3812-a562-46ff-bef3-223d74117d10
+index_title: A Few Products Drive Most of the Profit
+title: A Few Products Drive Most of the Profit
+type: main
+layout: standard-2-col
+---
+Most product portfolios follow a familiar pattern. A small share of products creates a large share of the result.
+
+The 80/20 principle gives us a useful rule of thumb. Around 20% of your products often generate about 80% of the profit.
+
+So the first question is simple: Which products are driving your performance?
+![image/size:550px/align:right/frame:none](learn/images/223/e94e78ad7283d04ae76bb047dfda2ad3ba1730215db0df83bc2fd7157b45634d)
+---
+> [next] Continue -> df020b81-2d0d-4e07-a8d4-7a3e17563d80
+
+[id:2/topic: KPI Benchmark]
+
+slide_id: df020b81-2d0d-4e07-a8d4-7a3e17563d80
+index_title: Start With the Big Picture
+title: Start With the Big Picture
+type: main
+---
+To find the products that matter most, you first need a clear view of how your portfolio performs. The KPI Benchmark Insight gives you this overview. It allows you to compare performance across categories and drill down to individual products.
+
+Click through the tutorial below to learn how to effectively get an overview with the KPI Benchmark Insight.
+[supademo: KPI Benchmark - Insight Walkthrough](https://app.supademo.com/embed/cmtr0bray1wa3qm30wixq0yze?embed_v=2&utm_source=embed)
+---
+> [next] Continue -> eb51be1b-3796-4c0d-a6e7-93c41cd475f6
+
+[id:3/topic: The Four Categories]
+
+slide_id: eb51be1b-3796-4c0d-a6e7-93c41cd475f6
+index_title: The 80/20 Framework
+title: The 80/20 Framework
+type: main
+layout: standard-2-col
+---
+Now that you know what to measure, where do we start? With thousands of products, we can’t tackle them all at once.
+
+We need to focus our energy where it creates the biggest impact.
+
+**Therefore, we categorize our products to find the ones that matter most.**
+![image/size:large/align:right/frame:none](learn/images/234/3a18c6f762783ca34929de4528a31e86f07f551b52980873e0d505fa38bdc2b4)
+---
+> [next] Continue -> af1bc7c1-3e78-4d27-ab25-492ff5472915
+
+slide_id: af1bc7c1-3e78-4d27-ab25-492ff5472915
+index_title: The Four Categories
+title: The Four Categories
+type: main
+---
+So, how do we categorize them?
+
+We do it through two commercial lenses: **Revenue** and **Margin.**
+
+Each product is assessed by its revenue and margin, and its performance on these two measures determines which category it belongs to.
+
+![image/size:large/align:center/frame:none](learn/images/225/05dad7bc53f82221bfccaebc9445c52a04b8de267e11305b2f7ef4f20e5ae8f9)
+---
+> [next] Continue -> d831a1d7-b41d-4753-8aeb-3da0bc1282c4
+
+slide_id: d831a1d7-b41d-4753-8aeb-3da0bc1282c4
+index_title: Different Categories, Different Priorities
+title: Different Categories, Different Priorities
+type: main
+---
+Once a product is categorized, we have a much better idea of what it needs. The goal is different in each category.
+![image/size:large/align:center/frame:none](learn/images/232/641d225b1dd19d73596ec4dab65732043ff6fa36ea100cb954e0dbfabf13f19c)
+---
+> [next] Continue -> 63ad9f0f-980e-42f0-b85e-88f37bb82c06
+
+slide_id: 63ad9f0f-980e-42f0-b85e-88f37bb82c06
+index_title: Move Products in the Right Direction
+title: Move Products in the Right Direction
+type: main
+---
+These actions have one purpose. Improve the position of each product and create a healthier portfolio.
+
+The goal is to move products towards stronger revenue and margin, or make a clear decision when they no longer belong.
+
+![image/size:large/align:center/frame:none](learn/images/228/21483a0427bc7a0667fc69c91264fcf07132101340ed60bb4313ec6326d10c9a)
+---
+> [next] Continue -> c8b8f670-3203-40a2-9ff5-2e03ea86ec3b
+
+slide_id: c8b8f670-3203-40a2-9ff5-2e03ea86ec3b
+index_title: Category Management Insight Walkthrough
+title: Category Management Insight Walkthrough
+type: main
+---
+Now that you know the four categories, let’s apply them to your own portfolio.
+
+The **Category Management Insight** shows how your products are split across Protect, Develop, Grow and Turnaround.
+
+[supademo: Category Management - Insight Walkthrough](https://app.supademo.com/embed/cmtr8ks032f1bqm300zf70nv1?embed_v=2&utm_source=embed)
+---
+> [next] Continue -> ea3704b0-0f8a-40c3-a1e3-b2c5f29e019d
+
+[id:4/topic: Product Profitability]
+
+slide_id: ea3704b0-0f8a-40c3-a1e3-b2c5f29e019d
+index_title: Hidden Costs Erode Your Profits
+title: Hidden Costs Erode Your Profits
+type: main
+layout: standard-2-col
+---
+It often costs more to sell a product than you think.
+
+Say you buy a product for 100 and sell it for 150, so you made 50. But the freight in takes 10, receiving it and putting it on the shelf takes another 5, the salesperson gets a bonus of 10, and sending it out to the customer takes 5 more.
+
+**You thought you made 50, but you actually made 20.**
+![video/size:large/align:right/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Products/Profit-Margin-Breakdown.mp4)
+---
+> [next] Continue -> 92f71642-d2a3-42a5-b052-d40f8137af3c
+
+slide_id: 92f71642-d2a3-42a5-b052-d40f8137af3c
+index_title: Gross Profit I and II
+title: Gross Profit I and II
+type: main
+layout: standard-2-col
+---
+Inact Now provides a P&L for every product or product group.
+
+Add shipping and discounts to your P&L and reveal the true profits with Gross Profit II.
+![image/size:large/align:right/frame:none](learn/images/231/d962daac9072c1010173983af50822cff26aa9e54822421cc2fed2ac67e9a8e4)
+---
+> [next] Continue -> b96e8b69-4c83-4229-821c-eb956a42ff0c
+
+slide_id: b96e8b69-4c83-4229-821c-eb956a42ff0c
+index_title: Cost to Serve
+title: Cost to Serve
+type: main
+layout: standard-2-col
+---
+Indirect costs are a hidden profit drain to most businesses. Cost to serve goes unnoticed, while profits are slowly eroding.
+
+What seems to be profitable at level one, is 35.6% less profitable in the example on the right when adding customer service, order handling and logistics.
+![image/size:large/align:right/frame:none](learn/images/236/632228c63fa0c2f3e1a0d36825bb710a593d12f4141ee48fa25712ac2c07055c)
+---
+> [next] Continue -> fa52b4fe-fc76-4dde-bf54-d756fe5fbe78
+
+[id:5/topic: What’s Next?]
+
+slide_id: fa52b4fe-fc76-4dde-bf54-d756fe5fbe78
+index_title: Congratulations
+title: Congratulations! You’ve Completed the Category Management Course
+type: main
+layout: standard-2-col
+---
+You’ve learned what the four product categories mean and how they help you see where to focus.
+
+This gives you a clear starting point for deciding where to protect performance, improve margins, grow sales or take a closer look at weak products.
+
+**Let’s keep going!**
+![image/size:large/align:right/frame:none](learn/images/235/6c6b6e22f119cb010ba88056566318c8c37d2037861bf949ea98b21e944f1eff)
+---

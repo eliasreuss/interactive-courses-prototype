@@ -1,0 +1,75 @@
+slide_id: a2104816-aa89-466a-88d6-630acc59733c
+index_title: Welcome to the Learning Path: Product Management
+title: 
+type: hero
+---
+hero_image: learn/images/218/9460e9759902ef73e8a994aa04038b6be1bed7c71cfc28e8a8284265b5d409b3
+hero_subtitle: Welcome to the Learning Path:
+hero_title: Product Management
+hero_body: Product Management is about managing your portfolio throughout the product life cycle.
+
+In this learning path, you will learn how to manage products from introduction to growth, maturity and eventually phase out.
+
+**Let’s get started!**
+---
+> [next] Let's do it! -> b0d1e64b-1092-44b2-8367-3ec8a88f0bf4
+
+slide_id: b0d1e64b-1092-44b2-8367-3ec8a88f0bf4
+index_title: The Product Life Cycle
+title: The Product Life Cycle
+type: main
+---
+Every stage of the product life cycle is different, and so is the approach. Inact Now provides insights and frameworks to help you master each stage.
+![video/size:large/align:center/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Products/product-lifecycle-loop.mp4)
+---
+> [next] Continue -> 8acf2044-8305-4d42-81dd-de00db08ded2
+
+slide_id: 8acf2044-8305-4d42-81dd-de00db08ded2
+index_title: New Product Introduction
+title: New Product Introduction
+type: main
+---
+Your business depends on introducing new products successfully, but not every product makes it.
+
+The New Product Introduction framework monitors your products during their first 12 months, so you can spot your future cash cows and the products that are falling behind.
+![image/size:large/align:center/frame:none](learn/images/222/1f1afbfaebd147a3cfee93a267a2af2ed885ba746cb098c946f4aefefd79bc9a)
+---
+> [next] Continue -> 4b3e07bb-27cb-46e8-9dd0-db65886f1aaf
+
+slide_id: 4b3e07bb-27cb-46e8-9dd0-db65886f1aaf
+index_title: Growth and Maturity
+title: Growth and Maturity
+type: main
+---
+**Your product portfolio needs care and strategic insight for your business to grow.**
+
+The Category Management framework groups your products by performance, so you can dive into your cash cows, run a long-tail analysis and identify the products that erode your profits.
+![image/size:large/align:center/frame:none](learn/images/221/0b367a72ce44d15b5416230d489fd1d9d2422bfee4e9f124c5e8bbeb52203e42)
+---
+> [next] Continue -> c1466fe3-e11f-44c7-a25d-0edd608227e3
+
+slide_id: c1466fe3-e11f-44c7-a25d-0edd608227e3
+index_title: End-of-life
+title: End-of-life
+type: main
+---
+Over time, some products stop earning their place in the portfolio.
+
+Inact Now runs a long-tail analysis so you can decide which products to cut from your portfolio. Beware, some long-tail items are linked to key customers.
+![image/size:large/align:center/frame:none](learn/images/220/824f88cb200f820099facbe777a99abd89858841351bc26081f511c792a572e0)
+---
+> [next] Continue -> bbdf7dee-7314-46e5-8558-e05644091080
+
+slide_id: bbdf7dee-7314-46e5-8558-e05644091080
+index_title: Congratulations
+title: Congratulations! You’ve Completed the Introduction to Product Management
+type: main
+layout: standard-2-col
+---
+You now know how the Products solution supports the product life cycle. In the next three courses, you will look at each part in more detail.
+
+We will start with Category Management and look at how to understand and manage your existing portfolio.
+
+**Let’s keep going!**
+![image/size:large/align:right/frame:none](learn/images/218/9460e9759902ef73e8a994aa04038b6be1bed7c71cfc28e8a8284265b5d409b3)
+---
