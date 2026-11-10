@@ -5,7 +5,7 @@ index_title: Welcome to Linked Revenue
 title: 
 type: hero
 ---
-hero_image: placeholder-images/Illustration.png
+hero_image: customers-linked-revenue/Hero-Correct.png
 hero_subtitle: Welcome to the course:
 hero_title: Linked revenue
 hero_body: In the previous courses, you segmented your customer portfolio and looked at the profitability of individual customer relationships.
@@ -120,5 +120,5 @@ You can now connect customers to the products they buy and the suppliers behind 
 This helps you distinguish between complexity that supports important customers and complexity that may need to be challenged.
 
 Next, we will use these relationships to see where the business should focus its commercial efforts.
-![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
+![image/size:large/align:right/frame:none](customers-linked-revenue/Hero-Correct.png)
 ---

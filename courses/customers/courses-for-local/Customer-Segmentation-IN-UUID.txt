@@ -5,7 +5,7 @@ index_title: Welcome to Customer Segmentation
 title: 
 type: hero
 ---
-hero_image: placeholder-images/Illustration.png
+hero_image: customers-customer-segmentation/Hero2.png
 hero_subtitle: Welcome to the course:
 hero_title: Customer Segmentation
 hero_body: In this course, you will learn how to segment your customer portfolio, identify which customers matter most, and understand where your attention should go.
@@ -33,11 +33,10 @@ index_title: The Four Customer Categories
 title: The Four Customer Categories
 type: main
 ---
-So, how do we do this? 
-
-Exactly as we did with Products, we divide our customers into the four categories we already know. Just like different products, different customers need different policies for how we serve and manage them.
-
+Just as we did with Products, we divide our customers into four categories:
 ![image/size:large/align:center/frame:none](customers-customer-segmentation/The-Four-Categories.png)
+
+Just like different products, different customers require different levels of attention and prioritisation.
 ---
 > [next] Continue -> aac71e54-7954-4c0c-a50c-fe65718b0f13
 
@@ -62,10 +61,12 @@ layout: standard-2-col
 ---
 Segmentation already gives us a strong overview of where revenue and profit are concentrated across the customer portfolio.
 
-**But we can go even deeper.**
+But we can go even deeper.
+
+Instead of looking at profitability across customer categories, we can examine the economics behind the individual customer relationships.
 
 In the next course Customer Profitability, we will answer:
 
 **What do we actually earn on our customers?**
-![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
+![image/size:large/align:right/frame:none](customers-customer-segmentation/Hero2.png)
 ---

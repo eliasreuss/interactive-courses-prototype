@@ -5,7 +5,7 @@ index_title: Welcome to Customer Profitability
 title: 
 type: hero
 ---
-hero_image: placeholder-images/Illustration.png
+hero_image: customers-customer-profitability/Hero2.png
 hero_subtitle: Welcome to the course:
 hero_title: Customer Profitability
 hero_body: In the previous course, you segmented your customer portfolio to understand which customers matter most.
@@ -72,5 +72,5 @@ You have completed Customer Profitability.
 Next, we move beyond the customer in isolation and look at the relationships between customers, products and suppliers.
 
 **Which relationships create value, and which create complexity?**
-![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
+![image/size:large/align:right/frame:none](customers-customer-profitability/Hero2.png)
 ---

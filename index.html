@@ -76,6 +76,7 @@
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(48, 70, 66, 0.08);
+    view-transition-name: site-header; /* keep the sticky header above transition snapshots */
   }
 
   .header-left {
@@ -1063,6 +1064,7 @@
   /* ── LP DECK (multi-path per topic) — fanned card carousel ── */
   /* Single-path: a lone in-flow card. Multi-path: a fanned stack. */
   .lp-deck-stage { position: relative; }
+  #lp-deck-wrap { overflow-anchor: none; }
 
   .lp-deck {
     position: relative;
@@ -1179,6 +1181,344 @@
   }
   .sol-toggle-wrap::-webkit-scrollbar { display: none; }
 
+  /* ══════════════════════════════════════
+     WELCOME — intro section for learners with zero progress
+     Same family as .learning-card: tinted surface, 20px dot grid,
+     tinted 1px border, 22px radius, hand-drawn illustrations.
+     ══════════════════════════════════════ */
+  .home-section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+  .home-section-title {
+    margin: 0;
+    font-size: 24px; font-weight: 700; line-height: 1.25; letter-spacing: -0.02em;
+    color: var(--color-primary);
+  }
+  .welcome-section:not([hidden]) + .paths-head { margin-top: 40px; }
+
+  /* "Watch intro": brings a hidden intro back */
+  .paths-watch {
+    display: inline-flex; align-items: center; gap: 7px;
+    min-height: 36px; margin-right: -12px; padding: 0 12px;
+    border: none; border-radius: 100px; background: transparent; cursor: pointer;
+    font-family: var(--font-family); font-size: 13px; font-weight: 500;
+    color: rgba(48, 70, 66, 0.66);
+    transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+  }
+  .paths-watch[hidden] { display: none; }
+  .paths-watch svg { width: 13px; height: 13px; flex-shrink: 0; transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1); }
+  .paths-watch:hover { background: rgba(48, 70, 66, 0.06); color: var(--color-primary); }
+  .paths-watch:hover svg { transform: translateX(1px) scale(1.12); }
+  .paths-watch:active { transform: scale(0.96); }
+  .paths-watch:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+
+  @media (prefers-reduced-motion: reduce) { .paths-watch, .paths-watch svg { transition: none; } }
+  @media (prefers-reduced-motion: no-preference) {
+    .paths-watch:not([hidden]) { animation: welcomeFade 0.3s ease-out both; }
+  }
+
+  .welcome-section {
+    --w-tint: #FFFDF9;   /* = SOLUTIONS inventory .bg */
+    --w-border: #EDE3CC; /* = SOLUTIONS inventory .bdr */
+    --w-body: rgba(48, 70, 66, 0.72);
+    --w-muted: rgba(48, 70, 66, 0.66);
+    --w-paper: #FBFAF8;
+    --w-deep: 30, 45, 42;
+    --w-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --w-in: cubic-bezier(0.4, 0, 1, 1);
+    display: flex; flex-direction: column; gap: 14px;
+    margin-top: clamp(4px, 1.2vw, 16px);
+    transition: opacity 0.2s var(--w-in), transform 0.2s var(--w-in);
+  }
+  .welcome-section[hidden] { display: none; }
+  .welcome-section.is-leaving { opacity: 0; transform: translateY(-8px) scale(0.985); pointer-events: none; }
+  .welcome-section :is(button, a, input):focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+
+  .welcome-dismiss {
+    display: inline-flex; align-items: center; gap: 7px;
+    min-height: 36px; margin-right: -10px; padding: 0 10px 0 12px;
+    border: none; border-radius: 100px; background: transparent; cursor: pointer;
+    font-family: var(--font-family); font-size: 13px; font-weight: 500; color: var(--w-muted);
+    transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+  }
+  .welcome-dismiss svg { width: 13px; height: 13px; flex-shrink: 0; transition: transform 0.25s var(--w-out); }
+  .welcome-dismiss:hover { background: rgba(48, 70, 66, 0.06); color: var(--color-primary); }
+  .welcome-dismiss:hover svg { transform: rotate(90deg); }
+  .welcome-dismiss:active { transform: scale(0.96); }
+
+  /* ── Card ── */
+  .welcome {
+    position: relative; overflow: hidden; isolation: isolate;
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 48px;
+    align-items: center;
+    padding: 40px 40px 40px 52px;
+    border-radius: 22px;
+    border: 1px solid var(--w-border);
+    background-color: var(--w-tint);
+    background-image: radial-gradient(circle, rgba(0,0,0,0.07) 1px, transparent 1px);
+    background-size: 20px 20px;
+    cursor: pointer;
+    transition: translate 320ms cubic-bezier(0.16,1,0.3,1), box-shadow 320ms cubic-bezier(0.16,1,0.3,1);
+  }
+  /* Same hover as the learning cards: barely-there lift + cursor parallax (initCardParallax) */
+  .welcome:hover { box-shadow: 0 10px 28px rgba(48,70,66,0.06), 0 2px 6px rgba(48,70,66,0.035); }
+  .welcome.is-cinema { cursor: default; }
+  .welcome-text, .welcome-stage { will-change: transform; }
+
+  .welcome-title {
+    margin: 0 0 12px;
+    font-size: 30px; font-weight: 700; line-height: 1.12; letter-spacing: -0.03em;
+    color: var(--color-primary);
+    text-wrap: balance;
+  }
+  .welcome-sub {
+    margin: 0; max-width: 34ch;
+    font-size: 15px; line-height: 1.6; color: var(--w-body);
+    text-wrap: pretty;
+  }
+  /* ── Stage ── */
+  .welcome-stage { position: relative; }
+
+  /* ── Player ── */
+  .welcome-player {
+    position: relative; z-index: 1; isolation: isolate; overflow: hidden;
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    background: rgb(var(--w-deep));
+    box-shadow: 0 0 0 1px rgba(48, 70, 66, 0.06), 0 2px 4px rgba(48, 70, 66, 0.06), 0 18px 40px -16px rgba(48, 70, 66, 0.35);
+  }
+  .welcome-player:fullscreen { border-radius: 0; }
+  .welcome-player video {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; background: rgb(var(--w-deep));
+  }
+  .welcome-player:fullscreen video { object-fit: contain; }
+
+  .welcome-cover {
+    position: absolute; inset: 0; z-index: 2;
+    display: grid; place-items: center;
+    padding: 0; border: none; background: none; cursor: pointer;
+    transition: opacity 0.25s var(--w-in), transform 0.25s var(--w-in);
+  }
+  .welcome-cover img {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.8s var(--w-out);
+  }
+  .welcome-cover::after {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    /* light poster: only a whisper of depth behind the play button and the bar */
+    background:
+      radial-gradient(ellipse 22% 30% at 50% 50%, rgba(var(--w-deep), 0.08), transparent 75%),
+      linear-gradient(to top, rgba(var(--w-deep), 0.1), transparent 30%);
+    transition: opacity 0.3s ease;
+  }
+  .welcome-cover:hover img { transform: scale(1.045); }
+  .welcome-cover:hover::after { opacity: 0.8; }
+  .welcome-cover.is-leaving { opacity: 0; transform: scale(1.03); pointer-events: none; }
+  .welcome-cover.is-static { cursor: default; background: var(--w-tint); }
+  .welcome-cover.is-static::after { display: none; }
+
+  .welcome-play {
+    position: relative; z-index: 1;
+    width: 68px; height: 68px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: var(--color-accent);
+    box-shadow: 0 10px 28px rgba(255, 90, 0, 0.36);
+    transition: transform 0.22s var(--w-out), background 0.15s ease;
+  }
+  .welcome-play svg { width: 26px; height: 26px; margin-left: 3px; color: var(--w-paper); }
+  .welcome-play::before, .welcome-play::after {
+    content: ''; position: absolute; inset: 0; border-radius: 50%;
+    border: 2px solid rgba(255, 140, 80, 0.7);
+    opacity: 0; pointer-events: none;
+  }
+  .welcome-cover:hover .welcome-play { transform: scale(1.08); background: #F25500; }
+  .welcome-cover:active .welcome-play { transform: scale(0.94); transition-duration: 0.1s; }
+
+  .welcome-soon { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .welcome-logo { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; color: var(--color-primary); }
+  .welcome-logo span { color: var(--color-accent); font-weight: 600; }
+  .welcome-pill {
+    padding: 6px 13px; border-radius: 100px;
+    border: 1px solid var(--w-border); background: var(--w-paper);
+    font-size: 12px; font-weight: 500; color: var(--w-body);
+  }
+
+  .welcome-resume {
+    position: absolute; inset: 0; z-index: 1;
+    display: grid; place-items: center;
+    border: none; padding: 0; cursor: pointer;
+    background: rgba(var(--w-deep), 0.28);
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+  .welcome-player.is-paused .welcome-resume { opacity: 1; pointer-events: auto; }
+  .welcome-resume .welcome-play { width: 60px; height: 60px; }
+  .welcome-resume:hover .welcome-play { transform: scale(1.08); background: #F25500; }
+
+  /* Frosted control bar: legibility over moving video, not decoration */
+  .welcome-bar {
+    position: absolute; left: 12px; right: 12px; bottom: 12px; z-index: 3;
+    display: flex; align-items: center; gap: 10px;
+    min-height: 42px; padding: 4px 6px;
+    border-radius: 11px;
+    background: rgba(251, 250, 248, 0.86);
+    -webkit-backdrop-filter: blur(12px) saturate(1.3);
+    backdrop-filter: blur(12px) saturate(1.3);
+    box-shadow: 0 4px 16px rgba(var(--w-deep), 0.18);
+    transition: opacity 0.3s var(--w-out), transform 0.3s var(--w-out);
+  }
+  .welcome-player.is-idle .welcome-bar { opacity: 0; transform: translateY(8px); pointer-events: none; }
+  .welcome-player.is-idle { cursor: none; }
+
+  .welcome-ctl {
+    width: 32px; height: 32px; flex-shrink: 0;
+    display: grid; place-items: center;
+    border: none; border-radius: 8px; background: transparent; cursor: pointer;
+    color: var(--color-primary);
+    transition: background 0.15s ease, transform 0.1s ease;
+  }
+  .welcome-ctl:hover { background: rgba(48, 70, 66, 0.08); }
+  .welcome-ctl:active { transform: scale(0.9); }
+  .welcome-ctl svg { width: 16px; height: 16px; }
+  .welcome-ctl .i-pause, .welcome-player.is-playing .welcome-ctl .i-play { display: none; }
+  .welcome-player.is-playing .welcome-ctl .i-pause { display: block; }
+  .welcome-ctl.is-collapse { display: none; }
+  .welcome.is-cinema .welcome-ctl.is-collapse { display: grid; }
+
+  .welcome-bar-title {
+    flex: 0 1 auto; min-width: 0;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    font-size: 12px; font-weight: 600; color: var(--color-primary);
+  }
+  .welcome-bar-title span { font-weight: 500; color: var(--w-body); }
+
+  .welcome-seek {
+    flex: 1 1 80px; min-width: 60px; height: 24px; margin: 0;
+    -webkit-appearance: none; appearance: none; background: transparent; cursor: pointer;
+    --p: 0%;
+  }
+  .welcome-seek::-webkit-slider-runnable-track {
+    height: 4px; border-radius: 100px;
+    background: linear-gradient(to right, var(--color-accent) var(--p), rgba(48, 70, 66, 0.16) var(--p));
+  }
+  .welcome-seek::-moz-range-track { height: 4px; border-radius: 100px; background: rgba(48, 70, 66, 0.16); }
+  .welcome-seek::-moz-range-progress { height: 4px; border-radius: 100px; background: var(--color-accent); }
+  .welcome-seek::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none;
+    width: 12px; height: 12px; margin-top: -4px; border-radius: 50%;
+    background: var(--color-accent); border: 2px solid var(--w-paper);
+    box-shadow: 0 1px 3px rgba(var(--w-deep), 0.3);
+    transform: scale(0); transition: transform 0.15s var(--w-out);
+  }
+  .welcome-seek::-moz-range-thumb {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--color-accent); border: 2px solid var(--w-paper);
+    transform: scale(0); transition: transform 0.15s var(--w-out);
+  }
+  .welcome-bar:hover .welcome-seek::-webkit-slider-thumb,
+  .welcome-seek:focus-visible::-webkit-slider-thumb { transform: scale(1); }
+  .welcome-bar:hover .welcome-seek::-moz-range-thumb,
+  .welcome-seek:focus-visible::-moz-range-thumb { transform: scale(1); }
+
+  .welcome-time {
+    flex-shrink: 0; padding-right: 2px;
+    font-size: 12px; font-weight: 500; color: var(--w-body);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .welcome-overlay {
+    position: absolute; inset: 0; z-index: 4;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;
+    padding: 20px; text-align: center;
+    background: rgba(var(--w-deep), 0.84);
+    -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  }
+  .welcome-overlay-title { margin: 0; font-size: 18px; font-weight: 600; letter-spacing: -0.01em; color: var(--w-paper); }
+  .welcome-overlay-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .welcome-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    min-height: 44px; padding: 0 20px; border-radius: 100px;
+    background: var(--color-accent); color: var(--w-paper);
+    font-family: var(--font-family); font-size: 14px; font-weight: 600; text-decoration: none;
+    transition: background 0.15s ease, transform 0.2s var(--w-out);
+  }
+  .welcome-cta svg { width: 12px; height: 12px; transition: transform 0.2s var(--w-out); }
+  .welcome-cta:hover { background: #D94E00; transform: translateY(-1px); }
+  .welcome-cta:hover svg { transform: translateX(2px); }
+  .welcome-cta:active { transform: scale(0.97); transition-duration: 0.1s; }
+  .welcome-ghost {
+    min-height: 44px; padding: 0 18px; border: none; border-radius: 100px;
+    background: rgba(251, 250, 248, 0.1); cursor: pointer;
+    font-family: var(--font-family); font-size: 14px; font-weight: 500; color: var(--w-paper);
+    transition: background 0.15s ease, transform 0.1s ease;
+  }
+  .welcome-ghost:hover { background: rgba(251, 250, 248, 0.18); }
+  .welcome-ghost:active { transform: scale(0.96); }
+
+  /* ── Cinema: the player takes the whole card while it plays ── */
+  .welcome.is-cinema { grid-template-columns: minmax(0, 1fr); padding: 14px; }
+  .welcome.is-cinema .welcome-text { display: none; }
+  .welcome.is-cinema .welcome-stage { padding: 0; }
+  .welcome.is-cinema .welcome-player { border-radius: 10px; }
+
+  /* View-transition choreography for entering / leaving cinema.
+     Names exist only while data-vt="welcome" is set, so other page transitions
+     (e.g. switching solution) never lift the card above the sticky header. */
+  html[data-vt="welcome"] #welcome .welcome { view-transition-name: welcome-card; }
+  html[data-vt="welcome"] #welcome .welcome-text { view-transition-name: welcome-text; }
+  html[data-vt="welcome"] #welcome .welcome-player { view-transition-name: welcome-player; }
+  html[data-vt="welcome"]::view-transition-group(*) { animation-duration: 0.55s; animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+  html[data-vt="welcome"]::view-transition-image-pair(welcome-card) { overflow: hidden; border-radius: 22px; }
+  html[data-vt="welcome"]::view-transition-old(welcome-card),
+  html[data-vt="welcome"]::view-transition-new(welcome-card) { animation: none; height: auto; object-fit: none; object-position: top left; }
+  html[data-vt="welcome"]::view-transition-old(welcome-player) { animation: none; opacity: 0; }
+  html[data-vt="welcome"]::view-transition-new(welcome-player) { animation: none; }
+  html[data-vt="welcome"]::view-transition-old(welcome-text) { animation: 0.22s var(--w-in, ease-in) both welcomeTextOut; }
+  html[data-vt="welcome"]::view-transition-new(welcome-text) { animation: 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both welcomeTextIn; }
+  html[data-vt="welcome"]::view-transition-old(learning-card) { animation: none; opacity: 0; }
+  html[data-vt="welcome"]::view-transition-new(learning-card) { animation: none; }
+  @keyframes welcomeTextOut { to { opacity: 0; transform: translateX(-20px); } }
+  @keyframes welcomeTextIn { from { opacity: 0; transform: translateX(-20px); } }
+
+  /* Motion is opt-in. */
+  @media (prefers-reduced-motion: no-preference) {
+    .welcome-section > * { animation: welcomeIn 0.45s var(--w-out) both; }
+    .welcome-section > .welcome { animation-delay: 0.06s; }
+    .welcome-player { animation: welcomeIn 0.5s var(--w-out) 0.16s both; }
+    .welcome-cover .welcome-play::after { animation: welcomeHalo 1s var(--w-out) 0.9s 1 both; }
+    .welcome-cover:hover .welcome-play::before { animation: welcomeHalo 0.8s var(--w-out) 1 both; }
+    .welcome-overlay { animation: welcomeFade 0.3s ease-out both; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .welcome-section, .welcome-cover, .welcome-cover img, .welcome-play, .welcome-bar,
+    .welcome-dismiss svg { transition: none; }
+  }
+  @keyframes welcomeIn { from { opacity: 0; transform: translateY(10px); } }
+  @keyframes welcomeFade { from { opacity: 0; } }
+  @keyframes welcomeHalo { 0% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(1.75); } }
+
+  @media (max-width: 1100px) {
+    .welcome { padding: 36px 32px 36px 40px; gap: 36px; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); }
+  }
+  @media (max-width: 860px) {
+    .welcome { grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 32px 24px 24px; }
+    .welcome-sub { max-width: 46ch; }
+  }
+  @media (max-width: 560px) {
+    .home-section-title { font-size: 20px; }
+    .welcome-dismiss-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .welcome { padding: 24px 14px 14px; gap: 20px; border-radius: 20px; }
+    .welcome-text { padding: 0 4px; }
+    .welcome-title { font-size: 25px; }
+    .welcome-sub { font-size: 14.5px; }
+    .welcome-player { border-radius: 12px; }
+    .welcome-bar-title { display: none; }
+    .welcome-play { width: 56px; height: 56px; }
+    .welcome-play svg { width: 20px; height: 20px; }
+    .welcome-bar { left: 8px; right: 8px; bottom: 8px; min-height: 40px; }
+  }
+
   /* ── SOLUTION TOGGLE ── */
   /* ── SOLUTION TOGGLE ─ icon + text horizontal layout ── */
   .sol-toggle {
@@ -1229,6 +1569,110 @@
   }
   .sol-btn.is-active .sol-btn-tag  { color: oklch(0.28 0.06 165); font-weight: 700; }
   .sol-btn:hover:not(.is-active) .sol-btn-tag { color: oklch(0.32 0.05 165); }
+
+  /* ── SOLUTION TILES (toggle v2) ── one tile per solution: icon, number, name, progress.
+     v1 pill toggle is backed up in backups/sol-toggle-v1/. */
+  .sol-toggle-wrap:has(.sol-tiles) {
+    justify-content: stretch;
+    padding: 6px 4px 12px; margin: -6px -4px -12px;
+    scroll-snap-type: x mandatory; scroll-padding-inline: 4px;
+  }
+  .sol-tiles {
+    display: grid; width: 100%;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .sol-tile {
+    position: relative; min-width: 0;
+    display: flex; flex-direction: column; gap: 0;
+    padding: 14px 16px 14px; text-align: left;
+    border-radius: 16px; border: 1px solid rgba(48, 70, 66, 0.07);
+    background: var(--color-card-bg);
+    box-shadow: 0 1px 2px rgba(48, 70, 66, 0.04), 0 4px 14px rgba(48, 70, 66, 0.045);
+    font-family: var(--font-family); color: var(--color-primary);
+    cursor: pointer; scroll-snap-align: start;
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .sol-tile:hover:not(.is-active) {
+    transform: translateY(-3px);
+    box-shadow: 0 2px 4px rgba(48, 70, 66, 0.04), 0 12px 28px rgba(48, 70, 66, 0.09);
+  }
+  .sol-tile:active { transform: scale(0.98); transition-duration: 0.08s; }
+  .sol-tile:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+  .sol-tile.is-active {
+    background-color: var(--sol-bg);
+    /* same dot grid as the learning cards */
+    background-image: radial-gradient(circle, rgba(0,0,0,0.07) 1px, transparent 1px);
+    background-size: 20px 20px;
+    border-color: color-mix(in oklch, var(--sol-color) 38%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in oklch, var(--sol-color) 12%, transparent), 0 4px 14px rgba(48, 70, 66, 0.05);
+    cursor: default;
+  }
+
+  .sol-tile-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+  .sol-tile-icon {
+    width: 36px; height: 36px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: var(--sol-bg); color: var(--sol-color);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+  }
+  .sol-tile-icon svg { width: 18px; height: 18px; display: block; }
+  .sol-tile.is-active .sol-tile-icon { background: var(--color-card-bg); box-shadow: 0 1px 3px rgba(48, 70, 66, 0.08); }
+  .sol-tile:hover:not(.is-active) .sol-tile-icon { transform: rotate(-12deg) scale(1.06); }
+  .sol-tile-num {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.02em;
+    color: rgba(48, 70, 66, 0.72); font-variant-numeric: tabular-nums;
+  }
+
+  .sol-tile-kicker {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
+    color: rgba(48, 70, 66, 0.68); line-height: 1.3;
+  }
+  .sol-tile-title {
+    margin-top: 2px;
+    font-size: 16px; font-weight: 500; line-height: 1.3; letter-spacing: -0.01em;
+    color: var(--color-primary);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .sol-tile.is-active .sol-tile-title { font-weight: 600; }
+
+  .sol-tile-prog { display: flex; align-items: center; gap: 10px; margin-top: 14px; }
+  .sol-tile-bar { flex: 1; height: 3px; border-radius: 99px; background: rgba(48, 70, 66, 0.1); overflow: hidden; }
+  .sol-tile-fill {
+    display: block; width: 100%;
+    height: 100%; border-radius: 99px; background: var(--color-primary);
+    transform: scaleX(var(--p, 0)); transform-origin: left;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .sol-tile-status {
+    flex-shrink: 0; font-size: 11.5px; font-weight: 500;
+    color: rgba(48, 70, 66, 0.66); font-variant-numeric: tabular-nums;
+  }
+  .sol-tile.is-done .sol-tile-status { color: var(--color-primary); font-weight: 600; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .sol-tile.is-active.is-popping { animation: solTilePop 0.42s cubic-bezier(0.16, 1, 0.3, 1); }
+    .sol-tile.is-active.is-popping .sol-tile-icon { animation: solTileIcon 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sol-tile, .sol-tile-icon, .sol-tile-fill { transition: none; }
+  }
+  @keyframes solTilePop { 0% { transform: scale(0.97); } 100% { transform: scale(1); } }
+  @keyframes solTileIcon { 0% { transform: scale(0.8) rotate(-14deg); } 100% { transform: none; } }
+
+  @media (max-width: 1100px) {
+    .sol-tile { padding: 12px 13px; }
+    .sol-tile-title { font-size: 15px; }
+  }
+  @media (max-width: 900px) {
+    .sol-tiles { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(176px, 42%); }
+  }
+  @media (max-width: 480px) {
+    .sol-tiles { grid-auto-columns: 72%; gap: 10px; }
+  }
 
   /* ── Learning card shell ── */
   .learning-card {
@@ -1746,8 +2190,33 @@
   <!-- ── HOME VIEW v2 ────────────────────────── -->
   <div id="view-home" class="view is-active">
     <main class="sol-main">
+      <section id="welcome" class="welcome-section" aria-labelledby="welcome-heading" hidden>
+        <div class="home-section-head">
+          <h2 class="home-section-title" id="welcome-heading">New here? Start with this</h2>
+          <button type="button" class="welcome-dismiss" data-welcome="dismiss">
+            <span class="welcome-dismiss-text">Hide intro</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="welcome">
+          <div class="welcome-text">
+            <h3 class="welcome-title">Welcome to Inact Learn</h3>
+            <p class="welcome-sub">Here is a 2-minute intro to what Inact Now is, how Learn works and what the four solutions cover.</p>
+          </div>
+          <div class="welcome-stage">
+            <div class="welcome-player" id="welcome-player"></div>
+          </div>
+        </div>
+      </section>
+      <div class="home-section-head paths-head">
+        <h2 class="home-section-title">Your learning paths</h2>
+        <button type="button" class="paths-watch" id="paths-watch" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+          Watch intro
+        </button>
+      </div>
       <div class="sol-toggle-wrap">
-        <div id="sol-toggle" class="sol-toggle"></div>
+        <div id="sol-toggle" class="sol-tiles" role="group" aria-label="Solutions"></div>
       </div>
       <div id="lp-deck-wrap"></div>
     </main>
@@ -1828,7 +2297,7 @@ const PATHS = [
   {
     id: 'product-management',
     title: 'Product Management',
-    desc: 'Product Management is about mastering all the stages in the product life cycle, and optimizing your product portfolio along the way. In this learning path, you will learn how to manage products from introduction to growth, maturity and eventually phase out.',
+    desc: 'Product Management is about optimizing your portfolio throughout the product life cycle, from introduction and growth to maturity and phase out.',
     courseCount: 4, duration: '36 min',
     thumbnail: 'LP-thumbnails/LP-Thumbnail-Inventory-Solution.png',
     href: 'products-hub.html', pathParam: 'products', hubFile: 'products-hub.html',
@@ -1870,6 +2339,7 @@ const PATHS = [
 
 if (performance.getEntriesByType('navigation')[0]?.type === 'reload') {
   Object.keys(localStorage).filter(k => k.startsWith('course_')).forEach(k => localStorage.removeItem(k));
+  localStorage.removeItem('learn_welcome_dismissed'); // demo reset: show the welcome band again
 }
 
 const BM_KEY = 'lp_bookmarks';
@@ -1948,39 +2418,59 @@ const SOL_ICONS = {
   functionality: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>`
 };
 
+// Progress across every path in a solution, weighted by course count.
+function solutionProgress(sol) {
+  let done = 0, sum = 0, total = 0;
+  for (const id of (sol.pathIds || [sol.pathId])) {
+    const path = PATHS.find(p => p.id === id);
+    if (!path) continue;
+    const g = getProgress(path);
+    done += g.done; total += g.total; sum += g.pct * g.total;
+  }
+  const pct = total ? Math.round(sum / total) : 0;
+  return { pct, label: sol.soon ? 'Coming soon' : pct === 0 ? 'Not started' : pct >= 100 ? 'Completed' : pct + '%' };
+}
+
 function renderSolToggle() {
   const wrap = document.getElementById('sol-toggle');
   if (!wrap) return;
 
-  // Already built: flip the active flag in place so the hovered icon can
-  // un-tilt smoothly instead of being replaced mid-transition.
-  const existing = wrap.querySelectorAll('.sol-btn');
+  // Already built: flip the active flag in place (keeps hover state smooth, replays the pop).
+  const existing = wrap.querySelectorAll('.sol-tile');
   if (existing.length === SOLUTIONS.length) {
     existing.forEach(btn => {
       const active = btn.dataset.sol === activeSolKey;
-      btn.classList.remove('is-active');
-      if (active) {
-        void btn.offsetWidth;            // restart the pop animation
-        btn.classList.add('is-active');
-      }
+      const was = btn.classList.contains('is-active');
+      btn.classList.toggle('is-active', active);
       btn.setAttribute('aria-pressed', active);
+      if (active && !was) {
+        btn.classList.remove('is-popping'); void btn.offsetWidth; btn.classList.add('is-popping');
+      }
     });
     return;
   }
 
-  wrap.innerHTML = SOLUTIONS.map(sol => {
+  wrap.innerHTML = SOLUTIONS.map((sol, i) => {
     const active = sol.key === activeSolKey;
-    return `<button class="sol-btn${active ? ' is-active' : ''}" data-sol="${sol.key}" aria-pressed="${active}"
-      style="--sol-color:${sol.bar};--sol-bg:${sol.toggleBg}">
-      <span class="sol-btn-icon">${SOL_ICONS[sol.key] || ''}</span>
-      <span class="sol-btn-text">
-        <span class="sol-btn-name">${sol.name}</span>
-        <span class="sol-btn-tag">${sol.label}</span>
+    const prog = solutionProgress(sol);
+    return `<button type="button" class="sol-tile${active ? ' is-active' : ''}${prog.pct >= 100 ? ' is-done' : ''}" data-sol="${sol.key}" aria-pressed="${active}"
+      style="--sol-color:${sol.bar};--sol-bg:${sol.toggleBg};--p:${(prog.pct / 100).toFixed(3)}"
+      aria-label="${sol.name}: ${sol.label}, ${prog.label}">
+      <span class="sol-tile-top">
+        <span class="sol-tile-icon" aria-hidden="true">${SOL_ICONS[sol.key] || ''}</span>
+        <span class="sol-tile-num" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
+      </span>
+      <span class="sol-tile-kicker">${sol.name}</span>
+      <span class="sol-tile-title">${sol.label}</span>
+      <span class="sol-tile-prog" aria-hidden="true">
+        <span class="sol-tile-bar"><span class="sol-tile-fill"></span></span>
+        <span class="sol-tile-status">${prog.label}</span>
       </span>
     </button>`;
   }).join('');
-  wrap.querySelectorAll('.sol-btn').forEach(btn => {
-    btn.addEventListener('click', () => switchSolution(btn.dataset.sol));
+  wrap.querySelectorAll('.sol-tile').forEach(btn => {
+    btn.addEventListener('click', () => { if (btn.dataset.sol !== activeSolKey) switchSolution(btn.dataset.sol); });
+    btn.addEventListener('animationend', () => btn.classList.remove('is-popping'));
   });
 }
 
@@ -2011,16 +2501,18 @@ function initBloomBtn(btn) {
   };
 }
 
-function initCardParallax(card) {
+function initCardParallax(card, opts) {
+  opts = opts || {};
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (card._parallaxCleanup) card._parallaxCleanup();
-  const illuWrap = card.querySelector('.lc-illu-wrap');
+  const illuWrap = card.querySelector(opts.media || '.lc-illu-wrap');
   if (!illuWrap) return;
-  const left = card.querySelector('.lc-left');
+  const left = card.querySelector(opts.content || '.lc-left');
   // Contents track the cursor 1:1; the card follows at a third of that and,
   // because its `translate` is eased in CSS, trails behind — hence the depth.
   const onMove = (e) => {
     if (card.classList.contains('is-side')) return;
+    if (opts.isOff && opts.isOff()) return onLeave();
     const r = card.getBoundingClientRect();
     const x = (e.clientX - r.left) / r.width  - 0.5;
     const y = (e.clientY - r.top)  / r.height - 0.5;
@@ -2036,6 +2528,7 @@ function initCardParallax(card) {
   };
   card.addEventListener('mousemove', onMove);
   card.addEventListener('mouseleave', onLeave);
+  card._parallaxReset = onLeave;
   card._parallaxCleanup = () => {
     card.removeEventListener('mousemove', onMove);
     card.removeEventListener('mouseleave', onLeave);
@@ -2114,9 +2607,10 @@ function initCardCursorTip(card, cfg) {
 
   // Resolve what the pointer is over: a TOC row, a real control, or the card.
   const resolve = (target) => {
+    if (cfg.isOff && cfg.isOff()) return null;
     const mod = target.closest('.lc-module.is-clickable');
     if (mod) return { verb: mod.dataset.tipVerb, name: mod.dataset.tipName };
-    if (target.closest('a, button, .lc-lp-dot, .lp-deck-arrow')) return null;
+    if (target.closest(cfg.controls || 'a, button, .lc-lp-dot, .lp-deck-arrow')) return null;
     return cfg.defaultTip;
   };
 
@@ -2134,7 +2628,7 @@ function initCardCursorTip(card, cfg) {
     if (isSide()) { hideCursorTip(); return; }
     const info = resolve(e.target);
     if (!info) { tip.classList.remove('is-on'); return; }
-    const html = `${LC_TIP_ICON}<span>${info.verb} <b>${escAttr(info.name)}</b></span>`;
+    const html = `${cfg.icon || LC_TIP_ICON}<span>${info.verb} <b>${escAttr(info.name)}</b></span>`;
     if (html !== lastHtml) { tip.innerHTML = html; lastHtml = html; }
     x = e.clientX; y = e.clientY;
     if (!raf) raf = requestAnimationFrame(place);
@@ -2148,6 +2642,7 @@ function initCardCursorTip(card, cfg) {
   const onClick = (e) => {
     if (isSide()) return;                                  // deck handles bring-to-front
     if (e.target.closest('a, button')) return;             // real controls win
+    if (cfg.onActivate) { if (!(cfg.isOff && cfg.isOff())) { hideCursorTip(); cfg.onActivate(); } return; }
     const mod = e.target.closest('.lc-module.is-clickable');
     const href = mod ? mod.dataset.href : cfg.ctaHref;
     if (!href) return;
@@ -2333,10 +2828,20 @@ function renderDeck() {
   const pathIds = sol.pathIds || [sol.pathId];
   const activeLpIdx = activeLpIndexes[activeSolKey] !== undefined ? activeLpIndexes[activeSolKey] : 0;
 
+  // Rebuilding empties the wrap for a moment; without this the browser re-anchors the
+  // scroll position mid-render and the page visibly jumps back once the deck is laid out.
+  const keepY = window.scrollY;
+  wrap.style.minHeight = wrap.offsetHeight + 'px';
+  const settle = () => {
+    wrap.style.minHeight = '';
+    if (window.scrollY !== keepY) window.scrollTo({ top: keepY, behavior: 'instant' });
+  };
+
   // Single path: a lone in-flow card, no fan controls.
   if (pathIds.length === 1) {
     wrap.innerHTML = '<div class="learning-card" id="learning-card"></div>';
     renderLearningCard(pathIds[0]);
+    settle();
     return;
   }
 
@@ -2401,7 +2906,10 @@ function renderDeck() {
     if (e.key === 'ArrowRight') { e.preventDefault(); switchLp((activeLpIndexes[activeSolKey] || 0) + 1); }
   });
 
-  // Defer so cards have painted and have their natural heights.
+  // Lay out now (inside the view-transition update) so the deck is captured already fanned,
+  // then once more after paint in case images/fonts changed the natural heights.
+  layoutDeck();
+  settle();
   requestAnimationFrame(() => requestAnimationFrame(() => layoutDeck()));
 }
 
@@ -2764,6 +3272,334 @@ document.getElementById('path-tabs').addEventListener('click', e => {
   if (btn) applyPathFilter(btn.dataset.tab);
 });
 
+// ── WELCOME: intro section for learners with zero progress ──
+// The intro video (built in videos/learn-intro, published to intro/).
+const WELCOME_VIDEO = {
+  src: 'intro/learn-intro.mp4',
+  poster: 'intro/learn-intro.jpg',
+  // Captions are burned into the video, so no caption track (it would show them twice).
+  captions: '',
+  title: 'Welcome to Inact Learn',
+  chapter: '',
+  durationLabel: '2 min',
+};
+const WELCOME_KEY = 'learn_welcome_dismissed';
+const WELCOME_FIRST_PATH = 'now-fundamentals';
+
+function welcomeIsDismissed() {
+  try { return localStorage.getItem(WELCOME_KEY) === '1'; } catch { return false; }
+}
+function welcomeReducedMotion() {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+function welcomeFmt(s) {
+  if (!isFinite(s)) return '0:00';
+  s = Math.max(0, Math.round(s));
+  return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
+}
+
+const W_ICON = {
+  play: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>',
+  pause: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="3" width="5" height="18" rx="1"/><rect x="5" y="3" width="5" height="18" rx="1"/></svg>',
+  full: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V5a1 1 0 0 1 1-1h4M15 4h4a1 1 0 0 1 1 1v4M20 15v4a1 1 0 0 1-1 1h-4M9 20H5a1 1 0 0 1-1-1v-4"/></svg>',
+  shrink: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4v4a1 1 0 0 1-1 1H4M20 9h-4a1 1 0 0 1-1-1V4M15 20v-4a1 1 0 0 1 1-1h4M4 15h4a1 1 0 0 1 1 1v4"/></svg>',
+  arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>',
+};
+
+function welcomePlayerHTML() {
+  const v = WELCOME_VIDEO;
+  if (!v.src) {
+    return '<div class="welcome-cover is-static"><div class="welcome-soon">'
+      + '<span class="welcome-logo">Inact <span>learn</span></span>'
+      + '<span class="welcome-pill">Intro video coming soon</span>'
+      + '</div></div>';
+  }
+  return '<video preload="metadata" playsinline' + (v.poster ? ' poster="' + v.poster + '"' : '') + ' aria-label="Intro to Inact Now, Inact Learn and the four solutions">'
+    + '<source src="' + v.src + '" type="video/mp4">'
+    + (v.captions ? '<track kind="captions" src="' + v.captions + '" srclang="en" label="English" default>' : '')
+    + '</video>'
+    + '<button type="button" class="welcome-resume" data-welcome="toggle" tabindex="-1" aria-hidden="true"><span class="welcome-play">' + W_ICON.play + '</span></button>'
+    + '<button type="button" class="welcome-cover" data-welcome="play" aria-label="Play the intro video, ' + v.durationLabel + '">'
+    +   (v.poster ? '<img src="' + v.poster + '" alt="" decoding="async">' : '')
+    +   '<span class="welcome-play">' + W_ICON.play + '</span>'
+    + '</button>'
+    + '<div class="welcome-bar">'
+    +   '<button type="button" class="welcome-ctl" data-welcome="toggle" aria-label="Play">'
+    +     W_ICON.play.replace('<svg', '<svg class="i-play"') + W_ICON.pause.replace('<svg', '<svg class="i-pause"')
+    +   '</button>'
+    +   '<span class="welcome-bar-title">' + v.title + (v.chapter ? ' <span>· ' + v.chapter + '</span>' : '') + '</span>'
+    +   '<input class="welcome-seek" type="range" min="0" max="1000" step="1" value="0" aria-label="Seek">'
+    +   '<span class="welcome-time" aria-hidden="true">' + welcomeFmt(0) + '</span>'
+    +   '<button type="button" class="welcome-ctl is-collapse" data-welcome="collapse" aria-label="Exit cinema view">' + W_ICON.shrink + '</button>'
+    +   '<button type="button" class="welcome-ctl" data-welcome="fullscreen" aria-label="Full screen">' + W_ICON.full + '</button>'
+    + '</div>';
+}
+
+function welcomeOverlay(kind) {
+  const player = document.getElementById('welcome-player');
+  player.querySelector('.welcome-overlay')?.remove();
+  if (!kind) return;
+  const firstPath = PATHS.find(p => p.id === WELCOME_FIRST_PATH);
+  const o = document.createElement('div');
+  o.className = 'welcome-overlay';
+  o.setAttribute('role', kind === 'error' ? 'alert' : 'status');
+  o.innerHTML = kind === 'ended'
+    ? '<p class="welcome-overlay-title">Ready to start?</p>'
+      + '<div class="welcome-overlay-actions">'
+      + '<a class="welcome-cta" href="' + (firstPath ? firstPath.href : '#') + '">Start Inact Now Fundamentals' + W_ICON.arrow + '</a>'
+      + '<button type="button" class="welcome-ghost" data-welcome="replay">Watch again</button>'
+      + '</div>'
+    : '<p class="welcome-overlay-title">Couldn\'t load the video.</p>'
+      + '<div class="welcome-overlay-actions"><button type="button" class="welcome-ghost" data-welcome="retry">Try again</button></div>';
+  player.appendChild(o);
+}
+
+// Cinema: the player grows from its slot to the full card (shared-element view transition).
+// The text and illustrations step aside; everything below the card glides with it.
+function welcomeCanCinema() {
+  return !window.matchMedia('(max-width: 860px)').matches;
+}
+function welcomeCinema(on, during) {
+  const card = document.querySelector('#welcome .welcome');
+  if (!card) return;
+  const apply = () => { card._parallaxReset?.(); hideCursorTip(); card.classList.toggle('is-cinema', on); if (during) during(); };
+  if (card.classList.contains('is-cinema') === on || (on && !welcomeCanCinema())) { if (during) during(); return; }
+  if (welcomeReducedMotion() || !document.startViewTransition) { apply(); return; }
+
+  const section = document.getElementById('welcome');
+  const follow = [];
+  for (let n = section.nextElementSibling; n; n = n.nextElementSibling) follow.push(n);
+  follow.forEach((n, i) => { n.style.viewTransitionName = 'welcome-follow-' + i; });
+  document.documentElement.dataset.vt = 'welcome';
+  const t = document.startViewTransition(apply);
+  t.finished.finally(() => {
+    follow.forEach(n => { n.style.viewTransitionName = ''; });
+    delete document.documentElement.dataset.vt;
+  });
+}
+
+function initWelcomePlayer() {
+  const player = document.getElementById('welcome-player');
+  player.innerHTML = welcomePlayerHTML();
+  const video = player.querySelector('video');
+  if (!video) return;
+  const seek = player.querySelector('.welcome-seek');
+  const time = player.querySelector('.welcome-time');
+  const toggleBtn = player.querySelector('.welcome-bar [data-welcome="toggle"]');
+  let scrubbing = false, idleTimer = 0;
+
+  const paint = () => {
+    const d = video.duration, t = video.currentTime;
+    const frac = isFinite(d) && d > 0 ? t / d : 0;
+    if (!scrubbing) seek.value = Math.round(frac * 1000);
+    seek.style.setProperty('--p', (frac * 100).toFixed(2) + '%');
+    seek.setAttribute('aria-valuetext', welcomeFmt(t) + ' of ' + welcomeFmt(d));
+    time.textContent = player.dataset.started !== '1' ? welcomeFmt(d) : welcomeFmt(t) + ' / ' + welcomeFmt(d);
+  };
+  const wake = () => {
+    player.classList.remove('is-idle');
+    clearTimeout(idleTimer);
+    if (!video.paused && !welcomeReducedMotion()) idleTimer = setTimeout(() => player.classList.add('is-idle'), 2400);
+  };
+  const setState = () => {
+    const playing = !video.paused && !video.ended;
+    player.classList.toggle('is-playing', playing);
+    player.classList.toggle('is-paused', video.paused && !video.ended && player.dataset.started === '1');
+    toggleBtn.setAttribute('aria-label', playing ? 'Pause' : 'Play');
+    wake();
+  };
+
+  video.addEventListener('loadedmetadata', paint);
+  video.addEventListener('timeupdate', paint);
+  video.addEventListener('play', () => { welcomeOverlay(null); setState(); });
+  video.addEventListener('pause', setState);
+  video.addEventListener('ended', () => {
+    setState();
+    player.classList.remove('is-idle');
+    welcomeCinema(false, () => welcomeOverlay('ended'));
+  });
+  video.querySelector('source')?.addEventListener('error', () => welcomeOverlay('error'));
+  video.addEventListener('click', () => welcomeToggle());
+
+  seek.addEventListener('input', () => {
+    scrubbing = true;
+    if (player.dataset.started !== '1') welcomeStart(false);
+    if (isFinite(video.duration)) video.currentTime = seek.value / 1000 * video.duration;
+    paint();
+  });
+  seek.addEventListener('change', () => { scrubbing = false; });
+
+  player.addEventListener('pointermove', wake);
+  player.addEventListener('focusin', wake);
+  player.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && document.querySelector('#welcome .welcome.is-cinema') && !document.fullscreenElement) {
+      e.preventDefault(); return welcomeCollapse();
+    }
+    if (e.target === seek) return;
+    if ((e.key === ' ' || e.key === 'k') && player.dataset.started === '1') { e.preventDefault(); welcomeToggle(); }
+  });
+}
+
+function welcomeStart(fromStart) {
+  const player = document.getElementById('welcome-player');
+  const video = player.querySelector('video');
+  if (!video) return;
+  if (fromStart) video.currentTime = 0;
+  const firstStart = player.dataset.started !== '1';
+  player.dataset.started = '1';
+  welcomeOverlay(null);
+  video.play().catch(() => {});
+
+  const cover = player.querySelector('.welcome-cover');
+  const cinematic = welcomeCanCinema() && !welcomeReducedMotion() && !!document.startViewTransition;
+  if (cinematic) {
+    welcomeCinema(true, () => cover?.remove());
+  } else {
+    welcomeCinema(true);
+    if (cover) {
+      cover.classList.add('is-leaving');
+      setTimeout(() => cover.remove(), welcomeReducedMotion() ? 0 : 260);
+    }
+  }
+  if (firstStart) player.querySelector('.welcome-bar [data-welcome="toggle"]').focus({ preventScroll: true });
+  if (!welcomeCanCinema()) player.scrollIntoView({ behavior: welcomeReducedMotion() ? 'auto' : 'smooth', block: 'center' });
+}
+function welcomeToggle() {
+  const player = document.getElementById('welcome-player');
+  const video = player.querySelector('video');
+  if (!video) return;
+  if (player.dataset.started !== '1') return welcomeStart(false);
+  if (video.paused) {
+    video.play().catch(() => {});
+    welcomeCinema(true);
+  } else video.pause();
+}
+function welcomeCollapse() {
+  document.querySelector('#welcome-player video')?.pause();
+  welcomeCinema(false, () => document.querySelector('#welcome-player .welcome-bar [data-welcome="toggle"]')?.focus({ preventScroll: true }));
+}
+function welcomeFullscreen() {
+  const player = document.getElementById('welcome-player');
+  if (document.fullscreenElement) document.exitFullscreen?.();
+  else if (player.requestFullscreen) player.requestFullscreen().catch(() => {});
+  else player.querySelector('video')?.webkitEnterFullscreen?.();
+}
+function welcomeRetry() {
+  const player = document.getElementById('welcome-player');
+  welcomeOverlay(null);
+  delete player.dataset.started;
+  initWelcomePlayer();
+  welcomeStart(true);
+}
+
+// Same hover language as the learning cards: cursor parallax (card trails, contents lead)
+// and the cursor-following tooltip. Both switch off while the video is playing.
+const WELCOME_TIP_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>';
+function initWelcomeHover() {
+  const card = document.querySelector('#welcome .welcome');
+  if (!card || !WELCOME_VIDEO.src) return;
+  const playing = () => {
+    const v = document.querySelector('#welcome-player video');
+    return card.classList.contains('is-cinema') || !!(v && !v.paused && !v.ended);
+  };
+  initCardParallax(card, { content: '.welcome-text', media: '.welcome-stage', isOff: playing });
+  initCardCursorTip(card, {
+    defaultTip: { verb: 'Watch', name: 'video' },
+    icon: WELCOME_TIP_ICON,
+    controls: 'a, .welcome-bar, .welcome-overlay, .welcome-resume',
+    isOff: playing,
+    onActivate: () => welcomeStart(false),
+  });
+}
+
+// FLIP: run `change`, then glide the section's following siblings from where they were.
+function welcomeGlideSiblings(el, change) {
+  const below = [...el.parentElement.children].filter(n => n !== el);
+  const before = below.map(n => n.getBoundingClientRect().top);
+  change();
+  if (welcomeReducedMotion()) return;
+  below.forEach((n, i) => {
+    const dy = before[i] - n.getBoundingClientRect().top;
+    if (dy) n.animate([{ transform: `translateY(${dy}px)` }, { transform: 'none' }], { duration: 380, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' });
+  });
+}
+
+function setPathsWatch(show) {
+  const btn = document.getElementById('paths-watch');
+  if (btn) btn.hidden = !show;
+}
+
+function dismissWelcome() {
+  const el = document.getElementById('welcome');
+  if (!el || el.hidden) return;
+  try { localStorage.setItem(WELCOME_KEY, '1'); } catch {}
+  el.querySelector('video')?.pause();
+  if (document.fullscreenElement) document.exitFullscreen?.();
+  el.querySelector('.welcome')?.classList.remove('is-cinema');
+  hideCursorTip();
+
+  const finish = () => {
+    welcomeGlideSiblings(el, () => {
+      el.hidden = true;
+      el.classList.remove('is-leaving');
+      setPathsWatch(true);
+    });
+    document.getElementById('paths-watch')?.focus({ preventScroll: true });
+  };
+  if (welcomeReducedMotion()) return finish();
+  // Exit accelerates out, then everything below glides up into the freed space.
+  el.classList.add('is-leaving');
+  setTimeout(finish, 200);
+}
+
+function restoreWelcome() {
+  const el = document.getElementById('welcome');
+  if (!el || !el.hidden) return;
+  try { localStorage.removeItem(WELCOME_KEY); } catch {}
+  setupWelcome(el);
+  // Unhiding replays the section's entrance fade; content below glides down to make room.
+  welcomeGlideSiblings(el, () => { el.hidden = false; setPathsWatch(false); });
+
+  const header = document.querySelector('.header');
+  const top = el.getBoundingClientRect().top - (header ? header.offsetHeight : 0) - 16;
+  if (top < 0) window.scrollBy({ top, behavior: welcomeReducedMotion() ? 'auto' : 'smooth' });
+  (el.querySelector('.welcome-cover') || el.querySelector('.welcome-dismiss'))?.focus({ preventScroll: true });
+}
+
+// Player, hover and click wiring: runs once, the first time the intro is actually shown.
+function setupWelcome(el) {
+  if (el.dataset.ready) return;
+  el.dataset.ready = '1';
+
+  initWelcomePlayer();
+  initWelcomeHover();
+
+  el.addEventListener('click', e => {
+    const t = e.target.closest('[data-welcome]');
+    if (!t) return;
+    switch (t.dataset.welcome) {
+      case 'play': return welcomeStart(false);
+      case 'toggle': return welcomeToggle();
+      case 'replay': return welcomeStart(true);
+      case 'retry': return welcomeRetry();
+      case 'collapse': return welcomeCollapse();
+      case 'fullscreen': return welcomeFullscreen();
+      case 'dismiss': return dismissWelcome();
+    }
+  });
+}
+
+function renderWelcome() {
+  const el = document.getElementById('welcome');
+  if (!el) return;
+  // Prototype: the intro shows for everyone (progress or not) until hidden.
+  document.getElementById('paths-watch')?.addEventListener('click', restoreWelcome);
+  if (welcomeIsDismissed()) { el.hidden = true; setPathsWatch(true); return; }
+  setupWelcome(el);
+  el.hidden = false;
+}
+
+renderWelcome();
 render();
 
 // ── HERO PARALLAX ─────────────────────────────────────────────

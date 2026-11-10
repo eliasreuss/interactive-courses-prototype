@@ -1,26 +1,95 @@
-[id:1/topic: Welcome to End to End]
+[id:1/topic: Welcome to Customer Management]
 
 slide_id: daf4051c-c535-4fc6-aaf3-0689da3209f8
-index_title: Welcome to End to End
-title: 
+index_title: Welcome to the Learning Path: Customer Management
+title:
 type: hero
 ---
-hero_image: placeholder-images/Illustration.png
-hero_subtitle: Welcome to the course:
-hero_title: Intro to End to End
-hero_body: ....
----
-> [next] Let's do it! -> a01efe42-fae9-438a-842c-bd96149614bc
+hero_image: customers-intro/Hero.png
+hero_subtitle: Welcome to the Learning Path:
+hero_title: Customer Management
+hero_body: Customers, products and suppliers are all part of the same value chain.
 
-[id:2/topic: Course Outline]
+In this learning path, you will connect them to understand what supports profitable business, and where you need to act.
+
+**Let’s get started!**
+---
+> [next] Let's do it! -> d0528d99-676d-48ef-9303-7930fa1a5d70
+
+[id:2/topic: Why Customers Matter]
+
+slide_id: d0528d99-676d-48ef-9303-7930fa1a5d70
+index_title: It Starts With Your Customers
+title: It Starts With Your Customers
+type: main
+layout: standard-2-col
+---
+Every part of the value chain exists to serve a customer.
+
+What your customers need shapes the products in your assortment. Those products decide the inventory you hold, and the inventory decides which suppliers you depend on.
+
+**When you understand your customers, you understand why the rest of the value chain looks the way it does.**
+![image/size:large/align:right/frame:none](customers-intro/Customer-Chain.png)
+---
+> [next] Continue -> ed91db1a-4044-4cad-adc5-4a95506ba9e8
+
+slide_id: ed91db1a-4044-4cad-adc5-4a95506ba9e8
+index_title: Each Part Only Tells Part of the Story
+title: Each Part Only Tells Part of the Story
+type: main
+layout: standard-2-col
+---
+It is easy to assess each part of the business on its own.
+
+Product performance tells you how a product performs. Customer profitability tells you what you earn on a customer. Both are useful, but neither tells you how they depend on each other.
+
+Before you remove a weak product, you need to ask:
+
+**Who relies on it?**
+![image/size:large/align:right/frame:none](customers-intro/Three-Views.png)
+---
+> [next] Continue -> d94dc254-0f89-4467-b726-ed62eaad4609
+
+slide_id: d94dc254-0f89-4467-b726-ed62eaad4609
+index_title: Which Complexity Is Worth Keeping?
+title: Which Complexity Is Worth Keeping?
+type: main
+layout: standard-2-col
+---
+Serving customers creates complexity. Every product, every item in stock and every supplier relationship adds work.
+
+Some of that complexity supports valuable business. Some of it adds cost without enough return.
+
+The challenge is to tell the two apart.
+![image/size:large/align:right/frame:none](customers-intro/Complexity.png)
+---
+> [next] Continue -> a01efe42-fae9-438a-842c-bd96149614bc
+
+[id:3/topic: The Five Steps]
 
 slide_id: a01efe42-fae9-438a-842c-bd96149614bc
-index_title: Five Steps
-title: 
+index_title: From Understanding to Action
+title: From Understanding to Action
 type: main
 ---
-Dette kursus bliver lavet til sidst
+To help you make those decisions, this learning path follows five steps. Each step builds on the one before it.
 
-We will follow five steps:
-![image/size:large/align:center/frame:none](customers-intro/Five-Steps.png)
+You will see this roadmap again at the start of every course, so you always know where you are.
+![image/size:large/align:center/frame:none](customers-intro/roadmap-all.png)
+---
+> [next] Continue -> d0f6c67a-4527-459c-a890-b3305b858cca
+
+[id:4/topic: What’s Next?]
+
+slide_id: d0f6c67a-4527-459c-a890-b3305b858cca
+index_title: Start With Your Customers
+title: Start With Your Customers
+type: main
+---
+Before you can assess the relationships across your value chain, you need to understand your customer portfolio.
+
+That is where the first course, Customer Segmentation, begins. You will divide your customers into four categories and answer the first question:
+
+**Which customers matter most?**
+![image/size:large/align:center/frame:none](customers-intro/Start-With-Customers.png)
 ---

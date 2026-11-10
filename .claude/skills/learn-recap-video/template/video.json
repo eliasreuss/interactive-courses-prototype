@@ -1,0 +1,41 @@
+{
+  "slug": "__SLUG__",
+  "compositionId": "__COMPOSITION__",
+  "kind": "course",
+  "unit": "Section",
+  "title": "__TITLE__",
+  "hero": null,
+  "sources": [],
+  "imageDirs": [],
+  "runtime": [
+    120,
+    180
+  ],
+  "words": [
+    300,
+    360
+  ],
+  "sections": [
+    {
+      "key": "s1",
+      "topic": "Section One",
+      "title": "Section One"
+    },
+    {
+      "key": "s2",
+      "topic": "Section Two",
+      "title": "Section Two"
+    },
+    {
+      "key": "s3",
+      "topic": "Section Three",
+      "title": "Section Three"
+    },
+    {
+      "key": "recap",
+      "title": "Summary"
+    }
+  ],
+  "holdAfter": {},
+  "continuous": []
+}

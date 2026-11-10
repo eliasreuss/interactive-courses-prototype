@@ -3170,9 +3170,12 @@
 
       // Sidequests don't advance progress; pin to the last main slide visited.
       const currentNode = nodeById.get(activeNodeId);
-      const isSidequest = (currentNode && currentNode.type === 'sidequest') ||
-                          activeNodeId.includes('-') ||
-                          activeNodeId.startsWith('sq-');
+      // Trust the node's type. The ID heuristics are only a fallback for unknown nodes:
+      // UUID slide ids always contain dashes, so checking '-' first made every slide a
+      // "sidequest" and pinned course progress at 0%.
+      const isSidequest = currentNode
+        ? currentNode.type === 'sidequest'
+        : (activeNodeId.includes('-') || activeNodeId.startsWith('sq-'));
       // Completion slide is synthetic: pin progress to the last real slide.
       const isComplete = !!(currentNode && currentNode.type === 'complete');
       const effectiveNodeId = isSidequest ? lastMainNodeId : activeNodeId;

@@ -5,7 +5,7 @@ index_title: Welcome to Where to Play, How to Win
 title: 
 type: hero
 ---
-hero_image: placeholder-images/Illustration.png
+hero_image: customers-where-to-play-how-to-win/Hero.png
 hero_subtitle: Welcome to the course:
 hero_title: Where to Play, How to Win
 hero_body: In the previous courses, you identified which customers matter most, looked at what you earn on them, and connected them to the products they buy and the suppliers behind those products.
@@ -43,8 +43,8 @@ Here, this expression can be translated into two fundamental questions:
 > [next] Continue -> b218a124-23df-4e0b-849b-2203afbfcedb
 
 slide_id: b218a124-23df-4e0b-849b-2203afbfcedb
-index_title: Kill It or Bill It
-title: Kill It or Bill It
+index_title: Kill it or Bill it
+title: Kill it or Bill it
 type: main
 layout: standard-2-col
 ---
@@ -97,7 +97,7 @@ Once you can see how profit is distributed, you can use the heat map to support 
 It also helps with resource allocation. You can see which customers and products contribute most to profit, and where investing more time and resources may create the greatest value.
 
 Go through the tutorial below to learn how to use the heatmap in Inact Now.
-![image/size:large/align:center/frame:none](customers-where-to-play-how-to-win/Heatmap-Walkthrough.png)
+![image/size:large/align:center/frame:none](customers-where-to-play-how-to-win/Heatmap-Walkthrough-Coming-Soon.png)
 ---
 > [next] Continue -> e823a076-90ba-43b2-88d4-7b73a587b342
 
@@ -121,7 +121,7 @@ The goal is to create clear priorities that shape behavior and, ultimately, impr
 
 slide_id: b8a81aba-1819-4aa0-93ab-d41c44dc9e84
 index_title: Congratulations
-title: Congratulations! You’ve Completed the End to End Learning Path
+title: Congratulations! You’ve Completed the Customer Management Learning Path
 type: main
 layout: standard-2-col
 ---
@@ -130,5 +130,5 @@ Customers were the final missing dimension in our view of the value chain.
 You can now see customers, products and suppliers as one connected picture. You can identify which relationships create healthy complexity, which create unhealthy complexity, and use that understanding to make better decisions.
 
 You now have the foundation to decide who to serve, what to offer, where to play and how to win.
-![image/size:large/align:right/frame:none](placeholder-images/Illustration.png)
+![image/size:large/align:right/frame:none](customers-where-to-play-how-to-win/Hero.png)
 ---

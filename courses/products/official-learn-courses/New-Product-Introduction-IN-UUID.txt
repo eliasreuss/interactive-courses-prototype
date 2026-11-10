@@ -2,7 +2,7 @@
 
 slide_id: ab2a0ac3-8a52-4970-ad6c-144992f6ab98
 index_title: Welcome to New Product Introduction
-title: 
+title:
 type: hero
 ---
 hero_image: learn/images/245/f69566650c6256831ab6acd097254e52d86ebc32dc0f0f21ec5e066164955b3b
@@ -14,7 +14,19 @@ In this course, we will look at the question: How are our new products performin
 
 **Let’s get started!**
 ---
-> [next] Let's do it! -> 5c2aead5-f16b-48ce-8d1e-1439354cbadf
+> [next] Let's do it! -> b3e262a3-ddd3-4d18-bc2a-c9af9ffd69bc
+
+slide_id: b3e262a3-ddd3-4d18-bc2a-c9af9ffd69bc
+index_title: The First Stage of the Product Lifecycle
+title: The First Stage of the Product Lifecycle
+type: main
+---
+You already know the product lifecycle. In this course, we focus on the very beginning. The goal is to make sure new products get the right start and that we quickly see whether they are developing as expected.
+
+The key question is simple: **Are we introducing the right products?**
+![image/size:large/align:center/frame:none](learn/images/247/6c713d4ce04f2bda5e7c0fb798797763cffe96bca76d7afe5b973bd0a54f865e)
+---
+> [next] Continue -> 5c2aead5-f16b-48ce-8d1e-1439354cbadf
 
 slide_id: 5c2aead5-f16b-48ce-8d1e-1439354cbadf
 index_title: What Happens After Launch?
@@ -31,18 +43,6 @@ That makes early follow up critical. The sooner we see that a new product is fal
 **If we do not follow up on new products, today’s new introductions can become tomorrow’s dead stock.**
 ![video/size:large/align:right/frame:none](https://pub-3c39fac4c588469d9bf40bf9e56bdbaf.r2.dev/Products/Failing-Products.mp4)
 ---
-> [next] Continue -> b3e262a3-ddd3-4d18-bc2a-c9af9ffd69bc
-
-slide_id: b3e262a3-ddd3-4d18-bc2a-c9af9ffd69bc
-index_title: The First Stage of the Product Lifecycle
-title: The First Stage of the Product Lifecycle
-type: main
----
-You already know the product lifecycle. In this course, we focus on the very beginning. The goal is to make sure new products get the right start and that we quickly see whether they are developing as expected.
-
-The key question is simple: **Are we introducing the right products?**
-![image/size:large/align:center/frame:none](learn/images/247/6c713d4ce04f2bda5e7c0fb798797763cffe96bca76d7afe5b973bd0a54f865e)
----
 > [next] Continue -> e2664aa4-81d8-49d8-b470-f2f8caeed754
 
 [id:2/topic: NPI Framework]
@@ -57,7 +57,7 @@ In Inact, we use the NPI Framework to track how new products develop after launc
 The exact criteria and thresholds can vary. Common examples include revenue, volume and actual sales compared with forecast.
 
 Based on the chosen criteria, each new product falls into one of three groups.
-![image/size:large/align:center/frame:none](learn/images/254/a94b1e3e91ceb110931016b014f3f6997c1067bc0c7bd08d36a6c3bc674c87d0)
+![image/size:large/align:center/frame:none](learn/images/272/57b27a91ffca4457dac781c4b0d577da9b071d2dd30dba59109e8929ce7f1f23)
 ---
 > [next] Continue -> 7d9c3c57-389c-4e79-8b28-3295d21ee31e
 
@@ -69,7 +69,7 @@ type: main
 Performance is only one part of the picture. We also need to consider how long the product has been in the portfolio.
 
 The NPI Framework follows new products through their first 12 months and divides them into three age groups. As the product gets older, we expect more from its performance.
-![image/size:large/align:center/frame:none](learn/images/243/3c930043373b733880bd0199c0f742a5c851b3f5c146702e8c74ef1a7a833c38)
+![image/size:large/align:center/frame:none](learn/images/269/a4fb8110e6db77877bfd3fe026dab03910c114e0aa74406dd3f8abd593ab7d58)
 ---
 > [next] Continue -> cc3f441d-88ae-4bbd-bb63-bee6684ba2c5
 
@@ -81,7 +81,7 @@ type: main
 Now we bring the two dimensions together. The framework combines a product’s age with its performance at that point in time.
 
 As the product moves through its first 12 months, we continue to assess whether it is **On track, Promising or Needs attention.** This makes it easy to see which new products are developing as expected and which ones require action.
-![image/size:large/align:center/frame:none](learn/images/253/d6afb5faa59f5a790547a55b908bb320e3b9bb6bed29e01b015caf692d02f079)
+![image/size:large/align:center/frame:none](learn/images/271/e3fee22240eb576eb6433b7bde1b42430bd28a922a65e5352b39ce0ef978a98e)
 ---
 > [next] Continue -> 8f4b0d55-4f3a-4b16-9a3e-1f7e6c2d0a91
 
@@ -95,78 +95,23 @@ Now you know how the framework works.
 Go through the tutorial below to see how your new products are developing during their first 12 months.
 [supademo: New Product Introduction Framework - Insight Walkthrough](https://app.supademo.com/embed/cmtsfgd6v3twpqm30q0g5k86b?embed_v=2&utm_source=embed)
 ---
-> [next] Continue -> 712fff29-6787-428d-a052-8b9ffde0fa29
+> [next] Continue -> abab240e-1481-4c6f-8244-df6b03f9d8b9
 
-[id:3/topic: Governance - Case]
-
-slide_id: 712fff29-6787-428d-a052-8b9ffde0fa29
-index_title: From a Black Box to a Clear Process
-title: From a Black Box to a Clear Process
-type: main
-layout: standard-2-col
----
-We have now seen how the NPI Framework follows new products during their first year. To make this more concrete, we will look at how one company used this NPI process in practice.
-
-Before introducing the process, the company estimated that **only 50 to 70 percent** of its new products were successful. Follow up after launch was limited, making it difficult to see which products were developing well and which needed attention.
-
-The company therefore set a target of more than 80 percent successful introductions and started by making responsibility for new products much clearer.
-![image/size:large/align:right/frame:none](learn/images/242/9e08a2600067f17202a12b83ebb2f6ee11cd2099b11e9a4f364189ec7fedd560)
----
-> [next] Continue -> e2b390e8-cce7-4660-a942-05e419bfdf76
-
-slide_id: e2b390e8-cce7-4660-a942-05e419bfdf76
-index_title: Clear Responsibility From the Start
-title: Clear Responsibility From the Start
+slide_id: abab240e-1481-4c6f-8244-df6b03f9d8b9
+index_title: Improve NPI Success Rate
+title: Improve NPI Success Rate
 type: main
 ---
-The company defined clear responsibilities for new products across three roles. Each role had its own responsibility during the introduction process and its own measures to follow.
-![image/size:large/align:center/frame:none](learn/images/251/40311777dce8d10e67f50d0a967152c7ec684688c590c0c343660820527cffc3)
-This meant that responsibility no longer disappeared once a product had been introduced.
----
-> [next] Continue -> 640c0160-2e7e-4d96-9975-56ec65ec3112
+The purpose of the NPI Framework is to raise the success rate of new products, so a larger share of launches reach their targets and become a healthy part of the assortment.
 
-slide_id: 640c0160-2e7e-4d96-9975-56ec65ec3112
-index_title: Following New Products After Launch
-title: Following New Products After Launch
-type: main
----
-With clear ownership in place, the company could follow new products more closely after launch.
+Transparency and proactivity make this possible. With a shared view of how each new product is performing, the team can act proactively: problems are spotted early, launch decisions get sharper, and suppliers are involved before support becomes urgent.
 
-Products that needed attention were reviewed by the Product Coordinator and Product Manager, who agreed on what to do next. Suppliers could also be involved when needed. The goal was to act early, before weak products developed into dead stock.
-![image/size:large/align:center/frame:none](learn/images/255/c94cc21772c218680d88379bd5e8c0013c9a561595bde6d484fcdd7385190c13)
----
-> [next] Continue -> 392b35df-1885-4d15-9300-a3a260770120
-
-slide_id: 392b35df-1885-4d15-9300-a3a260770120
-index_title: Better Decisions Before Launch
-title: Better Decisions Before Launch
-type: main
-layout: standard-2-col
----
-The process also changed how the company decided which products to introduce.
-
-Knowing that every new product would be followed closely made Product Managers ask more questions before launch.
-
-This helped the company become more selective about what entered the portfolio.
-![image/size:large/align:right/frame:none](learn/images/250/3498986353a7091743772f367411bdc2ed341d1f3ea133a8b7bf29421ae4b7a3)
----
-> [next] Continue -> c5a383d9-0e22-4306-b4e3-13528b6b1492
-
-slide_id: c5a383d9-0e22-4306-b4e3-13528b6b1492
-index_title: The Result
-title: The Result
-type: main
----
-The company increased the success rate for new products from **62 percent to 88 percent.**
-
-At the same time, weak introductions were identified earlier, Product Managers became more selective, and suppliers were involved when support was needed.
-
-The process gave the company a clearer way to manage new products from launch to handover.
+In the example below, a company increased its success rate for new products from **62% to 88% in 12 months.**
 ![image/size:large/align:center/frame:none](learn/images/252/d3a3feeac7395bbcbc50b035ea2215fcf03a95669b4f8957260e1f202af11806)
 ---
 > [next] Continue -> cf8e1490-02a3-4cb8-a2fa-2b764be733cc
 
-[id:4/topic: What’s Next?]
+[id:3/topic: What’s Next?]
 
 slide_id: cf8e1490-02a3-4cb8-a2fa-2b764be733cc
 index_title: Congratulations
@@ -176,7 +121,7 @@ layout: standard-2-col
 ---
 You’ve learned how to follow new products after they enter the portfolio, identify products that are not gaining traction, and take action before they become a larger problem.
 
-But even with a better introduction process, every portfolio will contain products that have reached the end of their lifecycle. In the next course, The Long Tail, we will look at how to identify which products should leave the portfolio.
+But even with a better introduction process, every portfolio will contain products that have reached the end of their lifecycle. In the next course, Phase Out, we will look at how to identify which products should leave the portfolio.
 
 **Let’s keep going!**
 ![image/size:large/align:right/frame:none](learn/images/245/f69566650c6256831ab6acd097254e52d86ebc32dc0f0f21ec5e066164955b3b)
