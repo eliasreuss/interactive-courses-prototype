@@ -17,10 +17,10 @@
     --color-primary-light: #3d5a54;
     --color-accent: #FF5A00;
     --color-accent-glow: rgba(255, 90, 0, 0.25);
-    --color-bg: #F9F7F5;
+    --color-bg: #F5F5F2;
     --color-card-bg: #FFFFFF;
-    --color-muted: #8A9A97;
-    --color-text-secondary: rgba(48, 70, 66, 0.6);
+    --color-muted: #5F706D;
+    --color-text-secondary: rgba(48, 70, 66, 0.75);
     --color-tag-bg: #F0F0F0;
     --pill-active-bg: #EEF0F0;
     --color-progress-bg: #EBEBEB;
@@ -159,7 +159,7 @@
   .nav-avatar:hover { transform: scale(1.08); }
   .nav-avatar span {
     color: #1F5591;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
     line-height: 1;
     font-family: var(--font-family);
@@ -308,7 +308,7 @@
     gap: 5px;
   }
   .hero-next-label {
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 600;
     letter-spacing: 1.6px;
     text-transform: uppercase;
@@ -316,7 +316,7 @@
     line-height: 1;
   }
   .hero-next-name {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.85);
     line-height: 1.4;
@@ -337,7 +337,7 @@
     align-items: center;
     gap: 12px;
     color: white;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 600;
     line-height: 24px;
     text-decoration: none;
@@ -387,7 +387,7 @@
     align-items: center;
     gap: 10px;
     color: white;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 24px;
     text-decoration: none;
@@ -455,7 +455,7 @@
     .hero-checklist { opacity: 0; }
   }
   .checklist-title {
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 600;
     letter-spacing: 1.4px;
     text-transform: uppercase;
@@ -483,7 +483,7 @@
     display: grid;
     place-items: center;
     flex-shrink: 0;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 600;
     color: white;
     background: #405754;
@@ -497,7 +497,7 @@
   @starting-style {
     .checklist-dot.is-active { box-shadow: 0 0 0 0 rgba(255, 90, 0, 0); }
   }
-  .checklist-label { font-size: 13px; color: rgba(255,255,255,0.88); font-weight: 400; line-height: 1.4; }
+  .checklist-label { font-size: 14px; color: rgba(255,255,255,0.88); font-weight: 400; line-height: 1.4; }
   .checklist-item.is-done .checklist-label { color: rgba(255,255,255,0.28); text-decoration: line-through; }
 
   /* ── CONTENT AREA ───────────────────────────── */
@@ -577,7 +577,7 @@
     font-size: 14px;
     font-weight: 500;
     font-style: italic;
-    color: rgba(48, 70, 66, 0.45);
+    color: rgba(48, 70, 66, 0.75);
     padding: 4px 0 2px;
   }
 
@@ -677,7 +677,7 @@
     align-items: center;
     gap: 6px;
     color: rgba(48, 70, 66, 0.45);
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
   }
   .soon-card-clock {
@@ -768,7 +768,7 @@
     padding: 10px 14px 10px 12px;
     border-radius: 100px;
     background: var(--pill-bg, rgba(238, 224, 195, 0.30));
-    font-size: 13px; font-weight: 600; line-height: 1;
+    font-size: 12px; font-weight: 600; line-height: 1;
     color: #304642;
     white-space: nowrap;
   }
@@ -792,7 +792,7 @@
     border-radius: 100px;
     background: var(--pill-bg, rgba(238, 224, 195, 0.30));
     color: #304642;
-    font-size: 13px; font-weight: 500; line-height: 1;
+    font-size: 12px; font-weight: 500; line-height: 1;
     white-space: nowrap;
   }
 
@@ -833,7 +833,7 @@
 
   .course-title {
     color: var(--color-primary);
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
     line-height: 30px;
     letter-spacing: -0.4px;
@@ -842,8 +842,8 @@
   }
 
   .course-description {
-    color: rgba(48, 70, 66, 0.55);
-    font-size: 15px;
+    color: rgba(48, 70, 66, 0.75);
+    font-size: 16px;
     font-weight: 400;
     line-height: 22px;
     display: -webkit-box;
@@ -865,7 +865,7 @@
     align-items: center;
     gap: 10px;
     color: var(--color-primary);
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
     line-height: 22px;
     text-decoration: none;
@@ -906,7 +906,7 @@
   /* ── RESPONSIVE ─────────────────────────────── */
   @media (max-width: 900px) {
     .hero-header { margin: 16px 24px 16px; padding: 40px; min-height: auto; }
-    .hero-title { font-size: 28px; line-height: 36px; }
+    .hero-title { font-size: 24px; line-height: 36px; }
     .hero-description { font-size: 16px; }
     .hero-checklist { display: none; }
     .content-area { padding: 16px 24px 32px; }
@@ -914,7 +914,7 @@
   @media (max-width: 600px) {
     .hero-header { margin: 12px 16px; padding: 32px 24px; }
     .content-area { padding: 16px 16px 24px; }
-    .course-title { font-size: 19px; line-height: 28px; }
+    .course-title { font-size: 20px; line-height: 28px; }
     .course-description { font-size: 14px; line-height: 22px; }
   }
 
@@ -1019,7 +1019,7 @@
   .path-tab:hover:not(.is-active) .sol-btn-icon { rotate: -15deg; }
 
   .path-tab .sol-btn-name {
-    font-size: 9.5px; font-weight: 400; letter-spacing: 0.07em;
+    font-size: 11px; font-weight: 400; letter-spacing: 0.07em;
     text-transform: uppercase; white-space: nowrap; line-height: 1;
     color: oklch(0.62 0.010 165);
     transition: color 0.2s cubic-bezier(0.22,1,0.36,1);
@@ -1199,8 +1199,8 @@
     display: inline-flex; align-items: center; gap: 7px;
     min-height: 36px; margin-right: -12px; padding: 0 12px;
     border: none; border-radius: 100px; background: transparent; cursor: pointer;
-    font-family: var(--font-family); font-size: 13px; font-weight: 500;
-    color: rgba(48, 70, 66, 0.66);
+    font-family: var(--font-family); font-size: 14px; font-weight: 500;
+    color: rgba(48, 70, 66, 0.75);
     transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
   }
   .paths-watch[hidden] { display: none; }
@@ -1217,9 +1217,9 @@
 
   .welcome-section {
     --w-tint: #FFFDF9;   /* = SOLUTIONS inventory .bg */
-    --w-border: #EDE3CC; /* = SOLUTIONS inventory .bdr */
+    --w-border: #EDE3CC; /* = inventory path border (pre sol-colors.js) */
     --w-body: rgba(48, 70, 66, 0.72);
-    --w-muted: rgba(48, 70, 66, 0.66);
+    --w-muted: rgba(48, 70, 66, 0.75);
     --w-paper: #FBFAF8;
     --w-deep: 30, 45, 42;
     --w-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -1236,7 +1236,7 @@
     display: inline-flex; align-items: center; gap: 7px;
     min-height: 36px; margin-right: -10px; padding: 0 10px 0 12px;
     border: none; border-radius: 100px; background: transparent; cursor: pointer;
-    font-family: var(--font-family); font-size: 13px; font-weight: 500; color: var(--w-muted);
+    font-family: var(--font-family); font-size: 14px; font-weight: 500; color: var(--w-muted);
     transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
   }
   .welcome-dismiss svg { width: 13px; height: 13px; flex-shrink: 0; transition: transform 0.25s var(--w-out); }
@@ -1267,13 +1267,13 @@
 
   .welcome-title {
     margin: 0 0 12px;
-    font-size: 30px; font-weight: 700; line-height: 1.12; letter-spacing: -0.03em;
+    font-size: 32px; font-weight: 700; line-height: 1.12; letter-spacing: -0.03em;
     color: var(--color-primary);
     text-wrap: balance;
   }
   .welcome-sub {
     margin: 0; max-width: 34ch;
-    font-size: 15px; line-height: 1.6; color: var(--w-body);
+    font-size: 16px; line-height: 1.6; color: var(--w-body);
     text-wrap: pretty;
   }
   /* ── Stage ── */
@@ -1434,7 +1434,7 @@
     background: rgba(var(--w-deep), 0.84);
     -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
   }
-  .welcome-overlay-title { margin: 0; font-size: 18px; font-weight: 600; letter-spacing: -0.01em; color: var(--w-paper); }
+  .welcome-overlay-title { margin: 0; font-size: 20px; font-weight: 600; letter-spacing: -0.01em; color: var(--w-paper); }
   .welcome-overlay-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
   .welcome-cta {
     display: inline-flex; align-items: center; gap: 8px;
@@ -1510,8 +1510,8 @@
     .welcome-dismiss-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
     .welcome { padding: 24px 14px 14px; gap: 20px; border-radius: 20px; }
     .welcome-text { padding: 0 4px; }
-    .welcome-title { font-size: 25px; }
-    .welcome-sub { font-size: 14.5px; }
+    .welcome-title { font-size: 24px; }
+    .welcome-sub { font-size: 14px; }
     .welcome-player { border-radius: 12px; }
     .welcome-bar-title { display: none; }
     .welcome-play { width: 56px; height: 56px; }
@@ -1556,7 +1556,7 @@
   /* Text block */
   .sol-btn-text { display: flex; flex-direction: column; gap: 2px; text-align: left; }
   .sol-btn-name {
-    font-size: 9.5px; font-weight: 400; letter-spacing: 0.07em;
+    font-size: 11px; font-weight: 400; letter-spacing: 0.07em;
     text-transform: uppercase; white-space: nowrap; line-height: 1;
     color: oklch(0.62 0.010 165);
     transition: color 0.2s cubic-bezier(0.22,1,0.36,1);
@@ -1603,11 +1603,13 @@
   .sol-tile:active { transform: scale(0.98); transition-duration: 0.08s; }
   .sol-tile:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
   .sol-tile.is-active {
-    background-color: var(--sol-bg);
+    /* same wash as the path card below, so tile and card read as one unit;
+       the edge stroke (≥3:1) carries the selected state */
+    background-color: var(--sol-wash, var(--sol-bg));
     /* same dot grid as the learning cards */
     background-image: radial-gradient(circle, rgba(0,0,0,0.07) 1px, transparent 1px);
     background-size: 20px 20px;
-    border-color: color-mix(in oklch, var(--sol-color) 38%, transparent);
+    border-color: var(--sol-edge, var(--sol-color));
     box-shadow: 0 0 0 3px color-mix(in oklch, var(--sol-color) 12%, transparent), 0 4px 14px rgba(48, 70, 66, 0.05);
     cursor: default;
   }
@@ -1620,16 +1622,17 @@
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
   }
   .sol-tile-icon svg { width: 18px; height: 18px; display: block; }
-  .sol-tile.is-active .sol-tile-icon { background: var(--color-card-bg); box-shadow: 0 1px 3px rgba(48, 70, 66, 0.08); }
+  /* same fill as the path card's Start learning button */
+  .sol-tile.is-active .sol-tile-icon { background: var(--sol-soft, var(--sol-bg)); color: var(--color-primary); }
   .sol-tile:hover:not(.is-active) .sol-tile-icon { transform: rotate(-12deg) scale(1.06); }
   .sol-tile-num {
     font-size: 12px; font-weight: 600; letter-spacing: 0.02em;
-    color: rgba(48, 70, 66, 0.72); font-variant-numeric: tabular-nums;
+    color: rgba(48, 70, 66, 0.75); font-variant-numeric: tabular-nums;
   }
 
   .sol-tile-kicker {
     font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
-    color: rgba(48, 70, 66, 0.68); line-height: 1.3;
+    color: rgba(48, 70, 66, 0.75); line-height: 1.3;
   }
   .sol-tile-title {
     margin-top: 2px;
@@ -1648,8 +1651,8 @@
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .sol-tile-status {
-    flex-shrink: 0; font-size: 11.5px; font-weight: 500;
-    color: rgba(48, 70, 66, 0.66); font-variant-numeric: tabular-nums;
+    flex-shrink: 0; font-size: 11px; font-weight: 500;
+    color: rgba(48, 70, 66, 0.75); font-variant-numeric: tabular-nums;
   }
   .sol-tile.is-done .sol-tile-status { color: var(--color-primary); font-weight: 600; }
 
@@ -1663,9 +1666,27 @@
   @keyframes solTilePop { 0% { transform: scale(0.97); } 100% { transform: scale(1); } }
   @keyframes solTileIcon { 0% { transform: scale(0.8) rotate(-14deg); } 100% { transform: none; } }
 
+  /* small laptops (13" MacBook Air = 1440–1470px): drop the 01/02 index and
+     put the icon beside the kicker + title so tiles get shorter */
+  @media (max-width: 1480px) {
+    .sol-tile {
+      display: grid; grid-template-columns: auto minmax(0, 1fr);
+      column-gap: 10px; align-items: center;
+    }
+    .sol-tile-top { display: contents; }
+    .sol-tile-num { display: none; }
+    .sol-tile-icon { grid-column: 1; grid-row: 1 / span 2; }
+    .sol-tile-kicker { grid-column: 2; grid-row: 1; align-self: end; }
+    .sol-tile-title { grid-column: 2; grid-row: 2; align-self: start; }
+    .sol-tile-prog { grid-column: 1 / -1; grid-row: 3; margin-top: 12px; }
+  }
+  /* five tiles in a row get too narrow for icon + one-line title here */
+  @media (min-width: 901px) and (max-width: 1139px) {
+    .sol-tile-title { white-space: normal; }
+  }
   @media (max-width: 1100px) {
     .sol-tile { padding: 12px 13px; }
-    .sol-tile-title { font-size: 15px; }
+    .sol-tile-title { font-size: 16px; }
   }
   @media (max-width: 900px) {
     .sol-tiles { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(176px, 42%); }
@@ -1718,15 +1739,22 @@
     display: flex; align-items: center; justify-content: center;
   }
 
+  /* title + description match the learning path hub header (hub.html) */
   .lc-title {
-    font-size: 22px; font-weight: 700; line-height: 1.2;
-    letter-spacing: -0.02em; color: var(--color-primary);
-    margin: 0 0 10px;
+    font-size: 32px; font-weight: 700; line-height: 1.2;
+    letter-spacing: -0.03em; color: var(--color-primary);
+    margin: 0 0 20px;
   }
 
   .lc-desc {
-    font-size: 15px; color: var(--color-text-secondary);
-    line-height: 1.6; margin: 0 0 28px; max-width: 42ch;
+    font-size: 20px; font-weight: 300; line-height: 27px;
+    color: rgba(48, 70, 66, 0.75); text-wrap: pretty;
+    margin: 0 0 32px; max-width: 470px;
+  }
+  /* small laptops: same breakpoint as the compact solution tiles */
+  @media (max-width: 1480px) {
+    .lc-title { font-size: 28px; margin-bottom: 14px; }
+    .lc-desc { font-size: 18px; line-height: 25px; margin-bottom: 24px; }
   }
 
   .lc-prog-row {
@@ -1756,7 +1784,7 @@
   }
   .lc-module {
     display: flex; align-items: center; gap: 10px;
-    padding: 6px 0; font-size: 13px;
+    padding: 6px 0; font-size: 14px;
   }
   .lc-module.is-done span { color: var(--color-muted); text-decoration: line-through; font-weight: 400; }
   .lc-module.is-current span { color: var(--color-primary); font-weight: 600; }
@@ -1764,7 +1792,7 @@
   .lc-module-num {
     width: 18px; height: 18px; border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    font-size: 9px; font-weight: 700; flex-shrink: 0;
+    font-size: 11px; font-weight: 700; flex-shrink: 0;
     color: var(--color-muted);
   }
   .lc-module.is-current .lc-module-num { background: #FF5A00; color: white; }
@@ -1786,7 +1814,7 @@
     padding: 8px 15px 8px 12px; border-radius: 999px;
     background: #304642; color: #fff;
     font-family: var(--font-family, 'Poppins', sans-serif);
-    font-size: 12.5px; font-weight: 500; line-height: 1; white-space: nowrap;
+    font-size: 12px; font-weight: 500; line-height: 1; white-space: nowrap;
     box-shadow: 0 10px 26px rgba(48,70,66,0.28), 0 2px 6px rgba(48,70,66,0.18);
     pointer-events: none; opacity: 0;
     transform: translate3d(0,0,0);
@@ -1949,19 +1977,19 @@
     padding: 18px 20px 10px;
   }
   .share-pop-label {
-    font-size: 10.5px; font-weight: 700; letter-spacing: 1.2px;
-    text-transform: uppercase; color: #9AADA9;
+    font-size: 11px; font-weight: 700; letter-spacing: 1.2px;
+    text-transform: uppercase; color: #5F706D;
   }
   .share-pop-close {
     width: 28px; height: 28px; border: none; background: none; cursor: pointer;
-    color: #9AADA9; display: flex; align-items: center; justify-content: center;
+    color: #5F706D; display: flex; align-items: center; justify-content: center;
     border-radius: 9px; padding: 0; flex-shrink: 0;
     transition: background 0.15s, color 0.15s, transform 0.22s cubic-bezier(0.22,1,0.36,1);
   }
   .share-pop-close:hover { background: rgba(48,70,66,0.08); color: #304642; transform: rotate(90deg); }
   .share-pop-name {
     padding: 0 20px 16px;
-    font-size: 15px; font-weight: 700; color: #1A2E2B; line-height: 1.3; letter-spacing: -0.2px;
+    font-size: 16px; font-weight: 700; color: #1A2E2B; line-height: 1.3; letter-spacing: -0.2px;
   }
   .share-pop-rule { height: 1px; background: rgba(48,70,66,0.08); margin: 0 20px; }
   .share-url-wrap { display: flex; align-items: center; gap: 8px; padding: 16px 20px 0; }
@@ -1975,7 +2003,7 @@
   .share-copy-btn {
     padding: 9px 15px; border-radius: 11px; border: none;
     background: #FF5A00; color: #FFFFFF;
-    font-family: 'Poppins', sans-serif; font-size: 12.5px; font-weight: 600;
+    font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 600;
     cursor: pointer; white-space: nowrap; flex-shrink: 0;
     display: flex; align-items: center; justify-content: center;
     min-width: 86px; height: 37px;
@@ -1998,7 +2026,7 @@
     display: flex; align-items: center; gap: 12px; padding: 11px 14px;
     border-radius: 13px; border: 1.5px solid rgba(48,70,66,0.09);
     background: transparent; position: relative; overflow: hidden;
-    font-family: 'Poppins', sans-serif; font-size: 13.5px; font-weight: 500; color: #304642;
+    font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; color: #304642;
     cursor: pointer; text-align: left;
     transition: border-color 0.18s, transform 0.2s cubic-bezier(0.22,1,0.36,1);
   }
@@ -2021,6 +2049,14 @@
   .lc-illu {
     width: clamp(200px, 30vw, 400px); height: auto; display: block; mix-blend-mode: multiply;
   }
+  /* small laptops: smaller graphic hands its width to the left column,
+     so the description wraps less and the card gets shorter */
+  @media (min-width: 821px) and (max-width: 1480px) {
+    .lc-illu { width: clamp(200px, 22vw, 300px); }
+    .lc-illu-wrap { margin: 0 40px; }
+    .lc-left { padding: 44px 44px 40px; }
+    .lc-desc { max-width: 640px; }
+  }
 
   .lc-soon-card {
     display: flex; flex-direction: row;
@@ -2037,10 +2073,10 @@
     color: var(--color-muted); margin-bottom: 10px;
   }
   .lc-soon-title {
-    font-size: 22px; font-weight: 700; line-height: 1.2;
+    font-size: 20px; font-weight: 700; line-height: 1.2;
     letter-spacing: -0.02em; color: var(--color-primary); margin: 0 0 10px;
   }
-  .lc-soon-desc { font-size: 15px; color: var(--color-text-secondary); line-height: 1.6; margin: 0 0 28px; max-width: 42ch; }
+  .lc-soon-desc { font-size: 16px; color: var(--color-text-secondary); line-height: 1.6; margin: 0 0 28px; max-width: 42ch; }
   .lc-soon-btn {
     display: inline-flex; align-items: center; gap: 8px;
     padding: 9px 22px; border-radius: 100px; border: none; cursor: default;
@@ -2076,6 +2112,7 @@
     .lc-modules-box.is-animating .lc-module:nth-child(6) { animation-delay: 0.20s; }
     .lc-modules-box.is-animating .lc-module:nth-child(7) { animation-delay: 0.25s; }
     .lc-modules-box.is-animating .lc-module:nth-child(8) { animation-delay: 0.30s; }
+
   }
 
   /* ── Tablet breakpoint (≤820px) ── */
@@ -2084,6 +2121,8 @@
     .sol-toggle-wrap { justify-content: flex-start; }
     .lc-inner { flex-direction: column-reverse; }
     .lc-left { padding: 28px 28px 32px; }
+    .lc-title { font-size: 26px; margin-bottom: 12px; }
+    .lc-desc { font-size: 18px; line-height: 25px; margin-bottom: 24px; }
     .lc-illu-wrap { margin: 28px auto 0; padding-bottom: 8px; }
     .lc-illu { width: clamp(160px, 50vw, 280px); }
     .lc-soon-card { flex-direction: column-reverse; }
@@ -2100,7 +2139,7 @@
     .hero-header { margin: 10px 12px 12px; padding: 24px 20px; gap: 20px; }
     .hero-title { font-size: clamp(22px, 5.5vw, 28px); }
     .hero-actions { gap: 10px; }
-    .btn-start, .btn-view { font-size: 15px; padding: 8px 16px; }
+    .btn-start, .btn-view { font-size: 16px; padding: 8px 16px; }
     .content-area { padding: 12px 12px 20px; }
 
     /* Sol toggle + card */
@@ -2109,13 +2148,13 @@
     .sol-btn { padding: 10px 14px; }
     .sol-btn-tag { font-size: 12px; }
     .lc-left { padding: 20px 16px 24px; }
-    .lc-title { font-size: 18px; }
-    .lc-desc { font-size: 14px; margin-bottom: 18px; }
+    .lc-title { font-size: 20px; }
+    .lc-desc { font-size: 15px; line-height: 22px; margin-bottom: 18px; }
     .lc-modules-box { padding: 10px 12px; }
     .lc-module { font-size: 12px; }
     .lc-actions { gap: 6px; }
-    .lc-btn-cta { padding: 10px 18px; font-size: 13px; }
-    .lc-btn-view { padding: 9px 14px; font-size: 13px; }
+    .lc-btn-cta { padding: 10px 18px; font-size: 14px; }
+    .lc-btn-view { padding: 9px 14px; font-size: 14px; }
     .lc-illu-wrap { margin: 16px auto 0; }
     .lc-illu { width: clamp(120px, 45vw, 200px); }
 
@@ -2126,13 +2165,13 @@
 
     /* Course cards */
     .course-card-top { height: 130px; }
-    .course-title { font-size: 17px; line-height: 24px; }
+    .course-title { font-size: 16px; line-height: 24px; }
     .course-card-bottom { padding: 20px; }
     .content-card { padding: 16px 16px 20px; }
   }
   /* ── Nav Progress Widget ── */
   .nav-progress-widget { display: flex; align-items: center; gap: 20px; padding: 0 0 0 16px; background: rgba(48, 70, 66, 0.055); border-radius: 100px; }
-  .nav-continue-btn { display: inline-flex; align-items: center; justify-content: center; gap: 7px; font-family: var(--font-family, 'Poppins', sans-serif); font-size: 13px; font-weight: 500; color: #fff; text-decoration: none; height: 36px; padding: 0 17px; border-radius: 100px; background: #FF5A00; box-shadow: 0 2px 8px rgba(255, 90, 0, 0.22); white-space: nowrap; line-height: 1; transition: background 0.2s ease, box-shadow 0.22s ease, transform 0.22s cubic-bezier(0.22,1,0.36,1); }
+  .nav-continue-btn { display: inline-flex; align-items: center; justify-content: center; gap: 7px; font-family: var(--font-family, 'Poppins', sans-serif); font-size: 14px; font-weight: 500; color: #fff; text-decoration: none; height: 36px; padding: 0 17px; border-radius: 100px; background: #FF5A00; box-shadow: 0 2px 8px rgba(255, 90, 0, 0.22); white-space: nowrap; line-height: 1; transition: background 0.2s ease, box-shadow 0.22s ease, transform 0.22s cubic-bezier(0.22,1,0.36,1); }
   .nav-continue-btn:hover { background: #D94E00; box-shadow: 0 5px 16px rgba(255, 90, 0, 0.34); transform: translateY(-1px); }
   .nav-continue-btn svg { width: 12px; height: 12px; flex-shrink: 0; color: #fff; transition: transform 0.22s cubic-bezier(0.22,1,0.36,1); }
   .nav-continue-btn:hover svg { transform: translateX(2px); }
@@ -2149,7 +2188,7 @@
     .header { padding: 14px 20px; }
     .header-left { gap: 20px; }
     .nav { gap: 2px; }
-    .nav a { padding: 8px 10px; font-size: 13px; }
+    .nav a { padding: 8px 10px; font-size: 14px; }
   }
   @media (max-width: 480px) {
     .header { padding: 10px 16px; border-radius: 0 0 16px 16px; }
@@ -2249,6 +2288,7 @@
 
 </div>
 
+<script src="sol-colors.js"></script>
 <script>
 const USER = { firstName: 'Elias', initials: 'ER' };
 document.getElementById('nav-initials').textContent = USER.initials;
@@ -2376,12 +2416,13 @@ function getActivePath() {
 
 // ── SOLUTION DATA ─────────────────────────────────────────────
 const SOLUTIONS = [
-  { key: 'functionality', name: 'Software',   label: 'Inact Now',     pathId: 'now-fundamentals', pathIds: ['now-fundamentals', 'admin'],     illu: 'SVGs/LP-Illustrations/Now-Illustration.png',            toggleBg: '#F1F6FF', bg: '#F5F9FF', btn: '#DBE9FF', btnT: '#1A2535', bdr: '#D0DFEF', dot: '#DBE9FF', bar: '#5888D0' },
-  { key: 'inventory',    name: 'Inventory',    label: 'What to stock?',  pathId: 'inventory-management', illu: 'SVGs/LP-Illustrations/Inventory-Illustration.png',      toggleBg: '#FFF9EC', bg: '#FFFDF9', btn: '#EEE0C3', btnT: '#2C2416', bdr: '#EDE3CC', dot: '#EEE0C3', bar: '#B8964E' },
-  { key: 'suppliers',    name: 'Suppliers',    label: 'How to source?',  pathId: 'supplier-management',  illu: 'SVGs/LP-Illustrations/Suppliers-Illustration.png',      toggleBg: '#F4EEFF', bg: '#FDFCFF', btn: '#E1DBEB', btnT: '#221D2E', bdr: '#D8D0E8', dot: '#E1DBEB', bar: '#7B68AA' },
-  { key: 'products',    name: 'Products',     label: 'What to offer?',  pathId: 'product-management',   illu: 'SVGs/LP-Illustrations/Products-Illustration.png',   toggleBg: '#FAF3D4', bg: '#FDFAEE', btn: '#EDE0A6', btnT: '#33290F', bdr: '#E6DAAC', dot: '#EDE0A6', bar: '#B49B33' },
-  { key: 'customers',   name: 'Customers',    label: 'Who to serve?',   pathId: 'end2end',             illu: 'SVGs/LP-Illustrations/Customers-Illustration.png',  toggleBg: '#F1F4E9', bg: '#F8FAF4', btn: '#E3E8D8', btnT: '#222619', bdr: '#DDE3D0', dot: '#D0D5C5', bar: '#8A9672' },
+  { key: 'functionality', name: 'Software',   label: 'Inact Now',     pathId: 'now-fundamentals', pathIds: ['now-fundamentals', 'admin'],     illu: 'SVGs/LP-Illustrations/Now-Illustration.png' },
+  { key: 'inventory',    name: 'Inventory',    label: 'What to stock?',  pathId: 'inventory-management', illu: 'SVGs/LP-Illustrations/Inventory-Illustration.png' },
+  { key: 'suppliers',    name: 'Suppliers',    label: 'How to source?',  pathId: 'supplier-management',  illu: 'SVGs/LP-Illustrations/Suppliers-Illustration.png' },
+  { key: 'products',    name: 'Products',     label: 'What to offer?',  pathId: 'product-management',   illu: 'SVGs/LP-Illustrations/Products-Illustration.png' },
+  { key: 'customers',   name: 'Customers',    label: 'Who to serve?',   pathId: 'end2end',             illu: 'SVGs/LP-Illustrations/Customers-Illustration.png' },
 ];
+SOLUTIONS.forEach(s => Object.assign(s, solColors(SOL_BASES[s.key])));
 
 let activeSolKey = 'inventory';
 const activeLpIndexes = {}; // tracks which LP is active per solution key
@@ -2454,7 +2495,7 @@ function renderSolToggle() {
     const active = sol.key === activeSolKey;
     const prog = solutionProgress(sol);
     return `<button type="button" class="sol-tile${active ? ' is-active' : ''}${prog.pct >= 100 ? ' is-done' : ''}" data-sol="${sol.key}" aria-pressed="${active}"
-      style="--sol-color:${sol.bar};--sol-bg:${sol.toggleBg};--p:${(prog.pct / 100).toFixed(3)}"
+      style="--sol-color:${sol.bar};--sol-bg:${sol.tint};--sol-wash:${sol.wash};--sol-edge:${sol.edge};--sol-soft:${sol.soft};--p:${(prog.pct / 100).toFixed(3)}"
       aria-label="${sol.name}: ${sol.label}, ${prog.label}">
       <span class="sol-tile-top">
         <span class="sol-tile-icon" aria-hidden="true">${SOL_ICONS[sol.key] || ''}</span>
@@ -2681,16 +2722,16 @@ function renderLearningCard(pathId, opts) {
   const sol = SOLUTIONS.find(s => s.key === activeSolKey);
   const card = opts.card || document.getElementById('learning-card');
   if (!card || !sol) return;
-  card.style.backgroundColor = sol.bg;
+  card.style.backgroundColor = sol.wash;
   card.style.backgroundImage = `radial-gradient(circle, rgba(0,0,0,0.07) 1px, transparent 1px)`;
   card.style.backgroundSize = '20px 20px';
-  card.style.borderColor = sol.bdr;
+  card.style.borderColor = sol.line;
 
   const activePathId = pathId || sol.pathId;
 
   if (sol.soon) {
     const path = PATHS.find(p => p.id === activePathId);
-    card.style.border = `1px solid ${sol.bdr}`;
+    card.style.border = `1px solid ${sol.line}`;
     card.innerHTML = `<div class="lc-soon-card">
       <div class="lc-soon-left">
         <span class="lc-soon-badge">
@@ -2710,7 +2751,7 @@ function renderLearningCard(pathId, opts) {
     return;
   }
 
-  card.style.border = `1px solid ${sol.bdr}`;
+  card.style.border = `1px solid ${sol.line}`;
   const path = PATHS.find(p => p.id === activePathId);
   if (!path) return;
   const prog = getProgress(path);
@@ -2762,7 +2803,7 @@ function renderLearningCard(pathId, opts) {
         ${moduleItems}
       </div>
       <div class="lc-actions">
-        <a href="${ctaHref}" class="lc-btn-cta" style="background:${sol.btn};color:${sol.btnT}">${ctaLabel}<span class="lc-btn-arrow"></span></a>
+        <a href="${ctaHref}" class="lc-btn-cta" style="background:${sol.soft};color:${sol.ink}">${ctaLabel}<span class="lc-btn-arrow"></span></a>
         <a href="${path.href}?from=home" class="lc-btn-view">View full path</a>
         <button class="lc-icon-btn lc-bm" aria-label="Bookmark">
           <svg viewBox="0 0 14 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1H2C1.44772 1 1 1.44772 1 2V15.1745C1 15.9644 1.87272 16.4425 2.53837 16.0172L6.28636 13.6228C6.60517 13.4191 7.01163 13.4128 7.33663 13.6065L11.4881 16.0803C12.1547 16.4775 13 15.9972 13 15.2213V2C13 1.44772 12.5523 1 12 1Z"/></svg>
@@ -3068,13 +3109,13 @@ const ALL_TAB_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
 function renderPathTabs() {
   const wrap = document.getElementById('path-tabs');
   if (!wrap) return;
-  const allTab = { key: 'all', name: 'All', label: 'All paths', toggleBg: 'oklch(0.93 0.012 165)', bar: 'var(--color-primary)' };
+  const allTab = { key: 'all', name: 'All', label: 'All paths', tint: 'oklch(0.93 0.012 165)', bar: 'var(--color-primary)' };
   const tabs = [allTab, ...SOLUTIONS];
   wrap.innerHTML = tabs.map(t => {
     const active = t.key === activePathTab;
     const icon = t.key === 'all' ? ALL_TAB_ICON : (SOL_ICONS[t.key] || '');
     return '<button class="path-tab' + (active ? ' is-active' : '') + '" data-tab="' + t.key + '" aria-selected="' + active + '"'
-      + ' style="--sol-color:' + (t.bar || 'var(--color-primary)') + ';--sol-bg:' + t.toggleBg + '">'
+      + ' style="--sol-color:' + (t.bar || 'var(--color-primary)') + ';--sol-bg:' + t.tint + '">'
       + '<span class="sol-btn-icon">' + icon + '</span>'
       + '<span class="sol-btn-text">'
       + '<span class="sol-btn-name">' + t.name + '</span>'
@@ -3150,13 +3191,13 @@ function renderPathCard(path, bookmarks, isActive) {
 
   // Find matching SOLUTIONS entry for hub-style thumbnail + pill colors
   const sol = SOLUTIONS.find(s => s.pathId === path.id || (s.pathIds && s.pathIds.includes(path.id)));
-  const pillBg  = sol ? hexToRgba(sol.btn, 0.30) : 'rgba(238,224,195,0.30)';
+  const pillBg  = sol ? hexToRgba(sol.soft, 0.30) : 'rgba(238,224,195,0.30)';
   const pillTxt = '#304642';
 
   const thumbVars = sol
-    ? ('style="--card-bg:' + sol.bg + ';--pill-bg:' + pillBg + ';--pill-text:' + pillTxt + '"')
+    ? ('style="--card-bg:' + sol.wash + ';--pill-bg:' + pillBg + ';--pill-text:' + pillTxt + '"')
     : ('style="background:linear-gradient(135deg,' + path.gradFrom + ',' + path.gradTo + ')"');
-  const cardBdr = sol ? sol.bdr : 'transparent';
+  const cardBdr = sol ? sol.line : 'transparent';
   const cardGlow = sol ? hexToRgba(sol.bar, 0.20) : 'rgba(48,70,66,0.22)';
   const thumbClass = sol ? 'course-card-top is-hub-thumb' : 'course-card-top';
 
@@ -3281,7 +3322,7 @@ const WELCOME_VIDEO = {
   captions: '',
   title: 'Welcome to Inact Learn',
   chapter: '',
-  durationLabel: '2 min',
+  durationLabel: '1.5 min',
 };
 const WELCOME_KEY = 'learn_welcome_dismissed';
 const WELCOME_FIRST_PATH = 'now-fundamentals';

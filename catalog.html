@@ -11,10 +11,10 @@
       --color-primary: #304642;
       --color-primary-light: #3d5a54;
       --color-accent: #FF5A00;
-      --color-bg: #F9F7F5;
+      --color-bg: #F5F5F2;
       --color-card-bg: #FFFFFF;
-      --color-muted: #8A9A97;
-      --color-text-secondary: rgba(48, 70, 66, 0.6);
+      --color-muted: #5F706D;
+      --color-text-secondary: rgba(48, 70, 66, 0.75);
       --color-tag-bg: #F0F0F0;
       --pill-active-bg: #EEF0F0;
       --color-progress-bg: #EBEBEB;
@@ -91,7 +91,7 @@
       cursor: pointer; flex-shrink: 0; text-decoration: none; transition: transform 0.2s;
     }
     .nav-avatar:hover { transform: scale(1.08); }
-    .nav-avatar span { color: #1F5591; font-size: 13px; font-weight: 600; line-height: 1; font-family: var(--font-family); }
+    .nav-avatar span { color: #1F5591; font-size: 14px; font-weight: 600; line-height: 1; font-family: var(--font-family); }
 
     /* ── Page layout ── */
     .catalog-page {
@@ -150,7 +150,7 @@
 
     /* ── Sidebar section label ── */
     .sidebar-section-label {
-      font-size: 10px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase;
       color: oklch(0.65 0.008 165);
       padding: 6px 14px 2px;
     }
@@ -223,7 +223,7 @@
     .filter-chip.is-checked .filter-chip-icon { color: var(--chip-color, var(--color-primary)); }
     .filter-chip-label-wrap { display: flex; flex-direction: column; gap: 2px; }
     .filter-chip-eyebrow {
-      font-size: 9px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+      font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
       color: oklch(0.66 0.008 165); line-height: 1;
       transition: color 0.18s ease;
     }
@@ -238,14 +238,14 @@
       margin-bottom: 20px;
     }
     .catalog-count {
-      font-size: 15px; font-weight: 600; color: var(--color-primary);
+      font-size: 16px; font-weight: 600; color: var(--color-primary);
       letter-spacing: -0.01em;
     }
     .catalog-sort {
       display: flex; align-items: center; gap: 10px;
     }
     .catalog-sort-label {
-      font-size: 13px; font-weight: 500; color: var(--color-muted);
+      font-size: 14px; font-weight: 500; color: var(--color-muted);
       white-space: nowrap;
     }
     .catalog-sort-wrap {
@@ -253,7 +253,7 @@
     }
     .catalog-sort-select {
       appearance: none; -webkit-appearance: none;
-      font-family: var(--font-family); font-size: 13px; font-weight: 500;
+      font-family: var(--font-family); font-size: 14px; font-weight: 500;
       color: var(--color-primary);
       background: #FFFFFF;
       border: 1.5px solid oklch(0.88 0.008 165);
@@ -302,7 +302,7 @@
     .catalog-empty-icon {
       width: 48px; height: 48px; color: oklch(0.75 0.008 165); margin-bottom: 8px;
     }
-    .catalog-empty-title { font-size: 17px; font-weight: 600; color: var(--color-primary); }
+    .catalog-empty-title { font-size: 16px; font-weight: 600; color: var(--color-primary); }
     .catalog-empty-sub { font-size: 14px; color: var(--color-muted); margin-top: -4px; }
     .catalog-empty-btn {
       margin-top: 8px; padding: 10px 22px; border-radius: 100px;
@@ -385,7 +385,7 @@
       display: inline-flex; align-items: center; gap: 7px;
       padding: 10px 14px 10px 12px; border-radius: 100px;
       background: var(--pill-bg, rgba(238,224,195,0.30));
-      font-size: 13px; font-weight: 600; line-height: 1;
+      font-size: 12px; font-weight: 600; line-height: 1;
       color: #304642; white-space: nowrap;
     }
     .card-type-icon {
@@ -427,7 +427,7 @@
       display: inline-flex; align-items: center; justify-content: center;
       padding: 10px 14px; border-radius: 100px;
       background: var(--pill-bg, rgba(238,224,195,0.30));
-      color: #304642; font-size: 13px; font-weight: 500; line-height: 1; white-space: nowrap;
+      color: #304642; font-size: 12px; font-weight: 500; line-height: 1; white-space: nowrap;
     }
     .card-bm-btn {
       display: inline-flex; align-items: center; justify-content: center;
@@ -454,12 +454,12 @@
       display: flex; flex-direction: column; gap: 0; flex: 1;
     }
     .course-title {
-      color: var(--color-primary); font-size: 18px; font-weight: 600;
+      color: var(--color-primary); font-size: 20px; font-weight: 600;
       line-height: 24px; letter-spacing: -0.3px; margin-bottom: 8px;
       transition: color 200ms ease;
     }
     .course-description {
-      color: rgba(48,70,66,0.55); font-size: 14px; font-weight: 400; line-height: 20px;
+      color: rgba(48, 70, 66, 0.75); font-size: 14px; font-weight: 400; line-height: 20px;
       display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2;
       -webkit-box-orient: vertical; overflow: hidden;
     }
@@ -469,7 +469,7 @@
     }
     .course-cta {
       display: inline-flex; align-items: center; gap: 10px;
-      color: var(--color-primary); font-size: 15px; font-weight: 500; line-height: 22px;
+      color: var(--color-primary); font-size: 16px; font-weight: 500; line-height: 22px;
       text-decoration: none; transition: gap 250ms var(--transition-smooth);
     }
     .course-card:hover .course-cta { gap: 14px; }
@@ -498,11 +498,11 @@
     .section-header-icon svg { width: 18px; height: 18px; }
     .section-header-text { display: flex; flex-direction: column; gap: 2px; }
     .section-header-eyebrow {
-      font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
       color: var(--sol-bar, var(--color-primary)); line-height: 1; opacity: 0.75;
     }
     .section-header-name {
-      font-size: 22px; font-weight: 700; color: var(--color-primary);
+      font-size: 20px; font-weight: 700; color: var(--color-primary);
       letter-spacing: -0.025em; line-height: 1.15;
     }
     .section-header-line { flex: 1; height: 1px; background: var(--sol-bar, rgba(48,70,66,0.12)); opacity: 0.18; }
@@ -551,7 +551,7 @@
     /* Eyebrow meta line */
     .lp-banner-eyebrow {
       display: flex; align-items: center; gap: 6px;
-      font-size: 13px; font-weight: 500; color: rgba(48,70,66,0.55);
+      font-size: 14px; font-weight: 500; color: rgba(48, 70, 66, 0.75);
     }
     .lp-banner-eyebrow .card-type-icon {
       background-color: rgba(48,70,66,0.55);
@@ -559,12 +559,12 @@
     .lp-eyebrow-sep { opacity: 0.5; }
     /* Title / desc */
     .lp-banner-title {
-      font-size: 28px; font-weight: 700; letter-spacing: -0.6px;
+      font-size: 24px; font-weight: 700; letter-spacing: -0.6px;
       line-height: 1.15; color: var(--color-primary); margin: 0;
     }
     .lp-banner-desc {
-      font-size: 15px; font-weight: 400; line-height: 1.6;
-      color: rgba(48,70,66,0.62);
+      font-size: 16px; font-weight: 400; line-height: 1.6;
+      color: rgba(48, 70, 66, 0.75);
       display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
     }
     /* Progress block (above CTA row) */
@@ -580,7 +580,7 @@
       border-radius: 100px;
       transition: width 0.8s cubic-bezier(0.4,0,0.2,1);
     }
-    .lp-banner-pct { font-size: 13px; font-weight: 600; color: var(--color-primary); white-space: nowrap; }
+    .lp-banner-pct { font-size: 14px; font-weight: 600; color: var(--color-primary); white-space: nowrap; }
     /* CTA row */
     .lp-banner-cta-row {
       display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
@@ -642,7 +642,7 @@
     }
   /* ── Nav Progress Widget ── */
   .nav-progress-widget { display: flex; align-items: center; gap: 20px; padding: 0 0 0 16px; background: rgba(48, 70, 66, 0.055); border-radius: 100px; }
-  .nav-continue-btn { display: inline-flex; align-items: center; justify-content: center; gap: 7px; font-family: var(--font-family, 'Poppins', sans-serif); font-size: 13px; font-weight: 500; color: #fff; text-decoration: none; height: 36px; padding: 0 17px; border-radius: 100px; background: #FF5A00; box-shadow: 0 2px 8px rgba(255, 90, 0, 0.22); white-space: nowrap; line-height: 1; transition: background 0.2s ease, box-shadow 0.22s ease, transform 0.22s cubic-bezier(0.22,1,0.36,1); }
+  .nav-continue-btn { display: inline-flex; align-items: center; justify-content: center; gap: 7px; font-family: var(--font-family, 'Poppins', sans-serif); font-size: 14px; font-weight: 500; color: #fff; text-decoration: none; height: 36px; padding: 0 17px; border-radius: 100px; background: #FF5A00; box-shadow: 0 2px 8px rgba(255, 90, 0, 0.22); white-space: nowrap; line-height: 1; transition: background 0.2s ease, box-shadow 0.22s ease, transform 0.22s cubic-bezier(0.22,1,0.36,1); }
   .nav-continue-btn:hover { background: #D94E00; box-shadow: 0 5px 16px rgba(255, 90, 0, 0.34); transform: translateY(-1px); }
   .nav-continue-btn svg { width: 12px; height: 12px; flex-shrink: 0; color: #fff; transition: transform 0.22s cubic-bezier(0.22,1,0.36,1); }
   .nav-continue-btn:hover svg { transform: translateX(2px); }
@@ -659,7 +659,7 @@
       .header { padding: 14px 20px; }
       .header-left { gap: 20px; }
       .nav { gap: 2px; }
-      .nav a { padding: 8px 10px; font-size: 13px; }
+      .nav a { padding: 8px 10px; font-size: 14px; }
     }
     @media (max-width: 480px) {
       .header { padding: 10px 16px; border-radius: 0 0 16px 16px; }
@@ -754,29 +754,25 @@
 
   <script src="tutorials.js"></script>
   <script src="recaps.js"></script>
+  <script src="sol-colors.js"></script>
   <script>
     // ── Data ─────────────────────────────────────────────────────────
 
     const SOLUTIONS = [
       { key: 'functionality', name: 'Software', label: 'Inact Now', pathId: 'now-fundamentals',
-        illu: 'LP-thumbnails/Farvetest/Fundamentals_LP.png',
-        toggleBg: '#F1F6FF', bg: '#F5F9FF', btn: '#DBE9FF', btnT: '#1A2535', bdr: '#D0DFEF', dot: '#DBE9FF', bar: '#5888D0' },
+        illu: 'LP-thumbnails/Farvetest/Fundamentals_LP.png' },
       { key: 'functionality', name: 'Software', label: 'Inact Now', pathId: 'admin',
-        illu: 'LP-thumbnails/Farvetest/Admin_LP.png',
-        toggleBg: '#F1F6FF', bg: '#F5F9FF', btn: '#DBE9FF', btnT: '#1A2535', bdr: '#D0DFEF', dot: '#DBE9FF', bar: '#5888D0' },
+        illu: 'LP-thumbnails/Farvetest/Admin_LP.png' },
       { key: 'inventory',    name: 'Inventory',  label: 'What to stock?', pathId: 'inventory-management',
-        illu: 'LP-thumbnails/Farvetest/Inventory_LP.png',
-        toggleBg: '#FFF9EC', bg: '#FFFDF9', btn: '#EEE0C3', btnT: '#2C2416', bdr: '#EDE3CC', dot: '#EEE0C3', bar: '#B8964E' },
+        illu: 'LP-thumbnails/Farvetest/Inventory_LP.png' },
       { key: 'suppliers',   name: 'Suppliers',  label: 'How to source?', pathId: 'supplier-management',
-        illu: 'LP-thumbnails/Farvetest/Suppliers_LP.png',
-        toggleBg: '#F4EEFF', bg: '#FDFCFF', btn: '#E1DBEB', btnT: '#221D2E', bdr: '#D8D0E8', dot: '#E1DBEB', bar: '#7B68AA' },
+        illu: 'LP-thumbnails/Farvetest/Suppliers_LP.png' },
       { key: 'products',    name: 'Products',   label: 'What to offer?', pathId: 'product-management',
-        illu: 'LP-thumbnails/Farvetest/Products_LP.png',
-        toggleBg: '#FAF3D4', bg: '#FDFAEE', btn: '#EDE0A6', btnT: '#33290F', bdr: '#E6DAAC', dot: '#EDE0A6', bar: '#B49B33' },
+        illu: 'LP-thumbnails/Farvetest/Products_LP.png' },
       { key: 'customers',   name: 'Customers',  label: 'Who to serve?', pathId: 'end2end',
-        illu: 'LP-thumbnails/Farvetest/End2End_LP.png',
-        toggleBg: '#F1F4E9', bg: '#F8FAF4', btn: '#E3E8D8', btnT: '#222619', bdr: '#DDE3D0', dot: '#D0D5C5', bar: '#8A9672' },
+        illu: 'LP-thumbnails/Farvetest/End2End_LP.png' },
     ];
+    SOLUTIONS.forEach(s => Object.assign(s, solColors(SOL_BASES[s.key])));
 
     const PATHS = [
       {
@@ -885,7 +881,7 @@
       general:      `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
     };
 
-    const GENERAL_SOL = { key: 'general', name: 'Quick Resources', label: 'Standalone', bar: '#8A9A97', toggleBg: 'rgba(138,154,151,0.10)', bdr: 'rgba(138,154,151,0.30)' };
+    const GENERAL_SOL = { key: 'general', name: 'Quick Resources', label: 'Standalone', bar: '#8A9A97', tint: 'rgba(138,154,151,0.10)', line: 'rgba(138,154,151,0.30)' };
 
     // ── State ─────────────────────────────────────────────────────────
     // Empty set = no filter on that group; ticked options within a group are OR'd
@@ -949,7 +945,7 @@
 
     function renderSectionHeader(sol, isFirst) {
       const icon = TOPIC_ICONS[sol.key] || TOPIC_ICONS.all;
-      return `<div class="catalog-section-header${isFirst ? ' is-first' : ''}" style="--sol-bar:${sol.bar};--sol-bg:${sol.toggleBg};--sol-bdr:${sol.bdr || 'rgba(48,70,66,0.15)'}">
+      return `<div class="catalog-section-header${isFirst ? ' is-first' : ''}" style="--sol-bar:${sol.bar};--sol-bg:${sol.tint};--sol-bdr:${sol.line || 'rgba(48,70,66,0.15)'}">
         <span class="section-header-icon">${icon}</span>
         <div class="section-header-text">
           <span class="section-header-eyebrow">${sol.label}</span>
@@ -984,14 +980,14 @@
       const pct  = prog.pct;
       const ctaText = pct === 100 ? 'Review' : (prog.started ? 'Continue' : 'Open path');
       const continueHref = getNextCourseHref(path);
-      const cardBdr  = sol ? sol.bdr  : 'transparent';
+      const cardBdr  = sol ? sol.line  : 'transparent';
       const cardGlow = sol ? hexToRgba(sol.bar, 0.16) : 'rgba(48,70,66,0.10)';
-      const pillBg   = sol ? hexToRgba(sol.btn, 0.40) : 'rgba(48,70,66,0.07)';
+      const pillBg   = sol ? hexToRgba(sol.soft, 0.40) : 'rgba(48,70,66,0.07)';
       const barClass = 'card-progress' + (pct === 100 ? ' completed' : '');
       const contents = pathContents(path);
 
       const cardTopHtml = sol && sol.illu
-        ? `<div class="course-card-top" style="background:${sol.toggleBg};--pill-bg:${pillBg}">
+        ? `<div class="course-card-top" style="background:${sol.tint};--pill-bg:${pillBg}">
             <img class="course-card-thumb" src="${sol.illu}" alt="" loading="lazy">
             <div class="card-top-bar">
               <div class="card-type-pill" style="background:${pillBg}"><span class="card-type-icon"></span>Learning Path</div>
@@ -1001,7 +997,7 @@
               </div>
             </div>
           </div>`
-        : `<div class="course-card-top standalone-thumb" style="--card-bg:${sol ? sol.bg : '#F5F7F5'};--pill-bg:${pillBg}">
+        : `<div class="course-card-top standalone-thumb" style="--card-bg:${sol ? sol.wash : '#F5F7F5'};--pill-bg:${pillBg}">
             <span class="standalone-thumb-icon">${TOPIC_ICONS[path.category] || TOPIC_ICONS.all}</span>
             <div class="card-top-bar">
               <div class="card-type-pill" style="background:${pillBg}"><span class="card-type-icon"></span>Learning Path</div>
@@ -1029,7 +1025,7 @@
       const { completed, progress } = getCourseProgress(course.id);
       const isStandalone = !course.pathId;
       const sol = SOLUTIONS.find(s => s.key === course.category);
-      const cardBdr  = sol ? sol.bdr  : 'transparent';
+      const cardBdr  = sol ? sol.line  : 'transparent';
       const cardGlow = sol ? hexToRgba(sol.bar, 0.20) : 'rgba(48,70,66,0.22)';
 
       let href;
@@ -1043,7 +1039,7 @@
       const pct = completed ? 100 : progress;
       const barClass = 'card-progress' + (completed ? ' completed' : '');
 
-      const pillBg = sol ? hexToRgba(sol.btn, 0.40) : 'rgba(48,70,66,0.07)';
+      const pillBg = sol ? hexToRgba(sol.soft, 0.40) : 'rgba(48,70,66,0.07)';
       let cardTopHtml;
       if (course.thumbnail) {
         cardTopHtml = `<div class="course-card-top" style="--pill-bg:${pillBg}">
@@ -1057,7 +1053,7 @@
           </div>
         </div>`;
       } else {
-        const thumbBg = sol ? sol.bg : '#F5F7F5';
+        const thumbBg = sol ? sol.wash : '#F5F7F5';
         const icon    = TOPIC_ICONS[course.category] || TOPIC_ICONS.general;
         cardTopHtml = `<div class="course-card-top standalone-thumb" style="--card-bg:${thumbBg};--pill-bg:${pillBg}">
           <span class="standalone-thumb-icon">${icon}</span>
@@ -1091,15 +1087,15 @@
     function renderTutorialCard(t) {
       const { completed, progress } = getCourseProgress('tutorial-' + t.id);
       const sol = SOLUTIONS.find(s => s.key === t.category);
-      const cardBdr  = sol ? sol.bdr : 'transparent';
+      const cardBdr  = sol ? sol.line : 'transparent';
       const cardGlow = sol ? hexToRgba(sol.bar, 0.20) : 'rgba(48,70,66,0.22)';
-      const pillBg   = sol ? hexToRgba(sol.btn, 0.40) : 'rgba(48,70,66,0.07)';
+      const pillBg   = sol ? hexToRgba(sol.soft, 0.40) : 'rgba(48,70,66,0.07)';
       const href = `course.html?tutorial=${t.id}&from=catalog`;
       const pct = completed ? 100 : progress;
       const ctaText = completed ? 'Review' : (progress > 0 ? 'Continue' : 'Start');
 
       return `<div class="course-card" data-href="${href}" tabindex="0" style="--card-bdr:${cardBdr};--card-glow:${cardGlow}">
-        <div class="course-card-top standalone-thumb" style="--card-bg:${sol ? sol.bg : '#F5F7F5'};--pill-bg:${pillBg}">
+        <div class="course-card-top standalone-thumb" style="--card-bg:${sol ? sol.wash : '#F5F7F5'};--pill-bg:${pillBg}">
           <span class="standalone-thumb-icon">${TYPE_ICONS.tutorial}</span>
           <div class="card-top-bar">
             <div class="card-type-pill" style="background:${pillBg}"><span class="card-type-icon-svg">${TYPE_ICONS.tutorial}</span>Tutorial</div>
